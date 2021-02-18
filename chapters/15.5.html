@@ -1,0 +1,813 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 15.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>As MATRIX-CHAIN-ORDER procedure, OPTIMAL-BST algorithm computes
+and returns two tables <i>e</i> and <i>root</i>. Table <i>root</i>
+is useful to print the structure of optimal binary search tree.
+Thus, using <i>root,</i> an algorithm like PRINT-OPTIMAL-PARENS,
+can be developed to print the structure of the optimal binary
+search tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following pseudo code that construct the structure
+of the optimal binary search tree</p>
+<p>CONSTRUCT-OPTIMAL-BST(<i>root</i>, <i>i, j</i>)</p>
+<p>//if i equal to 1 and j equal to <i>n</i>, then print the
+root</p>
+<p>1. <b>if</b> <i>i</i> = = 1 <b>and</b> <i>j</i> =
+=<i>root</i>.rows</p>
+<p>//printing the root which is at [1, <i>n</i>] in the
+<i>root</i></p>
+<p>2. print <i>k</i><sub>root</sub> <sub>[1,</sub>
+<sub>j</sub><sub>]</sub> is the root</p>
+<p>//if <i>i</i> is greater than j return</p>
+<p>3. <b>if</b> (<i>i &gt; j</i>)</p>
+<p>4. <b>return;</b></p>
+<p>// copy the value at [<i>i,j</i>] to <i>x</i></p>
+<p>5. <i>x</i> = <i>root</i> [<i>i, j</i>]</p>
+<p>6. <b>if</b> <i>i != x</i></p>
+<p>7. print <i>k</i><sub>root</sub>
+<sub>[</sub><sub>i,x</sub><sub>-1]</sub> is the left child of
+<i>k</i><sub>x</sub></p>
+<p>8. <b>else</b></p>
+<p>9. print <i>d</i><sub>x</sub><sub>-1</sub> is the left child of
+<i>k</i><sub>x</sub></p>
+<p>// call recursively on the left child</p>
+<p>10. CONSTRUCT-OPTIMAL-BST (<i>root, i, x</i>-1)</p>
+<p>11. <b>if</b> <i>j != x</i></p>
+<p>12. print <i>k</i> <sub>root</sub>
+<sub>[</sub><sub>x</sub><sub>+1,</sub> <sub>j</sub><sub>]</sub> is
+the right child of <i>k</i><sub>x</sub></p>
+<p>13. <b>else</b></p>
+<p>14. Print <i>d</i><sub>x</sub> is the right child of
+<i>k</i><sub>x</sub></p>
+<p>//calling print function on right child</p>
+<p>15. CONSTRUCT-OPTIMAL-BST (<i>root, x+</i>1, <i>j</i>)</p>
+<p>16. <b>return;</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of algorithm:</b></p>
+<p>• For the above algorithm CONSTRUCT-OPTIMAL-BST (<i>root</i>, 1,
+<i>n</i>) is the initial call. Where <i>n</i> is the number of
+keys. The root node is printed in the initial call only</p>
+<p>• The input table, <i>root</i> contains equal number of rows and
+columns. Thus whenever, <i>i</i> is greater than <i>j</i>, the
+algorithm simply returns back at line 4.</p>
+<p>• Otherwise, the algorithm prints left subtree nodes until
+<i>i</i> does not equal to <i>x</i>.</p>
+<p>• In the line 5, the value of <i>root</i> at [<i>i,j</i>] is
+stored into <i>x</i>.</p>
+<p>• If the <i>i</i> is equal to <i>x,</i> then the algorithm
+prints left dummy nodes, in the line 9.</p>
+<p>• After the left sub tree nodes are printed, the algorithm
+recursively called to print right sub tree nodes. The algorithm
+prints right subtree nodes until <i>j</i> does not equal to
+<i>x</i>.</p>
+<p>• If the <i>j</i> is equal to <i>x,</i> then the algorithm
+prints right dummy nodes, in the line 14.</p>
+<p>• The time complexity of the above algorithm is <img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">because
+there are <i>n</i> nodes and thus the algorithm called <i>n</i>
+times recursively.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Creating the Optimal Binary Search Tree</b></p>
+<p>The straight forward way to find the Optimal Binary Search Tree
+is to try different trees created by using the given keys.
+Calculate the search cost of each tree and try to find out the
+least of them. The one with the least cost would be the optimal
+Binary Search Tree.</p>
+<p>Consider the table given below:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><i><b>i</b></i></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>6</p>
+</td>
+<td>
+<p>7</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i><b>p</b></i> <sub>i</sub></p>
+</td>
+<td>
+<p>.</p>
+</td>
+<td>
+<p>0.04</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>0.08</p>
+</td>
+<td>
+<p>0.02</p>
+</td>
+<td>
+<p>0.10</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+<td>
+<p>0.14</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i><b>q</b></i> <sub>i</sub></p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>0.05</p>
+</td>
+<td>
+<p>0.05</p>
+</td>
+<td>
+<p>0.05</p>
+</td>
+<td>
+<p>0.05</p>
+</td>
+</tr>
+</table>
+<p>The keys are denoted by <i>i</i> and <i>p</i><sub>i</sub> and
+<i>q</i><sub>i</sub> are the probabilities of success and failures
+respectively in finding a key in tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The cost for any node having the key in the tree can be
+calculated using the formula below:</p>
+<p><img src=
+"../imgs/4b958c6a1f405c3f045799352264ca54fa3f723f.png"></p>
+<p>Where <i>c</i> is the cost, <i>d</i> is the depth or height of
+the key node and <i>p</i> is the probability of occurrence.</p>
+Keeping this formula in mind the tree should be created in such a
+manner that the tree is not severely unbalanced and the keys with
+maximum probability are kept near the root. Based on these
+speculations some possible tress would be as below:</div>
+<hr>
+<div class="answer">
+<p>The first tree in this case is the tree having k5 as the root.
+The expected values to be searched are located in the leaves of the
+tree.</p>
+<p><img src="../imgs/72571980b4cccf0d3e3326e2d7e3717cd8d7a1fe.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\8.tif"></p>
+<p><b>Tree T</b> <sub>1</sub> <b>having k5 as the root</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The second tree that can be used as the optimal binary search
+tree is shown below. This tree has k3 as root.</p>
+<p><img src="../imgs/3ca46e4fe693026e4fd2f62a761861976a587144.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></p>
+<p><b>Tree T</b> <sub>2</sub> <b>having k3 as the root</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>One more tree that can be used as an optimal binary search tree
+is shown below. This tree has k3 as root and all other nodes
+subsequently.</p>
+<p><img src="../imgs/16cbc828ec1b621870c8f4f3afc20325b6372608.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p><b>Tree T</b> <sub>3</sub> <b>having k3 as the root</b></p>
+<p>Now, the cost for each of the above tree has to be calculated:
+The table below shows the cost for each of the tree:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p>Key</p>
+</td>
+<td>
+<p>Probability</p>
+</td>
+<td>
+<p>T<sub>1</sub></p>
+</td>
+<td>
+<p>T<sub>2</sub></p>
+</td>
+<td>
+<p>T<sub>3</sub></p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>
+<p>Depth</p>
+</td>
+<td>
+<p>Cost</p>
+</td>
+<td>
+<p>Depth</p>
+</td>
+<td>
+<p>Cost</p>
+</td>
+<td>
+<p>Depth</p>
+</td>
+<td>
+<p>Cost</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>k1</p>
+</td>
+<td>
+<p>0.04</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>k2</p>
+</td>
+<td>
+<p>0.06</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>k3</p>
+</td>
+<td>
+<p>0.08</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.24</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0.08</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0.08</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>k4</p>
+</td>
+<td>
+<p>0.02</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>0.08</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>0.08</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>0.08</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>k5</p>
+</td>
+<td>
+<p>0.10</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0.10</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.30</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.30</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>k6</p>
+</td>
+<td>
+<p>0.12</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.36</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0.24</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>0.48</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>k7</p>
+</td>
+<td>
+<p>0.14</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0.28</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>0.42</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0.28</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Total Cost</p>
+</td>
+<td></td>
+<td></td>
+<td>
+<p>1.30</p>
+</td>
+<td></td>
+<td>
+<p>1.36</p>
+</td>
+<td></td>
+<td>
+<p>1.46</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">To find the cost,</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/4b958c6a1f405c3f045799352264ca54fa3f723f.png"> For
+T<sub>1</sub>, <img src=
+"../imgs/6f2530579d730116ef836d0e006260e57aa9ebe6.png"></div>
+<hr>
+<div class="answer">Based on the above result it can be clearly
+seen that the cost of search is least in the first tree so that is
+the optimal Binary Search Tree and the cost of search in that tree
+is 1.30.</div>
+<hr>
+<div class="answer">
+<p>The recursive solution using the dynamic programming for the
+same yields the following tables for search cost <i>e</i>, root
+table <i>r</i>, and the probability sum table <i>w</i>. The
+algorithm OPTIMAL-BST for creating the above said tables is given
+in the section 15.5 of the book.</p>
+<p>For the purpose of convenience the table is aligned horizontally
+along the diagonal. The values for any <i>e</i>(<i>i, j</i>) and
+<i>w</i>(<i>i, j</i>) can be calculated using the formula given in
+the section 15.5 of the book as well. The values are computed as
+shown:</p>
+<p>For example:</p>
+<p><i>e</i>(1<i>,</i>1) is calculated as below:</p>
+<p><img src=
+"../imgs/e4f23053a001d5fbef5a9eb3963a8dffda821170.png"></p>
+<p>The cost table according to the OPTIMAL-BST algorithm is as
+below:</p>
+<p>Suppose the value of <i>i</i>=1.The algorithm would execute as
+below:</p>
+<p><img src=
+"../imgs/378f3cc15a67fe7112db52e36602dcc69328f0bb.png"></p>
+<p><img src=
+"../imgs/f81b3fef0c6889bf21988aba1281c74f07455cd6.png"></p>
+<p>The consequent values would be calculated using the algorithm
+and the table would be populated. The final yield of the algorithm
+would result the following table <i>e</i> and <i>w</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The cost table shows the cost of searching the required key in
+different scenarios. A cell shows the cost of searching the key
+located at that intersection of row and the column.</p>
+<p><img src="../imgs/7bc78f258531f76b4d74c5911d9d9c983fe42efa.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p><b>The cost table</b> <i><b>e</b></i></p>
+<p>The table above shows that the cost of searching the key would
+be 3.12 in the worst possible case.</p>
+<p>The probability sum table according to the OPTIMAL-BST procedure
+is shown below. This table would be used in finding the root of the
+optimal binary tree.</p>
+<p><img src="../imgs/2a3e2bfd7981748f5963d2a06c4c0e381667d3ed.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\2.tif"></p>
+<p><b>The probability sum table</b> <i><b>w</b></i></p>
+<p>The root table that is shown in the figure would show the
+different possible roots of the tree in various possible
+conditions.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Any specific value of the root would be calculated using the
+algorithm as below:</p>
+<p>To understand, how the values are populated in root table, have
+a look at the remaining section of the algorithm for some sample
+values:</p>
+<p><img src=
+"../imgs/5c633f9afc9dd2bbfba0984b2b3181c7e8833c96.png"></p>
+<p><img src=
+"../imgs/c4bc399c4e05bf35dc48bdc79a41127418166e50.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The root table for getting the optimal BST according to the
+OPTIMAL-BST is shown below:</p>
+<p><img src=
+"../imgs/7883c81cc012130b36703609aecfcaf9b703453f.png"></p>
+<p>Since<img src=
+"../imgs/4c75a3ad1cabc2676b5d66dc3cde658f80da95b1.png"></p>
+<p>So</p>
+<p><img src=
+"../imgs/0676a42e204cd045470d8715d93d54874ebd10c5.png"></p>
+<p><img src="../imgs/d9e62899461ffde2d2a7921f302944823de93255.png"
+alt="F:\Tiffs\2254-15.5-2E.tif"></p>
+<p><b>Root table</b> <i><b>r</b></i></p>
+<p>The root table shows the root of the optimum tree would be the
+node 5 that means k5 should be the root of the tree for best
+performance in the worst case search. This way the optimal binary
+search tree for the previously discussed statistics can be
+created.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider OPTIMAL-BST and measure the effect on the asymptotic
+running time of the algorithm without making the table for<img src=
+"../imgs/cdc4d640f64bbcfa7cb1f62909c267c5026bb9d2.png"> but
+calculating the value of<img src=
+"../imgs/524f9b933ad022b8dbef72caaef7b8125fe1ef0b.png">directly
+from the equation:</p>
+<p><img src=
+"../imgs/bd4d2ba06693abdf5127b3880f9a1e2b2eea95d1.png"></p>
+<p>An OPTIMAL-BST is a tree with internal nodes as sorted keys
+<img src="../imgs/d79798aa600d4a9c3e2d19a0625ef2e69f869b59.png">
+and probability<img src=
+"../imgs/8333073cc45137c9e6ecaac0cd95be66d1196e77.png">associated
+with each data value to search in the tree. Because of this
+probability it is quite easy to compute the running time of optimal
+binary search tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Refer the page number 402 from textbook for OPTIMAL-BST
+algorithm. In that algorithm we prepare three tables. The table
+named <i>e</i> for storing expected cost of searching a node, table
+<i>w</i> for sum of probabilities of each key and <i>root</i> for
+containg roots of the sub tree containing keys.</p>
+<p>Now if we do not maintain a table<img src=
+"../imgs/cdc4d640f64bbcfa7cb1f62909c267c5026bb9d2.png">, we add up
+the values of <img src=
+"../imgs/524f9b933ad022b8dbef72caaef7b8125fe1ef0b.png"> in the line
+<img src="../imgs/fbc6d9fd2d0bc99d8934f9571b1898c8a6270a2d.png">of
+OPTIMAL-BST algorithm by using the equation:</p>
+<p><img src=
+"../imgs/f13e069fbb60e2b9e80ee0c8787b53979b32c278.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>There is a tradeoff between space and time complexity, and less
+space will be required if we do not maintain a table <img src=
+"../imgs/cdc4d640f64bbcfa7cb1f62909c267c5026bb9d2.png">but will
+subsequently increase the running time complexity.</p>
+<p>We would run loop for <img src=
+"../imgs/fac0079460017d5f31ae3cd1a6fba09a8f5f4c86.png"> iterations.
+The code will have three nested loops now, each with a constant
+work done.</p>
+<p>Each loop adds <i>n</i> time complexity and hence, the required
+time to run the algorithm that is the complexity is<img src=
+"../imgs/269934ce09ca78d5d9ad8fd0dec88ad7ff01a862.png">.</p>
+<p>Hence in OPTIMAL-BST if we do not maintain the table<img src=
+"../imgs/cdc4d640f64bbcfa7cb1f62909c267c5026bb9d2.png">but still
+calculating the value of <img src=
+"../imgs/524f9b933ad022b8dbef72caaef7b8125fe1ef0b.png">then the
+algorithm will take less space but the time required to run will be
+increased.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Modifying OPTIMAL-BST procedure</b></p>
+<p>The Optimal-BST is a procedure that is used to create a Binary
+Search tree of the given key values. This procedure yields the
+optimal tree structure that can be formed to make the search cost
+minimum.</p>
+<p>In order to modify the Optimal-BST procedure to run in<img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png">,
+characterize the optimal substructure of Optimal Binary Search
+Trees is needed.</p>
+<p>By considering any Sub-tree of Binary Search Tree that must
+contains the keys in contiguous range<img src=
+"../imgs/b7ca0441deeff6034ef8df6429c691dd4aa14f68.png">
+<sub>,</sub> for some<img src=
+"../imgs/65a33673fc5852aa33e68cf11e7728c411e7c118.png"> .</p>
+<p>A sub-tree that contains Keys <img src=
+"../imgs/b7ca0441deeff6034ef8df6429c691dd4aa14f68.png"> must also
+have as it is leaves the dummy keys <img src=
+"../imgs/81addf8f0448d14f92ecaf00245afdcaf5b05f02.png">.</p>
+If an Optimal Binary Search Tree <i>T</i> has a sub-tree <i>T’</i>
+containing Keys <img src=
+"../imgs/b7ca0441deeff6034ef8df6429c691dd4aa14f68.png">
+<sub>,</sub> then this sub-tree <i>T</i>’ must be optimal and also
+optimal for the sub-problem with keys <img src=
+"../imgs/b7ca0441deeff6034ef8df6429c691dd4aa14f68.png">and dummy
+keys <img src=
+"../imgs/81addf8f0448d14f92ecaf00245afdcaf5b05f02.png"> .</div>
+<hr>
+<div class="answer">
+<p>Consider the Optimal-BST <img src=
+"../imgs/6a7f6f5bc76035362de19458ab6b1f8b78bd89e5.png"> whose nodes
+ranging from <i><b>i</b></i>+1 to <i><b>j</b></i><b>.</b></p>
+<p>Adding an <i><b>i</b></i> node to <i>T as i+</i>1<i>’</i>s left
+child, and proper adjustment to dummy nodes makes also a legal BST
+<img src=
+"../imgs/44ac5f776b92eb94a2800ef6fc301dead9d7332c.png">.</p>
+<p>When making the Optimal-BST <img src=
+"../imgs/44ac5f776b92eb94a2800ef6fc301dead9d7332c.png">,</p>
+<p>If <img src=
+"../imgs/40200bf8380b70531fb391abdca6d13b4cd28347.png"></p>
+<p>Then <img src=
+"../imgs/1ffaa3ec9abd5944933bdfab747f1fab543290da.png"> in
+<img src="../imgs/44ac5f776b92eb94a2800ef6fc301dead9d7332c.png">should
+be placed at the <img src=
+"../imgs/643668bcb58d303c2017c771240d4f4b4f116d0c.png"><i>’</i>s
+left sub-tree.</p>
+<p>Since depth of <i>i</i>+1 with respect to <img src=
+"../imgs/1ffaa3ec9abd5944933bdfab747f1fab543290da.png">in<img src=
+"../imgs/44ac5f776b92eb94a2800ef6fc301dead9d7332c.png"> is similar
+to depth in<img src=
+"../imgs/6a7f6f5bc76035362de19458ab6b1f8b78bd89e5.png"><b>.</b></p>
+<p>The actual depth of <i>i'</i>s, that is, with respective
+to<img src=
+"../imgs/44ac5f776b92eb94a2800ef6fc301dead9d7332c.png">'s root,
+<img src=
+"../imgs/643668bcb58d303c2017c771240d4f4b4f116d0c.png"><b>,</b> is
+larger.</p>
+<p>But, there is another optimal tree <img src=
+"../imgs/44ac5f776b92eb94a2800ef6fc301dead9d7332c.png"> that is
+there with less increasing cost when inserting node <i>i</i>.</p>
+<p>Thus, <img src=
+"../imgs/6a7f6f5bc76035362de19458ab6b1f8b78bd89e5.png"> plus node
+<i>i</i>–1 can make a better tree, which contradicts<img src=
+"../imgs/44ac5f776b92eb94a2800ef6fc301dead9d7332c.png">'s
+optimism.</p>
+<p>Therefore, <img src=
+"../imgs/ad7c60f594114b9dcde49ef1253669e739be7b89.png"></p>
+<p>Similarly,</p>
+<p><img src="../imgs/2c2b291987551df8faa5808171d992e3e1edbf0b.png">
+.</p>
+<p>Thus, modified formula can be given as:</p>
+<p><img src=
+"../imgs/76b04d46e8b9dacbd4f656806221b99cc764b811.png"></p>
+<p>Then here to prove that the calculating of this formula, using
+dynamic programming, takes <img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png">time:</p>
+<p>Thus a call to the group of states <img src=
+"../imgs/50814f5d571c515c6b63e1c73a35066c2384d8f8.png">is there
+which has fixed<img src=
+"../imgs/833a380458e8fba6cbf6f0a6df7eacb5e3943d7b.png"> the
+level-<i>k</i> group (obviously <img src=
+"../imgs/e049b2cba915d712e0e0a93c874be9c10ba47827.png"> nodes will
+be there in the group).</p>
+<p>The calculation of <img src=
+"../imgs/50814f5d571c515c6b63e1c73a35066c2384d8f8.png"> takes
+<img src="../imgs/54823e4aa87ac89f0550f97b224de84fae41ba42.png">
+iterations;</p>
+<p>Thus, for all level-<i>k</i> group states, their calculations
+take <img src=
+"../imgs/50d531109743e552e44234b2a5269297bbcb7c73.png"> iterations
+in all.</p>
+<p>Since,</p>
+<p><img src=
+"../imgs/5b0f9d9e02c1476c3c3dea4d292d465c000a8285.png">,</p>
+<p>The number of iterations becomes<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"><i><b>.</b></i>
+The value of <i>k</i> varies from 0 to <i>n</i>–1 making it a total
+of <i>n</i> iterations. So, the complexity of each of the separate
+iterations would be<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">. When one
+of them is nested inside another one, the complexities of them
+would be multiplied according to the Master’s theorem.</p>
+<p>Thus, the combined complexity is <img src=
+"../imgs/06eb033596bf12b3f1eaec1596314664d2cad5b8.png"></p>
+<p>Therefore, this is the appropriate procedure to run the
+Optimal-BST in <img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png">time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

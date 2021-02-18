@@ -1,0 +1,279 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 6.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a1eb6770d22cfb598bb1ef9abbb91ce65d97ca99.png">
+<hr>
+<img src="../imgs/a220f38674fd264fa66d9aeab640d09a4c98858f.png">
+<hr>
+<img src="../imgs/ab87c8d7ff03839bbf3ff5483944e2f57ecceb2d.png">
+<hr>
+<img src="../imgs/637120bb67f90e49d182277b49192a78bbc77ba3.png">
+<hr>
+<img src="../imgs/543a65335ece502549b02b5a1b4184c698c82f09.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>a)</b></p>
+<p><i>d</i>-array can be represented as general binary heap. The
+array representation is also same as the array representation of
+binary heap. In the array representation, three children of a node
+are stored continuously. The following methods help to access the
+parent and child nodes in d-array.</p>
+<p>// Returns the index the parent of the child located at index
+<i>i</i></p>
+<p>PARENT(<i>i</i>)</p>
+<p><b>return</b> <img src=
+"../imgs/ff8bd0ab6af3805b09f727de58da57e08a77675f.png"></p>
+<p>// Returns <i>j</i><sup>th</sup> child’s index of any parent</p>
+<p>CHILD(<i>i ,j</i>)</p>
+<p><b>return</b> <b><img src=
+"../imgs/621e48caf76394be74140126a4f75f599aaeb844.png"></b></p>
+<p><b>Example:</b></p>
+<p>• Consider a 3-ary heap. The root 22 is located at, as usual, at
+index 0.</p>
+<p>The first, second and third children of 22 are located at index
+1, 2 and 3 respectively.</p>
+<p>• Similarly children of 21, are located at index 4, 5 and 6.</p>
+<p>• So, from this we can say that for any parent <i>i</i> have
+children at 3*parent_index + 1, 3*parent_index + 2 and
+3*parent_index + 3.</p>
+<p><img src="../imgs/203acf820e6b5a4d4cc50dd6b9477ee06c94e4ea.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\October 10\16.10.2015\Ambuj 2254\1.png"></p>
+<p><img src="../imgs/4cd01f25c1c3e2df8cf39ce6b213e80c1c56c2e0.png"
+alt="Picture 1"></p>
+<p>• So in general for any <i>d</i>-ary heap the children of parent
+at index <i>i</i> is at d*parent_index +1, d*parent_index+2…….
+d*parent_index +d.</p>
+<p>• Also, the parent of a node located at index <i>i</i> in 3-ary
+heap can be found at index floor (<i>i-</i>1/3).</p>
+<p>• In general the parent of child that is located at index
+<i>i,</i> can be found at floor (<i>i-</i>1<i>/d</i>).</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b)</b></p>
+<p>• At any level <i>i</i> the number of nodes are <i>d</i>
+<sup>i</sup> where d is the level of that heap.</p>
+<p>• Consider the height of the tree to be <i>h</i>. Then number of
+nodes in the heap will be determined as:</p>
+<p><img src="../imgs/65ece7a6d71a3161e02a74f2e8bfec46927f3bf7.png">
+(Where n = total number of nodes) …… (1)</p>
+<p>• Since, the equation (1) is Geometric Progression so,</p>
+<p><img src=
+"../imgs/3196c399aeecf2ae707a6d4e9aec30d6384a93ea.png"></p>
+<p>Now, apply the formula to calculate the sum of geometric
+progression:</p>
+<p><img src=
+"../imgs/062b4b56d1b45ade4aa592ff3ce21dd596f077ad.png"></p>
+<p>• Take logarithm on both sides,</p>
+<p><img src=
+"../imgs/604eb93fb8e90536068958690f05e11138fad171.png"></p>
+<p>Or,</p>
+<p><img src=
+"../imgs/f9f1edc275bfa9f0297f771c9dce9177f79e015f.png"></p>
+<p>• So,</p>
+<p><img src="../imgs/4c9fc8d954ba8fc83aa719b52bc7265e9277ccd9.png">
+(By base change property of log)</p>
+<p><b>Hence, the height of a</b> <i><b>d</b></i> <b>-ary heap
+of</b> <i><b>n</b></i> <b>elements in terms of</b> <i><b>n</b></i>
+<b>and</b> <i><b>d</b></i> <b>is</b> <b><img src=
+"../imgs/84252a92e6f7ae02ce19ed4887fb1c38c1dc593e.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>c)</b></p>
+<p>The procedure <i>d</i>-ARY-HEAP-EXTRACT-MAX also works similar
+to HEAP-EXTRACT-MAX and calls <i>d</i>-ARY-MAX-HEAPIFY.</p>
+<p><img src="../imgs/8eb6c9fd5e9fb5214a382d6a58d085b4d33605e5.png"
+alt="Picture 2"></p>
+</div>
+<hr>
+<div class="answer">Consider the following algorithm of
+D-ARY-MAX-HEAPIFY:
+<p><img src="../imgs/da0c80c1a8b182009d5d9ecd2cdfa2bea783b20e.png"
+alt="Picture 3"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>• The <i>d</i>-ARY_EXTRACT_MAX returns the first element in the
+array. And replaces the first place with the last element in the
+array.</p>
+<p>• Also, it calls <i>d</i>-ARY-MAX-HEAPIFY to maintain the
+max-heap property.</p>
+<p>• In <i>d</i>-ARY-MAX-HEAPIFY, first if condition is used to
+check the overflow using<i><img src=
+"../imgs/0430be4231dd69d6a040e4b9dd7874ad3cf6ed2d.png"></i>
+condition and <i>A</i>[<i>d*i + k</i>]<i>&gt;A</i>[<i>j</i>] is
+used to check whether max-heap property is followed or not.</p>
+<p>• If the above condition is true, it updates the largest value
+which is holding the index of an element to index of its
+parent.</p>
+<p>• Next if condition is used to check whether the largest value
+is updated or not. If the largest value is updated, then the parent
+and the node located at index largest are swapped.</p>
+<p>• After that, the program recursively calls
+<i>d</i>-ARY-MAX-HEAPIFY on largest node, to maintain the max-heap
+property.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running-time analysis:</b></p>
+<p>• The running time of this algorithm is <b><img src=
+"../imgs/38965e0e77e19a4ce112a1895f0e6088a4d20903.png"></b> because
+at each depth we are doing <i>d</i> loops, and then recurse to the
+depth of the tree.</p>
+<p>• In function user compare the i<sup>th</sup> node and each of
+its children to find max in all of the nodes. Then if the maximum
+child is greater than its parent swap them and recurse on
+child.</p>
+<p><b>Therefore, the run time complexity should be</b> <b><img src=
+"../imgs/38965e0e77e19a4ce112a1895f0e6088a4d20903.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>d)</b></p>
+<p>The algorithm given below is used to insert a new node in the
+heap .The Initial <i>key</i> value of the new node is initialized
+to <img src=
+"../imgs/6f5bed7ca3fff5e3f0fc1c011ace13be1584cfad.png">.</p>
+<p>• Since it is the lowest value possible it is inserted at the
+end of the heap and the <i>heapSize</i> is increased by 1.</p>
+<p>• Now this new node is to be updated with its required key value
+, for which it uses the INCREASE-KEY(<i>A ,i ,key</i>) method that
+is described in the part (e)</p>
+<p><img src="../imgs/5b1df0f22b304677f75d389329ce5a027e478fcd.png"
+alt="Picture 4"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running-time analysis:</b></p>
+<p>• Running time complexity depends upon the INCREASE-KEY(<i>A,
+A.heapSize ,key</i>) method. Since, in the worst case, this method
+traverses the full height of the tree that is from leaf node to the
+root.</p>
+<p>• Since, the height of d-ary heap as discussed above is
+<img src="../imgs/f9ba23c0399c6dff2a881569c1c851ced69cf304.png"></p>
+<p><b>So, the complexity is</b> <b><img src=
+"../imgs/296912eb35e1bd5ed561f09db2f6ba04eb895d10.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>e)</b></p>
+<p>First the method checks whether the input number is greater or
+not .If not then there is no need to change in heap .Otherwise
+insert the input value into the node.</p>
+<p>The algorithm for the same is described below:</p>
+<p><img src="../imgs/73b37e373b54bfe72b96b7207e47e8257a53c9f9.png"
+alt="Picture 5"></p>
+<p><b>Running time analysis:</b></p>
+<p>• Since it may be possible to have the index of child is at
+bottom, then in the worst case the Algorithm traverses the full
+height of the tree that is <img src=
+"../imgs/f9ba23c0399c6dff2a881569c1c851ced69cf304.png">,</p>
+<p><b>Therefore the run time complexity is</b> <b><img src=
+"../imgs/296912eb35e1bd5ed561f09db2f6ba04eb895d10.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/08992c5eac2b35559ee9d034b7bd5532d031f2c0.png">
+<hr>
+<img src="../imgs/cd5676403561ba3a58b130d31247b46f59552b18.png">
+<hr>
+<img src="../imgs/9eeb4170528d9d9e77389855a8102c0958e0f6ed.png">
+<hr>
+<img src="../imgs/a2daf72608d4132b57dcfda5a1fcf0a50f4533c7.png">
+<hr>
+<img src="../imgs/9b127c84944de6a30bd1b4b03bbadbbd99252c09.png">
+<hr>
+<img src="../imgs/2d335b4436be75d6468a2a29d73390cefbb517c0.png">
+<hr>
+<img src="../imgs/01ff05bbd3c3b3e8a8c93e3645004455b7106778.png">
+<hr>
+<img src="../imgs/e7413967bed2436538a4cf5b6687553cb6a13cc3.png">
+<hr>
+<img src="../imgs/d966b7adf350ec44d01f6dcf40a03b5ed231a7f9.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

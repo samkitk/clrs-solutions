@@ -1,0 +1,155 @@
+body {
+    padding: 0;
+    width: 680px;
+    margin: auto;
+    background: #FCFCFC;
+}
+
+#wrapper{
+    padding: 20px 20px 0 20px;
+    box-sizing: content-box;
+}
+
+::selection {
+    background: #CCC;
+}
+
+img {
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+hr {
+    display: block;
+    margin: 0.5em 0;
+    overflow: hidden;
+    border-top: 1px dashed #DDD;
+}
+
+.chapter {
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    background: white;
+    margin-bottom: 30px;
+}
+
+.chapter .chapter-title {
+    user-select: none;
+    font-size: 20px;
+    padding: 10px;
+    background: #DDD;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #888;
+}
+
+.chapter .chapter-problems {
+    font-size: 0;
+}
+
+.chapter .chapter-problems a.chapter-problem {
+    user-select: none;
+    display: inline-block;
+    width: 25%;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background: white;
+    transition: background 0.15s ease-out;
+    -webkit-transition: background 0.15s ease-out;
+    color: #777;
+    font-family: sans-serif;
+}
+
+.chapter .chapter-problems a.chapter-problem:hover {
+    background: #EEE;
+}
+
+.problem {
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    background: white;
+    margin-bottom: 20px;
+}
+
+.problem .problem-title {
+    user-select: none;
+    font-size: 20px;
+    padding: 10px;
+    background: #DDD;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #888;
+}
+
+.problem .problem-content {
+    padding: 10px 20px;
+}
+
+.chapter .chapter-title a, .problem .problem-title a {
+    text-decoration: none;
+    color: #888;
+}
+
+.info {
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+    white-space: nowrap;
+    padding: 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info a {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #777;
+}
+
+.return-float-btn {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: 16px;
+    height: 22px;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+}
+
+.arrow-left.icon {
+    color: #AAA;
+    width: 16px;
+    height: 1px;
+    background-color: currentColor;
+    position: relative;
+    display: inline-block;
+}
+
+.arrow-left.icon:before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+@media print {
+    .info, .return-float-btn {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .problem, .chapter {
+        box-shadow: none;
+        border: 1px solid #DDD;
+    }
+}

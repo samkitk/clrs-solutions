@@ -1,0 +1,1346 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 31.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>First, the expressions which are given in the equation (31.13)
+are as follow:</p>
+<p>They are the common divisors.</p>
+<p><img src=
+"../imgs/15d6c5f460af90a63bf0de089a96d7f32eae8fe5.png"></p>
+<p>Everything that are shown above are the integer, they are not
+the exponents which are negative.</p>
+<p>Now, prove that there is no longer a common divisor.</p>
+<p>This is done by proving that for each of the prime, there is no
+power is higher.</p>
+<p>Assume there is some common divisor <i>d</i> of <i>a</i> and
+<i>b</i>.</p>
+<p>First it is known that the <i>d</i> consists of a prime factor
+which is not appear in both <i>a</i> or <i>b</i>, otherwise any of
+the integer times <i>d</i> also consist of that factor.</p>
+<p>But being a common divisor, one can write both <i>a</i> and
+<i>b</i> in the form of any integer time <i>d</i>.</p>
+<p>Therefore, there is some sequence which is represented
+by<img src=
+"../imgs/8a3d3192b36ad6b0d7b077a2165acc1400f625c7.png">so
+that<img src=
+"../imgs/0362d19f6f7be685283d6e72adf60978561ef74d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now claim the following:</b></p>
+<p>For every <i>i</i>,<img src=
+"../imgs/3629c17bb39403e1f13e8179fef4a006923d9921.png">.</p>
+<p>Assume to a contradiction that there was some <i>i</i>,
+therefore the following:</p>
+<p><img src=
+"../imgs/f1e3b8fb55ec981b6c4e4f952c35959024e0fd53.png"></p>
+<p>This results that the number of factors of <i>d</i> is more than
+<i>a</i> and <i>b</i>.</p>
+<p>Since, multiplying the integers will not result to decrease the
+count of factors of each prime.</p>
+<p>Therefore, this is a contradiction.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Since, the claim is that the <i>d</i> is a common divisor.</p>
+<p>Since, each prime under <i>d</i> has the power lower than the
+power of the primes of c.</p>
+<p>We should have the following:</p>
+<p><img src=
+"../imgs/08bdd31caad782ea3c3d7e016d13dd077474e027.png"></p>
+<p>Thus, c is a greatest common divisor.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>EXTENDED-EUCLID algorithm is the extension for the EUCLID
+algorithm. As EUCLID Algorithm, EXTENDED-EUCLID is also used to
+find the greatest common divisor (gcd) of two numbers. GCD of two
+numbers <i>a, b</i> can be computed as follows:</p>
+<p><img src="../imgs/d7d41b1bf238d5f34658e062260c31214fd6facd.png">
+<img src=
+"../imgs/05961842f5eeaffc2fd0e2555e51f91aba9afd5e.png"></p>
+<p>The given numbers are <i>a</i>=899 and <i>b</i>=493.</p>
+<p>Now, the EXTENDED-EUCLID (899, 493) recursively calls the
+following sub problems:</p>
+<p>EXTENDED-EUCLID (493,406)</p>
+<p>EXTENDED-EUCLID (406,87)</p>
+<p>EXTENDED-EUCLID (87,58)</p>
+<p>EXTENDED-EUCLID (58,29)</p>
+<p>EXTENDED-EUCLID (29,0)</p>
+<p>When the algorithm calls EXTENDED-EUCLID (29,0), <i>b</i> is
+zero.</p>
+<p>Therefore, it returns (29,1,0)</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><i><b>a</b></i></p>
+</td>
+<td>
+<p><i><b>b</b></i></p>
+</td>
+<td>
+<p><i><b><img src=
+"../imgs/c6486304046131474cd9d747d5c1a7c810828084.png"></b></i></p>
+</td>
+<td>
+<p><i><b>d</b></i></p>
+</td>
+<td>
+<p><i><b>x</b></i></p>
+</td>
+<td>
+<p><i><b>y</b></i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>899</p>
+</td>
+<td>
+<p>493</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>493</p>
+</td>
+<td>
+<p>406</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>406</p>
+</td>
+<td>
+<p>87</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>58</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>–</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p>Since EXTENDED-EUCLID (29,0) returns (29,1,0), for the call
+EXTENDED-EUCLID (58,29), <img src=
+"../imgs/14ef8544c3dfba906fc56542f1841b347ade9419.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/b07206f9b9ce3959e6d3f109e6b5eaa3c05f329f.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><i><b>a</b></i></p>
+</td>
+<td>
+<p><i><b>b</b></i></p>
+</td>
+<td>
+<p><i><b><img src=
+"../imgs/c6486304046131474cd9d747d5c1a7c810828084.png"></b></i></p>
+</td>
+<td>
+<p><i><b>d</b></i></p>
+</td>
+<td>
+<p><i><b>x</b></i></p>
+</td>
+<td>
+<p><i><b>y</b></i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>899</p>
+</td>
+<td>
+<p>493</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>493</p>
+</td>
+<td>
+<p>406</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>406</p>
+</td>
+<td>
+<p>87</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>58</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>–</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p>Since EXTENDED-EUCLID (58,29) returns (29,0,1), for the call
+EXTENDED-EUCLID (87,58), <img src=
+"../imgs/5923eaa2c13ed2aeb0a87d4913772d1dc7adbb9a.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/0171d35374d815697310d6b2ca4b2db446da1454.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><i><b>a</b></i></p>
+</td>
+<td>
+<p><i><b>b</b></i></p>
+</td>
+<td>
+<p><i><b><img src=
+"../imgs/c6486304046131474cd9d747d5c1a7c810828084.png"></b></i></p>
+</td>
+<td>
+<p><i><b>d</b></i></p>
+</td>
+<td>
+<p><i><b>x</b></i></p>
+</td>
+<td>
+<p><i><b>y</b></i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>899</p>
+</td>
+<td>
+<p>493</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>493</p>
+</td>
+<td>
+<p>406</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>406</p>
+</td>
+<td>
+<p>87</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>–</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p>Since EXTENDED-EUCLID (87,58) returns (29,1,-1), for the call
+EXTENDED-EUCLID (406,87), <img src=
+"../imgs/25a7443a120d38b734d99641fd42cd50d8f2d901.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/2dfeabeefda771607f0c6e6cd9b79ee8aef27cd4.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><i><b>a</b></i></p>
+</td>
+<td>
+<p><i><b>b</b></i></p>
+</td>
+<td>
+<p><i><b><img src=
+"../imgs/c6486304046131474cd9d747d5c1a7c810828084.png"></b></i></p>
+</td>
+<td>
+<p><i><b>d</b></i></p>
+</td>
+<td>
+<p><i><b>x</b></i></p>
+</td>
+<td>
+<p><i><b>y</b></i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>899</p>
+</td>
+<td>
+<p>493</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>493</p>
+</td>
+<td>
+<p>406</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>406</p>
+</td>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+<td>
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>–</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p>Since EXTENDED-EUCLID (406,87) returns (29,-1,5), for the call
+EXTENDED-EUCLID (493,406), <img src=
+"../imgs/6c5f42bfb787f66cbd2942ad1713955a6ee63e7f.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/e3848046b33f5c6020e5f3553b2f443f84f5b942.png"></p>
+<hr>
+<div class="answer">a</div>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td>
+<p><i><b>b</b></i></p>
+</td>
+<td>
+<p><i><b><img src=
+"../imgs/c6486304046131474cd9d747d5c1a7c810828084.png"></b></i></p>
+</td>
+<td>
+<p><i><b>d</b></i></p>
+</td>
+<td>
+<p><i><b>x</b></i></p>
+</td>
+<td>
+<p><i><b>y</b></i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>899</p>
+</td>
+<td>
+<p>493</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>493</p>
+</td>
+<td>
+<p>406</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>-6</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>406</p>
+</td>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+<td>
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>–</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p>Since EXTENDED-EUCLID (493,406) returns (29,5,-6), for the call
+EXTENDED-EUCLID (899,493), <img src=
+"../imgs/b922e5689d29768ce5a807644c9d5686de5f3e7d.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/ecebe7f4fe6853f1075d99fdaf061deec31f4115.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><i><b>a</b></i></p>
+</td>
+<td>
+<p><i><b>b</b></i></p>
+</td>
+<td>
+<p><i><b><img src=
+"../imgs/c6486304046131474cd9d747d5c1a7c810828084.png"></b></i></p>
+</td>
+<td>
+<p><i><b>d</b></i></p>
+</td>
+<td>
+<p><i><b>x</b></i></p>
+</td>
+<td>
+<p><i><b>y</b></i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>899</p>
+</td>
+<td>
+<p>493</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>-6</p>
+</td>
+<td>
+<p>11</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>493</p>
+</td>
+<td>
+<p>406</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>-6</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>406</p>
+</td>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+<td>
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>87</p>
+</td>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>–</p>
+</td>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+<p>Finally, the call EXTENDED-EUCLID (899, 493) returns
+(29,-6,11).</p>
+<p><b>Therefore,</b> <b><img src=
+"../imgs/fd562b636adb22cd99c018ec670a41e704ad9bc5.png"> <img src=
+"../imgs/cab9bcc0556ff089765176b48a641321e2a4e059.png"></b>
+<b>=29</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the provided statement <img src=
+"../imgs/5a9302168439be722f0695246a34ca4831bfb3a1.png">where<img src="../imgs/f4883be7ede85ee3abf17292544a00c0ba2e38e3.png">.</p>
+<p>From the definition of greatest common divisor (gcd), <img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png">divides
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">
+and also divides<img src=
+"../imgs/4dcb25dc4b68eec0c6686a19a9b49389923df084.png">.</p>
+<p>Now by the <b>linear combination property</b>, as <img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png"> divides
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">,
+then <img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png">can also
+divide <img src=
+"../imgs/0b7e21b346c30f605494d24302b216c6bb0016f8.png"></p>
+<p>Since, <img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png"> divides
+<img src="../imgs/4dcb25dc4b68eec0c6686a19a9b49389923df084.png">
+and<img src=
+"../imgs/0b7e21b346c30f605494d24302b216c6bb0016f8.png">, <img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png">can also
+divide <img src=
+"../imgs/728c7e9b0cca196e33701178057704960efc9859.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/f25c659169cb6912d4a54d4a62aad257407a082b.png"></p>
+<p>By corollary 31.3, if d | a and d | b, then d | gcd(a,b).</p>
+<p>Since, <img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png"> divides
+<i>a</i> and <img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png"> divides
+<i>n</i>, <img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png">also divides
+<img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">.</p>
+<p>Thus,</p>
+<p><img src="../imgs/82c146481e73ba368694a9e54d1a4c4a702b5415.png">
+…… (1)</p>
+</div>
+<hr>
+<div class="answer">
+<p>By the definition of gcd, <img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">divides
+<i>a</i> and <i>n</i>.</p>
+<p>Since <img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">divides
+<i>n</i>, <img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">can also
+divides <i>kn.</i></p>
+<p>From the equation 31.3, if <i>d</i> | <i>a</i> and <i>d</i> |
+<i>b</i>, <i>d</i> can also divides (<i>a</i>+<i>b</i>).</p>
+<p>Since <img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">divides
+<i>a</i> and <i>kn</i>, <img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">can also
+divides (<i>a</i>+<i>kn</i>).</p>
+<p>That is,</p>
+<p><img src=
+"../imgs/f24efb55216963658c8f76e4ab3adaf7f0fc8dbc.png"></p>
+<p>Since, <img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">divides
+(<i>a</i>+<i>kn</i>) and <i>n</i> , <img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">can divides
+<img src=
+"../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png"></p>
+<p>That is,</p>
+<p><img src="../imgs/421d0fd4211c348066c02f4e6d5b208cc250addf.png">
+[By corollary 31.3] …… (2)</p>
+<p>Now from equation (1) and equation (2), it can be concluded
+that</p>
+<p><img src=
+"../imgs/67290d09973554df0ef7337c7e833097feb25c8f.png"></p>
+<p><b>Hence, given statement is proved.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the provided statement<img src=
+"../imgs/5a9302168439be722f0695246a34ca4831bfb3a1.png">.</p>
+<p>The above equation can also be proved using ECLUIDS
+algorithm.</p>
+<p>According to EUCLID’s formula,</p>
+<p><img src="../imgs/6a68344696bfb20e4acdcac495d179a0bebd1e9d.png">
+can be calculated as <img src=
+"../imgs/ff596b96884421e5b69c0629415a82b450221a90.png"></p>
+<p>That is,</p>
+<p><img src=
+"../imgs/9a4e9b75f8797c5a788fbd832f8616dbf8f3129f.png"></p>
+<p>According to EUCLID’s formula,</p>
+<p><img src=
+"../imgs/37378dce8cf8e1844b8395a6a78cffe848b903e1.png">can be
+calculated as <img src=
+"../imgs/c4b26c95d200cba2977698f9dd34f3607cd3ce24.png"></p>
+<p>That is, <img src=
+"../imgs/af15de9ab908d71585c1bc8ab48521bbd6f6fdb6.png"></p>
+<p><b>From (1) and (2),</b> <b><img src=
+"../imgs/5a9302168439be722f0695246a34ca4831bfb3a1.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a34bf53c545dabbc920f72ea2153ad6bcdee5184.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>It is known that for all values of <i>k</i>, if the following
+condition is there, then the function take only fewer number of
+steps.</p>
+<p><img src=
+"../imgs/1d0fc3d01e113dcbf953044916f90bed60004937.png"></p>
+<p>Assume the value of <i>k</i> to be <img src=
+"../imgs/83fe4b49fd03eff01c30b5dfb6dfc94a06e6113d.png">,since
+<img src="../imgs/285074977007b29d8214d3583222287f674722fb.png">,
+the number of steps taken are only <img src=
+"../imgs/df1aafd32f194ee81f09a5e0579ce77eb6e439a4.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The bound can be proved to be <img src=
+"../imgs/b8137f14cd9b19bd03be0dc65ee6376ede36b752.png">because it
+is known that the algorithm will terminate when it will reach to
+<img src=
+"../imgs/595ff571972849e4e96df31747cf3cf08f065cc0.png">.</p>
+<p>Emulate the proof of the lemma 31.10 to show a little bit
+different claim that the Euclid’s take <i>k</i> number of recursive
+calls. Then, <img src=
+"../imgs/8415e5c40690ac26b25e52edbe2610bfe9ccb3a6.png"> and
+<img src=
+"../imgs/333d51c88e55752de7aebd78449b9b17dd0f8e54.png">.</p>
+<p>In the same way, the induction can be done for <i>k</i>. if the
+number of calls taken by <i>k</i> is only 1 and having a &gt; b
+also the following:</p>
+<p><img src="../imgs/a51c5782f75739bd5a085d6faa730706816bc038.png">
+and</p>
+<p><img src=
+"../imgs/04d9b363ea57d1e21760112652584cc3c986424a.png"></p>
+<p>Now, assume that it can hold <i>k-1</i>, prove that it can holds
+for <i>k</i>.</p>
+<p>The first call will be as <img src=
+"../imgs/d7336fbd7befbf0dc06070467c0017df0d20c726.png">. So, this
+will take only <i>k-1</i> recursive calls.</p>
+<p>For the following, the induction can be applied:</p>
+<p><img src="../imgs/333d51c88e55752de7aebd78449b9b17dd0f8e54.png">
+and <img src=
+"../imgs/dbd3cbc7075cca4f139d062b24d31a11723e6941.png"></p>
+<p>Since, there is a &gt; b, <img src=
+"../imgs/854c177b582ec75aa6eec29676504a5ad9b1656c.png"> completing
+the induction.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Only <i>k</i> number of steps are needed therefore, if <img src=
+"../imgs/0821689c800b65efea252359e4e284b7ace9504d.png">.</p>
+<p>We have the following:</p>
+<p><img src=
+"../imgs/ab42fab1f0570e4c5fa26f6346ac3bb6c82417c4.png"></p>
+<p><b>Thus, it is satisfied that the value of</b> <i><b>k</b></i>
+<b>will be set as follows:</b></p>
+<p><img src=
+"../imgs/fc29ab1555786a8919751413d42cc641779587c8.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Since, gcd<img src=
+"../imgs/93609088757c96f8d34c962820dd61fefdc08592.png">=gcd<img src="../imgs/da86253abf4fdd7a3305fb059580e0a8c5ae345b.png">,
+so gcd (2,1) =1. It means that gcd<img src=
+"../imgs/735ca09c588fa0aa381b84534deb56a93d17e190.png"> for all
+<i>k</i>.</p>
+<p>Also, <img src=
+"../imgs/cee3cd52d29cf9225c97c43a237767d1ed820fbb.png"> is
+increasing so <img src=
+"../imgs/e8a0c984b3c89daaf24be0d1bb654f784e7a250a.png">=1 for all
+k. When the base case of recursive calls is reached return (1,1,0).
+The procedure EXTENDED-EUCLID takes as input a pair of non-negative
+integers and returns a triple of the form (d, x, y) which satisfies
+<img src=
+"../imgs/afa5b217ff0fa95978af874a1e5abc6729fdbb99.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm is as follows:</p>
+<p><b>EXTENDED-EUCLID</b> (x, y)</p>
+<p>1 <b>if</b> y=0</p>
+<p><b>2 return</b> (x,1,0)</p>
+<p>3 <b>else</b></p>
+<p>4 ( d ,a, b)=<b>EXTENDED-EUCLID</b>(y, x mod y)</p>
+<p>5 <b>return</b> ((d, b, a-(x/y) *b))</p>
+<p>For <img src=
+"../imgs/a411b300903cf324bc1c17c168d10fcba1804ec8.png"> and
+<img src="../imgs/a0559ed3c9078756aabdd75278a2c9e8426ae7fa.png">,
+<img src="../imgs/f390e6234968aafe9b7824f118e7e505d2119596.png">
+and <img src=
+"../imgs/8f80cee357a75d5ca522cf63d3fd5a76f1b6381a.png"> .</p>
+<p>The small cases are generated in the following ways:</p>
+<p>EXTENDED-EUCLID (1,0) returns (1,1,0).</p>
+<p>EXTENDED-EUCLID (<img src=
+"../imgs/87e52e97f64151aa4849265b1c00b14f589d2b71.png">) computes
+(1,1,0) and returns (1,0,1).</p>
+<p>EXTENDED-EUCLID (<img src=
+"../imgs/06637bff2cd6aadec2aa6f49539cccda61248f0e.png">) computes
+(1,0,1) and returns (1,1, -1).</p>
+<p>and so on, the pattern emerges as:</p>
+<p>EXTENDED-EUCLID (<img src=
+"../imgs/0d43a220167f71290eb44f62bcefaf0831e6511b.png">.</p>
+<p>The other formula is: EXTENDED-EUCLID (<img src=
+"../imgs/17987b9a8f74b8f1310bf995f4212f084edeab33.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Thus, the EXTENDED EUCLID<img src=
+"../imgs/93609088757c96f8d34c962820dd61fefdc08592.png"> returns
+<img src="../imgs/dbd2de26e92fcacb19bd1da930e012d0a553b179.png">.
+The best case is handled by <i>d</i>. If the claim holds for k-1,
+then EXTENDED EUCLID<img src=
+"../imgs/267eb13faf0d9d3324cdd7118eaac58a008a5ea8.png"> returns
+<img src="../imgs/832e1286142bdaf0dc5e389a99330dbd9949902c.png">
+where <img src=
+"../imgs/3b40609bd4fd0e7769d996af634295a956355f05.png">=1,
+<img src="../imgs/1171f7244860fada079bf5ed4b63fff7593efdd0.png">,
+<img src="../imgs/9a81232ff981d06ad6d281b1aed741ad427c8ada.png"> so
+the algorithm returns.</p>
+<p><img src=
+"../imgs/a1d68c49eab2e01c792f45f47ceff8faa6784037.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The gcd of n+1 integers can be defined by gcd function with n+1
+arguments as <img src=
+"../imgs/481a97fd7e870454e4f5cd2d6df8cbd3ef9f886a.png"> which can
+be written in recursive form as <img src=
+"../imgs/3a2d3e49b9ee4a7159db5e2da795e5637d719b87.png"></p>
+<p>The gcd operator is associative, so compute gcd in any order
+<img src="../imgs/3a2d3e49b9ee4a7159db5e2da795e5637d719b87.png"> or
+<img src="../imgs/18048ff8fe3bddca40e060dd48786f338dd20a40.png">
+and so on.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To show that the gcd function returns the same answer which is
+independent of the order in which its arguments are specified prove
+the swap property which is as follows:</p>
+<p>• For all a,b,c, gcd(a,gcd(b,c))=gcd(b,gcd(a,c))</p>
+<p>• Apply the swaps and obtain an arbitrary ordering on the
+variables.</p>
+<p>• Let <img src=
+"../imgs/647690954c38630d9b3b9d43b6e2ce836add79c5.png">be the power
+of the <img src=
+"../imgs/4f5635bf4358370dacd54c71ca53963c269a745b.png">prime in the
+prime factor decomposition of ‘x’, similarly define <img src=
+"../imgs/e77d7ffa5ea426d57c6b8870ff7daf3d175edd5f.png">and
+<img src="../imgs/074a01f5665fcbf80c300121bbdea56f62ed408a.png">.
+Then, the calculation is performed as follows:</p>
+<p><img src=
+"../imgs/a50b435ab45ca0dfd909f31f005b62de0d2ede0a.png"></p>
+<p>To find the integers <img src=
+"../imgs/5749018379041079678bdae4579aba72ee9c8669.png">as described
+in the problem use a similar approach as for EXTENDED-EUCLID
+algorithm such that <img src=
+"../imgs/cebe14708162b3575252be89c335e03695e52925.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>As per the interpretation of the greatest common divisor defined
+in the equation (31.13), the lcm is given as follows:</p>
+<p><img src=
+"../imgs/e956d9784560129b02f1d42cac9170c9a32b6b53.png"></p>
+<p>Generally, the <i>lcm</i> would be as follows:</p>
+<p><img src=
+"../imgs/ecc1bb9ebfa8a47699930d77c340a863435df28c.png"></p>
+<p>The denominator is computed recursively by the two argument
+<i>gcd</i> operation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The algorithm is shown below:</b></p>
+<p><img src=
+"../imgs/ccb94ea0da9e6c49df34cf882072dab3d8066fe3.png"></p>
+<p><b>The complexity of the above algorithm is</b> <b><img src=
+"../imgs/f7457b4a35c8ed520d2e3f3f5a79b2f0fcc863fb.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The integers n<sub>1</sub>,n<sub>2</sub>,…,n<sub>k</sub> are
+called as pair wise relatively prime only if the</p>
+<p>gcd(n<sub>i</sub>, n<sub>j</sub>)= 1. For every possibility of i
+and j with i ≠ j.</p>
+<p>For a complete graph, <img src=
+"../imgs/773d04951812f0832ff6897ab8e84834e498e32e.png"></p>
+<p><img src=
+"../imgs/dccc9e0846a0f5b84fdc15c84f58542c34c18e36.png">.</p>
+<p>For k=2, <img src=
+"../imgs/f1c631610049f43656f0e0477ab15d36a7e0c007.png"></p>
+<p>For k=3, <img src=
+"../imgs/b47a61305ca7fc0ddd466529b87ded617a62d9c2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><img src=
+"../imgs/d4cbde31ddc317e56a6f74da2190dc9dfb458feb.png">.</p>
+<p>With the help of strong mathematical induction,</p>
+<p><img src=
+"../imgs/602c040472db5973de506cdceb7c1a994ef3322f.png"></p>
+<p>Consider the integers 3, 5, 7 and 11. These integers can be
+proved pair wise relative prime is as follows:</p>
+<p>
+gcd(n<sub>1</sub>n<sub>2</sub>,n<sub>3</sub>n<sub>4</sub>)=<img src="../imgs/6957b6a3bbe331facfca7b84b2fbd9b26fe5e23b.png"></p>
+<p>
+gcd(n<sub>1</sub>n<sub>3</sub>,n<sub>2</sub>n<sub>4</sub>)=<img src="../imgs/8b613ef6135ffc8262655878d9d88de15b8c4cbf.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Therefore,</p>
+<p><img src=
+"../imgs/137f4b04b79fa798767965a88bf9cf6a99fe57d9.png"></p>
+<p>Hence, n<sub>1</sub>, n<sub>2</sub>, n<sub>3</sub>, and
+n<sub>4</sub> are pair wise relatively prime if and only if
+<img src=
+"../imgs/eb0ff7ee0563866ec4fa7d75555a7944429ff155.png">=<img src=
+"../imgs/0cbcc04a9de5d9235acae9bf84b054dcb5e7e4ab.png">=1 has been
+proved successfully.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

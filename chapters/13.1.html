@@ -1,0 +1,494 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 13.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Build a binary search tree of height 3 with the keys {1, 2, 3,
+4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}, insert the keys in the
+order {8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15}.</p>
+<p><b>Building binary search tree:</b></p>
+<p>1)</p>
+<p><img src="../imgs/043d101a3c0e1ff7837b8ea8db762b903818675e.png"
+alt="Picture 1"></p>
+<p>2)</p>
+<p><img src="../imgs/8338c5c4ce3f3d03011aa4ca0ccefa0ca6eda607.png"
+alt="Picture 2"></p>
+<p>3)</p>
+<p><img src="../imgs/95fac9d9fc0e561e322592338c5dc4a541b35c48.png"
+alt="Picture 3"></p>
+<p>4)</p>
+<p><img src="../imgs/993effdb161bd6bc769fee563165423d8ad5dbc8.png"
+alt="Picture 4"></p>
+</div>
+<hr>
+<div class="answer">
+<p>5)</p>
+<p><img src="../imgs/01cf93ee8c76dc5c9a0a97c1a4a61947da0af1f3.png"
+alt="Picture 6"></p>
+<p>6)</p>
+<p><img src="../imgs/0b995bbdf97d93f775f59d1e2ebfb0b14491fc25.png"
+alt="Picture 7"></p>
+<p>7)</p>
+<p><img src="../imgs/829c6c2163b0df4a6777298b6da2535915a19818.png"
+alt="Picture 8"></p>
+<p>8)</p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/6668b8f5ef587b05803ec908a94ee511a5c26068.png" alt=
+"Picture 9"></div>
+<hr>
+<div class="answer">
+<p>9)</p>
+<p><img src="../imgs/8d0e0ade63c885347835d1ee8634edfccbf3da7e.png"
+alt="Picture 10"></p>
+<p>10)</p>
+<p><img src="../imgs/865dbdaffe70eec36276c87aa42469ee6c365dbf.png"
+alt="Picture 11"></p>
+<p>11)</p>
+<p><img src="../imgs/ef443ad2c14970a95d1a61124bd924843e3a74d0.png"
+alt="Picture 12"></p>
+</div>
+<hr>
+<div class="answer">
+<p>12)</p>
+<p><img src="../imgs/4995865ccd795496ab9603541958a3bd2985a3d1.png"
+alt="Picture 13"></p>
+<p>13)</p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/d33adc8e033cf7f8ce08aabae7792a777b201a13.png" alt=
+"Picture 14">
+<p>14)</p>
+<p><img src="../imgs/2ec7c9bfd2dd794c1290fb8db85251d692d29bd7.png"
+alt="Picture 15"></p>
+<p>15)</p>
+<p><img src="../imgs/73e8550a7db7f5b77436a4647d1098e78af7c40d.png"
+alt="Picture 16"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now, add the NIL leaves to the above binary search tree of
+height 3 as follows:</b></p>
+<p><img src="../imgs/6d1af128362df82ecc2b02e7c307ddf9e39d0346.png"
+alt="Picture 17"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Color the above binary search tree such that the tree has
+black-height of 2 as follows:</b></p>
+<p><img src="../imgs/d2950930dcd377a201d2fc5fecf5f6a31f461e36.png"
+alt="Picture 18"></p>
+</div>
+<hr>
+<div class="answer"><b>Color the binary search tree such that the
+tree has black-height of 3 as follows:</b>
+<p><img src="../imgs/873d9dbdae04ecd0e454ba5d35871054ee62e3e2.png"
+alt="Picture 19"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Color the binary search tree such that the tree has
+black-height of 4 as follows:</b></p>
+<p><b><img src=
+"../imgs/5a6c7c28acd1e719adac1855c41db89fadb97420.png" alt=
+"Picture 20"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A red-black tree is a binary search tree with each node colored
+black or red. In addition, the red-black tree must satisfy the
+following properties:</p>
+<p>1. Every node must be colored in red or black.</p>
+<p>2. The root node must be in black.</p>
+<p>3. Every leaf (NULL) node must be black.</p>
+<p>4. If a node is red, then both children’s of it must be
+black.</p>
+<p>5. Every path from a node to a leaf must contain the same number
+of black nodes.</p>
+<p>The following is the given red-black tree with black-heights of
+each node:</p>
+<p><img src="../imgs/bba8e21cf8cab7d9d3c8ecbe2097c6a911ba1360.png"
+alt="Picture 2"></p>
+<p>Execute TREE-INSERT with the key 36 on the above tree. The
+resulting tree is as follows and it is not a red-black tree,
+because it violates the 4<sup>th</sup> red-black tree property
+(i.e. if a node is red, then both children’s of it must be
+black.).</p>
+<p><img src="../imgs/0bd058cc8649fac1a5e5287651284b50394bbe44.png"
+alt="Picture 4"></p>
+<p>Even though the new node is colored black, the tree is not a
+red-black tree, because the <i>black-height</i> property is
+violated.</p>
+<p><img src="../imgs/3d73c08c6e27431f6d8b289ca84419eada2523f4.png"
+alt="Y:\Authering\Authering on 03-08-2015\if black 1.jpg"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Red Black Tree:</b></p>
+<p>A binary search tree is called as a red-black tree, if it
+satisfies the following properties:</p>
+<p>1. Every node in the tree is either red or black in color.</p>
+<p>2. The root of tree must be black.</p>
+<p>3. The color of the every leaf (NIL) must be black.</p>
+<p>4. If the color of a node is red, then the color of its both
+children must be black.</p>
+<p>5. The number of black nodes along all the simple paths from any
+node to leaves must be same.</p>
+<p><b>Relaxed Red-Black tree:</b></p>
+<p>Now, consider a binary tree that follows the red-black tree
+properties 1, 3, 4, and 5. Such a tree is called relaxed red-Black
+tree. Since the relaxed red-black tree does not satisfy the
+red-black tree property 2, the root node is either red or
+black.</p>
+<p><b>Changing the color of the root node:</b></p>
+<p>Consider a relaxed tree <i>T</i> with red root node. Since, the
+relaxed red-black tree follows the all the red-black properties
+except 2<sup>nd</sup> property, root node has two black children
+and <i>T</i> has balanced black heights.</p>
+<p>• If the color of the root node is changed from red to black,
+the black heights are remained same.</p>
+<p>• Moreover root has two black children. This doesn’t violate any
+5 properties of red-black tree.</p>
+<p>• That is, the resulting tree satisfies all the red-black tree
+properties. Thus, the resulting tree is a red-black tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>Consider the following relaxed Red- Black tree whose root node
+is red.</p>
+<p><img src="../imgs/e0ea0a25754c37de8b50ca1cf6528be07c9f7675.png"
+alt="Picture 1"></p>
+<p>Now, change the color of the root node from red to black in the
+above relaxed Red- Black tree. Then the resulting tree is as
+follows:</p>
+<p><img src="../imgs/37c380935cbf7a5dccd70f1c9fb940cff906810e.png"
+alt="Picture 2"></p>
+<p>Obviously the above tree is a red-black tree, because the above
+tree satisfies all the properties of red-black tree.</p>
+<p><b>Hence, the resulting tree</b> <i><b>T</b></i> <b>, after
+changing the color of the root node of a relaxed red-black tree</b>
+<i><b>T</b></i> <b>with red root node to black, is a red-black
+tree.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Absorbing red nodes:</b></p>
+<p><b>Consider a simple red-black tree that has a black root node
+with two black children:</b></p>
+<p><img src="../imgs/e2a9e5f5e51097a86ebe8d8b2dcdfed08130d768.png"
+alt="Picture 1"></p>
+<p>In the above Red-Black tree, the root node has 2 black child
+nodes. The degree of root node is 2.</p>
+<p>Since there are no red nodes to absorb, the above red-black tree
+remains same as follows:</p>
+<p><img src="../imgs/e2a9e5f5e51097a86ebe8d8b2dcdfed08130d768.png"
+alt="Picture 2"></p>
+<p><b>Therefore, after absorbing the red nodes, the degree of a
+black node with two black children remains 2.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Consider a red-black tree that has a black root node with one
+black child and one red child:</b></p>
+<p><img src="../imgs/4cd2117983c1ffbda016616bf99e100d62c39ac3.png"
+alt="D:\Tiffs\all files\2254-13.1-4E.png"></p>
+<p>The above Red-Black tree has a black root that has 1 black and 1
+red child nodes. The degree of root node is 2.</p>
+<p>Now absorb the red node into its black parent. Then the
+resulting tree is as follows:</p>
+<p><img src="../imgs/5796ccc338ced3dc5ed9c9b1f99f6884d00e0e17.png"
+alt="Picture 3"></p>
+<p>The root node in the above resulting tree has 3 back child
+nodes. The degree of root node becomes 3.</p>
+<p><b>Therefore, after absorbing the red nodes, the degree of a
+black node with one black child and one red child is 3.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Consider a simple red-black tree that has a black root node
+with two red children:</b></p>
+<p><img src="../imgs/faa0e075c2853e6537fc7df4530236b8060b733b.png"
+alt="Picture 9"></p>
+<p>In the above Red-Black tree, the root node has 2 red child
+nodes. The degree of root node is 2.</p>
+<p>Now absorb the two red nodes into its black parent. Then the
+resulting tree is as follows:</p>
+<p><img src="../imgs/3ad4589b08e50ce97696e1516937951a8d0d0b65.png"
+alt="Picture 5"></p>
+<p>In the above tree, the root node has 4 black child nodes and
+thus the degree of root node is 4.</p>
+<p><b>Therefore, after absorbing the red nodes, the degree of a
+black node two red children is 4.</b></p>
+<p><b>Depth of the all leaves of the resulting tree:</b></p>
+<p>By observation it is cleared that the depth of the all the
+leaves of the resulting tree is same.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The following two of <i><b>red-black tree properties</b></i>
+enforces constraints on the length of the simple path from a node
+to a leaf:</p>
+<p>• If a node is red, then both its children are black.</p>
+<p>• For each node, all simple paths from the node to descendant
+leave contain the same number of black nodes.</p>
+<p><b>Calculating length of the longest simple path:</b></p>
+<p>• In the shortest simple path, at most all the nodes are black.
+Therefore, the shortest simple path from any node <i>x</i> is the
+<i><b>black-height</b></i> of that node <i>x</i> (i.e.,
+bh(<i>x</i>)).</p>
+<p>• The longest simple path from a node <i>x</i> to a leaf nodes
+contains alternative black and red nodes. Therefore, the longest
+simple path is the height of the sub tree with node <i>x</i> as the
+root or bh(<i>x</i>) + number of red nodes in the longest simple
+path.</p>
+<p>• That is,</p>
+<p>The length of the longest path from node <i>x</i> to a leaf node
+= height(<i>x</i>)</p>
+<p>OR</p>
+<p>The length of the longest path from node <i>x</i> to a leaf node
+= bh(<i>x</i>) + number of red nodes in the longest simple
+path.</p>
+<p>• Therefore, height(<i>x</i>) = bh(<i>x</i>) + number of red
+nodes in the longest simple path.</p>
+<p>Since the longest simple path contains alternative black and red
+nodes, the number of red nodes in the longest simple path is not
+more than<img src=
+"../imgs/c0a6723dcc583d3d748d92a9f97501fbcf5819a4.png">.</p>
+<p>i.e. Number of red nodes in the longest path ≤ <img src=
+"../imgs/c0a6723dcc583d3d748d92a9f97501fbcf5819a4.png"></p>
+<p><img src=
+"../imgs/0c77a3826e1b6f5ef08e5be9f80fa4b2b9847f7b.png"></p>
+<p><img src=
+"../imgs/ce7aaa00abdcc69f210048612763cb84989028ab.png"></p>
+<p><img src=
+"../imgs/973128620de27fe893b34b10601188b88781518d.png"></p>
+<p><img src=
+"../imgs/7f9228f745aa280b65fc0833adf104e2c852d648.png"></p>
+<p>The length of the longest path ≤ <img src=
+"../imgs/2541b24e914ba06cfac57100744c21e0fdfc547b.png">.</p>
+<p>The length of the longest path ≤ <img src=
+"../imgs/a5943996c7fb4b80d4078b41a4e555d883c55a20.png">length of
+the shortest simple path</p>
+<p><b>Hence, the length of the longest simple path from the
+node</b> <i><b>x</b></i> <b>is twice the length of the shortest
+simple path.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A red-black tree is a binary search tree that takes one extra
+bit of storage per node to specify the color of the node as either
+RED or BLACK.&nbsp;</p>
+<p><b>Red-black tree properties:</b></p>
+<p>1. Every node can be either red or black.</p>
+<p>2. The root node must be black.</p>
+<p>3. All leaves are black.</p>
+<p>4. If a parent node is red, then both children must be
+black.</p>
+<p>5. Every path from a node to a leaf must contain the same number
+of black nodes.</p>
+&nbsp;
+<p>Consider a red-black tree with black height as <i>k</i>. If each
+and every node is black, the maximum number of internal nodes
+is<img src="../imgs/a426642593c01fca3f4926185ed51f4937c2b888.png">.
+Considering the property 4, and if there are alternative nodes as
+black, the height will be 2<i>k</i> and the maximum number of
+internal nodes is<img src=
+"../imgs/fdaebcdfbe82cb1ab4c12b3bebb1f82e59eb6d18.png">.</p>
+<p>As proved in lemma 13.1, the minimum number of internal nodes of
+the sub tree of <i>x</i> is <img src=
+"../imgs/fc77bd86251d01f5a6ff12e648000a13884a9a4f.png">.If the
+height of any node <i>x</i> is k, then the sub tree of <i>x</i>
+will contain minimum of <img src=
+"../imgs/a426642593c01fca3f4926185ed51f4937c2b888.png"> internal
+nodes..</p>
+<p>Hence the largest possible number of internal nodes is <img src=
+"../imgs/fdaebcdfbe82cb1ab4c12b3bebb1f82e59eb6d18.png"> and the
+smallest possible number of internal nodes is <img src=
+"../imgs/a426642593c01fca3f4926185ed51f4937c2b888.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Red-black tree with largest red and black internal nodes
+ratio:</b></p>
+<p>Consider a red-black tree <i>T</i> that is a complete balanced
+binary tree. The ration of red internal nodes to black is largest,
+if <i>T</i> has red and black nodes at alternate levels.</p>
+<p>Consider the following Red-Black tree that has maximum red to
+black internal node ratio:</p>
+<p><img src="../imgs/0ecab0942fd04c08818f6fdee7865efc10bdcd6d.png"
+alt="D:\Tiffs\all files\2254-13.1-7E.png"></p>
+<p>The above Red-Black tree contains 5 black and 10 red nodes. The
+ratio of red to black nodes becomes:</p>
+<p><img src=
+"../imgs/c6371adc59b201bdf36f0ff158c2fb6c3032d2da.png"></p>
+<p><b>Therefore, the maximum ratio of red to black internal nodes
+in a Red-Black tree is</b> <b>2</b> <b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Red-black tree with smallest red and black internal nodes
+ratio:</b></p>
+<p>A red-black tree that has no red nodes has the smallest red to
+black internal nodes ratio.</p>
+<p>Consider the following Red-Black tree that has minimum red to
+black internal node ratio:</p>
+<p><img src="../imgs/c7e1fee4645582176e1a7654e89308d8faa40152.png"
+alt="D:\Tiffs\all files\2254-13.1-7E.png"></p>
+<p>The above tree contains 0 red nodes and 15 black nodes.</p>
+<p>Thus the red internal nodes to black internal nodes ratio is as
+follows:</p>
+<p><img src=
+"../imgs/12195e925e438262fff91d1ae24590f9365276e2.png"></p>
+<p><b>Hence, the minimum ratio of red internal nodes to black
+internal nodes in a Red-Black tree is</b> <b>0</b> <b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

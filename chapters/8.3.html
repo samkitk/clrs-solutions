@@ -1,0 +1,252 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 8.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d7f51d1ac3b6a4a25e56a9c31cc60b213c429e5a.png">
+<hr>
+<img src="../imgs/e1e49ff258281f936ab13205a4c5bdd29df4a4dd.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/e2c91d83edc0ac0bf0acd301c27412a5d4e6ec38.png">
+<hr>
+<img src="../imgs/e11709a3cbd3c1e9b4c37f973f1ab2bd5e0abb21.png">
+<hr>
+<img src="../imgs/ce2ac1a02b9155251dc14405ba2d3f8d35cc998c.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Radix sort is the most common linear sorting algorithm for the
+integers. Radix sort sorts based on the digits in the given input
+numbers.</p>
+<p>• This algorithm is mostly used by the card sorting
+machines.</p>
+<p>• Radix sort solve the card sorting problem by sorting on least
+significant digit first. Then sorting on the second least
+significant digit and so on.</p>
+<p>• For the correct working of radix sort, digit sorts must be
+stable.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider an array of <i>n</i>-numbers where each number consist
+<i>d</i> digits, such that digit 1 is the least significant digit
+and digit <i>d</i> is the most significant digit.</p>
+<p>Refer to the section 8.3 for the RADIX-SORT algorithm.</p>
+<p><b>Proving working of Radix Sort using Induction:</b></p>
+<p><b>Base step:</b></p>
+<p>• Assume that<img src=
+"../imgs/1327c4f5566a0c99ce95701a4387c6f5e3d1f8ca.png">. That is,
+there is only single digit in the given numbers.</p>
+<p>• Then radix sort sorts the array on that single digit.</p>
+<p>• That is, if <i>d</i>=1, radix sort performs sort on one column
+and gives the sorted array.</p>
+<p>• Therefore, radix sort works for single digit numbers.</p>
+<p><b>Induction step:</b></p>
+<p>• Assume that the radix sort works well on <img src=
+"../imgs/f02f36144d935e4e7dacf722b383f8b88d97421e.png"> digits or
+<img src=
+"../imgs/f02f36144d935e4e7dacf722b383f8b88d97421e.png">columns.</p>
+<p>• Now, it is enough to prove that radix sort can also works for
+<i>d</i> digits.</p>
+<p>• Since Radix sort works separately on each digit, starting from
+the least significant digit(digit 1) to most significant
+digit(digit <i>d</i>) and by induction hypothesis, before sorting
+on digit <i>d</i>, radix sort sorts well on lower-order <i>d</i>-1
+digits.</p>
+<p>• That is, after sorting on digit <i>d</i>-1, the numbers are
+ordered according to their low-order <i>d</i>-1 digits.</p>
+<p>• Now the sort is performed on digit <i>d</i> and it orders the
+numbers based on their <i>d</i>th digit as follows.</p>
+<p>• <b>Sort on</b> <i><b>d</b></i><b>th digit:</b></p>
+<p>Consider the two numbers <i>x</i> and <i>y</i>, such that
+<img src="../imgs/11f1623d9f1673aa7c64ac333398d7c04754c515.png">
+and <img src=
+"../imgs/1d7852441857ef10020f886f5b8efddeecc57806.png"> are the
+<i>d</i>th digits of <i>x</i> and <i>y</i> respectively.</p>
+<p>• If <img src=
+"../imgs/4f3d2fa8285447913d7bf500c3b439328b11ed55.png"> then the
+number <i>x</i> is placed after <i>y</i> in the array, irrespective
+of the lower-order <i>d</i>-1 digits.</p>
+<p>• If <img src=
+"../imgs/0b23764ddc2ca6e82473da4400d2efe815d19b78.png"> then the
+number <i>x</i> is placed before <i>y</i> in the array,
+irrespective of the lower-order <i>d</i>-1 digits.</p>
+<p>• If <img src=
+"../imgs/74031a2550ccf182e4bb5ba85d6db33db110aa45.png"> then the
+numbers <i>x</i> and <i>y</i> are left in their original order in
+the array, because it is assumed that the intermediate sort is
+stable. Since <i>d</i>th digits are equal and the order of <i>x</i>
+and <i>y</i> are not changing, the correct order of <i>x</i> and
+<i>y</i> is determined by the lower-order <img src=
+"../imgs/f02f36144d935e4e7dacf722b383f8b88d97421e.png"> digits.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the proof, the assumption that the intermediate sort is
+stable is required when sorting numbers on their <i>d</i>th digit
+and whose <i>d</i>th digits were equal.</p>
+<p>• Since the <i>d</i>th digits were equal, the correct order of
+numbers is already determined after sorting by their lower-order
+<i>d</i>-1 digits.</p>
+<p>• If the intermediate sort was not stable, the numbers correctly
+ordered by sorting on their lower ordered <i>d</i>-1 digits are
+rearranged while sorting on <i>d</i>th digit.</p>
+<p><b>Therefore the given assumption is required when sorting
+numbers on their</b> <i><b>d</b></i> <b>th digit and whose</b>
+<i><b>d</b></i> <b>th digits were equal.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Treat the numbers as 3 - digit numbers in radix n. Each digit
+ranges from 0 to n-1. Sort these 3 – digit numbers with radix
+sort.</p>
+<p>These are 3 calls to counting sort, each taking <img src=
+"../imgs/94056abeb95f55716cb132b4094153e633bab8c0.png">time</p>
+<p>Therefore, the total time is<img src=
+"../imgs/a7fa61a630a21a7ef66f6f2811da110fc4bca034.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Sort the numbers on the most significant digit, sort each of the
+resulting bins recursively and combine the decks in order.
+Therefore, the cards in 9 out of 10 bins are put aside to sort each
+of the bins. In this way, the intermediate piles of card are
+generated. The entire deck is sorted again on the second lest
+significant digit and recombined. The cards are sorted on all
+d-digits, so cards are fully sorted on the d-digit number.
+Therefore, only d passes are required to sort d-digit decimal
+numbers in worst case.</p>
+</div>
+<hr>
+<div class="answer">
+<p>If the decimal number is of d -digit, then for decimal digits,
+only 10 places are used in each column. A field of d columns is
+occupied by a d-digit number. The number of bins in each column are
+10 and it is required that a single pass must sort each bin.</p>
+<p>Therefore, 10d passes are required to sort d-digit decimal
+numbers in worst case.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Suppose the cards in 9 of the 10 bins must be put aside to sort
+each of the bins. This procedure generates many intermediate piles
+of cards that must be kept track of. Accordingly, whenever 1 bin in
+one column is sorted, keep track of rest 9 bins in each column. For
+each 10d bin, keep track of 9 bins so that we need to keep track of
+<img src="../imgs/0d8671e3c6ab5e4c38e2295331ffdd34f3b3f558.png">
+piles of cards. Therefore, in the worst case, an operator would
+need to track <b>90d piles of cards</b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

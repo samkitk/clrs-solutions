@@ -1,0 +1,840 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 31.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Binary gcd (Greatest common divisor) algorithm</b></p>
+<p>Binary gcd algorithm makes use of computations like testing
+parity of binary integer, subtraction and halving instead of
+calculating remainders</p>
+<p>a. <b>If</b> <i><b>a</b></i> <b>and</b> <i><b>b</b></i> <b>are
+even numbers, then</b> <b><img src=
+"../imgs/77433e21087588dd324ea9f28f37c5297411bbad.png"></b><b>:</b></p>
+<p>Consider a, <i>b</i> both as even numbers. Then the common
+divisor property can be written as:</p>
+<p><img src=
+"../imgs/2bf4c49c1fe119e392029d96d003984edad9695b.png"></p>
+<p>Now using property (if <img src=
+"../imgs/dd8bbd10b539780735d9a8b36abf9b9119facb31.png"> and
+<img src="../imgs/f843a4accf7c6308adb9e5e1ee1638e23ff9d649.png">
+this implies <img src=
+"../imgs/ec0c677ae1159895003d716249e64a1392a1aa7d.png">, the
+equation given above can also be written as:</p>
+<p><img src=
+"../imgs/9b6957543d764c42a3e2cb28d14dea116bac7614.png"></p>
+<p>Now, taking divisor 2 as common from R.H.S. and take it to
+L.H.S., the modified equation can be written as:</p>
+<p><img src="../imgs/786983341506d85eff2375d89faa71d7c72e976c.png">
+<b>… … (1)</b></p>
+<p>Now take,</p>
+<p><img src=
+"../imgs/0983b34887698ca48dcfd61fea035a2d1ef3e689.png"></p>
+<p>Again using property (if <img src=
+"../imgs/dd8bbd10b539780735d9a8b36abf9b9119facb31.png"> and
+<img src="../imgs/f843a4accf7c6308adb9e5e1ee1638e23ff9d649.png">
+this implies<img src=
+"../imgs/ec0c677ae1159895003d716249e64a1392a1aa7d.png">, the
+equation given above can also be written as:</p>
+<p><img src=
+"../imgs/d23663a38be9ed68983dd22348fb6ca8a2314be8.png"></p>
+<p>As per equation (1), it is clear that:</p>
+<p><img src=
+"../imgs/682585ba4e5765566ccd2c7f20502e91fd323f01.png"></p>
+<p>Thus, from both the equations, there comes a conclusion that</p>
+<p><img src=
+"../imgs/639a97c59fed81e66222c3f58ce456c2105ddd12.png"></p>
+<p>Therefore</p>
+<p><img src=
+"../imgs/77433e21087588dd324ea9f28f37c5297411bbad.png"></p>
+<p>When both <i>a</i> and <i>b</i> are even numbers</p>
+</div>
+<hr>
+<div class="answer">
+<p>b. <b>If</b> <i><b>a</b></i> <b>is odd and</b> <i><b>b</b></i>
+<b>is even number, then</b><b><img src=
+"../imgs/2b301e104ea66888add07442238d2667184176b6.png"></b><b>:</b></p>
+<p>Consider <i>a</i> as odd and <i>b</i> as even number. Then the
+common divisor property can be written as:</p>
+<p><img src=
+"../imgs/d6b1a52c8d4defc98c4ac85fd36a763166dfffc3.png"></p>
+<p>Now using property (if <img src=
+"../imgs/dd8bbd10b539780735d9a8b36abf9b9119facb31.png"> and
+<img src="../imgs/f843a4accf7c6308adb9e5e1ee1638e23ff9d649.png">
+this implies<img src=
+"../imgs/ec0c677ae1159895003d716249e64a1392a1aa7d.png">, the
+equation given above can also be written as:</p>
+<p><img src=
+"../imgs/f63e68dc19612c531d7d5e88f29ec5d9bae9ba0b.png"></p>
+<p><img src="../imgs/803ed1fd8f68611761f199f1aa7eb17ddcf47146.png">
+// as we can always choose an even <i>y</i></p>
+<p><img src="../imgs/2dadfa310c1b37b405a7e95855cfdfe4f4820eed.png">
+// where <i>z</i>= <i>y</i>/2</p>
+<p>Now take,</p>
+<p><img src=
+"../imgs/0983b34887698ca48dcfd61fea035a2d1ef3e689.png"></p>
+<p>Again using property (if <img src=
+"../imgs/dd8bbd10b539780735d9a8b36abf9b9119facb31.png"> and
+<img src="../imgs/f843a4accf7c6308adb9e5e1ee1638e23ff9d649.png">
+this implies<img src=
+"../imgs/ec0c677ae1159895003d716249e64a1392a1aa7d.png">, the
+equation given above can also be written as:</p>
+<p><img src=
+"../imgs/058216801f44d2eb33ca8ec347fb6f4ae423970d.png"></p>
+<p>It is described above that <img src=
+"../imgs/9af54ca1b62e69346c484aeaca81a5bd0f41223d.png"></p>
+<p>So <img src=
+"../imgs/474376f4becfff118b0781adaeeee0d693363d3c.png"></p>
+<p>This conclude that</p>
+<p><img src=
+"../imgs/cae1029ffb2becaa2df2f119c8e465945bac4214.png"></p>
+<p>When <i>a</i> is an odd number and <i>b</i> is even number</p>
+<p>c. <b>If</b> <i><b>a</b></i> <b>and</b> <i><b>b</b></i> <b>is
+odd numbers, then</b><b><img src=
+"../imgs/958dd7323491f63821889ddc4f4b833c7ea04956.png"></b><b>:</b></p>
+<p>Consider a, <i>b</i> both are odd numbers. The common divisor
+property can be written as:</p>
+<p><img src=
+"../imgs/62f8de74f620f50df87277c4005a3d971923ceef.png"></p>
+<p><img src=
+"../imgs/577c93b07f57086a022fe437964717543c098517.png"></p>
+<p><img src=
+"../imgs/f07dc1e8f82a44831c2353ce4e1bd4946adabd34.png"></p>
+<p>Now using property (if <img src=
+"../imgs/dd8bbd10b539780735d9a8b36abf9b9119facb31.png"> and
+<img src="../imgs/f843a4accf7c6308adb9e5e1ee1638e23ff9d649.png">
+this implies <img src=
+"../imgs/ec0c677ae1159895003d716249e64a1392a1aa7d.png">, the
+equation given above can also be written as:</p>
+<p><img src=
+"../imgs/0ec41669172cd1de1d1884ae411ea824dc992ac5.png"></p>
+<p>Thus we can rewrite the equation as:</p>
+<p><img src="../imgs/40501b0b042aca033b882756a1e4f764dcec8017.png">
+// where <i>w</i> = <i>x</i>/2 and <i>z</i>=
+<i>y</i>–<i>x</i>/2</p>
+<p>Now take,</p>
+<p><img src=
+"../imgs/0983b34887698ca48dcfd61fea035a2d1ef3e689.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/c30f3f0a5cfdd4fdd193824478ca3b45564a05d1.png"></p>
+<p>Again using property (if <img src=
+"../imgs/dd8bbd10b539780735d9a8b36abf9b9119facb31.png"> and
+<img src="../imgs/f843a4accf7c6308adb9e5e1ee1638e23ff9d649.png">
+this implies<img src=
+"../imgs/ec0c677ae1159895003d716249e64a1392a1aa7d.png">, the
+equation given above can also be written as:</p>
+<p><img src=
+"../imgs/032980fd598fa493f2a267e82fb7fe196fadc027.png"></p>
+<p><img src=
+"../imgs/9afadc7412335b930b5a25fc9a7536742f0389ec.png"></p>
+<p>This conclude that</p>
+<p><img src=
+"../imgs/848d22c22925f3f6eed1c04bf1f91c8888b1a3f6.png"></p>
+<p>When both <i>a</i> and <i>b</i> are odd numbers</p>
+</div>
+<hr>
+<div class="answer">
+<p>d. <b>Algorithm:</b></p>
+<p><b>Input:</b> two positive integers say <i>a</i> and
+<i>b</i></p>
+<p><b>Output</b>: gcd(<i>a</i>,<i>b</i>)</p>
+<p>//if condition to check whether first number is zero</p>
+<p><b>if</b> (<i>a</i>==0)</p>
+<p>// greatest common divisor gcd(0, <i>b</i>)=<i>b</i></p>
+<p><b>return</b> <i>b</i> ;</p>
+<p><b>else</b></p>
+<p>//if condition to check whether second number is zero</p>
+<p><b>if</b> (<i>b</i>==0)</p>
+<p>// greatest common divisor gcd (<i>a</i>, 0)=<i>a</i></p>
+<p><b>return</b> <i>a</i>;</p>
+<p><b>else</b></p>
+<p>//if condition to check whether both numbers are even</p>
+<p><b>if</b> (when both <i>a</i> and <i>b</i> are even)</p>
+<p><b>return</b> gcd (<i>a</i>/2, <i>b</i>/2)</p>
+<p><b>else</b></p>
+<p>//if condition to check whether first number is odd and second
+number is even</p>
+<p><b>if</b> (when <i>a</i> is odd and <i>b</i> is even )</p>
+<p><b>return</b> gcd (<i>a</i>, <i>b</i>/2)</p>
+<p><b>else</b></p>
+<p>//if condition to check whether first number is even and second
+number is odd</p>
+<p><b>if</b> (when <i>a</i> is even and <i>b</i> is odd)</p>
+<p><b>return</b> gcd( <i>a</i>/2, <i>b</i>)</p>
+<p>//This will be executed when both numbers are odd</p>
+<p><b>else</b></p>
+<p><b>return</b> gcd ( |<i>a</i>–<i>b</i>|/2, <i>b</i>)</p>
+<p>This algorithm uses a complexity of<img src=
+"../imgs/03666e9aceae73401415aa33ce5b29c3d72fc927.png">. In above
+algorithm <i>a</i> and <i>b</i> are two inputs and in which
+<i>a</i> is greater than <i>b</i>. It is clear from the algorithm
+given above that the maximum capability of extension is <i>a</i>,
+which is greater than <i>b</i>. So, the complexity can be measured
+by<img src=
+"../imgs/03666e9aceae73401415aa33ce5b29c3d72fc927.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Bit operations in Euclidean Algorithm:</b></p>
+<p><b>Paper and pencil algorithm:</b></p>
+<p>• Paper and pencil division algorithm is used to perform the
+division operation using decimal notations.</p>
+<p>• At each stage, there is the shifting of dividend and
+subtraction of largest divisor from left to right.</p>
+<p>• To perform a simple long division operation and to calculate
+the total bit operations performed, consider divisor as <i>b</i>
+and the dividend as <i>a</i>.</p>
+<p>• Here, <i>a</i> is divided by <i>b</i> as a result of which
+quotient <i>q</i> and the remainder <i>r</i> are obtained.</p>
+<p>There are mainly three operations that are performed in the
+paper and pencil algorithm. They are as follows:</p>
+<p>1. Division operation</p>
+<p>2. Calculating quotient operation</p>
+<p>3. Calculating remainder operation</p>
+<p><b>Order of operations:</b></p>
+<p>The first operation is division operation where the dividend
+(<i>a</i>) is divided by the divisor (<i>b</i>).</p>
+<p>The total number of bit operations required for each division
+operation is<img src=
+"../imgs/1556dfe7d1d5556ca612cf34e30df2e23e12e284.png">.</p>
+<p>The number of bit operations required to calculate the quotient
+is equal to <img src=
+"../imgs/13e1955370f97607be50d10e2f61c46aa5ba28a6.png">.</p>
+<p>The number of bit operations required to calculate the remainder
+is equal to <img src=
+"../imgs/9508777e2ef379d2bcfdd3af807ae5a00b982815.png">.</p>
+<p><b>Hence, the total number of bit operations required to perform
+long division operations using “paper and pencil” algorithm is
+equal to</b> <b><img src=
+"../imgs/9508777e2ef379d2bcfdd3af807ae5a00b982815.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The greatest common divisor of any two integer <i>a</i> and
+<i>b</i> is such that the divisor divides both the integers without
+leaving any remainder.</p>
+<p>The name itself describes that the number should be the greatest
+and there should be no other greater number which divides both
+integers without leaving a remainder.</p>
+<p><b>For example:</b></p>
+<p>The gcd of 20 and 130 is 10. The factors of 20 are: (1, 20), (2,
+10) and (4, 5). Similarly, the factors for 130 are: (1, 130), (2,
+65), (5, 26) and (10, 13). Among both the sets of factors, the
+common factor is 10. Thus, the gcf of 20 and 130 is 10.</p>
+<p>The greatest common divisor is denoted by gcd (<i>a</i>,
+<i>b</i>) for the two integers <i>a</i> and <i>b</i>.</p>
+<p>Here, the Euclidean algorithm is used to calculate the gcd of
+(<i>a</i>, <i>b</i>), that is, the larger of the two numbers is
+divided by the smaller one.</p>
+<p>In each step, the long division and sliding is followed. The
+term sliding means that the remainder and divisor move to the left
+so that they become the divisor and dividend respectively. This
+process is continued till the remainder becomes 0.</p>
+<p>Define the following equation:</p>
+<p><img src=
+"../imgs/a127f082b0abdc7b2479efb3fed6e72422e2e223.png"></p>
+<p>In the equation given above, integers <i>a</i> and <i>b</i> are
+the inputs and <img src=
+"../imgs/b8c0fb115725a78acf1c7c085ecbecec5e42d7f4.png"> and
+<img src="../imgs/7ff27b46a4713ea37aaa148f82873dbc0ff43524.png">
+are their running times respectively.</p>
+<p><img src=
+"../imgs/cf2af0905aa6aa5c69a991e997439f1a68903cf0.png"></p>
+<p>Reduce equation (3) by equation (2). In the reduction process,
+the basic long divisions and the sliding operation as discussed
+above are performed.</p>
+<p>The running time can be calculated as follows:</p>
+<p><img src=
+"../imgs/880313b5e0006f9aed1bd6f6254cf504b33c6fdd.png"></p>
+<p>Add and subtract 1 in the second parentheses.</p>
+<p><img src=
+"../imgs/6c34ea7a8ba5297cd3cbe9f3cc9dc72b277b4953.png"></p>
+<p>Equation (1) <img src=
+"../imgs/fcac51626930d4d596374580633476039c75af26.png"> can be
+written as follows:</p>
+<p><img src=
+"../imgs/c671e43a96bb58df7f8cdd46028e348eb2826c87.png"></p>
+<p>To calculate the total number of bit-operations, a constant
+should be multiplied with the equation given above. Suppose that
+the constant is <i>c</i>, the equation after multiplications is
+given below:</p>
+<p><img src=
+"../imgs/dad22871946539e09ab0700bb5b24bf1dbd6c974.png"></p>
+<p><b>Hence the number of bit operations to be performed will
+be</b> <b><img src=
+"../imgs/dad22871946539e09ab0700bb5b24bf1dbd6c974.png"></b> <b>for
+the value of</b> <i><b>c</b></i> <b>greater than 0 which is
+sufficiently large.</b></p>
+<p><b>Euclid operation with</b> <img src=
+"../imgs/78ceadd69dc9e1d06d16e83ef51a60948e050d42.png">
+<b>inputs:</b></p>
+<p>Consider <i>r</i> and <i>q</i> as the remainder and the quotient
+in the long division performed in part <i><b>a</b></i>.</p>
+<p>The Euclidean algorithm where the division is of the form
+<img src="../imgs/cddaf5e839011f447ed4fe693bd73f3997e1371f.png">
+where the value of <i>i</i> is from <img src=
+"../imgs/dd36e2fe88fa1acecb224d30e44aa8d2d426c488.png"> and the
+value of <img src=
+"../imgs/f5f8f8db2c80643d4f04c2e0f3171917de9953dd.png">has been set
+and the value of<img src=
+"../imgs/ceb0d9a9c638d1ab6bdffcf7d78d560646c5e517.png">.</p>
+<p>Calculate the total <i>r</i> time as follows:</p>
+<p><img src=
+"../imgs/30303a4ea7cfb152e8d136a5eda08d6c42431343.png"></p>
+<p>Apply Backward approach to the Euclidean algorithm, then
+<img src=
+"../imgs/f0090d616bfe1f22acabee4f0aadc7fe92bb6205.png">.</p>
+<p>Substitute the above value in equation (4).</p>
+<p><img src=
+"../imgs/4e63095ee08c80bd5eafdf87dc0cfb6e902c3c21.png"></p>
+<p>From part (b) of the question, <img src=
+"../imgs/25ac3922d20e39578688d1114a77b644ffc6cea0.png">.</p>
+<p>Using the above equation and the Euclidean expression, the
+number of bit operations required by<img src=
+"../imgs/54f95c48e10bff760e51e8f1b9600b07945b54ca.png"> is equal
+to<img src=
+"../imgs/84a41266fc65956af4ad8718fb410360464201d9.png">.</p>
+<p>From second part of the question, the input for the<img src=
+"../imgs/54f95c48e10bff760e51e8f1b9600b07945b54ca.png">expression
+is two<img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png">bits size
+numbers.</p>
+<p>Hence, the total time taken to calculate the expression is equal
+to,</p>
+<p><img src=
+"../imgs/a59d7e4ec5ca2d55e2b7cfd0f7bf212735f0529f.png">(up to
+<img src="../imgs/0d39a7c7c272ad96a173974e71064e7538f4e319.png">
+time).</p>
+<p><b>Therefore, the total time is equal to</b> <b><img src=
+"../imgs/239a87310be6dfdfa6a9f3bbee3ec087bd712f67.png"></b> <b>for
+the input size of</b> <b><img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png"></b>
+<b>bits.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Three algorithms for Fibonacci numbers are as
+follows:</b></p>
+<p>• Fibonacci numbers represent a sequence of numbers in which
+each subsequent number is the sum of previous two numbers.</p>
+<p>• The value of number at <i>n</i><sup>th</sup> position will be
+the sum of numbers at <i>n</i>–1 and <i>n</i>–2 positions
+respectively.</p>
+<p>• In Fibonacci numbers, the value of numbers at first and second
+position is fixed. First number is always 0 and the second number
+is always 1.</p>
+<p>• Fibonacci series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34… and so
+on.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p><b>Straightforward recursive method for computing Fibonacci
+numbers:</b></p>
+<p>The straightforward recursive method is used to compute the
+value of number at a certain position in the Fibonacci series.</p>
+<p>The values at positions 1 and 2 are fixed and represented by
+<i>F</i><sub>0</sub> and <i>F</i><sub>1</sub>. The values can be
+calculated by the equation given below:</p>
+<p><img src=
+"../imgs/1a76625290ae3ad4fc391b0e1e8e3563e3498c38.png"></p>
+<p>This is called recurrence equation because the function <i>F</i>
+calls itself to calculate the value at a position.</p>
+<p>// defining Fibonacci number as long</p>
+<p>1. long int <i>f</i> (int <i>n</i>)</p>
+<p>2. {</p>
+<p>// to check if n is zero</p>
+<p>3. <b>if</b> <img src=
+"../imgs/30993dd6a6d95433c886074882f7aada766ae0fd.png"></p>
+<p>4. <b>return</b> 0;</p>
+<p>//to check if n is 1</p>
+<p>5. <b>else if</b> <img src=
+"../imgs/c20e8f68966e08170bde16be0f3c78e6a354bda0.png"></p>
+<p>6. <b>return</b> 1;</p>
+<p>7. <b>else</b></p>
+<p>// return the sum the two previous numbers</p>
+<p>8. <b>return</b><img src=
+"../imgs/93f4081c0a6159d2ab38ee4f2b38810b38b8d36c.png">;</p>
+<p>9. }</p>
+<p>It is clear from the algorithm given above that the condition
+for the values at first and second positions are checked, because
+the values at both positions are fixed.</p>
+<p>The sum of two previous numbers is returned. This has been
+calculated by using recursion (called as recursive method).</p>
+<p>In FIB-procedure, a tree for <i>f</i>(<i>n</i>) has been
+maintained in such a manner that its left child always shows
+<i>f</i>(<i>n–</i>2) and right child shows value of
+<i>f</i>(<i>n–</i>1<i>)</i>.</p>
+<p>This procedure has been followed until the left child becomes
+<i>f</i>(1) and right child becomes <i>f</i>(0). It is because the
+values of both of them are fixed. A tree representation of
+<i>f</i>(4) is given below:</p>
+<p><img src="../imgs/b26dfd80cd3d01510c4b7c55e99b4f7e41c3e881.png"
+alt="D:\Tiffs\New folder (2)\2254-33-1.7E.tif"></p>
+<p>Assume that <img src=
+"../imgs/5bf8ee8c0b9aa9b9ee528035d373dd3c2182a07c.png"> calls were
+made to calculate <img src=
+"../imgs/1d0c59ef3ef86deab8e6d955b9d9be18989fcbaf.png">.</p>
+<p><img src=
+"../imgs/f8b597deb5811367f6f7fe2c30a0582c6458a712.png">, each term
+is in form <img src=
+"../imgs/c095e30d361765ce83d5c633828aa18b7a609f3e.png">.</p>
+<p><b>Recursion</b>: <img src=
+"../imgs/39c73eb7d5885dea3530114270ac8a81256ca118.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>In the equation given above, 2 is added because the node also
+calls to left child and right child.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>This takes up time</b> <b><img src=
+"../imgs/e2eb7aaeb3b20e810fa46a9b7fb65de04601cc0e.png"></b> <b>and
+it is seen that the time complexity is polynomial. Thus, the
+running time has the value of</b> <i><b>n</b></i> <b>in the
+exponential form.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p><b>Memoization for Fibonacci numbers</b>:</p>
+<p>Memoization is an efficient implementation of hash tables.</p>
+<p>The values calculated earlier are stored in the table and used
+later. Memoization is an effective technique to create
+algorithms.</p>
+<p>Let fib memoized = <i>n</i></p>
+<p>Let memo: int option array=Array. Create (<i>n</i>+1) Node
+in</p>
+<p>Let recursive <i>f</i> _memoized <i>n</i> = match memo
+(<i>n</i>) with</p>
+<p>Some <img src=
+"../imgs/14cb63f399dc1bfbc232145920ba0eb871ba14ac.png"></p>
+<p>Let result= <b>if</b> <img src=
+"../imgs/6139382f8ec71c7a12794112cc7b8e9aa1917798.png">then 1</p>
+<p><b>else</b> <i>f</i> memoized <img src=
+"../imgs/78cd9ff9413cfa67733b6b0b35f2b5442ed2171f.png">+<i>f</i>
+memoized <img src=
+"../imgs/700ea9d154e8610a8372baba3d49b18789600053.png"> in</p>
+<p>Memo (<i>n</i>) <img src=
+"../imgs/7b69c5e03dcc57b6c2379d1084bf0e3b4aa131d4.png"> some
+result;</p>
+<p><b>Result</b></p>
+<p>In <i>f</i>_ memoized <i>n</i></p>
+<p>The term <i>f</i>_memoized describes the original recursive
+algorithm. It also checks whether the result has been already
+calculated and stored in the table.</p>
+<p>The total time taken in a particular call of <i>f</i>_memoized
+is<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+<p>There is a method to bind the recursive calls by observing the
+ways of the work that has already been done.</p>
+<p>The best method to measure progress is counting the number of
+nonempty entries in the table for each case of memoization.</p>
+<p>Every time the <i>f</i>_memoization is called for the two
+recursive calls, it succeeds and the number of nonempty entries
+increase by one.</p>
+<p><b>As the table above has only</b> <b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></b>
+<b>entries, only</b> <b><img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"></b>
+<b>calls are required for</b> <i><b>f</b></i> <b>_memoization, and
+the total running time is</b> <b><img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p><b>Computing Fibonacci value at a certain position:</b></p>
+<p>The Fibonacci value at a certain position can be calculated by
+considering a matrix and its power. This approach is given
+below:</p>
+<p>If <img src=
+"../imgs/6ce8c5a65e567afd990871b2aae5df5da96388dd.png">, then
+<img src="../imgs/7c201f6c91f5c14553f6f859bdb33d51736786f7.png">,
+<i>n</i><img src=
+"../imgs/d944f1eb097dbb8c3ad2e3dab585eeea7e51862e.png">1</p>
+<p>Here,<img src=
+"../imgs/fde9aea5dd35424d680896532b5645da0fb955bf.png">is the
+<i>n</i><sup>th</sup> Fibonacci number and<img src=
+"../imgs/77911840a1b163f10bb8ed60875d06d90dc8279f.png">defined to
+be 0.</p>
+<p><i>F</i> <sup>n</sup> representation can be given as,</p>
+<p><img src=
+"../imgs/c5ce1ecddcccb5b7953360838454fd7d32d0ebc0.png">, when
+<i>n</i> is even</p>
+<p><img src=
+"../imgs/629e55a46244da680970c9ca0847cffa97acd7a4.png">, when
+<i>n</i> is odd</p>
+<p>This dynamic algorithm in form of a mathematical expression is
+given below:</p>
+<p>Let two variables be <i>x</i> and <i>y</i>.</p>
+<p>Using matrix multiplication,</p>
+<p><img src=
+"../imgs/57ef07dcbb4befdd04c4fe2ffc3dbd5d7d7a4631.png"></p>
+<p>It is clear from the above math expression that the right hand
+side expression is a sub-part to find an <i>nth</i> Fibonacci
+number. Using the above concept, the expression below gives the
+exact expression of <i>n</i><sup>th</sup> Fibonacci number.</p>
+<p><img src=
+"../imgs/6a4290683d3959324c7274a4d17f799a2aa3fdc9.png"></p>
+<p>Right hand side expression is expression for a Fibonacci
+sequence.</p>
+<p><img src=
+"../imgs/3892a5bb8c30946d506084a4e57719c851490019.png"></p>
+<p>This dynamic approach is better than the earlier one because in
+computing <i>nth</i> Fibonacci number, this algorithm takes only
+<img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">integer
+arithmetic expression.</p>
+<p><b>Therefore, computing</b> <i><b>n</b></i> <sup>th</sup>
+<b>power of any value requires only</b> <b><img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png"></b>
+<b>multiplication and te remaining multiplication and addition
+takes constant time.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i></p>
+<p><b>Running time of methods:</b></p>
+<p>Assume that the time taken in addition of two <img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png">-bit numbers
+takes <img src=
+"../imgs/cc24ff48ac21e07e1a3d1b25931fa19c531a3c94.png">time and
+multiplication of two <img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png">-bit numbers
+takes <img src=
+"../imgs/5cba7262affc17d5d02ec5f57876c3f5e32c480c.png">time.</p>
+<p>The running time of all the above methods can be calculated as
+shown below:</p>
+<p><b>For straight forward recursive method:</b></p>
+<p>Let <img src=
+"../imgs/5bf8ee8c0b9aa9b9ee528035d373dd3c2182a07c.png"> calls are
+made to calculate <img src=
+"../imgs/1d0c59ef3ef86deab8e6d955b9d9be18989fcbaf.png">.</p>
+<p><img src=
+"../imgs/f8b597deb5811367f6f7fe2c30a0582c6458a712.png">, each term
+is in the form <img src=
+"../imgs/c095e30d361765ce83d5c633828aa18b7a609f3e.png">.</p>
+<p>As it is assumed that adding two numbers take <img src=
+"../imgs/cc24ff48ac21e07e1a3d1b25931fa19c531a3c94.png">time, hence,
+the running time of this method will be a polynomial term,<img src=
+"../imgs/50aebe01104dfc6fe3ce14db2c3e014135917b21.png">.</p>
+<p><b>For memoization:</b></p>
+<p>In case of memoization, the data that has been obtained is used
+for further calculations. Here, the total time will be the sum of
+time taken to calculate <img src=
+"../imgs/a472eaa0b9b1fd674d285e9280da02b296d642a1.png"> operations
+and<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">. This is
+given below:</p>
+<p><img src=
+"../imgs/39965f133e126b4a59da2c419cf88270ac47cdd6.png"></p>
+<p><img src=
+"../imgs/e760db2104523fdd4e7d311b08a7505a024f9a1e.png"></p>
+<p><b>For matrix multiplication:</b> The running time for this
+method would be <img src=
+"../imgs/70f3960c2567b16a25c33a3e4c0410ab33f5fadc.png"> as it
+involves <img src=
+"../imgs/b68a8ce268b9e1586e41e0c0bb1ee72f23265498.png"> matrix
+multiplication.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Quadratic Residues</b></p>
+<p>It is a concept related to a number theory. An integer <i>r</i>
+is called as quadratic residue modulo <i>n</i> if congruent
+relationship exists for a perfect modulo <i>n</i>. For any integer
+<i>y</i> there exists a relation given as:</p>
+<p><img src=
+"../imgs/8d866b233f3d8069df113c776a0e58759534b4f6.png"></p>
+<p>Otherwise <i>r</i> will be termed as a quadratic non-residue
+modulo <i>n</i>. It has a wide range of application as-engineering
+related to acoustics, factoring of a large numbers.</p>
+<p>According to the question there is variable <i>p</i> which is an
+odd prime (that is the prime number except 2). It is because prime
+numbers are the numbers that are divisible by them and by 1.
+Examples of prime numbers include 2, 3, 17, 31 etc.</p>
+<p>A number <img src=
+"../imgs/0767a89c3aa5f3b9a302f9dc99e134fcb6d977dd.png"> is termed
+as a quadratic residue if the equation:</p>
+<img src="../imgs/f5d38933e0279e20bd698cde58ec0a0d0cda1f32.png">
+Has a solution for the unknown variable <i>x</i>. This means that a
+number will be called as the quadratic residue only when the
+condition given above will be satisfied.</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>As a number to be a quadratic modulo, it should satisfy the
+condition of<img src=
+"../imgs/f5d38933e0279e20bd698cde58ec0a0d0cda1f32.png">. Now,
+considering the values of <i>x</i> as 1 to prime number <i>p</i>,
+the quadratic residues are the non-zero numbers which are squares
+modulo <i>p</i>, so the numbers are as:</p>
+<p><img src=
+"../imgs/7ef00d589d47eb938e956e8219b47110d8979d97.png"></p>
+<p>After moving further along the residue, the square of the
+remaining number will start repeating in the reverse order as:</p>
+<p><img src=
+"../imgs/3ccf4822a72ba4c3989bb94c5965303980453623.png"></p>
+So, there is only requirement to move along the half of the
+squares. So to show that there is only <img src=
+"../imgs/6fc68aab2b4ab17311ee0901b056727c8581ea6a.png"> quadratic
+residue. For showing all the numbers <img src=
+"../imgs/342b2605834802c2d8aad1889015c92ddc1593bf.png">are
+different modulo <i>p</i>. Consider two number <img src=
+"../imgs/26ed2a0b9855d9ac7cf5f40572fbac3de90dbe84.png"> and
+<img src=
+"../imgs/6b652d12da023f56df4e334892aedc3d7b1ff136.png">which lies
+between 1 and<img src=
+"../imgs/6fc68aab2b4ab17311ee0901b056727c8581ea6a.png">. Now,
+suppose that <img src=
+"../imgs/8581164e80a9822ede13997d89a6a2e7fb5e0cbf.png">and we have
+to show that<img src=
+"../imgs/4453034325dc16b59b7895160fd85390bfca292f.png">.</div>
+<hr>
+<div class="answer">The fact that <img src=
+"../imgs/8581164e80a9822ede13997d89a6a2e7fb5e0cbf.png"> It means
+that <img src=
+"../imgs/0ae36915d3bffe5d5137e14f6d2f7d750492b4aa.png">
+divides<img src=
+"../imgs/d9177baaa1daef62cfff99c12cd6008299ec3562.png">. But
+<img src="../imgs/6fce41a35bea80bfa18f50f9835e88b74b9960d0.png">
+lies between 2 and<img src=
+"../imgs/bf905b31b9b21b14c51bd5b458c3c42af56703e1.png">, so it is
+not divisible by <i>p</i>. So, <i>p</i> must divide<img src=
+"../imgs/9a5c59b33b45a3af31f61ff14f558dd42eaf6162.png">. But
+<img src="../imgs/4cf44ac6f1d2dcf5fc4b77669eb1055fca7d4d79.png">so
+there is only one way such that <img src=
+"../imgs/2f54b482b51be8b1d23d8ffc52a23680ae7222b2.png">is divisible
+by <i>p</i> to have<img src=
+"../imgs/4453034325dc16b59b7895160fd85390bfca292f.png">. So the
+conclusion that all <img src=
+"../imgs/78db67689617b004cb9ec71f78e97c54915e4bc1.png"> have
+different modulo <i>p</i><b>.</b> Hence, the exact number of
+quadratic residue modulo <i>p</i> is<img src=
+"../imgs/4c80999ab97e87e1cea86a08665485fd6d243d4f.png">.</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>In the given question <i>p</i> and <i>a</i> is a prime and
+quadratic residue modulo. Defined Legendre symbol as function of
+<i>a</i> and <i>p</i> which is defined as,</p>
+<p><img src=
+"../imgs/a1a244900f9b28e8cd2a77ca7b01c5a20ef0edcb.png"></p>
+<p>It is clear from the equation given above that if the value of
+<img src="../imgs/d62e810ce692bd29f93b9da03bcc71bf4af83ba2.png"> is
+obtained to be equal to 1, then the <i>a</i> is quadratic residue
+modulo <i>p</i>. Also, <img src=
+"../imgs/868f700e6d4e84eab546de2d79d7d2c50153ab76.png"> (mod p). If
+the value of <img src=
+"../imgs/d62e810ce692bd29f93b9da03bcc71bf4af83ba2.png"> is obtained
+to be equal to -1, then it is quadratic non-residue modulo of prime
+<i>p</i>. If the value of <img src=
+"../imgs/d62e810ce692bd29f93b9da03bcc71bf4af83ba2.png"> is obtained
+to be equal to 0, then <img src=
+"../imgs/eaedb1d5c3c96c9f6a43614174212bfde5c1127b.png"> <img src=
+"../imgs/b31b98e48b282960aa8b4f54014aad7f35262b33.png">. The
+definition of the Legendre’s symbol as:</p>
+<p><img src=
+"../imgs/04deec7a2670e44d7438ce57b31b116188546ed6.png"></p>
+<p>Also consider that the value of <img src=
+"../imgs/d62e810ce692bd29f93b9da03bcc71bf4af83ba2.png"> can have
+value 0, 1 or -1. It is shown below:</p>
+<p><img src=
+"../imgs/5e1d48f01cadc60a3b632803c0933b0622b8ca3e.png"></p>
+<p>Consider integer <i>a</i> as quadratic residue for modulo
+<i>p</i>. If its square is non-zero, it means variable x will be
+there such that<img src=
+"../imgs/cbf8806cccc537d399f74751abd6ea10b815d0f0.png">. Otherwise
+it is said to be non-residue. This is characterised with the
+Euler’s algorithm. It is <b>very efficient</b> in determining the
+quadratic residue.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>To compute the square root modulo of the prime of the
+form<img src=
+"../imgs/5ca56e8d8ce4d7db11e6c1d740f2c7cceef0e954.png">. Consider
+that <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png"> be a
+quadratic residue of modulo <i>p</i>. Also it belongs from the
+value of integers. It can be given as<img src=
+"../imgs/42a2e0d00c2cd8c929306b7da472d05baa11db85.png">.Now
+considers the following equation:</p>
+<p><img src=
+"../imgs/41573c58ff4e31d595f115500b408aa6df575995.png"></p>
+<p>Which is the square root of<img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">: Such
+that</p>
+<p><img src=
+"../imgs/d6b52df47beb9932df83a8e414707c00857e8f95.png"></p>
+</div>
+<hr>
+<div class="answer">And the time to compute the square root of
+modulo is of the order of<img src=
+"../imgs/94de7bbfeef8b2c45c1da9b16b1940d3dadd6c0f.png">.</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i></p>
+<p>When we perform the repeated squaring we have the condition that
+<img src="../imgs/478d94c338f27cb9b9361248eba5004d661d4f34.png">
+mod p. Now, let us assume that <i>A</i>=<i>a</i> and <i>b</i>=1
+then at each step we have <img src=
+"../imgs/2964be1813456b4d28c0a5bb8433fcfae8976be1.png"> and at the
+end we have A=1.</p>
+<p>So, <i>a</i> is the square root <i>a</i> mod <i>p</i>. At each
+step the power of 2 is decreasing by dividing the order of
+<i>A</i>. so to initiate we have:</p>
+<p><img src="../imgs/554d4e28f734b4d0ac87a230c57c06fb533fbb66.png">
+if we have <img src=
+"../imgs/9f0b88f4936f3845c25a0ef2e82dd428f6e39a19.png"></p>
+<p>If it is not so then<img src=
+"../imgs/c4c72dd23ed93e8d31c6d59e0f1b0aebaf39e829.png">. So power
+of 2 dividing the order of <i>a</i> is exactly <img src=
+"../imgs/4f268e13990bb3957c6fcc84b166d99ffc7db948.png"> which is
+same as the power of 2 dividing<img src=
+"../imgs/218c3f118715076b6d7423cc818dc958410d82d4.png"> .So,
+consider set<img src=
+"../imgs/84773e176ae99e70de9a1f6dc3b1fd1e70ea4f47.png">, <img src=
+"../imgs/65c1da6355cff1be7ed006d0329138c9289b1ace.png"> and we
+found that:</p>
+<p><img src=
+"../imgs/3293d7c034875324e4af0aa09e9a7307b2a096dc.png"></p>
+<p><img src=
+"../imgs/c90a02dd1063570bf746948124762f88a344b1b8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>So, power of 2 which divides the order has decreased by 1. So in
+the next step, we have:</p>
+<p><img src="../imgs/9dffe32057532b8f9feee6b62afe1ebb4f00f558.png">
+,</p>
+<p>If yes do nothing.</p>
+<p>Claim that <img src=
+"../imgs/f0a580b14734a9fbd7646f99258f45f9894f7ccc.png"> is a square
+root of <i>A</i> mod <i>p</i>.</p>
+<p><img src=
+"../imgs/2cef5acac3d9c120fc9efb58d7808a1859c6abf6.png"></p>
+<p><img src=
+"../imgs/8fe6a3d92446f4c3515179be6a9f6c0afa3d3a74.png"></p>
+<p><img src=
+"../imgs/bc5de09f1966e2dd78ac9784fe18b5347a1fdd14.png"></p>
+<p><img src=
+"../imgs/7a22167a5a72fd5aa45acb2cc2bdeeea0d02989b.png"></p>
+<p>So the algorithm just returns:</p>
+<p><img src="../imgs/4b4fbed280580daf352b17951a320b988563530f.png">
+as<img src=
+"../imgs/969f077949a7eefaf13958de83056a510100ecd9.png">.</p>
+<p>So, a random number is a quadratic non-residue having
+probability <img src=
+"../imgs/32e10409aea73dcc957db167225a1999e3e8e339.png"> so if
+<i>k</i> trial is run then probability of not getting a quadratic
+non-residue is <img src=
+"../imgs/a4f1caefdf6878ebb056be83b2850a629a9862b5.png"> which is
+equal to log <i>p</i>. So, this randomized algorithm is the most
+efficient, having the number of operation less than<img src=
+"../imgs/ee5197c33ac469671e61f63fe0ad6ce98dee2a6d.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

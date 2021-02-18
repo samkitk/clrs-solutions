@@ -1,0 +1,191 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 13.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider that <i>y</i> is a node in a binary search tree and
+left child of <i>y</i> is <i>x.</i> Subtree <img src=
+"../imgs/b82246969719cb60d2ce0f58705253a71cb936a5.png"> is the
+right subtree of <i>y</i>. <img src=
+"../imgs/4e01d5fd4bac1ec7d3658b2d6ce406d6be526602.png">, <img src=
+"../imgs/6a10a7f0b5dae5254a749a4f51d1af25149e7331.png"> are the
+left subtree and right subtree of <i>x</i> respectively.</p>
+<p>When the right rotation is applied on the node <i>y,</i> the
+following occurs:</p>
+<p>• RIGHT-ROTATE makes right child of <i>x</i> as left child of
+<i>y</i>.</p>
+<p>• y’s parent is set as <i>x</i>’s parent</p>
+<p>• Finally, RIGHT-ROTATE makes <i>y</i> as right child of the
+<i>x</i> and <i>x</i> as parent of <i>y</i> so that <i>x</i>
+becomes the new root of the subtree.</p>
+<p>The pseudo code for RIGHT-ROTATE is as follows:</p>
+<p>RIGHT-ROTATE (<i>T, y</i>)</p>
+<p>1. <i>x</i> = <i>y.left</i> // set <i>x</i></p>
+<p>2. <i>y.left</i> = <i>x.right</i></p>
+<p>3. <b>if</b> <i>x.right</i> ≠ <i>T.nil</i></p>
+<p>4. <i>x.right.p</i> = <i>y</i></p>
+<p>5. <i>x.p</i> = <i>y.p</i> // link <i>y</i>’s parent to
+<i>x</i></p>
+<p>6. <b>if</b> <i>y.p</i> = <i>T.nil</i></p>
+<p>7. <i>T.root</i> = <i>x</i></p>
+<p>8. <b>elseif</b> <i>y</i> = = <i>y.p.right</i></p>
+<p>9. <i>y.p.right</i> = <i>x</i></p>
+<p>10. <b>else</b> <i>y.p.left</i> = <i>x</i></p>
+<p>11. <i>x.right</i> = <i>y</i> // put <i>y</i> on <i>x</i>’s
+right</p>
+<p>12. <i>y.p</i> = <i>x</i></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a3d8342220dc500dc191752bc1c6532e52248304.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The following is the given binary search tree:</p>
+<p><img src="../imgs/004544cabaa7cdf6d6d6f2d21e6f7ef9170355bd.png"
+alt="Picture 2"></p>
+<p>Consider a, b and c to be the arbitrary nodes of sub trees
+<img src="../imgs/2aba84e8ffa9df2502d146e08cc0c26f30e7e176.png">,
+<img src="../imgs/5213dab940934da8aba84dfbfbf93d545cb4bb1f.png">
+and <img src=
+"../imgs/f33df335656453b815f181b435f939db799c99a3.png">respectively.</p>
+<p>To understand easily, Assume that<img src=
+"../imgs/2aba84e8ffa9df2502d146e08cc0c26f30e7e176.png">, <img src=
+"../imgs/5213dab940934da8aba84dfbfbf93d545cb4bb1f.png"> and
+<img src="../imgs/f33df335656453b815f181b435f939db799c99a3.png">
+has only node a, node b and node c respectively.</p>
+<p>Apply left rotation on node <i>x</i> and then the tree is as
+follows:</p>
+<p><img src="../imgs/c5e2a8e3cbef73c7b4b49c0d98f17e814841fd90.png"
+alt="Picture 3"></p>
+<p>Now, Following changes in depths of a, b, and c are observed
+after left rotation:</p>
+<p>• Depth of node a is increased by 1.</p>
+<p>• Depth of node b is remains same.</p>
+<p>• Depth of node c is decreased by 1.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/149369eac62c5bb56b4070f72324ab452785a793.png">
+<hr>
+<img src="../imgs/de6ca31aa648939f5a190f10c979109f75d8f858.png">
+<hr>
+<img src="../imgs/6dba031fc10ebb30a6abf564e5bac6ed97807709.png">
+<hr>
+<img src="../imgs/25e45b2c471a9f41f81214183c8974cb5daa89c9.png">
+<hr>
+<img src="../imgs/3d8074652a41ac7b1f750d2534e81b99b38f21c0.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

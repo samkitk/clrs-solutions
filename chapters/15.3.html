@@ -1,0 +1,692 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 15.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Running RECURSIVE–MATRIX–CHAIN is asymptotically more efficient
+than enumerating all the ways of parenthesizing the product and
+computing the number of multiplications for each.</p>
+<p>The running time complexity of enumerating all the ways of
+parenthesizing the product is n*P(n) while in case of
+RECURSIVE-MATRIX-CHAIN, all the internal nodes are run on all the
+internal nodes of the tree and it will also create overhead</p>
+</div>
+<hr>
+<div class="answer">
+<p>We know that the running time for enumeration is <img src=
+"../imgs/b778f5f24c11f3c58a1ebdaa78e14f0a9d31aef2.png">.</p>
+<p>Now we will show that the running time for
+RECURSIVE–MATRIX–CHAIN is <img src=
+"../imgs/358ddbec4e2eeaf3e4bddb4749dc3c6b0cbf55a6.png">.</p>
+<p>To find an upper bound on the running time of
+RECURSIVE-MATRIX-CHAIN, derive a recurrence of the form <img src=
+"../imgs/bb825487ef27e46a28f2d60af652c28ee219c609.png"> and solve
+it by substitution.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To get the upper-bound recurrence, we will assume the lines 1–2
+and 6–7 each take at most constant time <img src=
+"../imgs/446206b88bd768266a4126280bc88739f7498497.png">. Thus, we
+have the recurrence:</p>
+<p><img src=
+"../imgs/307b971a5bc4bcf8c811d8d70847db946af12493.png"></p>
+<p>For <img src=
+"../imgs/8e48e1df1e2b652af96b93f582ef7dbcd0670668.png">, each term
+<img src=
+"../imgs/5b835f2ec33802efa131ef27b83bd264e3024e96.png">appears once
+as <img src=
+"../imgs/ded736abbd5ac18886d4557776fe04bdc106de28.png">and once as
+<img src="../imgs/ed20d9375b45b773310b81d5d0a0688b1fea1a62.png">,
+and collecting the <img src=
+"../imgs/d40687945fea22ac1deba93da826d3c9a7633c2f.png"> in the
+summation together with the <img src=
+"../imgs/446206b88bd768266a4126280bc88739f7498497.png"> out front,
+we can rewrite the recurrence as</p>
+<p><img src=
+"../imgs/8c1c127d1dadc0b10edd9c6c3ed30fff755db347.png"></p>
+<p>We will now prove that <img src=
+"../imgs/34e90d49c604981a79d00bc52b2eac9606588eea.png"> using
+substitution method.</p>
+<p>(NOTE: Any upper bound of <img src=
+"../imgs/8d24f7a3ed4580059f5d330d87462765a322ca43.png"> that is
+<img src="../imgs/f383ab34f1aa5a396cce84e2d09c106f3ad2894f.png">
+will suffice. It is preferred to prove<img src=
+"../imgs/68a598e38a4671e4e1c2d6a247d4412f4e6dd92a.png">).</p>
+<p>Specifically, we shall show that <img src=
+"../imgs/84ae2c974d25a2d8b9b01596eed472f9ea3f8537.png"> for all
+<img src="../imgs/1c01de527d2c3483f98c86180008a7553ba25367.png">.
+The basis is easy, since <img src=
+"../imgs/964e362f012c43cb4079081db6e016b94bd1b0a5.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Using inductive procedure, for <img src=
+"../imgs/a6ed6bcc4d918af39effe8ff27a555e230763c84.png"> we have</p>
+<p><img src=
+"../imgs/f4e7826fd9d1bf6c75785485e44cec3f89343597.png"></p>
+<p>The RECURSIVE–MATRIX–CHAIN takes <img src=
+"../imgs/358ddbec4e2eeaf3e4bddb4749dc3c6b0cbf55a6.png"> time, and
+enumerating all parenthesizing takes <img src=
+"../imgs/bc3ea70b75b8e57bfe9296eaee8b13bcff5ef1bd.png"> time.</p>
+<p><b>Hence, RECURSIVE–MATRIX–CHAIN is more efficient than
+enumeration.</b></p>
+<p><b>Note:</b></p>
+<p>The substitution uses <img src=
+"../imgs/5d09ce19baaddc21a37b260f0353b17003fcadd8.png"></p>
+<p>The equation can be derived from the equation of the exponential
+series</p>
+<p><img src=
+"../imgs/315e79334c62414f663387a4c54d25ea0d4b0e0a.png"></p>
+<p>Let <img src=
+"../imgs/1874275c383358642022abcb7ded6abd56933f92.png">. By taking
+derivative, we get</p>
+<p><img src=
+"../imgs/b77da155db5b04e7cd03340d89f7393a608f6e30.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/f2c82e8990f3f0b3b90ce4f985f8b5c0a289af18.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The matrix-chain multiplication problem exhibit optimal
+substructure</b></p>
+<p>If an optimal solution to a problem is obtained by the optimal
+solutions of its sub-problems, then the problem is said to be
+exhibits optimal sub structure.</p>
+<p>Maximizing the number of scalar multiplications in the
+matrix-chain multiplication problem is also exhibits optimal sub
+structure.</p>
+<p>• Consider a chain of matrices <img src=
+"../imgs/f397d2ec9457fd7cf08beced18be5a747a27c129.png"> to
+multiply. Then this chain of matrices can be parenthesized so that
+the product cost is the maximum.</p>
+<p>• To optimally parenthesize this product, the chain must be
+split between <i>A</i><sub>k</sub> and
+<i>A</i><sub>k</sub><sub>+1</sub> for some <i>k</i> in the range
+<i>i</i> ≤ <i>k</i> &lt; j. since the cost to calculate <img src=
+"../imgs/f397d2ec9457fd7cf08beced18be5a747a27c129.png"> is equals
+to the cost to calculate <img src=
+"../imgs/9aaf812f239a8fd1a66a26fbdc0c58ade2d8034d.png"> plus the
+cost to calculate <img src=
+"../imgs/fd48e3bada526cde0822227cb2f1802c7dcbad89.png"></p>
+<p>• Since the goal is to maximize the number of scalar
+multiplications, the sub chains<img src=
+"../imgs/9aaf812f239a8fd1a66a26fbdc0c58ade2d8034d.png"> and
+<img src="../imgs/fd48e3bada526cde0822227cb2f1802c7dcbad89.png">
+must be parenthesized optimally. That is , the problem split into
+two sub problems(<img src=
+"../imgs/9aaf812f239a8fd1a66a26fbdc0c58ade2d8034d.png"> and
+<img src="../imgs/fd48e3bada526cde0822227cb2f1802c7dcbad89.png">)
+and the parenthesizing of these sub chains must be optimal.</p>
+<p>• Consider that the sub problems produce the optimal solutions.
+Assume, if the solution to <img src=
+"../imgs/9aaf812f239a8fd1a66a26fbdc0c58ade2d8034d.png"> is not
+maximum cost, then there is another way to maximize the chain, then
+there is another way to parenthesis <img src=
+"../imgs/f397d2ec9457fd7cf08beced18be5a747a27c129.png">such that
+the cost to multiply the main chain more than the optimum. This is
+a contradiction.</p>
+<p>• Therefore the solutions to the sub problems give the optimal
+solution to the whole problem.</p>
+<p><b>Hence, maximizing the number of scalar multiplications
+problem exhibits optimal sub-structure.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Since the given problem exhibits optimal substructure, it can be
+solved by the following dynamic programming algorithm:</p>
+<p>MATRIX-CHAIN-ORDER (<i>p</i>)</p>
+<p>1 <i>n</i> = <i>p.</i><i>length-</i> 1</p>
+<p>2 let <i>m</i>[1..<i>n</i>,1..<i>n</i>] and
+<i>s</i>[1..<i>n</i>-1,1..<i>n</i>] be new tables</p>
+<p>3 <b>for</b> <i>i</i> = 1 <b>to</b> <i>n</i></p>
+<p>4 m[<i>i</i>, <i>i</i>]=0</p>
+<p>5 <b>for</b> <i>l</i> <b>=</b> 2 <b>to</b> <i>n</i> <b>//</b> l
+is the chain length</p>
+<p>6 <b>for</b> <i>i</i> = 1 <b>to</b> <i>n</i>-<i>l</i>+1</p>
+<p>7 <i>j</i> = <i>i</i> + <i>l-</i>1</p>
+<p>8 <i>m</i>[<i>i</i>, <i>j</i>]=-1</p>
+<p>9 <b>for</b> <i>k</i> = <i>i</i> <b>to</b> <i>j</i>-1</p>
+<p>10 <i>q</i> = <i>m</i>[<i>i</i>,<i>k</i>]+ <i>m</i>[<i>k</i>+1,
+<i>j</i>]+<i>p</i><sub>i</sub><sub>-</sub><sub>1</sub><i>p</i><sub>k</sub><i>p</i><sub>j</sub></p>
+<p>11 <b>if</b> <i>q</i> &gt; <i>m</i>[<i>i</i>,<i>j</i>]</p>
+<p>12 <i>m</i>[<i>i</i>, <i>j</i>]=<i>q</i></p>
+<p>13 <i>s</i>[<i>i</i>, <i>j</i>]=<i>k</i></p>
+<p>14 <b>return</b> <i>m</i> and <i>s</i></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Optimal Solution</b></p>
+<p>Consider the following sizes of the matrices<img src=
+"../imgs/145eb805ae820776bab86041821126db62ecfe26.png">, <img src=
+"../imgs/4d62d55b0d2f8fe9252ef086ca30b86f29d0bac1.png">, <img src=
+"../imgs/a67df67684179c43347a1ada4a01bcad4be620f3.png">, and
+<img src="../imgs/7c720ef910173475a4ffeb7d0ba4b18d67245d19.png">
+respectively</p>
+<p><img src=
+"../imgs/c884f9e62254e0727ae1c1dd880fc179e5599097.png"></p>
+<p>So,<img src=
+"../imgs/a7b6c0deaf0b652222a7d8fd35e13374589bda16.png"> here
+<img src=
+"../imgs/03c4c0bf68bd6d585cbeab92243dee488e3e3b97.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>From the dynamic programming technique,</p>
+<p><img src=
+"../imgs/a75568989283cd00fcab299dfaca0d9454c6b1fe.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/4319cc904c789f9f0b878f8594470a81a5baffbc.png"></p>
+<p><img src=
+"../imgs/796df2e97e4271b1d7ec633a64ef640ba0c54f90.png"></p>
+<p><img src=
+"../imgs/b0ff7e137fe2fb81b2b3257bff997b504e1124c3.png"></p>
+<p><img src=
+"../imgs/493c2bc49770b61e84018726e8cfa89bf58724cb.png"></p>
+<p><img src=
+"../imgs/ca4adc90efa90b223490375f5472228b0e5eac27.png"></p>
+<p><img src=
+"../imgs/c411225e1b3a4796d51c6017b793d59528f0b75c.png"></p>
+<p><img src=
+"../imgs/f09c890c46c4a3d4a1fbff5061aa2444d748f535.png"></p>
+<p><img src=
+"../imgs/919b2c0b449e6c9896cdbcecb62878f61a9b8cd6.png"></p>
+<p><img src=
+"../imgs/c296bf2ecb6bfb20ef20d1946224f065d8104611.png"></p>
+<p><img src=
+"../imgs/d7082d384e40d37d807ce4f5b482c20ce48055c5.png"></p>
+<p>From the dynamic programming technique,</p>
+<p>The optimal solution is <img src=
+"../imgs/24ac6477d5e9704603c5ff46cdcb35c8dc8b28ef.png"></p>
+<p>From the Professor Capulet’s equation,</p>
+<p><img src=
+"../imgs/31597696004b55092d3f6945edfe0cfc29987eef.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/4319cc904c789f9f0b878f8594470a81a5baffbc.png"></p>
+<p><img src=
+"../imgs/796df2e97e4271b1d7ec633a64ef640ba0c54f90.png"></p>
+<p><img src=
+"../imgs/b0ff7e137fe2fb81b2b3257bff997b504e1124c3.png"></p>
+<p><img src=
+"../imgs/493c2bc49770b61e84018726e8cfa89bf58724cb.png"></p>
+<p><img src=
+"../imgs/4287b3643e772adad6561311538896cf56038fa4.png"></p>
+<p><img src=
+"../imgs/1d82a37ea89de01ecc5e9cb0acc96d45416e7a0d.png"></p>
+<p><img src=
+"../imgs/fa3bd4de7ba4a8b325c0457325793e90d5d7cfea.png"></p>
+<p><img src=
+"../imgs/61bc75b29ae6722d54bc17260ec23917e8521d62.png"></p>
+<p><img src=
+"../imgs/4bca563c52e706525178b4ac4b0df530e2bbaab6.png"></p>
+<p><img src=
+"../imgs/7a860bd8a5cf35c533b5cebddeab137d8812c1e4.png"></p>
+<p>From the Professor Capulet’s technique,</p>
+<p>The optimal solution is <img src=
+"../imgs/54ec6827f9d2ff63181a4b9c5cb65961f44d0aaa.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Thus, the solution calculated using the Professor Capulet’s
+technique and the solution calculated using the dynamic programming
+is not identical.</p>
+<p>Therefore the solution calculated using the Professor Capulet’s
+technique is not optimal.</p>
+<p>Hence, the above problem is an instance of matrix chain
+multiplication problem. This problem yields a suboptimal solution
+when greedy technique is used.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The rod cutting problem:</b></p>
+<p>The rod cutting problem is violates the optimal substructure
+property if there is a limit <img src=
+"../imgs/ffad3bbab5deae2c7414c73ba5a0efd19671b73b.png"> on number
+of pieces of length i for <img src=
+"../imgs/fdeead9ffc2a2e446b89e6b5340cd924566d1907.png"></p>
+<p>Optimal substructure is a property which says that optimal
+solutions to a problem gives optimal solutions to related sub
+problems, which can be solved independently.</p>
+<p>If the number of pieces of a particular length that can be cut
+is limited, then the optimal -substructure property will be
+violated and dynamic programming approach would not apply. This is
+because, if the numbers of rods that can be cut of a particular
+length are limited, then the sub-problem which will involve two
+identical cuts would not have an optimal solution.</p>
+<p>Hence the parent problem to that sub problem in the optimal sub
+problem could not have an optimal solution. So the optimal
+substructure property would be violated.</p>
+<p>Example:</p>
+<p>If we take a rod of length 4, price distribution is as given
+below in the table:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><i>Length</i></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>Price</i></p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+</table>
+<p>Consider that at max user can have 1 cut of length 2.</p>
+<p>The optimal solution to this problem would depend on the optimal
+problem of the sub problems.</p>
+<p>So the optimal solution would be to cut the rod in 2+2 lengths
+using the optimal substructure property giving revenue of 10. But
+due to the restriction, the solution would be 2+1+1 revenue of 9,
+which is wrong.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Hence in case of restriction on the length <i>l</i><sub>i</sub>
+of the number of pieces, the optimal substructure property is not
+applicable in the rod cutting problem.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Currency conversion:</b></p>
+<p>Consider the following:</p>
+<p>Currency 1 = U.S Dollar, <i>r</i><sub>12</sub>=65,
+<i>r</i><sub>13</sub>=100</p>
+<p>Currency 2= Indian rupee, <i>r</i><sub>21</sub>=1/65,
+<i>r</i><sub>23</sub>=2</p>
+<p>Currency 3= Japanese Yen, <i>r</i><sub>31</sub>=0.01,
+<i>r</i><sub>32</sub>=1/2</p>
+<p>That is, 1 U.S dollar buys 65 Indian rupees, 1 Indian rupee buys
+2 Japanese yen, and 1 Japanese yen byes 0.01 U.S dollars.</p>
+<p>The conversion form Indian rupees to U.S dollars are as
+follows:</p>
+<p>• <b>Direct conversion:</b></p>
+<p>For 65 rupees one can get only 1U.S dollar.</p>
+<p>• <b>Making conversion in a series (rupees -&gt;
+Yens-&gt;dollars):</b></p>
+<p>For 65 Indian rupees one can get 130 Japanese Yens .</p>
+<p>For 130 Japanese Yens one can get 1.3 dollars</p>
+<p>Instead of one trade, a series of 2 trades makes profit of
+33.3%.</p>
+<p><b>Currency conversion problem:</b></p>
+<p>• Consider that there are <i>n</i> currencies numbered<img src=
+"../imgs/84431dd37101432d2b3b85e57ddf9fc01491e9bf.png">.</p>
+<p>• In the trade of currency exchange one can trade <i>n</i>
+currencies numbered <img src=
+"../imgs/84431dd37101432d2b3b85e57ddf9fc01491e9bf.png"> where he
+can start from 1 and ends up with <img src=
+"../imgs/2eee6e58b43280613ee968f0c0f8ab2a3b9acb25.png">currency.</p>
+<p>• If for each currency pair <i>i</i> and <i>j</i> the exchange
+rate is <img src=
+"../imgs/412fd1d0a52aa649b23cde05a5ab9919ddb15abe.png">, then with
+<i>d</i> units of the currency <i>i</i> can be converted
+into<img src=
+"../imgs/49fb367f1187edf8f629f46867641f7c77e8f1b6.png"> units of
+currency <i>j</i>.</p>
+<p>• <img src=
+"../imgs/1661625668d6c7234840c0515e90c0633d5d4621.png"> is the
+commission that is charged on making <i>k</i> trades in a
+sequence.</p>
+<p>• Since the sequence of trades may entail a commission, a best
+sequence of trades that produces more commission can be
+obtained.</p>
+<p><b>Case 1:</b></p>
+<p>Consider<img src=
+"../imgs/1661625668d6c7234840c0515e90c0633d5d4621.png">=0 for all
+<i>k</i> =1, 2, 3.., <i>n</i>. That is, there is no need to pay
+commission for making any number of trades. Then the finding best
+sequence of trade problem exhibits optimal sub structure.</p>
+<p>Consider the rates between any two currencies:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>n</i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><i>r</i> <sub>12</sub></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>r</i> <sub>1n</sub></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2</p>
+</td>
+<td>
+<p><i>r</i> <sub>21</sub></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td></td>
+<td></td>
+<td></td>
+<td>
+<p><i>r</i> <sub>2n</sub></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>n</i></p>
+</td>
+<td>
+<p><i>r</i> <sub>n1</sub></p>
+</td>
+<td>
+<p><i>r</i> <sub>n2</sub></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p><i>.</i></p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+<p>And <i>c</i><sub>k</sub> = 0 for making any number of
+trades.</p>
+<p>Consider the starting currency 1 and ending currency <i>n</i>.
+now for the sequence of exchange from currency 1 to currency
+<i>n</i> may contain one currency <i>k</i> such that
+<i>d.r</i><sub>1k</sub>.<i>r</i><sub>kn</sub> &gt;
+<i>d</i>.<i>r</i><sub>1n</sub>. There are <i>n</i>-2 choices for
+<i>k</i>. the trading sequence is 1-<i>k</i>-<i>n</i> .</p>
+<p>Now, the problem is sub-divided into two problems</p>
+<p>1. Trading from currency 1 to currency <i>k</i>: there may a
+currency <i>i</i> such that
+<i>d.r</i><sub>1i</sub>.<i>r</i><sub>ik</sub> &gt;
+<i>d</i>.<i>r</i><sub>1k</sub><sub>.</sub> There are <i>n</i>-3
+choices for <i>i</i>. The trading sequence is
+1-<i>i</i>-<i>n.</i></p>
+<p>2. Trading from currency <i>k</i> to currency <i>n</i>: again
+there may a currency <i>j</i> such that
+<i>d.r</i><sub>kj</sub>.<i>r</i><sub>jn</sub> &gt;
+<i>d</i>.<i>r</i><sub>kn</sub><sub>.</sub> There are <i>n</i>-3
+choices for <i>j.</i> The trading sequence is
+<i>k</i>-<i>j</i>-<i>n.</i></p>
+<p>Again the above problems produce sub problems.</p>
+<p>The solution to the sub problems is optimal and the solution to
+the main problem is obtained by combining the solution to the sub
+problems. The solution to the main problem is also optimal.</p>
+<p>Therefore the given problem exhibits optimal sub structure and
+can be solved recursively by dynamic programming.</p>
+<p><b>Case 2:</b></p>
+<p>If the commission rate (<i>c</i><sub>k</sub>) is an arbitrary
+random value, then the problem of finding the best sequence of
+trading does not exhibit an optimal sub-structure.</p>
+<p>Since the commission rate <i>c</i><sub>k</sub> is arbitrary,
+even though there exists a currency <i>k</i> such that
+<i>d.r</i><sub>1k</sub>.<i>r</i><sub>kn</sub> &gt;
+<i>d</i>.<i>r</i><sub>1n</sub>, the solution may not the
+optimal.</p>
+<p>There is no guarantee that the sub problems may give optimal
+solutions, because the commission rates are arbitrary values.</p>
+<p><b>Hence, if the commission rate is arbitrary, then the finding
+a best sequence of trades problem do not exhibit optimal
+substructure property.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,874 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 4.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the Master theorem provided in Theorem 4.1 of section
+4.5. This theorem is used to determine the asymptotic bound of
+recurrence<img src=
+"../imgs/8d24f7a3ed4580059f5d330d87462765a322ca43.png">.</p>
+<p>a.</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/c9e5f899350241894a539006165c9d12af40d5b1.png"></p>
+<p>For this recurrence,</p>
+<p><img src=
+"../imgs/a894541e6564e46af8c6e4bcf37e749fec113d3b.png"></p>
+<p>Therefore, <img src=
+"../imgs/9c5a92111e954fb472cca9a9ea4a27143fbf4a17.png"> becomes</p>
+<p><img src=
+"../imgs/84bc8d0c394cb622a78089fb11d534881691ceb7.png"></p>
+<p>Since,<img src=
+"../imgs/325ed89a69f7b0fa6bad3620fb0b9b4814a167fe.png">, where
+<img src=
+"../imgs/b47623df3207cca410310531984d799d9644a928.png">.</p>
+<p>Also,</p>
+<p><img src=
+"../imgs/f03d29f8e06714e225cd0f08988cbfa4f1b0a232.png"></p>
+<p>Now solve the above equation to find the value of <img src=
+"../imgs/446206b88bd768266a4126280bc88739f7498497.png">.</p>
+<p><img src=
+"../imgs/c8802888b55a69c9710ba12fed3e18788d7c15a8.png"></p>
+<p>So, <img src=
+"../imgs/e0077d8a4fa0f494b8722ef06896153175b852df.png"> and
+<img src=
+"../imgs/24d498f45d648008e2691385112fa69f48844a09.png">.</p>
+<p>Therefore, Case 3 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, solution becomes <img src=
+"../imgs/aac0b7a9f9aa6c0749e69110c5e9d5db81d21a45.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/e99a5702a0607589a2fc8bc692b3c1f3c4718d81.png"></p>
+<p>For this recurrence,</p>
+<p><img src=
+"../imgs/c972c2eb2a5755be99ed5377eb26048b3d4e3519.png"></p>
+<p>Therefore, <img src=
+"../imgs/9c5a92111e954fb472cca9a9ea4a27143fbf4a17.png"> becomes</p>
+<p><img src=
+"../imgs/bd4d35288d04d8fc2cec6ed04fc894f018d421c3.png"></p>
+<p>Since, <img src=
+"../imgs/71679a044493d668aa9a8cf963a833a46cd95408.png">, where
+<img src=
+"../imgs/703e4c2df8425084d6255742887a3579f4469391.png"></p>
+<p>Also,</p>
+<p><img src=
+"../imgs/edfad5de7ffc1dd6a4a6cf6ab725c8a047cf09a3.png"></p>
+<p>Now solve the above equation to find the value of <img src=
+"../imgs/446206b88bd768266a4126280bc88739f7498497.png">.</p>
+<p><img src=
+"../imgs/bb4f469df8e5cfdcbbda3d41db4260abfcbc8f95.png"></p>
+<p>So, <img src=
+"../imgs/e0077d8a4fa0f494b8722ef06896153175b852df.png"> and
+<img src=
+"../imgs/24d498f45d648008e2691385112fa69f48844a09.png"></p>
+<p>Therefore, Case 3 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, solution becomes<img src=
+"../imgs/08a6673688766261ea2a947d5134d3c93ac9843f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c.</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/c16a47d6692d6abb48684401731cf86ac7eb836d.png"></p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/94f2250c5911241c54d9c113481cccd2a416d5e0.png"></p>
+<p>Therefore, <img src=
+"../imgs/9c5a92111e954fb472cca9a9ea4a27143fbf4a17.png"> becomes</p>
+<p><img src=
+"../imgs/a66912e62aa2d6e9310375e23c0259c000fab52c.png"></p>
+<p>Since, <img src=
+"../imgs/b589bebad84bac51093bbc33814ce1286c666a52.png">.</p>
+<p>Therefore, Case 2 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, solution becomes<img src=
+"../imgs/afc02e00c5dfbd65f1d429e62301e97c8c032dd8.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d.</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/1a7af60e8d6888edc757c0ef0c54ae3638d1c764.png"></p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/fd1fbaa71e5bbc30a05ef5ccf8df0fd764029812.png"></p>
+<p>Therefore, <img src=
+"../imgs/9c5a92111e954fb472cca9a9ea4a27143fbf4a17.png"> becomes
+<img src=
+"../imgs/8635eb5bbe2ee729aa595efc24872a2cb271b04d.png"></p>
+<p>The value of <img src=
+"../imgs/5976df0d93fcaee553f20a3e50579e488d1e55e8.png">lies in
+between 1 and 2.</p>
+<p>Since,<img src=
+"../imgs/fd60998481ae8384d500d77ec684468fd235976d.png">, where
+<img src=
+"../imgs/e1ba1fb5e34eddd7e1b909d9fa6ea408b6078896.png"></p>
+<p>Also,</p>
+<p><img src=
+"../imgs/de05ad5bcc548d6d979cd00280a420904b606ffa.png"></p>
+<p>Now solve the above equation to find the value of <img src=
+"../imgs/446206b88bd768266a4126280bc88739f7498497.png">.</p>
+<p><img src=
+"../imgs/21ae1d6f3571e3f9b38f3086c2c5338f63b37fe5.png"></p>
+<p>So, <img src=
+"../imgs/e0077d8a4fa0f494b8722ef06896153175b852df.png"> and
+<img src=
+"../imgs/24d498f45d648008e2691385112fa69f48844a09.png">.</p>
+<p>Therefore, Case 3 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, solution becomes<img src=
+"../imgs/7d5c06861b14de93eeb1af7be9f0202c7e083d4e.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>e.</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/56c9b9738f14ce51f13a1b1a5f535e96de01d3cf.png"></p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/872248cab1c99b162ec4f843b9ad918d27b45eab.png"></p>
+<p>Therefore, <img src=
+"../imgs/9c5a92111e954fb472cca9a9ea4a27143fbf4a17.png"> becomes
+<img src=
+"../imgs/56f909de09e22b78c45b9128b03d9ba808ee741d.png"></p>
+<p>The value of <img src=
+"../imgs/b83537d24933d4c7fca7289d30e28bae9889df97.png">lies in
+between 2 and 3</p>
+<p>Since,<img src=
+"../imgs/c60ca1488f3cc7b17ec45bcae7055c3dfaa481b8.png">, where
+<img src=
+"../imgs/e1ba1fb5e34eddd7e1b909d9fa6ea408b6078896.png">.</p>
+<p>Therefore, Case 1 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, solution becomes<img src=
+"../imgs/13d60d92b801a767013d646fece686e4a0b752c2.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>f.</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/76303afcd98e93b417af09bddd7d4f5dbd50f5fd.png"></p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/e3b27b0160fdcee22b3cf7747b09ab070ef57131.png"></p>
+</div>
+<hr>
+<div class="answer">Therefore, <img src=
+"../imgs/9c5a92111e954fb472cca9a9ea4a27143fbf4a17.png"> becomes
+<p><img src=
+"../imgs/068435d79250a821a4b13c1713f7c83b31305b9e.png"></p>
+<p>Since,<img src=
+"../imgs/bef484265631b7905820becaf4af42f3b1a0a92c.png">.</p>
+<p>Therefore, Case 2 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, solution becomes<img src=
+"../imgs/19ee85bea4a346f40bebfcc38246b7a73e528ce7.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>g.</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/fe06bcf766192d8ecad2f67659709ff427925e28.png"></p>
+<p>The above recurrence can be evaluated by using the substitution
+method. On applying the substitution method, the recurrence
+relation is given as,</p>
+<p><img src=
+"../imgs/c836f12e6dd16f3dcf11fd0a8ff984b90cef540f.png"></p>
+<p>In general, the above recurrence leads to,</p>
+<p><img src=
+"../imgs/c6a95695f2051d2edfedd8abaef72307865ca613.png"></p>
+<p>Now, let</p>
+<p><img src=
+"../imgs/041c16be9a923bfe2090f37dcf5060d38eb21ebc.png"></p>
+<p>So, the above equation can be rewritten as,</p>
+<p><img src=
+"../imgs/32cc849e4944421d0943d26a8d73b7eb379cb244.png"></p>
+<p>From the above solution, the series is the sum of squares of
+<img src=
+"../imgs/e3d50243b18b92d94818a1f29d1a959685b28bab.png">natural even
+numbers.</p>
+<p>Therefore, the sum of squares of series of first <img src=
+"../imgs/e3d50243b18b92d94818a1f29d1a959685b28bab.png">even natural
+numbers is,</p>
+<p><img src=
+"../imgs/602a5f2c0071d5b851531914be98c756d6928cc8.png"></p>
+<p>So, the above obtained <img src=
+"../imgs/8d24f7a3ed4580059f5d330d87462765a322ca43.png">expression
+is given as,</p>
+<p><img src=
+"../imgs/6116b0d6c623736e334393ca0781918c17be4513.png"></p>
+<p>From the above it is clear that <img src=
+"../imgs/c34a923f55f520d776dd0ba9739f6398c643881c.png">.</p>
+<p>Therefore, by using the substitution method the asymptotic
+notation is obtained as Hence, solution becomes<img src=
+"../imgs/08143ba2d1a667b119ff016ea34f7068f2362b7e.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Binary search algorithm searches an element by comparing it with
+middle element. If element to be searched is equals to the middle
+element then it returns position where the element is found.</p>
+<p>If element to be searched is greater than middle element then
+lower bound becomes <img src=
+"../imgs/778e6dc2bb9dfe657bb9f3966b461ca4ff35d322.png"> and upper
+bound remains same.</p>
+<p>If element to be searched is smaller than middle element then
+upper bound becomes <img src=
+"../imgs/229ff9468fb8f3eafcad55ed2be18b1d071ad042.png"> and lower
+bound remains same. Search continues until the element.</p>
+<p><b>a.</b></p>
+<p><b>1. When an array is passed by a pointer to binary search
+function:</b></p>
+<p>Recurrence for binary search when array is passed as a pointer
+is,</p>
+<p><img src=
+"../imgs/0b678252c60d31de8b46d857bfd0ce80c0d606a7.png"></p>
+<p>Use master theorem to solve the above recurrence.</p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/b923632d3e973b8fc37e37ae5db81db90b16d569.png"></p>
+<p>Therefore, <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png"> becomes</p>
+<p><img src=
+"../imgs/531a4afe2d4a7609828ef09ce5621b6b65ac8e2e.png"></p>
+<p>Since, <img src=
+"../imgs/d6b1573ba34cf03786c2da894008c5575e2d4c72.png"></p>
+<p>Therefore Case 2 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, the solution is<img src=
+"../imgs/7e804b8bc05d255405402556ce68769b835de225.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2. When whole array is passed by copying, instead of pointer,
+to binary search function:</b></p>
+<p>Recurrence for binary search when array is passed is,</p>
+<p><img src=
+"../imgs/943711c60ed5eb19884d77db07746813215eda7f.png"></p>
+<p><img src=
+"../imgs/aa5ac3c6d338b528c92cddded3ad2d46876171e1.png"></p>
+<p>Hence, the solution is<img src=
+"../imgs/2a7207f7177e33af273d162c916e58668f59adfb.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>3. When an array is passed by copying such that only the sub
+range of size n can be accessed by the binary search
+function:</b></p>
+<p>Recurrence for binary search when array is passed sub range
+is,</p>
+<p><img src=
+"../imgs/6f203433c6e7a3f45dfa7c0da5ee99e4492b2707.png"></p>
+<p>Use master theorem to solve above recurrence.</p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/99b818793f036342771e9a4139b8719850b401fd.png"></p>
+<p>Therefore, <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png"> becomes</p>
+<p><img src=
+"../imgs/05f8aa44dea8deb5788c6c1966bf176dfc729d87.png"></p>
+<p>Since, <img src=
+"../imgs/7f1183a634ab56f11cce31eb7a6c19191ecdc786.png"> where
+<img src=
+"../imgs/b27fad2575dd05dec4e7598e53068739a5faa77f.png"></p>
+<p>Also,</p>
+<p><img src=
+"../imgs/cf6d687da1b742413f69104021d8715345414f6e.png">,
+Where<img src=
+"../imgs/1ead3d19f410b88c32147409c62d0560a29977bb.png"></p>
+<p>Therefore Case 3 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, the solution is<img src=
+"../imgs/22bf4cd73efdb93f8089ebdb25ca8e77534bdd23.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b.</b></p>
+<p>Merge sort is a divide and conquer algorithm. It divides the
+unsorted list into <i>n</i> sub lists. Each list contains one
+element. Then it merges these sub lists to generate a single sorted
+array.</p>
+<p><b>1. When an array is passed by a pointer to merge sort
+function:</b></p>
+<p>Recurrence for merge sort when pointer is passed to merge sort
+function is,</p>
+<p><img src=
+"../imgs/bfa20f9385f2c3de4ec9a8d60cd16a7ba7c2eb9f.png"></p>
+<p>Use master theorem to solve above recurrence.</p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/6fa746675d13c3e23072c00ec5ae63253a200468.png"></p>
+</div>
+<hr>
+<div class="answer">Therefore, <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png"> becomes
+<p><img src=
+"../imgs/8c5f637e61e1e758c6cd73395f017870bd288c21.png"></p>
+<p>Since, <img src=
+"../imgs/6fe3da778c39edbeccb82b7508ce25be2bfe4dc0.png"></p>
+<p>Therefore Case 2 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, the solution is<img src=
+"../imgs/52b38ce7fb2a1d998e0eddc5086fcd433882b5f7.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2. When whole array is passed by copying, instead of pointer,
+to merge sort function:</b></p>
+<p>Recurrence when array is passed by copying in merge sort is,</p>
+<p><img src=
+"../imgs/790170891636098e80ee27c3b6dfee4cb4552257.png"></p>
+<p><img src=
+"../imgs/9897c597924b94f0cc21891e2b000bd15a6506e9.png"></p>
+<p><img src=
+"../imgs/b53c15a3a212da14e91b400531d2b147fd6e9b9a.png"></p>
+<p>Hence, the solution is<img src=
+"../imgs/25dd34289d3d2d38ef386f06c0b235a76422797b.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>3. When an array is passed by copying such that only the sub
+range of size n can be accessed by merge sort function:</b></p>
+<p>Recurrence when array is passed by copying in merge sort is,</p>
+<p><img src=
+"../imgs/ae7fbb35515a6461f02f21ee6ae79bd919e31f9e.png"></p>
+<p>Use master theorem to solve above recurrence.</p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/8a996e806e4ae89bb825f575ba452e5613f9b418.png"></p>
+<p>Therefore, <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png"> becomes</p>
+<p><img src=
+"../imgs/8c5f637e61e1e758c6cd73395f017870bd288c21.png"></p>
+<p>Since, <img src=
+"../imgs/6fe3da778c39edbeccb82b7508ce25be2bfe4dc0.png"></p>
+<p>Therefore Case 2 of master theorem can be applied on this
+recurrence.</p>
+<p>Hence, the solution is<img src=
+"../imgs/2a7207f7177e33af273d162c916e58668f59adfb.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the Master theorem that can be used to determine the
+asymptotic bound of recurrence<img src=
+"../imgs/78c04fb03cc7f8eb5fcecefe57937b2459c8e9d4.png">. Also
+consider substitution method also to determine asymptotic bounds on
+the recurrence <i>T</i>(<i>n</i>).</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/200184dcc88b76fe057a5d46ed877ec561edb88a.png"></p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/3305b5d902b1cb94c780d9f9a5aab479e310d901.png"></p>
+<p>Therefore, <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png">
+becomes<img src=
+"../imgs/bd56437f16a3baef1647e216ed2ead2689768788.png">.</p>
+<p>The value of <img src=
+"../imgs/033f10140299d3800b8f97736be96312c6757657.png"> lies in
+between 1 and 2. That is 1.261</p>
+<p>Since,<img src=
+"../imgs/5bd9799fbdacfa50937902d2010ae989296e0f4a.png">, where
+<img src=
+"../imgs/154a592e92ca2604592b892b4ac5468940e8e0eb.png"></p>
+<p>Therefore, by the case 1 of master theorem, the solution for the
+given recurrence is <img src=
+"../imgs/8feee1feaf0c4e9deeef667cfd5aeb93d552c08e.png">can be
+applied on this recurrence.</p>
+<p><b>Hence, solution is</b> <b><img src=
+"../imgs/c1a81bef2f7ff8ed4290c141f2c1ad1326722588.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/a143dd2011721cd95f97c56a9ea989e337758e23.png"></p>
+<p>Substitute <i>T(n)</i> values recursively, in the above
+recurrence relation.</p>
+<p><img src=
+"../imgs/1ab5b5ba769347b6d2ecc8b7c1ccaee56d4a0b51.png"></p>
+<p>The above series is in harmonic progression series</p>
+<p><img src=
+"../imgs/5b6eec3e9a1144d7558b62bbb4800509eaa8c58b.png"></p>
+<p>Therefore, there sum can be written as</p>
+<p><img src=
+"../imgs/55f3696818b673631930ca429e728b57ab105ec1.png"></p>
+<p><b>Hence, solution is</b> <b><img src=
+"../imgs/fd6d6eeb2a06fbf6f2d0e5f41a1e647318921ee6.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/c3b3224f23bd4c481ee6bc72e13fa23d7e0b4e9b.png"></p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/93038cd298abf32959fe811f624d2fb7d75fddc3.png"></p>
+<p>Therefore, <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png"> becomes
+<img src=
+"../imgs/39953a16a38fa01a3dfea238705efe0fcc46eba3.png"></p>
+<p>Since,<img src=
+"../imgs/422b6d9164e81fa45fc4e4db3cb9e846c906f117.png">, where
+<img src=
+"../imgs/f27ae55d917115329aa4a213ceae6aa1d3f42925.png"></p>
+<p>Also,</p>
+<p><img src="../imgs/a37ae9a094de81da5af8752745813395ac0b194a.png">
+Therefore, by case 3 of master theorem the solution for the given
+recurrence is <img src=
+"../imgs/b3e2a56715d64b5071b50038bfbc73ab64fd9d5c.png">=<img src=
+"../imgs/198ec55d5875f6628b618f3f8237d29321b4e365.png">.</p>
+<p>Hence, solution becomes<img src=
+"../imgs/70fe0f5fb0ce143d2a6356a144d5c509c55f5921.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/3998a46cfcfcd2f1de608f33c62e6848c3238b39.png"></p>
+<p>For this recurrence ignore the constant -2.</p>
+<p><img src=
+"../imgs/0e4a54949b012cc418f4bbc091405c6dfd1e6453.png"></p>
+<p>Therefore, <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png">
+becomes<img src=
+"../imgs/166e638c15e2e9356e5e0eeea0077fa7847d97e4.png">.</p>
+</div>
+<hr>
+<div class="answer">Since,<img src=
+"../imgs/fcc15b65b2503f4fed24b164a17540d7db150903.png">, by case 2
+of master theorem the solution for the given recurrence is
+<img src="../imgs/f95e55d3fa6bd53f484ff1c50368488033c5aba4.png">.
+<p><b>Hence, solution is</b> <b><img src=
+"../imgs/baa3a578c2ae101b187afd907cd205ad6353a320.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/cb2f55ead9a4309f8bd9bc6bb38da9fb4a51b7a0.png"></p>
+<p>Substitute <i>T(n)</i> values recursively, in the above
+recurrence relation.</p>
+<p><img src=
+"../imgs/14a9687c0a99d76719bacf39304458bf94c25104.png"></p>
+<p>The above series is harmonic progression series</p>
+<p><img src=
+"../imgs/5b6eec3e9a1144d7558b62bbb4800509eaa8c58b.png"></p>
+<p>Therefore, there sum can be written as</p>
+<p><img src=
+"../imgs/55f3696818b673631930ca429e728b57ab105ec1.png"></p>
+<p>Hence, solution becomes<img src=
+"../imgs/fd6d6eeb2a06fbf6f2d0e5f41a1e647318921ee6.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/d39b67871bcce7a8eb472e7a3fe85346b26d406a.png"></p>
+<p>Initially <i>n</i> is divided into<img src=
+"../imgs/59e6c8607e3a17390b7ea14944bfeac90399f860.png">. Further
+<img src="../imgs/118ba9a54bf02cd374425c917a664a14a2f2c540.png">is
+divided into<img src=
+"../imgs/d7999d950051df79ee94d47e056ba7bf73dbdbd5.png">, also
+<img src="../imgs/d831747308d2fd8298df00acbdfe44213a9faf25.png">is
+further divided into <img src=
+"../imgs/cc9abb33cd4202f9e4bffccdb3e9d872a30b1040.png"> and so
+on.</p>
+<p>From above it, can be concluded that <img src=
+"../imgs/d9510a216b69c52dd0aaa0e55e4a595da67ebc98.png"></p>
+<p>Substitution method is used in following evaluation to show that
+<img src=
+"../imgs/e09589b37fcab5b11c3f6e98c7dc3282b2c8e1f4.png"></p>
+<p><img src=
+"../imgs/1b133d323b6528c039330481331dadf93cca23f8.png"></p>
+<p><img src=
+"../imgs/c48fd95844ad68db9f1d6a82cf1662b0453f2ac4.png"></p>
+<p>Hence, <img src=
+"../imgs/e09589b37fcab5b11c3f6e98c7dc3282b2c8e1f4.png"></p>
+<p><img src=
+"../imgs/2557623684ab36bf701be87f9b26ca0e3c5f2324.png"></p>
+<p>Hence, <img src=
+"../imgs/36b72cc59df2186435ba338a134f09f7f6ca5905.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/8cdf0c8c33ac55ac1dec833a6903792bd4f2a45b.png"></p>
+<p>Substitute <i>T(n)</i> values recursively, in the above
+recurrence relation.</p>
+<p><img src=
+"../imgs/c71f637b4dcb1849a1b3067f8077f60810996916.png"></p>
+<p><img src=
+"../imgs/2d5acfa407dc9092b2f7a9d8f3546f71270930da.png"></p>
+<p>Hence, solution becomes<img src=
+"../imgs/fd54a4479b2246591d41da12049e602ce0e52c67.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/6c6340e445ac84a3c00e4995b94e78a52e3c03fe.png"></p>
+<p>Substitute <i>T(n)</i> values recursively, in the above
+recurrence relation.</p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/80a8d0cdd346f79bb86c2330a572e98ab3617123.png">
+<p><img src=
+"../imgs/2d359b96648f6e3cffb410ce316a390f573ec9d5.png"></p>
+<p>Hence, solution becomes<img src=
+"../imgs/baa3a578c2ae101b187afd907cd205ad6353a320.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/23021dd033fed204087a9e2d43b2777b8ee4b352.png"></p>
+<p>This can be evaluate as</p>
+<p><img src=
+"../imgs/423a973d2364f432942429f85285719d6473e9af.png"></p>
+<p><img src=
+"../imgs/4c3360081e5521edb36514a94cba0f24922975a9.png"></p>
+<p>Hence, solution becomes<img src=
+"../imgs/64695ff080fa7f70f2631cfa454936932a85e13b.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/3916a390ab917858c839feb9481fa195d2a7f3c1.png"></p>
+<p>Apply substitution method on the above recurrence relation.</p>
+<p>Guess <i>T</i>(<i>n</i>) = <img src=
+"../imgs/f7c9bea58228f146e5c62ddcdaf552b538dd83a2.png">.</p>
+<p>Thus, it is enough to prove that, <i>T</i>(<i>n</i>) <img src=
+"../imgs/85fc238ebc5be61ae632c36f3ad8ec595d986ce1.png"> <img src=
+"../imgs/e3b88e050265da4b83047fa6b2aea8143186a67c.png">.</p>
+<p>Assume recurrence <img src=
+"../imgs/37b29e04bad9f59d583245b028587471530914f4.png"></p>
+<p>Substituting <img src=
+"../imgs/00d1ee98adf4221e59db7c5c697083352159fad5.png">value into
+the recurrence yields</p>
+<p><img src=
+"../imgs/2929d36a536b12c6f433c4566d06fa3657f8b3a5.png"></p>
+<p>Hence, solution becomes<img src=
+"../imgs/fd6d6eeb2a06fbf6f2d0e5f41a1e647318921ee6.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The properties of Fibonacci numbers are depicted by the
+following recurrence:</p>
+<p><img src=
+"../imgs/a2949472908a1e464c86a9aa597125e6e87c6ad8.png"></p>
+<p>The generating function<img src=
+"../imgs/bf5cc773184d955c82fda447f6a921916df05ec3.png"> is
+mathematically defined as follows:</p>
+<p><img src=
+"../imgs/9d289787fef45d860f9c9543653c08af3a6168f9.png"></p>
+<p>Here, <img src=
+"../imgs/434ecc6758290053acd1a4bde94d320a6066517f.png"> is the
+i<sup>th</sup> Fibonacci number.</p>
+</div>
+<hr>
+<div class="answer">
+<p>a.</p>
+<p>Consider the following expression:</p>
+<p><img src=
+"../imgs/d96a5bb416644bc571f000a4e7098909655774fc.png"></p>
+<p><img src=
+"../imgs/a75f0024dd4da9c346e0cc0408429d53b4c8ecf4.png"></p>
+<p><img src=
+"../imgs/b410dede41c75022af9249a86f1b841d73d7e93e.png"></p>
+<p>Hence, the expression <img src=
+"../imgs/cea9873cd64bf7ff28a646161d68e60e94e59b4e.png"> is
+proved.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>Consider the following equation:</p>
+<p><img src=
+"../imgs/aa24c7f7c2209d676ce10d9b00cbc9f6bc0c4cfe.png"></p>
+<p><img src=
+"../imgs/1a9cbdfe42897c51d46fc57479780f100d47b175.png"></p>
+</div>
+<hr>
+<div class="answer">Hence, the expression <img src=
+"../imgs/5b4e1656ed0ffaf29390a1dfcb79fb840ed357e9.png"> is
+proved.</div>
+<hr>
+<div class="answer">
+<p>c.</p>
+<p>Consider the following function:</p>
+<p><img src=
+"../imgs/b13e640d03d0584edca879d0136db2601b58d884.png"></p>
+<p>Recall the generating function <i>F</i> as follows:</p>
+<p><img src=
+"../imgs/cde7a8d3a2d025faadf23752e7ea5dbc714ac139.png"></p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/7a8ec3c9560c29eabf139feb35c8a45b0c02c7a0.png"></p>
+<p>Hence, the expression <img src=
+"../imgs/b13e640d03d0584edca879d0136db2601b58d884.png"> is
+proved.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d.</p>
+<p>Consider the following expression:</p>
+<p><img src=
+"../imgs/c89200d9d207e9f6a8373d7118c812ba9372518c.png"></p>
+<p>The absolute value of the second base is <img src=
+"../imgs/65c7358ec02ff712c6ae6f1a986c9fe1bcaadc9b.png">.</p>
+<p>Hence, <img src=
+"../imgs/9855d8a85fa8ba9db2048bb52ef503ad59cbab31.png"> for all
+<i>i</i>.</p>
+<p>From (c), use the following and proceed as follows:</p>
+<p><img src=
+"../imgs/8a35d5d65df6239ba2cbcbb3d9dd8cd502d7a9a4.png"></p>
+<p>Here, the second term is less than 1/2 in absolute value.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider there are <i>n</i> chips which have capability to check
+the other chip. The professor’s jig can check only 2 chips at a
+time. A good chip always provides the accurate result whereas the
+bad chip result is not trustable.</p>
+<p>• Suppose, there are <i>k</i> good chips which always provide
+the accurate result. Therefore, there are<img src=
+"../imgs/73bf707f30953087986c08944ca357bb1d2e057a.png">bad chips
+which provide inaccurate result.</p>
+<p>• As it is also provided that number of bad chips are greater
+than number of good chips.</p>
+<p><img src=
+"../imgs/9dae73b89d8d69e783520efeb52403e6aa073dab.png"></p>
+<p>• When bad chips are loaded with good chips in jig, then the bad
+chips declare themselves as good chips and say other chips are bad.
+Similarly, the good chips declare themselves as good chips and say
+other chips are bad.</p>
+<p>• The conclusion will always state that <b>at-least one is
+bad</b> and thus the professor may not conclude which chip is good
+and which chip is bad.</p>
+<p><b>Therefore no strategy based on pairwise test is useful to
+determine which chip is good, if the set of chips contains bad
+chips more than half of size.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Consider the following steps to reduce the number of chips to
+half the size:</b></p>
+<p>• First divide the <i>n</i> chips into two groups.</p>
+<p>• Now, take two chips, one from each group, and apply pairwise
+test.</p>
+<p>• Select chips when conclusion is <b>both are good, or both are
+bad.</b></p>
+<p>• Remove all the pairs which conclude <b>at least one is
+bad</b>. All these pairs contain one bad chip and one good chip.
+That is, when removing this type of pair, one good chip and a bad
+chip is removed.</p>
+<p>• So after testing all pairs, the number of reaming chips is one
+of nearly half the size.</p>
+<p>• Since previously, equal number of bad chips and good chips are
+removed, for the remaining <i>n/2</i> chips, the statement ‘more
+than <i>n</i>/2 of the chips are good’, still holds.</p>
+<p>• So, after removing these chips, user will have <i>n/2</i>
+chips with good chips more than half.</p>
+<p>• Repeat the above steps until only a good chip is left. Each
+iteration takes <img src=
+"../imgs/b91f0d971bfdefa593824f66de55315adb409a34.png">comparisons
+and makes the size of the remaining chips to half.</p>
+<p><b>Hence, only</b> <b><img src=
+"../imgs/b91f0d971bfdefa593824f66de55315adb409a34.png"></b>
+<b>comparisons are required to reduce the number chips to
+half.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>• In pairwise test at first <img src=
+"../imgs/118ba9a54bf02cd374425c917a664a14a2f2c540.png">comparison
+are performed to compare <i>n</i> chip. After that, <img src=
+"../imgs/d831747308d2fd8298df00acbdfe44213a9faf25.png">comparisons
+are made to compare <img src=
+"../imgs/118ba9a54bf02cd374425c917a664a14a2f2c540.png"> chip. The
+comparison goes on till only one chip is left.</p>
+<p>• Therefore the recurrence relation becomes:</p>
+<p><img src=
+"../imgs/93dbee77aa3c38c0ebcb18d2b4bcdfce8701b1bb.png"></p>
+<p>For this recurrence</p>
+<p><img src=
+"../imgs/b5d93a8a3a5925433f0af0233e9070d3c2380517.png"></p>
+<p>Therefore, <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png"> becomes</p>
+<p><img src=
+"../imgs/531a4afe2d4a7609828ef09ce5621b6b65ac8e2e.png"></p>
+<p>• Since,<img src=
+"../imgs/59f33f06cbcd55ce4982350b092ac6d61bfbbff0.png">, where
+<img src=
+"../imgs/b27fad2575dd05dec4e7598e53068739a5faa77f.png">.</p>
+<p>Therefore, Case 3 of master theorem can be applied on this
+recurrence.</p>
+<p><b>Hence, solution becomes</b> <b><img src=
+"../imgs/22bf4cd73efdb93f8089ebdb25ca8e77534bdd23.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6P">
+                <a href="#problem-6P">6P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/2dad13a67c55ac536bf36151dcbcb1ade4530922.png">
+<hr>
+<img src="../imgs/8cd7c4751ce01f5aee387d1193650f97f76ad3ee.png">
+<hr>
+<img src="../imgs/57bcffe47d528c92446c5c56a4ce081516974855.png">
+<hr>
+<img src="../imgs/88a78cf1f4b7e3d252ab3a1ca2873f7303f35e41.png">
+<hr>
+<img src="../imgs/5b9a554d349cec725ea1dca0f67a05cc3c9c538f.png">
+<hr>
+<img src="../imgs/15cdd6e00288d88afa74a9561479a6effc5e3b1e.png">
+<hr>
+<img src="../imgs/00a2e1b464b094a613cffda632328fc673471624.png">
+<hr>
+<img src="../imgs/2497eb6ca98fb74fd0b599a317327335e65fed1b.png">
+<hr>
+<img src="../imgs/2f31e189e468c85cde0d646994443188f0aaccfe.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

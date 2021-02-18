@@ -1,0 +1,561 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 26.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Equivalent network on splitting an edge:</b></p>
+<p>Consider the flow network <img src=
+"../imgs/689bfe6475838fcc66e681c12b0eda87eee91bde.png"> , which
+contains an edge (<i>u, v</i>).</p>
+<p>Now, create a new network <img src=
+"../imgs/e619f6ebcaa4500019c4badb4dccf841f9fc0584.png">from graph
+<i>G</i> by splitting the edge (<i>u, v</i>) into two edges by
+adding a vertex <i>x</i> between vertex <i>u</i> and vertex
+<i>v</i> and assign<img src=
+"../imgs/8f77d83ec8ab4b724ee11bf3c50e4439787ebf1b.png">. .
+Where<img src=
+"../imgs/70955c4acfbdda95faa6df803d7ba6f7204a8fd4.png"> and
+<img src=
+"../imgs/d8642936753f3cb1b6155e2b17c8497f203c9c19.png">.</p>
+<p>Now, the resulting network <img src=
+"../imgs/53bbf3e0fc50474fe1bfcf2b2cd0470a225d205d.png"> is
+equivalent to the graph G, because the net flow at <i>u</i> and
+<i>v</i> in <img src=
+"../imgs/53bbf3e0fc50474fe1bfcf2b2cd0470a225d205d.png"> are the
+same as in <i>G.</i> That is, the outflow and inflow at <i>u</i>
+and <i>v</i> are same in <img src=
+"../imgs/53bbf3e0fc50474fe1bfcf2b2cd0470a225d205d.png"> and
+<i>G</i> , since the cost of the new edges is equal to the cost of
+(<i>u,v</i>).</p>
+<p>Therefore,the network <img src=
+"../imgs/53bbf3e0fc50474fe1bfcf2b2cd0470a225d205d.png">created from
+a graph <i>G</i> by splitting an edge in <i>G</i> <i>is</i>
+equivalent to the original network <i>G.</i></p>
+<p><b>Maximum flow:</b></p>
+<p>Since the flow at new edges is same as the flow at original edge
+(<i>u,v</i>), the maximum flow in <img src=
+"../imgs/53bbf3e0fc50474fe1bfcf2b2cd0470a225d205d.png"> does not
+change. That is, the maximum flow in <img src=
+"../imgs/53bbf3e0fc50474fe1bfcf2b2cd0470a225d205d.png"> is same as
+the maximum flow in <i>G.</i></p>
+<p>Hence, on forming a new network by splitting an edge in a
+network into the two edges with same capacity, the flow of the
+network remains same and the two networks are equivalent.</p>
+<p><b>Example:</b></p>
+<p><img src="../imgs/07559e6be282d2e748b813c7651cd130a5623026.png"
+alt="Picture 1"></p>
+<p>Fig: splitting of edge in flow network</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A flow in a graph G with vertices V, a source vertex <i>s,</i>
+and sink vertex <i>t</i> is defined as a real-valued function
+<img src=
+"../imgs/f858ccaa73dc10598e70955a4ae868ba9ed8d2d0.png">satisfies
+the given two properties:</p>
+<p><b>Capacity constraint</b>: For all <img src=
+"../imgs/fd8047f6bddcab8ee815209834a9bdcb38c05bac.png"> , require
+<img src="../imgs/9372e30291ebad897b48024b118ad1c2a08818bf.png">
+.</p>
+<p><b>Flow conservation</b>: For all<img src=
+"../imgs/f230a2d1911e0673ce7f4173bbb10540cd378e6d.png">,
+require<img src=
+"../imgs/7a71467219c9586530a35ca782f27b114e50ae3e.png">.</p>
+<p>For a graph G with multiple-source vertices <img src=
+"../imgs/a9c09d0fecc1206eca151b1302ea7cc47b45a6c9.png"> and
+multiple-sink vertices <img src=
+"../imgs/dd2daa08971cde51afacbe09b0c71296bc415856.png"> the flow
+properties to determine the maximum flow is shown below:</p>
+<p>1. The maximum flow value in the single source and single sink
+network is identical to the maximum flow value in the
+multiple-source and multiple-sink network.</p>
+<p>2. The maximum flow can be easily determined by converting the
+multiple-source and multiple-sink network into the single source
+and single sink network.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Let the source vertex be <img src=
+"../imgs/3297cb448f62aa3a13090e3523022dcaef289d9e.png"> and the
+sink vertex be <img src=
+"../imgs/44840249836fc8899caeae0799d73d5a325fb02f.png"> and satisfy
+the “flow in, flow out” constraint. Let the value of a flow in
+multiple source, multiple sink problem be <img src=
+"../imgs/601ae6a227f54f0f4fde322080686c8ec1fd5afa.png">and set
+<img src="../imgs/1dc2b83c11f6c15f073363de46d8d9be501a0cdc.png">.
+This will satisfy both the properties that is capacity constraint
+and flow conservation constraint. In single source, no edges come
+into s. So, flow is <img src=
+"../imgs/bc2d9f3d905d71a617374a2b9b9b4f6e0172eb8b.png"> and it is
+equivalent.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Flow network <img src=
+"../imgs/38b9c6e2abdc2b703a6b08be70698b705c62ac9c.png">is a network
+in which each edge has a non-negative capacity<img src=
+"../imgs/bfd5236f3702b0b2d59fc822eeaac1e47bc66267.png">.</p>
+<p>Let V<sub>1</sub> be the set of vertices. For every vertex
+<i>v</i> in network, there exist a path such that</p>
+<p><img src="../imgs/cc301c23a9285a9579fe39f2a5c28a4084d93853.png">
+…… (1)</p>
+<p>Where <i>s</i> is the source vertex and <i>t</i> is the sink
+vertex.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Assume <i>u</i> be the vertex for which equation (1) doesn’t
+hold. This implies that there is no flow exists between <i>u</i> to
+<i>v</i>.</p>
+<p>So,</p>
+<p><img src="../imgs/d6f7681213755ea8852f49d97dd6920ac8587584.png">
+…… (2)</p>
+<p>• Since for all<img src=
+"../imgs/fb9615305d6785f87ee832b30174413c32d4500a.png">, there
+exists a capacity constraint<img src=
+"../imgs/5fa5ef921e596b6d283483ab8b664ed92c8dd7f7.png"></p>
+<p>If <img src=
+"../imgs/88c0f09179c5c1da1a47223d0218fee6c2a360e1.png"> and
+<img src="../imgs/d6f7681213755ea8852f49d97dd6920ac8587584.png">
+then by flow conservation rule,</p>
+<p><img src=
+"../imgs/538aee12c2a478fbb0af0f912c34ca1c5185b520.png"></p>
+<p>• Since from equation (2) the value of <img src=
+"../imgs/7f817e28f9841f6557b03d9b982fc63ac104bc11.png">is 0,</p>
+<p>So,</p>
+<p><img src="../imgs/1b241be4d9f59b0e372a0ee1bbd295e715ec50ac.png">
+…… (3)</p>
+<p>Hence from equation (2) and (3) <img src=
+"../imgs/03753eed29124ad83658c24367d5c603a4688698.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>• Now Source is the vertex from which only flow is outgoing and
+sink is the vertex which only is receives the flow. Since after
+giving the flow <img src=
+"../imgs/03753eed29124ad83658c24367d5c603a4688698.png"> to
+<i>u</i>, the flow property doesn’t violate because the capacity
+for any edge is a non-negative integer and flow should always be
+less than or equal to the capacity which is true in this case.</p>
+<p><b>Hence there must exist a maximum flow</b> <i><b>f</b></i>
+<b>in G such that</b> <b><img src=
+"../imgs/03753eed29124ad83658c24367d5c603a4688698.png"></b> <b>for
+all vertices</b> <b><img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png"></b> <b>, if
+there is no path from source(</b> <i><b>s</b></i> <b>) to</b>
+<i><b>u</b></i> <b>and</b> <i><b>u</b></i> <b>to sink (</b>
+<i><b>t</b></i> <b>).</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Flow:</b> The flow between two vertices is a real valued
+function. It is denoted by<img src=
+"../imgs/9dbfafa1988e815c09fba1e53ac4d657fe8a6a5a.png">.</p>
+<p>The scalar flow product is denoted by <img src=
+"../imgs/ade19d5f43619f3c553689227a7f0b55a702f5d1.png">and defined
+as follows:</p>
+<p><img src=
+"../imgs/f3eb9ab2554edbc5fb4a5a007872e1df067d56fa.png"></p>
+<p><b>Convex Set:</b> Convex Set comprises a set of points in which
+the line formed by any two points always falls within the set. In
+other words, this means that the points in the set form a connected
+component.</p>
+<p>To prove that the flows in a network form a convex set, it is to
+be shown that if <img src=
+"../imgs/fc2408afdc6bdb8c0a8200f56b6dd905161aa455.png"> and
+<img src="../imgs/e5db80b86fa65de1bf0e10a9bd1891611c3ad60a.png">
+are flows, then <img src=
+"../imgs/a9aac52e98f3a295f117e8202d3d04abb881a481.png"> is also a
+flow for <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png"> in the
+range<img src=
+"../imgs/776d37181e8b3b290e2f63caa4f2a7540345dfd3.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The total flow between two vertices which is denoted by
+<img src="../imgs/9dbfafa1988e815c09fba1e53ac4d657fe8a6a5a.png">
+has to satisfy these three properties:</p>
+<p>• Capacity constraint</p>
+<p>• Skew symmetry</p>
+<p>• Flow conversation</p>
+<p>1. <b>Capacity Constraint:</b> It states that the flow in an
+edge cannot exceed its capacity.</p>
+<p><img src=
+"../imgs/3ee9cfdeeef13aeef57e7829298d7638ae50ed39.png"></p>
+<p>It is given that<img src=
+"../imgs/776d37181e8b3b290e2f63caa4f2a7540345dfd3.png">.</p>
+<p>So, it is inferred that<img src=
+"../imgs/73c9235c8ec2ab541a4dab6c5a4d466397b1dbab.png">.</p>
+<p>Thus, for any edge<img src=
+"../imgs/6032023e421537285735919294cbc6f3caa37c2a.png">, the
+following can be observed:</p>
+<p><img src=
+"../imgs/b6d70225c75a5b35c7087be763168d6667c8f811.png"></p>
+<p>Since, the flow in any edge<img src=
+"../imgs/76d5bacb07cbdb95703adc4b2ea37af6af93184c.png">cannot
+exceed its capacity<img src=
+"../imgs/111d8d6ca08baad0209cd477c4f6d4aa9c9c7b43.png">.</p>
+<p>So, both <img src=
+"../imgs/9ff13b979b4ac2b50d0db9428f27da2c1fb5366f.png">and
+<img src="../imgs/681323304cd7d3094c82f48c02d9931ea8b1e1bb.png"></p>
+<p>Thus, for this instance of the flow, it becomes the
+following:</p>
+<p><img src=
+"../imgs/6e5bcd253ce17b09c745a090ab7cb7dcbdb0dbc2.png"></p>
+<p>So, it is found that <img src=
+"../imgs/f5576bf2dc6cd4740e2f4db370c242a109b8cd1d.png"></p>
+<p><b>Hence, the capacity constraint property is satisfied.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>2. <b>Skew Symmetry:</b> It states that the flow in an edge is
+symmetric on both sides. That is the flow from one vertex to
+another is the same as the flow in the opposite direction.</p>
+<p>For<img src=
+"../imgs/6032023e421537285735919294cbc6f3caa37c2a.png">, <img src=
+"../imgs/f53b2b03845bee323fa52e824ed6524f82c0a512.png"></p>
+<p>So, for this instance of the flow, both <img src=
+"../imgs/530f775bce534f1b4de2209e233aa002bc4bbd8d.png"> and
+<img src="../imgs/82ca3c1a358a95d7f1efcd4f58f12a69f4cc74fd.png">
+must hold.</p>
+<p>Thus, for any edge<img src=
+"../imgs/4ce4bb3dd50054e19b0f52f3dc4d1bedcbd90b18.png">, the
+following is observed:</p>
+<p><img src=
+"../imgs/3af5b8ad801ba6ab6e8141a6519888866b332d42.png"></p>
+<p>From the above, it is seen that <img src=
+"../imgs/e99fd9180f389d0e9f9694390284fe4ef49710bd.png"> abides by
+the skew symmetry property.</p>
+<p><b>Thus, it is concluded that the skew symmetry property is
+satisfied.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>3. <b>Flow Conservation:</b> It states that except the source
+and the sink nodes which are denoted by <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">and
+<img src="../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">
+respectively, the net flow entering a node <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">is 0.</p>
+<p>For all <img src=
+"../imgs/4ce4bb3dd50054e19b0f52f3dc4d1bedcbd90b18.png">.</p>
+<p>Since, <img src=
+"../imgs/fc2408afdc6bdb8c0a8200f56b6dd905161aa455.png">and
+<img src="../imgs/e5db80b86fa65de1bf0e10a9bd1891611c3ad60a.png">are
+flows. They satisfy the flow conservation. So, the following is
+observed for these two flows:</p>
+<p><img src="../imgs/956a72c9a31f57ece49024620311d31c57cd9688.png">
+and <img src=
+"../imgs/befd2ae01da94a2e594b529de98e5de1067d87f1.png"> …………. Eqn.
+(1)</p>
+<p>Thus, for this instance of the flow, the net flow at a node
+except source and sink is the following:</p>
+<p><img src=
+"../imgs/ead78f3dc10fc84f33f6c0350b2e54e74bd5b835.png"></p>
+<p>Putting equation (1) in the above equation:</p>
+<p><img src=
+"../imgs/e8b7a76990c513e13a17cbe3eb10897392211772.png"></p>
+<p><b>Hence, the net flow in this case is also 0 and thus, property
+of flow conservation is satisfied.</b></p>
+<p>Since, it is shown in the previous steps that the flow <img src=
+"../imgs/a9aac52e98f3a295f117e8202d3d04abb881a481.png"> exhibits
+all the three properties namely, capacity constraint, skew symmetry
+and flow conservation.</p>
+<p><b>Hence, it is proved that if</b> <b><img src=
+"../imgs/fc2408afdc6bdb8c0a8200f56b6dd905161aa455.png"></b>
+<b>and</b> <b><img src=
+"../imgs/e5db80b86fa65de1bf0e10a9bd1891611c3ad60a.png"></b> <b>are
+flows, then</b> <b><img src=
+"../imgs/a9aac52e98f3a295f117e8202d3d04abb881a481.png"></b> <b>is
+also a flow for all</b> <b><img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png"></b> <b>in
+the range</b> <b><img src=
+"../imgs/776d37181e8b3b290e2f63caa4f2a7540345dfd3.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">and the
+max-flow problem over the taken graph with the specified
+capacities<img src=
+"../imgs/14eefe04405f51702510ff74d254401dbc3f3cd7.png">.</p>
+<p>Suppose, <i>R</i> represent the value of the <i>s</i> (source
+node) – <i>t</i> (terminal node) flow, where, <i>R</i> needs to be
+maximized.</p>
+<p>The representation of max-flow problem is given below:</p>
+<p><img src=
+"../imgs/f30718ccf3576fc4f6fb88f691928f92a09709ad.png"></p>
+<p>And,</p>
+<p><img src=
+"../imgs/69fac928fda4ec98446c068b3d7a323e6a48cf4b.png"></p>
+<p>And,</p>
+<p><img src=
+"../imgs/77fb1a3ef6e28de3b0be6e815d1cb2eef7eb14b6.png">, for
+<img src="../imgs/800d2071f9240c9980d22ede9defca02fce8d75c.png">and
+<img src="../imgs/8f363b97bb6ba045eee44da67fb9c54cf8cbd2d4.png">for
+<img src=
+"../imgs/23f88edbdfe841758e4260d6f8dd26e383df35cb.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>In this optimization, the decision variables which need to be
+calculated are the flow value <i>R</i> and the flow
+variables<img src=
+"../imgs/24ce16443058e4d1807b85e72add073e9fbca01b.png">, <img src=
+"../imgs/23f88edbdfe841758e4260d6f8dd26e383df35cb.png">.</p>
+<p>From, the above it is clearly seen that this is a linear program
+in the decision variables. Consider the following rewritten linear
+programming in the matrix form. Here, two vectors <img src=
+"../imgs/fb921ae4a5aebf9db266f153299b471fa602ae76.png">and
+<img src="../imgs/faafe4a56b367dddec29a8340838093f731ded47.png">are
+defined as follows:</p>
+<p><img src=
+"../imgs/99b2cee27b8b7211a5e71891adcf7998acc34013.png"></p>
+<p>And</p>
+<p><img src=
+"../imgs/3304f7df8254d019a6e979f13cd4378432bebae6.png"></p>
+<p>Therefore, the max-flow LP problem reduces to minimized<img src=
+"../imgs/45581dea2c13476cae05807c6b6a375f63d096a7.png"></p>
+<p><img src=
+"../imgs/e1e1c024317d78370696a861cd30e2ddf61914a3.png"></p>
+<p><img src=
+"../imgs/68fc7626d7342573f67bd9d99c7b98c7bf291bac.png">for
+<img src="../imgs/23f88edbdfe841758e4260d6f8dd26e383df35cb.png"></p>
+<p>Where, <i>x</i> denotes the length <img src=
+"../imgs/cb93c733768f0427018c143a781c893b636d8e9c.png">of the
+vector. The component, which is used first in the <i>x,</i> denotes
+the rate variable and the other remaining variables denotes the
+flows over the edges.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The dimension of the matrix <i>A</i> is<img src=
+"../imgs/a695e9451a255b577715a08135919b4f46bdce32.png">. Then, the
+matrix <i>A</i> can be represented as<img src=
+"../imgs/256106afe687081c1044940eb3abded569c28465.png">, where,
+<img src=
+"../imgs/339d8c996b61cd2d829f266978e430fbcd81fb7d.png">denotes the
+flow vector multiplication matrix and <img src=
+"../imgs/41fc40710db5e3ee6e320e3a869279af941f1894.png"> denotes the
+column vector multiplying the variable <i>R</i>.</p>
+<p>• The matrix <img src=
+"../imgs/339d8c996b61cd2d829f266978e430fbcd81fb7d.png">is the
+node-arc incidence matrix of the taken graph <i>G.</i> The column
+of the matrix corresponds to an edge<img src=
+"../imgs/23f88edbdfe841758e4260d6f8dd26e383df35cb.png">.</p>
+<p>• If<img src=
+"../imgs/0ac292eeb15a1d9340751fc1381d213f016d4691.png">, then
+<img src=
+"../imgs/dfb4342c1df9059b427bcf4cabf2a97bff454bec.png">and<img src=
+"../imgs/ebf88af85cfaf9fc300b43c5b4aa26c5a07d7877.png">. Similarly,
+<img src=
+"../imgs/ec826f2e495357b26b60555af89febcf22dbda11.png">and<img src=
+"../imgs/1ccca1fb5add9b3772895bc9b0f939cc9b763245.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8e910a4e3d3dbb643cbef72400d1fb91fa62c66a.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a flow network <i>G</i> = (<i>V, E</i>) in which
+vertices <i>v</i> of the network has capacity limit
+<i>l</i>(<i>v</i>) of the flow that can be flowed from the network
+in addition to edge capacity. Now we have to transform this network
+into <i>G’</i> = (<i>V’, E’</i>) without vertex capacities so that
+the flow in the network <i>G</i> is equivalent to the flow in the
+network <i>G’.</i></p>
+<p>Flow network is the network which shows the automation of
+assembly line in the company from the warehouse to the
+manufacturing location and vice versa. In this network the raw
+material passes through various stages to be a finished
+product.</p>
+<p>Maximum flow is the rate at which the data flows from the source
+vertex to the sink vertex or it is the rate of flow of data through
+the network.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For the graph <i>G</i> = (<i>V, E</i>) with flow limits
+<i>l</i>(<i>v</i>) for the vertex <i>v</i>, a method to find the
+graph <i>G'</i> without the flow limit on the vertices is: “the
+addition of one more vertex, such that the edge connecting the new
+and the old vertex is the limit of the vertex in the previous
+stage.”</p>
+<p><b>For example</b>: Consider graph <i>G</i></p>
+<p><img src="../imgs/99d5a708f26e0994a48f14431dd5f969ee8d6c58.png"
+alt="2254-26"></p>
+<p>In this graph the limit of the vertex <i>V</i> is 12 and we have
+to transform this vertex in the graph without vertex limit then we
+create a new vertex</p>
+<p>The resulting figure <i>G’</i> would be:</p>
+<p><img src="../imgs/7e966f09b128cd3b21e2a0052c032f5323768c46.png"
+alt="2254-26"></p>
+<p>Here for every vertex other than the source and sink, we will
+have to add another vertex that is (<i>V</i>-2) more vertices are
+added and with each new added vertex one edge associated so
+(<i>V-2</i>) new edges are also added.</p>
+<p>So the total number of vertices in the graph is:</p>
+<p><img src=
+"../imgs/0415b0c05bdd9c43bba866e42997a8d84d9f7fe9.png"></p>
+<p>Number of vertices <img src=
+"../imgs/9355027929168e1fad7f4974bf86ae14fec455f8.png"></p>
+<p>Number of edges =<img src=
+"../imgs/c6f41b820bd55ed93abbefc2bedf5156c11d7f1b.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Hence, after the conversion of a graph <i>G</i> with vertex
+capacities into the graph <i>G’</i> with no vertex capacities, the
+total number of vertices in graph <i>G’</i> are<img src=
+"../imgs/709d85bd28474b2c1a6ed42337f41c16844818ec.png">and total
+number of edges are<img src=
+"../imgs/c6f41b820bd55ed93abbefc2bedf5156c11d7f1b.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

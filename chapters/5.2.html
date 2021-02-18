@@ -1,0 +1,296 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 5.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/3b0c3b9857a5b27607a480688cbe4e3a859e55b9.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>According to the procedure HIRE-ASSISTANCE, <i>n</i> candidates
+are interviewed and assigned a ranks from 1 to <i>n</i>. The
+procedure hires a candidate <i>i</i> who is better than the
+candidate <i>j</i> interviewed before candidate <i>i</i>. (that is
+, the rank of candidate i is better than the rank of candidate j
+).</p>
+<p>Thus, the following conditions must be satisfied, in order to
+hire exactly twice in HIRE-ASSISTANCE.</p>
+<p>• A candidate 1 must acquire the rank<img src=
+"../imgs/3adc270f5af9d65c53ac4cd4d329b8f671aab914.png">. That is,
+no candidate up to candidate <i>i</i> is better than candidate 1
+and thus candidate 1 is hired. and</p>
+<p>• The candidate <i>i</i>+1 must acquire the rank <i>n</i>. That
+is, no candidate interviewed after candidate <i>i</i>+1 should not
+be better than candidate <i>i</i>+1<i>.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Finding probability to hire twice:</b></p>
+<p>• Suppose <img src=
+"../imgs/5ee77182de33c341b62731dc453b5cd41bba6dbb.png">denotes the
+event where candidate 1 obtained a rank <i>i.</i> Hence, the
+probability of event where candidate 1 got rank <i>i</i> or got
+hired will be as follows:</p>
+<p><img src=
+"../imgs/33e75c343530ceba1136214ac2d92ed92c6bcc94.png">(Probability
+for hiring one candidate out of <i>n</i> candidates), for any</p>
+<p>value of <i>i.</i></p>
+<p>• Suppose, the event where candidates 2, 3,…,<i>i</i> consists a
+rank lower than the rank obtained by the candidate 1, be
+<i>G</i>.</p>
+<p>• After the event <img src=
+"../imgs/5ee77182de33c341b62731dc453b5cd41bba6dbb.png">has
+occurred, the event <i>G</i> will also occur if the best candidate
+is interviewed first among the remaining <i><img src=
+"../imgs/7c5a2b2c2b12fb096c3065eddf1ebe528ff4379e.png"></i>
+candidates, whose ranks are <i><img src=
+"../imgs/a6f62126727341823f0e5e81e332fd24bd72815c.png"></i></p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/5729e1c9b302b76d023ac8812b2639ecf998b17c.png"></p>
+<p>• Suppose <i>A</i> denotes an event where HIRE-ASSISTANT hires
+exactly twice. The events <img src=
+"../imgs/799267f95100d28ba3564a5f7adb1dc2225d84f8.png">are known as
+disjoint, then</p>
+<p><img src=
+"../imgs/0b7b53bfe000ea894c2c02c18641cc717cdae7ab.png"></p>
+<p>Now, simplify the above using distributive property,</p>
+<p><img src=
+"../imgs/57f321b4ba232d29f7008407f50e30a453ee279c.png"></p>
+<p>• Now,</p>
+<p><img src="../imgs/086351fd65ed2456626b8a960473dec1227b7e69.png">
+……(1)</p>
+<p>Now, apply the following conditional probability formula to
+solve the</p>
+<p>above equation(1):</p>
+<p><img src=
+"../imgs/2ea37792b078c4fd35a5c7c66148c6c0b6f1e50e.png"></p>
+<p>• Now, replace the value of <img src=
+"../imgs/fa678895fd42e17ed20097415e6bf7d134b959c8.png">in the
+equation (1), then</p>
+<p><img src=
+"../imgs/941ae1c1b91431d81ac44eb3b0b58351615400ab.png"></p>
+<p>Where, <img src=
+"../imgs/6038bef6fee689df0028c8f56f161f329270b77a.png"> denotes the
+<i>n</i>th harmonic number.</p>
+<p><b>Therefore the probability in order to hire exactly twice by
+HIRE-ASSISTANT is</b> <b><img src=
+"../imgs/28fe897fbd73f52dfec81405cf407bf31a5faacd.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/e173e6f16f06135f90f38a954a78f29e08eb770f.png">
+<hr>
+<img src="../imgs/31afd757cddb3533d4e4b4d5ec80f7b17d9b0ee7.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Indirect random variable</b></p>
+<p>Suppose that the sample space is <i>S</i> = {1, 2,...,
+<i>n</i>}</p>
+<p>Let <i>X</i> be a random variable that equals the number of
+customers that get back their own hat and let <i>X</i><sub>i</sub>
+be the indicator random variable associated with the event in which
+the <i>i</i><sup>th</sup> customer gets back his own
+hat<i>.</i></p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/0026e5931cbe6970e31ba3a700c8cbbc9918f762.png"></p>
+<p>and</p>
+<i><img src=
+"../imgs/216304e1d01a8cf4ee85ab90ca733240f16b6ffa.png"></i></div>
+<hr>
+<div class="answer">As the hat-check person gives the hats back to
+the customers in a random order, each customer has a probability of
+1<i>/n</i> of getting back his own hat. Thus <img src=
+"../imgs/55cd9f819c46bb5c9bc8e4160df3d85963dcb1cf.png"></div>
+<hr>
+<div class="answer">
+<p>By using lemma “Given a sample space S and an event A in the
+sample space S, Let<img src=
+"../imgs/b71f7153a9f509f31a53f8d7fd80fd15862767d0.png">.
+Then<img src=
+"../imgs/e2f86e9e1110e2f53530cc7ecdcd3af6eb357ce1.png">.”</p>
+<p>Since <img src=
+"../imgs/3741c403e62fa355ebd96da36fb2ad9690195e25.png">, calculate
+<img src="../imgs/c7901e2492833cb468160c88255f8c7495598b83.png">as
+follows.</p>
+<p><img src=
+"../imgs/410f3795d4fe183d4836cbca571107c5dcc867e0.png"></p>
+<p>This means that on an average, one customer can get back his own
+hat.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Suppose an array of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> distinct
+numbers is denoted as<img src=
+"../imgs/63ac31b7fcabdad48e2ead765a3aa731e404c0f2.png">. Now,
+according to the definition of inversion, a pair<img src=
+"../imgs/a2c03ad8f8a9a634bcaef0e8f383564d21080a0e.png">is known as
+an inversion of<img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png">, if
+<img src=
+"../imgs/8b9ae480312858e05352d287d62aa387b3fee795.png">and<img src=
+"../imgs/7e1b23bf9839d721e9e465c30a4916170743ade9.png">.</p>
+<p>Suppose that <img src=
+"../imgs/b6e094fd7f4c14b3cd2e5a4c014d91d531a538c6.png"> be an
+indicator random variable for the event inversion. That is
+<img src="../imgs/9f3da73ddc264c6b501c273d6994b809b5bb60bd.png">
+for <img src=
+"../imgs/27044ab8d00ba29669891bc3406451021f21f927.png">.</p>
+<p>Consider the probability of getting first number is bigger than
+the second number in the set of given two numbers. In this case,
+the probability is given as,</p>
+<p><img src=
+"../imgs/0617918e050a13b56d84941b3422eb068566c416.png"></p>
+<p>Now, by Lemma 5.1</p>
+<p><img src=
+"../imgs/3e7ab1ee49e3429fb3002059b21842d1c5ebb88f.png"></p>
+<p>Here,<img src=
+"../imgs/3e7ab1ee49e3429fb3002059b21842d1c5ebb88f.png">, because
+<img src="../imgs/7e1b23bf9839d721e9e465c30a4916170743ade9.png">or
+<img src=
+"../imgs/99bbf1cb4e6694e2e3a10112bdc9b46ab6eece11.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Computing expected number of inversions of an array of</b>
+<i><b>n</b></i> <b>distinct numbers:</b></p>
+<p>• Suppose that the random variable <img src=
+"../imgs/546b0670cd50c6a36a407729daade79e1b984a47.png"> denotes the
+total number of inverted pairs in the array.</p>
+<p>Thus ,</p>
+<p><img src="../imgs/2fc8d046bb7c21e857d3e6e5843f571fb07c15ff.png">
+……(1)</p>
+<p>• Since we require expected number of inversion, apply the
+expectation of the both side of equation (1).</p>
+<p><img src=
+"../imgs/7d4e4f1e66c61cee640f6d99794be6b1b3128e6c.png"></p>
+<p>Now, apply the linearity of expectation</p>
+<p><img src="../imgs/1f80f530847f99775ca60d268b413bed5bd79609.png">
+……(2)</p>
+<p>• Now, replace the value of<img src=
+"../imgs/3e7ab1ee49e3429fb3002059b21842d1c5ebb88f.png"> in equation
+(2),</p>
+<p><img src=
+"../imgs/4a7069fefb953317febf6d9783afa5554865a1d0.png"></p>
+<p>• Thus,</p>
+<p><img src=
+"../imgs/b514ba3ca83aa6d53b9974f97be34fe384f1ab99.png"></p>
+<p>Hence, from the above, <b>the expected number of inverted pair
+in an array of n distinct numbers is</b> <img src=
+"../imgs/9106c418aa46d258437a7d6c53571b3ba428d1b2.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

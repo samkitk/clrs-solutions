@@ -1,0 +1,733 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 11.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Inserting elements into Hash table</b></p>
+<p>Given keys are 10, 22, 31, 4, 15, 28, 17, 88, and 59</p>
+<p>Length of the Hash table, m = 11</p>
+<p>Auxiliary hash function <img src=
+"../imgs/ee82634ef35caf5e4846e374def6bcc1b1f67237.png"></p>
+<p><b>Linear probing :</b></p>
+<p>The hash function for linear probing<img src=
+"../imgs/ca6a70d186b328a4733eca10f2248e8042eaab86.png"> . Where,
+<img src=
+"../imgs/ee82634ef35caf5e4846e374def6bcc1b1f67237.png"></p>
+<p><i>h</i> (10, 0) = 10 mod 11</p>
+<p>Hence, <i>T</i>[10] =10</p>
+<p><i>h</i> (22, 0) =22 mod 11=0</p>
+<p>Hence, <i>T</i>[0]= 22</p>
+<p><i>h</i> (31, 0) = 31 mod 11 = 9</p>
+<p>Hence, T[9]=31</p>
+</div>
+<hr>
+<div class="answer">
+<p><i>h</i>(4, 0) = 4 mod 11=4</p>
+<p>Hence, <i>T</i>[4]=4</p>
+<p><i>h</i>(15, 0) =15 mod 11=4</p>
+<p>But <i>T</i>[4] is already full, so the next probe slot T
+<img src=
+"../imgs/5346ec3346bdfc127983be368c6151352bf0437e.png">.</p>
+<p>That is, <i>h</i>(15,1) = 15+1 mod 11 =5</p>
+<p>Hence, <i>T</i>[5]=15</p>
+</div>
+<hr>
+<div class="answer">
+<p><i>h</i>(28, 0) = 28 mod 11=6</p>
+<p>Hence, <i>T</i> [6]=28</p>
+<p><i>h</i>(17, 0) =17 mod 11</p>
+<p><i>But, T</i> [6] is already full, so the next probe slot
+<i>T</i> <img src=
+"../imgs/5346ec3346bdfc127983be368c6151352bf0437e.png">.</p>
+<p>That is, <i>h</i>(17,1)= (17+1) mod 11=7</p>
+<p>Hence, <i>T</i> [7] = 17</p>
+<p><i>h</i> (88, 0) =88 mod 11</p>
+<p>But, <i>T</i> [0] is already full, so the next probe slot
+<i>T</i> <img src=
+"../imgs/5346ec3346bdfc127983be368c6151352bf0437e.png">.</p>
+<p>That is, <i>h</i>(88,1) = (88+1) mod 11=1</p>
+<p>Hence<i>, T</i> [1] = 88</p>
+</div>
+<hr>
+<div class="answer">
+<p><i>h</i> (59, 0) =59 mod 11</p>
+<p>But, <i>T</i> [4] is already full, so the next probe slot
+<i>T</i> <img src=
+"../imgs/2ff3665a8832e9b98ccab550bbf6166834d99093.png">.</p>
+<p>That is, <i>h</i> (59, 1) =(59+1) mod 11 =5 .</p>
+<p><i>T</i> [5] is also full. so the next slot to probe <i>T</i>
+<img src=
+"../imgs/fd537e9be6b0e6c8c24e89f3ea4d9790cbf1741c.png">.</p>
+<p>That is, <i>h</i> (59, 2)=(59+2) mod 11 =6 .</p>
+<p><i>T</i> [6] is also full. so the next slot to probe <i>T</i>
+<img src=
+"../imgs/240dac79c78054153d06204c986de43a25f4d2c7.png">.</p>
+<p>That is, <i>h</i> (59, 3)= (59+3) mod 11 =7 .</p>
+<p><i>T</i> [7] is also full. so the next slot to probe <i>T</i>
+<img src=
+"../imgs/444810de4f582ffeddc31cd21bd4bbf6aedeb616.png">.</p>
+<p>That is, <i>h</i> (59, 4)=(59+4) mod 11 =8 .</p>
+<p>Slot <i>T</i>[8] is available.</p>
+<p>Hence, <i>T</i>[8]=59</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>After inserting the given keys using linear probing the hash
+table is as follows:</b></p>
+<p><img src="../imgs/477ce1dd71b03f092c7360fe73098f5a65a098ed.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Quadratic probing:</b></p>
+<p>Given auxiliary constants are <img src=
+"../imgs/24280df969cc3c59cfbfe32b8c7f760efe7834bf.png"> = 1,
+<img src="../imgs/e90b6566a054157fbfa37fde0dbbc93621b07aa4.png"> =
+3.</p>
+<p>Quadratic probing hash function is <img src=
+"../imgs/5cde0c24410a3c61b28ad1ac6f02e6fb38fb0e8d.png"></p>
+<p>Auxiliary <img src=
+"../imgs/a202f95fa0c14536a96c0a3394c945a5da66bc7f.png"></p>
+<p><i>h</i>(10, 0) = (10+1.0+3.0) mod 11</p>
+<p>= (10+0) mod 11</p>
+<p>Hence, <i>T</i> [10]=10</p>
+<p><i>h</i>(22, 0) = (0 + 1.0 + 3.0) mod 11</p>
+<p>= 0</p>
+<p>Hence, <i>T</i> [0]=22</p>
+</div>
+<hr>
+<div class="answer"><i>h</i> (31, 0) = (9 + 0 + 0) mod 11
+<p>= 9</p>
+<p>Hence, <i>T</i> [9]=31</p>
+<p><i>h</i>(4, 0) = (4+0+0) mod 11</p>
+<p>Hence, <i>T</i> [4]=4</p>
+<p><i>h</i> (15, 0)= (4+0+0) mod 11</p>
+<p>= 4</p>
+<p>But, <i>T</i>[4] is already in use.</p>
+<p>Next probe for slot <i>T</i>[<i>h</i> (15, 1)]. That is ,
+i=1</p>
+<p>= (4+1.1+3.1<sup>2</sup>) mod 11</p>
+<p>= (4 + 1 + 3) mod 11</p>
+<p>= (8) mod 11</p>
+<p>= 8</p>
+<p>Since, <i>T</i> [8] is available, <i>T</i> [8]=15</p>
+</div>
+<hr>
+<div class="answer">
+<p><i>h</i>(28, 0) = (6 + 0 + 0) mod 11 =6</p>
+<p>Hence, <i>T</i> [6]=28</p>
+<p><i>h</i> (17, 0) = (6 + 0 + 0) mod 11=6</p>
+<p><i>T</i> [6] is already in use.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (17, 1)]. That is, i=1</p>
+<p><i>h</i> (17, 1) = (6 + 1.1+ 3.1<sup>2</sup>) mod 11</p>
+<p>= (6 +1+3) mod 11</p>
+<p>= 10 mod 11</p>
+<p>= 10</p>
+<p><i>T</i> [10] is also in use.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (17, 2)]. That is, i=2</p>
+<p><i>h</i>(17, 2) = (6 + 1.2+ 3.2<sup>2</sup>) mod 11</p>
+<p>= (6 +2+12) mod 11</p>
+<p>= 20 mod 11</p>
+<p>= 9</p>
+<p><i>T</i> [9] is also in use.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (17, 3)]. That is, i=3</p>
+<p><i>h</i>(17, 3) = (6 + 1.3+ 3.3<sup>2</sup>) mod 11</p>
+<p>= (6 +3+27) mod 11</p>
+<p>= 36 mod 11</p>
+<p>= 3</p>
+<p>Since, <i>T</i> [3] is available, <i>T</i> [3]=17</p>
+</div>
+<hr>
+<div class="answer">
+<p><i>h</i>(88,0) = 0</p>
+<p>But <i>T</i> [0] is already full.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (88, 1)]. That is, i=1</p>
+<p><i>h</i>(88,1) = (0+1.1+3.1<sup>2</sup>) mod 11</p>
+<p>= (0 + 1 + 3) mod 11</p>
+<p>= (4) mod 11</p>
+<p>= 4</p>
+<p><i>T</i> [4] is also full.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (88, 2)]. That is, i=2</p>
+<p><i>h</i>(88,2) = (0+1.2+3.2<sup>2</sup>) mod 11</p>
+<p>= (0 + 2 + 12) mod 11</p>
+<p>= (14) mod 11</p>
+<p>= 3</p>
+<p><i>T</i> [3] is also full.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (88, 3)]. That is, i=3</p>
+<p><i>h</i>(88,3) = (0+1.3+3.3<sup>2</sup>) mod 11</p>
+<p>= (0 + 3 + 27) mod 11</p>
+<p>= (30) mod 11</p>
+<p>= 8</p>
+<p><i>T</i> [8] is also full.</p>
+</div>
+<hr>
+<div class="answer">
+<p>So, probe for slot <i>T</i>[<i>h</i> (88, 4)]. That is, i=4</p>
+<p><i>h</i>(88,4) = (0+1.4+3.4<sup>2</sup>) mod 11</p>
+<p>= (0 + 4 + 48) mod 11</p>
+<p>= (52) mod 11</p>
+<p>= 8</p>
+<p><i>T</i> [8] is also full.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (88, 5)]. That is, i=5</p>
+<p><i>h</i>(88,5) = (0+1.5+3.5<sup>2</sup>) mod 11</p>
+<p>= (0 + 5 + 75) mod 11</p>
+<p>= (80) mod 11</p>
+<p>= 3</p>
+<p><i>T</i> [3] is also full</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (88, 6)]. That is, i=6</p>
+<p><i>h</i>(88,6) = (0+1.6+3.6<sup>2</sup>) mod 11</p>
+<p>= (0 + 6 + 108) mod 11</p>
+<p>= (114) mod 11</p>
+<p>= 4</p>
+<p><i>T</i> [4] is also full.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (88, 7)]. That is, i=7</p>
+<p><i>h</i>(88,7) = (0+1.7+3.7<sup>2</sup>) mod 11</p>
+<p>= (0 + 7 + 147) mod 11</p>
+<p>= (154) mod 11</p>
+<p>= 0</p>
+<p>T [0] is also full.</p>
+<p>So, probe for slot <i>T</i>[<i>h</i> (88, 8)]. That is, i=8</p>
+<p><i>h</i>(88,8) = (0+1.8+3.8<sup>2</sup>) mod 11</p>
+<p>= (0 + 8 + 192) mod 11</p>
+<p>= (200) mod 11</p>
+<p>= 2</p>
+<p>Since, <i>T</i> [2] is availble, <i>T</i> [2]=88.</p>
+<p><i>h</i>(59,0) = 4.</p>
+<p>But <i>T</i>[4] is already in use.</p>
+</div>
+<hr>
+<div class="answer">So, probe slot <i>T</i>[<i>h</i> (59, 1)]. That
+is, i=1
+<p><i>h</i>(59,1) = (4+1.1+3.1<sup>2</sup>) mod 11</p>
+<p>= (4 + 1 + 3) mod 11</p>
+<p>= (8) mod 11</p>
+<p>= 8</p>
+<p><i>T</i> [8] is already full.</p>
+<p><i>h</i>(59,2) = (4+1.2+3.2<sup>2</sup>) mod 11</p>
+<p>= (4 + 2 + 12) mod 11</p>
+<p>= (18) mod 11</p>
+<p>= 7</p>
+<p>Since, <i>T</i> [7] is available, <i>T</i> [7]=59</p>
+<p><b>After inserting the given keys using quadratic probing the
+hash table is as follows:</b></p>
+<p><img src="../imgs/eb8bd9ce290dfc5cfa7664f0796cc55f46b7a955.png"
+alt="Picture 2"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Double hashing:</b></p>
+<p>Given that</p>
+<p><img src=
+"../imgs/13df55724f16e3c4921b3ba68346d1effc64b967.png"></p>
+<p><img src=
+"../imgs/bc48dee3c857a9b26f0fd2e07a4cc0050dc86e82.png"></p>
+<p><img src=
+"../imgs/b87450342ee0c329da2bcef1343aff4e420ce8e5.png"></p>
+<p><i>h</i>(10, 0) = (10 + 0. h<sub>2</sub> (k) mod 11)</p>
+<p>= 10</p>
+<p>Hence, <i>T</i> [10]=10</p>
+<p><i>h</i>(22, 0) = (0 + 0.h<sub>2</sub>(k) mod 11)</p>
+<p>= 0</p>
+<p>Hence, <i>T</i> [0]=22</p>
+<p><i>h</i>(31, 0) = ((9 + 0.h<sub>2</sub> (k) mod 11)</p>
+<p>= 9</p>
+<p>Hence, <i>T</i> [9]=31</p>
+<p><i>h</i>(4, 0) = (4 + 0.h<sub>2</sub> (k) mod 11)</p>
+<p>= 4</p>
+<p>Hence, <i>T</i> [4]=4</p>
+<p><i>h</i>(15,0) = (4+0.h<sub>2</sub> (k) mod 11)</p>
+<p>=4</p>
+<p><i>T</i> [4] is already full.</p>
+<p>So, probe for <i>T</i>[<i>h</i>(15,1)]</p>
+<p><i>h</i>(15,1) = (4+1. (1+ (15 mod 10)) mod 11)</p>
+<p>= (4+6) mod 11</p>
+<p>= 10 mod 11</p>
+<p>= 10</p>
+<p><i>T</i> [10] is also full.</p>
+<p>So, probe for <i>T</i>[<i>h</i>(15,2)]</p>
+<p><i>h</i>(15,2) = ( 4+2. (1+ (15 mod 10)) mod 11)</p>
+<p>= (4+12) mod 11</p>
+<p>= 16 mod 11</p>
+<p>= 5</p>
+<p>Since, <i>T</i>[15] is available, So, <i>T</i>[15]=15</p>
+</div>
+<hr>
+<div class="answer">
+<p><i>h</i>(28, 0) = ((6+0.h<sub>2</sub> (k)) mod 11)</p>
+<p>= 6</p>
+<p>Hence, <i>T</i>[<i>6</i>]=28</p>
+<p><i>h</i>(17, 0) = ((6 + 0.h<sub>2</sub> (k)) mod 11)</p>
+<p>=6</p>
+<p><i>T</i> [6] is already full.</p>
+<p>So, probe for <i>T</i>[<i>h</i>(17,1)]</p>
+<p><i>h</i>(17, 1) = ( 6+1. (1+ (17 mod 10)) mod 11)</p>
+<p>= (6+8) mod 11</p>
+<p>= 14 mod 11</p>
+<p>= 3</p>
+<p>Since, <i>T</i>[3] is available, <i>T</i>[3]=17</p>
+<p><i>h</i>(88, 0) = ((0+0.h<sub>2</sub> (k)) mod 11)</p>
+<p><i>=0</i></p>
+<p><i>T</i>[0] is already full.</p>
+<p>So, probe for <i>T</i>[<i>h</i>(88, 1)]</p>
+<p><i>h</i>(88, 1) = ( 0+1. (1+ (88 mod 10)) mod 11)</p>
+<p>= (0+9) mod 11</p>
+<p>= 9</p>
+<p><i>T</i>[<i>9</i>] is already full.</p>
+<p>So, probe for <i>T</i>[<i>h</i>(88, 2)]</p>
+</div>
+<hr>
+<div class="answer"><i>h</i>(88, 2) = ( 0+2. (1+ (88 mod 10)) mod
+11)
+<p>= (0+18) mod 11</p>
+<p>= 18 mod 11</p>
+<p>= 7</p>
+<p>Since, So, <i>T</i>[<i>7</i>] is available,
+<i>T</i>[<i>7</i>]=88</p>
+</div>
+<hr>
+<div class="answer">
+<p><i>h</i>(59, 0) = ( 4+0. (1+ (59 mod 10)) mod 11)</p>
+<p>=4</p>
+<p><i>T</i> [4] is already full.</p>
+<p>So, probe for <i>T</i> [<i>h</i>(59, 1)]</p>
+<p>h(59, 1) = ( 4+1. (1+ (59 mod 10)) mod 11)</p>
+<p>= (4+10) mod 11</p>
+<p>= 14 mod 11</p>
+<p>=3</p>
+<p><i>T</i> [3] is already full.</p>
+<p>So, probe for <i>T</i> [<i>h</i>(59, 2)]</p>
+<p><i>h</i>(59, 2) = ( 4+2. (1+ (59 mod 10)) mod 11)</p>
+<p>= (4+20) mod 11</p>
+<p>= 24 mod 11</p>
+<p>=2</p>
+<p>Since, <i>T</i>[2] is available, <i>T</i>[2]=59</p>
+<p><b>After inserting the given keys using quadratic probing, the
+hash table is as follows:</b></p>
+<p><img src="../imgs/71ccef56b32e0a5f252924cc6258b32e38d217be.png"
+alt="Picture 3"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/295c3141d582b3029f63c41e57fed54751b85d9a.png">
+<hr>
+<img src="../imgs/d577f0b6b4cb36aec77468a189438c702643dcd7.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/b40ac12ef89764c6542c69722628e42a7548e8d9.png">
+<hr>
+<img src="../imgs/71ae1089339fdaeb2c964c3e38b74fd89c538289.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Double hashing uses a hash function of the form
+<i>h(k,i)=(h</i><sub>1</sub><i>((k) + ih</i><sub>2</sub><i>(k))Mod
+M</i> here,</p>
+<p><i>h</i> <sub>1</sub> and <i>h</i><sub>2</sub> are auxiliary
+hash function.</p>
+<p>The value of <i>h</i><sub>2</sub><i>(k)</i> must be relative
+prime to the hash table size <i>M</i> for the entire hash table to
+be searched. Otherwise, <i>m</i> and <i>h</i><sub>2</sub><i>(k)</i>
+have greatest common divisor <i>d&gt;1</i> for some key <i>k</i>,
+then search for the key <i>k</i> only examine
+(<i>1/d)</i><sup>th</sup> hash table.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider an example :</p>
+<p>Here,</p>
+<p>m is prime and let</p>
+<p><i>h</i> <sub>1</sub> <i>(k) = k mod m</i></p>
+<p><i>h</i> <sub>2</sub> <i>(k) = 1 + (k mod m’)</i> here m’ is
+less than m</p>
+<p>If k = 123456, m = 601, m’ = 600 then h<sub>1</sub>(k) = 92 and
+h<sub>2</sub>(k)= 347.</p>
+<p>So, here first position 92 is examined and then every
+347<sup>th</sup> slot (mod m) until the key is found.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Open – address – hash – table:</b></p>
+<p>Consider the open-address hash table with the load factor α and
+uniform hashing.</p>
+<p>Then according to <i>theorem 11.6</i> the expected number of
+probes in an unsuccessful search is at most<img src=
+"../imgs/3a3be053d1f2b3bbfc1dd2ee340634c3108723bd.png">.</p>
+<p>According to <i>theorem 11.8</i> the expected number of probes
+in a successful search is at most<img src=
+"../imgs/e29e476713fb9465508f1e91355c504fbfb0bdc4.png">.</p>
+<p>Expected number of probes in unsuccessful search = <img src=
+"../imgs/92dc14a603a2046209767c4fb3e964f2fb124247.png">(expected
+number of probes in successful search)</p>
+<p><img src=
+"../imgs/ffb73e0b98754bbf36eb693bf926900d61f65d57.png"></p>
+<p>The above equation solved by newton’s bisection method as
+follows.</p>
+<p>Let <img src=
+"../imgs/b67601bbf351e3156c51c5c8f83c1d5fd6350dcf.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider initial values for <img src=
+"../imgs/e86c901c917243a5c558f9767963d67b18b42b68.png">= 0.1 and
+<img src="../imgs/5588e66efcfaa9daa5207f02ced8784d286d4a61.png">
+=0.9.</p>
+<p><img src=
+"../imgs/c32f027d416eb4420e3924289b14a931397ce1cf.png"></p>
+<p><img src=
+"../imgs/bffc7dd93ee47eb65176624bd5a87316eaf5796c.png"></p>
+<p>From the above two values, It is clear that the value of
+<img src="../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png"> is
+between 0.1 and 0.9. So calculate the mid-point for 0.1 and 0.9 as
+follows:</p>
+<p><img src=
+"../imgs/1b9d4e5db40da891ed1c29907ec3c7da07bbb953.png"></p>
+<p>Calculate <img src=
+"../imgs/b4a7f603e758cfc1016a5202ef27056077422e58.png"> as
+follows:</p>
+<p><img src=
+"../imgs/8379bc23f363f531b33595bb05c2f65607495322.png"></p>
+<p>From the above value, it is clear that the value is between 0.5
+and 0.9. So calculate the mid-point for 0.5 and 0.9 as follows:</p>
+<p><img src=
+"../imgs/bcd0f65eff653f4c1973c515c2b5cce5e326ac72.png"></p>
+<p>Calculate <img src=
+"../imgs/75a9b281ccde7800f1550deff5651a4f2d810eec.png"> as
+follows:</p>
+<p><img src=
+"../imgs/184aefc71a4f0cd91f89fc9a6fde95b54c3b8228.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>By proceeding in this way, the following table will be
+obtained.</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Step</b></p>
+</td>
+<td>
+<p><i><b>α</b></i></p>
+</td>
+<td>
+<p><i><b>f</b></i> <b>(</b> <i><b>α</b></i> <b>)</b></p>
+</td>
+<td>
+<p><i><b>α</b></i> <sub>i</sub> <b>-</b> <i><b>α</b></i>
+<sub>i-1</sub></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/eb3c95bbe330c446d7c25b4afe64a6a8c9194689.png"></p>
+</td>
+<td>
+<p>0.5</p>
+</td>
+<td>
+<p>-0.1931</p>
+</td>
+<td>
+<p>0.4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/08088a96b54390c28c89a75154c45747a7603eba.png"></p>
+</td>
+<td>
+<p>0.7</p>
+</td>
+<td>
+<p>-0.0373</p>
+</td>
+<td>
+<p>0.2000</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/e6de414c1cf96180c7e23232d34f01b8698a7b85.png"></p>
+</td>
+<td>
+<p>0.8</p>
+</td>
+<td>
+<p>0.3906</p>
+</td>
+<td>
+<p>0.1000</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/efea71525a7460173620074e2a813d7e28337015.png"></p>
+</td>
+<td>
+<p>0.75</p>
+</td>
+<td>
+<p>0.1137</p>
+</td>
+<td>
+<p>0.0500</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/64134491c573fe517939dc7e7a5cb2e19865ed09.png"></p>
+</td>
+<td>
+<p>0.725</p>
+</td>
+<td>
+<p>0.0272</p>
+</td>
+<td>
+<p>0.0250</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/b583b35d103a17ac243df05ceb852ed23be7b4d8.png"></p>
+</td>
+<td>
+<p>0.7125</p>
+</td>
+<td>
+<p>-0.0074</p>
+</td>
+<td>
+<p>0.0125</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/f22eb34d4f23612be5a06175b2f99823d938a59e.png"></p>
+</td>
+<td>
+<p>0.7188</p>
+</td>
+<td>
+<p>0.0093</p>
+</td>
+<td>
+<p>0.0063</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/944021abe14b1762a5bb5f85c37a61995ecdd0b6.png"></p>
+</td>
+<td>
+<p>0.7156</p>
+</td>
+<td>
+<p>0.0008</p>
+</td>
+<td>
+<p>0.0031</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/f960d2fc758b0a2d88a23a9ea94ec026dbc184b2.png"></p>
+</td>
+<td>
+<p>0.7141</p>
+</td>
+<td>
+<p>-0.0033</p>
+</td>
+<td>
+<p>0.0016</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/ff72c8420a8c94bfb47f440fa1c02cecda057a60.png"></p>
+</td>
+<td>
+<p>0.7148</p>
+</td>
+<td>
+<p>-0.0013</p>
+</td>
+<td>
+<p>0.0008</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/88087dbb9f5bc65d45806b7894229e4d755ab79f.png"></p>
+</td>
+<td>
+<p>0.7152</p>
+</td>
+<td>
+<p>-0.0003</p>
+</td>
+<td>
+<p>0.0004</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/0803d6974a602b334f058fe2ed8502a911b36d25.png"></p>
+</td>
+<td>
+<p>0.7154</p>
+</td>
+<td>
+<p>0.0003</p>
+</td>
+<td>
+<p>0.0002</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/8466d99b7f582ea963977c5f85bd2490a329a544.png"></p>
+</td>
+<td>
+<p>0.7154</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0.0002</p>
+</td>
+</tr>
+</table>
+<p>From the above table, the function is satisfied for the value of
+<img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">=0.7154.</p>
+<p><b>Therefore, the nonzero value of</b> <b><img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png"></b> <b>for
+which the given condition is satisfied is 0.7154</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

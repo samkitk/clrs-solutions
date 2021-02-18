@@ -1,0 +1,1045 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 27.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The dag for computing P-SQUARE-MATRIX-MULTIPLY on</b>
+<b><img src=
+"../imgs/be656ac5ea7d38fe079d23fc59b56c9c44c8748f.png"></b>
+<b>matrices</b></p>
+<p>Work is defined as total time needed to execute an entire
+multithreaded computation on one processor.</p>
+<p>Span is defined as the longest time to needed to execute the
+strands along any path in the direct acyclic graph (DAG).</p>
+<p>Suppose the work is the running time on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose we have an unlimited number of processors then we
+can donate the span by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+The ratio of <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png"> and
+<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">that is
+<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</div>
+<hr>
+<div class="answer">
+<p><b>DAG Representation:</b></p>
+<p><img src="../imgs/494eb6cc16b2a1f1b84c8d7c851522c75fbf5e8e.png"
+alt="F:\Tiffs\2254-27.2-1E.tif"></p>
+<p>The two numbers in each of the rectangle gives the subscript of
+the matix element that is currently being accessed in the present
+invocation. The black circle in each of the rectangle shows whether
+the element is the part of the base case or the parallel call.The
+white circles show the strands where the result of the calculation
+is stored after the control returns from the parallel calls.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Analyzing the above diagram, it can be observed that each of the
+base case is being passed through eight different stages of
+calculation. It can be seen by counting the number of arrows that a
+base case is being driven through. This makes the total number of
+strands 8.</p>
+<p>There are three different levels in which this entire
+calculation for a strand is taking place. The fourth level is the
+final answer itself. The calculations are being done upto the third
+level. Now move to the next stage.</p>
+<p>Since there are total 8 strands.</p>
+<p>Therefore,</p>
+<p>Total work is <img src=
+"../imgs/d0a35039819ef0d1952c4a59b30b0c9814a5f164.png">.</p>
+<p>Since the length of the largest strand is 3</p>
+<p>Therefore, its span is <img src=
+"../imgs/64b8229c120b88e1a18092879701b9f6e2ea5970.png">.</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p><img src=
+"../imgs/2adf22436b89396959e429ad8d87cf8a007de4a3.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Pseudo code for a multithreaded algorithm of matrix
+multiplication</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by spawning, both parent and child work
+simultaneously. The main motive behind for evolving the concept of
+spawning is to achieve parallelism, which results in increase the
+overall performance of computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor. Suppose in
+the below example each circle represents the strands which takes
+unit time. Therefore, total work done is 25 units.</p>
+<p><img src="../imgs/cbd420884079ddd2fea4c33c147afdbb8eb7b6d0.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\13.tif"></p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. The path highlighted in the above figure is known as
+span.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there areunlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</div>
+<hr>
+<div class="answer">
+<p><b>Pseudo code:</b></p>
+<p>The procedure P-MATRIX-MULTIPLY will get the multiplication of
+two matrices. <i>X</i> and <i>Y</i> are the matrices to be
+multiplied. Create a new matrix to hold the resultant of
+multiplication. Run two parallel loops to go through the matrix
+elements and call the procedure MATRIX_SUB to get the
+multiplication.</p>
+<p>P-MATRIX-MULTIPLY <img src=
+"../imgs/49e3dad7e67cf25c190f50246e90206a30d8d2d7.png"></p>
+<p><img src=
+"../imgs/f12fda440e58d9f038c3b0eb424771ffb5098fc3.png"></p>
+<p>Let <img src=
+"../imgs/05665b6565ee635d113bfb9770ef04108034c64e.png">be a new
+<img src="../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">
+matrix</p>
+<p><b>parallel for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png">to <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/a32daf262850ab8aa5225dd33a8b33863a1d8a4e.png"> to
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><img src=
+"../imgs/1f934e8e6bb0cec6241628880a359fbc666232ad.png">MATRIX_SUB<img src="../imgs/c6062743c5326309dee9bf508c93126ade890554.png"></p>
+<p><b>return</b> <img src=
+"../imgs/05665b6565ee635d113bfb9770ef04108034c64e.png"></p>
+<p>Use the below procedure to get the multiplication. <i>X</i> and
+<i>Y</i> are the matrices to be multiplied. The row and column
+subscript <i>i</i> and <i>j</i> would represent the element that is
+currently being accessed. <i>m</i> and <i>m’</i> would be used to
+partition the matrix based on the upper and the lower bound of
+matrix dimension for parallel multiplication.</p>
+<p>MATRIX_SUB<img src=
+"../imgs/be73f16d9b00ec854febe3ae1f731d0da98e8d71.png"></p>
+<p><b>if</b> <img src=
+"../imgs/75848619859a03ef7a4aada1ff6bdabe3c90b975.png"></p>
+<p><b>return</b> <img src=
+"../imgs/a7b9dfbc418b1628f8e8f3d4697c9e09e432f49d.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/62c73691587324846ebe47a12bd937629404d1d2.png"></p>
+<p><img src=
+"../imgs/23eea5612d2f6be88894004945eaf638264308db.png">spawn
+MATRIX_SUB<img src=
+"../imgs/a737de4da1cbede85ec76f92ea868629ce6f4cde.png"></p>
+<p><img src="../imgs/88cbaa9601f24ebc8e6afebfe354ddf3ab3374fe.png">
+MATRIX_SUB <img src=
+"../imgs/bf1ae253935b08a9c3262b938da7ac712d130ecc.png"></p>
+<p><b>sync</b></p>
+<p><b>re</b> <b>turn</b> <img src=
+"../imgs/71b84c94b4f2653f96465d2485cdbbc8a1c30718.png">+ <img src=
+"../imgs/eceb55d37f7d6316fbfb42121757a1ec0dceb0c8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The multiplication is done typically as below:</p>
+<p>Let <i>A</i> and <i>B</i> be two matrices as below:</p>
+<p><img src=
+"../imgs/b03f6a5ba7314c873a0168505ea447b25deec434.png"></p>
+<p>Now perform the partition, so that the sub matrices can be given
+to separate threads for parallel computing.</p>
+<p><img src=
+"../imgs/cbdddebbd4964a8d125e1b962ef8d38880dde1c8.png"></p>
+<p>Now, get the separate multiplication of the sub matrices:</p>
+<p><img src=
+"../imgs/ab66bd0993228d9129d8322e2c0565f457780341.png"></p>
+<p><img src=
+"../imgs/f03f8051cfbebe36b7887122b8146806c28b8588.png"></p>
+<p><img src=
+"../imgs/b52d44e194a2ccc75c1ed0b8f555711a6cea6aa7.png"></p>
+<p>Now, perform left shift on the lower part of the left sub part
+and an up shift in the right most part of the right sub part. This
+would be done to perform the recursive multiplication.</p>
+<p><img src=
+"../imgs/4e639568f6451202e36a31f49e57b0c0ab727756.png"></p>
+<p>Now, perform the multiplication as below. Each sub matrix
+multiplication would be performed parallel to other
+multiplications.</p>
+<p><img src=
+"../imgs/ab66bd0993228d9129d8322e2c0565f457780341.png"></p>
+<p><img src=
+"../imgs/9e25c56d8f7d1358a4fe44d5cc9eff73b444104e.png"></p>
+<p>Perform the left shift on the entire left part and the up shift
+on the entire right sub part. This would be done for the second
+recursive call.</p>
+<p><img src=
+"../imgs/a971fc25c8edd3d58179aa314a4e680b09227270.png"></p>
+<p>Now, perform the multiplication again. All the below
+multiplications would be done in parallel.</p>
+<p><img src=
+"../imgs/71460e7e0f127cb9283be751badc722a4c431acb.png"></p>
+<p><img src=
+"../imgs/3e525eb177e1d03bb87dbcf117bcb6339d58b342.png"></p>
+<p><img src=
+"../imgs/23e9a7e9e3517469a681e08f718d6ae4a0ebd26e.png"></p>
+<p><img src=
+"../imgs/efdd05587ad93fb3fcbadc9046eaaf09f06b7c82.png"></p>
+<p><img src=
+"../imgs/9b14aa1e90c3df505fe007bbc9f46bf841d828fc.png"></p>
+<p><img src=
+"../imgs/ac4ab3976f64eda413302d5fa9280d1a15473aa5.png"></p>
+<p>The final answer would be the integration of all the sub
+matrices.</p>
+<p><img src=
+"../imgs/db05f638200ea51af6e99a75e4a3363193093535.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png"> of the
+P-MARIX-MULTIPLY <img src=
+"../imgs/49e3dad7e67cf25c190f50246e90206a30d8d2d7.png"> can be
+calculated by computing the execution time of its serialization. In
+order to calculate the execution time of its serialization, replace
+<b>parallel for</b> loop by ordinary <b>for</b> loop.</p>
+<p>Consider<img src=
+"../imgs/03c876af47ed07c834d99282ba8edca5854c3532.png">be the work
+of the MATRIX_SUB (nested for loop).</p>
+<p>Therefore <img src=
+"../imgs/d4b21ab77705e0531b5e94f0c5b20a950eecd60c.png"> <b>… …
+(1)</b></p>
+<p>MATRIX_SUB can be given by the recurrence (consider if-else and
+mid-point division)</p>
+<p><img src="../imgs/e1a73b19c58976d634d1e6353a15ea887379eba4.png">
+<b>… … (2)</b></p>
+<p>By applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p>Generic form of master theorem is:</p>
+<p><img src=
+"../imgs/146a755b8f9cb705de2ba48bc432b406e97738bb.png"></p>
+<p>Where, <img src=
+"../imgs/1d0c59ef3ef86deab8e6d955b9d9be18989fcbaf.png">is the sum
+of cost of dividing the problem into sub-problems and the cost of
+combining these sub-problems outside the recurrence call.</p>
+<p>Above recurrence relation is in form of <img src=
+"../imgs/e1a73b19c58976d634d1e6353a15ea887379eba4.png"></p>
+<p>Here, according to the master theorem,</p>
+<p><img src=
+"../imgs/dd801de016820ccd76f43741417e3882efb1be4b.png"></p>
+<p>Then the solution of the recurrence relation become</p>
+<p><img src=
+"../imgs/5245e31af7f71ac3463c743cb73c88eefad5e147.png"></p>
+<p>Therefore from <b>(1)</b> and <b>(2)</b></p>
+<p><img src="../imgs/38bb9159aef6c13478c64134735de0507fedcc21.png">
+<b>…… (3)</b></p>
+<p>Hence total work of P-MATRIX-MULTIPLY algorithm is<img src=
+"../imgs/bc72e212648319a95fdc57d6c317415489556fc9.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span can be calculated by below recurrence-</p>
+<p><img src=
+"../imgs/e62d24492c0ff4989a283f1f5f9e247118c0fbe3.png"></p>
+<p>In P-MATRIX-MULTIPLY() function, each iteration of second
+<b>parallel for</b> loop call MATRIX_SUB() function to multiply
+square matrix. Further each time the MATRIX_SUB() function half the
+space between 1 and <i>n</i>by calling itself again and again and
+does the constant time work. Therefore the span becomes<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">.</p>
+<p>That is,</p>
+<p><img src=
+"../imgs/67f270d37b6936e7852e3fa6320409fa51d099f4.png"></p>
+<p>Hence, Span of P-MATRIX-MULTIPLY algorithm is<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">.</p>
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/c6ed04fefdd3430c8c94d9b89b62c9431dddc7f3.png"></p>
+<p>Hence, Parallelism of P-MATRIX-MULTIPLY algorithm is<img src=
+"../imgs/18b8732d8d39f149110dd148decc61b72ed4b72d.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Pseudo code for an efficient multithreaded algorithm of two
+matrix multiplication</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by spawning, both parent and child work
+simultaneously. The main motive behind for evolving the concept of
+spawning is to achieve parallelism, which results in increase the
+overall performance of computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor. Suppose in
+the below example each circle represents the strands which takes
+unit time. Therefore, total work done is 25 units.</p>
+<p><img src="../imgs/cbd420884079ddd2fea4c33c147afdbb8eb7b6d0.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\13.tif"></p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. The path highlighted in the above figure is known as
+span.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there areunlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</div>
+<hr>
+<div class="answer">
+<p><b>A pseudo code for an efficient multithreaded algorithm that
+multiplies</b> <b><img src=
+"../imgs/c97ea11f58194081de4a7b43d80e109a7dd582f0.png"></b>
+<b>matrix by a</b> <b><img src=
+"../imgs/15c73534378d12aee85556040efdef470db15ee2.png"></b>
+<b>matrix</b></p>
+<p>The procedure P-MATRIX-MULTIPLY will get the multiplication of
+two matrices. <i>X</i> and <i>Y</i> are the matrices to be
+multiplied. Create a new matrix to hold the resultant of
+multiplication; run two parallel loops to go through the matrix
+elements and call the procedure MATRIX_SUB to get the
+multiplication.</p>
+<p>P_MATRIX_MULTIPLY (<img src=
+"../imgs/8187f1870bb8192bc36d1fddb43f8355b63e9b34.png">,<img src=
+"../imgs/546b0670cd50c6a36a407729daade79e1b984a47.png">)</p>
+<p>//Find number of rows in <i>X</i> matrix</p>
+<p><img src=
+"../imgs/691d3d21e36601919f2399df35d135b4084d1a5d.png"></p>
+<p>//Find number of columns in <i>X</i> matrix</p>
+<p><img src=
+"../imgs/6f4349e51027217b7c4293630e5d422ffc31aae7.png"></p>
+<p>//Find number of columns in <i>Y</i> matrix</p>
+<p><img src=
+"../imgs/9297cd83d3353f8a32c71bc7fce1e3115d656ce5.png"></p>
+<p>let<img src=
+"../imgs/05665b6565ee635d113bfb9770ef04108034c64e.png">is a new
+matrix having <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png"> rows and
+<img src="../imgs/9120f6ea2a8de5c694d7ccb8ccdf8fcb3a8d02eb.png">
+columns.</p>
+<p>//use parallel for loop to traverse<i>p</i>rows of <i>X</i>
+matrix</p>
+<p><b>parallel for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png">to <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png"></p>
+<p>//use parallel for loop to traverse r columns of <i>Y</i>
+matrix</p>
+<p><b>parallel for</b> <img src=
+"../imgs/a32daf262850ab8aa5225dd33a8b33863a1d8a4e.png">to <img src=
+"../imgs/9120f6ea2a8de5c694d7ccb8ccdf8fcb3a8d02eb.png"></p>
+<p>//Call MATRIX_SUB() function to split matrix into small matrix
+and then</p>
+<p>//multiply it.</p>
+<p><img src="../imgs/1f934e8e6bb0cec6241628880a359fbc666232ad.png">
+MATRIX_SUB <img src=
+"../imgs/407f24d70b64f5cfe8b65008b004aada6d8eb7cc.png"></p>
+<p><b>return</b> <img src=
+"../imgs/05665b6565ee635d113bfb9770ef04108034c64e.png"></p>
+<p>Use the MATRIX_SUB () procedure defined below to get the
+multiplication. <i>X</i> and <i>Y</i> are the matrices to be
+multiplied. The row and column subscript <i>i</i> and <i>j</i>
+would represent the element that is currently being accessed.
+<i>m</i> and <i>m’</i> would be used to partition the matrix based
+on the upper and the lower bound of matrix dimension for parallel
+multiplication.</p>
+<p>MATRIX_SUB<img src=
+"../imgs/be73f16d9b00ec854febe3ae1f731d0da98e8d71.png"></p>
+<p>//using if statement to check upper and lower bound are same or
+not.</p>
+<p><b>if</b> <img src=
+"../imgs/75848619859a03ef7a4aada1ff6bdabe3c90b975.png"></p>
+<p>//return multiplication to calling function</p>
+<p><b>return</b> <img src=
+"../imgs/a7b9dfbc418b1628f8e8f3d4697c9e09e432f49d.png"></p>
+<p><b>else</b></p>
+<p>//divide thematrix</p>
+<p><img src=
+"../imgs/62c73691587324846ebe47a12bd937629404d1d2.png"></p>
+<p>//Again call MATRIX_SUB() to calculate the first half.</p>
+<p><img src=
+"../imgs/23eea5612d2f6be88894004945eaf638264308db.png"><b>spawn</b>
+MATRIX_SUB<img src=
+"../imgs/a737de4da1cbede85ec76f92ea868629ce6f4cde.png"></p>
+<p>//Again call MATRIX_SUB() function calculate the last half</p>
+<p><img src="../imgs/88cbaa9601f24ebc8e6afebfe354ddf3ab3374fe.png">
+MATRIX_SUB <img src=
+"../imgs/bf1ae253935b08a9c3262b938da7ac712d130ecc.png"></p>
+<p><b>Sync</b></p>
+<p><b>return</b> <img src=
+"../imgs/71b84c94b4f2653f96465d2485cdbbc8a1c30718.png">+ <img src=
+"../imgs/eceb55d37f7d6316fbfb42121757a1ec0dceb0c8.png"></p>
+<p>The algorithm would work as below:</p>
+<p>Let the two matrices to be multiplied be <i>A</i> and
+<i>B</i>.</p>
+<p><img src=
+"../imgs/429c5a48ca6c27db517a7da4982746a90f285c05.png"></p>
+<p><img src=
+"../imgs/66138165bafa85687697dc0041183072c67bad7c.png"></p>
+<p>The matrices would first be divided in the sub matrices for
+assigning them to the parallel processors. The sub matrices would
+as below:</p>
+<p><img src=
+"../imgs/8ffdaeca02ae15ea9049995e6ca526f751d11103.png"></p>
+<p><img src=
+"../imgs/2fa76a7042b3bd091548fcddd51c927d90661282.png"></p>
+<p>Now, the sub matrices would be multiplied to get the desired
+result. The matrix that does not get a corresponding sub matrix for
+multiplication would be discarded.</p>
+<p><img src=
+"../imgs/194f089d6cd6185663c0b6eaa020723141ba1744.png"></p>
+<p><img src=
+"../imgs/847bf7b74c6a2839ffc78f5364ed45423203f6ab.png"></p>
+<p>Now, get the resultant by adding the result of above
+calculations.</p>
+<img src=
+"../imgs/ddf59125b068f1bee9ae080e1904be1fd2bba0e3.png"></div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png"> of the
+above algorithm can be calculated by replacing the parallel for
+loop with ordinary for loop.</p>
+<p>Consider the work of MATRIX_SUB is<img src=
+"../imgs/ea0e1b05d8ea309369165a3957873cbfacc008f9.png">.</p>
+<p>(Nested for loops runs up-to <i>pr</i>times)</p>
+<p>Therefore <img src=
+"../imgs/9c0dfaa2ceb176039cdc4eefb45f39b6e37cb9ad.png"> <b>… …
+(1)</b></p>
+<p>Since input size of the procedure MATRIX_SUB is <img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png"></p>
+<p>Because it is common in both the matrices</p>
+<p>Therefore <img src=
+"../imgs/d51e9d1b4670e12c0fd260ce264341a48b909a13.png"> <b>… …
+(2)</b></p>
+<p>From <b>(1)</b> and <b>(2)</b></p>
+<p><img src=
+"../imgs/0215187ca0fad1db61d74fd520ca372f59a8c263.png"></p>
+<p>Hence total work of modified P-MATRIX-MULTIPLY algorithm
+is<img src=
+"../imgs/db96dfd89b56865f2c87c90f634d622c8e67993e.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>In order to calculate the spanof the above algorithm, check the
+number of iteration each loop will have in it.</p>
+<p>In general span of a parallel for loop, in which <img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png"><sup>th</sup>
+iteration has span say <img src=
+"../imgs/2f5ab3cd47d08d1ab721f76c91f69f4f9f078173.png">is given
+by,</p>
+<p><img src=
+"../imgs/e62d24492c0ff4989a283f1f5f9e247118c0fbe3.png"></p>
+<p>Therefore span in this case will be-</p>
+<p><img src=
+"../imgs/c065e6dadceb2c3bc6f073f750a89cfb3c49af26.png"></p>
+<p>Hence span of modified P-MATRIX-MULTIPLY algorithm is<img src=
+"../imgs/abff734dcfc561b20e25898d3dc2732297f39119.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src="../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png"> by
+<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/cef8b98205a44a92952e1cc9269df69d82771777.png">When
+<i>p</i> is equal to 1 then parallelism becomes</p>
+<p>Parallelism<img src=
+"../imgs/28258a747abbd53d8b25637bec36df08a2e11082.png"></p>
+<p>When <i>q</i> is equal to 1 then parallelism becomes</p>
+<p>Parallelism<img src=
+"../imgs/bef79a580f5ddfbf011df6b8130a64b35b654081.png"></p>
+<p>When <i>r</i> is equal to 1 then parallelism becomes</p>
+<p>Parallelism<img src=
+"../imgs/3a1276f883c85fb9780fdee4a6a5247980d0516d.png"></p>
+<p>Thus, algorithm should be highly parallel even if any of <i>p,
+q,</i> and <i>r</i> is 1. As the value of <i>p,q</i> and <i>r</i>
+is increases then correspondingly parallelism also increases.</p>
+<p>Now if <i>p, q,</i> and <i>r</i> are 1 then according to above
+algorithm,</p>
+<p>Parallelism<img src=
+"../imgs/1bf7bc165b5bc6bddbe036722f12ba7359664204.png"></p>
+<p><img src=
+"../imgs/c23497b623cb9df3ae9795b1a5ce84893404a755.png"></p>
+<p>Thus, algorithm should be highly parallel even if <i>p, q,</i>
+and <i>r</i> is 1.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Pseudo code for a multithreaded algorithm to get then transpose
+of matrix is as follows:</p>
+<p><b>Algorithm:</b></p>
+<p>The algorithm given below finds the transpose of a matrix
+<i>A</i> of order<img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png">. The
+variables <i>x</i> and <i>y</i> indicates the row and column number
+of the matrix that is currently being transposed.</p>
+<p>This algorithm divides the matrix in two halves and makes a
+recursive call to the procedure to transpose the concerned matrix.
+The recursive call uses the divide-and-conquer technique.</p>
+<p>P-MATRIX-TRANSPOSE<img src=
+"../imgs/7c7a17fa343e0355959b05707551aeba76df66de.png"></p>
+<p><b>//</b> Transpose the <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">sub-matrix
+starting at<img src=
+"../imgs/f8211014b5907783256ef5812d2fe7fd3530a043.png">.</p>
+<p><b>if</b> <img src=
+"../imgs/9b4d6fe93ec992fb65253350d922d4f8594ea910.png"></p>
+<p><b>return</b></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/b1d1d093d81ff74f8c2bb80819ef2c396bb1a7bd.png"></p>
+<p>//recursive call to the procedure for transposing the first half
+of matrix</p>
+<p><b>spawn</b> P-MATRIX-TRANSPOSE<img src=
+"../imgs/633f43491dcbf1b9f9496fb3c74895b7d3ea27e6.png"></p>
+<p>//parallel call to the procedure for transposing the second half
+of matrix</p>
+<p><b>spawn</b> P-MATRIX-TRANSPOSE<img src=
+"../imgs/b6f26f75e9109f850b6c7efe8a5a335ea2ef0543.png"></p>
+<p>//call to procedure for swapping the element</p>
+<p>P-MATRIX-TRANSPOSE-SWAP<img src=
+"../imgs/2bed5ebde19e159b5deec18d10cf9f63715792c0.png"></p>
+<p><b>sync</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Use the procedure below to swap the elements of matrix <i>A</i>
+to perform the transpose operation. The element at <img src=
+"../imgs/eaf21336610cc086911810ca301fdab1ea50d295.png"> row and
+<img src=
+"../imgs/870fa1051d1c8dedf24340d579d1e3fc47440715.png">column would
+be swapped with the element at <img src=
+"../imgs/86728541025b49ef1a90045e026e85d137d07ed7.png"> row and the
+<img src="../imgs/9a2df5454e0d31ee363af3dc168f74e5ebd8075e.png">
+column.</p>
+<p>P-MATRIX-TRANSPOSE-SWAP<img src=
+"../imgs/3c72a79bb4bffda8e6010c7bbe675d9c7f77eeee.png"></p>
+<p><b>//</b> Transpose the <img src=
+"../imgs/2fe7d89aad2f746c7b8ee4719b39a707eef5a0e2.png">sub matrix
+starting at <img src=
+"../imgs/24e43dd9636be86d451047e624bebeb2900ac2e4.png"> with the
+<img src="../imgs/2fe7d89aad2f746c7b8ee4719b39a707eef5a0e2.png">sub
+matrix</p>
+<p><b>//</b> starting at <img src=
+"../imgs/6591926e241d06f40e48fe7570469c598e6fac1c.png"></p>
+<p><b>if</b> <img src=
+"../imgs/52a3af25ef5c7ab84fdd6d995dd1020d0e624f16.png"></p>
+<p>P-MATRIX-TRANSPOSE-SWAP<img src=
+"../imgs/08730b6ee6cac57c10e15a1c414d36cbaf9e508b.png"></p>
+<p><b>else if</b> <img src=
+"../imgs/a2217053effca7faf99b19d562ce78a52c352d3d.png"></p>
+<p><b>//</b>this will make<img src=
+"../imgs/0b8369d613f269e6470b190b275d30578e389338.png"></p>
+<p>exchange<img src=
+"../imgs/24e43dd9636be86d451047e624bebeb2900ac2e4.png">with
+<img src=
+"../imgs/6591926e241d06f40e48fe7570469c598e6fac1c.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/9454b9009f069054dcdd2086e8c3561671ab23c7.png"></p>
+<p><b>spawn</b> P-MATRIX-TRANSPOSE-SWAP<img src=
+"../imgs/754fa484000b71a24737fe753df4827fe159626f.png"></p>
+<p><b>spawn</b> P-MATRIX-TRANSPOSE-SWAP<img src=
+"../imgs/adb0ff0aee8b771fe67cb6fe1bf5616e180bfdbd.png"></p>
+<p><b>sync</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>This would be an in place algorithm. It takes the matrix as
+input and replace the original matrix with its transpose.</p>
+<p>The algorithm divides the matrix into smaller sub matrices. They
+are processed separately to find the transpose. Once all the sub
+parts are processed, the results are combined to get the transpose
+of the entire matrix.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+<p>Calculate the work, span and parallelism for analyzing the
+efficiency of the algorithm.</p>
+<p><b>Work:</b></p>
+<p>Calculate the total running time of the matrix. Taking<img src=
+"../imgs/bed4e267d626700cd38f820b1520c411f4a4b6ff.png">be number of
+elements in the matrix.</p>
+<p>In this case <img src=
+"../imgs/69f1add7eb2b01bf5ae3757af6f968fcf8d2de03.png"></p>
+<p>Work of P-MATRIX-TRANSPOSE-SWAP say <img src=
+"../imgs/03a050837eb225f28a8d6aa58c0d51162b741bbf.png"> can be
+calculated by calculating the running time of its
+serialization,</p>
+<p>That is</p>
+<p><img src=
+"../imgs/83ef809b4efb2aacc5ad3ead0db36c9f834309b8.png"></p>
+<p>Using mater theorem (In the analysis of the algorithm, master
+theorem gives the solution in asymptotic term for the recurrence
+relation),</p>
+<p><img src=
+"../imgs/d63b297c0a101da46e6ad7b164e21b1c3aa763fe.png"></p>
+</div>
+<hr>
+<div class="answer">Span of P-MATRIX-TRANSPOSE-SWAP say <img src=
+"../imgs/7eb9396a9e8ee5124f3966a843226b351e5f7502.png">is given by
+the following recurrence:
+<p><img src=
+"../imgs/bec14e651dd3647c0a53291b6a0d7ed10d754343.png"></p>
+<p><img src=
+"../imgs/167bae4b39e331cdccfc7c9fb3747342e3695de3.png"></p>
+<p>Calculate work of P-MATRIX-TRANSPOSE say <img src=
+"../imgs/2aaa0934d11090115dcdc873355b2fd0969ed01e.png"> by
+calculating the running time of its serialization.</p>
+<p>The matrix of order <img src=
+"../imgs/b33731e265d3a43394a0a09416aba7199c5ff08f.png"> will have
+<img src=
+"../imgs/e0cdc7a29cb899f27722d77c3bbe5c31011b850c.png">elements.
+<img src=
+"../imgs/f5dd1409f4f96dd54338ede02eea70a7328f04b1.png"></p>
+<p>From (1) and (3)</p>
+<p><img src=
+"../imgs/55542765c40f7994d84380338430e36aa66826c6.png"></p>
+<p>Hence total work of P-MATRIX-TRANSPOSE algorithm is<img src=
+"../imgs/540070efca256607a4d79ec80eef5d9e031239d1.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of P-MATRIX-TRANSPOSE say <img src=
+"../imgs/73f7d899df2fe264fd3779723f3a7d71bc9cdf1b.png">will be
+maximum of the span of one of these recursive calls plus <img src=
+"../imgs/540070efca256607a4d79ec80eef5d9e031239d1.png"> of
+P-MATRIX-TRANSPOSE-SWAP (from equation (3)) plus<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">.</p>
+<p>That is</p>
+<p><img src=
+"../imgs/d3188c66b5add1f7e28e738193722328b47c2fc4.png"></p>
+<p>Hence span of P-MATRIX-TRANSPOSE algorithm is<img src=
+"../imgs/ae080a3a3e1853f712ae2d1b01f7b29b4ea37a9c.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is, ratio of
+<img src="../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and <img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/e721d698bbce357d447b27e6b971eb9b8303b172.png"></p>
+<p>= <img src=
+"../imgs/4aff14520d7ecc03b2ad258b85c5dd97206e3e20.png"></p>
+<p>Hence, parallelism of P-MATRIX-TRANSPOSE algorithm is<img src=
+"../imgs/4aff14520d7ecc03b2ad258b85c5dd97206e3e20.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Pseudo code for an efficient multithreaded algorithm of the
+Floyd-Warshall</b> <b>algorithm</b></p>
+<p>The Floyd-Warshall Algorithm is used to solve the all-pairs
+shortest-paths for a given directed graph<img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">.It
+considers the intermediate vertex of a simple path. This algorithm
+uses dynamic programming approach.</p>
+<p>The shortest distance between any two vertices is calculated
+by:</p>
+<p><img src=
+"../imgs/e7502556052e311071376eefc7f64557141bbb26.png"></p>
+<p>Graph may have the negative weight edges but there should not be
+any negative-weight cycles.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the execution time of a computation on a single
+processor. Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there areunlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</div>
+<hr>
+<div class="answer">
+<p><b>Multithreaded Implementation of the Floyd-Warshall
+algorithm:</b></p>
+<p>Below given procedure will calculate the shortest path from all
+vertices of a graph to all other vertices. All the respective
+distances are stored in a<img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png"> matrix
+<i>W</i>. Every row shows a vertex and the columns of that row show
+the distances from that vertex to all other vertices.</p>
+<p>Mt-FLOYD-WARSHALL (<i>W</i>)</p>
+<p><img src=
+"../imgs/c1a3c18baaf0ae03d543fc8b9abfbae63de31dbe.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png"> to
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><b>parallel for</b><img src=
+"../imgs/a32daf262850ab8aa5225dd33a8b33863a1d8a4e.png"> to
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//get the distance of the current node from all other nodes</p>
+<p><img src=
+"../imgs/8930a16e5a648ba794478ccf0cc7c6ac880ee687.png"></p>
+<p><b>for</b> <img src=
+"../imgs/31a4b424a8808ddbae3cb49ea3e19ff052c452cd.png">to <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><b>parallel for</b><img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png"> to
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/a32daf262850ab8aa5225dd33a8b33863a1d8a4e.png"> to
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//find the minimum of distances</p>
+<p><img src=
+"../imgs/a9eb30a460d0cba42f7b11bba58d7f77d0a4217f.png"></p>
+<p><b>return</b> <img src=
+"../imgs/eae58c0823f2b880e25dae3edde341e0a1c90146.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Suppose the shortest paths for the given graph have to be
+calculated.</p>
+<p><img src="../imgs/db3ecc278b47ce6af8245c7e8fcccd250ad75e00.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p>The task of finding the shortest path would be distributed in
+the processes. Each process would find the possible path from any
+node to other.</p>
+<p>So the matrices and respective updatesin the execution would be
+as below:</p>
+<p>Now compute <i>D</i> matrix using given algorithm.</p>
+<p>Initially the <i>D</i> matrix will be <i>W</i> matrix as shown
+below.</p>
+<p><img src=
+"../imgs/df2d5ac696b10c9f7af71defc8e6e22a5ced676d.png"></p>
+<p>In the above matrix if there is any edge from vertices <i>i</i>
+to <i>j</i> then path will also exist between them and assign value
+of weight in (<i>i</i>, <i>j</i>)<sup>th</sup> position in the
+matrix.</p>
+<p>Now for <i>k</i>=1, so, vertex “1” can be an intermediate node.
+Then the corresponding <i>D</i><sub>1</sub>matrix will be as
+shown:</p>
+<p><img src=
+"../imgs/c066c1248dcb4da3b8611051af34d7c5baa580d8.png"></p>
+<p>In the above matrix weight of <i>d</i><sub>4,2</sub> and
+<i>d</i><sub>4,5</sub> have been changed which are calculated by
+using the given formula:</p>
+<p><img src=
+"../imgs/4fcae1d369eab7b2b6c4a13b42ab2c0ffeb9b91a.png"></p>
+<p><img src=
+"../imgs/8a54149aee65197683b19bb17b5b4e54dbbb99f4.png"></p>
+<p>Now for <i>k</i>=2, so, vertex “2” can be an intermediate node.
+Then the corresponding <i>D</i><sub>2</sub> matrix will be as
+shown:</p>
+<p><img src=
+"../imgs/c35dedd16ef23480b88724a60bef1c291daab1bf.png"></p>
+<p>In the above matrix, weight of <i>d</i><sub>1,4</sub>,
+<i>d</i><sub>3,4</sub>and <i>d</i><sub>3,5</sub> have been changed
+which are calculated by using the given formula:</p>
+<p><img src=
+"../imgs/2fd5d100ec3c07df42772f47a3f6e0d49855a65c.png"></p>
+<p><img src=
+"../imgs/23199756f6dbecfaaad6c629eaa4e2f656ef81f3.png"></p>
+<p><img src=
+"../imgs/3372a1bdb5233025623d40025b4d1816cce220cc.png"></p>
+<p>Now for <i>k</i>=3, so, vertex “3” can be an intermediate node.
+Then the corresponding <i>D</i><sub>3</sub> matrix will be as
+shown:</p>
+<p><img src=
+"../imgs/6569ea2dbb8c6e3310a3ac969d4faf10984b8bee.png"></p>
+<p>In the above matrix weight of <i>d</i><sub>4,2</sub> has been
+changed which are calculated by using the given formula:</p>
+<p><img src=
+"../imgs/a6d6ecb399a80f778bece2106c25f528786aca8d.png"></p>
+<p>Now for <i>k</i>=4, so, vertex “4” can be an intermediate node.
+Then the corresponding <i>D</i><sub>4</sub> matrix will be as
+shown:</p>
+<p><img src=
+"../imgs/e76c7ac0d0d5c91a87c2c788afc4923d9c67a8fd.png"></p>
+<p>In the above matrix, weight of <i>d</i><sub>2,1</sub>,
+<i>d</i><sub>2,3</sub><i>, d</i><sub>2,5</sub><i>,
+d</i><sub>3,1</sub><i>, d</i><sub>3,5</sub><i>,
+d</i><sub>5,1</sub><i>, d</i><sub>5,2</sub> and
+<i>d</i><sub>5,3</sub>have been changed which are calculated by
+using the given formula:</p>
+<p><img src=
+"../imgs/e1f4ab7b81df40dfff320d4077b6fa979c0af12e.png"></p>
+<p><img src=
+"../imgs/c44a4863d6db35eebcf3debef5c2e3b9293f1a41.png"></p>
+<p><img src=
+"../imgs/2cfff9783c4b7c58941a023e9dfb9589a08d5c76.png"></p>
+<p><img src=
+"../imgs/56e9da5b527640b1291baac53a29f24b4f8a7732.png"></p>
+<p><img src=
+"../imgs/b2b24616d428adfe3effd07803e329d67ed27df4.png"></p>
+<p><img src=
+"../imgs/c116c8a5acf1238434e01167747cbefbc9a34d46.png"></p>
+<p><img src=
+"../imgs/8357ae5289eff8766d2f506702ea1498452bd8c7.png"></p>
+<p><img src=
+"../imgs/98e70a3cb5b232aa77e186c031f55eba50ee6367.png"></p>
+<p>Now for <i>k</i>=5, so, vertex “5” can be an intermediate node.
+Then the corresponding <i>D</i><sub>5</sub> matrix will be as
+shown:</p>
+<p><img src=
+"../imgs/88e0015f8defb76d5ee600e4f3fd2e95e5353f10.png"></p>
+<p>In the above matrix weight of <i>d</i><sub>1,2</sub>,
+<i>d</i><sub>1,3</sub> and <i>d</i><sub>1,4</sub> have been changed
+which are calculated by using the given formula:</p>
+<p><img src=
+"../imgs/b436372731e0a9f4324f359824286e43e2bf50d7.png"></p>
+<p><img src=
+"../imgs/97b9d704efae5547314122dfe8fa6eec065c7f43.png"></p>
+<p><img src=
+"../imgs/8882aa52d858046e952529df55bdb60caae5af91.png"></p>
+<p>Now, the shortest distances would be picked up and the final
+distance matrix would look like below:</p>
+<p><img src=
+"../imgs/057ed7b1172a1bffd50bcc3c03d1a11354829684.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of the above Mt-FLOYD-WARSHALL (<i>W</i>) will be same as
+that ofthe execution time of its serialization. So in order to
+compute work, parallel for loop must be replaced with ordinary for
+loop.</p>
+<p>Since for loop in above algorithm runs <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">times so do
+<img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png">and<img src=
+"../imgs/d82627e3850254d87a2dde5fb97d4e955fc8773b.png">, therefore
+total running time will be<img src=
+"../imgs/79048f2a38946449333fe9ff0d875d29b16143f2.png">.</p>
+<p>That is,</p>
+<p><img src=
+"../imgs/38bb9159aef6c13478c64134735de0507fedcc21.png"></p>
+<p>Hence total work of the above algorithm is<img src=
+"../imgs/79048f2a38946449333fe9ff0d875d29b16143f2.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of the doubly nested parallel for loop will be<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">.Since it
+runs under for loop for <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">times
+therefore total span will be<img src=
+"../imgs/f95e55d3fa6bd53f484ff1c50368488033c5aba4.png">.</p>
+<p>That is</p>
+<p><img src=
+"../imgs/341dcfd189dee0c36d1156e21a0e3e03051d3f16.png"></p>
+Hence span of the above algorithm is<img src=
+"../imgs/f95e55d3fa6bd53f484ff1c50368488033c5aba4.png">.</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>= <img src=
+"../imgs/26711b191401a671215b8be95526c30eab3d8eec.png"></p>
+<p>= <img src=
+"../imgs/de518a5739b52aec073653e6529c7fe8825244bd.png"></p>
+<p>Hence Parallelism of the above algorithm is<img src=
+"../imgs/de518a5739b52aec073653e6529c7fe8825244bd.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,542 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 28.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a set of unit vectors<img src=
+"../imgs/10dec278a25dab041b15351a4b7e1082a97f9acb.png">.</p>
+<p>Where<img src=
+"../imgs/704371aef77f99d43de3090ee35e767d82425222.png">, <img src=
+"../imgs/db116b0b19b36c69ad1cad470d987f1d426bf51d.png"> and so
+on.</p>
+<p>That is for every <img src=
+"../imgs/8994cce8ece0dfb5138a4de3effea3b60d7d36ed.png"> all vectors
+value are zeros, expect for <img src=
+"../imgs/11db4d124e63896d1b14908210cf4bfbc32e548d.png">row which is
+1.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Symmetric Positive Definite Matrix:</b> If a <img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png"> symmetric
+matrix <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png"> satisfy the
+condition <img src=
+"../imgs/35907462ca392e409756c57d81cdda815ac63743.png"> for all
+non-zero column vectors <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"> of
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">
+real numbers, then the matrix <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png"> is said to
+be a symmetric positive definite matrix.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the symmetric positive definite matrix <i>A</i> as
+follows:</p>
+<p><img src=
+"../imgs/3d2cb536b094a72fe1c0194b3b04f5b5979ceb41.png"></p>
+<p>The condition <img src=
+"../imgs/35907462ca392e409756c57d81cdda815ac63743.png"> holds for
+all <img src=
+"../imgs/c89297c561dac8081e0cbef4e4ece0a9ae18612f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now suppose for any <img src=
+"../imgs/11db4d124e63896d1b14908210cf4bfbc32e548d.png"> value in
+diagonal of matrix <i>A</i> is not positive, that is <img src=
+"../imgs/298b183de0be63432ae39178d61e5334bcfe4736.png">.</p>
+<p>Choose <img src=
+"../imgs/8994cce8ece0dfb5138a4de3effea3b60d7d36ed.png"> from the
+set <i>X</i> and calculate<img src=
+"../imgs/09d1a3ac81b7fd8944cdc9112c3417535d10cd7c.png">.</p>
+<p><img src=
+"../imgs/bbe67c6269ceff811528d559b7f92dd5dc3863b4.png"></p>
+<p>That is <img src=
+"../imgs/e5fff11af143431b117296de1012ba9dbe58c800.png">. So,
+<img src=
+"../imgs/3d4a588bcac2ac3ce51265a7a1cb2d294b3d4c6e.png">will be
+negative.</p>
+<p>This is a contradiction to the initial consideration; <i>A</i>
+is a symmetric positive definite matrix.</p>
+<p><b>Therefore, if</b> <i><b>A</b></i> <b>is a symmetric
+positiv</b> <b>e definite matrix then the value of</b> <b><img src=
+"../imgs/3bdfb3b97ca9aa735cb099e8062423ff0a0d5b8e.png"></b>
+<b>,</b> <b><img src=
+"../imgs/c49f271664633834deba014846b7112d68db8ec5.png"></b> <b>.
+That is all the diagonal elements of the symmetric positive
+definite matrix are positive.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The matrix is <img src=
+"../imgs/a4e816f14045349eaa8e5cb1f80b3d8e21faa41a.png"> which is
+<img src="../imgs/1114b4b652af27a1ed5f89afc2bfbbe4362ed089.png">
+symmetric positive definite matrix. Its determinant <img src=
+"../imgs/3f8cfe7ef7560ca6995167e92f289dee743985d4.png"> is positive
+by “completing the square”. It can be proved as follows:</p>
+<p>Let x = -by/a and A is positive definite so,</p>
+<p><img src=
+"../imgs/b24038f51a05806558eef3adc5c5a30d4a59e189.png"></p>
+<p>=<img src=
+"../imgs/3ab5c325724d03d06a588cb0557fc1ee3fd4919f.png"></p>
+<p>The determinant of the above equation is given as: <img src=
+"../imgs/4d0c0a887a36ebd3e1a77680fb9294321def27f0.png"></p>
+<p>Here, b = 2by, a = a, c = <img src=
+"../imgs/f16a0d41888b157bd060201e574fa130b13ba812.png"></p>
+<p>So, substituting the values of a, b and c in D it can be deduced
+that:</p>
+<p><img src=
+"../imgs/b61d35e5d03348267045191c1e8ac38100b2f423.png"></p>
+<p>Ignoring the constant value that is 4, the expression becomes:
+<img src=
+"../imgs/932f24c9bfef03231abacbdd1a82fbe169c0d6a8.png"></p>
+<p>=<img src=
+"../imgs/c6947ded08cb570a67c467ede4c8d078137bacb7.png"></p>
+<p>=<img src=
+"../imgs/9ed8245a2fd4aca2c3e2610747348e0c73d1550d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Thus, <img src=
+"../imgs/2f70000510e492975df0228abff2f6daae42e969.png">so, it means
+that <img src=
+"../imgs/3f8cfe7ef7560ca6995167e92f289dee743985d4.png">&gt;0
+because a&gt;0</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>A symmetric positive-definite matrix:</b></p>
+<p>Let A is the <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"> matrix
+which is real in nature and can be positive-definite for a non-zero
+vector<img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">, if:</p>
+<p><img src=
+"../imgs/35907462ca392e409756c57d81cdda815ac63743.png"></p>
+<p>A symmetric positive-definite matrix has following
+properties:</p>
+<p>• All the Eigenvalues of <i>A</i> will be positive.</p>
+<p>• The largest element of the matrix is always there on the
+diagonal.</p>
+<p>• All the diagonal elements of <i>A</i> will be positive.</p>
+<p>• Matrix <i>A</i> will be a nonsingular matrix.</p>
+<p>Consider the symmetric positive-definite matrix <i>A</i> as:</p>
+<p><img src=
+"../imgs/cbbd30fc3c41b88a50360f063e39144e228e8e86.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>To prove that the maximum element lies on the diagonal, apply
+the same permutation to the both rows and columns of matrix
+<i>A</i>, the resultant matrix will continue to be symmetric and
+positive-definite.</p>
+<p>The <b>SYLVESTER’S CRITERION</b> states that: A symmetric
+<img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrix
+<i>A</i> is positive-definite if and only if:</p>
+<p><img src="../imgs/33800ba09a3df0120d08660cc7233570c3929e58.png">
+…… (1)</p>
+<p>Where, A is the <img src=
+"../imgs/f3efa5e80d6d5d66720c89f85fc00d82674f2d95.png"> matrix
+formed by the intersection of the first k rows and columns of A and
+in a symmetric matrix <img src=
+"../imgs/f9c4de23df1d7c838e3d0135e0863dc1d2d1d09e.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>If there is any element at position<img src=
+"../imgs/d57ba906eca49be227145b28fbc4c1bdbc0a29a9.png">, it will
+also there at the position of<img src=
+"../imgs/4361fb80a0448130d881006793cbdcd8ee6433f4.png">. Thus,
+every element which is not at a diagonal, it will also appear at
+another position of the matrix. Further, for<img src=
+"../imgs/e20db10d0135129871c47c9af6943d767d243596.png">, applying
+the suitable permutation, SYLVESTER’S CRITERION gives:</p>
+<p><img src="../imgs/2f10e377e1857602001c29eb6b8ad8ea94f56015.png">
+…… (2)</p>
+<p>Now, consider the positive-definite matrix given below:</p>
+<p><img src=
+"../imgs/27925f539755e1f7af2fe977543bcf755003f47d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>In symmetric, real, positive-definite matrix, there is always
+large multiplier with a positive-definite matrix.</p>
+<p>• In the above matrix, large multiplier is 10001. Due to this
+multiplier, the determinant of the matrix becomes positive.</p>
+<p>• Knowing this, large multipliers will not try to create
+unstable conditions unless they lead to growth of the transformed
+element, because the length of matrix continuously increases.</p>
+<p>• And to make the determinant positive, the diagonal elements
+products have to be made larger than the non-diagonal terms, which
+are used in the corresponding calculation.</p>
+<p>• Further, as all the reduced matrices<img src=
+"../imgs/356f36ad01d8ea424ad42a6afc30b87c807c9f41.png">are
+positive-definite, their maximum element will lie on the diagonal
+(consider the above determinant equation), which is one of their
+properties stated above.</p>
+<p>• Also from equation (2) either one of the element that is
+<img src="../imgs/8967ae6594802d9a2bb8d6b4a90633626893c12d.png"> or
+<img src="../imgs/95099f30cbc60081fc136ef6979158390f5e2b28.png">
+should be greater than <img src=
+"../imgs/a1eb102bf677a75a90debe165faeea6b9ebdf725.png"> to hold the
+inequality of equation (1). Hence the max element should lie in the
+diagonal.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>A symmetric positive-definite matrix:</b></p>
+<p>A<img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"> matrix
+<i>A</i>, which is real in nature, can be positive-definite for a
+non-zero vector<img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">, if:</p>
+<p><img src="../imgs/35907462ca392e409756c57d81cdda815ac63743.png">
+<b>… … (1)</b></p>
+<p>A symmetric positive-definite matrix has following
+properties:</p>
+<p>a. All the Eigen values of <i>A</i> will be positive.</p>
+<p>b. The largest element of the matrix is always there on the
+diagonal.</p>
+<p>c. All the diagonal elements of <i>A</i> will be positive.</p>
+<p>d. <i>A</i> will be a nonsingular matrix.</p>
+<p>Consider a symmetric positive-definite matrix <i>A</i> as:</p>
+<p><img src=
+"../imgs/27d67fb20b96d4de418a7c33184cb18e8f0d7ea7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>To prove that determinant of each leading sub-matrix of a
+symmetric positive matrix is positive, suppose that <img src=
+"../imgs/8c3feb59b28b4109794d49326fae5dff8b6ac476.png">be any
+leading sub-matrix of a symmetric positive-definite matrix<img src=
+"../imgs/8187f1870bb8192bc36d1fddb43f8355b63e9b34.png">.</p>
+<p>After removing corresponding rows and columns of the symmetric
+matrix<img src=
+"../imgs/8187f1870bb8192bc36d1fddb43f8355b63e9b34.png">, the
+sub-matrix <img src=
+"../imgs/8c3feb59b28b4109794d49326fae5dff8b6ac476.png"> is also
+going to be symmetric in nature.</p>
+<p>So, <img src=
+"../imgs/8c3feb59b28b4109794d49326fae5dff8b6ac476.png"> is a
+symmetric matrix. <b>… … (a)</b></p>
+<p>Now, consider that <img src=
+"../imgs/de001454801926c5d4f450c20f1f6639d0ce5f52.png"> be a
+particular column inside this sub-matrix<img src=
+"../imgs/8c3feb59b28b4109794d49326fae5dff8b6ac476.png">, having
+<i>p</i> entries, which are non-zero in nature.</p>
+<p>Increase <img src=
+"../imgs/de001454801926c5d4f450c20f1f6639d0ce5f52.png"> to make it
+into an <i>n</i>-vector <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">by inserting
+zeros into the places corresponding to the particular rows
+of<img src=
+"../imgs/8187f1870bb8192bc36d1fddb43f8355b63e9b34.png">which were
+previously removed in the form<img src=
+"../imgs/8c3feb59b28b4109794d49326fae5dff8b6ac476.png">. Then
+<img src="../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"> is
+not the zero vector and a relation is derive.</p>
+<p>So, <img src=
+"../imgs/de001454801926c5d4f450c20f1f6639d0ce5f52.png"> is a
+non-zero vector. <b>… … (b)</b></p>
+<p>Now combining the statement (<b>a</b>) and (<b>b</b>) and also
+putting it in equation (1),</p>
+<p><img src=
+"../imgs/4106318a004d01031f99d5ff4d39d57e73be37ae.png"></p>
+<p>This is a sufficient and necessary condition for leading
+sub-matrixes in a symmetric definite matrix to be positive.</p>
+<p>Hence, the determinant of each leading sub-matrix of a
+<b>symmetric positive-definite matrix is positive</b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8495eccee4775a9619389e08b3caa564377b0f52.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following function:</p>
+<p><img src=
+"../imgs/81b0b7e4dffdc4f2713972832194a31f6b25bde1.png"></p>
+<p>Calculate the function of the form <img src=
+"../imgs/35b7cdf2f54382a0bdd15631039174effb113016.png">such that,
+it is the best least-square fit to the data points<img src=
+"../imgs/f2e3a7ed414ca2fe7ec096e26196edad71333f28.png">.</p>
+<p>Consider,</p>
+<p><img src=
+"../imgs/9d97730074d4672ee2993bc191422e29cbe153c5.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Construct the matrix of values of the basis functions at the
+points <img src=
+"../imgs/01158f300807b1d995c0883d3f0ab44ad1c8fd72.png"></p>
+<p><img src=
+"../imgs/6b1eadf7975666f2da5fb107c4176acad1367b90.png">as
+follows:</p>
+<p><img src=
+"../imgs/eda05cc950b8f89fca8d195047505e13dd4eec56.png"></p>
+<p>Substitute the point values from (1) in the above matrix
+<i>A</i>.</p>
+<p><img src=
+"../imgs/42c8ad01bb1d995a215df348c44dddc23a682827.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Calculate the pseudoinverse of the matrix <i>A</i> using the
+formula,</p>
+<p><img src=
+"../imgs/11800ce8e8b77559014191143ba9ecaf2a5e68be.png">.</p>
+<p>Calculate <img src=
+"../imgs/9e2240ee90378fc0e78a95f88d551ea60fcfa1db.png">.</p>
+<p><img src=
+"../imgs/2d77cc3cc27a6c9b72e853f57cb0a7f67e002de2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Calculate <img src=
+"../imgs/de35173d68a787006b541d1d6b7a921b5bc728d8.png">.</p>
+<p><img src=
+"../imgs/334c75bf0132fabdd669b8b5763c5736417f4b1d.png"></p>
+<p>The normal equation is given by the equation, <img src=
+"../imgs/f26c13ebab82cc714f58e335ba53538886e82cfc.png">. Solve it
+for <i>C</i>.</p>
+<p><img src=
+"../imgs/4cc5783866296e9433ef36083a3fdd904c8eda9d.png"></p>
+<p><img src=
+"../imgs/5e3175c9bb61b6929448001cca51f6e43aa2db74.png"></p>
+</div>
+<hr>
+<div class="answer">Calculate the value of <i>C</i>.
+<p><img src=
+"../imgs/4a2a38eeaea62e454a426faf9e202e0edea7cca1.png"></p>
+<p>Hence, the constants of the function (1) are as follows:</p>
+<p><img src=
+"../imgs/90214ceebf4328d315fbe0b320ec1bf8b939fffa.png"></p>
+<p>Substitute the values of <i>C</i> in (1) to get the required
+function.</p>
+<p><img src=
+"../imgs/a9d4edd5e59f021f9ef20443678a1a2fbefe1b41.png"></p>
+<p><b>Therefore, the function that is best least-square fit to the
+data points</b> <b><img src=
+"../imgs/bdc81c9bee3cd593705c0680d95a263c03ff8eeb.png"> <img src=
+"../imgs/5eda114f7833f26aa3726822f61792533f91d515.png"></b>
+<b>and</b> <b><img src=
+"../imgs/7c31a74fb27b9a6dedd2e46af837c9f4384b386e.png"></b>
+<b>is</b> <b><img src=
+"../imgs/731ddc83a17bb443b1286f6db1420567b2ecf14b.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The following four equations are satisfied by the pseudoinverse
+<img src="../imgs/78e0c5d2426e75a357e4ed6d6c5a8f9ce55da204.png"> of
+the matrix <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png">.</p>
+<p><img src=
+"../imgs/1b0bcf28b01186ace2b0332ed074bc5d2b845a09.png"></p>
+<p>Pseudoinverse <img src=
+"../imgs/78e0c5d2426e75a357e4ed6d6c5a8f9ce55da204.png"> of the
+matrix <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png"> is given by
+the following equation:</p>
+<p><img src=
+"../imgs/66a5ee942f5b33b3d7337af9e42e77712e22c5b4.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Show that pseudoinverse <img src=
+"../imgs/78e0c5d2426e75a357e4ed6d6c5a8f9ce55da204.png">satisfies
+the equation (1).</p>
+<p><img src=
+"../imgs/e3436a2c0133d98378debecc3f1511db39514900.png"></p>
+<p><b>Therefore, pseudoinverse</b> <b><img src=
+"../imgs/78e0c5d2426e75a357e4ed6d6c5a8f9ce55da204.png"></b>
+<b>satisfies the equation</b> <b><img src=
+"../imgs/d96628a7c4bfdcdf7e8143f0ef98d2dc0c22fafe.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Show that pseudoinverse <img src=
+"../imgs/78e0c5d2426e75a357e4ed6d6c5a8f9ce55da204.png">satisfies
+the equation (2).</p>
+<p><img src=
+"../imgs/74ecf7e88fde6f9480cd69f39823d286e9d6d0af.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Show that pseudoinverse <img src=
+"../imgs/78e0c5d2426e75a357e4ed6d6c5a8f9ce55da204.png">satisfies
+the equation (3).</p>
+<p>Consider left hand side of equation (3).</p>
+<p><img src=
+"../imgs/b2e0b0fc041f1b1cdf8bb160039149ea796b3e54.png"></p>
+<p>Consider right hand side of equation (3).</p>
+<p><img src=
+"../imgs/65083bfcfb67c92308ac1c6723b6535104dbe288.png"></p>
+<p>From equations (6) and (7) <img src=
+"../imgs/8e8ff8d0397cf0ded9006398f7a8c8b8f5fd4072.png"></p>
+</div>
+<hr>
+<div class="answer">Now show that pseudoinverse <img src=
+"../imgs/78e0c5d2426e75a357e4ed6d6c5a8f9ce55da204.png">satisfies
+the equation (4).
+<p>Consider left hand side of equation (4).</p>
+<p><img src=
+"../imgs/f75d9f53f052fc2d8c3995fd9b952a9129d1f4c8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider right hand side of equation (4).</p>
+<p><img src=
+"../imgs/81f710928ff2611a17b694ed093bc45e1e878cc0.png"></p>
+<p>From equations (8) and (9) <img src=
+"../imgs/407a3f6ef5d1a6e5567dca8123c7a8e313e61208.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

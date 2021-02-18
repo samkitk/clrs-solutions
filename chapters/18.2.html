@@ -1,0 +1,340 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 18.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/caf97b9d04869ec32916503a20eb4c39658fea10.png">
+<hr>
+<img src="../imgs/10047821607a12410b720e84855aa28c40b17ea9.png">
+<hr>
+<img src="../imgs/d79d62a8ead16f11bbc8d613cb7498d90b9c98d5.png">
+<hr>
+<img src="../imgs/01cca5746de49b0d1188ed4884ca65dd9d24a014.png">
+<hr>
+<img src="../imgs/ab63ce1ceb4952760e33e0a7adec7c3fc0cb281e.png">
+<hr>
+<img src="../imgs/49388fbf8918c184bcffbdd3268c82c4aaabadbb.png">
+<hr>
+<img src="../imgs/283d34402ad309d2509856b990ef1b8af8d32378.png">
+<hr>
+<img src="../imgs/cc53727c3f41a3aaf9b30e5bf962062bdae3a12d.png">
+<hr>
+<img src="../imgs/a21030526580b75a734484bafa4e92870f2cf022.png">
+<hr>
+<img src="../imgs/df232f6b6fdba803745cdc4d6997e13432f57058.png">
+<hr>
+<img src="../imgs/1e6cba2baeed585592524e06c01698bac6a3555a.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A data structure which is used to maintain the ordered set of
+data element and that provides the different type of operation such
+as search, insert, delete and browse the data in efficient manner,
+is called the B-tree data structure.</p>
+<p>• B-tree algorithm uses DISK-READ and DISK-WRITE operations for
+reading pages from disk to main memory and writing pages back to
+disk.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• In B-tree, one unit or one piece of information of stored data
+is refereed as key. Each key is uniquely defined and it can be
+placed only at one location in B-tree.</p>
+<p>• In B-tree storage, root of the tree is always placed into the
+main memory. Therefore there is no need to perform the DISK-READ
+operation on root.</p>
+<p>• Only DISK-WRITE needs to be performed on the root node,
+whenever the root node is changed.</p>
+<p>• Refer to the Section 18.2 for procedure B-TREE-INSERT (for
+inserting a key <i>k</i> into B-TREE <i>T</i>) and
+B-TREE-INSERT-NONFULL (for inserting a key <i>k</i> into leaf node
+<i>x</i> of B-TREE <i>T</i>).</p>
+<p>• B-TREE-INSERT calls B-TREE-SPLIT-CHILD in order to make sure
+that recursion never goes to full node. The procedure B-TREE-INSERT
+splits the root node <i>r</i> into a new node <i>s</i> having two
+child nodes. This procedure calls B-TREE-INSERT-NONFULL.</p>
+<p>• Further, B-TREE-INSERT-NONFULL calls B-TREE-SPLIT-CHILD for
+splitting node <i>x</i> into child nodes <i>c</i> (denoted by
+<i>x</i>.<i>c</i>). In the procedure B-TREE-INSERT-NONFULL,
+DISK-READ (<i>x</i>.<i>c</i>) is not required as the recursion will
+move down to a child node created by B-TREE-SPLIT-CHILD.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• However, if an object is already in the main memory, there is
+no need to perform DISK-READ for that object. Thus, there is no
+need of redundant DISK-READs for the same object, if it is already
+inserted into B-tree.</p>
+<p>• B-tree algorithm performs DISK-WIRTE on an object only if that
+object is modified. Thus there is no need of DISK-WRITE on the same
+object, if it is not modified.</p>
+<p><b>Therefore it</b> <b>can be concluded that the redundant
+DISK-READ and DISK-WRITE operations never occur while the execution
+of B-TREE-INSERT.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following algorithm to find minimum key stored into
+B-Tree.</p>
+<p>B-Tree_MIN (<i>a</i>)</p>
+<p>// <i>a</i> is the node in B-Tree and if statement is used to
+check tree is empty or not</p>
+<p>1 if <i>a</i>= NIL</p>
+<p>//if tree is empty return nil.</p>
+<p>2 return NIL</p>
+<p>//else statement is used to check leaf node of tree</p>
+<p>3 else if <i>a</i>. leaf</p>
+<p>//return the minimum key of particular node.</p>
+<p>4 return <i>a</i>. key</p>
+<p>// else statement is execute when if statement is false.</p>
+<p>5 else</p>
+<p>//scan the node of tree.</p>
+<p>6 Disk-Read (<i>a</i>. <i>d</i>)</p>
+<p>// find the minimum key of another node.</p>
+<p>7 return B-Tree_MIN (<i>a</i>. <i>d</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the Algorithm:</b></p>
+<p>• In the above algorithm minimum key of B-Tree is found similar
+to finding the minimum key in binary search tree.</p>
+<p>• First check the node of B-Tree, if the node is null then
+return NIL.</p>
+<p>• Check leftmost child recursively until the leaf node and
+return the minimum key.</p>
+<p>• If left child of tree is null then the root node of B-Tree
+will be minimum key.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Algorithm to find the Predecessor of key stored in a B-Tree.</p>
+<p>B_Tree_PREDECESSOR (a, j)</p>
+<p>// if statement is used to check the node is leaf or not.</p>
+<p>1. if a!= leaf</p>
+<p>//if node is not leaf then move leftmost sub tree of node.</p>
+<p>2. Disk-Read (<i>a</i>. <i>d</i>)</p>
+<p>//find maximum in leftmost sub tree.</p>
+<p>3. return B-Tree_MAX (<i>a</i>. <i>d</i>)</p>
+<p>//else if statement is used to check the value of <i>j</i>.</p>
+<p>4. else if <i>j&gt;1</i></p>
+<p>// return the predecessor of node <i>a</i>.</p>
+<p>5. return <img src=
+"../imgs/28e951040b09bea573301e98214a202030628990.png"></p>
+<p>6. else</p>
+<p>//compare the current node by key value.</p>
+<p>7. r=a</p>
+<p>//if condition is true then enters within loop.</p>
+<p>8. While (true)</p>
+<p>//if statement is used to check the value of <i>r. c</i> is null
+or not.</p>
+<p>9. if r. c= NIL</p>
+<p>//return the null value.</p>
+<p>10. return NIL</p>
+<p>// store the value in another variable X</p>
+<p>11. X= r.c</p>
+<p>12. Disk-Read (<i>X</i>. <i>d</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the Algorithm:</b></p>
+<p>• In the above algorithm three rules are used to find the
+predecessor of any node.</p>
+<p>• First check, the node <i>a</i> is leaf or not. If <i>a</i> is
+not a leaf node then finds the maximum in left sub tree. The
+maximum element is the predecessor of node.</p>
+<p>• In second case, if node <i>a</i> is leaf and <i>j&gt;</i>1
+then return <i>j-</i>1 key of node <i>a</i>.</p>
+<p>• In third case, if tree have no left child then find
+predecessor of any node by traversing from bottom to top until
+<i>j&gt;0</i>.</p>
+<p>• Finally display the predecessor of node.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>B-Tree</b></p>
+<p>For a B-tree</p>
+<p>• Except the root node, all other nodes should have minimum
+<img src="../imgs/b0b67470c8bd13515e1aeb806e4bcd68d11b6b19.png">
+keys.</p>
+<p>• Every internal node except the root will have minimum of
+<i>t</i> children.</p>
+<p>• In a nonempty tree, the root node must have minimum one
+key.</p>
+<p>• Every node can have maximum <img src=
+"../imgs/b6c87dc3d4193d4e8e3fca51f49ab4f968638ee2.png"> keys.</p>
+<p>• Every internal node can have maximum of 2<i>t</i>
+children.</p>
+<p>• All leaves will have the same depth, which is considered as
+the height of the tree.</p>
+<p>If the degree of <i>t</i> is 1, the minimum number of nodes will
+be 0 and the B-tree will be an empty tree. A nonempty B - tree
+should contain at least one key, thus making degree<img src=
+"../imgs/7bce2cc4d06801d910c7a3a62f4c71489e1e3f81.png">.</p>
+<p>If <i>h</i> is the height of the B-tree, then the root contains
+minimum one key and all other nodes will contain <img src=
+"../imgs/f4c805a026ba1d8544e2559a0b004e4f05ae9fd6.png"> keys.</p>
+<p>• At depth 1 minimum 2 nodes</p>
+<p>• At depth 2 minimum 2<i>t</i> nodes</p>
+<p>• At depth 3 minimum 2<i>t</i><sup>2</sup> nodes</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>• At depth <i>h</i> minimum 2<i>t</i><sup>h-1</sup> nodes</p>
+<p><img src=
+"../imgs/068765953bee31712d4d24ef3ef04a331de20034.png"></p>
+<p>Depending on the height and degree of the B-tree, the nodes in
+the final B-tree are determined.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/babb191486bc2534c5863ae9016f94057276021c.png">
+<hr>
+<img src="../imgs/32c1ee7d3abe42734146cb2c5f14854ccc2f3026.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

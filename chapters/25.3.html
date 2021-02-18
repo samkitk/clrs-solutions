@@ -1,0 +1,481 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 25.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/2fcf49a854fa24c6595bb4ec4128f13c6c83d1e9.png">
+<hr>
+<img src="../imgs/18d155fcbfef4018b1debeb8c5ae10c5f4c8508d.png">
+<hr>
+<img src="../imgs/a56bbe0e8ae6d1cf782fd978b8f079f0373e62d0.png">
+<hr>
+<img src="../imgs/72457fd8765fc4863f07329a0a936144433d6a4f.png">
+<hr>
+<img src="../imgs/74f96cbbff82d23d777e108318967e6f73e4543c.png">
+<hr>
+<img src="../imgs/53701af8851cc9e0965706d28e155d6808b47a04.png">
+<hr>
+<img src="../imgs/7d7d1e3ee6083b46d77087a02cfe372ffe4bc00b.png">
+<hr>
+<img src="../imgs/919f7751aee7181de6f60a2d06bc48301f92b7ee.png">
+<hr>
+<img src="../imgs/afc278b7239e5ce31300aa905caea46d3834b942.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Graph<img src=
+"../imgs/0084fee95dbe1efc26bfcc6a16de42abe950dd76.png"> is the
+collection of distinct vertices<img src=
+"../imgs/5bc5426dca7c39927ef323dbefe123a614d01073.png">and distinct
+edge<img src=
+"../imgs/e276b9345b67fc0f16542365cb58ecad2b256878.png">.</p>
+<p>A graph is said to be connected if every pair of vertices have
+the path between each of them.</p>
+<p>• The new vertex <i>s</i> is added in the graph <i>G</i> to find
+the minimum path between<img src=
+"../imgs/b0025ca5668e5f3f578725b045c9c2a0d649c33e.png">.</p>
+<p>• The vertex of graph represents the individual object.</p>
+<p>• A vertex <i>v</i> said to be adjacent to another vertex
+<i>S</i> if the graph contain an edge<img src=
+"../imgs/1771b3fd3dd65fb234a5ed1c2784dd0e67fd82c0.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Therefore, the purpose of adding the new vertex</b>
+<i><b>s</b></i> <b>to</b> <i><b>V</b></i> <b>that yields</b>
+<i><b>V’</b></i> <b>is to find the all pairs shortest path.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider a graph <i>V</i>. A new vertex <i>s</i> is added to
+graph <i>V</i>. After adding the vertex, the new set of edges is
+<i>V’.</i></p>
+<p>• In the graph, the vertices are represented with label
+<img src="../imgs/63d834d318913152b18cc91c9d36bafef432714c.png">and
+edge is represented by line between the vertices.</p>
+<p>• A path in a graph represents a way from source to destination
+by traversing the edge.</p>
+<p><b>The new vertex</b> <i><b>s</b></i> <b>is addition helps to
+find the all pairs shortest path of the graph</b> <b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Weight with Non-Negative Edge</b></p>
+<p>In order to understand relationship between <i>w</i>
+and<img src="../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png">,
+it is necessary to understand Johnson’s algorithm. Johnson
+algorithm uses concept of Dijkstra’s and Bellman-Ford algorithm for
+finding the shortest path for all set of vertices. This algorithm
+works on the methods of reweighting, if the graph has negative
+weight cycle.</p>
+<p>Methods of reweighting are as follows:</p>
+<p>1. Dijkstra’s algorithm is used for finding the shortest path,
+if weight of all the edges in the graph is non-negative. For each
+vertex Fibonacci heap priority queue is used for finding the
+shortest path.</p>
+<p>2. Bellman-Ford algorithm is used for finding the shortest path,
+if weight of any edge in the graph is negative. Calculate new non
+negative edges from the set of negative weights by using the weight
+function. For each vertex Fibonacci heap priority queue is used for
+finding the shortest path.</p>
+<p><b>Difference between</b> <i><b>w</b></i> <b>and</b> <img src=
+"../imgs/6f3655b49f43c301bb81b1720366a23cf2b77d81.png">
+<b>:</b></p>
+<p>1. For all the set of vertices <b><img src=
+"../imgs/a4e7cc1fdaa583da62a2facb1da277aa405d04d5.png"></b> weight
+function <img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"> can-be
+derived from the weight function <i>w</i> by using reweighting
+method. Reweighting method is applied on the graph <i>G,</i> if and
+only if graph contains negative weight cycle.</p>
+<p>So, weight function <i>w</i> cannot be derived from weight
+function<img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"><b>.</b></p>
+<p>2. Weight function <i>w</i> can be positive as well as negative
+but <img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"> is always
+positive.</p>
+<p>Here, weight function is shortest path from initial vertex
+<i>u</i> to final vertex <i>v</i>.</p>
+<p><b>Relationship between</b> <i><b>w</b></i> <b>and</b> <img src=
+"../imgs/6f3655b49f43c301bb81b1720366a23cf2b77d81.png">
+<b>:</b></p>
+<p><b>Weight function</b> <img src=
+"../imgs/6f3655b49f43c301bb81b1720366a23cf2b77d81.png"> <b>can be
+derived from weight function</b> <i><b>w</b></i><b>:</b></p>
+<p>d is used for representing weight of the shortest path which is
+calculated from weight function <i>w</i>. d<i>’</i> is used for
+representing weight of the shortest path which is calculated from
+weight function<img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png">.</p>
+<p>After that, show the newly derived weight <img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"> which is
+derived from negative weight cycles is non-negative. According to
+the lemma,</p>
+<p>A weighted directed graph <i>G (V, E)</i> is given such that</p>
+<p><i>w:E?R</i> and</p>
+<p><i>h:V?R</i>For every edge which is connected between vertex
+<i>u</i> and vertex <i>v</i> define new weight function such
+as:</p>
+<p>1. Assume that <i>p</i> is any shortest path from the vertex
+<i>v</i><sub>0</sub> to the vertex <i>v</i><sub>k</sub> where
+weight function is <i>w</i> if and only if <i>p</i> is also the
+shortest path where weight function is <img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png">.</p>
+<p>2. <img src=
+"../imgs/62f779b94a1297b5c3c2de89ffbe9984e55a17ec.png"> if only
+<img src=
+"../imgs/a12c3237d5668e5f465a99e55692a0223a8d5e31.png"></p>
+<p>3. Assume that a graph <i>G</i> contains a negative weight cycle
+from weight function <i>w</i> only when the <i>G</i> also contains
+negative weight cycle from weight function <img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"></p>
+<p>Proving the first condition of the Lemma:</p>
+<p>Show that, a path <i>p</i> from the vertex <img src=
+"../imgs/1a446b6bfd738d8aca1dedc1df225b6227bfa0a3.png"> to vertex
+<img src="../imgs/789a37e146554b65ef29262aa9263f917adf729f.png">
+has</p>
+<p><img src="../imgs/efcb2672696da3015d65f4a1371ef69fdf56aa77.png">
+… … (1)</p>
+<p>Now,</p>
+<p><img src=
+"../imgs/b398ae1deacff80a8e3d3878d335c0fbbb96e927.png"></p>
+<p>Proving the third condition of the Lemma:</p>
+<p>Assume a cycle <i>c</i> which contains set of vertices from
+initial vertex <img src=
+"../imgs/1a446b6bfd738d8aca1dedc1df225b6227bfa0a3.png"> to final
+vertex <img src=
+"../imgs/789a37e146554b65ef29262aa9263f917adf729f.png">, where the
+last vertex <img src=
+"../imgs/789a37e146554b65ef29262aa9263f917adf729f.png"> is equal to
+the first vertex <img src=
+"../imgs/1a446b6bfd738d8aca1dedc1df225b6227bfa0a3.png">.</p>
+<p>Now, weight function <img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"> is as
+shown:</p>
+<p><img src="../imgs/a89b0aae4fd71f108aa30997661211e03a1388ec.png">
+… … (2)</p>
+<p>It is known that</p>
+<p><img src=
+"../imgs/7902b8d443a1dc0b13c320913816488fbdf4abf3.png"></p>
+<p>So, from equation (2),</p>
+<p><img src=
+"../imgs/787e80e3e05159adec4400a9c2f79deb4d8c3350.png"></p>
+<p>Hence, all the conditions of the Lemma have been proved.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Weight function</b> <b><img src=
+"../imgs/d1774a6ce33950eafe25a2eaf4bdc964a8de766c.png"></b> <b>is
+always positive:</b></p>
+<p>Assume a directed weighted graph <i>G =</i> (<i>V, E</i>) such
+that weight function <i>w: E</i><i><img src=
+"../imgs/4fdca010c9a1b2f943490197a2cbb95e53e1a006.png"></i><i>R</i>.</p>
+<p>Now, create a new graph <i>G`=</i> (<i>V’, E’</i>), where a new
+vertex <i>x</i> which does not belong to previous set of vertices
+<i>V</i>.</p>
+<p>Now new set of vertices <i>V’</i> and edges <i>E’</i> are
+denoted as:</p>
+<p><img src=
+"../imgs/cd2364b2098c58c4e873962a4e7c4a4b4e38a1ad.png"></p>
+<p>For<img src=
+"../imgs/e1ae642a9f414c1d0f40ab21b0b94065eb1dac6e.png">for all
+vertices <i>v</i> which are belonging to the previous set of
+vertices <i>V,</i> extend weight function.</p>
+<p>From the third condition which had been proved earlier that
+<i>G’</i> contains no cycle of negative weight, but the condition
+is that <i>G</i> should also not contain negative weight cycle.</p>
+<p>Now assume that the Graph <i>G</i> and <i>G’</i> contains no
+cycle of negative weight</p>
+<p><img src=
+"../imgs/75bcb6c474e0410f7883e0613b82abdb80d51686.png"></p>
+<p>By using property of triangle inequality (sum of any two side of
+the triangle is greater than or equals to the third side)</p>
+<p><img src="../imgs/07bc1746dc3a3bfecb632f769bb408fd447579c9.png">
+… … (3)</p>
+<p><img src=
+"../imgs/24545c809028da210cc70ed4bebaa68b7e3d2cfb.png"></p>
+<p>By using the using equation (3) prove <img src=
+"../imgs/1c08cc73c9c421faec65043ae92788252a537eb8.png"> is always
+greater than or equal to the final vertex.</p>
+<p>Thus, <img src=
+"../imgs/1c08cc73c9c421faec65043ae92788252a537eb8.png"> is always
+greater than or equal to the <i>h</i>(<i>v</i>). So, the weight
+function <img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"> is always
+comes to be positive.</p>
+<p>Hence, it is proved that <img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"> is always
+positive.</p>
+<p>A weighted directed graph <i>G</i>(<i>V</i>, <i>E</i>) is given
+such that <i>W</i>:<i>E</i>?<i>R</i> and
+<i>h</i>:<i>V</i>?<i>R</i>For every edge which is connected between
+vertex <i>u</i> and vertex <i>v</i> define new weight
+function<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Johnson’s algorithm uses steps as:</p>
+<p>1. Add a new node <i>a</i> to the graph, each of the node in the
+graph is connected to the edges of weight zero.</p>
+<p>2. In the second step, use the bellman-ford algorithm which
+determines the minimum weight <img src=
+"../imgs/552cfb08cb45655f14e35ee55d38b0b048f51b37.png"> along the
+path from the new vertex <i>a</i> to <i>v</i>. If during the
+process if negative weight cycle is found, then the algorithm is
+terminated.</p>
+<p>3. Then in the next step the reweighting is done for the edge
+from <i>u</i> to <i>v</i> having length <img src=
+"../imgs/4d3ee5e81a9f4f09ee1045285a6a427e41bfede6.png"> (original)
+and the new length is <img src=
+"../imgs/e853fb2b1ad2d65c6037451ea44b3d481964241d.png"> (after
+reweighting).</p>
+4. Finally the added node <i>a</i> is removed from the graph and
+the Dijkstra’s algorithm is used to find the shortest path.</div>
+<hr>
+<div class="answer">
+<p><b>Illustration to prove that</b> <b><img src=
+"../imgs/d1774a6ce33950eafe25a2eaf4bdc964a8de766c.png"></b> <b>is
+always positive:</b></p>
+<p>Consider the following graph <i>G</i>:</p>
+<p><img src="../imgs/fcbc32059a99adeb840ebdd118ae7c758b376402.png"
+alt="Picture 5"></p>
+<p>In the below graph, one new vertex, which is of orange color, is
+added into the above Graph <i>G</i>.</p>
+<p><img src="../imgs/2bc6d6f6909735758721d78afcfd9f11127802e9.png"
+alt="Picture 1"></p>
+<p>Next, assign the weight 0 to all the vertices which are
+connected with the new (source) vertex.</p>
+<p><img src="../imgs/4e8a1a39c982ccd481fe0c2d0066795d9ec8767b.png"
+alt="Picture 2"></p>
+<p>By using the Bellman-Ford algorithm, weights of vertices is
+calculated.</p>
+<p><img src="../imgs/e409707f6b8ee596da796f2b80506d52c8ef8862.png"
+alt="Picture 3"></p>
+<p>New non-negative weights of all the edges are calculated by
+using the weight function:</p>
+<p><img src=
+"../imgs/81b6e198953c6e21fff6725c38cefbd4ffc1c7c1.png"></p>
+<p><img src=
+"../imgs/f684c8a086e5031d6d5ff22c88eed1bbe13010ed.png"></p>
+<p><img src=
+"../imgs/01955f41d385db018e4fe1e0dcc7acd60e2a6c84.png"></p>
+<p><img src=
+"../imgs/21edb464e0082fea3457188c957ce6bbcd327765.png"></p>
+<p><img src=
+"../imgs/d98b05b6808dc7d7b3b855ad5e0c86e08580e806.png"></p>
+<p><img src=
+"../imgs/fc63228653095993fd884b9acdeb6d918d754372.png"></p>
+<p><img src=
+"../imgs/adfdd1156fe54450183c5b8beabfd4fcb655aba2.png"></p>
+<p><img src=
+"../imgs/25eaea3093f144c5528d7e79702ca1a82d9f6f72.png"></p>
+<p><img src=
+"../imgs/06840be1a29ae091fed204828d206a5ff1171d2c.png"></p>
+<p><img src=
+"../imgs/39b0124258054054961c11ae543017e9d91295df.png"></p>
+<p>By using the reweighting technique, weights of edges can be
+calculated.</p>
+<p>Thus from the above example, it is clear that weight
+function<img src=
+"../imgs/b17f430e8bf435fda6ba0b50c58eeefee6099f47.png"> always
+contain positive value.</p>
+<p><img src="../imgs/8fbd1f355c71a4cfb598260f068848bb6c8a5533.png"
+alt="Picture 4"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Using Johnson’s algorithm, weights of a directed and weighted
+graph can be rewritten without changing the shortest paths.</p>
+<p><b>The flaw in the Professor Greenstreet claims:</b></p>
+<p>Professor Greenstreet claims doesn’t guarantee that the shortest
+paths remain same, even after the graph is rewritten.</p>
+<p><b>Counter example to Professor Greenstreet claims:</b></p>
+<p>Consider the following graph with 4 edges and add minimum weight
+(-10) to every weight to re calculate <img src=
+"../imgs/858e64427dad0c9d8da59ba6f8a47d4b95a24730.png">.</p>
+<p><img src="../imgs/5655262943926579e6a693f0340c3b9d051ca6fd.png"
+alt="Picture 1"></p>
+<p>The shortest path from <img src=
+"../imgs/f6b1d5fb05b5edc4eae907291a69eb51abb06a22.png">is <img src=
+"../imgs/8f4a26c9fa6e3c80a625e3b77653dadc256e148c.png"> with weight
+4 in the original graph.</p>
+<p>After rewriting the graph using Professor Greenstreet’s claim,
+the shortest path from <i>s</i> to <i>b,</i> is changed. That is,
+<img src="../imgs/e7c99dbcee4a3e0adeb903e526212e85bd9ef32b.png">
+with weight 15.</p>
+<p><b>Therefore, Professor Greenstreet’s claim changes shortest
+paths.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a 0-weight cycle <i>a-b-c</i> in a directed graph
+<i>G</i>. That is,<img src=
+"../imgs/61ff8154d4325f580d517410a9a064c9048ac43f.png"> Now, add a
+new vertex <i><b>s</b></i> to the graph <i>G</i> such that there is
+an edge between <i>s</i> to every vertex in the graph <i>G</i>.
+Then, compute the new weights for each edge in the graph.</p>
+<p>Particularly,</p>
+<p><img src=
+"../imgs/ccc0743b8668295eff463b4bdc21c8334ba38f94.png"></p>
+<p>Since the a-b-c is a 0-weight cycle, <img src=
+"../imgs/60c05ffbaa60d738f2017fef1f842d253bc95389.png"></p>
+<p>Hence,</p>
+<p><img src=
+"../imgs/3d256832742b489e7a1d9046d8e524df7ba08801.png"></p>
+<p>Similarly,</p>
+<p><img src=
+"../imgs/f54d456aee5abddac2634cdb0b790495df416aa3.png"></p>
+<p>Therefore, if any graph <i>G</i> has a 0-wieghted cycle, then
+the new weights of every edge in the cycle is 0.</p>
+<p><b>Example:</b></p>
+<p><img src="../imgs/4b98421c4d4506ef595c423b58987e4017e00cb5.png"
+alt="Picture 5"></p>
+<p>Observe that the cycle 1-3-4, where <i>w</i>(1,3) +
+<i>w</i>(3,4)+<i>w</i>(4,1) = 0</p>
+<p>Add the new vertex <i>s</i> and compute the new weights.</p>
+<p><img src="../imgs/45c52659ee8fd4b4e3199d47974db56397c25aa4.png"
+alt="Picture 6"></p>
+<p><img src="../imgs/4c72e220553463b07f464e4517f0ae5cf3f90a69.png"
+alt="Picture 7"></p>
+<p><b>After rewriting the graph, the new weights are as
+follows:</b></p>
+<p><img src="../imgs/a7e7aa5ba8b48fe7e8c8d096481082806cde3ab8.png"
+alt="Picture 8"></p>
+<p>Observe that,</p>
+<p><img src=
+"../imgs/b63c03f9dfadf54213b6f28e919dbe7c8849091b.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/66348d6bb11d1dc9a0a99f85ff855b78e13779d7.png">
+<hr>
+<img src="../imgs/f9ce55c8d1d8b9537db3dc2f998040b9172d37eb.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

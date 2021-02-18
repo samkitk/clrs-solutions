@@ -1,0 +1,197 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 31.7</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following RSA key set to determine the value of
+<i>d</i> that is used as the secret key.</p>
+<p>The provided value of <i>p</i>, <i>q n</i> and <i>e</i> are as
+follows:</p>
+<p><img src=
+"../imgs/6e877d7706df2d8c649760e3a8bdf768ed0abc5f.png"></p>
+<p>Calculate the value of <img src=
+"../imgs/40e61604c6d8726c07742c11eb182040dbd99eb0.png"> using the
+formula <img src=
+"../imgs/a77c10dd7ddf2d38dd00cf3d15fc0c504aefe91c.png">.</p>
+<p><img src=
+"../imgs/e7ac1a82a9b1168cf415cbf1706cbcf688534f33.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Compute the value of <i>d</i> using Extended-Euclid’s algorithm
+such that <img src=
+"../imgs/ce269490a03fa7e15ea19760a33d948543954c27.png"></p>
+<p><img src=
+"../imgs/8b859b7ee43b13bf3c1ec20a3dd4d43c1754c0e3.png"></p>
+<p>where <i>k</i> is the least positive integer.</p>
+<p>For <img src=
+"../imgs/aaa7cf1a66ef328903b187b912f560da838fa63a.png"></p>
+<p><img src=
+"../imgs/85a202b9a1982986f25d132168beec7961f2adfb.png"></p>
+<p><b>Therefore the value of the secret key is</b> <b><img src=
+"../imgs/5476d3372e6f123f91cf2bb6291cd50f9d5b8d10.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Calculate the cipher text of the message <img src=
+"../imgs/6fd8fb364186d908ad9c9d7d08d7eb8fca409f7b.png">.</p>
+<p>The formula to calculate the cipher text is <img src=
+"../imgs/7f7d2bd857add551b2b20fb6da523cf6d9cc757e.png">.</p>
+<p>where <i>c</i> is the cipher text.</p>
+<p><img src=
+"../imgs/59c7e17352ecd36be74497c2da1ee24fe2017910.png"></p>
+<p><b>Therefore, the encryption message of the message</b>
+<b><img src=
+"../imgs/6fd8fb364186d908ad9c9d7d08d7eb8fca409f7b.png"></b>
+<b>is</b> <b>254</b> <b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>If Alice’s public exponent <img src=
+"../imgs/7380f045a63368301590e8d7fd31ef2dc2f981c8.png">is chosen as
+3, then it is insecure.</p>
+<p>Suppose that when a same message that Alice want to send to
+several different people.</p>
+<p>• Now, if Alice does the obvious thing as encrypting the message
+which have to send using each of their public keys and send it.</p>
+<p>• Then eavesdropper Eve will collect every encrypted
+message.</p>
+<p>Now, Eve will check if the number of messages is equal to or
+greater than the encrypted exponent<img src=
+"../imgs/e2e811d2a6327ba3134d888796a6ff9eb9c19f28.png">, <b>then in
+this condition Eve may recover the message.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following example:</p>
+<p>Suppose Alice’s want to send the same message <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">in the
+encrypted form to a number of different several people<img src=
+"../imgs/90d5b97e16494e271b98d2fc420da00d1efef736.png">, where
+every using the same exponent <img src=
+"../imgs/7a88e8d1faa47ad518962360c8b9625ac82aca45.png">and
+different modulo<img src=
+"../imgs/fec0e7a51fbbaf5453bbdb1c8caa9646e3134498.png">.</p>
+<p>Suppose the eavesdropper Eve intercepts <img src=
+"../imgs/5423007c7221f85e0be3569835bdade1ac3cf233.png">and
+<img src="../imgs/beba840559b0ad0de4a5f7edd949bbcce8bda161.png">where,
+<img src=
+"../imgs/e5b201a42968f75eb11ab6dc063ce11270b52edb.png">.</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/8f43800eceb32de4e2306e17b6514e8087b664d4.png"></p>
+<p>However,</p>
+<p><img src=
+"../imgs/584a5e1f4e79bde37b950a9cfe050ea58ef156b0.png"></p>
+<p>Then user consists the following:</p>
+<p><img src=
+"../imgs/c990dc5d6e0b4a22867abd7f843ce619d0f23fcc.png"></p>
+<p>Thus, <img src=
+"../imgs/4ac7c12752ae5845e1f2e6f975bc2fd8324ef13a.png">holds over
+the integer and then Eves can easily obtain the cube root of
+<img src="../imgs/9004886286af59169980925a50e052a8a63d2909.png">to
+compute<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">.</p>
+<p>Hence, if the exponent <img src=
+"../imgs/7380f045a63368301590e8d7fd31ef2dc2f981c8.png">is chosen to
+3 or<img src=
+"../imgs/7a88e8d1faa47ad518962360c8b9625ac82aca45.png">; then only
+three different encryptions are sufficient to recover the original
+message.</p>
+<p>Therefore, from the above explanation it is clear that, “<b>if
+the exponent</b> <b><img src=
+"../imgs/e2e811d2a6327ba3134d888796a6ff9eb9c19f28.png"></b><b>is
+chosen to 3, then the adversary can factor Alice’s modulus</b>
+<i><b>n</b></i> <b>in time polynomial in the number of bits in</b>
+<i><b>n</b></i><b>”</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/29f3df26b116b450ce6d474a1fef295edbaf4e0a.png">
+<hr>
+<img src="../imgs/5f9c8948f01f341d06720d93cb91d0fd0c0bc65a.png">
+<hr>
+<img src="../imgs/8e8fdc4a6b85861436df3030f935eafc501c25c2.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

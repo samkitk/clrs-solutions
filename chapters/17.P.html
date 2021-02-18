@@ -1,0 +1,862 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 17.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a)</p>
+<p>The algorithm will be as follows:</p>
+<p>Initialize the array say A that has length n such that it is
+true for all values, then traverse the indices of the original
+array. If the corresponding entry in the array A is true, swap the
+element at the current index with the element at the bit reversed
+position.</p>
+<p>Set the entry in the array A that corresponds to the
+bit-reversed index equal to false.</p>
+<p>The function <img src=
+"../imgs/93a0b74559315054f818dc2116fe832322b3c8fb.png">is running
+less than n times. So, the run-time is <img src=
+"../imgs/e58b9bf402a9f83b21d48797c7eb7111af76b1a0.png">.</p>
+<p>1. do <img src=
+"../imgs/dea3f7f171526da6612e09c38ff776383186ad16.png"></p>
+<p>2 if <img src=
+"../imgs/0c1ccc4370603a899164008592dbe0f9c0b41dd9.png"></p>
+<p>3 then swap <img src=
+"../imgs/6ae1f072d92d9e67da1196b532bf36ccf710cd11.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p>The implementation of the BIT-REVERSED-INCREMENT procedure is as
+follows:</p>
+<p>Do the bit reversed increment which will add a one to the left
+most position in which all carries will go to left instead of
+right.</p>
+<p><b>BIT – REVERSED –INCREMENT</b> <b><img src=
+"../imgs/931e334e27146ecf8789a8b3f60af822704225ce.png"></b></p>
+<p>1. let y be 1 followed by k-1 zeros.</p>
+<p>2. while (<img src=
+"../imgs/4d48e480a883155e1f81ea088ce2dd3ae5d4ece7.png">)</p>
+<p>3. do</p>
+<p>4. <img src=
+"../imgs/9afe68a46ae6c47e73875aa009f08cf627a4d797.png"></p>
+<p>5. <img src=
+"../imgs/93b42b498930b12863f6541549e315253faaae47.png"></p>
+<p>6. end while</p>
+<p>7. return (<img src=
+"../imgs/ad2bb325cb9d0aaf3935cb6d625c1d4f2f033c50.png"> )</p>
+<p>This algorithm will take amortized time. So, take a binary
+counter and bit reversed counter and swap the values of the two
+counters and perform increment.</p>
+<p>If swapping has already been done, then do not swap.</p>
+<p>The total running time of <img src=
+"../imgs/567ef45604b25f97ccdae582de2ea167fbb3f1fe.png"> BIT –
+REVERSED –INCREMENT s is<img src=
+"../imgs/567ef45604b25f97ccdae582de2ea167fbb3f1fe.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c)</p>
+<p>If a word is shifted left or right by one bit in unit time, then
+it is still possible to implement O(n) time bit reversal
+permutation in the following way:</p>
+<p><b>BIT – REVERSED –INCREMENT</b> <b><img src=
+"../imgs/931e334e27146ecf8789a8b3f60af822704225ce.png"></b></p>
+<p>1. <img src=
+"../imgs/786038c94ff5a9e2f2d37a026c6d79d1f91a2c8b.png"></p>
+<p>2. count <img src=
+"../imgs/5d7206478c57e58fd660c62a1b59ed0f804c0edd.png"></p>
+<p>3. while <img src=
+"../imgs/d03a01cc88b80c4799840cf7e5df1c67bb771a7a.png"></p>
+<p>4. do <img src=
+"../imgs/2e84713eee72275b300fc2aa0afcc120c31b3f0b.png"><img src=
+"../imgs/7cbdd73ec1392708b8226c4389fe8324eadb1205.png">Shifts value
+of x by only 1 bit left.</p>
+<p>5. count <img src=
+"../imgs/d27a24242d59aa60ea7c121f1ecb4f6f1502019b.png">count +
+1</p>
+<p>6. <img src=
+"../imgs/5a851461ad41ecc1b80c152c2416f4c80e63f7ba.png"></p>
+<p>7. while (count &gt; 0)</p>
+<p>8. do <img src=
+"../imgs/047aa022b8913b246f0c105407943f2246a10792.png"><img src=
+"../imgs/7cbdd73ec1392708b8226c4389fe8324eadb1205.png">Shifts value
+of x by only 1 bit right.</p>
+<p>9. count = count – 1</p>
+<p><img src="../imgs/171bf4a5521aa2801e0ce1e0e7536627aa82f2a9.png">
+still holds.</p>
+<p>In this algorithm, only single shifts to the right or left are
+used.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/7100706786ae683496f659809a03841906d02857.png">
+<hr>
+<img src="../imgs/96e1681f7ea3af6aaae885e536293b8c5664f491.png">
+<hr>
+<img src="../imgs/7cfda2fb0e3285a4f61dbccf1191cac8d8d4f341.png">
+<hr>
+<img src="../imgs/f94f21c36b1ad7cbe8a6cdb2860c1cbf06913b1c.png">
+<hr>
+<img src="../imgs/bb86e91ce0907942dd06812ae64013c137f11adc.png">
+<hr>
+<img src="../imgs/0b3d4540c0abf4093f013aa55c8164e3429f2006.png">
+<hr>
+<img src="../imgs/050a147d0345f96352e9887aa925bab680fd76a0.png">
+<hr>
+<img src="../imgs/f0d2641c28a69ea577437f23dc58e9b17dd6cd45.png">
+<hr>
+<img src="../imgs/b28ba238e044d7f80ef6ac66321499c7561840b8.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p>Consider the following algorithm to build an <i>x</i> rooted
+tree which is <img src=
+"../imgs/32e10409aea73dcc957db167225a1999e3e8e339.png">balanced:</p>
+<p>HALF-BALANCE-TREE <img src=
+"../imgs/67b2f0b1e29460942824c1fb23b1ae52423169f7.png"></p>
+<p>1. Declare an array<img src=
+"../imgs/084f7e772c8e89c88d2d1ce283dd3c5bd8137b33.png">.</p>
+<p>2. <img src=
+"../imgs/34af5e007aca4ef01ac082c1cb94c03afbec5b3c.png"></p>
+<p>3. <img src=
+"../imgs/97d4dc420d7d7410b5e8970bd3932b9fd5390f2c.png"></p>
+<p>4. INSERT-NODE <img src=
+"../imgs/1e788a41e5bccf78df9e7ad6075e6e7c28a55169.png"></p>
+<p>5. if<img src=
+"../imgs/03f0da446689da35845c462898d02a4a0e72827f.png"></p>
+<p>6. return.</p>
+<p>7. HALF-BALANCE-TREE <img src=
+"../imgs/4a309b5ce0bb32780fd0d25fc93ad906d2872c7d.png"></p>
+<p>8. HALF-BALANCE-TREE <img src=
+"../imgs/879cad8da58e9debd20c49d0ece2429e3f34ebcd.png"></p>
+<p><b>Time complexity:</b></p>
+<p>In above algorithm the 2<sup>nd</sup> line call the
+INORDER-TRAVERSAL procedure to determine the in-order which takes
+<img src="../imgs/938fbf2c49c28ecda60714f0293b2d7e90292af3.png">
+time. The HALF-BALANCE-TREE procedure recursively call itself.
+Therefore its recurrence becomes:</p>
+<p><img src=
+"../imgs/d12b2fd1a78c0e01dc87cd30dad7d7554aa76ec9.png"></p>
+<p>Thus, time complexity becomes<img src=
+"../imgs/498b1d267a65f2e7b3df72539287325dbde2e5be.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>In <i>n</i>-node <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">-balanced
+binary tree the searching is done with the recursive calls. At any
+point the sub-tree having <i>i</i> nodes make recursive call the
+sub-tree having <img src=
+"../imgs/a28be3d1408fb52f70ac1e581a2bec1fe4fbab2b.png">nodes.
+Therefore the recurrence becomes:</p>
+<p><img src=
+"../imgs/e4d47190e4386ad01c5cc46de36d20433727d718.png"></p>
+<p>Where, <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png"> is the
+constant, therefore total time taken by <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">-balanced
+binary tree in searching is<img src=
+"../imgs/d19fa26c198ca350a2e597d470cd3dcb3f01b492.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i>c.</i></p>
+<p><i>It is already given that potential of tree is:</i></p>
+<p><i><img src=
+"../imgs/d4448db702a24f0538d456c25f29f5c4da4cef53.png"></i></p>
+<p><i>Where,<img src=
+"../imgs/e1efe6554cb74226ed983f76798148edc40aaca1.png">, is the
+absolute difference between size of left and right sub-tree that is
+why the binary search tree has non-negative potential. The
+potential is non-negative because <img src=
+"../imgs/e1efe6554cb74226ed983f76798148edc40aaca1.png">is the
+absolute difference between size of left and right
+sub-tree.</i></p>
+<p><i>It is already known that in</i> <img src=
+"../imgs/32e10409aea73dcc957db167225a1999e3e8e339.png"> <i>balanced
+binary search tree the size of left and right sub-tree is less
+than</i> <img src=
+"../imgs/32e10409aea73dcc957db167225a1999e3e8e339.png"> <i>the size
+root</i> x<i>.</i></p>
+<p><img src=
+"../imgs/5b55437b1adf62f1c1bcd64d3f98ebedc17dec82.png"></p>
+<p>and,</p>
+<p><i><img src=
+"../imgs/f4b3c0cad2c1be73a06f4c9da272735335f5bdab.png"></i></p>
+<p><i>Now, prove</i> <img src=
+"../imgs/a27b3967eedd0598d7bd882ef5fe8a00c7324980.png"> <i>in</i>
+<img src="../imgs/32e10409aea73dcc957db167225a1999e3e8e339.png">
+<i>balanced binary search tree by contradiction. At first
+suppose</i> <img src=
+"../imgs/a27b3967eedd0598d7bd882ef5fe8a00c7324980.png">
+<i>.</i></p>
+<p><i>This implies</i> <img src=
+"../imgs/890e8aadeaf31fb41e77878dc354ed8ce42c25f0.png"> <i>……
+(1)</i></p>
+<p><i>It is already known that sum of size of left sub-tree and
+right sub-tree is one less than size of its root tree.</i></p>
+<p><i><img src=
+"../imgs/b7ea877f0ca4e773c148f08fca1af4e4c39ed062.png"></i></p>
+<p>Now, move size of left tree to RHS to determine value of
+<img src=
+"../imgs/c3a1695f385484056f9cf2fa84b4d80063ab4f9f.png"></p>
+<p><img src="../imgs/2119e5f8313544c0634453afafd04fb58f59a51c.png">
+<i>…… (2)</i></p>
+<p><i>Now, put size of right sub-tree in equation</i>
+<i>(1).</i></p>
+<p><img src=
+"../imgs/e2e5d451780f6ec37fbaef2e2540ba2393d6ba1b.png"></p>
+<p>Move 2 to RHS</p>
+<p><img src=
+"../imgs/5b726b51a4fdeb7d1b7f490707edbbdf820651ee.png"></p>
+<p><i>But, according to condition of</i> <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">-balanced
+search tree<img src=
+"../imgs/034017b2ba96a24bb9ee5a0115af4c650d7c6cc2.png">, therefore
+it’s a contradiction.</p>
+<p>This implies<img src=
+"../imgs/b417842edd636b058391ffc4aab06dd0d44fa1bd.png">.</p>
+<p>The potential is sum of all nodes over<img src=
+"../imgs/eae2c4d9674ccd3f40743984ec725b092b48834c.png">, but
+according to above contradiction it is prove that there is no such
+node.</p>
+<p><b>Therefore,</b> <b><img src=
+"../imgs/5ad80f366891b6c177859ec357664a8024440c5d.png"></b>
+<b>in</b> <b><img src=
+"../imgs/32e10409aea73dcc957db167225a1999e3e8e339.png"></b>
+<b>balanced search tree</b></p>
+</div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer">d.
+<p>Suppose there is <i>x</i>-rooted <i>m</i>-node tree which is not
+<img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">-balanced.
+This mean that it violets the property of <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">-balanced
+tree.</p>
+<p>Suppose size of left tree violets the property</p>
+<p><img src="../imgs/afcc63a778dec8df13fe860cb1297fb02074023d.png">
+…… (3)</p>
+<p><i>It is already known that the sum of size of left sub-tree and
+right sub-tree is one less than size of its root tree.</i></p>
+<p><i><img src=
+"../imgs/b3aefe881296d228366f238bd687636c3821bdb2.png"></i></p>
+<p><i>Using equation</i> <i>(3)</i></p>
+<p><img src=
+"../imgs/b37f250871169a5326c033d28f7828a925ed2dfd.png"></p>
+<p>Take <img src=
+"../imgs/5b0e2ffae14235655ae91ecb8995fc900e4116a6.png"> as
+common</p>
+<p><img src=
+"../imgs/01b0d06ac3caf40e141c9f6d7a0654949871dbbd.png"></p>
+<p>Remove -1 from RHS</p>
+<p><img src=
+"../imgs/8868b6831d8beec29336d8f4a87dfcaa3b1d462d.png"></p>
+<p>The difference in size of left and right sub-tree that is
+<img src=
+"../imgs/af21adf686f6cdd097c6b6208b8f3049d24c4ac0.png">becomes:</p>
+<p><i><img src=
+"../imgs/1a0cc2e1325a5390ad456742a902a06adacbf8c7.png"></i></p>
+<p>It is <i>m</i>-node tree therefore value of<img src=
+"../imgs/5b0e2ffae14235655ae91ecb8995fc900e4116a6.png"> becomes
+m</p>
+<p><img src=
+"../imgs/fc9cdaf0622bb3cdffa658600de510dd8e9d2adf.png"></p>
+<p>Take <i>m</i> as common</p>
+<p><img src=
+"../imgs/050bb05c9eb4d04b1b6eeb12f4dc3d233eccf6fa.png"></p>
+<p><img src="../imgs/0fca7f41ff51176c8793f2394c5bbf84a367bc57.png">
+…… <i>(4)</i></p>
+<p><i>Since,</i></p>
+<p><i><img src=
+"../imgs/b1d5fe264580ddc84aaaccbf63d5408da28c2a3d.png"></i></p>
+<p><i>Now, use equation (4)</i></p>
+<p><img src=
+"../imgs/8c02fdee2237e153e42dc09436d27828a324dbfc.png"></p>
+<p>So, when <i>m</i>-node is again rebuild into <img src=
+"../imgs/32e10409aea73dcc957db167225a1999e3e8e339.png">balanced
+tree then the potential at each node including root node must be 0.
+Therefore potential change must be at least<img src=
+"../imgs/2c747be57fd31b0f20914d8a50b954017497bf13.png">.</p>
+<p>If value of constant <i>c</i> must be greater than <img src=
+"../imgs/058dafda4ce02461c92a1ec24bbc78cdeda1c619.png">then the
+potential will get reduce to <i>m</i>. Since, the potential to
+rebuild a tree is <i>m</i> unit, the amortized cost of rebuilding
+is <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"></p>
+<p><b>Therefore, the value of constant must be</b> <b><img src=
+"../imgs/43b230ca9ba43ddea4842350c68f5246688e9107.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>e.</b></p>
+<p>In <i>n</i>-node <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">-balanced
+BST the total amortized cost of insert and delete operation is the
+sum of cost of insert or delete operation and the potential
+difference between two states.</p>
+<p>The cost of insert or delete operation is same as the cost of
+searching a node in <i>n</i>-node <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">-balanced
+BST.</p>
+<p>As per part (b), the cost of searching the node is<img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">. Therefore
+the actual cost of insert and delete operation is also<img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">.</p>
+<p>When a node <i>x</i> is inserted or deleted in tree then
+<img src=
+"../imgs/e2cb447e880217a58400f41846eb73581ebeb4ea.png">changes on
+those i<sup>th</sup> node which comes in path from node <i>x</i> to
+root. When insertion is occurred then <img src=
+"../imgs/e2cb447e880217a58400f41846eb73581ebeb4ea.png">is increased
+by 1.The<img src=
+"../imgs/e2cb447e880217a58400f41846eb73581ebeb4ea.png">of all other
+remaining node get unchanged.</p>
+<p>According to part (b), the number of nodes to the location where
+<i>x</i> is inserted is<img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">. Therefore
+the change in potential becomes:</p>
+<p><img src=
+"../imgs/48056d6138f015676d3c3589ee356a9a14dda35c.png"></p>
+<p>Remove the constant <i>c</i></p>
+<p><img src=
+"../imgs/dcd98a30abb3ad6894f0bbd59915c085e589adea.png"></p>
+<p>Therefore the total amortized cost of insertion or deletion:</p>
+<p><img src=
+"../imgs/5ae58c3ef0a3975676d852869e039b39ef69a882.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/bebeb25cb7d700d140f03517c385f2b728040d46.png">
+<hr>
+<img src="../imgs/4cfa0e5409e88e23edfcf305995ba703e3d44e7e.png">
+<hr>
+<img src="../imgs/c634fcf6b9151edc890c3b1590567b00557fef92.png">
+<hr>
+<img src="../imgs/709c3ddb5df5f19f580364430e1e7d8e66c6099e.png">
+<hr>
+<img src="../imgs/b3fbd44b9b80bacd72618d80929aedbf2cc39383.png">
+<hr>
+<img src="../imgs/ad82687562b65a634e3e7e40ae92492e0fdf5bd2.png">
+<hr>
+<img src="../imgs/5ee1ae4ca99d1db2389ac79446eb2fb697a074eb.png">
+<hr>
+<img src="../imgs/0ae845a1a481fdd045e3921bea2c561292d0c30f.png">
+<hr>
+<img src="../imgs/9364a1c7e36f7c46d55495d4ba033d3c99be9827.png">
+<hr>
+<img src="../imgs/63911bf4077ccbe678d8c306f5b95c7c1e7b5529.png">
+<hr>
+<img src="../imgs/447e550498fdfc83bfe9c622dde9abc0fc81d2bd.png">
+<hr>
+<img src="../imgs/b766def1fc689d3ec53e020b728d4c25a41e74db.png">
+<hr>
+<img src="../imgs/bd5e2a898827bf0785c4c50f97c5cdc765f6b19e.png">
+<hr>
+<img src="../imgs/a6ba61d4eca8c2cadb1bc27d87f547813d4dab81.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>SELF ORGANISING LISTS BY MOVE-TO-FRONT</b></p>
+By the name it suggests it is a type of list in which
+self-organizing is done in such a way that its elements are
+reordered on the basis of its heuristics such that the average
+access time improves. The main purpose of this method is to
+increase efficiency of the sequential search. And it is done by
+forwarding the items towards the head list which are frequently
+accessed. In the best case it takes the constant time for the
+accessing of element. It can be implemented easily by the
+linked-list. It is efficient in insertion and memory allocation of
+the random node but inefficient in its accesses.</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> Suppose there is a list of <i>n</i>-elements
+and an access sequence <img src=
+"../imgs/72afb624c7883fc2bfff8a2ac822d65839791427.png"> of keys to
+find elements, in order. In order to find any specific element in
+list, traverse the list from beginning till element is not
+found.</p>
+<p>The cost of accessing the sequence <img src=
+"../imgs/30d13ebcfa7fa4a9c94f3d355e61764c547627d7.png">using
+heuristic is denoted by <img src=
+"../imgs/17e129285186d3beaa29c61522673430527cf5c5.png"> and the
+symbol <i>m</i> is for the number of access in<img src=
+"../imgs/30d13ebcfa7fa4a9c94f3d355e61764c547627d7.png">.</p>
+<p>Now assume that there is a list <i>L</i> having <i>n</i>
+elements.</p>
+<p>The sequence of <img src=
+"../imgs/30d13ebcfa7fa4a9c94f3d355e61764c547627d7.png"> operations
+which is provided one at a time and for each of the operations the
+heuristics H must execute the operation immediately without
+considering the future operations and it also look over the whole
+sequence <img src=
+"../imgs/30d13ebcfa7fa4a9c94f3d355e61764c547627d7.png"> before.</p>
+<p>The worst case for Heuristic H on an access sequence is the
+access of the last (<i>n</i><sup>th</sup>) element of list.</p>
+<p>It is already mentioned that the cost of <i>k</i><sup>th</sup>
+element of list is <i>k</i>.</p>
+<p>Therefore the cost to access the <i>n</i><sup>th</sup> element
+is <i>n</i>.</p>
+<p>The cost of sequence is the summation of cost of each access.
+The numbers of access in sequence are <i>m</i>.</p>
+<p>Hence, the cost of accessing the worst case using Heuristics H
+is</p>
+<p><b><img src=
+"../imgs/1edc11b145eda1d293e4d8c21e0196cc37462897.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b. Move</b></i> <b>-to-front-Heuristics:</b></p>
+<p>In this first find the element <i>x</i> in list and then
+advances to the first position in the list. Here <img src=
+"../imgs/6087e1c1a3a5d031d5f2fb2f8a112a53c99cf4e3.png"> is called
+as the rank for the element <i>x</i> in the list <i>L</i>. The cost
+of accessing sequence <img src=
+"../imgs/e7e5bc236de47bca313fb6d84396ae3a864a01c0.png"> is denoted
+by <img src="../imgs/7fcfd8b173dbb10ff29682457c037e93f069bd3e.png">
+using the move-to-front heuristics. Explaining <img src=
+"../imgs/6087e1c1a3a5d031d5f2fb2f8a112a53c99cf4e3.png">with the
+help of example that is if the element <i>x</i> is at
+2<sup>nd</sup> position in the list then its rank is 2. It is
+mentioned that the cost of finding <i>x</i><sup>th</sup> element of
+list is <i>x</i> which is equal to the rank of the element in the
+list which is denoted by<img src=
+"../imgs/6087e1c1a3a5d031d5f2fb2f8a112a53c99cf4e3.png">.</p>
+<p>In the move-to-front heuristics after the accessing of the
+element <i>x</i> it is moved towards the front of <i>L</i> by the
+transpose operations.</p>
+<p>Therefore, the cost of accessing the <img src=
+"../imgs/e7e5bc236de47bca313fb6d84396ae3a864a01c0.png"> key element
+of list is the sum of cost of finding <i>x</i><sup>th</sup> element
+in list and cost of moving it to first position of list.</p>
+<p>The cost of finding <i>x</i><sup>th</sup> element in list =
+<i>x</i> or <img src=
+"../imgs/6087e1c1a3a5d031d5f2fb2f8a112a53c99cf4e3.png"></p>
+<p>The cost of moving <i>x</i><sup>th</sup> element of list to
+first is always one less than its rank like moving 4<sup>th</sup>
+element of list to first position requires 3 movements (4 to 3), (3
+to 2) and (2 to 1).</p>
+<p>Therefore,</p>
+<p>The cost of moving <i>x</i><sup>th</sup> element of list at
+first position= <img src=
+"../imgs/2227692780c793b6d9341ce26debc5d50ae81053.png"></p>
+<p>The cost of accessing the<img src=
+"../imgs/e7e5bc236de47bca313fb6d84396ae3a864a01c0.png"> key element
+of list that is</p>
+<p><img src=
+"../imgs/c4af147b3178e7c3be537126226b002ab2ed8116.png"></p>
+<p><b>Hence the condition for the cost is</b> <b><img src=
+"../imgs/e9a6db75b96f1fed97ac318cb8a2d8420817d8a3.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> The list after accessing of <img src=
+"../imgs/e7e5bc236de47bca313fb6d84396ae3a864a01c0.png"> with the
+move-to-front technique is denoted by <img src=
+"../imgs/1a150c23b81f2bd29969bf956dd54f490b364b29.png"> and
+<img src="../imgs/d1e01b66575e8f21146be60aced1cb718af2b48e.png">
+after the heuristics H.</p>
+<p>Correspondingly the cost of accessing the element is denoted by
+<img src="../imgs/7fcfd8b173dbb10ff29682457c037e93f069bd3e.png">
+for the move-to-front technique and <img src=
+"../imgs/ea48862c02c15acb659a46b331f943f719b17c4c.png"> by the
+heuristics H and it is also provided that the number of transpose
+is <img src="../imgs/5f20fc5dc08d7d49df50d33ddf667ca82f38da37.png">
+by the heuristics H.</p>
+<p>Since the cost for the <i>i</i><sup>th</sup> operation in the
+move-to-front technique is,</p>
+<p><img src=
+"../imgs/e2e4987abe772822997c600b955fb7304a66524d.png">for the
+accessing of the element <i>x</i>.</p>
+<p>The list <img src=
+"../imgs/d1e01b66575e8f21146be60aced1cb718af2b48e.png"> is
+reordered by transposing (changing the position of element) the
+element of list. The cost of one transposition is one unit.</p>
+<p>It is already mentioned that the cost of finding
+<i>x</i><sup>th</sup> element of list is <i>x</i> which is equal to
+the rank of the element in the list which is denoted by<img src=
+"../imgs/2b8f6dd4d15d0a99610216b94da384415b749bad.png">.</p>
+<p>Therefore, the cost for accessing the <i>x</i><sup>th</sup>
+element of list by the heuristics H is the sum of cost of accessing
+the <i>x</i><sup>th</sup> element and number of transposition.</p>
+<p><img src=
+"../imgs/4a56a4732fe4ba0caf93640d729ded003f2da7a2.png"></p>
+<p>Where <i>x</i> = cost of accessing <i>x</i><sup>th</sup>
+element.</p>
+<p><img src=
+"../imgs/5f20fc5dc08d7d49df50d33ddf667ca82f38da37.png">= number of
+transposition.</p>
+<p>The cost of accessing the <i>x</i><sup>th</sup> element is equal
+to the rank of <i>x</i><sup>th</sup> element which is denoted by
+<img src=
+"../imgs/6ebe0d7f6fde393264bac99d3f1de497b1ff4f27.png"></p>
+<p><img src=
+"../imgs/64a8436ad9b222b48e892b644d096c74e9b7e725.png"></p>
+<p><b>Hence proved</b></p>
+<p><i><b>d.</b></i> <b>Inversion:</b></p>
+<p>An inversion in the list <img src=
+"../imgs/1a150c23b81f2bd29969bf956dd54f490b364b29.png"> for a pair
+of element <i>y</i> and <i>z</i> has done in such a way that
+<i>z</i> is preceded by <i>y</i> in the list <img src=
+"../imgs/1a150c23b81f2bd29969bf956dd54f490b364b29.png"> and
+<i>y</i> is preceded by <i>z</i> in the list <img src=
+"../imgs/d1e01b66575e8f21146be60aced1cb718af2b48e.png">and the
+number of inversion is denoted by<img src=
+"../imgs/075eeebe887c484c97d4256685db314db2a23051.png">. The
+potential function <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png"> maps list
+<img src="../imgs/1a150c23b81f2bd29969bf956dd54f490b364b29.png">
+with number of inversions<img src=
+"../imgs/075eeebe887c484c97d4256685db314db2a23051.png">.</p>
+<p><img src=
+"../imgs/f36359c6d17c54869aeb85abba7ad72322cdf1c2.png"></p>
+<p>Since</p>
+<p><img src=
+"../imgs/fa02bcec824498f77fbb60a50e35f3af3d07d98c.png"></p>
+<p>And</p>
+<p><img src=
+"../imgs/473c69df431155dbaaa42bb685e90b27ed9376c1.png"></p>
+<p>The list is reordered by transposing (changing the position of
+element) the element of list. The cost of one transposition is one
+unit.</p>
+<p>And as the transpose used to either create or destroy the 1
+inversion so the change in potential function is denoted by the
+symbol <img src=
+"../imgs/3961375b21e60abb97a3bf2b398403ca7e01db7e.png"> which is
+equal to<img src=
+"../imgs/c2e061388ca5b36398617193d67f7c6f034a4a97.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>e</b></i> . To understand the effect of the access
+sequence on the potential function, define or classify the elements
+into four sets which are as follows:</p>
+<p><img src=
+"../imgs/e456165c2eaf80200311b646090feab4d587b94f.png"></p>
+<p>Where as</p>
+<p><img src=
+"../imgs/641de46ea28360ac8c1e7d044361e66fddb91779.png">implies that
+elements come before <i>x</i> in list <img src=
+"../imgs/f18c1d96fdecc38fd096a3934e434d2eca242cf6.png"><i><b>.</b></i></p>
+<p><img src=
+"../imgs/019af6a6353fab957ea3a61774e253cc3445b6bc.png">implies that
+elements come after <i>x</i> in list <img src=
+"../imgs/f18c1d96fdecc38fd096a3934e434d2eca242cf6.png"><i><b>.</b></i></p>
+<p>Now considering the above sets it implies that the elements of
+list are divided into four sets. Some element of list <img src=
+"../imgs/f18c1d96fdecc38fd096a3934e434d2eca242cf6.png"> which came
+before <i>x</i> are in set <i>A</i> and remaining elements of list
+<img src=
+"../imgs/f18c1d96fdecc38fd096a3934e434d2eca242cf6.png">which came
+before <i>x</i> are in set <i>B</i>.</p>
+<p>Therefore the total elements of list <img src=
+"../imgs/f18c1d96fdecc38fd096a3934e434d2eca242cf6.png"> before
+<i>x</i> are the sum of set <i>A</i> and set <i>B</i> that is</p>
+<p><img src=
+"../imgs/3d9cc35389606062101c5b07b91947cfd9b9d093.png"></p>
+<p>The above sum of set <i>A</i> and <i>B</i> does not contain
+element <i>x</i>.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/ab9755b55c5432d66be7a0990fe5828709bfc2c8.png"></p>
+<p>Rank that is <img src=
+"../imgs/13be65a1f0fda8cb01d2da33112d29b03af46f82.png"> of element
+is the position of <i>x</i> element in list.</p>
+<p>For example the rank of 6<sup>th</sup> element in list is 6 or
+the number of elements till 6<sup>th</sup> element including
+itself.</p>
+<p>Hence,</p>
+<p><img src=
+"../imgs/1b19adf873edc0d56bd87fd3286e9f6293605897.png"></p>
+<p>Or</p>
+<p><img src=
+"../imgs/e245d1cb828fb16be4cb3dbc6b3ca6b4991f9ac0.png"></p>
+<p>Similarly, all the elements of list <img src=
+"../imgs/e3925d3ebc05c2080a6a76cb587083820abf8f0e.png">which come
+before <i>x</i> are the sum of set <i>A</i> and set
+<i>C</i>.Therefore</p>
+<p><img src=
+"../imgs/bb465569c5deb8889a2c2a3cef2215a7db236622.png"></p>
+<p>Or</p>
+<p><img src=
+"../imgs/b2df82a3bb0e74273de806380997ebc21d0f12a4.png"></p>
+<p>When an element is accessed for a given operation, then,</p>
+<p><img src=
+"../imgs/35a26050870aa38c6f5a95a304e9ff4854a9b852.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><img src=
+"../imgs/f1421e0ba76a1d1c363336fada41e736b85e1dc8.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/aa341a3e9b5c92c6b37ebc3428f1ad808772029a.png"></p>
+</td>
+</tr>
+</table>
+<p><img src=
+"../imgs/7d379376cced64cd54e829e9df3ecee02adfa3ee.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><img src=
+"../imgs/7c6cb6d0eb672b9b9e489d95ec8c608b63f9a94a.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/70c8198aafe241bba98f78a03d830b817d23607b.png"></p>
+</td>
+</tr>
+</table>
+<p><img src=
+"../imgs/35a26050870aa38c6f5a95a304e9ff4854a9b852.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><img src=
+"../imgs/f1421e0ba76a1d1c363336fada41e736b85e1dc8.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/aa341a3e9b5c92c6b37ebc3428f1ad808772029a.png"></p>
+</td>
+</tr>
+</table>
+<p><img src=
+"../imgs/3b2f694d6375eaffc2e9f30f3a9a0376e312fa7b.png"></p>
+<p><img src=
+"../imgs/004f3dc97f5ea33e4f0f4778ac8585cb54f8a16c.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><img src=
+"../imgs/7c6cb6d0eb672b9b9e489d95ec8c608b63f9a94a.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/70c8198aafe241bba98f78a03d830b817d23607b.png"></p>
+</td>
+</tr>
+</table>
+<p><img src=
+"../imgs/d0767f4b4df4d87aab03f399366981c032f3500d.png"></p>
+<p>Now considering the above access operation and its effect at the
+conclusion that</p>
+<p><img src=
+"../imgs/e245d1cb828fb16be4cb3dbc6b3ca6b4991f9ac0.png"></p>
+<p>And</p>
+<p><img src=
+"../imgs/b2df82a3bb0e74273de806380997ebc21d0f12a4.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>f.</b></i> Considering the part
+<b>(</b><i><b>e</b></i><b>)</b> of the problem, the condition for
+the change in potential as when using move-to-front technique the
+<i>x</i> is moved forward that is in the front, it creates the
+inversions which is equal to <img src=
+"../imgs/0b3c072eb93d5f06fefe8bbca85e7aeb4a2683cd.png"> and during
+the process <img src=
+"../imgs/0bc4d830ce60a3b89c6b5c9ead70aea65dc7c085.png">inversions
+are destroyed. And the transpose for the heuristics in which the
+inversions created is less than equal to 1.</p>
+<p>So using the concept of the above discussion the <b>change in
+potential is</b></p>
+<p><img src=
+"../imgs/d44df2b63282fda56e91f25767db270d347b8ef5.png"></p>
+<p>The amortized cost is defined as the sum of the cost of the
+access sequence and the change in the potential function which can
+be represented for the <i>i</i><sup>th</sup> operation with the
+move-to-front technique as</p>
+<p><img src=
+"../imgs/753a3097369289dc49a19b3a99c61545458721e0.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>g.</b></i> Proof of amortized cost <img src=
+"../imgs/26e7e6f9ce73748bf51067b1e7d2f507051f4290.png"> of access
+being bounded by <img src=
+"../imgs/f2f0c497a805f33a94d081f686a2056a53aee784.png"></p>
+<p>In this problem amortized cost defined in the part
+<b>(</b><i><b>f</b></i><b>)</b> is as follows,</p>
+<p><img src=
+"../imgs/149aefc92c3c0ffbecc5f30a7587792cbe3730e0.png"></p>
+<p>From part (<i><b>b</b></i><b>)</b> and (
+<i><b>f</b></i><b>)</b>,</p>
+<p>Put <img src=
+"../imgs/e7d7c641c104a63de37a71233cc806bd1c381d79.png"> and
+<img src=
+"../imgs/37e1e28eb2fd70c21cd811b2e1367c41dbd58636.png"></p>
+<p><img src=
+"../imgs/2b07d852cd23b106082da4b89f2d709d02517c60.png"></p>
+<p>From part (<i><b>e</b></i><b>),</b></p>
+<p>Put <img src=
+"../imgs/7ac89be892801ab051727b4e11b2b9edcca83e92.png"></p>
+<p><img src=
+"../imgs/36516b58c1e76462190f8db4739a3b3884f15967.png"></p>
+<p>Add <img src=
+"../imgs/70e55e57cb90746c3df81ebcf91cfcbf77232878.png"> on right
+hand side of the equality</p>
+<p><img src=
+"../imgs/99b21af5d147bb8ef8907e0eb5c5023389ed148a.png"></p>
+<p>Put <img src=
+"../imgs/05f532f8bf5f6d7a936903e7613be5f5c8d16c0a.png"></p>
+<p><img src=
+"../imgs/8d7fa65a36323989972b07984b1aaa1c6ad9e89f.png"></p>
+<p>As <img src=
+"../imgs/265f4134e18812b741b6a5e540e7c4c9cd30d2cd.png"></p>
+<p><b><img src=
+"../imgs/257b9406cec2f1fc8463ce8c4f3be98ed302dd65.png"></b><b>Hence
+proved</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>h.</b></i> Considering the part
+<b>(</b><i><b>g</b></i><b>)</b> of the problem the condition is as
+follow:</p>
+<p><img src=
+"../imgs/e8aabdc166381d6cd2531bf484dcff5710641cd2.png"></p>
+<p><img src=
+"../imgs/d3196686ace00af4b514f761d6c3577edc869acd.png"></p>
+<p><img src=
+"../imgs/beb01d718c65432d38197a27148a64721ba6342f.png"></p>
+<p><img src=
+"../imgs/ffadb87cb433fca1b4b8945fd49f888e16058957.png"></p>
+<p>Where, <img src=
+"../imgs/843b32d9137e45b87b0123b66124d1daa2cd11d0.png">is the cost
+of accessing using heuristics.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

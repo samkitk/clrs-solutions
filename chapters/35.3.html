@@ -1,0 +1,341 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 35.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/1c07e2e3497db5e9c6a068f64f5874d9486d97fd.png">
+<hr>
+<img src="../imgs/6a742a5ce03c43621cea5803802f6d0617bcf0c3.png">
+<hr>
+<img src="../imgs/259adcecbc181c0474e23536e89d72999a36ba18.png">
+<hr>
+<img src="../imgs/ca5f6ae8e9896bf7a2bed173042152c6854433fd.png">
+<hr>
+<img src="../imgs/e5e5b27cf64551cf9ffe6d997b2a6f68e218256f.png">
+<hr>
+<img src="../imgs/3e039ba1ca3948d0c73a454e7df28e9853f5a833.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Decision Version of the Set-Covering Problem</b></p>
+<p>In the set covering problem a set of finite capacity is given
+which is also called the universe <i>U</i> of <i>n</i> elements.
+Each element of universe <i>U</i> is contained in either of the
+subsets<img src=
+"../imgs/5fa583c0b7545ea98c4ddf174fabe0aec112a44e.png">of set
+<i>S</i>.</p>
+<p><img src=
+"../imgs/61aeadfd31d8280bd56efc07bea05414a85c82c4.png"></p>
+<p><b>For example:</b> Consider that there are 10 simple points are
+in the universe <i>U</i> and each of the point is contained in
+subsets<img src=
+"../imgs/600abeb5175122474e4cb14ba6f80b4d8c4720d1.png">as shown in
+the figure below:</p>
+<p><img src="../imgs/67e10d067a9690633b78041315774e7f87bfac5b.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></p>
+<p>The subsets are contained in the set <i>S</i> that is<img src=
+"../imgs/1e63bc7cfd4d96483362b3fd6730ca533672d967.png">the minimum
+set that covers all the points of the universe is<img src=
+"../imgs/23c16025023eb3ecce3234e0192b16b448c7de28.png">. In set
+covering problem there is a finite set (universe) <i>U</i> of
+<i>n</i> elements is given, with a collection of its subsets, each
+set <img src=
+"../imgs/53e3d69329b563b12207a43b54a12aba44b75c77.png"> has a
+non-negative cost cost(<i>S</i>). The task is to find a minimum
+cost collection of these subsets is <i>U</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Vertex-Cover Problem:</b> For an undirected graph the vertex
+cover is define as the set of vertices that can cover all the edges
+of the graph. Consider the graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png"> the subset
+<i>P</i> of vertex set <i>V</i> is the set of vertices that can
+cover all the edges<img src=
+"../imgs/e0eed80e88763dc0e58b50b69e3d7b03f8295279.png">in the graph
+that is either the edge<img src=
+"../imgs/e0eed80e88763dc0e58b50b69e3d7b03f8295279.png">is connected
+to vertex <i>a</i> or it is connected to the vertex <i>b.</i></p>
+<p><b>For example:</b> Consider the graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">where<img src="../imgs/7539a6265a9f837a30c061171fa82640c04620b7.png">
+.</p>
+<p><img src="../imgs/c4b97e17136616041ae9ff760a91658c40a85660.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p>In the above graph the un-colored vertices are covering the
+edges of graph <i>G</i> that is vertex cover<img src=
+"../imgs/d9d235ed0a91e77c8086fe3e0df9fef5b8cf165e.png">. The size
+of vertex cover is the total amount of vertices in the vertex cover
+set. For the above graph the size of vertex cover is 4.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof for decision problem of set cover is NP
+complete:</b></p>
+<p>For showing that decision problem of set cover is NP complete
+following two points must be proved:</p>
+<p>a. The problem is in NP by a polynomial time expression.</p>
+<p>b. Reduce it to any of the NP complete problem using the above
+one.</p>
+<p><b>a. Proof for decision problem of set cover in NP</b>:
+Consider an example of set covering problem. The set covering
+problems here includes two sets. The finite set can be considered
+as <i>S</i> that is the total set of sports and the other set taken
+is of efficient set of counselors, which is defined according to
+the set covering problem which is in NP.</p>
+<p>Assume that <i>S</i> is the total set of <i>k</i> sports and
+<i>A</i> is the efficient set of counselors to be verified. Then
+the algorithm for the recruitment of counselors for the sports is
+as which is:</p>
+<p>Certifier_efficient_recruitment()</p>
+<p>{</p>
+<p>// check if number of counselors are greater than number of
+sports sets</p>
+<p><b>if</b> <img src=
+"../imgs/b5ed3da500e9586fc9677445136526196e97264f.png"></p>
+<p>// break the process by retuning false</p>
+<p><b>return</b> false</p>
+<p><b>end</b></p>
+<p><b>else</b></p>
+<p>// <i>c</i> is the number of times loop runs to find the set of
+counselors</p>
+<p><b>for</b> each counselor <img src=
+"../imgs/15c768d9750aa4614eec6c2e223b4d19b9bfb085.png"></p>
+<p>// exclude all counselors who are expert in sports and included
+in set <i>S</i></p>
+<p><b>remove</b> all sports that <i>A</i> is expert in from
+<i>S</i></p>
+<p>// end of for loop</p>
+<p><b>end</b> <b>for</b></p>
+<p>// check if the set is empty</p>
+<p><b>if</b> set <i>S</i> is empty</p>
+<p>// returning true on successful execution of algorithm</p>
+<p><b>return</b> True</p>
+<p><b>else</b></p>
+<p>// return statement</p>
+<p><b>return</b> False</p>
+<p>}</p>
+<p>In the above algorithm the outer loop runs for maximum of
+<i>c</i> number of times and there are <i>k</i> sports subsets are
+included in the set <i>S</i> so, the inner operation will be
+performed in <i>k</i> time. Hence, the overall complexity of
+algorithm<img src=
+"../imgs/16ee22ab4922edfec3408ec630ff7d0f6b203f40.png">.</p>
+<p>The complexity of the algorithm is in the form of polynomial and
+taken up by both the sets totally in the set covering problem
+above. Therefore, above efficient recruitment problem of counselors
+is in NP.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b. Reduce the decision problem of set discover to any of the
+NP complete problem</b></p>
+<p>As the vertex cover problem is NP complete so reducing the set
+cover problem to vertex cover problem as:</p>
+<p>Consider that there is a vertex- cover problem for a graph
+<i>G</i>(<i>V</i>, <i>E</i>), allocate a counselor at each vertex
+and allocate a sport on every edge. So, <img src=
+"../imgs/9150d0fdb1aca65a71231cfd97e21369070f05a0.png">that is
+<i>V</i> is the number of vertices in vertex cover problem and
+<i>A</i> is the number of counselors in set cover problem.</p>
+<p><img src=
+"../imgs/286e95c35566e028401f648d3f91f691068918a8.png">That is
+<i>E</i> is the number of edges in vertex cover problem and
+<i>S</i> is the set of sports in set cover problem.</p>
+<p>The two vertices joining the edges are the experts in that
+sport. Further, for finding the least number of counselors who are
+the expert in each and every sport, there will be the lowest number
+of vertices that cover all edges. So, the vertex cover of size
+<i>k</i> in the vertex cover problem will be similar to the set
+cover of size <i>k</i> in the set cover problem. Thus the above
+problem is reduced to vertex cover which is NP complete so this
+problem will be in NP complete.</p>
+<p>Hence, the decision version of the set covering is in NP by a
+polynomial time expression and it is been reduced it to vertex
+cover problem which is NP complete so it is in NP complete.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>An instance (X, F) of the problem has a finite set of elements X
+and a family of subsets (F) such that the <img src=
+"../imgs/88f695b57d1d50f7c1c983ec5726f7189c8aa270.png"></p>
+<p>Let <img src=
+"../imgs/9fff9c19a1b854d68c7c6ac15aee693729ca2250.png"></p>
+<p>We must find a minimum size subset such that <img src=
+"../imgs/3295a912549629c9c63c49340c2ae8e20698f2a7.png"></p>
+<p>The implementation can be done as follows:</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>LINEAR-GREEDY-SET-COVER</b></p>
+<p>1 Find the sizes of every instance of S storing them in S.
+size</p>
+<p>2 Let the length of the array A be <img src=
+"../imgs/f94e8b379e1052868738061f1f9655831d8e165e.png">which has
+empty lists</p>
+<p>3 <b>for</b> each instance of S do</p>
+<p>4 Add S to A [S. size]</p>
+<p>5 <b>end for</b></p>
+<p>6 Let A.max be the index of the largest non-empty list in A</p>
+<p>7 Let L be an array of length <img src=
+"../imgs/8ba874acc963c81d6400bff94ec15de8309f528e.png"> consisting
+of empty lists</p>
+<p>8 <b>for</b> each S do</p>
+<p>9 <b>for</b> <img src=
+"../imgs/dba7d0d3e136662e7523666581103386591d7b41.png">do</p>
+<p>10 add S to <img src=
+"../imgs/cc4f37de35fb7fb9a542ddc8514243869fb4e886.png"></p>
+<p>11 <b>end for</b></p>
+<p>12 <b>end for</b></p>
+<p>13 Select a set cover C which is initially empty</p>
+<p>14 Let M be the set of letters that are empty</p>
+<p>15 <b>while</b> A.max&gt;0 <b>do</b></p>
+<p>16 Let <img src=
+"../imgs/bc5b901c4729452e08d0e84fd1204d17d417bbd8.png">be any
+element of <img src=
+"../imgs/ef1770bdd45321abaeb67488079f9b43749d06df.png"></p>
+<p>17 add <img src=
+"../imgs/bc5b901c4729452e08d0e84fd1204d17d417bbd8.png">to C</p>
+<p>18 remove <img src=
+"../imgs/bc5b901c4729452e08d0e84fd1204d17d417bbd8.png">from
+<img src=
+"../imgs/1bb4e1d02d0e03b0ae5f00b6c945e45ba516ba9a.png"></p>
+<p>19 <b>for</b> <b><img src=
+"../imgs/5c60abbf75de8c9b83949a73e666e18d20da7cdc.png"></b><b>do</b></p>
+<p>20 <b>for</b> <b><img src=
+"../imgs/d5aadd2fcd374ecbb0cdaba1ead84406dcfa20e8.png"></b><b>do</b></p>
+<p>21 Remove S from <img src=
+"../imgs/1bb4e1d02d0e03b0ae5f00b6c945e45ba516ba9a.png"></p>
+<p>22 S. size-= 1 //decrement size</p>
+<p>23 Add S to A [S. size]</p>
+<p>24 <b>if</b> A[A.max] is empty, then</p>
+<p>25 A.max-=1</p>
+<p>26 <b>end for</b></p>
+<p>27 <b>end for</b></p>
+<p>28 <b>end while</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explaination</b>: Take the maximum points to the set with
+maximum number of elements. Add this set to get the required
+results. Decrement elements to be added in <img src=
+"../imgs/a939457349720b8048c8e530f6e4ce3b2597d8a3.png">time. Check
+if elements to be added are greater the 0 or not, else take the
+next maximum set.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

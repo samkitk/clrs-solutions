@@ -1,0 +1,939 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 32.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/cff7db30b9a3f14e9065399238d9f7c78768464f.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The prefix function is used to determine how the pattern
+<i>P</i> matches itself. This testing is used while finding a
+pattern <i>P</i> in text <i>T</i>. It helps to avoid testing
+useless shifts.</p>
+<p>The <img src=
+"../imgs/3d7505725a6e322ad8cc851dddcb08cdef321592.png"> is the
+longest prefix length of <i>P</i> that has proper suffix<img src=
+"../imgs/0d604dcfd89726dad3ff1c2c041fb2ebb6f79941.png">, where
+<i>q</i> is the longest repetitive sequence in <i>P.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>Suppose there is pattern<img src=
+"../imgs/f25c2428114ad29203c9012eadf46c36ff03b2c9.png">.</p>
+<p>The maximum value of <i>q</i> for this pattern is 7.</p>
+<p>So, the <img src=
+"../imgs/91bbac0aff92e035396dc735e16bbefc9acbeb98.png">for this
+pattern is 5. It is because the letter ‘<i>ab</i>’ repeats itself 5
+times in pattern <i>P</i>.</p>
+<p><img src=
+"../imgs/a67bc6eda385a9c78a655944dd4ad87562721b45.png">,
+implies<img src=
+"../imgs/373fe5395cfd943b52feeeb1546c63d3441c3e12.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>This bound is tight; consider the following example to show
+that:</p>
+<p>Suppose there is a pattern string in which letter <i>a</i> is
+repeated <i>q</i> time that is<img src=
+"../imgs/62a3fe5a9486739c9bc763c2f2019b9b6a9f9aae.png">.</p>
+<p>Therefore, <img src=
+"../imgs/a1f16d86223203a1691d6be73d174ad62db23727.png"></p>
+<p>Also, <img src=
+"../imgs/36857d824db047a70b17adc4409e9f842354e5d1.png"> and so
+on</p>
+<p>This implies <img src=
+"../imgs/828f6b90261a2e45d5a967506080f114da911a5c.png"></p>
+<p><b>Therefore, the upper bound on the size of</b> <b><img src=
+"../imgs/9784f62d9ca9f4e4fb24eb01c6db59f6424815e3.png"></b>
+<b>is</b> <b><img src=
+"../imgs/67e1f2016e64db987ca5e09c8f4419c67d456e98.png"></b> <b>,
+which is the function of</b> <i><b>q</b></i> <b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The prefix <img src=
+"../imgs/e6bd39953a8d5587a04887a1cf47264dcb655786.png"> has the
+information about how the pattern matches against the shifts of
+itself.</p>
+<p>This information can be used to avoid testing useless shifts in
+naive pattern matching algorithm or to avoid precomputation of
+<img src="../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">for
+a string matching automaton.</p>
+<p>Let the pattern P be “ababc” and the text T be “ababaabc”. Here,
+4 characters have matched successfully but the 5<sup>th</sup>
+pattern character fails to match the corresponding text
+character.</p>
+<p>The shifts in which the characters do not match are called
+invalid shifts.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In this figure the characters of the pattern P have matched with
+the text T and q denote the matching characters. In this case, the
+value of q is 4.</p>
+<p><img src="../imgs/a1e55fc67f3beb7c7caff968c37f34c34ba8b22c.png"
+alt="Picture 3"></p>
+<p>When a shift of <img src=
+"../imgs/35f07c93450459362f47f13ddc3e8b2898896b6f.png"> is taken,
+which is a valid shift the matching will be done as follows:</p>
+<p><img src="../imgs/690c75858feab3460a94cd943a22c4dbc6f6f870.png">
+and the value of k becomes 3.</p>
+<p><img src="../imgs/67ecde0b460cd25ec36c0c36daad6b3239d4a95b.png"
+alt="Picture 1"></p>
+<p>Now, compare the matched patterns with itself and it is shown in
+the following manner:</p>
+<p>The longest prefix of pattern P that is also a proper suffix of
+<img src="../imgs/ab0f54986a7230c25781f6e60e3c9fff02f32c74.png"> is
+<img src=
+"../imgs/28cfd129f238b9a0bc52edc1d73e392c49669999.png">.</p>
+<p>Here the value of q in the first diagram is 4 because the four
+characters have matched and after shifting two positions to the
+right, in the second diagram the value of k is 3.</p>
+<p>Therefore, <img src=
+"../imgs/47d315072d44cf5d45850f940afafc7579bc3749.png">.</p>
+<p>The next potential shift is at the position: <img src=
+"../imgs/a0844bddc956d84eab59680633cbb884dfac3fc3.png"></p>
+<p>Given pattern <img src=
+"../imgs/43996a0fb210d2794a303b2920bdaa573225f6a4.png">, the prefix
+function for pattern P is the function <img src=
+"../imgs/e6bd39953a8d5587a04887a1cf47264dcb655786.png">: <img src=
+"../imgs/a45dbc8d61df52180fcb584b483707d527bf0116.png"> such that
+<img src=
+"../imgs/e589696de64e07ad43039c8528724bcd721709b6.png">where
+<img src="../imgs/d609e9cae74890962fb8a6f2502b882b80be05d4.png"> is
+the length of the longest prefix of P that is, a proper suffix of
+<img src=
+"../imgs/446fa3c2c1fffde863c541af210307a3d60b45ba.png">.</p>
+<p>The complete prefix function <img src=
+"../imgs/e6bd39953a8d5587a04887a1cf47264dcb655786.png"> for the
+pattern P: “ababaabc” is</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p>i</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>6</p>
+</td>
+<td>
+<p>7</p>
+</td>
+<td>
+<p>8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/3d10ad44da08b9fbdeecf4a07a0741969b7e425b.png"></p>
+</td>
+<td>
+<p>a</p>
+</td>
+<td>
+<p>b</p>
+</td>
+<td>
+<p>a</p>
+</td>
+<td>
+<p>b</p>
+</td>
+<td>
+<p>a</p>
+</td>
+<td>
+<p>a</p>
+</td>
+<td>
+<p>b</p>
+</td>
+<td>
+<p>c</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/1c0577862e5b5612df0293a9f773d9e0005061c6.png"></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explaination:</b></p>
+<p>• The Knuth-Morris and Pratt algorithm is used as its
+computation time is linear and it uses an auxillary function
+<img src="../imgs/a7f1cdf98776cf449efbfe575763a0759c72d60f.png">
+precomputed from the pattern in time <img src=
+"../imgs/93570f61e5729d1af7b7d3f8142e274c0cb1b8a4.png">.</p>
+<p>• The auxillary function <img src=
+"../imgs/500dc82b23a8bbb10aad3eadcf8d681c0863b4ee.png">allows the
+transition function <img src=
+"../imgs/a0844bddc956d84eab59680633cbb884dfac3fc3.png">to be
+computed efficiently.</p>
+<p>• <img src=
+"../imgs/5a414dbae8d78c7f25d74a5986c9ec1b81a9e4ec.png"> contains
+the information that is independent of <i>a</i> and is needed to
+compute <img src=
+"../imgs/0f95bc5705abbcb8bd6967f855da3d3eb845e1cd.png">.</p>
+<p>• Thus, save a factor of <img src=
+"../imgs/14ca4ebaa0a72ceb61dfd635b0fbecfdc2f4fc40.png">in
+preprocessing time by computing <img src=
+"../imgs/500dc82b23a8bbb10aad3eadcf8d681c0863b4ee.png">rather than
+<img src=
+"../imgs/a0844bddc956d84eab59680633cbb884dfac3fc3.png">.</p>
+<p>To summarize it all, the simple way to achieve the result is to
+expand the alphabet one by one and if any character does not occur
+in either P or T, then compute the prefix array.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Proof showing that the running time of KMP-MATCHER is</b>
+<img src=
+"../imgs/42a1820dbbdf982375dd822f339b5c95fc8e3f1a.png"></p>
+<p>Aggregate analysis is one of the methods of amortized analysis.
+Amortized analysis of an algorithm involves computing of maximum
+total number of all operations on the different type of data
+structures.</p>
+<p>In amortized analysis the average of all the operations is
+computed by using the formula:</p>
+<p><img src=
+"../imgs/fe552e11227a27b2b5ef9f2ecb41533e74e95d3c.png"></p>
+<p>Where <i>n</i> is the total number of operations</p>
+<p>Thus by this method the average cost of all operations remains
+the same and less expensive as compared to individual operations
+that might have high individual costs.</p>
+<p>Using aggregate analysis it can be obtained the tighter bound of
+the algorithm</p>
+</div>
+<hr>
+<div class="answer">
+<p>The Knuth-Morris-Pratt (KMP) algorithm is one of the best string
+matching algorithms with its run time of <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"></p>
+<p>Now KMP algorithm needs to be analyzed using aggregate analysis
+and find out its run time.</p>
+<p>For this method, consider potential function to find out the
+order of each operation</p>
+<p>Amortized cost = actual cost + potential difference</p>
+<p>Here Actual cost is equal to the Initial cost of each
+operation</p>
+<p>Potential difference: tradeoff or additional cost required for
+the operation when compared to the previous operation</p>
+<p>According to formula,</p>
+<p><img src=
+"../imgs/78219a96638ba122c02fd5416cf8030430376c05.png"></p>
+<p>Where <i>i</i>: denotes the <i>i</i><sup>th</sup> operation</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Idea of Approach</b></p>
+<p>A single matching operation might take order of <i>k</i> that is
+<img src="../imgs/660ae2bc8832fe5102bc06d7ef66fa331a3fe287.png">and
+for <i>n</i> operations the order would be:<img src=
+"../imgs/c343d264ed48ad3c386148fc6792c96798fcf5fd.png"></p>
+<p>Thus order is zero when <i>n</i> = 0 (when the string is already
+matched)</p>
+<p>But, this is not a tighter bound hence the tighter bound would
+be<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p>Now, average aggregate analysis of an operation can be found out
+by using:</p>
+<p><img src=
+"../imgs/fe552e11227a27b2b5ef9f2ecb41533e74e95d3c.png"></p>
+<p>Here the order of one operation can be found out by using the
+potential function and it is known for ‘<i>n</i>’ operations,</p>
+<p>If the order is <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">then order
+of an operation is <img src=
+"../imgs/31d814cc508f440ad5b99c3cc5c2b63f394b7686.png"></p>
+<p>By using the converse, the order of one operation is known by
+using potential function. As the numbers of operations are
+‘<i>n</i>’, the order is found out by multiplying the order of one
+operation and the number of operations ‘<i>n</i>’.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>1.</b> <img src=
+"../imgs/3606920fe7c729e71e2f378c2356312789d84b76.png">: Initial
+potential = 0 as no string has been matched before it</p>
+<p><img src=
+"../imgs/dfd64c776ad8f08882f0ba1dce6632333bcf9aac.png">: It can
+never be negative as number of strings matched can never be
+negative</p>
+<p>As per KMP algorithm if:</p>
+<p><img src=
+"../imgs/263941063cc8e786e4805a9fd70723b512fa37d1.png"></p>
+<p>Where, <i>p</i>: denotes the pattern</p>
+<p><i>t</i>: denotes the text</p>
+<p>Then using the amortized equation</p>
+<p>. <img src=
+"../imgs/78219a96638ba122c02fd5416cf8030430376c05.png"></p>
+<p><img src=
+"../imgs/341bb652ce229027348373d0e3c3961ab26a6cf8.png">, as one
+comparison is known:</p>
+<p><img src=
+"../imgs/ea2de47daf706e82ab73f609c086eb47867d891d.png"></p>
+<p>Now using the equations</p>
+<p><img src=
+"../imgs/525ebf5212129a4367c0a09b3d4865270a5b5804.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2.</b> If<img src=
+"../imgs/dfd60ba5978f64c66378d40730f747292c401cbf.png"></p>
+<p>It implies that <i>n</i> number of times the shifting needs to
+be done <i>n</i> times to find the match</p>
+<p>Then using the amortized equation</p>
+<p>. <img src=
+"../imgs/78219a96638ba122c02fd5416cf8030430376c05.png"></p>
+<p><img src=
+"../imgs/e55d2f351132925f6dc08e548ec90b5be4ca1cae.png">, as
+<i>n</i> is the number of times until match is not found</p>
+<p><img src=
+"../imgs/653b64170d2d14653cee4b135fd234dab8af4df4.png"></p>
+<p>Where <i>j</i> denotes number of characters unused for match as
+per the cases in KMP algorithm</p>
+<p>Now using the equation,</p>
+<p><img src=
+"../imgs/a96d756ab92352aaeb43c0cb3010eb49bc923cc6.png"></p>
+<p>But,</p>
+<p><img src=
+"../imgs/d4ddab8fc403454904f84c354cd5e11b84d45d68.png">, since only
+comparison</p>
+<p>So,</p>
+<p><img src=
+"../imgs/7129f28626ffc8bc70673bdca345b59b91022dba.png"></p>
+<p>Hence,<img src=
+"../imgs/92f74b3c50b4809836ea84c9402252b83f1d98a5.png"></p>
+<p><b>3.</b> If<img src=
+"../imgs/dfd60ba5978f64c66378d40730f747292c401cbf.png"></p>
+<p>That is if <img src=
+"../imgs/4a93a675f31d3ec7aa9976c7abd3cd2f1fdf621f.png">is greater
+than <img src=
+"../imgs/9aea6000b37b5460a832c55fbaaca9d26c75ab91.png"></p>
+<p>Then using the amortized equation</p>
+<p><img src=
+"../imgs/309d52c1eace8904be0dde40950ad1d263c5e28a.png"></p>
+<p>// since no other shifts are necessary as already matched</p>
+<p><img src=
+"../imgs/f9261d45c3aef8453e4ca8b3de4bfd959ddd9121.png"></p>
+<p>Now using the equation,</p>
+<p><img src=
+"../imgs/a80cc740f5147e1303f329b8024c86169fbdb24d.png"></p>
+<p>But,</p>
+<p>As<img src=
+"../imgs/ab3ff51632b0001809f183a3b4edc460fa587c98.png"></p>
+<p>Since only one comparison,</p>
+<p><img src=
+"../imgs/9b26b7197b13151ff8322537199bdc330d680125.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/84ed6f4aad99097df1f00d2f56c302d935b618a5.png"></p>
+<p>Since in all the three cases,</p>
+<p><img src=
+"../imgs/92f74b3c50b4809836ea84c9402252b83f1d98a5.png"></p>
+<p>Amortized cost of <i>i</i>-<sup>th</sup> operation will be
+<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+<p>Thus, cost of each operation is of<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">.</p>
+<p>Thus for ‘<i>n</i>’ operations the order would be<img src=
+"../imgs/de5580341325531d9018684a313714214406a548.png">that
+is<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</p>
+<p>Hence, for KMP algorithm the tighter bound is obtained <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">by using the
+aggregate analysis.</p>
+<p><b>Hence proved</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Running time of KMP-MATCHER using potential function</b></p>
+<p>Potential method is a part or method of amortized analysis. In
+this method, the individual costs of the operations are to be found
+out by finding <img src=
+"../imgs/fe552e11227a27b2b5ef9f2ecb41533e74e95d3c.png"></p>
+<p>Where <i>n</i>: number of operations</p>
+<p>Amortized cost = actual cost + potential difference</p>
+<p>Actual cost: initial cost of each operation</p>
+<p>Potential difference: tradeoff or additional cost required for
+the operation when compared to the previous operation</p>
+</div>
+<hr>
+<div class="answer">
+<p>According to formula,</p>
+<p><img src=
+"../imgs/78219a96638ba122c02fd5416cf8030430376c05.png"></p>
+<p>Here <i>i</i>: denotes the <i>i</i><sup>th</sup> operation</p>
+<p>The Knuth-Morris-Pratt (KMP) algorithm is one of the best string
+matching algorithms with its run time of <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"></p>
+<p>NowKMP algorithm using aggregate analysis needs to be analyzed
+and run time is to be found.</p>
+<p><img src=
+"../imgs/3606920fe7c729e71e2f378c2356312789d84b76.png">: Initial
+potential = 0 as no string has been matched before it</p>
+<p><img src=
+"../imgs/dfd64c776ad8f08882f0ba1dce6632333bcf9aac.png">: It can
+never be negative as number of strings matched can never be
+negative</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>1</b>. As per KMP algorithm if:</p>
+<p><img src=
+"../imgs/263941063cc8e786e4805a9fd70723b512fa37d1.png"></p>
+<p>Where,</p>
+<p><i>p</i>: denotes the pattern and<i>t</i>: denotes the text</p>
+<p>Then using the amortized equation</p>
+<p>. <img src=
+"../imgs/78219a96638ba122c02fd5416cf8030430376c05.png"></p>
+<p><img src=
+"../imgs/341bb652ce229027348373d0e3c3961ab26a6cf8.png">, as one
+comparison is done</p>
+<p><img src=
+"../imgs/ea2de47daf706e82ab73f609c086eb47867d891d.png"></p>
+<p>Now using the equations</p>
+<p><img src=
+"../imgs/525ebf5212129a4367c0a09b3d4865270a5b5804.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2.</b> If <img src=
+"../imgs/dfd60ba5978f64c66378d40730f747292c401cbf.png"></p>
+<p>It implies that shift <i>n</i> number of times shifting is to be
+performed to find the match</p>
+<p>Then using the amortized equation</p>
+<p>. <img src=
+"../imgs/78219a96638ba122c02fd5416cf8030430376c05.png"></p>
+<p><img src=
+"../imgs/e55d2f351132925f6dc08e548ec90b5be4ca1cae.png">, as
+<i>n</i> is the number of times until match is not found</p>
+<p><img src=
+"../imgs/653b64170d2d14653cee4b135fd234dab8af4df4.png"></p>
+<p>Where <i>j</i> denotes number of characters unused for match as
+per the cases in KMP algorithm</p>
+<p>Now using the equation,</p>
+<p><img src=
+"../imgs/a96d756ab92352aaeb43c0cb3010eb49bc923cc6.png"></p>
+<p>But, <img src=
+"../imgs/d4ddab8fc403454904f84c354cd5e11b84d45d68.png">, since only
+comparison</p>
+<p>So,</p>
+<p><img src=
+"../imgs/7129f28626ffc8bc70673bdca345b59b91022dba.png"></p>
+<p>Hence,<img src=
+"../imgs/92f74b3c50b4809836ea84c9402252b83f1d98a5.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>3.</b> If <img src=
+"../imgs/dfd60ba5978f64c66378d40730f747292c401cbf.png"></p>
+<p>That is if <img src=
+"../imgs/4a93a675f31d3ec7aa9976c7abd3cd2f1fdf621f.png">is greater
+than <img src=
+"../imgs/9aea6000b37b5460a832c55fbaaca9d26c75ab91.png"></p>
+<p>Then using the amortized equation</p>
+<p><img src=
+"../imgs/309d52c1eace8904be0dde40950ad1d263c5e28a.png"></p>
+<p>// since no other shifts are necessary as already matched</p>
+<p><img src=
+"../imgs/f9261d45c3aef8453e4ca8b3de4bfd959ddd9121.png"></p>
+<p>Now using the equation,</p>
+<p><img src=
+"../imgs/a80cc740f5147e1303f329b8024c86169fbdb24d.png"></p>
+<p>But,</p>
+<p>As <img src=
+"../imgs/ab3ff51632b0001809f183a3b4edc460fa587c98.png"></p>
+<p>Since only one comparison,</p>
+<p><img src=
+"../imgs/9b26b7197b13151ff8322537199bdc330d680125.png"></p>
+<p>So,<img src=
+"../imgs/84ed6f4aad99097df1f00d2f56c302d935b618a5.png"></p>
+<p>Since in all the three cases,</p>
+<p><img src=
+"../imgs/92f74b3c50b4809836ea84c9402252b83f1d98a5.png"></p>
+<p>Amortized cost of <i>i</i><sup>th</sup> operation will be
+<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+<p>As per our assumption as there are <i>n</i> operations</p>
+<p>Hence, the amortized cost of KMP algorithm is <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"></p>
+<p><b>Hence proved</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>KMP-MATCHING</b></p>
+<p>It is an algorithm used for the pattern matching. The term
+pattern matching means that a pattern is searched in a given text.
+In the pattern matching, the searching has to be done for all of
+the occurrences of the pattern or one of it. It can be understood
+better by following example.</p>
+<p>Text: abaaaaaaaabacccaba</p>
+<p>Pattern: aba.</p>
+<p>In this all the sub-string which has aba has to be searched. It
+has a wide range of applications as-editing of the text. A number
+of algorithms are used for this purpose as NAÏVE algorithm,
+KMP-algorithm. Here would be discussed the KMP algorithm. It is
+named after the scientist KNUTH-MORRIS-PRATT.</p>
+<p>It is based on the string matching machine. It has the
+improvement over the naive matching algorithm. It checks that the
+pattern has matched or not. In this algorithm the movement should
+be from one state to the next during the matching. In the process
+the record of the state has to be kept to track the change that
+occurs when there is mismatch. If here is an array of length
+<i>n</i> for the text then total time taken is<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For KMP-MATCHER algorithm refer (section 32.3 of the textbook)
+and here the modified form of the KMP-MATCHER is discussed in which
+in the line 7 the <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png"> is replaced
+by <img src="../imgs/1a8a93f0c437f087ffcf7393159ff40efc64a1ed.png">
+which is defined in a recursive way and its formulation is as
+described below:</p>
+<p><img src=
+"../imgs/f7459c58412b74ce59bc172dd824e95c7ed382ac.png"></p>
+<p>In the original algorithm the string has to be tested from left
+to right and if during the process there is a match then the shift
+will take place and if there is mismatch then the shift will not be
+a valid one and the loop has to be tested again. And when <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png"> is replaced
+by <img src=
+"../imgs/1a8a93f0c437f087ffcf7393159ff40efc64a1ed.png">it does not
+need to be shifted again and again. So, in this way the running
+time increases and which reduces the time complexity.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation by implementation of both versions:</b></p>
+<p>Consider the text T = bacbababaabcbab</p>
+<p>Pattern P = ababaca</p>
+<p>Now, according to the prefix function version of the text book,
+the table formed for a particular pattern and step wise shift
+operation shown below:</p>
+<p><img src=
+"../imgs/ac3f24e6a859c147d5bc494642082d4ca38a4b78.png"></p>
+<p><img src="../imgs/619cb04da4f464b89b2f33aa7d18d6107f368580.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\15.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, according to the modified prefix function version of the
+KMP-MATCHER (according to the question), the table formed for a
+particular pattern and step wise shift operation shown below:</p>
+<p><img src="../imgs/8f2260a70a95f73ada8890e04a8dfe646141782c.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\18.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Here in above table the value of <i>q</i> and <i>k</i> are same
+as in older version that is 5 and 3 but here is shift operation
+perform only once but in the older version that are 3.</p>
+<p><img src="../imgs/27b73fae248283c9b0639ae7dc329ccc468f49a3.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\16.tif"></p>
+<p>The diagrammatic representation of shift (<i>s</i>), <i>q</i>
+and <i>k</i> for the above text and pattern and also pattern itself
+has some character common.</p>
+<p><img src="../imgs/e9b339fa1a488eab472aab66e3864b5e6afb7860.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\17.tif"></p>
+<p>Hence, the modified algorithm is correct and it improves the
+time complexity.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Cyclic Rotation in strings:</b></p>
+<p>The cycle that exist in the string need to be identified.
+Existence of cyclic rotation in the string can be observed using
+the following example:</p>
+<p>“structure”</p>
+<p>“cturestru”</p>
+<p>“urestruct”</p>
+<p>All the three text sequences shown above form a part of cyclic
+rotation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following algorithm is the linear time algorithm to
+determine whether a text</b> <i><b>T</b></i> <b>is a cyclic
+rotation of another string</b> <i><b>T</b></i> <b>’:</b></p>
+<p>The logic for finding cyclic rotations is as follows:</p>
+<p>• Concatenate the string <i>T</i> with itself.</p>
+<p>• Check <i>T</i>’ is substring of <i>TT</i> or not.</p>
+<p>• If <i>T</i>’ is a substring of <i>TT</i>, then <i>T</i> is a
+cyclic rotation of <i>T</i>’.</p>
+<p>• If <i>T</i>’ is not a substring of <i>TT</i>, then <i>T</i> is
+not a cyclic rotation of <i>T</i>’.</p>
+<p><b>Algorithm:</b></p>
+<p>CYCLIC-CHECK(<i>T</i>, <i>T</i> ’)</p>
+<p>1 <b>//</b> <i>T</i> is a main string and <i>T’</i> is another
+string</p>
+<p>2 <b>if</b> length(<i>T</i>)! = length(<i>T’</i>)</p>
+<p>3 <b>return</b> false</p>
+<p>4 <b>for</b> <i>i</i> = 0 to length(<i>TT</i>)</p>
+<p>5 <b>if</b>(<i>TT</i>[i] = <i>T</i> ’[<i>i</i>])</p>
+<p>6 count = count + 1</p>
+<p>7 <b>else</b></p>
+<p>8 count = 0</p>
+<p>9 <b>if</b> count = length(<i>T’</i>)</p>
+<p>10 <b>return</b> true;</p>
+<p>11 <b>else</b></p>
+<p>12 <b>return</b> false;</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time complexity calculations:</b></p>
+<p>• The line 4 in the algorithm contains a loop and iterates
+2<i>n</i> times if length of string <i>T</i> is <i>n</i>. So it
+takes a time <img src=
+"../imgs/fe1e75f85768d4cbbf5f892420fc024cc20d0d8d.png">.</p>
+<p>• The remaining lines in the algorithm take constant time. So,
+it takes <img src=
+"../imgs/8519ca3e935098d452442ab4085fcb4b9e5032f5.png">.</p>
+<p>• The total running time of the algorithm is <img src=
+"../imgs/50ddef11213c87019c1b53cff2806a5b8ff43bff.png">.</p>
+<p><b>Therefore, the total running time of the algorithm
+CYCLIC-CHECK(</b> <i><b>T</b></i> <b>,</b> <i><b>T</b></i> <b>’)
+is</b> <b><img src=
+"../imgs/eec9d8b411772d3dfa197719c839a18da4e5d8b8.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>For example:</b></p>
+<p><i>T</i>=“structure”</p>
+<p><i>T’</i>=“cturestru”</p>
+<p>Both strings have the same length, so</p>
+<p>Concatenating, <i>TT</i> becomes “structurestructure”</p>
+<p>Now checking that if <i>T’</i> is the substring of <i>TT</i>, it
+returns true.</p>
+<p>In this particular example it is:</p>
+<p><img src=
+"../imgs/b3c2d1cccfc0ad60bb8d846206c066a0746dc2f0.png"></p>
+<p>So, <i>T</i> is a cyclic rotation of another string
+<i>T</i>’.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>To compute the transition function</b> <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png"> <b>for the
+string-matching automaton:</b></p>
+<p>Transition function is generally computed in<img src=
+"../imgs/ebfb6440ebae019a815b53bffc64e17369343385.png">. But, the
+transition function can be computed in <img src=
+"../imgs/3f460c57d72d85e50e3bc8375651f3cad6caa38d.png"> by
+efficiently using the algorithm.</p>
+<p>Now, trying to find out the algorithm that can compute the
+transition function of a string matching algorithm having pattern
+<i>p</i> has time complexity of<img src=
+"../imgs/3f460c57d72d85e50e3bc8375651f3cad6caa38d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Use the hint in the problem.</p>
+<p>Assume, that <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png">has been
+computed (it is the prefix function as defined in KMP
+algorithm).</p>
+<p>Now, compute<img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png">, using the
+below algorithm,</p>
+<p>COMPUTE-PRE-FIX-FUNCTION (<i>P</i>)</p>
+<p>1 <i>len</i> = <i>P</i>.<i>length</i></p>
+<p>2 let <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png">[1...
+<i>len</i>] be a new array</p>
+<p>3 <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png"> [l] = 0</p>
+<p>4 <i>k</i> = 0</p>
+<p>5 <b>for</b> <i>q</i> = 2 <b>to</b> <i>len</i></p>
+<p>6 <b>while</b> <i>k</i>&gt; 0 and <i>P</i>[<i>k</i>+1]<img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png"><i>P</i>[<i>q</i>]</p>
+<p>7 <i>k</i>= <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png">
+[<i>k</i>]</p>
+<p>8 <b>if</b> <i>P</i>[<i>k</i> + 1] == <i>p</i>[<i>q</i>]</p>
+<p>9 <i>k</i>=<i>k</i>+1</p>
+<p>10 <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png"> [<i>q</i>]
+= <i>k</i></p>
+<p>11 <b>return</b><img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, the value <img src=
+"../imgs/af0d7e4681de95cea7350d83ed20c584b7867345.png">needs to be
+calculated which is the state that has to be gone through. If the
+current input character is <i>x</i> and the stage is <i>q</i> and
+current character is <i>P</i>[<i>q</i>], control moves to next
+stage, which is <i>q</i>+1 because the character at this stage is
+matched.</p>
+<p>So <i><img src=
+"../imgs/88bf732b78539e852d57f378ea4e947d4af3ea0d.png"></i></p>
+<p>Whenever the condition given above does not match, the tracing
+of stage having lower number <i>p</i>[<i>q</i>] is there. This
+makes the state before <i>q,</i> which is last state <i>p</i> [0
+... <i>p</i>[<i>q</i>]] as a suffix of <i>p</i> [0 ...
+<i>q</i>].</p>
+<p>So at state the <i>q</i>, its output contains the outputs of
+state <i>p</i>[<i>q</i>]. It is because the outputs are copied to
+the state <i>q</i>. As The character <i>p</i>[<i>i</i>] is set
+previously, this will be copied.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modified Algorithm:</b></p>
+<p>COMPUTE_TRANSITION_FUNCTION (P,<img src=
+"../imgs/70fc19c27e4666a341b1bd946685c9d91d9f887d.png">)</p>
+<p>//Store the length of the string in variable <i>m</i></p>
+<p>1 <i>len</i> = <i>length (P);</i></p>
+<p>2 <b>for</b> <i>q</i> = 0 through <i>m</i></p>
+<p><b>do</b></p>
+<p>{</p>
+<p>3 <b>for</b> each character <i>x</i> in <img src=
+"../imgs/70fc19c27e4666a341b1bd946685c9d91d9f887d.png"></p>
+<p>// make increment of +1 for <i>x</i>, and increment of +2 for
+subsequent repeat</p>
+<p>// loop to decrement. Finding minimum <i>len</i>+1, <i>q</i>+2
+and store in <i>k</i></p>
+<p>4<i>k</i> = <i>min</i> (<i>len</i>+1, <i>q</i>+2);</p>
+<p>// from here working of backward starts from <i>q</i>+1</p>
+<p>5 <b>repeat</b> <i>k</i> = <i>k</i>-1</p>
+<p>6 <b>until</b> <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png"><i>(k</i>)
+is-suffix-of' <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png">(<i>q</i>);</p>
+<p>// operation of assigning the transition table occurs here</p>
+<p><img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">(<i>q</i>,
+<i>x</i>) = <i>k</i>;</p>
+<p>}</p>
+<p>7 <b>end</b> for;</p>
+<p><b>Return</b> <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">;</p>
+<p>Thus, the required state is got that needs to be gone through
+and modification part is on step6.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Complexity of the algorithm:</b></p>
+<p>Step 1 and step 7 are of complexity<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+<p>Steps 2, 3, 4, 5, 6 are of <img src=
+"../imgs/3f460c57d72d85e50e3bc8375651f3cad6caa38d.png"></p>
+<p>On finding the complexity throughout the algorithm the
+result,</p>
+<p><img src=
+"../imgs/af1cb14de8a8ee2e7961bd1f02c3c35f5489eab6.png"></p>
+<p>On keeping a tighter bound the complexity is <img src=
+"../imgs/ed598ea8bf1ca7bcb5e54714f427badc46e062bb.png"></p>
+<p><b>Hence proved</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

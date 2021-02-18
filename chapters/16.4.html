@@ -1,0 +1,510 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 16.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A matroid set is defined as the ordered structure <img src=
+"../imgs/0d4aaf70cf022a76491ad1ff00b0f43e1b0093e5.png">which
+fulfills the following conditions:</p>
+<p>1. The set <i>S</i> must be a finite set.</p>
+<p>2. The set <img src=
+"../imgs/71793fb26cdea53d6fb7e48ba7d87cf641f4e0ee.png">contains at
+least one value in it and is formed from the sub-sets of <i>S</i>
+such that if <img src=
+"../imgs/4a99bd095a95ce3b501b90745db746ff483b4180.png">and
+<img src="../imgs/50033a6102d8b0702fae37c98453da54ab1993dd.png">then<img src="../imgs/96fee6284beb4bea6c49e3495e3bc38fe2069d29.png">.
+If it satisfies this property then <img src=
+"../imgs/71793fb26cdea53d6fb7e48ba7d87cf641f4e0ee.png">is called as
+<b>hereditary</b>. <img src=
+"../imgs/71793fb26cdea53d6fb7e48ba7d87cf641f4e0ee.png">Must contain
+empty set<img src=
+"../imgs/43081b143985b413b7484429097d0cc48ac21176.png">.</p>
+<p>3. If<img src=
+"../imgs/96fee6284beb4bea6c49e3495e3bc38fe2069d29.png">, <img src=
+"../imgs/4a99bd095a95ce3b501b90745db746ff483b4180.png">and<img src=
+"../imgs/f671d8537b292531a5c88c05579b0031648e6bb6.png">then for an
+item <img src=
+"../imgs/b9f8613ff30b3a74c94a90d296492fd469976886.png">such
+that<img src=
+"../imgs/83e26dc8e680fd417685a9b13b476b0c1a2833dd.png">. It is
+called as <b>exchange</b> property.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof of first property:</b></p>
+<p>It is already given that in<img src=
+"../imgs/9a61f969d1c3e9c78df5423f010858aec5c016e5.png">, <i>S</i>
+is a finite set so that it follows the (1) property of matriod.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof of second property:</b></p>
+<p>It is also given that <img src=
+"../imgs/18acd8a19588ac931043f9b8ec72713ac266c15a.png">is a set
+which contain all the subsets of <i>S</i>. This implies that
+<img src=
+"../imgs/18acd8a19588ac931043f9b8ec72713ac266c15a.png">also contain
+the empty set<img src=
+"../imgs/43081b143985b413b7484429097d0cc48ac21176.png">.</p>
+<p>Suppose <i>B</i> is a subset of <i>S</i> which lies in <img src=
+"../imgs/18acd8a19588ac931043f9b8ec72713ac266c15a.png"> and
+also<img src=
+"../imgs/4309aa24187de6aa49b238e0bf2ad3c2a1b85d0b.png">. Therefore,
+A is also a subset of<img src=
+"../imgs/18acd8a19588ac931043f9b8ec72713ac266c15a.png">. This can
+be shown by following example:</p>
+<p>Suppose S is a finite set<img src=
+"../imgs/e01cc76b6678a541aba46455dca22d6f70ffd55f.png">.</p>
+<p>Therefore all the subset of S that lies in <img src=
+"../imgs/18acd8a19588ac931043f9b8ec72713ac266c15a.png"> are as
+follow:</p>
+<p><img src=
+"../imgs/8d422b44cbd92c86fbf0b624191a73082010809f.png"></p>
+<p>Suppose B is<img src=
+"../imgs/2d2c51083991ce5acb4f588c449c118a59866dbc.png">and <i>A</i>
+is subset of <i>B</i> so <i>A</i> can be <img src=
+"../imgs/e2f486dd8735ae9c680e353e829b9074c469a736.png">or<img src=
+"../imgs/606521a2510c2480dd1b750e4120b2f99f2f1a76.png">. The subset
+<i>A</i> is also a member of<img src=
+"../imgs/18acd8a19588ac931043f9b8ec72713ac266c15a.png">.
+Therefore<img src=
+"../imgs/9a61f969d1c3e9c78df5423f010858aec5c016e5.png">satisfies
+the 2<sup>nd</sup> property of matriod.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof of third property:</b></p>
+<p>Suppose <i>A</i> is <img src=
+"../imgs/e2f486dd8735ae9c680e353e829b9074c469a736.png">and <i>B</i>
+is <img src="../imgs/2d2c51083991ce5acb4f588c449c118a59866dbc.png">
+are the subset lies in<img src=
+"../imgs/18acd8a19588ac931043f9b8ec72713ac266c15a.png">. The number
+of elements in <i>A</i> is less than <i>B</i> that is<img src=
+"../imgs/637da537fc8c1332d5d0c916bc1a689ebac82879.png">. There
+exist element <i>x</i> which exist in <i>B</i> but not in <i>A</i>
+that is element 2. The subset <img src=
+"../imgs/3d04ad67c13d94e41c0572575b287fccc9e96891.png">that is
+<img src="../imgs/2d2c51083991ce5acb4f588c449c118a59866dbc.png">is
+also a part of<img src=
+"../imgs/18acd8a19588ac931043f9b8ec72713ac266c15a.png">.</p>
+<p>Therefore<img src=
+"../imgs/9a61f969d1c3e9c78df5423f010858aec5c016e5.png">satisfies
+the 3<sup>rd</sup> property of matriod.</p>
+<p><b>The</b> <b><img src=
+"../imgs/9a61f969d1c3e9c78df5423f010858aec5c016e5.png"></b>
+<b>satisfies all three properties of matriod.</b></p>
+<p><b>Therefore,</b> <b><img src=
+"../imgs/9a61f969d1c3e9c78df5423f010858aec5c016e5.png"></b> <b>is a
+matriod.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A matroid set is defined as the ordered structure <img src=
+"../imgs/0d4aaf70cf022a76491ad1ff00b0f43e1b0093e5.png">which
+fulfills the following conditions:</p>
+<p>1. The set <i>S</i> must be a finite set.</p>
+<p>2. The set <img src=
+"../imgs/71793fb26cdea53d6fb7e48ba7d87cf641f4e0ee.png">contains at
+least one value in it and is formed from the sub-sets of <i>S</i>
+such that if <img src=
+"../imgs/4a99bd095a95ce3b501b90745db746ff483b4180.png">and
+<img src="../imgs/50033a6102d8b0702fae37c98453da54ab1993dd.png">then<img src="../imgs/96fee6284beb4bea6c49e3495e3bc38fe2069d29.png">.
+If it satisfies this property then <img src=
+"../imgs/71793fb26cdea53d6fb7e48ba7d87cf641f4e0ee.png">is called as
+<b>hereditary</b>. <img src=
+"../imgs/71793fb26cdea53d6fb7e48ba7d87cf641f4e0ee.png">Must contain
+empty set<img src=
+"../imgs/43081b143985b413b7484429097d0cc48ac21176.png">.</p>
+<p>3. If<img src=
+"../imgs/96fee6284beb4bea6c49e3495e3bc38fe2069d29.png">, <img src=
+"../imgs/4a99bd095a95ce3b501b90745db746ff483b4180.png">and<img src=
+"../imgs/f671d8537b292531a5c88c05579b0031648e6bb6.png">then for an
+item <img src=
+"../imgs/b9f8613ff30b3a74c94a90d296492fd469976886.png">such
+that<img src=
+"../imgs/83e26dc8e680fd417685a9b13b476b0c1a2833dd.png">. It is
+called as <b>exchange</b> property.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The following three conditions must be satisfied in order to
+show <img src=
+"../imgs/076f6b8221dd6d1d870083ee83b037610d5a0db4.png">is
+Metroid:</p>
+<p>• <i>S</i> is a finite set; it is because <i>S</i> contains the
+set of columns of <i>T.</i></p>
+<p>• Suppose <img src=
+"../imgs/4a99bd095a95ce3b501b90745db746ff483b4180.png">, therefore
+the column of B matrix are linearly independent. If <i>A</i> is
+subset of <i>B</i> that is<img src=
+"../imgs/4309aa24187de6aa49b238e0bf2ad3c2a1b85d0b.png">. Then,
+<i>A</i> must be linearly independent therefore, <img src=
+"../imgs/96fee6284beb4bea6c49e3495e3bc38fe2069d29.png">.</p>
+<p>Hence, <img src=
+"../imgs/71793fb26cdea53d6fb7e48ba7d87cf641f4e0ee.png">is
+hereditary.</p>
+<p>• In order to proof the exchange property, suppose <i>A</i> and
+<i>B</i> are subset of <img src=
+"../imgs/71793fb26cdea53d6fb7e48ba7d87cf641f4e0ee.png">and
+<img src="../imgs/637da537fc8c1332d5d0c916bc1a689ebac82879.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The columns of A are linearly independent. Now, in order to
+calculate the rank takes these columns as matrix. The maximal set
+of linear independent columns is the rank of any matrix. Therefore
+the rank of <i>A</i> becomes:</p>
+<p><img src=
+"../imgs/87be83573e4fd00aac983912419db05bb2732ae3.png"></p>
+<p>Similarly, the rank for <i>B</i> becomes:</p>
+<p><img src=
+"../imgs/23f37aab300f911212cf4a2b7d671851ece58c0a.png"></p>
+<p>Because, <img src=
+"../imgs/637da537fc8c1332d5d0c916bc1a689ebac82879.png">
+therefore</p>
+<p><img src="../imgs/0601054685fc6c150829a3c3d46044e2738d5d32.png">
+…… (1)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Use contradiction</b> to proof the exchange property that is
+there is column <i>d</i> in <i>B</i> which does not form linearly
+combination with columns of <i>A</i>. Therefore <img src=
+"../imgs/7238b4dee2597060676ade6891a01b3e4f7f7aa9.png">is linearly
+independent.</p>
+<p>At first suppose the columns of <i>B</i> form linear combination
+with columns of <i>A</i>. This means the column space of <i>B</i>
+form subspace for columns space <i>A</i>.</p>
+<p>So, according to matrix property that if column space of
+<i>X</i> is subspace of <i>Y</i> then<img src=
+"../imgs/8e2d6241c99214787ec6d498c51a1736da200e5e.png">.</p>
+<p>Therefore, rank of <i>B</i> is less than rank of A<img src=
+"../imgs/c4ecde6fa31603a72936493fe54813b066410c6d.png">. This
+contradicts the equation (1). So, B’s columns are not linear
+combination of A’s column.</p>
+<p>Therefore, <img src=
+"../imgs/076f6b8221dd6d1d870083ee83b037610d5a0db4.png">satisfies
+the exchange property. The, <img src=
+"../imgs/9a61f969d1c3e9c78df5423f010858aec5c016e5.png">satisfy all
+three properties of matriod. Hence <img src=
+"../imgs/9a61f969d1c3e9c78df5423f010858aec5c016e5.png">is a
+matriod.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>It is required to show that if (S, <i>I</i>) is a matroid, then
+(S, <img src=
+"../imgs/346bc41c8c433136ddca22bbbf80874c9135d4db.png">) is a
+matroid. So, first show that <img src=
+"../imgs/346bc41c8c433136ddca22bbbf80874c9135d4db.png">is
+non-empty. Let the maximal element of <img src=
+"../imgs/2312ff6f0f98b81ee99a9383c0a7011fb0648540.png"> be A, then
+<img src="../imgs/6c61ca89da41a404092e963de3ada92e0c2e539c.png">
+because S-(S-A) = <img src=
+"../imgs/3ae6e01bde4615d5c5c9f2c869844297b1c083df.png"> which is
+maximum in <img src=
+"../imgs/2312ff6f0f98b81ee99a9383c0a7011fb0648540.png">.</p>
+<p>Suppose that <img src=
+"../imgs/74580fa808590c75e1737dd24865a237dbcc5241.png">, then there
+must exist <img src=
+"../imgs/3e65a5e412e0773522a90bc972883fd54dd64731.png"><img src=
+"../imgs/43e321161339f675320c593a971b6c8966489b6b.png"> so that
+<img src="../imgs/1a0bda7cf4a593ea2a53174f90d7c9c841f1d5b3.png">,
+however <i>S-B</i><i><img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"></i>
+<img src=
+"../imgs/d85c997e1d2b66e2e22b57a3f55b2338b67b6ed4.png"><img src=
+"../imgs/1a0bda7cf4a593ea2a53174f90d7c9c841f1d5b3.png">so <img src=
+"../imgs/024bc357f385ee52b538cb2bd74c9b42b3d9faa4.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Lastly, the exchange property is required to be proved. If B
+exists, <img src=
+"../imgs/14d0185ced463c0fb89c904cacc742fa25280d9e.png">and
+|B|&lt;|A|, so an element y can be found out in A-B that can be
+added to B. In this scenario, there exists two cases:</p>
+<p>Case 1: |A|=|B|+1</p>
+<p>Case 2: Let X be a maximal independent set of <i>I</i> which is
+contained in <i>S-A</i>. Pick a set having size |X|-1 from the
+independent set contained in <i>S-B</i>, let the set be Y. So there
+exists some <img src=
+"../imgs/e7de0d87b83c06190c6d300c155c64ba7aa64967.png">such that
+<img src="../imgs/e462aba418e8fdf7b7a747111682f14bf2ee4164.png"> is
+maximal independent set in <i>I</i></p>
+<p>Thus, <img src=
+"../imgs/0d5f16a0b300945d3b1ffc6d6a452eff42124770.png"> is
+independent in <img src=
+"../imgs/346bc41c8c433136ddca22bbbf80874c9135d4db.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a finite set <i>S</i> which is to be partition into
+number of subsets <img src=
+"../imgs/2194124b9c0a2386a85b2cf6a025e2e6d950f908.png">with at
+least one element in them now defining a structure <img src=
+"../imgs/1f1b3be44cfaf152d5fac0d891d631542324bfa7.png">such
+that<img src=
+"../imgs/c1a710476e2a58998a5c0ae24dedb15c943f20e6.png">. Proving
+that the structure<img src=
+"../imgs/1f1b3be44cfaf152d5fac0d891d631542324bfa7.png"> is
+matroid.</p>
+<p>Matroid set is defined as the ordered structure <img src=
+"../imgs/b6f367eced941bd13709a94f383e3fd70403cb8b.png">which
+fulfills the conditions as:</p>
+<p>1. The set <i>S</i> in matroid set is finite.</p>
+<p>2. The set <i>I</i> contains at least one value in it and is
+formed from the sub-sets of <i>S</i> such that if <img src=
+"../imgs/77e042dbb23dccdd59c8f606a4fbbde8aa4a4b7e.png">and
+<img src="../imgs/58a7ffae7497f520d4a5a839f4fa4c82f22a8fa4.png">then<img src="../imgs/795a3e4aa09c9fa880e75f9a011a7e7ece12536f.png">.</p>
+<p>3. If<img src=
+"../imgs/795a3e4aa09c9fa880e75f9a011a7e7ece12536f.png">, <img src=
+"../imgs/77e042dbb23dccdd59c8f606a4fbbde8aa4a4b7e.png">and<img src=
+"../imgs/98019517aae4e5dd79e7ef0f25ebede7b765d55d.png">then for an
+item <img src=
+"../imgs/687c62a73edfe06436a7fb919ea6a4534bd3a289.png">such that
+<img src=
+"../imgs/78e7effe5d1b2b1f4761abc65af2346ff11fa463.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For a set<img src=
+"../imgs/1f1b3be44cfaf152d5fac0d891d631542324bfa7.png">to be a
+matroid set it must fulfill the properties of the matroid set which
+is as follows:</p>
+<p><img src=
+"../imgs/7fae9fbd2f6b61c4da2d8e5d4cc7f4eec1eb2c8f.png"></p>
+<p>Now, <img src=
+"../imgs/0c9fc6ea7e25bf311c16225dcdf5048227705c26.png">, after that
+the rank of the function is as given below:</p>
+<p><img src=
+"../imgs/590049f39ba0fc6ef83b781218d4b647e3ce47f1.png"></p>
+<p>Thus, the rank function of the matroid is as follow some
+properties is as given below:</p>
+<p><img src=
+"../imgs/71ea3aeb41abb14c4f1b26730b93e4364c67d18e.png"></p>
+<p>Thus, from the above three functions, concluded that the
+following cases is as follows:</p>
+<p>1. <img src=
+"../imgs/83cda31ac7af09c0b30c86614ff5103aabfe4321.png"> is a finite
+non-empty set. (Non-empty because the partitions of <img src=
+"../imgs/83cda31ac7af09c0b30c86614ff5103aabfe4321.png"> are
+non-empty)</p>
+<p>2. <img src=
+"../imgs/2312ff6f0f98b81ee99a9383c0a7011fb0648540.png">is
+non-empty, as mentioned in the problem. If <img src=
+"../imgs/5afc4abc498f3846867fb4ca3309fac5421c5d43.png">, then
+<b><img src=
+"../imgs/47ccc38768f77b21c2b76e027714c08ea9ebd3cf.png"></b>contains
+either one or no element from the partition. And any subset of
+<img src=
+"../imgs/47ccc38768f77b21c2b76e027714c08ea9ebd3cf.png">will also,
+therefore contain either one or no element from the partition. So,
+<img src="../imgs/2312ff6f0f98b81ee99a9383c0a7011fb0648540.png">is
+hereditary.</p>
+<p>3. If <img src=
+"../imgs/5187c25cefd3166442f3a7f7aeccec00f51198cc.png">and<img src=
+"../imgs/5afc4abc498f3846867fb4ca3309fac5421c5d43.png">and<img src=
+"../imgs/b3abea498cab31f6a38d5c81f256ef937cb303ac.png">, which
+means <b><img src=
+"../imgs/47ccc38768f77b21c2b76e027714c08ea9ebd3cf.png"></b>has at
+least one element more than <img src=
+"../imgs/3c8f524b663e6f62fe09577b4dc2ab8505fcc97a.png">. This
+element must belong to some partition of <img src=
+"../imgs/83cda31ac7af09c0b30c86614ff5103aabfe4321.png">whose
+element is not in set<img src=
+"../imgs/3c8f524b663e6f62fe09577b4dc2ab8505fcc97a.png">(as
+<img src="../imgs/b3abea498cab31f6a38d5c81f256ef937cb303ac.png">).
+If such an element is added to<img src=
+"../imgs/3c8f524b663e6f62fe09577b4dc2ab8505fcc97a.png">, it will
+still fulfill the property of <img src=
+"../imgs/2312ff6f0f98b81ee99a9383c0a7011fb0648540.png">containing
+at most one element from a partition.</p>
+<p>Since the structure <img src=
+"../imgs/1f1b3be44cfaf152d5fac0d891d631542324bfa7.png"> fulfills
+all the properties of the matroid set so <img src=
+"../imgs/b0ba59274fc27163984efcdd111a19e65098dd18.png">is
+matroid.</p>
+<p>Hence the structure<img src=
+"../imgs/1f1b3be44cfaf152d5fac0d891d631542324bfa7.png">, made up of
+the finite set <i>S</i> which is to be partition into number of
+subsets <img src=
+"../imgs/2194124b9c0a2386a85b2cf6a025e2e6d950f908.png">with at
+least one element in and <img src=
+"../imgs/c1a710476e2a58998a5c0ae24dedb15c943f20e6.png">is
+matroid.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Transforming the weight function of a weighted matroid
+problem to a standard weighted matroid problem:</b></p>
+<p>The weighted Matroid set is defined as the ordered structure
+<img src="../imgs/765387f5cfb9a4b76c7942ba1da5e999452e3e09.png">
+with weight function<img src=
+"../imgs/4ac88739868e7b95ad2826a32edc2f16949d566c.png"> which
+fulfills the conditions:</p>
+<p>1. The set S in matroid set is finite.</p>
+<p>2. The set <i>I</i> contains minimum one value in it and is
+formed from the sub-sets of S such that if <img src=
+"../imgs/e86ddc35b315ffb9b11da165f97b80530d357fd9.png">and
+<img src="../imgs/50033a6102d8b0702fae37c98453da54ab1993dd.png">then<img src="../imgs/4e933b14dfd20ee0f9e7a179817700c3c16df950.png">.</p>
+<p>3. If<img src=
+"../imgs/4e933b14dfd20ee0f9e7a179817700c3c16df950.png">, <img src=
+"../imgs/e86ddc35b315ffb9b11da165f97b80530d357fd9.png">and<img src=
+"../imgs/f671d8537b292531a5c88c05579b0031648e6bb6.png">then for an
+item <img src=
+"../imgs/3985df4d942acb11f4388f03110aad734071e690.png">such that
+<img src=
+"../imgs/de7ec6c9d23d3c03c0814905e71daa8c060d8080.png"></p>
+<p>• The input to the GREEDY algorithm that solves matroid problem
+is a set <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">and<img src=
+"../imgs/2bb90a637d89a309efe693436a18de499f30a980.png">, and it
+returns an optimal independent subset <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png"> such that
+<img src="../imgs/4ac88739868e7b95ad2826a32edc2f16949d566c.png"> is
+maximized.</p>
+<p>• The algorithm considers each element <img src=
+"../imgs/dba7d0d3e136662e7523666581103386591d7b41.png">in the order
+of non-increasing weight and adds it to the solution set <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png">, if
+<img src="../imgs/f4b54daeb6a66d3202d4eb592cb1a547f0b0206a.png"> is
+independent.</p>
+<p>• Now, the new weights function as follows:</p>
+<p><img src=
+"../imgs/bcc8f56c8dd26c7d82964a6f713a062e72f0c14e.png"></p>
+<p>• Here,<img src=
+"../imgs/691e3b631d365509dbd86b3117bb90015afdc48f.png"> is a number
+greater than the highest weight of any of the edges in the
+graph.</p>
+<p>• Now, all <img src=
+"../imgs/4ac88739868e7b95ad2826a32edc2f16949d566c.png">for a
+matroid with positive edges are zero. So, as the value <img src=
+"../imgs/4ac88739868e7b95ad2826a32edc2f16949d566c.png">increased
+the value of <img src=
+"../imgs/f9c0b3cffb5fee55539e33a5890cfc871d486dbe.png"> is
+decreased, because <img src=
+"../imgs/691e3b631d365509dbd86b3117bb90015afdc48f.png"> is
+constant.</p>
+<p><b>Hence, any algorithm that will maximize weight function</b>
+<b><img src=
+"../imgs/4ac88739868e7b95ad2826a32edc2f16949d566c.png"></b> <b>will
+minimize</b> <b><img src=
+"../imgs/f9c0b3cffb5fee55539e33a5890cfc871d486dbe.png"></b> <b>that
+is the standard weight function.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

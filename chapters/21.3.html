@@ -1,0 +1,375 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 21.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Disjoint-set forest is a type of data structure in which, a tree
+data structure is used for the representation of each set. Here, a
+reference to the parent node is held by each node. Each set is
+represented by its root tree.</p>
+<p><b>Now, the code block (refer to the textbook, exercise 21.2-2)
+would be executes as below:</b></p>
+<p>• The <b>for</b> loop would run 16 times making 16 different
+sets. The sets are as shown below:</p>
+<p><img src=
+"../imgs/9a4095dc2a61bcdc6ebfe744cba0b016003d4d74.png"></p>
+<p>• Now, second <b>for</b> loop would run from 1 to 15 and every
+time the increment would be done by 2. This would make the loop run
+7 times. Each time, inside the loop, the union operation would be
+performed on two consecutive sets. This would yield the following
+result:</p>
+<p><img src=
+"../imgs/1307eb86a4244ce10a2fa7505c051106220769db.png"></p>
+<p>• The third <b>for</b> loop would run from 1 to 13, and every
+time the loop variable would be incremented by 4. This would make
+the loop run only 4 times. This would yield the following
+result:</p>
+<p><img src=
+"../imgs/870c2870e164ce67844b2553a0af62d7e789895c.png"></p>
+<p>• Now, the UNION would be applied on <img src=
+"../imgs/eaf21336610cc086911810ca301fdab1ea50d295.png"> and
+<img src="../imgs/5be5d0781e5bad683081292e934feecc03f8e5b2.png"> .
+This would yield the following result:</p>
+<p><img src=
+"../imgs/44736920ec3f80d3ab967b4ce29a322a1637e990.png"></p>
+<p>• The above statement would UNION the set <img src=
+"../imgs/709795e7616b8829d19ab001aea9203ef812d3dd.png"> and
+<img src="../imgs/e24af0066dbf6477a678eaf76809167ad00b7ad8.png">.
+Since the rank of <img src=
+"../imgs/e24af0066dbf6477a678eaf76809167ad00b7ad8.png"> is more
+than<img src=
+"../imgs/709795e7616b8829d19ab001aea9203ef812d3dd.png">, <img src=
+"../imgs/709795e7616b8829d19ab001aea9203ef812d3dd.png"> would be
+appended to<img src=
+"../imgs/e24af0066dbf6477a678eaf76809167ad00b7ad8.png">. This would
+save the running time of the instruction. The yield would be as
+shown below:</p>
+<p><img src=
+"../imgs/04b6de6d705cc59481ba32ae6a3743abd0eedc03.png"></p>
+<p>• The statement would append <i>x</i><sub>10</sub> to
+<i>x</i><sub>1</sub> as shown below:</p>
+<p><img src=
+"../imgs/d0f4f31e5d5d0481ed098ef41783582d149ccbd1.png"></p>
+<p>The structure of the <i>x</i><sub>1</sub> set would be like
+below:</p>
+<p><img src="../imgs/daa360fcc436a4be46b877728e3025cb675ea26b.png"
+alt=
+"C:\Users\naveen\Desktop\Kaifi\Nidhi Ma'am\Tiffs\Screenshots.tif"></p>
+<p>So, the tree representation will remain same as it was obtained
+before FIND-SET function.</p>
+<p><b>Therefore, the FIND-SET operation of</b> <b><img src=
+"../imgs/86728541025b49ef1a90045e026e85d137d07ed7.png"></b>
+<b>and</b> <b><img src=
+"../imgs/a1143b2397700983f0cd3901aafd5b80e48cfb9a.png"></b> <b>are
+returns to pointer</b> <b><img src=
+"../imgs/eaf21336610cc086911810ca301fdab1ea50d295.png"></b> <b>.
+The tree is not</b> <b>changed by FIND-SET (</b> <b><img src=
+"../imgs/86728541025b49ef1a90045e026e85d137d07ed7.png"></b> <b>)
+and FIND-SET (</b> <b><img src=
+"../imgs/a1143b2397700983f0cd3901aafd5b80e48cfb9a.png"></b>
+<b>).</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Procedure for non-recursive version of FIND-SET with path
+compression using disjoint-sets is:</p>
+<p>FIND-SET(<i>x</i>)</p>
+<p>1. <i>top =</i>0; Initialize an empty stack top</p>
+<p>2. <i>z</i><i><img src=
+"../imgs/f311b8fcdee20aced20b8a0eacfde2c4a7c9ef05.png"></i>
+<i>x</i></p>
+<p>3. While <img src=
+"../imgs/3d2372d9aa18eea255d89fbef1e384d9223bc3f0.png"> //finding
+the root</p>
+<p>4. PUSH(<i>top, z</i>)</p>
+<p>5. z<img src=
+"../imgs/f311b8fcdee20aced20b8a0eacfde2c4a7c9ef05.png">
+parent[<i>z</i>]</p>
+<p>6. While <i>top</i> <img src=
+"../imgs/63215d3079edb763956cefe52cc6d4b4c4f79703.png"> 0</p>
+<p>7. y<img src=
+"../imgs/f311b8fcdee20aced20b8a0eacfde2c4a7c9ef05.png">POP(<i>top</i>)</p>
+<p>8. <i>p[y]</i> <i><img src=
+"../imgs/f311b8fcdee20aced20b8a0eacfde2c4a7c9ef05.png"></i><i>z</i></p>
+<p>9. return z</p>
+<p>This algorithm uses a stack top to store the nodes on the path
+from a given element x to the root.</p>
+<p>This algorithm finds the root <i>z</i> and sets the parent
+pointers to all nodes in <i>top</i> to <i>z</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Union by rank:</b></p>
+<p>It is a heuristic approach in which two trees are merging on the
+basis of their rank. The tree which has the larger root node
+becomes root node after merging.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the MAKE-SET(), UNION() and FIND-SET() procedure
+provided in section 21.3.</p>
+<p>Suppose there are <i>n</i> elements <img src=
+"../imgs/6f898acc804636a27e51b654e6e2ebe5f68f1433.png"> on which
+<i>m</i> operation are performed through MAKE-SET(), UNION() and
+FIND-SET() procedures.</p>
+<p>At first call MAKE-SET() procedure with <i>n</i> elements to
+create <i>n</i> sets, each having only one element. The sets after
+<i>n</i> MAKE-SET() procedure are as follows:</p>
+<p><img src=
+"../imgs/54e553f8188d91a8611b19b8a1b9a3bc2a2dce62.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, call UNION() procedure to create set of size 2 or a tree
+having 2 nodes. Therefore <img src=
+"../imgs/118ba9a54bf02cd374425c917a664a14a2f2c540.png"> UNION()
+procedure get called:</p>
+<p><img src=
+"../imgs/5555168a374dbc06e4be5f1ae557ad56ee8c34da.png"></p>
+<p>Consider the following diagram to show a tree having 2
+nodes:</p>
+<p><img src="../imgs/aaf097c176c329d57a7988645cf1e030144d4684.png"
+alt="D:\Tiffs\all files\2254-21.3-3E.png"></p>
+<p>Now, again call UNION() procedure to create set of size 4 or a
+tree having 4 nodes.</p>
+</div>
+<hr>
+<div class="answer">
+<p>So, <img src=
+"../imgs/d831747308d2fd8298df00acbdfe44213a9faf25.png"> UNION()
+procedure is called:</p>
+<p><img src=
+"../imgs/6f98362327f371e1fa9eb09dc98f9bc89ffadb4f.png"></p>
+<p>Consider the following diagram to show a tree having 4
+nodes:</p>
+<p><img src="../imgs/456506b86c8f6616ac42a09e88d537369af3f774.png"
+alt="D:\Tiffs\all files\2254-21.3-3E.png"></p>
+<p>Similarly, the UNION() procedure will goes on till there are one
+two set contain <img src=
+"../imgs/118ba9a54bf02cd374425c917a664a14a2f2c540.png"> elements
+each. Then again UNION() procedure get called only once to create a
+set of <i>n</i> elements or a tree having <i>n</i> nodes.</p>
+<p><img src=
+"../imgs/33b4e1e61d31dc4311827aa22b61ac07b2b5e09a.png"></p>
+<p>This result gives a binomial tree which has <img src=
+"../imgs/b72aac6138cb70dbc56cedf67d298fd40b70a743.png">nodes at
+<i>i</i><sup>th</sup> level and has height<img src=
+"../imgs/ff3300aadb4fbd30b9f225fa1e3c1557bb8b7359.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Total Cost:</b></p>
+<p>• The MAKE-SET() procedure is called <i>n</i> time so its cost
+becomes <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p>• The UNION() procedure merge the two elements which is called
+<i>n</i>-1 times. Therefore its cost <img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">.</p>
+<p>• The total cost of MAKE-SET() and UNION() procedure becomes
+<img src=
+"../imgs/94ff133be5a01f874a4a0f7969fafc239659968d.png">.</p>
+<p>• The height (or rank) of root node is<img src=
+"../imgs/2b1a6286744d9e62ea3aba976f7dffc3a9f7468f.png">. Therefore
+the cost of remaining <img src=
+"../imgs/1935fb569eefe7f20734532c57b276f6f8552450.png"> FIND-SET()
+will be <img src=
+"../imgs/dbcddd31f775e861a83d9249a0ad35bdcb66f760.png">.</p>
+<p>• Suppose <img src=
+"../imgs/d2e2924a0e35773abc53d9c57e52a6785f525e31.png">,
+so<img src="../imgs/c141aa6274410f82c53a07f29f82230ede22eee5.png">.
+Therefore the FIND-SET() procedure cost becomes <img src=
+"../imgs/4675c5267ff5878ca2f5a30a7b3e824fa1f336fb.png">.</p>
+<p><b>Hence, the total cost all procedure becomes</b> <b><img src=
+"../imgs/4675c5267ff5878ca2f5a30a7b3e824fa1f336fb.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Linear time in Operation PRINT-SET(x)</b></p>
+<p>According to path-compression heuristic technique, sequence of
+<i>m</i> MAKE-SET, FIND-SET, and PRINT-SET operations is there.
+Here, all the PRINT operations will be performed before execution
+of FIND-SET operations, this takes<img src=
+"../imgs/bf96a0fc3117b181b4c6c3b3682ef95bfa582ae8.png">running
+time. Here, a node <i>x</i> appears on an end path, <i>x</i> will
+be either root or child of a root at all times thereafter.</p>
+<p><b>Analyzing that asymptotic running times are changed or
+not:</b></p>
+<p>An array has been maintained by every node of the tree having
+points of its children. The operation <img src=
+"../imgs/53b1259fee0aad8f9d1ced0b0c67d7bbb4c469a3.png"> works on
+Depth First Search (DFS) taking <i>x</i> as the starting node. As
+the nodes are connected with each other, either in form of its
+parent or child, all the nodes are connected with each other. On
+the basis of this, all the nodes are visited while performing DFS.
+The DFS also prints whenever it visits any node.</p>
+<p>For <img src=
+"../imgs/a8526762e78a44de0d03a8c1f5908462e516acfa.png"> operation,
+a circular singly linked list having set of nodes has been
+maintained. This operation will be followed until the control moves
+to node <i>x</i> and printing of all the members of list will be
+there. Consider a graph having vertices <i>V</i> and edges
+<i>E</i>, the time taken by DFS will be <img src=
+"../imgs/c1c562e326649af8a751796a334ded9cbb6e4f1b.png">.Taking
+number of vertices as <i>A</i>, where<img src=
+"../imgs/e9f6713f1bd8b5915b95cd8be90e84bc9e520f7a.png">, the number
+of edges will be<img src=
+"../imgs/a5390c59e07ba4d921533151ac44fa548eacdb35.png">. It is
+because the graph is in form of tree. So, total time required will
+be<img src=
+"../imgs/01ea5487201c427bcda8907cd8e769d801b9e61d.png">.</p>
+<p>This operation will not affect on the FIND and UNION operations.
+The execution time of both of them will remain same. The execution
+time of FIND operation will not be changed because there are
+changes in the pointers and not in the tree. Taking the UNION
+operation, root of tree has been made as internal node of the tree.
+While performing this operation, the pointer is set representing
+leaves of another tree. After this, the newly built child pointer
+is set as leaf of the tree’s old root. The time requirement of the
+operation is always<img src=
+"../imgs/b3e953d7895846b80cac37b7aedfdab819e5f94c.png">. So, the
+time required for the execution of UNION operation will be
+same.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The time taken by MAKE-SET and LINK operations is O (1). If
+there are n FIND-SET operations that occur then it is required to
+show that all FIND-SET operations take O(n) time. To show this,
+amortize the cost of FIND-SET operations into the cost of MAKE-SET
+operations. If there are n LINK operations, the time taken is O(n)
+and n-1 tree edges are created. The time taken by m FIND-SET
+operations is not more than O(m+n).</p>
+</div>
+<hr>
+<div class="answer">
+<p>While performing the FIND-SET(x) operations, there are three
+possibilities. The first possibility that can occur is when x is
+the representative of its own set and in that case, it takes only
+constant time. The second possibility occurs when the path from x
+to the set representative is compressed already, so a single step
+is taken to find the set representative. The time in this case is
+O(1).</p>
+<p>The third possibility is that x is not the representative and
+the path is not compressed. If there are k nodes, then the time of
+the find-set operation is O(k) but the extra amount is used that is
+being utilized in the MAKE-SET operations for k nodes which have
+compressed paths.</p>
+<p>If any further call is made to find the set for the nodes, it
+will take O(1) time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

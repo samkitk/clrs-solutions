@@ -1,0 +1,367 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 31.9</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Pollard’s rho</b></p>
+<p>Consider the execution history of Pollard’s rho for
+factorization:</p>
+<p><img src="../imgs/8bdeb8154923eca225aef77d262b038d83dd44c5.png"
+alt="2254-31"></p>
+<p>Printing the factor 73 of 1387</p>
+<p>Pollard’s rho is the heuristic approach for finding the factors
+of a number <i>n</i>. Factorization of a number is the process of
+decomposing the number into the product of primes. Pollard’s rho
+method is the heuristic approach so there is no specified running
+time or the guaranteed success rate exists but its effective in
+practice.</p>
+<p>POLLARD’S-RHO algorithm</p>
+<p>1. First, initialize the variable <i>i</i> to 1 and assign a
+random value to <i>x</i><sub>1</sub> by using random number
+generator variable <i>y</i> stores the recent value of
+<i>x</i><sub>i</sub> when <img src=
+"../imgs/00895c64720cffbe7ba4eb32c5d3b260c371aa71.png">where
+<i>k</i> stores the even numbers starting from 2. After that we
+move to the loop which iterates until we find all the factors of
+number <i>n</i>.</p>
+<p>2. Update the value of <i>x</i><sub>i</sub> by squaring its most
+recent value and then find the greatest common divisor <i>d</i> by
+using function gcd and check if it the required value and print
+it.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Execution of algorithm POLLARD-RHO for n=1387</b>:</p>
+<p>Initially</p>
+<p><img src=
+"../imgs/cc39590a5dba7e1503c6bde8a983406eec160919.png"></p>
+<p>Until all factors of <i>n</i> are not found:</p>
+<p><img src=
+"../imgs/4d65be956500a799bf8cc85d8d01a8648444f572.png"></p>
+<p><img src=
+"../imgs/9b0b6c2fb208ef8e11f811886f0465e790330cca.png"></p>
+<p><img src=
+"../imgs/19bb699c97bd004ba623faed04d7b3c0a79f914b.png"></p>
+<p><img src=
+"../imgs/ffb99824048deb73ff865803de97a53f0ca6e52a.png"></p>
+<p>This process repeats 16 times yields<img src=
+"../imgs/92d99a3d85045ed0d21949f153aa5adeb1200ee0.png">and
+<img src="../imgs/08a64f50cdec272b1b9bdc0dfd905c81c67c5a67.png">=595</p>
+<p>So greatest common divisor</p>
+<p><img src=
+"../imgs/31c65953e04735874d413bb1ec650c0006acf0d7.png"></p>
+<p>The divisors of 219 are {3, 73} and the divisors of 1387 are
+{19, 73}</p>
+</div>
+<hr>
+<div class="answer">
+<p>Here 73 is the greatest common divisor of both and hence it
+computes<img src=
+"../imgs/0031f3805b58856d1f402ef9897d60039b55f85d.png">.</p>
+<p>Hence after 16 times of execution of POLLARD-RHO algorithm the
+value of <i>x</i> and <i>y</i> are 595 and 814 then it results in
+greatest common divisor 73 which is the factor of 1387.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Pollard’s rho algorithm is the best algorithm for calculating
+the factors of a number <i>n</i>.</p>
+<p>This algorithm is based on the concept of heuristics so it
+always gives the best result but we can’t calculate the accurate
+running time of this algorithm because its loop iterates
+forever.</p>
+<p>Considering <i>t,</i> this represents the length from the first
+value to the first repeated value of <i>x</i> in the sequence
+and<img src=
+"../imgs/00995185e1d209d1e0118340868bf1a0aea7a649.png">represents
+the length of the cycle that has been produced.</p>
+<p>For the values of <i>t</i> and <i>u</i> the algorithm of
+Pollard’s rho can be modified so that it returns these values at
+the same time when it’s calculating the factors. Algorithm is
+as:</p>
+</div>
+<hr>
+<div class="answer">
+<p>POLLARD-RHO (<i>n</i>)</p>
+<p>// initialize array <img src=
+"../imgs/3377ea696ebe2efae9754754bcd7c5bdd28ad4d5.png">for storing
+the cycle length</p>
+<p>1. <img src=
+"../imgs/c0bb3d17dc65ad0b83de1791b57d619b08581ec2.png"></p>
+<p>2. <img src=
+"../imgs/2b24c75d3e5f9889d3ea5de79cb64b350cc8c08d.png"></p>
+<p>3. <img src=
+"../imgs/e0bb0e3066dd3c83602eca062adb9a57d3fa6a75.png"></p>
+<p>4. <img src=
+"../imgs/9d803b64ac50bad85322d3d23710819ff9a08462.png"></p>
+<p>5. while TRUE</p>
+<p>6. <img src=
+"../imgs/72fa19b95dc8f3683d5c9f65a8e59edbb4fb16a6.png"></p>
+<p>// calculating next value of <i>x</i><sub>i</sub> using
+recurrence</p>
+<p>7. <img src=
+"../imgs/bfa90a6539ce6141ee59a3163da0ca728699a47c.png"></p>
+<p>// calculating greatest common divisor <i>d</i></p>
+<p>8. <img src=
+"../imgs/2bc8a30dab79e0d6488dbebf9366f0757d558e2f.png"></p>
+<p>// check if <i>d</i> is non-trivial</p>
+<p>9. if <img src=
+"../imgs/dc35771670a376451690d77fe45791479beb8d13.png">and
+<img src="../imgs/f69a2ad6f027975d73366e651628cdf598593155.png"></p>
+<p>10. print <i>d</i></p>
+<p>// search if <i>d</i> is in <i>A</i> or not</p>
+<p>11. if <img src=
+"../imgs/ec9dba192fd5be900d5c3f870a454417e4146bb9.png"></p>
+<p>12. put <i>d</i> in <img src=
+"../imgs/3377ea696ebe2efae9754754bcd7c5bdd28ad4d5.png"></p>
+<p>13. else if<img src=
+"../imgs/517b61be7279af65cb0ebe276b0b1f37e1b6dfda.png"></p>
+<p>// calculating the length of cycle <i>u</i> and tail</p>
+<p>14. <img src=
+"../imgs/d4d505e4dfa59cc8c3376dc16f8fec793f4810d7.png"> and
+<img src=
+"../imgs/982101b01e4a511345c5757090eba75373d8ac49.png"></p>
+<p>// update values of <i>y</i> and <i>k</i> for equal values of
+<i>i</i> and <i>k</i></p>
+<p>16. if <img src=
+"../imgs/d010ae0a5bb733c473758f31639c259bb8acf649.png"></p>
+<p>23. <img src=
+"../imgs/623da53eb41086d608a42d03642df6384fe55ed9.png"></p>
+24. <img src=
+"../imgs/cdf58fe0ea0ede3ad6a3612da34456ded0ec46fd.png"></div>
+<hr>
+<div class="answer">
+<p>In this algorithm first we initialize an array for the storage
+of cycle length, a variable <i>i</i> to 1 and assign a random value
+to <img src=
+"../imgs/450572e207d233952bd9d4a655b001c5af0cb2d4.png">by using
+random number generator. A variable <i>y</i> stores the recent
+value of<img src=
+"../imgs/b2043e6ef7b9fc84b142c176b4342bcb42fe4325.png">when
+<img src=
+"../imgs/f2b37caad4efb24ecfc893fc4eda7a1d06d3cb29.png">where
+<i>k</i> stores the even numbers starting from 2.</p>
+<p>After that we move to the loop which iterates until we find all
+the factors of number <i>n</i>.</p>
+<p>Update the value of <img src=
+"../imgs/b2043e6ef7b9fc84b142c176b4342bcb42fe4325.png"> by squaring
+its most recent value and then find the greatest common divisor
+<i>d</i> by using function <i>gcd</i> and check if it the required
+value and print it. In this way all the factors of number are
+printed.</p>
+<p>For running time of the algorithm we find the number of steps
+that are executed before the repetition of <i>x</i> begins and for
+the smallest values of <i>t</i> and <i>u</i> such that<img src=
+"../imgs/cb6e076b943a887c3bb3e2cac75b9bc5d7f8e05f.png"> is
+<img src="../imgs/c5e88330944ad669c5212b669a1cc4bcbe7f9b2d.png">where
+<i>p</i> is the factor of <i>n.</i></p>
+<p>Hence in the Pollard’s rho algorithm for <i>t,</i> the tail
+length and<img src=
+"../imgs/00995185e1d209d1e0118340868bf1a0aea7a649.png"> is cycle
+length of the rho contains their smallest values such that
+<img src="../imgs/cb6e076b943a887c3bb3e2cac75b9bc5d7f8e05f.png">
+for<img src=
+"../imgs/273c0ff04b9b0ef9dcc954b318214bb50e0de270.png">the running
+time is <img src=
+"../imgs/c5e88330944ad669c5212b669a1cc4bcbe7f9b2d.png">as it finds
+its first factor as <i>p</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Pollard’s rho is the heuristic approach for finding the factors
+of a number <i>n</i>.</p>
+<p>Factorization of a number is the process of decomposing the
+number into the product of primes.</p>
+<p>Pollard’s rho method is the heuristic approach so there is no
+specified running time or the guaranteed success rate exists. But
+it is effective in practice.</p>
+<p>Refer chapter 31, section 31.9 of the textbook for POLLARD’S-RHO
+algorithm.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The lines 1 to 4 in the algorithm are initializing
+statements.</p>
+<p>These lines have no impact on the number of steps that the
+algorithm requires to compute factors.</p>
+<p>The number of steps required to calculate the factor of the form
+<img src="../imgs/9c04f73068daa490b01eb5de4be01e71c6b9cdf2.png"> is
+dependent on the loop in the line 5 and the block of statements
+from line 6 to 13.</p>
+<p>The POLLARD’S-RHO(<i>n</i>) algorithm takes <img src=
+"../imgs/fa044560fdcc1acee97e86e3e1a2848b1a7728e7.png"> steps to
+discover one of the prime factor <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png"> of the
+given number <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">. Also the
+prime factor, <img src=
+"../imgs/22ac8713535f42d9ac94879e1a8572c57a4f1c16.png">.</p>
+<p>If there exist another prime factor <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">for the
+number <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">, then to
+discover this prime factor <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">; the while
+loop in the algorithm POLLARD’S-RHO(<i>n</i>) will take <img src=
+"../imgs/fa044560fdcc1acee97e86e3e1a2848b1a7728e7.png">steps
+again.</p>
+<p>If there exist prime factors <img src=
+"../imgs/823498a9f9b9e1b37bbc8a40d44e82e0b400cf0b.png">for the
+number <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">, then to
+discover this prime factors <img src=
+"../imgs/9c04f73068daa490b01eb5de4be01e71c6b9cdf2.png">; the while
+loop in the algorithm POLLARD’S-RHO(<i>n</i>) will take <img src=
+"../imgs/ac5f87c8c4ab7fc38f177810fef4d07edc80cdac.png">steps.</p>
+<p><b>Therefore, the number of steps required to the</b>
+<b>algorithm POLLARD’S-RHO(</b> <i><b>n</b></i> <b>) to find the
+factor of the form</b> <b><img src=
+"../imgs/9c04f73068daa490b01eb5de4be01e71c6b9cdf2.png"></b>
+<b>is</b> <b><img src=
+"../imgs/ac5f87c8c4ab7fc38f177810fef4d07edc80cdac.png"></b>
+<b>steps, where</b> <b><img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png"></b> <b>is a
+prime and</b> <b><img src=
+"../imgs/c967226116d199c352f9c83fb72bd75a0c6ec47d.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Pollard’s rho is the heuristic approach for finding the factors
+of a number <i>n</i>. Factorization of a number is the process of
+decomposing the number into the product of primes. Pollard’s rho
+method is the heuristic approach so there is no specified running
+time or the guaranteed success rate exists but its effective in
+practice.</p>
+<p>Refer the page number 976 in the textbook for POLLARD’S ROW
+algorithm, in this algorithm we execute the step 8 that is<img src=
+"../imgs/28b7a04d07f0cbc539d0c33cf6c43e2ab45335b8.png">calculation
+in every recurrence of the while loop which is its main
+disadvantage.</p>
+<p>So the computation of gcd(greatest common divisor) every time
+can be minimized , if we keep the product of <img src=
+"../imgs/b2043e6ef7b9fc84b142c176b4342bcb42fe4325.png"> values
+stored in an array and then use it to find the greatest common
+divisor, which would eliminate the overhead involved.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm can be modified by using these steps:</p>
+<p>1. The call to the function<img src=
+"../imgs/28b7a04d07f0cbc539d0c33cf6c43e2ab45335b8.png">should not
+be made each time.</p>
+<p>2. Take an array <i>A</i> and store the values<img src=
+"../imgs/b2043e6ef7b9fc84b142c176b4342bcb42fe4325.png">the
+array.</p>
+<p>3. Use the stored values from the array while computation.</p>
+<p>4. The size of the batch would be decided by the length of the
+cycles of the pollard -rho algorithm.</p>
+<p>After implementing these changes in the POLLARD’S ROW algorithm
+it will again give the correct values of the factor of any number.
+The only changes will be as it will reduce the computational
+overhead. The value of <i>u</i> would decide the batch length for a
+<i>ß</i> bit number <i>n</i>.</p>
+<p>Hence we can get rid of recursive gcd computation by grouping
+the <i>x</i><sub>i</sub> products in a row by using an array and
+then using this computation so that we need not to calculate the
+gcd again and again.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,1044 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 24.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Solving a system of difference constraints:</b></p>
+<p>• A feasible solution for a system of difference constraints can
+be found by running Bellman-Ford algorithm, on constraint
+graph.</p>
+<p>• If the Bellman-Ford identifies a negative cycle in constraint
+graph, then it returns FALSE. That is, there is no feasible
+solution for the given system of difference constraints.</p>
+<p>• If the Bellman-Ford algorithm returns TRUE, the shortest path
+weights of vertices gives a solution.</p>
+<p><b>Making constraint graph from the given system of difference
+constraints:</b></p>
+<p>• To find the feasible solution in the provided system of
+differential constraints, first of all need to construct the
+constraint graph corresponding to the given system of in
+equations.</p>
+<p>• For each constraint, <img src=
+"../imgs/f419f9cc46185476297cd84f067c46be4bd2c7f4.png"> (where x is
+some constant), make an edge from a to b and then give that edge
+weight of x.</p>
+<p>• Construct the graph for the all given in equations as
+follows:</p>
+<p><img src="../imgs/6efe4580d2c5a55830fe607ccb9da7664b03d00a.png"
+alt="D:\Tiffs\all files\2254-24.3-2E.png"></p>
+<p>• Now to solve the above constraint graph, add the additional
+vertex <img src=
+"../imgs/0821f6b274f9622babf5dcfd7b74f0013930534a.png"> to
+guarantee that the all vertices are reachable from this vertex,
+also assign 0 weights to all edges from that vertex so that it
+cannot alter the shortest path. Then the graph will be as
+follows:</p>
+<p><img src="../imgs/a7c315ef7b49930ee0a0f7c123c0655ac7cd4413.png"
+alt="D:\Ani\G\2254-24.4-1E.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running Bellman-Ford algorithm on the above graph:</b></p>
+<p>Since the for loop in Bellman-Ford algorithm runs <img src=
+"../imgs/7ab2977ae14b2c97bbf9e2f3a3b27134d650b35a.png"> times, it
+runs 6 times or 6 steps on the above generated graph.</p>
+<p><b>Step 1:</b></p>
+<p>In first iteration the initial graph and array will look like as
+follows:</p>
+<p><img src="../imgs/172084a43550b275df04721de293c55f79b504e7.png"
+alt="D:\Ani\G\2254-24.4-1E.png"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Node</b></p>
+</td>
+<td>
+<p><i>v</i> <sub>0</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>1</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>2</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>3</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>4</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>5</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>6</sub></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Cost</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>∞</p>
+</td>
+<td>
+<p>∞</p>
+</td>
+<td>
+<p>∞</p>
+</td>
+<td>
+<p>∞</p>
+</td>
+<td>
+<p>∞</p>
+</td>
+<td>
+<p>∞</p>
+</td>
+</tr>
+</table>
+<p>• Now take the each edge and relax using RELAX algorithm. That
+is update the cost or distance.</p>
+<p>• For node <i>v</i><sub>0</sub> since every node is reachable in
+0 cost and it is better than ∞. so the cost for all nodes from v0
+will be zero.</p>
+<p>• After first iteration the graph will be as follows:</p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/953ce8368c6bc3ba205d6af237ba8923382e1155.png" alt=
+"Picture 1">
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Node</b></p>
+</td>
+<td>
+<p><i>v</i> <sub>0</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>1</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>2</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>3</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>4</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>5</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>6</sub></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Cost</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>-4</p>
+</td>
+<td>
+<p>-3</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+<td>
+<p>-8</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step 2:</b></p>
+<p>• Again take each edge and perform relaxation.</p>
+<p>• Only for the edge (<i>x</i><sub>1</sub><i>,x</i><sub>5</sub>)
+, the cost of <i>x</i><sub>5</sub> is updated to -5.</p>
+<p>• After iteration the graph will be as follows:</p>
+<p><img src="../imgs/4f99c021b2cc6023f9a503d1161ea60bc5fb3f88.png"
+alt="Picture 3"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Node</b></p>
+</td>
+<td>
+<p><i>v</i> <sub>0</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>1</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>2</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>3</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>4</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>5</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>6</sub></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Cost</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>-4</p>
+</td>
+<td>
+<p>-3</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>-5</p>
+</td>
+<td>
+<p>-8</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step 3:</b></p>
+<p>• Again take each edge and perform relaxation.</p>
+<p>• For the edge (<i>x</i><sub>2</sub><i>,x</i><sub>4</sub>) , the
+cost of <i>x</i><sub>5</sub> is updated to -1.</p>
+<p>• For the edge (<i>x</i><sub>4</sub><i>,x</i><sub>1</sub>) , the
+cost of <i>x</i><sub>5</sub> is updated to -5.</p>
+<p>• After iteration the graph will be as follows:</p>
+<p><img src="../imgs/cafaf387ca275b365bdd07cd5f338f28e23b7ade.png"
+alt="Picture 4"></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Node</b></p>
+</td>
+<td>
+<p><i>v</i> <sub>0</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>1</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>2</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>3</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>4</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>5</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>6</sub></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Cost</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>-5</p>
+</td>
+<td>
+<p>-3</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+<td>
+<p>-5</p>
+</td>
+<td>
+<p>-8</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step 4:</b></p>
+<p>• Again take each edge and perform relaxation.</p>
+<p>• Only for the edge (<i>x</i><sub>1</sub><i>,x</i><sub>5</sub>)
+, the cost of <i>x</i><sub>5</sub> is updated to -6.</p>
+<p>• After iteration the graph will be as follows:</p>
+<p><b><img src=
+"../imgs/581cf41a77881405d8e236ccaaa1f4fa49be8667.png" alt=
+"Picture 15"></b></p>
+<hr>
+<div class="answer">Node</div>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td>
+<p><i>v</i> <sub>0</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>1</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>2</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>3</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>4</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>5</sub></p>
+</td>
+<td>
+<p><i>x</i> <sub>6</sub></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>Cost</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>-5</p>
+</td>
+<td>
+<p>-3</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>-1</p>
+</td>
+<td>
+<p>-6</p>
+</td>
+<td>
+<p>-8</p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p>There are no further possibilities to update the costs in the
+iteration 5 and 6.</p>
+<p>Thus, at the end of the 6<sup>th</sup> iteration the graph with
+shortest distances is as follows:</p>
+<p><img src="../imgs/53c4a37f10d67344202859d397dc7779a959987d.png"
+alt="D:\Ani\G\2254-24.4-1E.png"></p>
+<p>• Now the algorithm iterates one more time to check if there
+exist a negative weight cycle or not, in the constraint graph. If
+there is a negative cycle, the algorithm returns FALSE. That is ,
+there is no feasible solution for the given constraints.</p>
+<p>• But in the above graph, there is no negative cycle. Thus the
+shortest distances of vertices are the feasible solution for the
+given system of difference constraints.</p>
+<p><b>Therefore the feasible solution for the given system of
+difference constraints</b></p>
+<p><b>is (-5,-3,0,-1,-6,-8).</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>To find the feasible solution in the provided system of
+differential constraints, first of all need to construct the
+constraint graph corresponding to the system that can be drawn
+as:</p>
+<p><img src="../imgs/d4a2c944cb0156c0fc48f2d197d1cf1a78dd2345.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\October 10\21.10.2015\Bibek 2254\Image\1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now to solve the above constraint graph, add the additional
+vertex <i>x</i><sub>0</sub> to guarantee that the constraint graph
+has few vertices which can be reached all other vertices.
+Additional vertex can be shown in the following graph:</p>
+</div>
+<hr>
+<div class="answer">
+<p><img src="../imgs/cb7878e94b1b7d5fffa6493afb91a5baaccd3ad2.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\October 10\21.10.2015\Bibek 2254\Image\2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now the above graph can be solved by the following Bellman ford
+algorithm:</p>
+<p><b>Step-1:</b></p>
+<p>Provide the definition of the Bellman Ford Algorithm which takes
+an input in the form of vertex source and it fills the distance
+array with information of shortest-path.</p>
+<p>Bellman_Ford <i>(</i>vertex source, list vertex, list
+edge<i>)</i></p>
+<p><b>Step-2:</b></p>
+<p>In this step, now initialize the graph for the execution
+process, for every vertices v in the set of vertices:</p>
+<p><b>if</b> vertex <i>v</i> is taken as the source</p>
+<p>//then the vertex distance is assigned to 0</p>
+<p><i>distance[v]:=</i> 0</p>
+<p><b>else</b></p>
+<p><b>//</b> assign the distance of the vertex is infinity</p>
+<p><i>distance[v]:= infinity</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step-3:</b></p>
+<p>When the vertices are executed from source to the other
+connected, then relax edges repeatedly between of them.</p>
+<p>// use <b>fo</b>r loop to access the all vertices,</p>
+<p><b>for</b> <i>j</i> from 1 to size(vertices)-1:</p>
+<p>// now for every edge denoted as (<i>u, v</i>) with the weight
+<i>w</i> in the</p>
+<p>//edges:</p>
+<p><b>if</b> <i>distance[v]&gt;distance[u] + w</i> :</p>
+<p><b>then</b>,</p>
+<p><i>distance[v]:= distance[u] + w</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step-4:</b></p>
+<p>In the execution process of vertices check and test the
+negative-weight cycles with the following statements:</p>
+<p>// Now check negative cycle for every edge (<i>u, v</i>) that
+consists the</p>
+<p>//weight w in the edges:</p>
+<p><b>if</b> <i>distance[v]&gt;distance[u] + w</i> :</p>
+<p>Show error (“There is a negative-weight cycle exists in the</p>
+<p>graph”)</p>
+</div>
+<hr>
+<div class="answer">
+<p>After applying the above Bellman algorithm the shortest path can
+be found from the Vertex 0 to the all other vertices and there is
+no negative cycle shown in the following graph:</p>
+<p><img src="../imgs/e24bc819fb5ddb95f28633523201618b3eaff324.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\October 10\21.10.2015\Bibek 2254\Image\3.png"></p>
+<p>After applying the above Bellman algorithm, user obtained a
+negative cycle <img src=
+"../imgs/5fc4a1bc3d6faff66529d6569c6a25668d8953be.png"> exists,
+which is shown by the red dotted line. The length of this negative
+cycle is <img src=
+"../imgs/07407e8bd405907d0513a91f2bc443a332e6df5c.png">or<img src=
+"../imgs/ec86fc259c44162d3d6234227e2ee0418b7cc9a9.png">.</p>
+<p><b>Hence the system has no feasible solution.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/e89d5a04eb3efe3385bb80aef0a13837b72e8bbe.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In single pair shortest path, there is source and destination
+always given. In linear programming, objective is to maximize or
+minimize some function.</p>
+<p>Let <img src=
+"../imgs/4dc37ecaceb96f952c8fe9a4aa72234abf7a036c.png"> be the
+single pair shortest-path weight from a given source s to a given
+destination t.</p>
+<p>The constraints will be as follows:</p>
+<p><img src=
+"../imgs/ac96cad4a52a7751d760994c33384ab9d4a4d879.png">, <img src=
+"../imgs/da129268c0653d025e0961a5b19deff8cf865865.png"> for all
+<img src="../imgs/d2c3d6a87935b9f624d4be279c20cc941b052d01.png">.
+When <img src=
+"../imgs/e839e0dc1451632e753040c06d81cf27bf30f1e8.png">=0, then
+<img src="../imgs/492a505c8e2e6881f655a8628172344b96c5d7f6.png">
+<img src="../imgs/1d9110a6be16173ee8e318e611faa8cbac216d05.png">.
+Substitute <img src=
+"../imgs/28b4d0fe323b584897d1056b45091b747142b56f.png"> by
+<img src="../imgs/5b2d1819f263ba681e2eae4bb52eb0432d033580.png">
+and <img src=
+"../imgs/6a50e049e6358beafc173ddce676ff937080c505.png"> to get the
+inequalities.</p>
+<p>Since, now the constraints have changed, <img src=
+"../imgs/ee7301b67695a2a92eb33cc927dab89f2f1efb8f.png">.</p>
+<p>Since <img src=
+"../imgs/1b074e9e98d6f92575fd1464f390f40a942de80d.png"> should be
+equal to <img src=
+"../imgs/4dc37ecaceb96f952c8fe9a4aa72234abf7a036c.png">, maximize
+<img src=
+"../imgs/1b074e9e98d6f92575fd1464f390f40a942de80d.png">.</p>
+<p>-<img src=
+"../imgs/d8ef70d499f965e0bcba03ec917da581c9610dd9.png"> because
+<img src="../imgs/6afa3bc3da148eba43d1cb0f3e07970451f16f33.png">
+also a solution to the set of inequalities.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Suppose y is the shortest path from <i>s</i> to <i>t</i>.
+Summing all the edges weight that lie on the path, the linear
+program will be as follows:</p>
+<p><img src=
+"../imgs/58f7275867f9a43cc45beb470cc9f1586e2b3022.png"></p>
+<p>The inequality that was previously discussed is <img src=
+"../imgs/ee7301b67695a2a92eb33cc927dab89f2f1efb8f.png">.</p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/d0e985f5b0589b3a47bc8f7a9f7f98362989178d.png"></p>
+<p>Since, <img src=
+"../imgs/b3b8d7969f41e6b08d30e3d20e0f6174efc7ee04.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Bellman-Ford algorithm:</b></p>
+<p>A Bellman-Ford algorithm which is implemented for a graph
+<i>G</i> = (<i>V, E</i>) with source vertex <i>s</i> and the weight
+function <img src=
+"../imgs/104c849f1b03ae8792aef1c82ee770ee18d6b48e.png"></p>
+<p><b>Modifying the algorithm:</b></p>
+<p>To implement it with <i>m</i> inequalities and <i>n</i> unknown
+variables, which takes the running time is <img src=
+"../imgs/67f52b8e3cf6530655b1d416e3461ce2f3298099.png">.</p>
+<p>Bellman-Ford algorithm is used to find the shortest path in the
+graph <i>G</i> = (<i>V, E</i>) from a source <i>s</i> vertex to all
+other vertices <img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png">of the
+graph. This is the special algorithm which can work in the
+condition if there are negative weights associated with the edges
+of the graph.</p>
+</div>
+<hr>
+<div class="answer">
+<p>This algorithm first checks if there is any negative weight
+cycle in the graph presen, then no solution exists for the graph,
+otherwise it gives the shortest path for the graph from the source
+vertex. This algorithm can also be used to solve the problem of
+difference constraints with inequalities.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Difference constraints system is the system in which we can
+solve the linear inequalities of <img src=
+"../imgs/f9cf8df5fee96f6ff736c1434ddd9b16ad641790.png">for two
+unknowns <i>x</i> and <i>y</i> where,<img src=
+"../imgs/4ca64b62b8b70e436f8c74046d11dd73ce09a3c4.png">, <img src=
+"../imgs/47da202396e4f14c80a55d8efaefc0763e35e0b6.png"><img src=
+"../imgs/f3f31aa9a8d98fcfb9051502d46b488aeb530d2e.png">and<img src=
+"../imgs/42133e0181483a7896eadd4b3ceebee3857b422b.png">.</p>
+<p>To solve this by using Bellman-Ford, first create the graph from
+the inequalities and</p>
+<p>then apply the algorithm to find the negative weight cycle in
+the graph.</p>
+<p>If there is no negative weight cycle, then it gives the solution
+for unknowns.</p>
+<p>The complexity of the Bellman-Ford algorithm for <i>V</i>
+vertices and <i>E</i> edges is<img src=
+"../imgs/79e690cb3bf9a80980000d89210b2aff03e80c33.png">. The
+present algorithm uses an extra vertex <img src=
+"../imgs/1a446b6bfd738d8aca1dedc1df225b6227bfa0a3.png"> and draws
+edges from it to every other vertex and hence, we have total of
+<i>m</i> extra edges, where <i>m</i> is the number of unknown
+variables.</p>
+<p>Similarly number of vertices equals<img src=
+"../imgs/42d1d4c5ef279a63d78749f2cab9d866cd4cc337.png"><b>.</b></p>
+<p>To achieve the desired complexity, we remove the extra vertex
+and initialize <img src=
+"../imgs/a5c5dbcc0f2ebcacf97434c0ab4026230c912810.png"> and then
+apply the bellman-Ford algorithm over the graph.</p>
+<p>So, the number of edges is <i>m</i> and the number of vertices
+is <i>n</i>. Then the complexity of this algorithm is<img src=
+"../imgs/67f52b8e3cf6530655b1d416e3461ce2f3298099.png"></p>
+<p><b>Hence, by removing the concept of the extra node</b>
+<b><img src=
+"../imgs/1a446b6bfd738d8aca1dedc1df225b6227bfa0a3.png"></b> <b>from
+the algorithm, use the algorithm for solving difference constraints
+with</b> <i><b>m</b></i> <b>inequalities and</b> <i><b>n</b></i>
+<b>unknowns with</b> <b><img src=
+"../imgs/67f52b8e3cf6530655b1d416e3461ce2f3298099.png"></b>
+<b>running time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Initially the vertex <img src=
+"../imgs/929414f0440114bd3ffc16e35cc5a1a257348469.png"> is added.
+Now assume that the source vertex <img src=
+"../imgs/1a446b6bfd738d8aca1dedc1df225b6227bfa0a3.png"> of the
+constraint graph is corresponded to the vertex<img src=
+"../imgs/929414f0440114bd3ffc16e35cc5a1a257348469.png">.</p>
+<p>If there is no negative-weight cycle present in the graph,</p>
+<p>So,</p>
+<p><img src="../imgs/08f55f36a3a9e0f9dba5a56f4f82707065542e53.png">
+…… (1)</p>
+<p>For equation (1), set the value<img src=
+"../imgs/8f7f52ce73813a37d5b640e6878e37ad38a5fe36.png">and it can
+be treated as single variable constraint with<img src=
+"../imgs/8994cce8ece0dfb5138a4de3effea3b60d7d36ed.png">.</p>
+<p>So,</p>
+<p>The value of single variable constraint will be,</p>
+<p><img src=
+"../imgs/12b89b7e26d334f0f57a015135b37efcaa4cacda.png"></p>
+<p>And</p>
+<p><img src=
+"../imgs/50abab3f44e1466cfa00d0601085e57cbce01632.png"></p>
+<p>If there exist a shortest path from source vertex<img src=
+"../imgs/1a446b6bfd738d8aca1dedc1df225b6227bfa0a3.png">, set the
+value as given below:</p>
+<p><img src="../imgs/71559691ca29d24c3bf53872959f95f748d989ac.png">
+for every<img src=
+"../imgs/c6f53a78d6d5fcd2deae75f91f0437f1d245e8da.png"></p>
+<p>So user will get the feasible solution for the given system.</p>
+<p>Since by the triangle inequality, the following equation
+exists,</p>
+<p><img src="../imgs/f3698625bb9353cc5b036a5e79fc72a15402e530.png">
+…… (2)</p>
+<p>Since, <img src=
+"../imgs/71559691ca29d24c3bf53872959f95f748d989ac.png"> and from
+equation (2),<img src=
+"../imgs/eb9be261f0398be1e8495c89bccb8716e1017750.png"></p>
+<p>Put the value of <img src=
+"../imgs/07bcf2fd11976e95cb79b6f41dd8e062636ddb23.png"> and
+<img src="../imgs/442bcf6d25860f7be679d972fdfcd05da472c3b9.png"> in
+equation (2),</p>
+<p>So from the above,</p>
+<p><img src="../imgs/3f848c14caaa2ca765da122c8f3391f3d4883c9c.png">
+…… (3)</p>
+<p>Similarly for constraint<img src=
+"../imgs/e43e47ce9b30ef3e426c9e656c54e89a0475c00d.png">, triangle
+inequality is as follows:</p>
+<p><img src=
+"../imgs/e267c18c97aa08caca69144e22463d63f666984b.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/80113af555df4a14e0e8464427a34af9183a45fb.png"></p>
+<p>After simplification user will obtain the following result,</p>
+<p><img src=
+"../imgs/e43e47ce9b30ef3e426c9e656c54e89a0475c00d.png"></p>
+<p><b>Hence bellman-Ford algorithm solved this variety of
+constraint</b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/15ee04774e2545c41d6f9a6c1252875e2437da45.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-10E">
+                <a href="#problem-10E">10E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Introduce the dummy variable x and assume <img src=
+"../imgs/2b8a3dd50b2e2d6f815ad6b1aec2c41b136bb71d.png">, where
+<img src="../imgs/2bdf05f4e06b91175672f8ff755ae0a3b62eab4c.png">
+denotes the set of solution to the system of different constraints
+if the given set is <img src=
+"../imgs/d7fc8e1ab7599e1f12ad8b2734c9f9ff27004e94.png">.</p>
+<p>Since, the constraint <img src=
+"../imgs/eb2c4e8402c0a98f298014411089434d129817aa.png">exists if
+and only if <img src=
+"../imgs/40920e0382da8b7dc555416cb9a263eeacae8185.png"> and the
+constraint <img src=
+"../imgs/1613d9107c72dc1b5fa89cc1c6a9b302ce1d62a1.png"> exists if
+<img src=
+"../imgs/a589e60ccc3b0f8fa5453731aed0613b298cde31.png">.</p>
+<p>Thus, there is the need to construct the constraint graph as
+follows:</p>
+<p>Assume the vertices to be <img src=
+"../imgs/0b81c880d46345ba712039e1ef3b685cb3504024.png"> and draw
+the edges through the vertices. Let the weight from the initial
+vertex <img src=
+"../imgs/94352057cc8cdb22e068308211d6213a3e33ed5a.png"> to another
+vertex be 0. Create the edge <img src=
+"../imgs/3ae59bf36827046432ad4024a3f5bd996643b8f3.png">
+corresponding to the constraint <img src=
+"../imgs/eb2c4e8402c0a98f298014411089434d129817aa.png"> having
+weight <img src=
+"../imgs/f761a030343fa9734fd1c5cf334b5eeec3e86961.png">.
+Corresponding to the constraint <img src=
+"../imgs/1613d9107c72dc1b5fa89cc1c6a9b302ce1d62a1.png"> the edge
+<img src="../imgs/cfc57c403266aef344150f0bdcae6c972aba61cf.png"> is
+created having negative weight <img src=
+"../imgs/ce3a99e641036116414d0ccfca551505cd0d0b08.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Finally subtract the weight which is assigned to the vertex x
+from the weights of every vertex so that desired solution can be
+obtained by using the Bellman-Ford algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-11E">
+                <a href="#problem-11E">11E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Difference constraints of an Algorithm</b></p>
+<p>The solution of a system is depends on different
+constraints<img src=
+"../imgs/940ae9a451bf9ed18b2ae86080e8ec04babea7df.png"> for the
+real values of constant <i>b</i> and integer type unknown variable
+<i>x.</i></p>
+System of difference constraints<img src=
+"../imgs/940ae9a451bf9ed18b2ae86080e8ec04babea7df.png">is the
+system in which we solve the linear inequalities of <img src=
+"../imgs/e581fd7c1516158bf6fa9c76e7eb44184bfc2c42.png">for two
+unknowns <i>x</i> and <i>y</i> where<img src=
+"../imgs/c8f4f629b4d2b91b2a77ba5fa656394bbe232167.png">, <img src=
+"../imgs/848975558648a53bde62b6e16f1505a6c3b7681d.png"><img src=
+"../imgs/4f317827991199ea1c4ababe8347e96dcbeabaae.png">and<img src=
+"../imgs/97f46bf21334d4782650e59d7115545dd7cebedc.png"></div>
+<hr>
+<div class="answer">
+<p>In the inequality <img src=
+"../imgs/8c16d5092f04db140d2127fd5ccd7b2094e6c7e8.png"> of system
+<img src="../imgs/940ae9a451bf9ed18b2ae86080e8ec04babea7df.png">,
+where <i>b</i> is some real value. So <i>b</i> will contain some
+fractional as well as integer part.</p>
+<p>For the solution of this inequality problem we follow the
+procedure:</p>
+<p>1. Round value of <i>b</i> to next higher integer, this will
+definitely preserve the inequality.</p>
+<p>2. Get the inequalities <img src=
+"../imgs/d9fe2391474ba301e17622859f804badd42b8f96.png"> of the form
+where <img src=
+"../imgs/c439d3414ebd802049fd371d84763c3f6ad47dd4.png"> will be an
+integer.</p>
+<p>3. Apply bellman-Ford algorithm to get integer values for the
+unknown values of <i>x</i>.</p>
+<p>Bellman-Ford algorithm is used to find the shortest path in the
+graph <i>G</i> = (<i>V, E</i>) from a source <i>s</i> vertex to all
+other vertices <img src=
+"../imgs/30527add33a09341e835125367a1defa7fbe2af6.png">of the
+graph. This is the special algorithm which can work in the
+condition if there are negative weights associated with the edges
+of the graph.</p>
+<p>To solve difference inequality using Bellman-Ford we first
+create the graph from the inequalities and then apply the algorithm
+to find the negative weight cycle in the graph. If there is no
+negative weight cycle then it gives the solution for unknowns.</p>
+<p>Bellman-Ford algorithm for the graph made from inequalities we
+first initialize the source vertex of the graph then test the edges
+whether there is a path from vertex <i>u</i> to vertex <i>v</i> by
+relaxing the edges. Then after check for the negative weight cycle
+in the graph and if there is no negative weight cycle then it will
+give the best solution for inequalities.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Hence is Bellman-Ford algorithm is the best algorithm for the
+solution of system of difference constraints<img src=
+"../imgs/940ae9a451bf9ed18b2ae86080e8ec04babea7df.png">for the real
+values of the <i>b</i> and integer <i>x</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-12E">
+                <a href="#problem-12E">12E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Difference constraints of algorithm</b> <b><img src=
+"../imgs/940ae9a451bf9ed18b2ae86080e8ec04babea7df.png"></b>
+<b>:</b></p>
+<p>For the real values of constant <i>b</i> of some integer type
+unknown variable <i>x</i> but it is not requisite that all the
+values of <i>x</i> are integers<i>.</i></p>
+<p>System of difference constraints<img src=
+"../imgs/940ae9a451bf9ed18b2ae86080e8ec04babea7df.png">is the
+system in which we solve the linear inequalities of <img src=
+"../imgs/e581fd7c1516158bf6fa9c76e7eb44184bfc2c42.png">for two
+unknowns <i>x</i> and <i>y</i> where<img src=
+"../imgs/c8f4f629b4d2b91b2a77ba5fa656394bbe232167.png">, <img src=
+"../imgs/848975558648a53bde62b6e16f1505a6c3b7681d.png"><img src=
+"../imgs/4f317827991199ea1c4ababe8347e96dcbeabaae.png">and<img src=
+"../imgs/97f46bf21334d4782650e59d7115545dd7cebedc.png">.</p>
+<p>In the inequality<img src=
+"../imgs/8c16d5092f04db140d2127fd5ccd7b2094e6c7e8.png">of
+system<img src=
+"../imgs/940ae9a451bf9ed18b2ae86080e8ec04babea7df.png">where
+<i>b</i> is some real value so <i>b</i> will contain some
+fractional as well as integer part and the some of the <i>x</i> are
+integers but not all of them.</p>
+<p><b>Solution of the procedure:</b></p>
+<p>1. Round value of <i>b</i> to next higher integer, this should
+be done for the particular values of <i>b</i> for which we intend
+to obtain integer solutions, to preserving the inequality.</p>
+<p>2. Get the inequalities<img src=
+"../imgs/d9fe2391474ba301e17622859f804badd42b8f96.png">of the form
+where <img src=
+"../imgs/c439d3414ebd802049fd371d84763c3f6ad47dd4.png"> will be an
+integer.</p>
+<p>3. Apply bellman-Ford algorithm to get integer values for the
+unknown values of <i>x</i>.</p>
+<p>Bellman-Ford algorithm is used to find the shortest path in the
+graph <i>G</i> = (<i>V, E</i>) from a source <i>s</i> vertex to all
+other vertices <img src=
+"../imgs/30527add33a09341e835125367a1defa7fbe2af6.png">of the
+graph. This is the special algorithm which can work in the
+condition if there are negative weights associated with the edges
+of the graph.</p>
+<p>To solve difference inequality using Bellman-Ford we first
+create the graph from the inequalities and then apply the algorithm
+to find the negative weight cycle in the graph.</p>
+<p>If there is no negative weight cycle then it gives the solution
+for unknowns. Bellman Ford algorithm is the graph, which made from
+inequalities.</p>
+<p>1. First initialize the source vertex of the graph then test the
+edges whether there is a path from vertex <i>u</i> to vertex
+<i>v</i> by relaxing the edges.</p>
+<p>2. After check for the negative weight cycle in the graph and if
+there is no negative weight cycle then it will give the best
+solution for inequalities.</p>
+<p>Hence is Bellman-Ford algorithm is the best algorithm for the
+solution of system of difference constraints<img src=
+"../imgs/940ae9a451bf9ed18b2ae86080e8ec04babea7df.png">for the real
+values of the <i>b</i> and some integer values of <i>x</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

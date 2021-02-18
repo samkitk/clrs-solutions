@@ -1,0 +1,759 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 32.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the provided value of <i>p</i> and <i>q</i> for
+text<img src=
+"../imgs/ffda7b3b11d0ceb25ee2ffe47df28d8aee751663.png">.</p>
+<p><img src="../imgs/4230f5c2325eacc3d9c1ad962290ad2043c872a7.png">
+And <img src=
+"../imgs/666c40b75779503e962c40a23e0b988d651da136.png"></p>
+<p>The number of digits in <i>p</i> is 2 therefore window size
+<i>m</i> becomes 2.</p>
+<p>Assume <i>x</i> is the remainder.</p>
+<p><img src=
+"../imgs/50b212873aa2ee7a2036f3af24a75b925af592f8.png"></p>
+<p>• A spurious hit will occur when <i>p</i> has a value, such that
+the value of <img src=
+"../imgs/970525f8eb04b06295c040c21dd9857762b5ce0d.png">is 4.</p>
+<p>• A proper match will occur when remainder is 4 and <i>p</i> is
+26.</p>
+<p>Now, each time extract two digits from the text <i>T</i>, and
+match as follows.</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td>
+<p><b>Different (p)</b></p>
+</td>
+<td>
+<p><b>Remainder (p mod q)</b></p>
+</td>
+<td>
+<p><b>Status</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p1</p>
+</td>
+<td>
+<p>31(first two digits of <i>T</i>)</p>
+</td>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p2</p>
+</td>
+<td>
+<p>14(2<sup>nd</sup> and 3<sup>rd</sup> digits of <i>T</i>)</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p3</p>
+</td>
+<td>
+<p>41</p>
+</td>
+<td>
+<p>8</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p4</p>
+</td>
+<td>
+<p>15</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p><b>Spurious</b> <b>Hit</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p5</p>
+</td>
+<td>
+<p>59</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p><b>Spurious</b> <b>Hit</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p6</p>
+</td>
+<td>
+<p>92</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p><b>Spurious</b> <b>Hit</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p7</p>
+</td>
+<td>
+<p>26</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>Proper Match</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p8</p>
+</td>
+<td>
+<p>65</p>
+</td>
+<td>
+<p>10</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p9</p>
+</td>
+<td>
+<p>53</p>
+</td>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p10</p>
+</td>
+<td>
+<p>35</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p11</p>
+</td>
+<td>
+<p>58</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p12</p>
+</td>
+<td>
+<p>89</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p13</p>
+</td>
+<td>
+<p>97</p>
+</td>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p14</p>
+</td>
+<td>
+<p>79</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p15</p>
+</td>
+<td>
+<p>93</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>No Hit</p>
+</td>
+</tr>
+</table>
+<p>Observe the above table, the remainder is 4 is obtained, when
+<i>p</i> is 15, 59, 92, and 26. When the value of <i>p</i> is 26,
+the match is a proper match, but not a Spurious Hit.</p>
+<p><b>Therefore, the numbers of Spurious Hits are 3 .</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A RABIN-KARP-MATCHER method is used to determine the <i>P</i>
+pattern in text string T. Make following modification in Rabin-Karp
+method to determine any one pattern among <i>K</i> patterns:</p>
+<p>Suppose <i>P</i> is a 2-D array which contains <i>K</i>
+patterns. Each pattern of <i>P</i> is <i>m</i> characters long.</p>
+</div>
+<hr>
+<div class="answer">
+<p>FIXED-RABIN-KARP-MATCHER (<i>T</i>, <i>P</i>, <i>d</i>,
+<i>q</i>, <i>K</i>)</p>
+<p>//determine the length of first pattern of <i>P</i>. The length
+of all pattern in <i>P</i> are same.</p>
+<p>1 <img src=
+"../imgs/5cc59d75055e830488b79b1aa2e92f35dcd8bc0d.png"></p>
+<p>2 <img src=
+"../imgs/3142d02f68bbd0a5c5c473f431419f70729f7021.png"></p>
+<p>//loop used to check all pattern in P till one pattern is not
+found</p>
+<p>3 <b>for</b> <b><img src=
+"../imgs/b4d5156d4c14af0794ce1da45a5896bbc7bbc3a9.png"></b><b>to</b>
+<b><img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png"></b></p>
+<p>4 <img src=
+"../imgs/5be27e6f8959f89c998652cb816611cd21bf8d1f.png"></p>
+<p>5 <img src=
+"../imgs/e4c31fa36790f3ce4e1420bf1c06a213f910f8cf.png"></p>
+<p>6 <img src=
+"../imgs/0d19671ddacaf3b6fd7ec49b327fa2f741b8a56a.png"></p>
+<p>//use for loop to determine the hash value of
+<i>j</i><sup>th</sup> pattern and text strings <i>T</i>.</p>
+<p>7 <b>for</b> <b><img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png"></b><b>to</b>
+<b><img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png"></b></p>
+<p>8 <img src=
+"../imgs/4614d5fb01a716145db44640ae519c2eae9acd45.png"></p>
+<p>9 <img src=
+"../imgs/0478a2283b1d5eaaa85b1bc575e2b2fa3b6f85bb.png"></p>
+<p>//use for loop to traverse the whole text strings <i>T</i>.</p>
+<p>10 <b>for</b> <b><img src=
+"../imgs/7071f619feeea82d339dcf0ff5c456cb8b1ee7f7.png"></b><b>to</b>
+<b><img src=
+"../imgs/dacf12537adcac9d9eaba274b1297455c41ee173.png"></b></p>
+<p>//compare the hash value.</p>
+<p>11 <b>if</b> <img src=
+"../imgs/30748ac4d4c9ce4485c07f116de43e7ced6cc23b.png"></p>
+<p>//check whole pattern matches</p>
+<p>12 <b>if</b> <img src=
+"../imgs/26dff6132a96be08568304b2b9285306b8e2b689.png"></p>
+<p>13 print “j<sup>th</sup> pattern occur with shift” <i>s</i></p>
+<p>//control moves to the calling function after finding one</p>
+<p>// pattern of <i>P</i> in text string <i>T</i></p>
+<p>14 <b>return</b></p>
+<p>//recalculate the hash value</p>
+<p>15 <b>if</b> <b><img src=
+"../imgs/95acfcd80d14a510b5cb6b0dbef5c0516446e95f.png"></b></p>
+<p>16 <img src=
+"../imgs/a594adfeb0973e6d3ff978cb6a348c9a4be395a6.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modification for fixed pattern:</b></p>
+<p>• All <i>K</i> pattern has same length, so determine the first
+pattern length.</p>
+<p>• Use one more for loop in line 3 to traverse all <i>K</i>
+pattern till one pattern is not found in text string <i>T</i>.</p>
+<p>• Make modification in 8<sup>th</sup> and 12<sup>th</sup> line
+to replace <img src=
+"../imgs/4ed7ad3969ade2e2aef0653c610be61515521030.png">and
+<img src="../imgs/1b4ee3b849b3073bc62a7349bf0eaa4ac0483308.png">with
+<img src=
+"../imgs/f866bea5e4e6f6f28e57d879f53c503b06b12e0f.png">and<img src=
+"../imgs/21a6480a255f3f9537bb9a29f317ad695b2669b0.png">.</p>
+<p>• Add return statement in 14<sup>th</sup> line to return the
+control when one pattern is found.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modification required for variable patterns:</b></p>
+<p>Only small modification in FIXED-RABIN-KARP-MATCHER is required
+for variable <i>K</i> patterns. For variable <i>K</i> patterns put
+1<sup>st</sup> line code inside the first for loop. The first 4
+line after modification in FIXED-RABIN-KARP-MATCHER are as
+follow:</p>
+<p>VARIABLE-RABIN-KARP-MATCHER (<i>T</i>, <i>P</i>, <i>d</i>,
+<i>q</i>, <i>K</i>)</p>
+<p>//determine the length of text string <i>T</i>.</p>
+<p>1. <img src=
+"../imgs/3142d02f68bbd0a5c5c473f431419f70729f7021.png"></p>
+<p>//loop used to check all pattern in <i>P</i> till one pattern is
+not found</p>
+<p>2. <b>for</b> <b><img src=
+"../imgs/b4d5156d4c14af0794ce1da45a5896bbc7bbc3a9.png"></b><b>to</b>
+<b><img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png"></b></p>
+<p>//determine the length of <i>j</i><sup>th</sup> pattern.</p>
+<p>3. <img src=
+"../imgs/9741cc90ccc198a84fcfab6bdca9cb60cc3a3e3b.png"></p>
+<p>4. <img src=
+"../imgs/5be27e6f8959f89c998652cb816611cd21bf8d1f.png"></p>
+<p>Rest all code from line 5 to 16 will be same as above
+FIXED-RABIN-KARP-MATCHER algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Make following modification to determine <img src=
+"../imgs/190479fa58aeb31c577f5a3f889c60002b6c1127.png"> ‘<i>P</i>’
+pattern in <img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png"> ‘<i>T</i>’
+character array.</p>
+<p>• One of the best methods is to get first row from pattern
+<i>P</i> and check that pattern in first row of character array
+<i>T</i>.</p>
+<p>• If pattern is found then fetched second pattern from <i>P</i>
+again find that pattern from first row of character array
+<i>T</i>.</p>
+<p>• When pattern is not found in first row of character array
+<i>T</i> then find that pattern in second row of character array
+<i>T</i> and so on. If pattern is not found in any row of <i>T</i>
+array then return text NOT FOUND.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following CHECK algorithm to determine <img src=
+"../imgs/190479fa58aeb31c577f5a3f889c60002b6c1127.png"> ‘<i>P</i>’
+pattern in <img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png"> ‘<i>T</i>’
+character array.</p>
+<p>CHECK <img src=
+"../imgs/e12403fe8d2dff4dae32efdaeea684787b635af2.png"></p>
+<p>//use nested for loop to check each row of <i>P</i> and
+<i>T.</i></p>
+<p>1 <b>for</b> <b><img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png"></b><b>to</b>
+<i>m</i></p>
+<p>2 <b>for</b> <b><img src=
+"../imgs/b4d5156d4c14af0794ce1da45a5896bbc7bbc3a9.png"></b><b>to</b>
+<i>n</i></p>
+<p><i>//</i>call function to check particular i<sup>th</sup> row
+exist in j<sup>th</sup> row of T</p>
+<p>3 <b>if</b> RABINKARP <img src=
+"../imgs/4b2dd6d1d6363ca55cc605dde0369f30c0704c3e.png">!= NOT
+FOUND</p>
+<p>4 <b>break</b></p>
+<p>//use if statement to check particular i<sup>th</sup> row does
+not exist in T.</p>
+<p>5 <b>if</b> <b><img src=
+"../imgs/df9fa6dcfa1a4ed6339ed3958cbeb740732a2f53.png"></b></p>
+<p>6 <b>break</b></p>
+<p>7 <b>return</b> NOT FOUND</p>
+</div>
+<hr>
+<div class="answer">
+<p>//function to check pattern exist in text or not</p>
+<p>RABINKARP <img src=
+"../imgs/d7d29a659b8ab6ec14e162d032a053f8c83f7f3d.png"></p>
+<p>//calculate the hash value</p>
+<p>1 <img src=
+"../imgs/2066f01b0e5d380af0462c60a20c7e2151fe945d.png"></p>
+<p>2 <img src=
+"../imgs/9cfbea74647b4ceb2dc04135079ebd2492e443e3.png"></p>
+<p>//use loop to check the pattern in <i>t</i></p>
+<p>3 <b>for</b> <b><img src=
+"../imgs/3beff1ae4c05f9e9b76faf6996c5e328d46b8da6.png"></b><b>to</b>
+<b><img src=
+"../imgs/fb371bc78e66aaf6a0d4b99a1f1a6b88d2131547.png"></b></p>
+<p><b>//</b>compare the hash value</p>
+<p>4 <b>if</b> <b><img src=
+"../imgs/2fc05cc1c40bb40d395e929d0c34e7cbdce74216.png"></b></p>
+<p>5 <b>if</b> <b><img src=
+"../imgs/7c1713ea213efd044a1c01c2ab91d31353375f89.png"></b></p>
+<p>6 <b>return</b> k</p>
+<p>7 <img src=
+"../imgs/876540520360676935b5449e7fffc0e837d1586d.png"></p>
+<p>8 <b>return</b> NOT FOUND</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time complexity:</b></p>
+<p>• In above CHECK algorithm a nested <b>for</b> loop is used to
+check <img src=
+"../imgs/190479fa58aeb31c577f5a3f889c60002b6c1127.png"> ‘<i>P</i>’
+pattern in <img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png">
+‘<i>T</i>’.</p>
+<p>• In each iteration of nested <b>for</b> loop a RABINKARP
+function is called which also uses one <b>for</b> loop.</p>
+<p>Hence, the total time complexity of CHECK algorithm to determine
+<img src="../imgs/190479fa58aeb31c577f5a3f889c60002b6c1127.png">
+‘<i>P</i>’ pattern in <img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png"> ‘<i>T</i>’
+character array is<img src=
+"../imgs/054ea1686081c5b13850ee2ac7e563ecda68db79.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>ALICE AND BOB</b></p>
+<p>Alice and Bob are the two names of person who communicates with
+each other. In computer language, it is easy for them to
+communicate, it is because their desired conditions are represented
+by 1 are non-desired conditions are represented by 0. After this,
+an algorithm is used that tests the conditions and returns whether
+there exists condition when desired conditions of both are matched
+or not.</p>
+<p>Most commonly used method is matrix method, where all the
+conditions are shown and at desired positions 1 will be there.
+Suppose the bit transferred by Alice is represented by ‘red’ and
+bits of Bob is represented by ‘blue’, the corresponding matrix can
+be shown as:</p>
+<p><img src="../imgs/409a11063c8c3209c85cdced0e7acdd8a3f9620f.png"
+alt="Picture 119"></p>
+<p><b>Matrix</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>In the given problem, Alice has a copy of <i>n</i>-bit file
+<img src="../imgs/bb812c0e90d411c6c7e1244eb8b7d462172a8194.png">
+and in the same way, the Bob has an <i>n</i>-bit file as<img src=
+"../imgs/283fe7440356b3f5ab3376411c86d7ac8b42bb62.png">. Both Alice
+and Bob wants to check whether the files that both have are
+identical or not. And in the process of file transmission they use
+the concept of probability for the file checking.</p>
+<p>In order to check whether both files are same, Alice can send
+the whole file to Bob and the Bob checks both files and return
+‘Yes’ if both files are same otherwise ‘No’. This method is very
+costly and time taking. One another method for checking whether
+both files are same is given below:</p>
+<p>A prime <i>q</i> is selected in the process in such a way that
+an integer <i>x</i> which is obtained from the set<img src=
+"../imgs/f1db053b29e377e86b91f2e9e0661494d4dd777a.png">. The value
+of <i>q</i> is selected in such a manner that<img src=
+"../imgs/82dfedf562790f2c87b758b06662b287e6e2b1c9.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Suppose that the bits that Alice have are represented by A and
+bits that Bob has are represented by B. Here, the functions are
+used for fits are their corresponding functions are represented by
+<img src="../imgs/81b47be68392d4dee70553dc912ee6bf74250de6.png">
+and<img src=
+"../imgs/feb1dc872e2dc4a5adf6a876b836d2a7752a46fb.png">. Using this
+condition, the function <img src=
+"../imgs/81b47be68392d4dee70553dc912ee6bf74250de6.png"> is
+evaluated by Alice which is as below:</p>
+<p><img src=
+"../imgs/50c6356ea2ef14f828e90c645caef117d81c683c.png"></p>
+</div>
+<hr>
+<div class="answer">The above function provides the value in form
+of polynomial of <i>x</i>. The highest degree can be of<img src=
+"../imgs/6e3ae7e0a6a1d90d9276998947bf11f5b08d610b.png">. The same
+procedure is followed by the bob in which the function <img src=
+"../imgs/0b8e03a39161600c36266ae3f6ba69ab40d7b51d.png">is
+evaluated. The function is given below:</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/facd08547c042305604a60ac3afc0df6929a37a5.png"></div>
+<hr>
+<div class="answer">The above function provides the value in form
+of polynomial of <i>x</i>. The highest degree can be of<img src=
+"../imgs/95027557ad7367cf2ebf88bb1f49f92dfa06aa4a.png">.</div>
+<hr>
+<div class="answer">
+<p>As it is known that <i>a</i> belongs to <i>Z</i><sub>q</sub>
+provides a zero of given polynomial <img src=
+"../imgs/44268c2aa17355d7066859a484b6f38570822feb.png">and
+if<img src="../imgs/92cc6f2933cf1be0ffee041a6e0a7b7bce421637.png">,
+then the polynomial <img src=
+"../imgs/44268c2aa17355d7066859a484b6f38570822feb.png">has maximum
+of <i>n</i> distinct zeros. To prove the required condition as
+stated in the problem, it is checked that both Alice and Bob sends
+<img src="../imgs/2263111ec136a4f938297aa7669e06ff81bd481d.png">
+and <img src=
+"../imgs/0b8e03a39161600c36266ae3f6ba69ab40d7b51d.png">
+respectively.</p>
+<p>So, if<img src=
+"../imgs/ca20adbd70bc168284f803058b7f191567e17dda.png">, and since
+<img src="../imgs/7707ced777e8cfff4726d83b997dd73c6804cbf8.png">
+then<img src=
+"../imgs/b1c733b4d21bd16a4b2cf99456df6b53d09e42a9.png">, then it
+can be concluded that <img src=
+"../imgs/13445c71f1b34f2373164a2f74f569370770194c.png">and thus,
+the integer <img src=
+"../imgs/2263111ec136a4f938297aa7669e06ff81bd481d.png"> would take
+more than <i>n</i>-bits to send. Hence, <img src=
+"../imgs/08f31faa7b813e68204d522b85004a4c16d9966b.png"> and
+<img src="../imgs/ca20adbd70bc168284f803058b7f191567e17dda.png">
+are evaluated.</p>
+<p>Here, the value of <i>q</i> is taken greater than <img src=
+"../imgs/b0c66505d2321a30576eb617dc15f355c5b2ff62.png"> and the
+value of <i>x</i> is chosen between 0 to<img src=
+"../imgs/31e3136fd03bbc4d3e19911e00967045b1e1b205.png">. So, if the
+value of both the evaluations does not match, then there will be
+one case when the value can be the same.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider an example in which the length of bits is 4 bit:
+Consider that Alice has a file in which bits are {1, 0, 0, 1} and
+Bob has a file containing bits {0, 1, 0, 1}. So, the value of
+<i>n</i> is 4. Now, a value of q is selected in such a manner that
+it should satisfy the condition <img src=
+"../imgs/82dfedf562790f2c87b758b06662b287e6e2b1c9.png"> and also a
+prime. This means that a prime number is selected having prime
+value greater than 4000. The prime values greater than 4000 are
+4001, 4003, 4007 and so on.</p>
+<p>After selecting the value of <i>q</i> as 4001, the value of
+<i>x</i> should be selected. The value of <i>x</i> lies between 0
+to<img src="../imgs/d7b72af89adc693654b734f15549eb666a8d71c5.png">,
+any value which lies from 0 to 4001 can be taken into
+consideration. Select the value of <i>x</i> as 2.</p>
+<p>Now, the functions <img src=
+"../imgs/81b47be68392d4dee70553dc912ee6bf74250de6.png"> and
+<img src="../imgs/feb1dc872e2dc4a5adf6a876b836d2a7752a46fb.png">
+are calculated. This can be given as:</p>
+<p><img src=
+"../imgs/025bbec46fa5633fece8f19e20012c572f7bf091.png"></p>
+<p>After expansion, the equation can also be written as:</p>
+<p><img src=
+"../imgs/8ad4e7e2fb364bd4317d9857248d893888d94adb.png"></p>
+<p>Now, insert the value of <i>a</i><sub>0</sub> to
+<i>a</i><sub>3</sub>, the equation given above becomes:</p>
+<p><img src=
+"../imgs/6e695f5861d791e10d6be5bf473a7489139a3a04.png"></p>
+<p>As, the <i>a</i><sub>0</sub> and <i>a</i><sub>3</sub> has values
+1, so their corresponding values can be written as:</p>
+<p><img src=
+"../imgs/c0ddc5080aaf54019024ff96f1d88899e30b2418.png"></p>
+<p><img src=
+"../imgs/55da467c4ab2b0ffa1248a6eb392cef248bd5f66.png"></p>
+<p><img src=
+"../imgs/5f6938c5c6a848f1e1537de6774fc1d9bbbee792.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Similarly, the value of <img src=
+"../imgs/a16f74d7d8692dc239a69022e5253793c6be7515.png"> can be
+calculated as:</p>
+<p><img src=
+"../imgs/8baca8d24ddeb2a05969f38bb0042c4f78794938.png"></p>
+<p>After expansion, the equation of <img src=
+"../imgs/a16f74d7d8692dc239a69022e5253793c6be7515.png"> can also be
+written as:</p>
+<p><img src=
+"../imgs/3b99ed0127f55af700e9e7d0b09387ec34235f04.png"></p>
+<p>Now, on putting the values of <i>b</i><sub>0</sub> to
+<i>b</i><sub>3</sub>, the above equation becomes:</p>
+<p><img src=
+"../imgs/827ebc8b1f1067a370045ad7bc5aa04381b0b9b1.png"></p>
+<p>As, the <i>b</i><sub>1</sub> and <i>b</i><sub>3</sub> has values
+1, so their corresponding values can be written as:</p>
+<p><img src=
+"../imgs/8265ab6488d7318aba62f43ffe4e7e528da32c98.png"></p>
+<p><img src=
+"../imgs/af5077211aa03d207ac87f43dc16a5222744524c.png"></p>
+<p><img src=
+"../imgs/f5a2bb7159764081a1a6a94a8b439d2343c29ae4.png"></p>
+<p>As, the value of functions <img src=
+"../imgs/881664708f66b80eee82788a7ec1f9936a5928ae.png"> and
+<img src="../imgs/a16f74d7d8692dc239a69022e5253793c6be7515.png">
+are different, this states that the bits are different.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Here, the number of roots of the polynomial are checked over the
+field and by using the condition that if <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png"> is a prime
+such that <img src=
+"../imgs/85abe02d5404af637757bd3e5989c0db8defe3aa.png"> is the
+polynomial of degree <i>t</i> in which <img src=
+"../imgs/ffd46f3104043cc0d4a48ce8db6430a2c69cb4e2.png"> is obtained
+from<img src=
+"../imgs/d2af4c29af96e1142cf2e45910855650ee98a585.png">. So as
+<img src="../imgs/30f1f9542ffb38efd6507d9a03bcac460b056a0c.png"> is
+zero, if <img src=
+"../imgs/d70fdc2e8d65424490712ce1eee2530d4968a0e0.png"> then if
+<i>a</i> is zero of <img src=
+"../imgs/6a3cd55483f5f1c8f2738c9c89098c7ce29a526c.png"> then
+<img src="../imgs/688ddc0f88e2b26b3826cb7d845746bb91f1f094.png">
+for a polynomial <img src=
+"../imgs/785d3bb30057b1b40ba94d5b0741e4326e60260f.png"> of
+degree<img src=
+"../imgs/88f99e5b6ffa85d3f188d8a55f446682153b734d.png">. Hence, if
+<i>p</i> is a prime, then polynomial <img src=
+"../imgs/da0e41e514f52607b23889610ebb690a5aada267.png"> of degree
+<i>t</i> can have at most <i>t</i> distinct zeros modulo <i>p</i>.
+The probability can be found by using the equation given below:</p>
+<p><img src=
+"../imgs/25ea86d4e8778ab83d7c1f028cd340d05e8d09a9.png"></p>
+<p><img src=
+"../imgs/6a34d19f4ef99c8bd8f3168d4a49c44d41bd3624.png"></p>
+<p><img src=
+"../imgs/401f62960d7dceb6e6afa7ed5e8e944d406f9b4f.png"></p>
+<p>So, the probability will be:</p>
+<p><img src=
+"../imgs/d017b46764ef3ae3b4d5bbee9fadceb6eb5d820a.png"></p>
+<p>This means that if the value of<img src=
+"../imgs/aea203a5c337a1ae404837701d42bf2a195f6ce4.png">, and then
+there will be one chance among 1000 chances that<img src=
+"../imgs/b1c733b4d21bd16a4b2cf99456df6b53d09e42a9.png">. It is
+clear from the values of functions <img src=
+"../imgs/2263111ec136a4f938297aa7669e06ff81bd481d.png"> and
+<img src="../imgs/0b8e03a39161600c36266ae3f6ba69ab40d7b51d.png">
+that if their values are same then the value of <i>A</i> will be
+equal to <i>B</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

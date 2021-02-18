@@ -1,0 +1,220 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 19.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Extracting minimum value in Fibonacci heap</b></p>
+<p>Fibonacci heap is a kind of data structure and the collection of
+min-heap-ordered trees is called the Fibonacci heap. Here, the min
+heaps are arranged in an order that is known as the collection of
+min-heap-ordered trees.</p>
+<p>Min-heap-property is the condition in which for any node the
+value of its key is leading or equal to the value of its parent
+node.</p>
+<p>The tree with minimum key value is the root node in the
+Fibonacci heap and the children of this Fibonacci heap are
+connected or arranged in the circular doubly linked list.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Refer the textbook for FIB-HEAP-EXTRACT-MIN.</p>
+<p>It is used to find the minimum value node in the tree.</p>
+<p>In above mention algorithm, the node which points to min
+(<i>H</i>) is drawing out from the heap and all its children are
+appended to the root list of the tree.</p>
+<p>After that for maintaining the Fibonacci heap the algorithm
+CONSOLIDATE (<i>H</i>) is called, which arranges the nodes of the
+tree in heap order.</p>
+<p>FIB-HEAP-LINK (<i>H, y, x</i>) is called for linking of node
+<i>y</i> as the child of the node <i>x</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For figure 19.4(<i>m</i>) in the textbook, the step by step
+calculation of the FIB-HEAP-EXTRACT-MIN algorithm is as
+follows:</p>
+<p><b>Setp1:</b> <img src=
+"../imgs/fac2586cea508c5cc6dceec8a98c1ade4d10d30a.png"></p>
+<p><b>Step2:</b> <i>z</i> contains some value so run the for loop
+for each child of <img src=
+"../imgs/8ae93c0d65be9d66198a90d517e9ad847e2e8568.png"></p>
+<p><b>Step3:</b> add each child of the <i>z</i> to the root list
+and set their parents to NIL</p>
+<p><img src="../imgs/062a2238ff91660d5698ff0321550ada5e5174a3.png"
+alt="Picture 7"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step4:</b> remove <img src=
+"../imgs/8ae93c0d65be9d66198a90d517e9ad847e2e8568.png">from the
+root list and set<img src=
+"../imgs/ec9dcf6a7b21b483c938065233edf61c99cf3661.png">as in figure
+below:</p>
+<p><img src="../imgs/bfd89e664de13f1841144ad04182c878cf6ebd81.png"
+alt="Picture 5"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step5:</b> Now call CONSOLIDATE (<i>H</i>) on the Fibonacci
+heap</p>
+<p>Take an array which stores the degrees of the nodes set all of
+them to NIL and consider every node from the root list one by
+one</p>
+<p><b>for</b><img src=
+"../imgs/fbf14b7a0cdb93ba9d16201abf0002219944ab25.png"></p>
+<p><img src=
+"../imgs/2694d1e57f100c5f62435b45676229e9f198e9c8.png"></p>
+<p><b>while</b> <img src=
+"../imgs/affe5f08010f8e6daced4ede3bca3c59e3565615.png">that is if a
+node other than 18 is present in the root list</p>
+<p>with degree 2</p>
+<p><img src=
+"../imgs/a32e92fb767c82010b9e1a3b8bc56854df144158.png"></p>
+<p>check <b>if</b> <img src=
+"../imgs/2cb323a1b746a44469b77f5a4b4de39078cf828f.png">that is
+<img src=
+"../imgs/79f3769b75ee89bde2a2e3b139b06e95d62349c5.png">which is
+false</p>
+<p>now calling FIB-HEAP-LINK(<i>H,</i>24,18)</p>
+<p>remove node 24 from root list and add it to the child list of 18
+as in figure:</p>
+<p><img src="../imgs/bac1e9ee0f8f6e6713538aef6bfa88bee28c8ae9.png"
+alt="D:\Tiffs\2254-19.2-1E .tif"></p>
+<p><img src=
+"../imgs/97271b092cafce8da3f7711713aa7d1c71fe6d27.png"></p>
+<p><img src=
+"../imgs/7e3b241db8b90da76a6155cf5d626363376d4076.png"></p>
+<p>But only one node remains with degree 3 so terminate the while
+loop and <b>return</b> back to the for loop</p>
+<p><b>for</b><img src=
+"../imgs/d5e6100f60b8667475b32f39c04a783544bf5099.png"></p>
+<p><img src=
+"../imgs/e789b8cc58de2ded375fdea56412ca21aa937eb1.png"></p>
+</div>
+<hr>
+<div class="answer"><b>while</b> <img src=
+"../imgs/bd59d89b523c25399ed31db19059ae837cf5c6d5.png">that is any
+other node in the root list with degree 1is present <img src=
+"../imgs/35e72727eb79f4e6a8945aca6c4e1b73dc4d35bb.png">
+<p>check <b>if</b> <img src=
+"../imgs/2cb323a1b746a44469b77f5a4b4de39078cf828f.png">that is
+<img src=
+"../imgs/a37734b48af2ba2b5cf6c1566915453fb6bca36e.png">which is
+true so exchange the keys of nodes containing keys 38 and 17</p>
+<p>now <img src=
+"../imgs/677f95785031de7fbcefa510cb9706d6d9d40274.png"></p>
+<p>call FIB-HEAP-LINK(<i>H,</i>38,17)</p>
+<p>remove node 38 from root list and add it to the child list of 17
+as in figure:</p>
+<p><img src="../imgs/ddd39e4771c1f2d798a137ab1ad918552d92120e.png"
+alt="D:\Tiffs\2254-19.2-1E .tif"></p>
+<p>set<img src=
+"../imgs/497f35dcfca6f27bf59bc0cf729615c1f7b39338.png"></p>
+<p><img src=
+"../imgs/3e6382dd25339ec1b30bc02dcc9138fda2157156.png"></p>
+<p>But there is only one node with degree 2 so terminate the while
+loop and back to the for loop</p>
+<p><b>for</b><img src=
+"../imgs/b29196597e8558b0351428ef32f05253b6d2f6e9.png"></p>
+<p><img src=
+"../imgs/1be7a56e13ecc22dcfa8527f9bd6e3d692474546.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>There is no other node in the root list having degree 0 so we
+will not enter in while loop ad also there is no other node in the
+root list so for loop is also terminated.</p>
+<p>set<img src=
+"../imgs/07932021d0ce6c58ea9083814a13b0bab3538c8e.png"></p>
+<p><b>for</b> <img src=
+"../imgs/f3fb541092394802bc073c1b820f04b39962e190.png"></p>
+<p>check if<img src=
+"../imgs/2de29ea336a98e5e9a25db61687bcf01a7b30f1a.png">that is
+there is at least one node with degree 0 then</p>
+<p><b>if</b><img src=
+"../imgs/871875ef6d920195f237823356ec22b2cdf3eaf8.png"></p>
+<p>a root list is created and which contains node<img src=
+"../imgs/fe506884e597f60d54ce0b14be6bef429973b4d0.png"></p>
+<p>set<img src=
+"../imgs/8fbc97b0e4ac4051c5774f31b1a23e9c9887b795.png"></p>
+<p>increase the value of <i>i</i> as<img src=
+"../imgs/25b22961c8368b30041c3c5ad6fb12de1533798f.png"></p>
+<p>no node is in the root list with degree 1 so</p>
+<p><b>for</b><img src=
+"../imgs/1b42611d9f77f4b8f95235767dd237b1d8e8c803.png"></p>
+<p><img src=
+"../imgs/affe5f08010f8e6daced4ede3bca3c59e3565615.png"><b>returns</b>
+false because<img src=
+"../imgs/9a77925f5ac3cf2394ca2035b6faafb3ae67fb06.png"></p>
+<p>Insert 17 to the heaps root list and check if <img src=
+"../imgs/0bbca086ce4fbfb39280947a6c1eb74fe9230e47.png">which is
+true</p>
+<p>So <img src=
+"../imgs/10fb18432091b1e3f1dd5962b451ace6e11c4596.png"></p>
+<p><b>for</b><img src=
+"../imgs/920f61f838068ea4aeba4c40d9db1ae4b0aeaacf.png"></p>
+<p><img src=
+"../imgs/435c513b14552aac0d984660d3b3ade04365ebe3.png">because<img src="../imgs/95654afeb0c685ff409189192332d833676cf37f.png"></p>
+<p>So insert node 18 to the root list and check if<img src=
+"../imgs/25e80ed82ec196b83d1dabc5a19fd0a2826a3965.png">which is
+false.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now no node is remaining in the heap so algorithm ends here. We
+get back to the FIB-HEAP-EXTRACT-MIN which returns value 7 as the
+lowest value and the final Fibonacci heap is as follows:</p>
+<p><img src="../imgs/f57d045a0ca91e064dd2c2332713aa6e135380b8.png"
+alt="D:\Tiffs\2254-19.2-1E .tif"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

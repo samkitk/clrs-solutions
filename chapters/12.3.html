@@ -1,0 +1,370 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 12.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>To insert a new node <i>z</i> into tree <i>T</i>, the
+RECURSIVE-TREE-INSERT procedure calls itself until it finds a
+suitable node at which the new node <i>z</i> must be inserted.</p>
+<p>• The initial call of the procedure is TREE-INSERT (<i>T.root,
+z</i>).</p>
+<p>• That is, initially, <i>x</i> is a root node.</p>
+<p>• If the tree T is empty (i.e. if initially x = = NIL), the
+procedure inserts the new node z as root (i.e. x = z).</p>
+<p>• If the tree is not empty, the procedure recursively calls
+itself until a node is found.</p>
+<p>• The new node z is inserted at the node that the procedure
+finds.</p>
+<p><b>Recursive version of TREE-INSERT procedure is as
+follows:</b></p>
+<p>RECURSIVE-TREE-INSERT(x, z)</p>
+<p>1. <b>If</b> x = = NIL</p>
+<p>2. x=z</p>
+<p>3. <b>elseif</b> z. key &lt; x. key</p>
+<p>4. <b>if</b> x.left-child <img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png">NIL</p>
+<p>5. RECURSIVE-TREE-INSERT (x.left-child, z)</p>
+<p>6. <b>else</b></p>
+<p>7. z.parent = x</p>
+<p>8. x.left-child = z</p>
+<p>9. <b>elseif</b> z.key <img src=
+"../imgs/d944f1eb097dbb8c3ad2e3dab585eeea7e51862e.png"> x.key</p>
+<p>10. <b>if</b> x. right-child <img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png">NIL</p>
+<p>11. RECURSIVE-TREE-INSERT (x.right-child, z)</p>
+<p>12. <b>else</b></p>
+<p>13. z.parent = x</p>
+<p>14. x.right-child = z</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following binary search tree for inserting any
+particular node:</p>
+<p><img src="../imgs/334d5fda83829b07ae1c1016becd9dfdc8e3b41f.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\October 10\9.10.2015\Gaurav\Image\3.png"></p>
+<p>Consider TREE-INSERT () algorithm provided in section 12.3.
+Suppose one have to insert 17 in above binary search tree. The
+number of nodes examined in inserting a particular node is as
+follows:</p>
+<p>• At first store root node reference in any temporary
+variable.</p>
+<p>• Now inside the <b>while</b> loop check current node <i>15</i>
+is <i>NIL</i> or not. The current node is not NIL, so compare the
+current node 15 with the node which has to insert that is 17.</p>
+<p>• The current node is smaller than the node which has to be
+inserted, so control moves to right child 18.</p>
+<p>• Now, again check whether current node 18 is <i>NIL</i> or not.
+The current node is not <i>NIL</i>, so compare the current node 18
+with the node which has to insert that is 17.</p>
+<p>• The current node is larger than the node which has to be
+inserted, so control moves to left child of 18.</p>
+<p>• The left child of current node 18 is <i>NIL</i> therefore 17
+inserted as left child of 18.</p>
+<p><b>Therefore, total 2 nodes are examined to insert 17 into the
+node of binary search tree.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following binary search tree for searching any
+particular element:</p>
+<p><img src="../imgs/f0f8b14cd8f77d9f5ccabf541fd75df2f17ca461.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\October 10\9.10.2015\Gaurav\Image\4.png"></p>
+<p>Consider ITERATIVE-TREE-SEARCH () algorithm provided in section
+12.2.</p>
+<p>The following steps search the node 17:</p>
+<p>• During search, compare the first key value of the root node
+with search value that is compare 15 with 17.</p>
+<p>• The key value of root node 15 is smaller than the search value
+that is 17, so control move to right child of root.</p>
+<p>• Again compare the current node value 18 with the search value
+17. The current node value is greater than search value, so the
+control move to left child of current node 18.</p>
+<p>• Now, again compare the current node value 17 with the search
+value 17. The current node value exactly matches with the search
+value, so the control returns to the calling function.</p>
+<p><b>Therefore, total 3 nodes are examined during searching a 17
+key value node in above tree.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Conclusion</b></p>
+<p>When 17 has to be inserted in above binary search tree Figure1
+then only <b>2</b> node are examined whereas When 17 has to be
+search in above binary search tree Figure 2 then <b>3</b> node are
+examined.</p>
+<p><b>Hence, from this it can be conclude that number of node
+examined while searching a node is one more than inserting that
+node in binary search tree.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A binary search tree is built in such a way that the right child
+must be greater than the parent and the left child must be less
+than the parent. Therefore, sort a set of numbers by building a
+binary search tree and print using tree walk ( or tree
+traversing).</p>
+<p><b>The algorithm to sort and print set of numbers using binary
+search tree is as follows:</b></p>
+<p>TREE-SORT (<i>A</i>)</p>
+<p>1. <b>for</b> <i>i</i> =1 <b>to</b> <i>n</i></p>
+<p>2. TREE-INSERT( <i>T</i><sub>,</sub> <i>A</i>[<i>i</i>]) //let
+<i>T</i> be an empty binary search free</p>
+<p>3. INORDER-TREE-WALK(<i>T.root</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p>TREE-INSERT (<i>T, z</i>)</p>
+<p>1. <i>y</i> = NIL</p>
+<p>2. <i>x</i> = <i>T.root</i></p>
+<p>3. <b>while</b> <i>x</i><img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png"> NIL</p>
+<p>4. <i>y</i> = <i>x</i></p>
+<p>5. <b>if</b> <i>z.key</i> &lt; <i>x.key</i></p>
+<p>6. <i>x</i> = <i>x.left</i></p>
+<p>7. <b>else</b> <i>x</i> = <i>x.right</i></p>
+<p>8. <i>z.p</i> = <i>y</i></p>
+<p>9. <b>if</b> <i>y</i> = = NIL</p>
+<p>10. <i>T.root</i> = <i>z</i> // tree T was empty</p>
+<p>11. <b>elseif</b> <i>z.key</i> &lt; <i>y.key</i></p>
+<p>12. <i>y.left</i> = <i>z</i></p>
+<p>13. <b>else</b> <i>y.right</i> = <i>z</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>INORDER-TREE-WALK (<i>x</i>)</p>
+<p>1. <b>if</b> <i>x ≠</i> NIL</p>
+<p>2. INORDER-TREE-WALK (<i>x.left</i>)</p>
+<p>3. print <i>x.key</i></p>
+<p>4. INORDER-TREE-WALK (<i>x.right</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Worst case running time analysis for TREE-SORT:</b></p>
+<p>If the linear chain of numbers (numbers in ascending or
+descending order) is to be inserted, TREE-INSERT takes worst case
+running time.</p>
+<p>That is, in the worst case, TREE-INSERT checks the nodes
+proportional to height of the tree and inserts a node in <img src=
+"../imgs/98d2be1c56d0cfbe6c93e38033ef1d53074acad1.png"> time.</p>
+<p>If array <i>A</i> contains ‘n’ numbers in ascending order or
+descending order in each iteration of for loop, TREE-INSERT
+executes in time proportional to height of the tree.</p>
+<p>Thus, the for loop executes overall in (1(1<sup>st</sup>
+iteration)+2(2<sup>nd</sup> iteration)+…+n(n th iteration))</p>
+<p><img src="../imgs/ec4adfa4753dc8ac0712314d2f7d3631a5350544.png">
+=<img src="../imgs/a69108d769f8a4f203f0186679629f4c2297f950.png">
+=<img src=
+"../imgs/40271ff19cd1e6a10602386ce5c791be41939784.png"></p>
+<p><b>Hence, the worst case running time for TREE-SORT is</b>
+<b><img src=
+"../imgs/40271ff19cd1e6a10602386ce5c791be41939784.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Best case running time for TREE-SORT:</b></p>
+<p>If the set of nonlinear numbers (numbers neither in ascending
+nor in descending order) is to be inserted, TREE-INSERT takes best
+case running time.</p>
+<p>That is TREE-INSERT inserts a node in <img src=
+"../imgs/d19fa26c198ca350a2e597d470cd3dcb3f01b492.png"> time.</p>
+<p>If array <i>A</i> contains ‘n’ nonlinear numbers, the for loop
+executes n times and each time TREE-INSERT executes in log n time.
+Overall, the for loop executes <img src=
+"../imgs/b163e91983363dd71b74a78a6210932470014f76.png"> times.</p>
+<p><b>Hence, the best case running time for TREE-SORT is</b>
+<img src=
+"../imgs/dde4c60b411880414b8ac2a579a8908e4728a6cb.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/911be6f82a3918d7285625f79758aa3294ab2657.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>TREE-DELETE algorithm in</b> <b>Binary Search Tree:</b></p>
+<p>• Binary Search Tree is a special type of data structure which
+is implemented by using linked list.</p>
+<p>• It has a special property that for each node its left sub tree
+has values smaller than that node and right sub tree has values
+larger than that node.</p>
+<p>• In Binary Search Tree, TREE-DELETE algorithm has node
+<img src="../imgs/bf5b8a9bf7ccc439989c336ec53acc39667535ba.png">(node
+to be deleted) with two children, it could choose node<img src=
+"../imgs/b5fff234280964a566e9cc61077a2b6241fb501c.png">as its
+predecessor rather than its successor.</p>
+<p>• In this TREE-DELETE algorithm, there are three conditions
+implemented for deleting node<img src=
+"../imgs/bf5b8a9bf7ccc439989c336ec53acc39667535ba.png">in
+TREE-DELETE algorithm of Binary Search Tree:</p>
+</div>
+<hr>
+<div class="answer">
+<p>• <b>Let the z is deleting node.</b></p>
+<p>Case 1: When deleting node has no child.</p>
+<p>• If z has no child, then that node is simply deleted and child
+to its parent is set to NULL.</p>
+<p>• Example: Deleting node <i>X</i> from the tree.<img src=
+"../imgs/b140868534ac4d9475d2233dfa491efec09ac2f6.png"></p>
+<p><img src="../imgs/0308e8c0817856b92a58fcfb5df23b45a2488ce0.png"
+alt="C:\Tiffs\2254-10.2-6E..tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Case 2: When deleting node has a child.</p>
+<p>• If <img src=
+"../imgs/bf5b8a9bf7ccc439989c336ec53acc39667535ba.png"> has only
+one child then, get the value from its only sub tree to replace
+with <img src=
+"../imgs/bf5b8a9bf7ccc439989c336ec53acc39667535ba.png"></p>
+<p>• And then delete it.</p>
+<p>• Example: Deleting node <i>G</i> from the tree.</p>
+<p><img src="../imgs/3e9fd2a479214b3ae05715632bcfcb3f9187137a.png"
+alt="C:\Tiffs\2254-10.2-6E..tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Case 3: When deleting node has two children.</p>
+<p>• If <i>z</i> has two children, after calling TREE-DELETE
+on<img src="../imgs/bf5b8a9bf7ccc439989c336ec53acc39667535ba.png">,
+it will delete the node z and place the successor node of z at the
+position of node z.</p>
+<p>• And, to get the successor of node z, find the minimum value
+node from right child nodes.</p>
+<p>• Example: Deleting node <i>D</i> from the tree.</p>
+<p><img src="../imgs/f758a8f82c2d4a325e35975db83d491c208315cd.png"
+alt="C:\Tiffs\2254-10.2-6E..tif"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

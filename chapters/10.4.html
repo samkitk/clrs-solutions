@@ -1,0 +1,368 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 10.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a43e4aca5263b6746f0dbf7e87f4c7b5420bd993.png">
+<hr>
+<img src="../imgs/9101043673482b1e80e576a575cc90e6bf81663b.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/36050ecad24bea4f31c88cb33c9af508f2dcae34.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Non recursive procedure for n-node binary tree using stack as an
+auxiliary data structure:</p>
+<p>PRT-WITH-STACK (T)</p>
+<p>// if statement is used to check tree is empty or not</p>
+<p>1 if T== Nil</p>
+<p>// display the message</p>
+<p>2 print(“Stack is empty”)</p>
+<p>3 Return</p>
+<p>// else statement is executed when if statement is wrong</p>
+<p>4 else</p>
+<p>//add the node of tree into stack</p>
+<p>5 Stack.Push(T)</p>
+<p>// increment the value of top by 1 in stack</p>
+<p>6 Stack. Top= Stack.top+1</p>
+<p>//while statement is used to check the element in stack</p>
+<p>7 While Stack != empty</p>
+<p>//fetch the element from stack</p>
+<p>8 Crnt-node = Stack.Pop</p>
+<p>//decrease the value of top by 1 in stack</p>
+<p>9 Stack.top= Stack. top-1</p>
+<p>//display the all node value</p>
+<p>10 Print (Crnt-node.value)</p>
+<p>//if statement is used to check the left child of current
+node</p>
+<p>11 if Crnt-node.left != NIL</p>
+<p>//insert the left node into stack</p>
+<p>12 Stack.Push (Crnt-node.left)</p>
+<p>//else if statement is used to check the right child of current
+node</p>
+<p>13 else if Crnt-node.right != NIL</p>
+<p>// insert the right node into stack</p>
+<p>14 Stack.Push (Crnt-node.right)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of Algorithm:</b></p>
+<p>• In the above algorithm stack is used to store all nodes of
+tree and to display the key of each node.</p>
+<p>• All ancestors of any particular node are stored into stack.
+Once user reach the key, display all value of stack.</p>
+<p>• In the above algorithm, first check the tree is empty or
+not.</p>
+<p>• If tree is not empty, push all the element of tree into
+stack.</p>
+<p>• While statement is used to check the element in stack,
+retrieve all nodes from stack and store it into current node
+variable.</p>
+<p>• Check the left child of tree, and insert it into stack.</p>
+<p>• Similarly, check the right child of tree and insert it into
+stack.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a617781b914c04f72e27e13001bf50f916c0de3f.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Binary Tree</b></p>
+<p>Binary tree is a tree type data structure where each has at most
+two child nodes, classified as “<b>left</b>” and “<b>right</b>”.
+The nodes which have children are called as <b>parent</b> nodes,
+and child nodes can have references to the parents’ node. If the
+ancestor of all nodes that is root node exists then it is often
+referenced outside the tree.</p>
+<p>In the data structure, a node can be reached by starting at root
+node and repeatedly following references to either the <b>left</b>
+or <b>right</b> child. A tree which does not have any node except
+the ancestor of all nodes is classified as a <b>null tree</b>. In a
+binary tree every node can have a maximum degree of two. A tree
+which has n nodes can have <i>n</i>-1 degree or branches
+exactly.</p>
+Here in the given <i><b>n</b></i><b>-node binary tree</b>, we have
+to print out the each node keys, for this purpose we have
+<b>current</b> pointer and <b>last</b> pointer, it recognize the
+current and last visited node respectively. The traversing is done
+in the algorithm in <b>preorder</b> that is (<b>parent, left,
+right</b>). Then according to the relationship between the last and
+the current node, whether current node is the right or the left
+child, we update the respective pointer.</div>
+<hr>
+<div class="answer">
+<p>Here in the following algorithm, two variables are used:</p>
+<p><i>l_p</i> - last pointer.</p>
+<p><i>c_p</i> - current pointer.</p>
+<p>//variable assignment</p>
+<p><i>l_p</i> = null;</p>
+<p><i>c_p</i> = root;</p>
+<p>// check that the current pointer is null or not</p>
+<p><b>while</b> (<i>c_p</i> !=null)</p>
+<p>{</p>
+<p>// checking that pointer of parent node of current pointer is
+same as last pointer</p>
+<p><b>if</b> (<i>l_p</i> == <i>c_p</i>. parent)</p>
+<p>{</p>
+<p>// printing the data of current pointer</p>
+<p>print (<i>c_p</i>. data);</p>
+<p>// left traversing</p>
+<p><b>if</b> (<i>c_p</i> .left!=null)</p>
+<p>{</p>
+<p>// last pointer is equal to current pointer</p>
+<p><i>l_p</i>=<i>c_p</i>;</p>
+<p>}</p>
+<p>// right traversing</p>
+<p><b>else if</b> (<i>c_p</i>. right!=null)</p>
+<p>{</p>
+<p>// last pointer is equal to current pointer</p>
+<p><i>l_p</i>=<i>c_p</i>;</p>
+<p><i>c_p</i>=<i>c_p</i> .right;</p>
+<p>}</p>
+<p><b>else</b></p>
+<p>{</p>
+<p>// last pointer is equal to current pointer</p>
+<p><i>l_p=c_p</i>;</p>
+<p>// parent node of current pointer become the current pointer</p>
+<p><i>c_p=c_p</i> .parent;</p>
+<p>}</p>
+<p>}</p>
+<p>// now considering the left tree of current pointer node</p>
+<p><b>else if</b> (<i>l_p</i> == <i>c_p</i> .left)</p>
+<p>{</p>
+<p><b>if</b> (<i>c_p</i> .right !=null)</p>
+<p>{</p>
+<p>// last pointer is equal to current pointer</p>
+<p><i>l_p</i>=<i>c_p</i>;</p>
+<p><i>c_p</i>=<i>c_p</i> .right;</p>
+<p>}</p>
+<p><b>else</b></p>
+<p>{</p>
+<p>// last pointer is equal to current pointer</p>
+<p><i>l_p</i>=<i>c_p</i>;</p>
+<p>// parent node of current pointer become the current pointer</p>
+<p><i>c_p</i>=<i>c_p</i>. parent;</p>
+<p>}</p>
+<p>}</p>
+<p>// now considering the right tree of current pointer node</p>
+<p><b>else if</b> (<i>l_p</i> == <i>c_p</i>. right)</p>
+<p>{</p>
+<p>// last pointer is equal to current pointer</p>
+<p><i>l_p</i>=<i>c_p</i>;</p>
+<p>// parent node of current pointer become the current pointer</p>
+<p><i>c_p</i>=<i>c_p</i>. parent;</p>
+<p>}</p>
+<p>}</p>
+</div>
+<hr>
+<div class="answer">
+<p>Here we consider the logic that from a given node <i>A</i>, we
+move down the left sub-tree of the node <i>A</i> (apply the same
+logic at each node that is reached in the sub-tree), then come back
+to node <i>A</i> and do the same procedure in the right sub-tree
+(apply the same logic at each node that is reached in the
+sub-tree), and then again come back to this node and transfer
+control to the parent of the current node <i>A</i>.</p>
+<p><b>Complexity:</b></p>
+<p>? The number of iterations which are performed on a tree to
+traverse down the left sub-tree.</p>
+<p>? The number of iterations which are performed on a tree to
+traverse back up to the node.</p>
+<p>Both points above have the same number of iterations. Hence it
+would be bound by a factor of<img src=
+"../imgs/2c5284365ffbc2949f81e27c18c8d0ece9b493c1.png">, overall.
+So, the <b>complexity is the order of</b> <b><img src=
+"../imgs/ea2efff0307048756d32e35eff28da1a8774d39b.png"></b><b>(</b><i><b>n</b></i><b>).</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following tree in which <i>A</i> is the root of the
+tree. Each node in following tree has three pointers, <i>left</i>,
+<i>right</i> and <i>parent</i>. All these three pointers point to
+the left, right and parent of any particular node.</p>
+<p><img src="../imgs/58ed5e62de1b5a01630605e67e86215581347929.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\October 10\9.10.2015\Gaurav\Image\1.png"></p>
+<p><b>Explanation:</b></p>
+<p>• In above tree, <i>A</i> is the root of the tree. The root node
+<i>A</i> has 2 children nodes <i>B</i> and <i>C</i> which are
+pointed by the <i>left</i> and <i>right</i> pointer of the <i>A</i>
+node.</p>
+<p>• The node <i>B</i> again has 2 children nodes, <i>D</i> and
+<i>E</i> which are pointed by the <i>left</i> and <i>right</i>
+pointer of the node <i>B</i>. The <i>parent</i> pointer of the
+<i>B</i> node points its parent node that is <i>A</i>.</p>
+<p>• Similarly, node <i>C</i> again has 2 children nodes, <i>F</i>
+and <i>G</i> which are pointed by the <i>left</i> and <i>right</i>
+pointer of the node <i>C</i>. The <i>parent</i> pointer of the C
+node points its parent node that is <i>A</i>.</p>
+<p>• The node <i>D</i>, <i>E</i>, <i>F</i> and <i>G</i> are the
+leaves node therefore there left and right pointer points to the
+<i>NIL</i> which is represented by the slash. The <i>parent</i>
+pointer of all these node points to their respective parents.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modification required for implementing a tree with 2 pointers
+and 1 Boolean value:</b></p>
+<p>• The <i>left</i> pointer of each node points to its left child
+whereas <i>right</i> pointer points to its right sibling.</p>
+<p>• The <i>right</i> pointer of the right most child point to its
+parent and also set 1 as the Boolean value of the right most
+children to know that it is the right most children.</p>
+<p>• A loop is made between children and parent, so that a parent
+of any children can be determined in a liner time.</p>
+<p>Consider the following tree in which <i>A</i> is the root of the
+tree. Each node in following tree has two pointers, <i>left</i> and
+<i>right</i>, and one Boolean value.</p>
+<p><img src="../imgs/eff77d3271d4b1e10bd1dc40c2c8a2865f7f62d6.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\October 10\9.10.2015\Gaurav\Image\2.png"></p>
+<p><b>Explanation:</b></p>
+<p>• In above tree, <i>A</i> is the root of the tree. The
+<i>left</i> pointer of the root node points to its left child that
+is <i>B</i>.</p>
+<p>• The <i>left</i> pointer of <i>B</i> node points to its left
+child <i>D</i>. The <i>right</i> pointer of <i>B</i> node pointes
+to its sibling <i>C</i>. Set 0 as Boolean values of node <i>C</i>
+because it is not the right most child of its parent.</p>
+<p>• The <i>left</i> pointer of <i>D</i> node points to <i>NIL</i>
+whereas the <i>right</i> pointer pointes to its sibling <i>E</i>.
+Set 0 as Boolean values of node <i>D</i> because it is not the
+right most child of its parent.</p>
+<p>• The <i>left</i> pointer of E node points to <i>NIL</i> whereas
+the <i>right</i> pointer points to its sibling parents <i>B</i>
+because it is the right most child. Set 1 as Boolean values of node
+<i>E</i> because it is the right most child of its parent
+<i>B</i>.</p>
+<p>• Similarly, pointers point its sibling and parents in node
+<i>C</i>, <i>F</i> and <i>G</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

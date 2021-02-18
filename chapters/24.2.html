@@ -1,0 +1,231 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 24.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/7d49c881ffe0b4217014284029192395a9de0b2e.png">
+<hr>
+<img src="../imgs/55af2b5e60321911ed2face109c2da8c44ea9aaf.png">
+<hr>
+<img src="../imgs/03b1d759f5e508566bb17cecf67a5f7510c791f2.png">
+<hr>
+<img src="../imgs/e516e6082d96b678d742f55f2f89de367f51c717.png">
+<hr>
+<img src="../imgs/a6180bff87164dff10a2714175d6c4cf82c346a7.png">
+<hr>
+<img src="../imgs/37018778a4cf93e0b5eebe3fd90f098a1ee6e30a.png">
+<hr>
+<img src="../imgs/a35bdd6585c6a143a787295e9b88a686c89e2125.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>DAG-SHORTEST-PATHS</b></p>
+<p>DAG-SHORTEST-PATHS algorithm for any graph <i>G</i> which has
+<i>s</i> as source node and <i>w</i> weight:</p>
+<p>On changing the line no 3 of that algorithm as:</p>
+<p>3 for the first <img src=
+"../imgs/dc19fe8365b9a35a2bc0213f82a60ae9c68e2d12.png">vertices
+taken in topologically sorted order</p>
+<p><b>The process for execution of DAG-SHORTEST-PATHS:</b></p>
+<p>Direct acyclic graph shortest path algorithm used to find the
+shortest path between the vertices of the directed graph which has
+no cycles. Topological sorting is the process of sorting the nodes
+or vertices of the graph in the linear order that is it arranges
+the vertices from left to right in the sequence in which they
+encounter. It is different from other forms of sorting.</p>
+<p>DAG-SHORTEST-PATHS algorithm performs a topological sort on the
+vertices first and then performs relaxation on the edges.
+Topological sort ensures that edges are arranged in a linear
+fashion.</p>
+<p>Now, if the edges are arranged in a linear fashion and we are
+performing the task of doing relaxation then the last vertex will
+have its edges already visited because if there exist edge
+<img src="../imgs/08c34da91abfcaf6498b33dee1b040c0b1f20cc8.png">
+then <i>u</i> falls before <i>v</i>.</p>
+So we can perform the looping for <img src=
+"../imgs/1b62d3477b2db08e31151913c185aac78a2e24fc.png"> vertices
+because the vertices after topological sort will be ordered.</div>
+<hr>
+<div class="answer">
+<p>Thus if we change the line no 3 in the above algorithm as: “for
+the first <img src=
+"../imgs/dc19fe8365b9a35a2bc0213f82a60ae9c68e2d12.png">vertices
+taken in topologically sorted order“ then there will be no effects
+on the accuracy of algorithm that is the algorithm works
+correctly.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The Pseudo code for the DAG-SHORTEST-PATH is given in the
+section 24.2. The following modification is required in
+DAG-SHORTEST-PATH algorithm so that it is able to find the longest
+path in the directed acyclic graph with weighted cycle in linear
+time:</p>
+<p>• Modification in the INITIALIZE-SINGLE-SOURCE procedure.</p>
+<p>• Modification in the RELAX procedure.</p>
+<p>The both procedure need to modify to accommodate the weighted
+vertices instead of the weighted edges.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modification in the</b> <b>INITIALIZE-SINGLE-SOURCE
+procedure:</b></p>
+<p>The modification is highlighted with grey color.</p>
+<p>INITIALIZE-SINGLE-SOURCE-NEW (<i>G, s, w</i>)</p>
+<p>1. <b>for</b> each vertex <img src=
+"../imgs/2a5e966f52e680355c386c86e30784a4677d6fec.png"></p>
+<p>//initializing distance of all vertexes with <img src=
+"../imgs/6f5bed7ca3fff5e3f0fc1c011ace13be1584cfad.png"></p>
+<p>2. <img src=
+"../imgs/7a62b81341969867c29c000e49e854ebfbbeb5e6.png"></p>
+<p>//initialize all predecessor with nil</p>
+<p>3. <img src=
+"../imgs/605265aad3f0b15336b209912ed2e5b56b292b20.png"></p>
+<p>//initialize the source vertex distance</p>
+<p>4. <img src=
+"../imgs/9b42705d3f6d4abeeb444aee623d10405c951573.png"></p>
+<p><b>Modification in the</b> <b>RELAX procedure:</b></p>
+<p>RELAX-NEW (<i>u, v, w</i> )</p>
+<p>//check current distance</p>
+<p>1. <b>if</b> <img src=
+"../imgs/0660b41cb75ff36670c8e7c5c36624618356b051.png"></p>
+<p>//update the current distance</p>
+<p>2. <img src=
+"../imgs/2acbf180d0779be04206c147c6c0fad38c0e676b.png"></p>
+<p>3. <img src=
+"../imgs/35c63f74f0f64414c0221503961d1f17b99d780e.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>• In the above INITIALIZE-SINGLE-SOURCE procedure, instead of
+initializing<img src=
+"../imgs/39b395de860263d044c0b94deb77d3d0bae03429.png">, program
+initializes <img src=
+"../imgs/119c5a5828a8b304cf295a975056654ff9a77cfa.png">to make sure
+that in the beginning all nodes have minimum path cost.</p>
+<p>• In RELAX method instead of checking whether there is shortest
+path, program checks for longest path. For this, in line 1 of RELAX
+method there is <b><img src=
+"../imgs/5e304caadbad70dd1f4614891771ed9377075b10.png"></b> sign
+instead of<img src=
+"../imgs/18a69f7c5c7eace9169984d5aa445650926372a5.png">.</p>
+<p>• Since the weight is now on the vertices the weight is now
+changed from <i>w</i> (<i>u, v</i>) to <i>w</i>[<i>v</i>].</p>
+<p>• Now if program get any path which is greater than the existing
+path it falls in <i>if</i> condition of RELAX procedure and update
+the value and predecessor accordingly.</p>
+<p>• Now replace the INITIALIZE-SINGLE-SOURCE and RELAX by the
+above modified function into the given DAG-SHORTEST-PATH Pseudo
+code in section 24.2 of Textbook.</p>
+<p>• The algorithm complexity will remain linear; that is <img src=
+"../imgs/860802824c9ca26a5dea931f4753a5807dc096f5.png"> because
+changing value from <img src=
+"../imgs/7e34a007bd835dc92ad9c46a7cd5fa86919a169b.png"> to
+<img src="../imgs/6f5bed7ca3fff5e3f0fc1c011ace13be1584cfad.png">
+and <img src=
+"../imgs/5e304caadbad70dd1f4614891771ed9377075b10.png"> to
+<img src="../imgs/18a69f7c5c7eace9169984d5aa445650926372a5.png">
+does not involve any extra loop or task.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/dfd75ccf3f72288bb8754fb867348ebfcd99eeb6.png">
+<hr>
+<img src="../imgs/864a50c814f092d0f41bb81d4374c41e81711f17.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,504 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 35.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Triangle Inequality</b></p>
+<p>According to triangle inequality the sum of the length of two
+sides of a triangle must be greater than the third side. If this
+condition is true for any triangle then the triangle follows the
+inequality.</p>
+<p><img src="../imgs/36cea29860afd4efe759d292fd2daf5b9bf0cf02.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\12.tif"></p>
+<p>It states that:</p>
+<p><img src="../imgs/2c8ed92920d18592e9004f42086dce4c6f1e5509.png">
+or</p>
+<p><img src=
+"../imgs/ac252c647f20445f356a848e978900d1364ffdac.png">or</p>
+<p><img src=
+"../imgs/ebbcf50f5adb150cfb1017b4e3c06fba16e788c1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Travelling salesman problem:</b> The travelling salesman
+problem follows the triangular inequality. It is the problem in
+which a salesman in a city travels to the other cities for selling
+his products without repeating any city twice except the city from
+where he has started his tour. There is fixed cost incurred for
+travelling from one city to the other city.</p>
+<p>It can be represented using a graph <i>G</i> (<i>V</i>,
+<i>E</i>) in which <i>V</i> is the number of nodes which represents
+the number of cities the salesman visits. The number of edges
+<i>E</i> of the graph are representing the <i>r</i> out that is
+followed by the salesman. The cost for any route from <i>u</i> to
+<i>v</i> is <img src=
+"../imgs/ad26d83e5fa0b12aa545d16be4a9dfeef937fdeb.png">which is
+shown on the edges of the graph. The graph showing the travelling
+salesman problem is as:</p>
+<p><img src="../imgs/0d97fdd38b4c684f0f31ba619e972433d3a0a672.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\8.tif"></p>
+<p>In the above graph it is shown that the salesman starts his tour
+from city <i>a</i> he goes to the city <i>b</i> from there he goes
+forward to <i>c</i>, <i>d</i>, <i>e</i> and <i>f</i> after thathe
+came back to city <i>a</i>. The cost of each route is shown on the
+respective edges.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Metric Travelling salesman problem</b>: This is the TSP which
+follows triangular inequality, and minimum cost is incurred while
+visiting each vertex single time. According to metric travelling
+salesman problem the cost elapsed for travelling from one city to
+other is less than that cost if he follows any indirect route.</p>
+<p><b>For example:</b> The cost of going from <i>u</i> to <i>v</i>
+will be lesser than the cost incurred when he goes from <i>u</i> to
+<i>w</i> and then from <i>w</i> to <i>v</i>. This shows the
+inequality because the sum of cost incurred in the indirect path is
+greater than the cost in the direst path. That is the sum of two
+sides of triangle is greater than one side.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm to solve the metric TSP is as:</p>
+<p><b>Algorithm</b>:</p>
+<p>// A MST is a spanning tree which has minimum weight of all the
+spanning trees.</p>
+<p>1. Find minimum spanning tree from <i>G.</i></p>
+<p>// increase every edge of MST to get a eulerian graph.</p>
+<p>2. Increase each of the minimum spanning trees to get an
+Eulerian graph <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png"></p>
+<p>// Eulerian circuit is a path which each vertex only once and
+start and it is trailing on</p>
+<p>// same vertex.</p>
+<p>3. Find out Eulerian circuit <i>E</i> from<img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png">.</p>
+<p>4. Output the vertices of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> as found
+out in<img src=
+"../imgs/785d06b44a2a7034681ca36a42913ba51658fb76.png">.</p>
+<p>In the above algorithm first step is to find the minimum
+spanning tree (MST) for the graph. The minimum spanning tree is the
+graph without any cycle such that it can cover all the vertices of
+the graph and its weight or cost is lesser than all other spanning
+trees for the same graph.</p>
+<p>After that is finds the Euler graph for the MST, for finding the
+Euler graph it extends the edges of MST. Euler graph is the one
+that contains the Euler cycle and Euler cycle is path which
+contains each edge of the graph exactly once. Now, the Euler
+circuit for the graph is calculated which is the path in which each
+vertex is added only once accept the starting vertex which is also
+the ending vertex.</p>
+<p><b>TSP WITH THREE VERTICES:</b> Consider the graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">with three
+vertices <i>u</i>, <i>v</i>, and <i>w</i>. it is the graph with
+three edges and is a complete undirected graph as shown below:</p>
+<p><img src="../imgs/328ff4baaa8577a47395fd542ee0019b44d7df66.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\14.tif"></p>
+<p>The cost of the edges of the graph is as:</p>
+<p>Cost function <i>c</i> in going from <i>u</i> to
+<i>v</i>=<img src=
+"../imgs/ad26d83e5fa0b12aa545d16be4a9dfeef937fdeb.png"></p>
+<p>Cost function <i>c</i> in going from <i>u</i> to
+<i>w</i>=<img src=
+"../imgs/88535f3e539cc1ac6bbf78099f61ab546a435293.png"></p>
+<p>Cost function <i>c</i> in going from <i>v</i> to
+<i>w</i>=<img src=
+"../imgs/3d9d9976accfed67d413f19c9fe7c08a1b8cac1d.png"></p>
+<p>Hence, the cost incurred in this MST travelling salesman problem
+will be:</p>
+<p><img src=
+"../imgs/e4b1c5edee8832409e3fdbdc40a5908a69f08a8a.png"></p>
+<p>The reason is this; in any triangle the basis property is that
+any two side length sum is greater than the third one side. So,
+here triangle side length is same as cost from one point to other
+and points are same as vertices as in the triangle.</p>
+<p>Now, if there is any transformation of triangle in any traveling
+sales man problem structure the triangular inequality can be
+applied to check which route has less cost charges. If triangle
+inequality fails it means those point cannot make any triangle
+structure.</p>
+<p>Thus, it is proved that <img src=
+"../imgs/bfd5236f3702b0b2d59fc822eeaac1e47bc66267.png"> for
+all<img src=
+"../imgs/fb9615305d6785f87ee832b30174413c32d4500a.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>TSP WITH FOUR VERTICES:</b> Now, consider the graph for TSP
+in which there are four vertices. In this graph, there is a path
+with four vertices <i>u</i>, <i>v</i>, <i>w</i> and <i>x</i>. To
+traverse the path from vertex <i>u</i> to vertex <i>x</i> there are
+two routes that is it can be traced either from <i>u</i> to
+<i>v</i> then <i>x</i> or <i>u</i> to <i>w</i> then <i>u</i> and
+finally <i>x</i>.</p>
+<p><img src="../imgs/c0006371cbfb8e548d5657e99a937a3f31f81e49.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\9.tif"></p>
+<p>As according to the condition the <b>triangle</b>
+<i><b>u</b></i><b>,</b> <i><b>v</b></i><b>,</b> <i><b>w</b></i>
+follows triangular inequality</p>
+<p>Cost function <i>c</i> in going from <i>u</i> to <i>v</i>=
+<img src=
+"../imgs/ad26d83e5fa0b12aa545d16be4a9dfeef937fdeb.png"></p>
+<p>Cost function <i>c</i> in going from <i>w</i> to <i>u</i> =
+<img src=
+"../imgs/88535f3e539cc1ac6bbf78099f61ab546a435293.png"></p>
+<p>Cost function <i>c</i> in going from <i>v</i> to <i>w</i>
+=<img src=
+"../imgs/3d9d9976accfed67d413f19c9fe7c08a1b8cac1d.png"></p>
+<p>Cost function <i>c</i> in going from <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">to <i>x</i>
+=<img src=
+"../imgs/2c07c89c2ff7f4ab45bb7a2025e7918af602675a.png"></p>
+<p>Therefore, <img src=
+"../imgs/b5598f4651ef8681e974df6c2ed49982c5dfc953.png"> which also
+fulfills the condition that <img src=
+"../imgs/bfd5236f3702b0b2d59fc822eeaac1e47bc66267.png"> for
+all<img src=
+"../imgs/fb9615305d6785f87ee832b30174413c32d4500a.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>TSP WITH</b> <i><b>n</b></i> <b>VERTICES:</b> For <i>n</i>
+vertex TSP consider the graph given below</p>
+<p><img src="../imgs/8b54e34dbbbd13c8d7d2293dedc079930c8b03d1.png"
+alt="D:\Tiffs\New folder (2)\2254.tif"></p>
+<p>From the above graph first consider the path <i>v</i>, <i>u</i>,
+and <i>w</i>. Starting from <i>v</i> to reach <i>u</i>, the path
+that can be tracedis either from <i>v</i> to <i>u</i> or <i>v</i>
+to <i>w</i> and then <i>u</i>. From, triangular inequality:</p>
+<p><img src=
+"../imgs/ccea721d964fad4aa702654a881aedde1e6bf17c.png"></p>
+<p>Hence, the path from <i>v</i> to <i>u</i> will be chosen, and
+thus again the cost<img src=
+"../imgs/bfd5236f3702b0b2d59fc822eeaac1e47bc66267.png"> for
+all<img src=
+"../imgs/fb9615305d6785f87ee832b30174413c32d4500a.png">.Similarly,
+it can be proved for rest of all the paths in the above figure.</p>
+<p>Thus, it is proved that in a complete undirected path<img src=
+"../imgs/38b9c6e2abdc2b703a6b08be70698b705c62ac9c.png">with at
+least three vertices will always have a cost function <i>c</i>
+followed with triangle inequality, which will be <img src=
+"../imgs/bfd5236f3702b0b2d59fc822eeaac1e47bc66267.png"> for
+all<img src=
+"../imgs/fb9615305d6785f87ee832b30174413c32d4500a.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A TSP (Travelling Salesman Problem) is a problem in which a
+salesman in a city travels to the other cities for selling his
+products without repeating any city twice except the city from
+where he has started his tour.</p>
+<p>• There is fixed cost incurred for travelling from one city to
+the other city.</p>
+<p>• travelling salesman problem is represented using an undirected
+graph <i>G</i> (<i>V</i>, <i>E</i>) where <i>V</i> represent the
+set of vertices and <i>E</i> represent the set of edge between two
+vertices.</p>
+<p>• The cost for any route from <i>u</i> to <i>v</i> is
+represented by non-negative integer cost function <img src=
+"../imgs/ad26d83e5fa0b12aa545d16be4a9dfeef937fdeb.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Let <i>I</i> refer to the original instance of the TSP. In this
+instance of TSP, there are <i>n</i> cities. The maximum number of
+edges possible assuming no multi-edges is <img src=
+"../imgs/1a4ffc930792fa3689e70723691aade1f9480b83.png">.</p>
+<p>Cost function for the edge of this instance of TSP is<img src=
+"../imgs/111d8d6ca08baad0209cd477c4f6d4aa9c9c7b43.png">.</p>
+<p>Let the maximum cost of an edge in this instance is
+<i>m</i>.</p>
+<p>To transform this instance of TSP to another instance<img src=
+"../imgs/95630b0e05cd2e479579079dde48fa42553da4e0.png">, add
+<i>m</i> to each edge of the original instance. This operation
+takes a total of <img src=
+"../imgs/1a4ffc930792fa3689e70723691aade1f9480b83.png"> steps
+because there are a total of <img src=
+"../imgs/1a4ffc930792fa3689e70723691aade1f9480b83.png">edges in the
+system. So, the total complexity of the operation is <img src=
+"../imgs/ebe10a8af6b2c72ac5d918aa1ca7971a316c3401.png">which is of
+polynomial order. The new instance of TSP, <img src=
+"../imgs/95630b0e05cd2e479579079dde48fa42553da4e0.png"> has cost
+function<img src=
+"../imgs/645e2c41659dd31dc9aa6fbd63a85164b4b19750.png">.</p>
+<p><b>Triangle Inequality:</b> Sum of two sides of a triangle
+greater than the length of the third side.</p>
+<p>Let three random vertices be <img src=
+"../imgs/eeafa469ba7ef464bcb902c125f7e8c63a44ae0f.png"> are
+representing a triangle in the graph of the TSP.</p>
+<p><img src=
+"../imgs/7903b8a2254742f792b4206a48313121f690257e.png"></p>
+<p><img src=
+"../imgs/74de60aad59779c3c82570f68a0d7b1e31bf646f.png"></p>
+<p>Every edge of the <img src=
+"../imgs/9f770dcc6f37c1faf279a849e11d80b967ded2e7.png">instance of
+TSP is positive in magnitude, therefore, <img src=
+"../imgs/69edd6b36c133c34067f4fefa043113dda76485c.png"> can be
+expressed as the following:</p>
+<p><img src=
+"../imgs/0380c49daed5f8ad31737c2e338305c0f438e68a.png"></p>
+<p>The above proves that the property of triangle inequality is
+maintained in the new instance of TSP, <img src=
+"../imgs/95630b0e05cd2e479579079dde48fa42553da4e0.png">.</p>
+<p><b>Thus, in polynomial time, one instance of the travelling
+salesman problem can be transformed into another instance whose
+cost function satisfies the triangle inequality property.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The optimal tour consists of every vertex being traversed only
+once. Connecting every vertex in the graph requires <img src=
+"../imgs/1b64dd05df8fe8bd3f29cd6dbbc6762288412a4e.png">edges. It is
+required to each the initial vertex at the end, so, there is need
+of one more edge. So, the number of edges in an optimal tour is the
+following:</p>
+<p><img src=
+"../imgs/a2eb3f061c816ce37f8be39c2c21ee66076ebd6e.png"></p>
+<p>In the new instance, <img src=
+"../imgs/95630b0e05cd2e479579079dde48fa42553da4e0.png">that was
+created, the new cost function is <img src=
+"../imgs/645e2c41659dd31dc9aa6fbd63a85164b4b19750.png"></p>
+<p>So, weight of every edge is increment by <i>m.</i></p>
+<p>The total amount of increment in <i>n</i> edges is
+<i>nm.</i></p>
+<p>Constant amount of change happens in every tour, thus, the
+relative order of total weights of each tour remains the same.</p>
+<p><b>Thus, it is concluded that the two instances of TSP have the
+same set of optimal tours.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Theorem 35.3</b> states that if<img src=
+"../imgs/1e0cb47a36b4d15b6c2fbdc6ca016e74a20fa19d.png">, then there
+cannot be a polynomial-time approximation algorithm for TSP with
+approximation ratio<img src=
+"../imgs/78737e7b3373d170272ad369d6c2bdee945b8979.png">.</p>
+<p>The <img src=
+"../imgs/0c26c685b3403a8dd59c63c97cdc20569cd3e14d.png">-approximation
+algorithm to the transformed TSP instance <img src=
+"../imgs/95630b0e05cd2e479579079dde48fa42553da4e0.png">exists
+with<img src=
+"../imgs/c8e783ae7ff1416b7dd9e730d896d3534da08632.png">.</p>
+<p>When this algorithm is used on the original TSP
+instance<img src="../imgs/9f770dcc6f37c1faf279a849e11d80b967ded2e7.png">,
+the following observations are made:</p>
+<p>Cost of optimal tour = <img src=
+"../imgs/eff7ddfb875367daa32efc0d8bfc21731ce729d5.png"></p>
+<p>Cost of a random tour that is the output of running the
+algorithm on <img src=
+"../imgs/9f770dcc6f37c1faf279a849e11d80b967ded2e7.png"> = <img src=
+"../imgs/2dba8cab49bd10b05f89a8f78caadf08daf45e5b.png">.</p>
+<p>When this algorithm is used on the transformed TSP
+instance<img src=
+"../imgs/95630b0e05cd2e479579079dde48fa42553da4e0.png">, the
+following observations are made:</p>
+<p>Cost of optimal tour = <img src=
+"../imgs/fb73a4ff493ae5bab1ee2a58a4102fb4ea0e21ec.png"></p>
+<p>Cost of a random tour that is the output of running the
+algorithm on <img src=
+"../imgs/95630b0e05cd2e479579079dde48fa42553da4e0.png">= <img src=
+"../imgs/b6cebc50628ae116c2a4bfe3ca12ff0d659d8e1e.png"></p>
+<p>By considering an instance of<img src=
+"../imgs/679e498f90d11db67d9778aee7c2be3095f41d7c.png">, the
+following observation is made:</p>
+<p><img src=
+"../imgs/1955542f2580af9da7662678973c7292df935104.png"></p>
+<p>This happened because the term <i>mn</i> dominated the optimal
+cost of the instance<img src=
+"../imgs/95630b0e05cd2e479579079dde48fa42553da4e0.png">. So, the
+constant factor approximation to the transformed TSP doesn’t give
+constant factor approximation to the original TSP instance.</p>
+<p><b>Thus, the polynomial time transformation doesn’t contradict
+Theorem 35.3 even under the assumption that</b> <img src=
+"../imgs/1e0cb47a36b4d15b6c2fbdc6ca016e74a20fa19d.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Let the optimal tour at the step i be denoted as <img src=
+"../imgs/879e243f97404d69362c0c50fc2e32f06e9c5cdf.png"> and the
+tour produced by the heuristic as <img src=
+"../imgs/230aac66377df3d5e7b43efdf5ab77592df07946.png">. Suppose
+the vertex on the cycle that is nearest to <img src=
+"../imgs/d1158de0b4db6a7711dec323280d79d3957c681b.png">is vertex
+<img src="../imgs/dd44f75f004ce2dd510e394ffc11352837c71169.png">on
+adding vertex <img src=
+"../imgs/d1158de0b4db6a7711dec323280d79d3957c681b.png"> because the
+cost function satisfies the triangle inequality, it is easy to get
+<img src="../imgs/581a95a3f419e8cacbe9948a7dd4810769311526.png">.
+So, <img src=
+"../imgs/b1d70b534fa6249d6364081c3fdeceed62d1a63c.png"> and recall
+the Prim’s algorithm because the way the nodes and edges are added
+is closest point heuristic like Prim’s algorithm</p>
+</div>
+<hr>
+<div class="answer">
+<p>The preorder traversal can also be defined if the parent node is
+traversed first and then left child and then right child, it means
+that the parent is considered before the children.</p>
+<p>So, the cost of the MST produced by prim’s algorithm is equal to
+<img src="../imgs/deff89f886263fe5077b64469cadb6a1d96c6a9e.png">.
+Since, <img src=
+"../imgs/cdd946c45de06248a886fabc7f88594bc6715c04.png">, so it can
+be proved that <img src=
+"../imgs/9c1b7a54215c8a03f96a81c7f7da7a0bd4939d19.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>An optimal tour never crosses itself can be shown by eliminating
+a crossing always results in a tour with smallest cost.</p>
+<p>Now, consider the following figure:</p>
+<p><img src="../imgs/46be24f99e89e4cf7b1502c22e32703d798eb546.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\11 November\13.11.2015\Bibek 2254\Image\1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>In the above figure, the crossing is eliminating by replacing
+the given edge<img src=
+"../imgs/936e6647e2009961c373fa65c50287e6411c2752.png">with
+<img src="../imgs/7be1608d8545c641bd7cc3e89ddaec1891d97cbf.png">and
+the edge<img src=
+"../imgs/147648f5d18ad49e2fb095934892f00a17403239.png">with the
+edge<img src=
+"../imgs/60347f73ad3a057130b2f29365156b1b431c2111.png">.</p>
+<p>According to triangle inequality of Euclidian distance, the sum
+of two side’s cost in a triangle must be greater than to the cost
+of the remaining side.</p>
+<p><img src=
+"../imgs/3fb18ce6a74cf4eb93b0fa40b1969cdd191c4f9d.png">. …… (1)</p>
+<p>and</p>
+<p><img src="../imgs/feb7c16abde6201a0011652e61f14e0d6eb27bba.png">
+…… (2)</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, add the equation (1) and (2), then user will obtained:</p>
+<p><img src="../imgs/470a6241c7d42593f3ea511719efb4383197aa42.png">
+…… (3)</p>
+<p>From the above figure, <img src=
+"../imgs/2d2f5adab58648b435aefece99bdc177a03e94e4.png">and<img src=
+"../imgs/92002000f1c4aa0a41a7a67c3a525244ff1583ab.png">. Put these
+values in the equation (3), then;</p>
+<p><img src=
+"../imgs/5db1ed479758cba9d534bd2522e3157308769e41.png"></p>
+<p><b>Hence, the newly constructed tour’s cost is smaller than the
+cost of the tour with crossing.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

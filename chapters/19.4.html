@@ -1,0 +1,248 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 19.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>According to the claim of Professor Pinocchio, height of the
+Fibonacci heap with the n- number of node is<img src=
+"../imgs/ad39c92f0dbfa626d5e8fd15768350d83b31eba8.png">. The
+professor’s statement needs to be proved wrong by showing that a
+Fibonacci heap, containing one tree with a linear chain of <i>n</i>
+nodes, can be created from a sequence of Fibonacci-heap
+operations.</p>
+<p>The demonstration is as follows:</p>
+<p>• Suppose that <img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png"> is the
+Fibonacci heap. In order to demonstrate that the professor is
+wrong, there is a need to create an algorithm for Fibonacci heap
+such that the heap comprises of only one tree with <i>n-</i>1
+nodes, starting with empty<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">. After that
+one more node is added to this chain.</p>
+<p>• First of all create a Fibonacci heap with the height of one
+with the root key <i>R</i>, such that <i>R</i> is the value of root
+node. Now add the nodes with the following keys: <i>R</i>–1 (a
+value less than the current root’s value), <i>R+</i>1 (a value
+greater than the current root’s value) and <i>R</i>–2 (a value
+which is twice less than the current root’s value. Finally remove
+the node with key <i>R-</i>2.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Following are the steps of pseudocode to create the required
+Fibonacci heap. In the following algorithm, it is assumed that the
+number of nodes in the tree is greater than two.</p>
+<p>Linear-heap (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">, <i>R</i>,
+<i>n</i>)</p>
+<p>// start with empty <img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png"></p>
+<p>Linear-heap (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">,
+<i>R</i>+1, <i>n–</i>1)</p>
+<p>// add a node with a value greater than the current root’s
+value</p>
+<p>Insert (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">,min(<img src="../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">)+1)</p>
+<p>// add a node with a value lesser than the current root’s
+minimum value</p>
+<p>Insert (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">,min(<img src="../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">)–1)</p>
+<p>// add a node with a value twice less than the current root’s
+minimum value</p>
+<p>Insert (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">,min(<img src="../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">)–2)</p>
+<p>// delete the node with minimum key from the <img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png"></p>
+<p>Deletemin (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">)</p>
+<p>// assign the minimum node’s child node to the variable
+<i>b</i></p>
+<p><i>b</i> = min (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">).secondchild</p>
+<p>// decrease the node’s key value by two</p>
+<p>Decreasekey (<i>b</i>, min (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">)–2)</p>
+<p>Deletemin (<img src=
+"../imgs/872d663ec9cb89c7db7794ab53f4650a850fb37e.png">)</p>
+<p>return</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof of Correctness:</b></p>
+<p><b>Base case:</b></p>
+<p>Hypothesis is correct for <img src=
+"../imgs/70120b9043d3e0b5854bd0e0bf8c80608502b02c.png">as the
+Fibonacci heap contains one tree with a linear chain of <i>n</i>
+nodes.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Inductive process:</b></p>
+<p>• Suppose that the above demonstration is true for the
+<i>n=k</i>. Now for <i>n=k+</i>1, the pseudocode creates a linear
+chain containing <i>k</i> nodes. After this two new child nodes
+<i>x</i> and <i>y</i> are added to the root node of the tree.</p>
+<p>• The child node <i>x</i> has a key which is less than the
+minimum key.</p>
+<p>• The child node <i>y</i> has a key which is greater than the
+minimum key.</p>
+<p>• At last it adds the node <i>R</i> such that this node’s key is
+smaller than the minimum key. When the node <i>R</i> is deleted
+then there remain the chain of the <i>k</i> nodes containing
+<i>x</i> and <i>y</i>.</p>
+<p>• Since the degree of the nodes <i>x</i> and <i>y</i> is zero so
+the nodes are joined. Now the chain having two element is obtained
+such that <i>x</i> becomes the root with the degree one.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Thus, chain having height two and other chain with height
+<i>k</i> are combined. Hence, removing the node <i>y</i> can give a
+linear chain with <i>n</i> nodes.</p>
+<p><b>Hence, a Fibonacci heap, containing one tree with a linear
+chain of</b> <i><b>n</b></i> <b>nodes, can be created from a
+sequence of Fibonacci-heap operations and the professor Pinocchio
+is wrong.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Cascading-cut rule</b></p>
+<p>Consider the generalization of the cascading-cut rule to erase a
+vertex named <i>x</i> from its predecessor as soon as it does not
+find its <img src=
+"../imgs/2eee6e58b43280613ee968f0c0f8ab2a3b9acb25.png">child, for
+some integer constant<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.</p>
+<p>Assume that <i>x</i> is node in the Fibonacci heap whose degree
+is <i>k</i> represented as <img src=
+"../imgs/1e56b4ef3e3f88fc21a9cf127239d541a8dce4da.png">that is the
+node <i>x</i> has <i>k</i> children, which are<img src=
+"../imgs/4bff3cec939691762963997bbbfa95d52b676312.png">. If the
+order of connection of children of node <i>x</i> is the same as
+their order then,</p>
+<p><img src=
+"../imgs/c83dcce6bde64f9268909c69e7c4bcd3e7426706.png">and</p>
+<p><img src=
+"../imgs/11f606d82df6a5e9f28d289745818ac2f4ee2eff.png"></p>
+<p>Here, <img src=
+"../imgs/92b6f95ce05e54d480cb3281756930c925ddbe1f.png"></p>
+<p>The variable <img src=
+"../imgs/0d3530eb4ee07ea7eac382534947c8980bb4177e.png">represents
+the lowest measure of <img src=
+"../imgs/974908cd5a06190313211c3ee0a44be736955dfe.png">for the
+whole node <i>z</i>, the<img src=
+"../imgs/589fdb7bff730e6ab52c20a5d504b51f8ed5b6de.png">. The size
+of a node <i>x</i> in the Fibonacci heap of degree <i>k</i> must be
+more than the <img src=
+"../imgs/e10534dd567a041b591c9fa437ffb5f60e22c633.png">Fibonacci
+number <i>F</i> that is,</p>
+<p><img src="../imgs/c002b8d36136a5625c501168495a030bcbdb91b5.png">
+……(1)</p>
+<p>The Fibonacci number is defined as a number in a series in which
+each number is the sum of the previous two numbers. Now, from the
+equation (1)</p>
+<p><img src=
+"../imgs/482844be8fe9827c3aaad6f897d7c0ab8a7943a3.png"></p>
+<p>But</p>
+<p><img src="../imgs/46742af3e606c36a76bf16aa40f59f465e4ed054.png">
+……(2)</p>
+<p>Now, use the generalized form, of equation (2)</p>
+<p><img src=
+"../imgs/b565adf32eef1ee6d3731326f259360b26e65e61.png"></p>
+<p><img src="../imgs/201aa43aee99ba1490439d5c165d68db69f3e349.png">
+……(3)</p>
+<p>From equation (3) , take an example to find the <i>k</i> value,
+where<img src=
+"../imgs/70120b9043d3e0b5854bd0e0bf8c80608502b02c.png"></p>
+<p><img src=
+"../imgs/b76807bca72ec9a3c454bddbaecb3eeefdfb57d5.png"></p>
+<p>If <i>x</i> be any node in an <i>n</i>-node Fibonacci heap,
+and<img src=
+"../imgs/8f7be8264552c815ffe9386d2d8e94264d2f89b2.png">. Taking the
+base as<img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">, using
+logarithms, get<img src=
+"../imgs/43f698aed45db645327717a8479565ec9568a454.png">.</p>
+<p><img src=
+"../imgs/6ffe6d1824440692727cf37c7cac570d42337997.png"></p>
+<p>Here, <img src=
+"../imgs/ea253f2ebd63227bc9048684043123f593df4d01.png">is
+representing a constant value.</p>
+<p>Thus, in the generalized form of cascading cut all numbers
+satisfy <img src=
+"../imgs/aa789ba6e3b1dd491f3f0c390bfdb3f02b7a4dc4.png">
+including<img src=
+"../imgs/70120b9043d3e0b5854bd0e0bf8c80608502b02c.png">. Thus, for
+<i>n</i> node Fibonacci heap, <img src=
+"../imgs/ba258baa7ed20663281174e4f3529165f393a2ea.png"></p>
+<p><img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

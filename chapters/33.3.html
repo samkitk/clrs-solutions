@@ -1,0 +1,617 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 33.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Convex hull <img src=
+"../imgs/667eb0cae6c312a3f6f0f3036988292099f764a3.png">is the
+polygon of the set of points<img src=
+"../imgs/7d0f96eb3f32fd2e9d56a4fa983826a463985255.png">in the
+convex space such that all the points can be covered with a tight
+rubber band. All the points <i>Q</i> inside the convex must be
+unique.</p>
+<p><img src="../imgs/444000a6c7993205b56f58447fb28bb4a2e2cad1.png"
+alt="Capture"></p>
+<p>Fig: Convex hull</p>
+</div>
+<hr>
+<div class="answer">
+<p>In GRAHAM-SCAN procedure of forming convex hull all the points
+are arranged in the order of the polar angle made by the points
+with the reference vertex.</p>
+<p>We take a stack in which initially 3 vertices are inserted and
+then we scan the next vertex and check the polar angle made by the
+vertex with the vertices left to that vertex. If the angle is
+non-left turn then pop the top most vertices and insert that vertex
+in the stack.</p>
+<p>This process repeats for each vertex in the space.</p>
+<p>Now if<img src=
+"../imgs/a63ee018e4219c2ae39c0d0789925ae5e95bba83.png">is the point
+which makes the largest polar angle and is the farthest amongst the
+one’s which make the polar angle equal to that of<img src=
+"../imgs/a63ee018e4219c2ae39c0d0789925ae5e95bba83.png">. Then it
+encloses all the points before it, that is, there is no point on
+right side of it so in the convex hull, point<img src=
+"../imgs/a63ee018e4219c2ae39c0d0789925ae5e95bba83.png"> should be
+included.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the case of<img src=
+"../imgs/a7754d494681f813e6351bc7e658ac63c2445f1a.png">the
+criterion to select it is opposite. If<img src=
+"../imgs/a7754d494681f813e6351bc7e658ac63c2445f1a.png">is the point
+which makes smallest polar angle and is the farthest from <img src=
+"../imgs/828c9bc42306029a8fa9efba6ac092fe23d0a557.png">among the
+ones who make the same polar angle. It encloses the points on the
+right side of it and there is no point on left of it making a
+smaller polar angle, so it lies on boundary of the convex hull is a
+part of convex hull.</p>
+<p>Hence, in the convex hull formed by points<img src=
+"../imgs/2544e8d2722dcab827d06f2f36bb5d2345661e58.png">which are in
+sorted order of the polar angle made by two points with its
+references. The vertices<img src=
+"../imgs/9795737af04da3307d233d0ed7974f6f32a9c017.png">and<img src=
+"../imgs/1c6270f76101126efb33da2cbac83cb27c5867ba.png">are the
+vertices of the Convex-Hull <img src=
+"../imgs/667eb0cae6c312a3f6f0f3036988292099f764a3.png"> that
+is<img src="../imgs/9795737af04da3307d233d0ed7974f6f32a9c017.png">
+and<img src=
+"../imgs/1c6270f76101126efb33da2cbac83cb27c5867ba.png">are lies on
+the boundary of the convex hull.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Taking the set of positive numbers and mapping each number in
+the set to any point in the plane.</p>
+<p>To map the numbers in the plane user find the points that
+arranged in the convex form that is all the points are forming the
+convex hull.</p>
+<p>• So user will try to form the curve <img src=
+"../imgs/1b6492b30c0333087b3af04c057eb9dcf9df8bf9.png"> where
+<i>x</i> is the positive number in the set.</p>
+<p>• Add <img src=
+"../imgs/0a493ef2aeb7333ee70829e707637a50cd1a0823.png">to the list
+of convex points which is to be sorted. One more point is added as
+an extra point <img src=
+"../imgs/dd1364630cf8f967902bb5a9900fdf65692b39b7.png">in the
+convex here<img src=
+"../imgs/dd1364630cf8f967902bb5a9900fdf65692b39b7.png">will be a
+vertex on the boundary of the convex.</p>
+<p>• These points must be in anticlockwise order.</p>
+</div>
+<hr>
+<div class="answer">
+<p>From the above method, the points that are returned are in the
+non-decreasing order of<img src=
+"../imgs/f1a7e785d60fbda96b5b49ecfcc6f3b7f2e004a4.png"> that is all
+the number <i>x</i> are in there increasing order.</p>
+<p>• Similarly user take the set of numbers that are negative and
+map these numbers <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"> to<img src=
+"../imgs/c5a9756aa866f075b6eb9f4111d1a941d5e842c2.png">.</p>
+<p>• After the mapping of the numbers a call to the convex hull is
+made, which returns the points in the decreasing order of<img src=
+"../imgs/6d0af61aaf980adc9784845cb51b99ed6e4419d2.png">, that is in
+the descending order of<img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">.</p>
+<p>• Now invert the list of points and take <img src=
+"../imgs/8843ba440dac84cec874fbe49fb3d2cc085288d7.png"> for each
+<i>x</i> so that user will sort the negative numbers.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now user have two files in the sorted order which are merged
+in<img src="../imgs/e620bcb751167d33a53c0422ebfb181049d43aef.png">
+time and an algorithm in which is called Convex Hull for the two
+times to solve the problem linearly. So an amount of extra work to
+sort the list of input numbers is given as:</p>
+<p><img src=
+"../imgs/12247f19b9087cd269e26993267a58adf331889f.png"></p>
+<p>However, it is already known that the sorting time is<img src=
+"../imgs/23f4d88d955aed418cfa8f2c13c65bde429acdcb.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Hence</p>
+<p><img src=
+"../imgs/6928f985f78a26e488462ce1c36a9baad2535229.png">is<img src=
+"../imgs/23f4d88d955aed418cfa8f2c13c65bde429acdcb.png">.</p>
+<p><b>It is known that</b> <b><img src=
+"../imgs/e620bcb751167d33a53c0422ebfb181049d43aef.png"></b>
+<b>cannot be</b> <b><img src=
+"../imgs/23f4d88d955aed418cfa8f2c13c65bde429acdcb.png"></b>
+<b>,</b> <b>hence it must be the case that</b> <b><img src=
+"../imgs/8fd1c5da0cd934a9780066182e87371024f132cf.png"></b><b>is</b><b><img src="../imgs/23f4d88d955aed418cfa8f2c13c65bde429acdcb.png"></b><b>.</b>
+Hence for the computation of convex hull of <i>n</i> vertices by
+using the model of computation geometry of which supports addition
+multiplication and comparison operation the lower bound is<img src=
+"../imgs/552baeb6a3aa52a6f0b889a996ae645d6f5b2063.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a set of points<img src=
+"../imgs/bcf7568bdae7c84c3af3fbf3d4a4635604e2f990.png">.</p>
+<p>The convex hull of set <img src=
+"../imgs/7017c72b62f8f3f1d14818efd9591d81ec9ba902.png"> is defined
+as the smallest polygon <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">such that
+each point in <img src=
+"../imgs/7017c72b62f8f3f1d14818efd9591d81ec9ba902.png"> is in its
+interior or on its boundary. It is denoted by <img src=
+"../imgs/9f0066d5512877613146554a1acce7a7207dc22a.png">.</p>
+<p><img src="../imgs/94408a6d36d52ab2e484a8795cea7f5636547262.png"
+alt="Picture 4"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider two points <img src=
+"../imgs/ca83aad1b6d5db524f7a49c718259472716d8a70.png">and
+<img src="../imgs/ab1627b76e24e2d1c5fcf7c22ae1b874f32113a0.png">
+such that <img src=
+"../imgs/a0d46cdc5ca05a97b4edf4efb77c0a9bffd5fdb8.png">.</p>
+<p>Now prove that if the pair of points <img src=
+"../imgs/01bd5c9fe170383147ff6de636f9ca3ecf0fbb95.png"> are
+farthest from each other, then they must be the vertices of the
+convex hull <img src=
+"../imgs/9f0066d5512877613146554a1acce7a7207dc22a.png">.</p>
+<p>Since the pair of points <img src=
+"../imgs/01bd5c9fe170383147ff6de636f9ca3ecf0fbb95.png"> are
+farthest from each other, the distance between <img src=
+"../imgs/ca83aad1b6d5db524f7a49c718259472716d8a70.png">and
+<img src="../imgs/ab1627b76e24e2d1c5fcf7c22ae1b874f32113a0.png">will
+be maximum when compared with the distance between any other pair
+of points in the set <img src=
+"../imgs/7017c72b62f8f3f1d14818efd9591d81ec9ba902.png">.</p>
+<p>That is, if <img src=
+"../imgs/654db792a969cf10d5c5ad9b7d86d8debc62b4e1.png">, where
+<img src="../imgs/5867267558e8288f6c3402e517458f3191584b9b.png">
+represent the distance between the points <img src=
+"../imgs/df09ea12f04fed58bbc19b72d00dc4aa58ba97b4.png"> and
+<img src="../imgs/b404966689fb3bc0c6d42ba94cd67f120b80ec14.png">,
+then the maximum of <img src=
+"../imgs/03c913c9fb8278d8a3d73fffa7e16d4a9f803999.png">will be the
+distance between <img src=
+"../imgs/ca83aad1b6d5db524f7a49c718259472716d8a70.png">and
+<img src="../imgs/ab1627b76e24e2d1c5fcf7c22ae1b874f32113a0.png">.</p>
+<p><img src=
+"../imgs/dfe344b0e79776347ba12e8460e5d346cf2c19d9.png"></p>
+<p>Contrarily, suppose <img src=
+"../imgs/82b189bdb6a1718b8e27cd6fa4bc375dce74c615.png"><img src=
+"../imgs/8df520cacc6d5cd6d287bb79a81020200931ff4d.png">is the
+maximum distance, but the pair of points are not the vertices of
+the convex hull <img src=
+"../imgs/9f0066d5512877613146554a1acce7a7207dc22a.png">, then there
+exist another point <img src=
+"../imgs/7b38ccbbb0ed9640f548a4f3ed357255b937fcdf.png">such that it
+is the vertex of the polygon <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">
+and<img src="../imgs/e19b1123c1845764e2977d09ed9a501923ef17d5.png">
+<img src="../imgs/ee6e6f2120b325a826cf7211c0f0150e3d6e6658.png">.
+Here, it is evident that<img src=
+"../imgs/d5a97dfa752b073f0c3dac8011d0c6536e4dc8b3.png"> when
+<img src="../imgs/6b7c35636cdcbf2b4ca64f463055cc6161bc59fc.png">
+and <img src=
+"../imgs/cdec534e5211de4f81ac7ada55c5f16dea5adf1e.png"> when
+<img src=
+"../imgs/082d48b62688e2d1f56f8cb261daea5cc2a71058.png">.</p>
+<p>Since <img src=
+"../imgs/e19b1123c1845764e2977d09ed9a501923ef17d5.png"> and point
+<img src="../imgs/7b38ccbbb0ed9640f548a4f3ed357255b937fcdf.png"> is
+the vertex of the polygon <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">, then the
+polygon is a convex hull.</p>
+<p>This is a contradiction to the consideration that the polygon
+<img src="../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">is
+a convex hull <img src=
+"../imgs/9f0066d5512877613146554a1acce7a7207dc22a.png">.</p>
+<p>Hence, the assumption that <img src=
+"../imgs/82b189bdb6a1718b8e27cd6fa4bc375dce74c615.png"><img src=
+"../imgs/8df520cacc6d5cd6d287bb79a81020200931ff4d.png">is the
+maximum distance, but the pair of points are not the vertices of
+the convex hull <img src=
+"../imgs/9f0066d5512877613146554a1acce7a7207dc22a.png">is
+incorrect.</p>
+<p>Therefore, if the pair of points <img src=
+"../imgs/01bd5c9fe170383147ff6de636f9ca3ecf0fbb95.png"> are
+farthest from each other, then they must be the vertices of the
+convex hull <img src=
+"../imgs/9f0066d5512877613146554a1acce7a7207dc22a.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For example: Consider the points<img src=
+"../imgs/13e8528bc10708d43153ab6f65649d78c796ca9e.png"> in the
+space as in figure:</p>
+<p><img src="../imgs/47bba2478b34bf18a0b9f83f4cace8316c9be602.png"
+alt="Picture 5"></p>
+<p>In the figure above, the points<img src=
+"../imgs/63179285e695935b59346fc0817dfc24845b2b6e.png">and<img src=
+"../imgs/1daa403eb226dc172cef1a8bd649a6f951cd7585.png"> are at a
+maximum distance from each other. Make the convex hull of these
+points.</p>
+<p>The convex hull can be made only when the all the points in the
+space are covered, which is not possible without covering the
+points <img src=
+"../imgs/63179285e695935b59346fc0817dfc24845b2b6e.png">and<img src=
+"../imgs/1daa403eb226dc172cef1a8bd649a6f951cd7585.png">.</p>
+<p>So, to cover all the points using boundary line, it is necessary
+that the points <img src=
+"../imgs/63179285e695935b59346fc0817dfc24845b2b6e.png">and<img src=
+"../imgs/1daa403eb226dc172cef1a8bd649a6f951cd7585.png">must lie on
+the boundary of the convex hull. The points that lie on the
+boundary of the convex hull are the vertices of the convex
+hull<img src=
+"../imgs/054e6cc3669aac40322e1dd573df78f3833b1661.png">.</p>
+<p>Hence, in the set of points<img src=
+"../imgs/bcf7568bdae7c84c3af3fbf3d4a4635604e2f990.png">in a convex
+space, the pair of points at the maximum distance from each other
+is the vertices of the convex hull <img src=
+"../imgs/054e6cc3669aac40322e1dd573df78f3833b1661.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Convex hull <img src=
+"../imgs/667eb0cae6c312a3f6f0f3036988292099f764a3.png">is the
+polygon of the set of points<img src=
+"../imgs/ff02684cd1fbf64149fc018f1ae38f494039b81d.png">in the
+convex space such that all the points can be covered with a tight
+rubber band. All the points <i>Q</i> inside the convex must be
+unique.</p>
+<p><img src="../imgs/3102d8786b498cf097a964a346c06ff9721ab1b7.png"
+alt="C:\Tiffs\2254-33.3..tif"></p>
+<p>Consider a star shaped polygon</p>
+<p><img src="../imgs/430533556fff52614a74298009fd83e29fc6b1f7.png"
+alt="C:\Tiffs\2254-33.3..tif"></p>
+<p>In the star shaped polygon <i>P,</i> there is a point <i>p</i>
+inside this polygon which is formed by the shadow of the point
+<i>q</i> that lies on the boundary of the polygon <i>P.</i> The
+point <i>p</i> can be on the boundary of the polygon <i>P</i> and
+these points are called the kernel of the <i>P</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the star shaped polygon the point lies inside or on the
+boundary of polygon is <i>p</i>, which is the shadow of every point
+on the boundary of <i>P</i>. The algorithm for the computation of
+the convex hull for such polygon is as:</p>
+<p>1. The set of all the points in the given polygon <i>P</i>
+is<img src=
+"../imgs/a4bd6a48afd5457054cfab1def3a069f3d8e91ef.png">and
+<img src="../imgs/7fe228afc3d2816795cf8d6e7dbbc7822eba0341.png"> is
+the kernel of <i>P</i>.</p>
+<p>2. Start a circular sweep from <img src=
+"../imgs/7fe228afc3d2816795cf8d6e7dbbc7822eba0341.png">starting
+from a particular point till it reaches that point</p>
+<p>again and repeat step 3 until all points are visited.</p>
+<p>3. For <img src=
+"../imgs/dd8ce818ca52cf102aa55b523ccc2fd84d4c4b66.png">point in the
+set, if <img src=
+"../imgs/6821908cc4363f98484d44078dd302d040f28794.png">is the point
+farthest from <img src=
+"../imgs/7fe228afc3d2816795cf8d6e7dbbc7822eba0341.png">on the
+ray<img src="../imgs/08bfc61588e4654762bc72192264ec13ed24a724.png">
+then<img src=
+"../imgs/6821908cc4363f98484d44078dd302d040f28794.png">is in the
+convex hull<img src=
+"../imgs/a52e0517ccafac500b9f1172c135a15d75412a9c.png">.</p>
+<p>4. Terminate when sweep comes to initial point that is the point
+repeats.</p>
+<p>In this algorithm we visit each vertex in the star shaped
+polygon so for all the <i>n</i> vertices in the polygon the
+algorithm takes<img src=
+"../imgs/3a2dae0d92e08ee51ece85ef63e69d4493145d34.png">time for the
+computation of the convex-hull<img src=
+"../imgs/a52e0517ccafac500b9f1172c135a15d75412a9c.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Convex hull <img src=
+"../imgs/667eb0cae6c312a3f6f0f3036988292099f764a3.png">is the
+polygon of the set of points<img src=
+"../imgs/ff02684cd1fbf64149fc018f1ae38f494039b81d.png">in the
+convex space such that all the points can be covered with a tight
+rubber band. All the points <i>Q</i> inside the convex must be
+unique.</p>
+<p><img src="../imgs/3102d8786b498cf097a964a346c06ff9721ab1b7.png"
+alt="C:\Tiffs\2254-33.3..tif"></p>
+<p>Convex hull can be formed by using GRAHAM-SCAN procedure which
+uses the process of “rotational sweep” that is processing the
+vertices in the order of their polar angles formed with the
+reference vertex.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For on-line convex hull problem the Graham’s scan algorithm will
+run in <img src=
+"../imgs/818ad079301587cd80b43af53543b4c8ebb88aea.png"> for
+<i>n</i> number of vertices updated in the convex hull. In this
+process no sorting of vertices is required because we are adding
+the nodes one by one and updating the convex hull after adding one
+vertex or point.</p>
+<p>Now for running this algorithm in<img src=
+"../imgs/ed4ca7ef6a1b3f45be20c793a6cd555c00a2a95b.png">time,
+consider the convex hull<img src=
+"../imgs/1b3df65f91a15d03ccb73abf686b114719ba1523.png">of <img src=
+"../imgs/b6fe9addff70de18c4e637bdb88ed906e5bed9cd.png">points<img src="../imgs/1e58ca8024b129fb7de7cbb5a8b1fbdf6b0e7c8e.png">then
+the points that are already added in the convex hull will be in
+anticlockwise sequence of the angle they made with their reference
+node.</p>
+<p>Now the next node <img src=
+"../imgs/7fe228afc3d2816795cf8d6e7dbbc7822eba0341.png">encountered
+and we have to add this to convex hull for this we assume
+that<img src=
+"../imgs/7fe228afc3d2816795cf8d6e7dbbc7822eba0341.png">is in the
+interior region of <img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png">.Then<img src="../imgs/7c93b5746ab88afdc1e24c126eabb50efc0b03c0.png">is
+equal to<img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png">.</p>
+<p>To detect this case we can use the fact that if <img src=
+"../imgs/b5c8ab070f7e6bfe4609f8c0d04108678157cfc7.png">are the
+points of <img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png">in
+anti-clockwise order from the lowest one<img src=
+"../imgs/7b6b615de2c97123bc8f3c64b3d3574d37acfb41.png">, then we
+can say that for every<img src=
+"../imgs/082f0526eddf3be3aef84f2faafb709ace326d60.png">, involves a
+left-turn here we do perform<img src=
+"../imgs/044eadd219c1d003d2227d7ff2e36ee6ad27bcd6.png">in a
+wraparound style, with<img src=
+"../imgs/16fa92f624c6b4d6fc54769710b79e64df4f8069.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the alternate fashion suppose that <img src=
+"../imgs/7fe228afc3d2816795cf8d6e7dbbc7822eba0341.png"> is on the
+exterior of <img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png"> for this
+assume that convex hull<img src=
+"../imgs/6afba48c0b4204112370fef382ffab1eda1e417b.png">consist of
+<img src="../imgs/7fe228afc3d2816795cf8d6e7dbbc7822eba0341.png">
+and one uninterrupted part from<img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png">. Normally
+this segment will be consisting of majorly the already present
+points on<img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png">.</p>
+<p>So the left or right turns of<img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png">with respect
+to <img src="../imgs/7fe228afc3d2816795cf8d6e7dbbc7822eba0341.png">
+could be interpreted as follows:</p>
+<p>While taking points of <img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png">from the
+last (bottom) point<img src=
+"../imgs/7b6b615de2c97123bc8f3c64b3d3574d37acfb41.png">and further,
+consider <i>i</i> be the first point such that <img src=
+"../imgs/444696e658a4107a698478b65c644c63ea18ab07.png"> involves a
+right turn.</p>
+<p>Subsequent to finding the <i>i</i> defined above, let <i>j</i>
+be the first index after <i>i</i> such that <img src=
+"../imgs/33c92d39905d3bd3c7a39af3d06a6abacfa1a4ae.png">involves a
+left turn. It is easy to argue that <img src=
+"../imgs/0876b0deb77886e551ea56a484e0dc99c8051a1e.png">is always a
+left turn from <img src=
+"../imgs/f892ed810ba137cb50f4de4b3b39c51f04f18a1c.png">all the way
+round to<img src=
+"../imgs/90d7c0d531e023b3d1eb97473110dde4e4400229.png">.The convex
+hull <img src=
+"../imgs/6afba48c0b4204112370fef382ffab1eda1e417b.png"> is equal
+to<img src=
+"../imgs/f7839f63d5d0da47700bfc8948b792c9b70ae9dd.png">.</p>
+<p>In the solution, the updation of <img src=
+"../imgs/01eb4481c04325fb8244674637c3e5bd23c31952.png">to<img src=
+"../imgs/6afba48c0b4204112370fef382ffab1eda1e417b.png">, required a
+scanning of points (which are maximum<img src=
+"../imgs/b6fe9addff70de18c4e637bdb88ed906e5bed9cd.png">) in the
+linear order. The extra work done that is checking for the
+left/right turn on each node requires a constant time for each
+node. Hence the overall time to update for the new point<img src=
+"../imgs/9ed3585a21bfbd8c1971548ac4f9fbdbf2bb2892.png">takes
+<img src=
+"../imgs/ed4ca7ef6a1b3f45be20c793a6cd555c00a2a95b.png">time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Two conditions can occur at this point:</p>
+<p><b>1.</b> If <img src=
+"../imgs/3d696f82fd7a6b701ae1046adc29aae0fc8ec3d5.png">&nbsp;is
+inside<img src=
+"../imgs/d0b9a7314c14a3ab8695d655817cf1c3204c0503.png">, that
+is<img src="../imgs/3d696f82fd7a6b701ae1046adc29aae0fc8ec3d5.png">
+belongs to<img src=
+"../imgs/d0b9a7314c14a3ab8695d655817cf1c3204c0503.png">. It is
+quite simple to detect it in linear time by going through the
+points of&nbsp;<img src=
+"../imgs/d0b9a7314c14a3ab8695d655817cf1c3204c0503.png">in clockwise
+order and determining if&nbsp;<img src=
+"../imgs/3d696f82fd7a6b701ae1046adc29aae0fc8ec3d5.png">is always on
+the right side of an edge, in this case<img src=
+"../imgs/1d3cb187753df1fad4df5e6a53db3cc3c8051d24.png">.</p>
+<p><b>2.</b> If<img src=
+"../imgs/3d696f82fd7a6b701ae1046adc29aae0fc8ec3d5.png">&nbsp;is
+outside<img src=
+"../imgs/d0b9a7314c14a3ab8695d655817cf1c3204c0503.png">, that
+is,<img src=
+"../imgs/3d696f82fd7a6b701ae1046adc29aae0fc8ec3d5.png">&nbsp;not
+belongs to<img src=
+"../imgs/d0b9a7314c14a3ab8695d655817cf1c3204c0503.png">then it is
+done by discovering the two inclined lines from<img src=
+"../imgs/3d696f82fd7a6b701ae1046adc29aae0fc8ec3d5.png">to<img src=
+"../imgs/d0b9a7314c14a3ab8695d655817cf1c3204c0503.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>INCREMENTAL-CONVEX-HULL(<i>S</i>)</p>
+<p>//for loop is used to traverse each point of convex hull</p>
+<p>1. <b>for</b> i<i>=4</i> to <i>n</i>&nbsp;</p>
+<p>2. <i>j</i>&nbsp;←&nbsp;&nbsp;Index of the point which is at the
+right end of&nbsp;<i>CH</i></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; // find the upper tangency point</p>
+<p>3. <i>u</i><i>&nbsp;=&nbsp;</i><i>j</i></p>
+<p>4. <b>while</b>&nbsp;
+<i>p</i><sub>i</sub><i>h</i><sub>4&nbsp;</sub>is not tangent
+to&nbsp;<i>CH</i></p>
+<p>5. &nbsp;<b>if</b>&nbsp;<i>u</i>&nbsp;≠&nbsp;<i>j</i></p>
+<p>6. remove&nbsp;<i>h</i><sub>4&nbsp;</sub>from&nbsp;<i>CH</i></p>
+<p>7. <i>u&nbsp;</i>=&nbsp;<i>u</i>&nbsp;-1</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// find the lower tangency
+point</p>
+<p>8. <i>i</i>&nbsp;=&nbsp;<i>j</i></p>
+<p>9.
+<b>while</b>&nbsp;<i>p</i><sub>i</sub><i>h</i><sub>l</sub>&nbsp;is
+not tangent to&nbsp;<i>CH</i><b>&nbsp;</b></p>
+<p>10. &nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;if</b>&nbsp;<img src=
+"../imgs/b6177c88635562a8713c028530ca8c5a5697cbb3.png"></p>
+<p>11.
+remove&nbsp;<i>h</i><sub>i</sub>&nbsp;from&nbsp;<i>CH</i></p>
+<p>12.&nbsp; <i><img src=
+"../imgs/0ae1d8541d183ba3acba09434dae842f0d8c69b0.png"></i></p>
+<p>13.
+INSERT&nbsp;<i>p</i><sub>i</sub>&nbsp;in&nbsp;<i>CH&nbsp;</i>between&nbsp;<i>h</i><sub>u</sub>&nbsp;and&nbsp;<i>h</i><sub>i</sub></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis of Algorithm:</b></p>
+<p>• In this algorithm the addition of the new node takes <img src=
+"../imgs/447d8970ca682333a6a18fc13d9abcddbc1822a1.png">time so for
+<i>n</i> node the total is<img src=
+"../imgs/e85b4f39c74034ace13da33c1485186e86f5709f.png">.</p>
+<p>• The complexity of this algorithm is dependent on sorting and
+that’s why the upper bound will be due to sorting and so the
+complexity is<img src=
+"../imgs/fcb5cea37c0e08fcd22176ebceff0e3c1dfa5c64.png">.</p>
+<p><b>Hence, the complexity of above algorithm will be</b>
+<b><img src=
+"../imgs/fcb5cea37c0e08fcd22176ebceff0e3c1dfa5c64.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

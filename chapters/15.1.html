@@ -1,0 +1,501 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 15.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the provided equation:</p>
+<p><img src="../imgs/910bc322789d1bc43a9d5dbd2451eb9dce72e6cf.png">
+…… (1)</p>
+</div>
+<hr>
+<div class="answer">
+<p>It is already given that:</p>
+<p><img src=
+"../imgs/3d14d69c7dc6c2702f2a98fc155a27f869873c3d.png"></p>
+<p>Now, put value of<img src=
+"../imgs/70120b9043d3e0b5854bd0e0bf8c80608502b02c.png">in equation
+(1).</p>
+<p><img src=
+"../imgs/54726227ec0275f2cc361478cf89b80d08759e1d.png"></p>
+<p>Now, put value of<img src=
+"../imgs/bdba0200f7d7f8fbb4fdb1baba006a4d2f67c9c8.png">in equation
+(1).</p>
+<p><img src=
+"../imgs/3f366205b7766a460b0b41a57325c919afb25920.png"></p>
+<p><img src=
+"../imgs/f7576cd68c43c2d9b74eabcb327262607d2ad9c0.png"></p>
+<p>Similarly,</p>
+<p><img src=
+"../imgs/b9f439e3d2844ba06387373dee62a8a75b69213a.png"></p>
+<p><img src=
+"../imgs/fb32379ee5e717e13ee25c9cf6d7ef789265f60c.png"></p>
+<p>Therefore,<img src=
+"../imgs/e9b2ddf3bc8858bcc9298224fea922a388971ad0.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Rod cutting problem is defined as finding the maximum revenue
+that can be achieved by cutting the rod and selling the pieces. The
+output of the rod cutting problem is the way of cutting rod into
+pieces that achieves the maximum revenue.</p>
+<p>• The Greedy strategy is applied to find solution of rod cutting
+problem. The greedy strategy finds a solution for the problem one
+selecting the optimal option in each stage (i.e., in the current
+situation).</p>
+<p>• Therefore, to solve the rod cutting problem greedy strategy
+can be used to find the way of cutting pieces that maximizes the
+revenue.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proving the given greedy strategy does not always produce an
+optimal solution:</b></p>
+<p>The given greedy strategy selects the length of first piece
+<i>i</i> (<img src=
+"../imgs/4aea0ec8bb72e4d32b0fae58c039d178985ecc54.png"> ) that has
+maximum density first. Then, it selects the length of the next
+piece that has maximum density in the remaining piece of length
+<i>n-i</i>.</p>
+<p>This strategy does not always produce an optimal solution. To
+show this, consider the following example of rod of length 4,
+pricing table and density table:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p>Length <i>(n)</i></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Price <i>(p</i><sub>i</sub><i>)</i></p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>20</p>
+</td>
+<td>
+<p>36</p>
+</td>
+<td>
+<p>32</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Density <i>(p</i><sub>i</sub><i>/i)</i></p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>10</p>
+</td>
+<td>
+<p>12</p>
+</td>
+<td>
+<p>8</p>
+</td>
+</tr>
+</table>
+<p>In the above example of rod cutting, length of rod is 4. Before
+applying the greedy strategy , sort the above table by the density
+(<i>p</i><sub>i</sub><i>/i</i>) .</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p>Length <i>(n)</i></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Price <i>(p</i><sub>i</sub><i>)</i></p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>32</p>
+</td>
+<td>
+<p>20</p>
+</td>
+<td>
+<p>36</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Density <i>(p</i><sub>i</sub><i>/i)</i></p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>8</p>
+</td>
+<td>
+<p>10</p>
+</td>
+<td>
+<p>12</p>
+</td>
+</tr>
+</table>
+<p>Now apply the greedy strategy to select the rod length. The
+greedy strategy initially selects the length of the rod(<i>i</i>)
+as 3, as the rod of length 3 has the maximum density and the
+revenue of 36. Then the strategy selects the rod of length 1.
+Therefore total revenue (<i>R</i><sub>g</sub>) for this greedy
+selection is calculated as follows:</p>
+<p><img src=
+"../imgs/50d887ef53d5a2c5deed0c094b558aef98866035.png"></p>
+<p>But the selection (3,1) is not an optimal solution, because
+there is another choice that gives maximum revenue. Thus, the
+optimal solution is as follows:</p>
+<p><img src=
+"../imgs/86bc765b823d6d71c91aea890bfbcac1d7a25b93.png"></p>
+<p><b>Therefore, the given greedy strategy that selects the length
+of the rod piece according to density does not always gives the
+optimal solution.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Rod cutting is an example of dynamic programming in which a long
+steel rod is bought by a company and then they cut that rod into
+the pieces and then sells them to find the maximum revenue.</p>
+<p>This problem is slightly different as from now every cut has a
+cost and user has to deduct that cost from the profit.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now consider the modification of the rod cutting problem, in
+which each cut incurs a fixed cost of<img src=
+"../imgs/2dba8cab49bd10b05f89a8f78caadf08daf45e5b.png">, with each
+rod price<img src=
+"../imgs/df09ea12f04fed58bbc19b72d00dc4aa58ba97b4.png">. So, the
+final price of the rod obtained after subtracting this cost from
+the actual price.</p>
+<p>• Now, to achieve the above modification, use the original rod
+cutting method along with the added cost of the rod cut.</p>
+<p>• The calculation performed on the basis of the following:</p>
+<p><img src=
+"../imgs/5d92750c814e9437cf2e4bc432eb2ce6d3ec7472.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The modified rod cutting algorithm is as follows:</p>
+<p><b>MODIFIED_CUT_ROD</b> (<i>p, n, c</i>):</p>
+<p>1. Assume an array <i>w</i>[0 <b>..</b><i>n</i>] is taken.</p>
+<p>2. <i>w</i>[0] = 0</p>
+<p>// Run a loop from <img src=
+"../imgs/011636eea5541e8bff04c8f187c2cf460b26c54f.png"></p>
+<p>3. <b>for</b> <i>j=</i>1 to <i>n</i></p>
+<p>// storing the cost in the array <i>w</i></p>
+<p>4. <img src=
+"../imgs/3be7409f058de3a771eeb9ab343dc0bd901305eb.png"></p>
+<p>// now cutting the rod at different position ranging from 1 to
+<i>i</i></p>
+<p>5. <b>for</b> <i>i=</i>1 to <i><img src=
+"../imgs/99124852cf321db712c4ca2800bc8db539cefd36.png"></i></p>
+<p>6. <img src=
+"../imgs/fbc6911ed2ffa8e1e52176e4c3ba9a1921f8a718.png"></p>
+<p>7. <i>w</i>[<i>j</i>] = <i>q</i></p>
+<p>8. <b>return</b> <img src=
+"../imgs/fc98e2527ffd3416ada9553774076cc1e98c7e47.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the above algorithm:</b></p>
+<p>The above algorithm is the modified cut rod algorithm. The major
+modification required in the inner for loop, given in line number
+5. Now, the inner for loop reads the value<img src=
+"../imgs/fbc6911ed2ffa8e1e52176e4c3ba9a1921f8a718.png">.</p>
+<p>This changes reflects the fixed cost of making the cut, which is
+declared from the revenue.</p>
+<p>In the above algorithm, user also handle the case in which user
+make no cuts (when <i>I</i> equals to <i>j</i>); in this case the
+total revenue will be given simply as <i>p</i>[<i>j</i>] takes care
+of the case of no cuts.</p>
+<p>If user did not make these modifications, then in this case of
+no cuts, user would deducting <i>c</i> from the total revenue.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Rod cutting is an example of dynamic programming in which a long
+steel rod is bought by a company and then they cut that rod into
+the pieces and then sells them to find the maximum revenue.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the rod cutting algorithm the array <i>B</i> stores the final
+revenue of each sub problem of rod cut. The variable<img src=
+"../imgs/df09ea12f04fed58bbc19b72d00dc4aa58ba97b4.png">contains the
+price of length <i>v</i> and <i>k</i> is the length of the rod. The
+modified MEMOIZED-CUT-ROD which returns not only the value but the
+actual solution too is given below:</p>
+<p><b>MEMOIZED-CUT-ROD- MODIFIED</b> (<i>p, k</i>)</p>
+<p>//Define two arrays of length <i>k</i></p>
+<p>1. Let <img src=
+"../imgs/9e9d34b7955746b99acc93b6eb9bf50ef4fe4284.png"> and
+<img src="../imgs/ffb25fb45f930a6b7b49c1461c31d9e2ac6f3577.png">be
+new arrays</p>
+<p>// Run a loop from <img src=
+"../imgs/4bbde3691352eee00e8b2982aa305d311fe1104c.png">
+initializing <img src=
+"../imgs/415275c89d610b79c28a160da55916f48920c8ae.png">with a very
+large negative value</p>
+<p>2. <img src=
+"../imgs/b4bd169db90be5c953bb1f8a41325674e6abe976.png"></p>
+<p>3. <img src=
+"../imgs/3cc4853a44a5c4a8c34bae7401db7b1b896a8c05.png"></p>
+<p>4. <b>MEMOIZED-CUT-ROD-AUX- MODIFIED</b> (<i>p, k, A, B</i>)</p>
+<p>// printing the solution</p>
+<p>5. <b>for</b> <i>i</i>=0 to <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>6. print <i>B</i>[<i>n</i>]</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the above algorithm, MEMOIZED-CUT-ROD-AUX-MODIFIED is an
+auxiliary algorithm to help the MEMOIZED-CUT-ROD-MODIFIED for the
+calculation of maximum revenue.</p>
+<p><b>MEMOIZED-CUT-ROD-AUX- MODIFIED</b> (<i>p, k, A, B</i>)</p>
+<p>//Check if <img src=
+"../imgs/02801dfed33d05b98298439f2fa14fbb259c126d.png">then return
+<img src=
+"../imgs/2a65a7646212802838f246d817dec31c9c07bd4e.png"></p>
+<p>1. <b>if</b> <img src=
+"../imgs/02801dfed33d05b98298439f2fa14fbb259c126d.png"></p>
+<p>2. return <img src=
+"../imgs/2a65a7646212802838f246d817dec31c9c07bd4e.png"></p>
+<p>//Check if length is zero then assign zero to <i>w</i></p>
+<p>3. <b>if</b> <img src=
+"../imgs/84a0f4bc08a30f0870573f1ac1dc0b0a83594e03.png"></p>
+<p>4. <img src=
+"../imgs/3f4cc65612540a8a693c45e1b13ffb97dc9ea875.png"></p>
+<p>//Otherwise assign a very large negative value to <i>w</i></p>
+<p>5. <b>else</b> <img src=
+"../imgs/81cb9ad8cb0d8e0725e7a0b6d0be51fa37423dfd.png"></p>
+<p>// iterate the loop until all possible cuts of rod are
+considered once.</p>
+<p>6. <b>for</b> <img src=
+"../imgs/bea39de90b8429a4216b6489253a7151764dd4cd.png"></p>
+<p>7. // array <i>B</i> contains the revenue for cut <i>i</i></p>
+<p>8. <img src=
+"../imgs/13dee962895200e4cf3454a4b188e882afed32a5.png"></p>
+<p>9. <img src=
+"../imgs/3bcbbe9b03dd02b445e0097aaba79c5c8a5eb5e8.png"></p>
+<p>10. <img src=
+"../imgs/54b38f3f21ff115e103821db3dbb5b6526276836.png"></p>
+<p>11. <img src=
+"../imgs/26dca0452e77ec9cf1b56b82f558e9f07f1da5a3.png"></p>
+<p>12. <b>return</b> <i>w</i> and <i>B.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>• In above algorithm first <b>MEMOIZED-CUT-ROD- MODIFIED</b> is
+called.</p>
+<p>• In this function there are two arrays: <i>A</i> is used to
+store the result and <i>B</i> is used to store the respective
+length of cut.</p>
+<p>• After that <b>MEMOIZED-CUT-ROD-AUX- MODIFIED</b> is called in
+line 4 where the result and the actual value will be filled in
+array <i>A</i> and <i>B</i>.</p>
+<p>• This function is same as provided in section 15.1 but with a
+little modification. Along with storing the profit value, the array
+<i>B</i> will take care of the length of cut.</p>
+<p>• So as soon as program finds a new better solution, it stores
+the value of length at which cut is made.</p>
+<p>• After the completion of <b>MEMOIZED-CUT-ROD-AUX- MODIFIED,</b>
+the value at <i>n</i><sup>th</sup> index of array <i>A</i> will be
+the actual profit.</p>
+<p>• Now program continues the <b>MEMOIZED-CUT-ROD- MODIFIED,</b>
+where the result is now ready to print<i>.</i></p>
+<p>• The <i>while</i> loop is used to print the actual answer. In
+this loop user first print the length of cut needed to get maximum
+profit and then reducing the subsequent problem by decreasing the
+value of <i>n</i> by the value of cut.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The definition of the Fibonacci numbers by the following
+recurrence:</p>
+<p><img src=
+"../imgs/100fe0501f800792bced28708e50cbdb4d040139.png"></p>
+<p>Computing the n<sup>th</sup> Fibonacci number with the help of
+bottom-up approach (iterative method):</p>
+<p><img src=
+"../imgs/bee197399418368e75a77fa9505db53b940134a7.png"></p>
+<p>//Input: An integer n which is a non-negative number.</p>
+<p>//Output: The nth Fibonacci number.</p>
+<p><img src=
+"../imgs/d20c8ecf6d0dd1e05e03fa713b5b451318da14c3.png"></p>
+<p>for <img src=
+"../imgs/7bab4509dceda11bb07c4189f728e108bdf5ba37.png"> to n</p>
+<p><img src=
+"../imgs/f15c616cb344f22e197d0b56c67a3d7f931cfa5b.png"></p>
+<p>return <img src=
+"../imgs/075f7c60d87ba955b6e937dd8cb7dc72c041d3f8.png"></p>
+<p>The graph of computing the n<sup>th</sup> Fibonacci number
+problem is collected of <img src=
+"../imgs/4293b07cd40b30769f9117d598e66c856c8e50ff.png"> nodes.</p>
+<p>The edges correspond to the relationship between larger sub
+problems to smaller sub problems.</p>
+<p>In this case, F[2] is connected to F[1] and F[0].</p>
+<p>So, there are <img src=
+"../imgs/68356488298e9e79f6ebc4bbfb47784cd9c85bdf.png"> edges.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For example, the sub-problems are solved by dividing them in to
+smaller sub-problems again and again until to reach some simple
+case that can be solved easily.</p>
+<p><img src="../imgs/50cf38000effddde3dc9a41fc6b11ef20e1098bd.png"
+alt=
+"Figure 2. The subproblem graph for the Fibonacci sequence. That it is not a tree but a DAG indicates overlapping subproblems."></p>
+<p>The sub problem graph for the Fibonacci sequence.</p>
+<p>The number of vertices is 5 and the number of edges is 7.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

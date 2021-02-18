@@ -1,0 +1,247 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 8.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/356bdffb82f28c2428b53c354d59c957b5770ddc.png">
+<hr>
+<img src="../imgs/0aa751ad4deb811bf113ad1b539e2b3b0d867c32.png">
+<hr>
+<img src="../imgs/68ba27d1beb2a3d8c42ad38d597156b2dafdd507.png">
+<hr>
+<img src="../imgs/a5af9afaecb674f71cd9b2d4414ac9dda155d30f.png">
+<hr>
+<img src="../imgs/0f3d5ca78e37dabafdc85c3fe2683da0f7f454da.png">
+<hr>
+<img src="../imgs/bdfcaec349b645d3f9fede8f1aa204637a5f5d04.png">
+<hr>
+<img src="../imgs/f5d7aa77f7e7a3d00441187dfdc4d0017476ef25.png">
+<hr>
+<img src="../imgs/7c52d339bcbc66868f8ffea77eb3879fe772c381.png">
+<hr>
+<img src="../imgs/19c8ff905e70be6ec60ac613b24a2d97c162ba6d.png">
+<hr>
+<img src="../imgs/93f82475e1b970e390e094a7bf3e7b88607a9105.png">
+<hr>
+<img src="../imgs/6cdbc171c811d3c6f5b34339396d187bc5df31cd.png">
+<hr>
+<img src="../imgs/85883c5c07cd95fd6cd47184a8fe28468c6ae737.png">
+<hr>
+<img src="../imgs/66914065cffa05049ed879cd75ab0606d40af2fe.png">
+<hr>
+<img src="../imgs/1f980f26178ee48726b08cf98a73b6ac0c295488.png">
+<hr>
+<img src="../imgs/a8b98ca968e340cc1d78e439d4ed45829980b812.png">
+<hr>
+<img src="../imgs/a5b2b49192bee9d2ca69826806e4a6dd77e13701.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>COUNTING-SORT is stable:</b></p>
+<p>• It is known that a sorting algorithm is table, if any two
+elements with same value appear in the same order in sorted array,
+as they appear in the original array.</p>
+<p>• COUNTING-SORT is stable, as the input order among equal
+elements in the input array is preserved in the sorted array. That
+is, the elements with same value appear in the same order as they
+appear the original array.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proving that C</b> <b>OUNTING</b> <b>-S</b> <b>ORT</b> <b>is
+stable:</b></p>
+<p>• The final for loop of COUNTING-SORT runs from <i>A.length</i>
+to 1 and after <i>i</i> is stored in <i>B</i>, <i>C</i>[<i>i</i>]
+is decreased by 1. Thus, if there are any two elements with same
+value in <i>A</i>, the element with higher index in <i>A</i> is
+appear after the element with lower index in <i>A</i>.</p>
+<p>• For example, consider two equal elements in <i>A</i>, stored
+at indices <i>i</i><sub>1</sub> and
+<i>i</i><sub>2</sub><sub>,</sub> where <i>i</i><sub>1</sub> &lt;
+<i>i</i><sub>2</sub> . That is, <i>A</i>[<i>i</i><sub>1</sub>] =
+<i>A</i>[<i>i</i><sub>2</sub>].</p>
+<p>• If there are <i>k</i> number of elements less than or equal to
+<i>A</i>[<i>i</i><sub>1</sub>] or <i>A</i>[<i>i</i><sub>2</sub>].
+That is, <i>C</i>[<i>A</i>[<i>i</i><sub>1</sub>]] or
+<i>C</i>[<i>A</i>[<i>i</i><sub>2</sub>]]=<i>k</i>.</p>
+<p>• Now, the final for loop processes
+<i>A</i>[<i>i</i><sub>2</sub>] first. That is,
+<i>A</i>[<i>i</i><sub>2</sub>] is stored in <i>B</i> at index
+<i>k</i> and <i>C</i>[<i>A</i>[<i>i</i><sub>1</sub>]] is decreased
+by 1. That is,
+<i>C</i>[<i>A</i>[<i>i</i><sub>1</sub>]]=<i>k</i>-1.</p>
+<p>• Later <i>A</i>[<i>i</i><sub>1</sub>] is stored in <i>B</i> at
+index <i>k</i>-1. Obviously, <i>k</i>-1 &lt; <i>k</i>. Thus,
+<i>A</i>[<i>i</i><sub>1</sub>] and <i>A</i>[<i>i</i><sub>2</sub>]
+appear in the same order in <i>B</i> as they appear in
+<i>A</i>.</p>
+<p><b>Since the COUNTING-SORT is preserving the order of the
+elements with the same value, COUNTING-SORT is stable.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>Even after applying COUNTING-SORT, the order of <i>A</i>[1] and
+<i>A</i>[4] is same in B.</p>
+<p><b><img src=
+"../imgs/df9d9a4e6ff2ae0a759f4112a79e6b587be1c39d.png" alt=
+"Picture 2"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/14720cf882d68f5a19d2fe324599d1405a8087d9.png">
+<hr>
+<img src="../imgs/418912acaaf2903edde37e22a7e3a8cc603feeb1.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Assume there is an array <img src=
+"../imgs/bb390c0604caf65d804ca1d14a703dd288632492.png"> that stores
+<i>n</i> integer values. The range of integers lies in between 0 to
+<i>k.</i> Consider the following algorithm to determine number of
+integer lies in any particular range <i>a</i> and <i>b</i>.</p>
+<p><i>Count</i> (<i>A</i>)</p>
+<p>1. Declare two new arrays <img src=
+"../imgs/74daf299e879f624a8c8636118731f251d436bbf.png">
+and<img src="../imgs/0725e7ad4b23a1eeec26084e5a0b51df467c64ca.png">.</p>
+<p>2. Initialize all elements of <i>B</i>[] array with 0.</p>
+<p>//Now, use <b>for</b> loop to make increment in <i>C</i>[] array
+counter respective to elements of // <i>A</i> array. It will take
+<img src=
+"../imgs/f7457b4a35c8ed520d2e3f3f5a79b2f0fcc863fb.png">time to
+process <i>n</i> elements of <i>A</i> array.</p>
+<p>3. <b>for</b><img src=
+"../imgs/e0237bec0f4a2c8d6f021f7fa90512371c352610.png">to
+<i>A.length</i>( )</p>
+<p>4. <img src=
+"../imgs/7ac3a322c41e7266378fc6df550d4513b30ee1c8.png"></p>
+<p>5. <img src=
+"../imgs/9b5735b9deab3fd85951366102bd84158893d1ad.png"></p>
+<p>//use <b>for</b> loop to store count up to j<sup>th</sup>
+element of B[] array. It will take <img src=
+"../imgs/c22389c5398540044dae6a041a0fb9c62a47218e.png">time to
+process <i>k</i> elements of <i>B</i>[] array.</p>
+<p>6. <b>for</b><img src=
+"../imgs/cb628f0543548acd5eb5e7360c392c6743107481.png">to
+<i>k</i></p>
+<p>7. <img src=
+"../imgs/9e00e307b4cd4ec76001e00414d1f09f5f008477.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The above algorithm stores the count to any i<sup>th</sup>
+element in <i>C</i> [] array. The 3<sup>rd</sup> line of above
+algorithm uses <b>for</b> loop which takes <img src=
+"../imgs/f7457b4a35c8ed520d2e3f3f5a79b2f0fcc863fb.png">time to
+process <i>n</i> elements of <i>A</i> array.</p>
+<p>The 6<sup>th</sup> line of above algorithm uses <b>for</b> loop
+which takes <img src=
+"../imgs/c22389c5398540044dae6a041a0fb9c62a47218e.png">time to
+process <i>k</i> elements of <i>B</i>[] array.</p>
+<p>Therefore, the total processing time taken by <i>Count</i>
+Algorithm is<img src=
+"../imgs/d0a5802978c8bbd9a6a0ca85b0971e6d3b6669a9.png">.</p>
+<p>Now, use following formula to determine number of integer lies
+in any particular range <i>a</i> and <i>b:</i> <img src=
+"../imgs/d7f60d0ea105a3bb7f0b023c2fadf4572ca5c08f.png"></p>
+<p>This computation requires only <img src=
+"../imgs/47e9685092300a79dbaba66d327eac7db8d280b3.png">time after
+the pre-processing time <img src=
+"../imgs/d0a5802978c8bbd9a6a0ca85b0971e6d3b6669a9.png"> taken by
+the <i>Count</i> algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

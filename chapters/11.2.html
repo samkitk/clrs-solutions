@@ -1,0 +1,593 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 11.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Define an indicator random variable <i>X</i><sub>kl</sub> = I {
+<i>h(k)</i> = <i>h(l)</i> } such that key <i>k</i> ≠ <i>key l</i> .
+<i>X</i><sub>kl</sub> represents the possible values of a collision
+occurrence (i.e. key k and l both hashed to same slot in the
+array). Since simple uniform hashing is used, the probability of a
+key <i>x</i> that hashed to a location in a table is <img src=
+"../imgs/57f9d32db7295a78f395192380a87cf8aa63f297.png">.</p>
+<p>The probability that both keys <i>h(k)</i> and <i>h(l)</i>
+represent the same slot S (i.e. the probability for collision) is
+Pr { <i>h(k)</i> = <i>h(l)</i> }.</p>
+<p>Pr { <i>h(k)</i> = <i>h(l)</i>} = <img src=
+"../imgs/57f9d32db7295a78f395192380a87cf8aa63f297.png"></p>
+<p>Therefore, the expectation value of both keys representing the
+same slot in the array is</p>
+<p>E <img src=
+"../imgs/3ef976541223f2eddd6d9a8c6e53d6ca27e5eec2.png">= <img src=
+"../imgs/57f9d32db7295a78f395192380a87cf8aa63f297.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, the total expected number of collisions is E<img src=
+"../imgs/28d6686ce9870c37b5a49a1c5e65f719d982a4cd.png"> .</p>
+<p>E<img src=
+"../imgs/28d6686ce9870c37b5a49a1c5e65f719d982a4cd.png"> = <img src=
+"../imgs/e135061ea8a563d27a50bd5df859717b8b9575e9.png">E <img src=
+"../imgs/3ef976541223f2eddd6d9a8c6e53d6ca27e5eec2.png"></p>
+<p>Since, collisions are detected for <img src=
+"../imgs/38e9d5a24ed92ef656a2edaee041e8f22b9abfef.png">
+combinations of key pairs (<i>k , l</i>) such that <i>k</i> ≠
+<i>l,</i></p>
+<p><img src=
+"../imgs/7f58a0a4f7430dc71dea605426d06e73e83dcb4e.png">E <img src=
+"../imgs/3ef976541223f2eddd6d9a8c6e53d6ca27e5eec2.png"> = <img src=
+"../imgs/7536e74dce5f12fcf632d34d3020e9356d31b287.png"></p>
+<p>= <img src=
+"../imgs/5f4d29849ad9967627bcd7c423e72171c632a2d2.png"></p>
+<p>= <img src=
+"../imgs/19c2fb92ef2fa469845dcb05558f4cfbe060f99c.png"></p>
+<p><b>Hence, the expected number of collisions is</b> <b><img src=
+"../imgs/d20ba4ea5e7504d629a3b8ffe555fdc1e99a40e4.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Inserting Keys into Hash Table with Collisions Resolved by
+Chaining</b></p>
+<p>Chaining is one of the collision resolution techniques. In this
+technique, an index or slot <img src=
+"../imgs/b430ee0c3ffe63c4bf84b0d5cff36d41cd6d2af1.png"> of a hash
+table <img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png">contains a
+linked list of elements with the same index <img src=
+"../imgs/ab8d30928f42ce9f541d35ae2fd7a322f7909fc4.png"> which is
+calculated by the hash function.</p>
+<p>The following procedure shows an implementation of a hash table
+<img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png">such that
+each key <img src=
+"../imgs/85b7abaaaaa69d53adcbb3d4db38cc4616bb90e3.png"> of a
+universe <img src=
+"../imgs/a063db915d9a56a12a6156bb9e26acf3f85e3ed0.png">maps to an
+index or slot in the hash table. Here, the number of slots in the
+table is 9. So the range of the index of the table is from 0 to 8.
+And the hash function is <img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png">. Therefore
+a slot <img src=
+"../imgs/8d4a1322cdad5c42e88221bb73efb12bb935217d.png"> is occupied
+by a value with key <img src=
+"../imgs/85b7abaaaaa69d53adcbb3d4db38cc4616bb90e3.png">. The hash
+table does not allow the duplicate values.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Insert the key 5 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 5 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/ede7a413143a40dd7f16d0d8fddd9c53e1b073a0.png"></p>
+<p>Therefore, the index to hold the key 5 is 5.</p>
+<p>Search about the key 5 in the liked list of keys at the index 5
+in the hash table.</p>
+<p>Here, the key 5 is not found in the hash table.</p>
+<p>Insert the key 5 as head of the list at the index 5 in the
+table.</p>
+<p>After inserting the key 5, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/f06167fffba9355dc39c85bbc852eaddb170dae3.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Insert the key 28 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 28 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/5b958df477e916241d315e7d9d1d26ab55e69b51.png"></p>
+<p>Therefore, the index to hold the key 28 is 1.</p>
+<p>Search about the key 28 in the liked list of keys at the index 1
+in the hash table.</p>
+<p>Here, the key 28 is not found in the hash table.</p>
+<p>Insert the key 28 as head of the list at the index 1 in the
+table.</p>
+<p>After inserting the key 28, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/ede614fa8b402640f26fa40b84a99b95988ceaa8.png"></p>
+<p><b>Insert the key 19 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 19 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/b508a1ed4ada90eee746ca9f7e085685217c8aeb.png"></p>
+<p>Therefore, the index to hold the key 19 is 1.</p>
+<p>Search about the key 19 in the liked list of keys at the index 1
+in the hash table.</p>
+<p>Here, the key 19 is not found in the hash table.</p>
+<p>Insert the key 19 as head of the list at the index 1 in the
+table.</p>
+<p>After inserting the key 19, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/4611af901bc8e67a5cac8492ae5144a2fa313774.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Insert the key 15 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 15 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/af4e818eb6697b419f2eed312095f2b15bf79e26.png"></p>
+<p>Therefore, the index to hold the key 15 is 6.</p>
+<p>Search about the key 15 in the liked list of keys at the index 6
+in the hash table.</p>
+<p>Here, the key 15 is not found in the hash table.</p>
+<p>Insert the key 15 as head of the list at the index 6 in the
+table.</p>
+<p>After inserting the key 15, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/66ed1a26185e8e7fb40b690ed85cc1339320b093.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Insert the key 20 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 20 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/626e0d77857a60d7a222aefc5f8e1e7a2c02a81a.png"></p>
+<p>Therefore, the index to hold the key 20 is 2.</p>
+<p>Search about the key 20 in the liked list of keys at the index 2
+in the hash table.</p>
+<p>Here, the key 20 is not found in the hash table.</p>
+<p>Insert the key 20 as head of the list at the index 2 in the
+table.</p>
+<p>After inserting the key 20, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/33bc3c161f17d16497be5d77c1755828600ddc3d.png"></p>
+<p><b>Insert the key 33 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 33 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/a04df004846ae53a6a6e1fa7a42d52a982b04025.png"></p>
+<p>Therefore, the index to hold the key 33 is 6.</p>
+<p>Search about the key 33 in the liked list of keys at the index 6
+in the hash table.</p>
+<p>Here, the key 33 is not found in the hash table.</p>
+<p>Insert the key 33 as head of the list at the index 6 in the
+table.</p>
+<p>After inserting the key 33, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/e1a8d220b7e0dffef5abdb4f9a7e44b58ff46cdb.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Insert the key 12 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 12 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/73b9c725163749b09914b6fc6aa624de02a157ec.png"></p>
+<p>Therefore, the index to hold the key 12 is 3.</p>
+<p>Search about the key 12 in the liked list of keys at the index 3
+in the hash table.</p>
+<p>Here, the key 12 is not found in the hash table.</p>
+<p>Insert the key 12 as head of the list at the index 3 in the
+table.</p>
+<p>After inserting the key 12, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/9809cb01096e19ba2a79cb43fc05d6a721a3e375.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Insert the key 17 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 17 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/b3dfc167d7bceb3d11d0b68594ce3f9a2ed44c10.png"></p>
+<p>Therefore, the index to hold the key 17 is 8.</p>
+<p>Search about the key 17 in the liked list of keys at the index 8
+in the hash table.</p>
+<p>Here, the key 17 is not found in the hash table.</p>
+<p>Insert the key 17 as head of the list at the index 8 in the
+table.</p>
+<p>After inserting the key 17, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/913c2305b35e6a35e9f3a0ecb1e03020999615fc.png"></p>
+<p><b>Insert the key 10 into the hash table</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>
+<b>:</b></p>
+<p>Find the index of the table to insert the key 10 using the hash
+function,</p>
+<p><img src=
+"../imgs/a12635c0062a0ad6869b5bc6c5e8a1383287a970.png"></p>
+<p><img src=
+"../imgs/a5f57968441ab047b94160f8ade85ed480a933ef.png"></p>
+<p>Therefore, the index to hold the key 10 is 1.</p>
+<p>Search about the key 10 in the liked list of keys at the index 1
+in the hash table.</p>
+<p>Here, the key 10 is not found in the hash table.</p>
+<p>Insert the key 10 as head of the list at the index 1 in the
+table.</p>
+<p>After inserting the key 10, the hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> is as
+below.</p>
+<p><img src=
+"../imgs/6e42689f40e5d7702c522cd99f787ac7cf751764.png"></p>
+<p>The slots with no elements are filled as NIL(<i>/</i>) in the
+resultant hash table <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>When the hashing with chaining method is modified such that each
+list is maintained in sorting order, this modification effects the
+running time of successful searches, unsuccessful searches,
+insertions, and deletions as follows:</p>
+<p><b>Running time effect on Successful search:</b></p>
+<p>In changing scheme with unsorted lists, the complexity of
+successful search is <img src=
+"../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png">where<img src="../imgs/6647e6df4daed8e15159dc964e01a70dd168a48f.png">.
+That is, time complexity of the successful search is proportional
+to the length of the list. In the worst case, the whole list is
+traversed to search an element. The length of the list is same,
+even though list is sorted or unsorted. Thus the modification does
+not affect the running time complexity of successful search.</p>
+<p><b>Therefore, running time complexity of successful search, in
+chaining scheme with sorted lists, is still</b> <b><img src=
+"../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png"></b>
+<b>.</b></p>
+<p><b>Running time effect on Unsuccessful search:</b></p>
+<p>In chaining scheme with unsorted lists, the complexity of
+unsuccessful search is<img src=
+"../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png">. in the
+unsuccessful search, the running time of unsuccessful search is
+proportional to the length of the list. Thus, in chaining scheme
+with sorted list, the time complexity for unsuccessful search is
+also<img src=
+"../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png">. Hence, the
+modification also does not affect the running time of unsuccessful
+search.</p>
+<p><b>Therefore, in chaining scheme with sorted list, running time
+complexity of unsuccessful search is still</b> <b><img src=
+"../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running time effect on Deletion:</b></p>
+<p>Before deleting an element from lists, it is required to find
+(or search) that element in list. That is, the running time for
+deletion is same as running time of searching time. Thus, the
+running time complexity of deletion is<img src=
+"../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png">. However,
+the case of deletion an element is similar to successful search.
+Therefore, the running time does not change with modified
+scheme.</p>
+<p><b>Therefore, running time complexity of deletion in sorted list
+is still</b> <b><img src=
+"../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png"></b>
+<b>.</b></p>
+<p><b>Running time effect on Insertion:</b></p>
+<p>Since, in chaining scheme with unsorted lists, an element is
+inserted at the head of the list, the time complexity of insertion
+is<img src="../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">.
+But, in the modified scheme, before inserting a new element, a
+proper place is required to be found (searched) in the sorted list.
+Running time for searching appropriate place is similar to running
+time for unsuccessful search. The running time complexity of
+unsuccessful search in chaining scheme with sorted lists
+is<img src="../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png">.</p>
+<p><b>Thus, the running time complexity of insertion in modified
+scheme is</b> <b><img src=
+"../imgs/1c5b6513ce3adbe9795f064318a09f3cd1a439cc.png"></b>
+<b>.</b></p>
+<p><b>Since, the modified scheme does not affect the running time
+of successful search, un successful search and deletion, except the
+insertion, the modified scheme does not improve the performance
+chaining scheme. Moreover, it increases the running time of
+insertion.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8927abc0a963b634b3bdf6615a40751f5b010843.png">
+<hr>
+<img src="../imgs/7357bb309f15061335a1b83f4994f2990f97ca5d.png">
+<hr>
+<img src="../imgs/692ec34533c588cba1dab537a39914b9596a9b86.png">
+<hr>
+<img src="../imgs/b5a2d36f1bc4f2e55f5bc45d0b0096186352c19a.png">
+<hr>
+<img src="../imgs/65da99fbfc156f4371d35765cfb5e5a0610449ea.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A hash table with <i>m</i> slot size is denoted by <i>T</i>
+which is having the capacity to store <i>n</i> keys from the set
+universe <i>U</i>.</p>
+<p>Since the table is having <i>m</i> slots, the hash function
+<i>h</i> maps the keys of universe <i>U</i> into the different
+slots of hash table<img src=
+"../imgs/23c346b1b7fc797ae38a6d8e89483c9795f64ee3.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proving that if keys are selected from</b> <i><b>U</b></i>
+<b>with</b> <b><img src=
+"../imgs/879465b7124d242a4dbc69603e4265245bd27cd6.png"></b>
+<b>,</b> <b>then there exist a subset of keys, having size</b>
+<i><b>n</b></i> <b>, in</b> <i><b>U</b></i> <b>such that all</b>
+<i><b>n</b></i> <b>keys hash to the same slot:</b></p>
+<p>• Consider the universe <i>U</i> of size greater than <i>nm</i>
+(i.e.<img src=
+"../imgs/b74be30c63335573f0d8a85bf3e9643adab185e8.png">) and a hash
+table <i>T</i> of size <i>m</i>.</p>
+<p>• The set <i>U</i> contains the keys from 1, 2,…,<img src=
+"../imgs/2c965019754150871a862dc31aba11cd4d76d2d8.png">,… and each
+key can be mapped to a slot into <i>T</i>.</p>
+<p>• Since hashing with chaining is using, if<img src=
+"../imgs/f78639f411ba0e04d23fc80bbfc7108e8d9f2144.png">, <img src=
+"../imgs/89cc0fd544804bb5b42ada53d3578a730358a3ce.png"> keys can be
+mapped into each slot of <i>T</i>.</p>
+<p>• But, since<img src=
+"../imgs/b74be30c63335573f0d8a85bf3e9643adab185e8.png">, there
+exist some sub sets of size <img src=
+"../imgs/45966710edb5d541246ed2413144b58084afbbff.png"> keys in
+<i>U</i>, such that all the keys of sub set can be mapped to same
+slot. Also there exist some sub sets of size <img src=
+"../imgs/89cc0fd544804bb5b42ada53d3578a730358a3ce.png">keys in
+<i>U</i>, such that all the keys can be mapped to same slot.</p>
+<p>• From the above, we can conclude that the set <i>U</i> has a
+set of size at least <img src=
+"../imgs/89cc0fd544804bb5b42ada53d3578a730358a3ce.png">, such that
+all the keys of the subset can be hash to same slot. That is, the
+number of keys mapped to same slot will be at least <i>n</i>.</p>
+<p>• Since the searching time for a key is proportional to number
+of keys inserted into the slot, the worst case search time for
+hashing with chaining will be <img src=
+"../imgs/95d4d293e2abfc196e50322e6fe890ffd8fc6d9f.png">.</p>
+<p><b>Hence if the</b> <i><b>n</b></i> <b>keys from the
+universe</b> <i><b>U</b></i> <b>with</b> <b><img src=
+"../imgs/879465b7124d242a4dbc69603e4265245bd27cd6.png"></b> <b>,
+are inserted into a hash table</b> <i><b>T</b></i> <b>of size</b>
+<i><b>m</b></i> <b>,</b> <b>the minimum number of keys that can be
+mapped into same slot is</b> <i><b>n</b></i> <b>and thus the
+searching time for hashing with chaining will be</b> <b><img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider that <i>n</i> keys are hashed into a hash table of size
+<i>m</i> using chaining and the length of the each chain is known.
+Length of the longest chain is <i>L</i>.</p>
+<p>To select a key uniformly at random means that each key in the
+hash table have equal probability to be selected.</p>
+<p>The following procedure selects a key uniformly at random an
+returns in time O(L(1+m/n)).</p>
+<p>• Repeat a loop until the procedure finds a non-empty bucket and
+return a key.</p>
+<p>• Select a bucket <i>b</i> , randomly.(i.e. <i>b</i>=
+0,1,…,m-1).</p>
+<p>• The selected bucket may contain a chain of length between 0 to
+<i>L.</i></p>
+<p>• From the selected bucket <i>b</i>, randomly select a key
+<i>k</i> from the chain (i.e. <i>k</i>=1, 2, 3…<i>L</i>).</p>
+<p>i)</p>
+<p>The time required to retrieve an element and to return from a
+chain of length <i>L</i> = <img src=
+"../imgs/59c282fd4c35ad50f9548ac441d92fe56148011a.png"></p>
+<p>ii)</p>
+<p>Expected number of elements per bucket is = <img src=
+"../imgs/9db503fa0f0f0ab408fcc875f6e6221accc62cda.png"></p>
+<p>The probability for each element in the chain with length
+<img src="../imgs/5c00dbe9325fb4a7bc58613d0b4c3981c6e4b528.png"> to
+be selected = <img src=
+"../imgs/aec47db7019b656783d5cc646fd98261926c9157.png"></p>
+<p>= <img src=
+"../imgs/5c00dbe9325fb4a7bc58613d0b4c3981c6e4b528.png"></p>
+<p>The probability for selecting and return any one of the elements
+in the chain with length <img src=
+"../imgs/5c00dbe9325fb4a7bc58613d0b4c3981c6e4b528.png"> = <img src=
+"../imgs/d5922e8c69616943160f34a04d226332239bbb69.png"></p>
+<p>Therefore the time required to pick a key randomly is =
+<img src="../imgs/e63c273b1ae9207cf2e67144ed242f2e79a0f84b.png"></p>
+<p>Hence, the total time taken by the procedure to select a key
+uniformly at random = <img src=
+"../imgs/59c282fd4c35ad50f9548ac441d92fe56148011a.png">+ <img src=
+"../imgs/e63c273b1ae9207cf2e67144ed242f2e79a0f84b.png"></p>
+<p>= <img src=
+"../imgs/d38677681d5bb561c3dc15dc5d792a479a0b1b26.png"></p>
+<p>= <img src=
+"../imgs/92cd45582c73ba65c03e693b5239ea610808c7c6.png"></p>
+<p>= <img src=
+"../imgs/613a2ffd87346a4b6fcc5f67dbbe018e041478d0.png"> Since,
+<img src="../imgs/6647e6df4daed8e15159dc964e01a70dd168a48f.png"> ;
+<img src="../imgs/0e2ff62f5c47816463f598bca293b41250faf5ff.png">
+.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

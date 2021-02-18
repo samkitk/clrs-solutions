@@ -1,0 +1,209 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 21.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/c87908c5602946813c4e3191b15366edea2e90b3.png">
+<hr>
+<img src="../imgs/cd41d02451a74003fe5f6938d2d04dcaa7b428da.png">
+<hr>
+<img src="../imgs/5245c4396bc03fb0aa3a6af209ddd82b2ad82296.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>CONNECTED-COMPONENTS procedure computes a graph in such a way
+that it puts all the vertices of the same component in its own set.
+.</p>
+<p>The algorithm for the CONNECTED-COMPONENTS is the following:</p>
+<p>CONNECTED-COMPONENTS (G)</p>
+<p>// <i>loop through each of the vertices in the Graph</i></p>
+<p>1. for vertex <img src=
+"../imgs/5933ccce569093c4108f9ec0db0d8de3297f0c18.png"></p>
+<p>// <i>create sets for each of the vertices in the Graph</i></p>
+<p>2. <img src=
+"../imgs/9211387e9229c87d5a2d13d356cc3c45b5895b8d.png"></p>
+<p>// <i>loop through each of the edges of the Graph</i></p>
+<p>3. for <img src=
+"../imgs/f67d41188bfb5e46fc295c5c1b72f684f03d95e7.png"></p>
+<p><i>// check if both the vertices of the edge are in the same set
+or not</i></p>
+<p>4. if <img src=
+"../imgs/fc5e86062694eb2b73f0b37e4a7632075b317fab.png"></p>
+<p><i>// if the vertices are not in the same set, then join the
+sets to form one set</i></p>
+<p>5. <img src=
+"../imgs/9033e38894f1c2f655de20a47f2e88d79441bdee.png"></p>
+<p>From the above algorithm it can be observed easily that every
+vertex that belongs to the graph at first gets its own set. And
+then for every edge, the two vertices which form the edge are
+brought into the same SET using the UNION procedure.</p>
+</div>
+<hr>
+<div class="answer">
+<p>There are two perspectives to this proof.</p>
+<p>After processing all the edges, the following two observations
+have to be seen:</p>
+<p>• If two vertices are in the same set, then they are part of a
+connected component.</p>
+<p>• If two vertices are part of a connected component, then they
+are in the same set.</p>
+<p><b>Proof that if two vertices are in the same set, then they are
+part of a connected component:</b></p>
+<p>Initially every vertex has its own set as seen from step 1 and 2
+in the above algorithm. At this stage, there is no edge between any
+of the vertices as no edge has been looked at yet.</p>
+<p>So, the property that if two vertices are in same set, then they
+are part of a connected component holds initially.</p>
+<p>Now after processing a single edge<img src=
+"../imgs/29920df19f2ab74aa6b7c822e3c753a780e53178.png"> the
+following is observed:</p>
+<p>The edges <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"> and
+<img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">
+are put into the same set implying that they are part of a
+connected component. This is true because they form an edge. So,
+the property under consideration holds true even after the
+processing of the first edge.</p>
+<p>Let’s assume that an edge<img src=
+"../imgs/24a4203c0dfb9c75322bb9009d3ce0c02df0f33c.png">.</p>
+<p>There are two possibilities of processing this edge:</p>
+<p>1.<img src=
+"../imgs/ba1bcf9f4092b61dafb5144f6bff96831d7377bb.png"> before
+taking the union but <img src=
+"../imgs/8c4b5e4bb4d6859b3ba92f0b5ef0f91c9cbdeb12.png">after taking
+the union. This is because before the edge was seen, it was not in
+the same set implying that it doesn’t belong to the same component
+but once the edge is seen, it is processed by UNION and now it is
+in the same set implying that it belongs to the same component.
+This is true because it is an edge which means that it must be part
+of the same component.</p>
+<p>2.<img src=
+"../imgs/8c4b5e4bb4d6859b3ba92f0b5ef0f91c9cbdeb12.png">before
+taking the union but <img src=
+"../imgs/ba1bcf9f4092b61dafb5144f6bff96831d7377bb.png">after taking
+the union. If this could happen, then it would show that two
+vertices that do not belong to the same connected component were
+once in the same set. But it cannot happen because all that is done
+during the processing of the edges is either UNION them or don’t
+union them. If UNION is done, then the previous status of already
+being in the same set doesn’t change. And if UNION is not done,
+then obviously nothing is done in this step and so the previous
+status of being in the same set must prevail.</p>
+<p>Thus, it cannot happen that two vertices which are in the same
+set are not in same connected component.</p>
+<p><b>So, it is shown that any two vertices that are in the same
+set are also in the same connected component.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof that if two vertices are in the same connected
+component, then they are part of the same set:</b></p>
+<p>Assume that <img src=
+"../imgs/e240dd1ea4c3fbdf1f173a7cbcabbbcbad58a4ad.png">are two
+vertices in the same connected component. There are other vertices
+in the connected component. Let them be denoted by <img src=
+"../imgs/792af20588c7b481f3234a9ae64e00a34e7e96de.png"> such that
+<img src="../imgs/15054a55e6299227b0009ee8e301e313b7eeccb1.png"> is
+an edge. So, each edge is processed one by one using<img src=
+"../imgs/42101a5700948001380223154a2ae64ed14708f4.png">. When each
+instance of this is processed, they get put into the same set
+because they are edges and the algorithm puts the vertices of every
+edge into the same set. Thus after all the edges in the connected
+component are processed, the following is observed:</p>
+<p><img src=
+"../imgs/7634b6ec9009af98648f95824761d55943984c12.png"></p>
+<p>So, the set of all the vertices in the above connected component
+is the same.</p>
+<p>This is because every adjacent vertex in a connected component
+is in the same set because they are an edge. And every other vertex
+in the connected component is adjacent to the initial vertex
+indirectly. And in turn all of them are in the same set.</p>
+<p><b>Thus, it is shown that any two vertices which are in the same
+connected component are in the same set.</b></p>
+<p><b>Hence, it is proved that after all the edges are processed by
+CONNECTED-COMPONENTS; two vertices are in the same connected
+component if and only if they are in the same set.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8fc5904e2c46de0ff91cbf18475c8e6175d4444e.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

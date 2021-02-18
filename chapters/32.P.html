@@ -1,0 +1,178 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 32.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer"><b>String matching based on repetition
+factors</b></div>
+<hr>
+<div class="answer">String matching is the method of knowing a
+given sequence, whether it constitutes some of the patterns or not.
+The string can be in any form may be sequence or in tree
+structures. String matching has a wide function in matching the
+location of a pattern within a token sequence, to replace the
+matching pattern with other token sequence.</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> To give an algorithm that takes the input as a
+pattern<img src=
+"../imgs/854eb75268eb9f3a6ff15855a0ad78ff8b005831.png">and
+calculates the value<img src=
+"../imgs/ae6699ba4dc1263e14dcb64c6c7a82897bd472f0.png"></p>
+<p>This can be done so using Naive approach.</p>
+<p>The algorithm is given below:</p>
+<p>1.<img src=
+"../imgs/cfef88438cdfb343a64a4f0b689e3bb07ee8f2d7.png">Text size
+();</p>
+<p>// inputs the text size</p>
+<p>2. <img src=
+"../imgs/49e2264ee5657a857e168de0eefa64e59841b507.png">Pattern size
+();</p>
+<p>//inputs the text pattern</p>
+<p>3. <b>for</b> <img src=
+"../imgs/f5d91e77d94543268daa6c904c1005edbcd8140c.png"></p>
+<p>4 {</p>
+<p>5. <b>if</b> (pattern <img src=
+"../imgs/e6e9846bfbd951d0a84fe29d25da082debee9272.png">=text
+<img src=
+"../imgs/ee5d2b308d4d42533da42d89703bb488683c856c.png">)</p>
+<p>add-result<img src=
+"../imgs/dbcfb2c6a973c6fd63420bc0e4049c7fc35e080e.png"></p>
+<p>6 }</p>
+The running of the algorithm would be <img src=
+"../imgs/7a4a66ab87552e7897d796d8529f1302155ee6ab.png"> This is
+because one power of <i>m</i> for loop that is “for” loop (worst
+case) and another for checking process of “if” statement because it
+is run up-to <i>m</i> in worst case scenario.</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Taking the pattern <img src=
+"../imgs/854eb75268eb9f3a6ff15855a0ad78ff8b005831.png"> and
+<img src="../imgs/9a569c5932b9dfbf8eef19196e041dbe59b0b3c7.png">is
+defined as <img src=
+"../imgs/0192f83955b75bdfb61064fcb0fc35918dbce96d.png"></p>
+<p>Taking the pattern involving one string:</p>
+<p><img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">Or <img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"></p>
+<p>When matching the above pattern, it iterates in one cycle
+maximum.</p>
+<p>Taking the pattern involving two strings:</p>
+<p><img src=
+"../imgs/9ac1150b213f98d8ae0ace2af7630f1208ff95c2.png"></p>
+<p>When trying to match the given string with the above pattern. It
+will match the string as single one or the text as a two together
+completing it in maximum one or two iteration.</p>
+<p>Taking the pattern of three strings:</p>
+<p><img src=
+"../imgs/617072d197ccf3121e2e7ed7e186406f432ec009.png"></p>
+<p>Again while trying to match the above string either it matches a
+single string or a few strings together or all might be same.</p>
+<p>Similarly, it can be done so for <img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">strings.</p>
+<p>Each time involving <img src=
+"../imgs/e103fbd93e596d1c619a319f41cb6fc96d567c53.png">time
+maximum;</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> To show that the repetition matcher algorithm
+given on page 1013 for pattern P in a text<img src=
+"../imgs/3e09ba466d00239b5de8dd81051c2483f1be73dc.png">, takes the
+time <img src=
+"../imgs/6ec59aa88373907ce5ce5f9dd2c5b30c0edba0eb.png"></p>
+<p>The given Galil-Seiferas algorithm consists of preprocessing
+phase and searching phase.</p>
+<p>The preprocessing phase of Galil-Seiferas algorithm involves
+finding decomposition <img src=
+"../imgs/b05fab077c5d060de06ccdb4dc69580a498dce23.png">of <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"> following
+that <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">has at least
+one prefix period and<img src=
+"../imgs/8bb6671101cb79e61949d2f1c3b77cb6a23e21d8.png"> the
+searching phase works in scanning the text for each occurrence of
+<img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">and<img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png"> checks
+immediately if <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">occurs just
+before <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">.</p>
+<p><img src="../imgs/0efa9c4bd74dbf2700cbff0a63f2b1347241166d.png"
+alt="C:\Users\Kaifi\Documents\Tiffs\2254-36-P6P.tif"></p>
+<p>While searching for <img src=
+"../imgs/0ddcd92cd245a5682008d31f3a749c36ac4a15c2.png">in<img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png">:</p>
+<p>a. If<img src=
+"../imgs/b6c9d1f3b6224f0a06b6df86d8620855aac5acb9.png"> matches
+with a shift of length <img src=
+"../imgs/1b90f2767908095b894293bb1ca3e6b0d12fe666.png">, the
+comparisons are continued with <img src=
+"../imgs/663bf8284f42636bf65b5537d252dce79dc4d4f4.png"></p>
+<p>b. Else if a mismatch occurs with <img src=
+"../imgs/f244ef6de5540179cc9850416c0ea114238c47b3.png">and
+<img src="../imgs/42cb57474581229931550bd6b6d1aab4a47b3d4d.png">
+then a shift of length <img src=
+"../imgs/1e3ebd5d3bd0284e6bd507e522c6918d28d317c2.png">can be done
+and comparisons are carried on with <img src=
+"../imgs/8cc6ad8b04b27b75c380fe4e870350398b4c26cd.png"></p>
+<p>The preprocessing will incur <img src=
+"../imgs/23a8402fac4038ead3394797a4caf61721328bda.png">times and
+the searching phase <img src=
+"../imgs/4a0876ace135a5120e2df229b0e408353335af07.png">times and it
+is noticed in line 3 of algorithm that algorithm runs for<img src=
+"../imgs/9a569c5932b9dfbf8eef19196e041dbe59b0b3c7.png">.</p>
+<p>The total process therefore will take <img src=
+"../imgs/6ec59aa88373907ce5ce5f9dd2c5b30c0edba0eb.png">time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,178 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 6.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8393ae1b8472cef6816ec0a2b411c7c02c1ec73d.png">
+<hr>
+<img src="../imgs/4362940361428c127153047371e0fd9e8c9885df.png">
+<hr>
+<img src="../imgs/a62ce9514df0b18e9d63df063ee37b6ec3b52933.png">
+<hr>
+<img src="../imgs/7a9c3080edc450124c67c602e5d2b7ca4719205e.png">
+<hr>
+<img src="../imgs/18ce5e77f17066787c695cc853edd66106188829.png">
+<hr>
+<img src="../imgs/19257e648d096130a8b5b97f015d630df29ce9b3.png">
+<hr>
+<img src="../imgs/326a2bc4e168faf269ba90b0dd8d52aff0d50da1.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/e1e1d0772589c5794f4d710f2e21860cbcd3d81c.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Heap data structure is created on the concept of complete binary
+tree. The height of the tree can be calculated as the height of the
+root. The height of the node in a tree is referred to the number of
+edges on the simple longest downward path from the node to the
+leaf.</p>
+<p>The heap of size <i>n</i> with the height <i>h</i> has the
+following characteristics:</p>
+<p>• The height of heap is <i>log n</i>.</p>
+<p>• The total number of leaves in the heap are <i>n/2</i>.</p>
+<p>• The number of nodes of the height <i>h</i> is less than equal
+to<img src=
+"../imgs/b6c41490c6be2f715cef50c4d4676852a6cfd25e.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Use induction method to show that there are the at most
+<img src="../imgs/b420a2d48cbbf1080c46155709ff236979ce9f20.png">
+nodes with height h in any kind of heap of <i>n</i> - element.</p>
+<p>For the heap size of <i>n</i> which is greater than zero, the
+number of leaves is <img src=
+"../imgs/2c62e3078def60c75d159ba13b3b8456e9a94f8e.png">, assume
+that tree is nearly a complete binary tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Base case:</b></p>
+<p>• The number of leaves at the height of <i>h</i> is equal to
+zero or the number of leaves in the heap of <i>n</i> element at
+height is zero.</p>
+<p>• The parent of last node will be node at <img src=
+"../imgs/8ea75b78f5bec0e2d182d0df8a5875e167743396.png">, it is the
+last parent for the heap. It means, after this node all nodes will
+be counted as leaves.</p>
+<p>• Hence the count of number of leaves is equal to the <img src=
+"../imgs/8ea75b78f5bec0e2d182d0df8a5875e167743396.png">, which
+shows that the base case is completely true.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now suppose that at the height of <img src=
+"../imgs/eeaf87187bd08cb08809aca996899a1b704eda37.png"> number of
+nodes is given by formula<img src=
+"../imgs/d5957066a7bf7523280649eef580ef26592b6f5e.png">.</p>
+<p>If all the leaves are removed from the existing heap, nodes
+which are placed at the height 1 will be counted as the leaves in
+new heap and have the zero height.</p>
+<p>In the same way all nodes for the new one tree will have one
+less than height from the old height. Use it in the induction
+step.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Induction:</b></p>
+<p>• Consider that tree <i>T</i><sub>old</sub> of <i>n</i>-node,
+which have the <i>N</i><sub>h</sub> number of node at the height of
+<i>h</i> and <i>T</i><sub>new</sub> is the formed tree after
+removing the leaves from <i>T</i><sub>old</sub> tree. The tree
+<i>T</i><sub>new</sub> has the nodes as: <img src=
+"../imgs/9de79664d35f1a150b801f57be94aeb83a92998e.png">.</p>
+<p>• The number of nodes at the height of h in
+<i>T</i><sub>old</sub> would be same at the height of the <img src=
+"../imgs/eeaf87187bd08cb08809aca996899a1b704eda37.png"> in the
+<i>T</i><sub>new</sub> tree. Assume that <img src=
+"../imgs/c5a43a7374c4e241f1dad48246c21205de95c109.png"> represents
+the number of node at the height of <img src=
+"../imgs/eeaf87187bd08cb08809aca996899a1b704eda37.png"> in
+<i>T</i><sub>new</sub> tree.</p>
+<p><img src=
+"../imgs/5223e7b9e92d2e975e02c9737ae8524cec1ad2d9.png"></p>
+<p><b>Hence it is prove that there are the at most</b> <b><img src=
+"../imgs/b420a2d48cbbf1080c46155709ff236979ce9f20.png"></b>
+<b>nodes with height</b> <i><b>h</b></i> <b>in any kind of heap
+of</b> <i><b>n</b></i> <b>-element.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,253 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 12.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/9c20fdbeb8ca6398bbdcc94be37a423b0f919a70.png">
+<hr>
+<img src="../imgs/c07a6954d146c447e68e58f19c9b93f3bc5fef9e.png">
+<hr>
+<img src="../imgs/990d67cf2ef5f84b50a33ecde10bc019a6400944.png">
+<hr>
+<img src="../imgs/a5dc6f0325340d467f37535dd25dca6f72fa85c1.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/83c7c01e1853c8edaaf08abb788a4afbb8e5f834.png">
+<hr>
+<img src="../imgs/d831468fd7e0acb9e58e6d628d20a84a82656536.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The following is the non-recursive algorithm to perform in-order
+tree traversal on a binary search tree. The following algorithm
+uses a stack as an auxiliary data structure in order to accomplish
+the in-order transversal.</p>
+<p>INORDER-TREE-TRAVERSE (<i>T</i>)</p>
+<p>//initialize an empty Stack</p>
+<p>1. <i>A</i>= <i>Empty Stack</i>;</p>
+<p>//put the root of tree into current node variable.</p>
+<p>2. <i>Crnt_node</i> =<i>T.root</i></p>
+<p>// while loop is used to check the value of current node.</p>
+<p>3. <b>While</b> <i>Crnt_node</i> != <i>NIL</i> <b>or</b>
+<i>Stack-Empty</i> (<i>A</i>)= <i>FALSE</i></p>
+<p>//if the current node value is not null</p>
+<p>4. <b>if</b> <i>Crnt_node</i> != <i>NIL</i> then</p>
+<p>//insert the value of current node into stack <i>A</i></p>
+<p>5. PUSH (<i>A</i>, <i>Crnt_node</i>);</p>
+<p>// store the left child of tree into current node</p>
+<p>6. <i>Crnt_node</i>=<i>Crnt_node</i>. <i>left</i></p>
+<p>7. <b>else</b></p>
+<p>// retrieve the element from stack and store it into current
+node.</p>
+<p><i>Crnt_node</i> =POP (<i>A</i>)</p>
+<p>//display the current value</p>
+<p>8. Display (<i>Crnt_node</i>)</p>
+<p>//store the right child of tree into current node.</p>
+<p>9. <i>Crnt_node</i> = <i>Crnt_node</i>. <i>right</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of Algorithm:</b></p>
+<p>• The algorithm starts from the <i>Crnt_node</i>, which contains
+the root node initially.</p>
+<p>• In line 3, while loop is used to traverse the left nodes (left
+children) from the root.</p>
+<p>• In line 4-6, <i>Crnt_node</i> is pushed into stack if the
+<i>Crnt_node</i> is not <i>NIL</i>.</p>
+<p>• In line 7-9, if <i>Crnt_node</i> is <i>NIL</i> ,
+<i>Crnt_node</i> is displayed and starts traversing right children
+by updating <i>Crnt_node</i> with its right child.</p>
+<p>• While loop exits when the <i>Crnt_node</i> is <i>NIL</i> and
+the stack is empty.</p>
+<p><b>Since the above algorithm traversing all the nodes in the
+binary search tree, if</b> <i><b>n</b></i> <b>is the number of
+nodes in the binary search tree, the above algorithm takes</b>
+<b><img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png"></b> <b>time
+to traverse.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The following is the non-recursive algorithm to perform in-order
+tree traversal on a binary search tree without using stack as an
+auxiliary data structure, but using a pointer called
+previous(<i>Prev</i>). Previous pointer is used to compare with
+current node.</p>
+<p>INORDER-TREE-TRAVERSE (<i>T</i>)</p>
+<p>//put the root of tree into current node variable.</p>
+<p>1. <i>Crnt_node=T</i>.<i>root</i></p>
+<p>// while loop is used to check the value of current node.</p>
+<p>2. <b>While</b> <i>crnt_node</i> != <i>NIL</i></p>
+<p>//if the current node value is not null</p>
+<p>3. <b>if</b> <i>crnt_node</i>.<i>left</i> = <i>NIL</i></p>
+<p>//display the current value</p>
+<p>4. Display (<i>Crnt_node</i>)</p>
+<p>//add the right child of tree into current node variable</p>
+<p>5. <i>Crnt_node</i> = <i>Crnt_node</i>. <i>right</i></p>
+<p>6. <b>else</b></p>
+<p>//add the left child of current node into previous node
+variable.</p>
+<p>7. <i>Prvs_node</i> = <i>Crnt_node</i>. <i>left</i></p>
+<p>//while loop is used to check the value of previous node and
+compare previous</p>
+<p>//node with current node</p>
+<p>8. <b>While</b> <i>Prvs_node</i> != <i>NIL</i> <b>and</b>
+<i>Prvs_node.right</i> != <i>Crnt_node</i></p>
+<p>//add right child of previous node into previous node
+variable</p>
+<p>9. <i>Prvs_node</i> =<i>Prvs_node.right</i></p>
+<p>//check the value of right child of previous node.</p>
+<p>10. <b>if</b> <i>Prvs_node.right</i> = <i>NIL</i></p>
+<p>//store the current node value into previous node</p>
+<p>11. <i>Prvs_node.right</i> =<i>Crnt_node</i></p>
+<p>12. <i>Crnt_node</i> = <i>Crnt_node.left</i></p>
+<p>13. <b>else</b></p>
+<p>//put null into right child of previous node</p>
+<p>14. <i>Prvs_node.right</i> = <i>NIL</i></p>
+<p>15. Display (<i>Crnt_node</i>)</p>
+<p>//store the right child of tree into current node.</p>
+<p>16. <i>Crnt_node</i> = <i>Crnt_node</i>. <i>right</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of Algorithm:</b></p>
+<p>• In line 1, algorithm initializes current node with root.</p>
+<p>• in line 2, “While” loop runs until the C<i>rnt_node</i> is
+NIL<i>.</i></p>
+<p>• In line 3 -7, if left child of current node is <i>NIL,</i>
+then the <i>Crnt_node</i> is displayed and updates the
+<i>Crnt_node</i> with the right child of the current node.
+Otherwise updates the <i>Prvs_node</i> with the left child of
+current node.</p>
+<p>• in line 8, “While” loop is used to find the previous node(or
+predecessor) to <i>Crnt_node</i>.</p>
+<p>• In line 10-12, if the right child of previous node is
+<i>NIL,</i> then assign current node as right child of previous
+node and assign left child of the current node to <i>Crnt_node</i>
+variable.</p>
+<p>• In line 13-16, the tree is restored to original .</p>
+<p><b>The above algorithm also takes</b> <b><img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png"></b> <b>time
+to traverse the binary search tree with</b> <i><b>n</b></i>
+<b>nodes.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/761a9047ba5b5303f9e2f96b249f08f38a342b10.png">
+<hr>
+<img src="../imgs/827690434f45e753a93e003ffef15b531a898770.png">
+<hr>
+<img src="../imgs/ac1c3edd6b825c2b5d7d3c0ede994d27ee274110.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8b6a7477936e717f5d3da241dcfc27f78d1728f9.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

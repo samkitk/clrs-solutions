@@ -1,0 +1,240 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 2.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The general formula of polynomial function is p(n)=<img src=
+"../imgs/e81219bdf5d02d031b987eed18ab7c3f6d59b5c3.png"> where
+<img src="../imgs/b2ececeb4139e176ef614c5670f2e7e74e735d98.png"> is
+constant and <img src=
+"../imgs/b975596db6b01ff4a5d87fd555785f3f5614a1df.png">&gt;0.</p>
+<p>• In order to express the polynomial function in terms of
+<img src="../imgs/9ef64217384e6a886c937c748723b6f4a4e3b92e.png">
+notation, identify the term, which is having the highest power and
+ignore the coefficients of the term.</p>
+<p>• The highest term in the general formula of polynomial function
+is <img src=
+"../imgs/722f80f2526c4f1134a6271f1923fd5a192fecd8.png">.</p>
+<p>• Therefore, the <img src=
+"../imgs/9ef64217384e6a886c937c748723b6f4a4e3b92e.png"> notation of
+general polynomial function will be <img src=
+"../imgs/ca901e9e82269ca67cfebae2b1dab3437284b404.png"></p>
+<p>The given polynomial function is <img src=
+"../imgs/0fda80c306eaa1c1cbbc4e8d1da314f34d732566.png">.</p>
+<p>• The terms in the polynomial are <img src=
+"../imgs/58d07e497fe0050861c60a3a598065a92752f0e6.png">,<img src=
+"../imgs/a9d5e7c79e78fc17b7c9074c77e8316c4dfcf0b1.png">,<img src=
+"../imgs/a4c52e092f5af0f20b5ae74804280cdb4f96a2f6.png"> and 3.</p>
+<p>• The highest term in the given polynomial function is <img src=
+"../imgs/58d07e497fe0050861c60a3a598065a92752f0e6.png">.</p>
+<p>• Therefore, the <img src=
+"../imgs/9ef64217384e6a886c937c748723b6f4a4e3b92e.png"> notation of
+given polynomial function</p>
+<p><img src=
+"../imgs/98da9fab3387ce859c198e7ab84b103340afb358.png"></p>
+<p>Hence, the <img src=
+"../imgs/9ef64217384e6a886c937c748723b6f4a4e3b92e.png"> notation of
+the function <img src=
+"../imgs/0fda80c306eaa1c1cbbc4e8d1da314f34d732566.png"> is
+<img src="../imgs/1d46f262f968d061793bb4f221dd4dda065384d4.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Loop invariants:</b></p>
+<p>After each iteration, the element at the position <i>index</i>
+is properly placed. The array is divided into two subarrays.</p>
+<p>• The first subarray <i>A [1...index]</i> will contain the
+<i>index</i> smallest elements arranged in increasing order.</p>
+<p>• The second subarray <i>A [index</i>+1<i>...n]</i> will contain
+the elements to be sorted.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Reason to run only for first</b> <i><b>n-1</b></i>
+<b>elements:</b></p>
+<p>• In the first iteration, the smallest element in the list
+<i>A[</i>1<i>..n]</i> is found and is exchanged with the element at
+first position.</p>
+<p>• In the second iteration, the smallest element in the list
+<i>A[2..n]</i> is found and is exchanged with the element at second
+position.</p>
+<p>• In the third iteration, the smallest element in the list
+<i>A[2..n]</i> is found and is exchanged with the element at third
+position.</p>
+<p>• The process continues for all the elements until there are
+only 2 elements left to be sorted.</p>
+<p>• In the <i>n-1</i> iteration, there will be only two elements
+in the list. The smallest element in the list <i>A [n-1, n]</i> is
+found and is exchanged with the element at <i>n-1</i> position.</p>
+<p>• The last element <i>A[n]</i> is already placed in its proper
+position. Therefore, there is no necessity for executing the
+loop.</p>
+<p>Hence, the loop runs for first <i>n-1</i> elements rather than
+for all <i>n</i> elements.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Best-case and worst-case running times:</b></p>
+<p>In selection sort algorithm, the entire unsorted list must be
+searched to find the minimum element.</p>
+<p>In the <img src=
+"../imgs/70a1850f727d8b4e03d3768497b65838c509752c.png"> iteration,
+the inner loop executes exactly <img src=
+"../imgs/5bd47bbf2278b632d1a9810c40342ccb4a91b24a.png"> times, and
+on each such execution exactly one array comparison is
+performed.</p>
+<p>Thus, in all cases (best, worst, average) the number of
+comparisons done by Selection Sort is <img src=
+"../imgs/8444050f4b5f9306cec37a859cfda2cd4123c9ed.png"></p>
+<p><img src=
+"../imgs/7041ec8f15d874fd1712edc2737383377a6f6df2.png"></p>
+<p>Therefore, the run time of Selection Sort is<img src=
+"../imgs/89968a3180530867e0c19c9f106865f616581034.png"> in all
+cases.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Pseudo code for Linear Search</b></p>
+<p>// pseudo code for linear search scans the sequence for <i>v</i>
+using a loop invariant:</p>
+<p><b>Input:</b> A sequence of n numbers <img src=
+"../imgs/15f419636ddc284486a56fde7bb0a5d0f2abfa3f.png"> and a value
+<i>v</i>.</p>
+<p><b>Output:</b> An index <i>i</i> such that <i>v = A[i]</i> or
+the special <i>NIL</i> if <i>v</i> does not appear in <i>A</i>.</p>
+<p><b>Linear Search</b> <i><b>(A, v)</b></i></p>
+<p>1. <b>for</b> <i>i =1 to n</i></p>
+<p>2. {</p>
+<p>3 <b>if</b> <i>A[i] = v</i></p>
+<p>4. <b>return</b> <i>i</i></p>
+<p><i>5.</i> }</p>
+<p>6. <b>return</b> <i>NIL</i></p>
+<p><b>Average case:</b></p>
+<p>Average case occurs when the element to be searched is found in
+the array. In such a case, the linear search will search through
+half of the array.</p>
+<p>Thus, the number of elements that are searched on an average is
+<b>n/2</b>.</p>
+<p>Hence, the running time of linear search in the average case is
+<img src=
+"../imgs/95d4d293e2abfc196e50322e6fe890ffd8fc6d9f.png">.</p>
+<p><b>Worst Case:</b></p>
+<p>Worst case occurs when the element to be searched is the last
+element in the array or may not be there in the array. In such a
+case, the entire array needs to be searched.</p>
+<p>Thus, the number of elements that are searched in a worst case
+is <b>n</b>.</p>
+<p>Hence, the running time of linear search in the worst case is
+<img src=
+"../imgs/95d4d293e2abfc196e50322e6fe890ffd8fc6d9f.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>To have a good best-case running time, choose a particular
+instance of the input and pre-compute its output.</p>
+<p>• In the beginning of the algorithm, first check if the given
+input is same as the input for which the output has been
+pre-computed.</p>
+<p>• If so, just provide the pre-computed output as output.</p>
+<p>This will make the algorithm to have good best-case running
+time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

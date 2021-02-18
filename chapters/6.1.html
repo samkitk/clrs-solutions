@@ -1,0 +1,369 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 6.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/3e2d2afef6808901ec47752966d1755afef25516.png">
+<hr>
+<img src="../imgs/43bf250bc61539e604b613aa3b67f779f605d684.png">
+<hr>
+<img src="../imgs/a9dd31882ddea68b6ab49fdc7e6beba989c038dd.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/7cb1be83dc087dde80245f0b21c3765a42e2e4f4.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A max-heap is an array of elements such that the max-heap can be
+viewed as a nearly complete binary tree.</p>
+<p>Properties of max-heap tree:</p>
+<p>• If <img src=
+"../imgs/ede5f1d490a320a5e4d46a2beddb170e7a54d722.png"> is the
+max-heap array, then root of the max-heap is stored at
+<i>A</i>[1].</p>
+<p>• Parent, left child and right child of a node ‘<i>i’</i> can be
+obtained by indexes<img src=
+"../imgs/8158cc84bbae5b2939b4fac55719565e3f63c1a6.png">, <img src=
+"../imgs/df42fc9620b8f75165c90c40eacc46d3df5e1010.png">and
+<img src="../imgs/b8849f8e6fac469d3ca37e822c5790803dc55700.png">
+respectively.</p>
+<p>• Max-heap property ensures that parent node must be larger than
+or equal to its children. i.e. <img src=
+"../imgs/fef95a6bfb5de94ec6d74d274eefc9fd763ecd44.png">.</p>
+<p>• In the array<img src=
+"../imgs/ede5f1d490a320a5e4d46a2beddb170e7a54d722.png">, every node
+of index <img src=
+"../imgs/3aec6c7a54af9013ea7c8cd432c4f74eba12786c.png">is a leaf
+node in the max-heap tree and every node of index <img src=
+"../imgs/b734a0ed2b9022c8d815db8cd7871bc88a15761c.png">is an
+internal node of max-heap tree.</p>
+<p>Now it is to be proved that root node of any sub tree of
+max-heap contains the largest value in that sub tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Consider the following proof that shows that root node of any
+sub tree of max-heap contains the largest value in that sub
+tree:</b></p>
+<p><b>Base case ( if a node is leaf node):</b></p>
+<p>• Consider a node <i>L</i> such that<img src=
+"../imgs/df001a078e61e287a926c6dbab4006bfd4567182.png">.</p>
+<p>• That is, <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png"> is a leaf
+node of a max-heap.</p>
+<p>• Since <i>L</i> is the sub-tree rooted at <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">, just
+<i>L</i> contains single node.</p>
+<p>• Thus, obviously node<img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">contains the
+largest value in that sub-tree.</p>
+<p><b>Inductive case (if a node is an internal node):</b></p>
+<p>• Consider a node <i>L</i> such that<img src=
+"../imgs/40c8ed491755432395e724a18e9e8efaa2f1904e.png">.</p>
+<p>• That is, <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">is an
+internal node of a max-heap.</p>
+<p>• Assume that <img src=
+"../imgs/15470f4801d713948de075c92739927d51485b3d.png">such
+that<img src=
+"../imgs/2631a99b8c225485d6d03ecb2e64e6d3a1982b0b.png">, <img src=
+"../imgs/978780e8924714438fcca7564e0c694d0321df4a.png">is true.
+That is, these node are leaf nodes and they have parent nodes.</p>
+<p>• Also, since these nodes are leaf nodes(sub trees having single
+node), these nodes contain the largest value occurring anywhere in
+that sub-tree.</p>
+<p>Now consider the node<img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">:</p>
+<p>• <img src=
+"../imgs/47c6c97eb6bdf7151ddd2f102b0cdfdcfca626b2.png">and
+<img src="../imgs/f22791fc448286c29dd1eaa379eec89706cfc6f2.png">are
+the left and right child of node <i>L</i> respectively.</p>
+<p>• Since 2<i>L</i> and 2<i>L</i>+1 are child nodes, they contain
+the largest value, by the inductive hypothesis that for <img src=
+"../imgs/2631a99b8c225485d6d03ecb2e64e6d3a1982b0b.png">, <img src=
+"../imgs/978780e8924714438fcca7564e0c694d0321df4a.png">is true.</p>
+<p>• Now, because of the max-heap property, parent node <i>L</i>
+must contain larger value than the value that the left child
+2<i>L</i> and right child 2<i>L</i>+1 have.</p>
+<p>• So, it can be concluded that the node <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">contains the
+largest value in the sub-tree rooted at<img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">.</p>
+<p><b>Therefore it is proved that root node of any sub tree of
+max-heap contains the largest value</b> <b>occurring anywhere in
+that subtree.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In the max-heap, the maximum element will be the root node. In
+other words, root element in the max-heap is greater than or equal
+to the elements of its children.</p>
+<p>• If the elements in the max-heap are distinct, then root
+element in the max-heap will be greater than the elements of its
+children.</p>
+<p>• All the smaller elements will be in the leaf nodes.</p>
+<p>• The smallest element resides in one of the leaf nodes of the
+max-heap.</p>
+<p>Assume that the number of elements in a max-heap is <i>n</i>. As
+all the elements are distinct, the indices of the elements start
+from 1 and end at <i>n</i>. Then the indices of the leaf nodes are
+starting from <img src=
+"../imgs/6b6b65e1de53fae6995f162cc797d25a61a570c3.png"> and ending
+with <i>n</i>. Therefore, the index of the smallest in the max-heap
+lies in the indices <img src=
+"../imgs/6b6b65e1de53fae6995f162cc797d25a61a570c3.png"> and
+<i>n</i>.</p>
+<p><b>Example of a max-heap:</b></p>
+<p><img src="../imgs/a29a043b136f39e769f7b1c98fa46d7f5ab1a0bc.png"
+alt="Picture 10"></p>
+<p>In the above example, the maximum element is 15 which is the
+root element and the smallest element is 5 which is one among the
+leaf nodes.</p>
+<p><b>Therefore, the smallest element in the max-heap exists in one
+of the leaf nodes of the max-heap.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In a sorted array, say A, the element at index <i>i</i> will be
+less than or equal to the element at index <i>j</i> for
+<i>i</i>&lt;<i>j</i>. That is <img src=
+"../imgs/6799a7a4388f53caf799c6ca7b8ef05bc7e48a51.png"> for
+<i>i</i>&lt;<i>j</i>.</p>
+<p>If a sorted array is represented as min-heap, then the node at
+index <i>i</i> will be the parent node and nodes at index <img src=
+"../imgs/4330cf8ae69a507db92021de60bda1eef61452c4.png">
+and<img src="../imgs/cb5f408216e9cb34855db08cbd57a24d38d5b44a.png">
+will be its children. Both the children are greater than the parent
+and hence they satisfy the property of min-heap.</p>
+<p>Hence, the array that is in a sorted order is a min-heap.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Following is an example of sorted array:</p>
+<p><img src="../imgs/b43cd03cd4025e77b18ae6079d0f8c60df3f7a19.png"
+alt="Picture 25"></p>
+<p>Min-heap for the sorted array is shown below:</p>
+<p><img src="../imgs/a8274fd61359c66d3cc60af7b30d0247318e4ed9.png"
+alt="Picture 1"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/5c698f3f5da89088b765c186971d5e30f70e82c4.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Heap:</b></p>
+<p>Heap data structure is a tree and it is generally represented by
+an array <i>X</i> where value for each node of heap is represented
+as an element of <i>X</i>.</p>
+<p>• Every node in the heap must be satisfying the heap property.
+If the heap is max-heap, the value of every node must be less than
+or equal to its parent’s value. If the heap is min-heap, the value
+of every node must be greater than or equal to the value of its
+parent’s value.</p>
+<p>• Always <i>X</i> [1] be the root of the tree<i>.</i></p>
+<p>• If the parent is stored at index <i>i</i>, then the left child
+will be stored at index <i>2i.</i></p>
+<p>• If the parent is stored at index <i>i</i>, then the right
+child will be stored at index <i>2i +1</i>.</p>
+<p>• Suppose the root is at index <i>i,</i> then the children for
+this root node will be at 2<i>i + 1, 2i + 2…..2i + n.</i> where
+<i>n</i> is the number of elements in the heap.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Indexes of leaf nodes in the heap:</b></p>
+<p>• Consider an <i>n</i>-element heap. Now it is to be proved that
+the leaves of the <i>n</i>-element heap are stored in the array
+from indexes <img src=
+"../imgs/e59b6f6642fa419c0ba098e7bd9e9197983d3e7b.png">to<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.</p>
+<p>• Assume that a non-leaf node is stored at index<img src=
+"../imgs/e59b6f6642fa419c0ba098e7bd9e9197983d3e7b.png">. Now check
+the index of left child of non-leaf node indexed at<img src=
+"../imgs/e59b6f6642fa419c0ba098e7bd9e9197983d3e7b.png">.</p>
+<p>• From the definition of the heap , LEFT(<i>i</i>)=
+2<i>i</i></p>
+<p><img src=
+"../imgs/fc42b7bf5c9e5ba4cbdd5da27bf5c062d4d0c42a.png"></p>
+<p>• From the definition of the heap , RIGHT(<i>i</i>)=
+2<i>i</i>+1</p>
+<p><img src=
+"../imgs/c241468f948428acaf1ed7883cb015a1731c4183.png"></p>
+<p>• It is observed that, if a non-leaf node is stored at <img src=
+"../imgs/e59b6f6642fa419c0ba098e7bd9e9197983d3e7b.png"> or index
+greater than <img src=
+"../imgs/e59b6f6642fa419c0ba098e7bd9e9197983d3e7b.png">, then the
+index of its left child and right exceed the total number of
+elements(<i>n</i>). That is the indexes are out of bounds of the
+array. Thus this is against the definition of heap.</p>
+<p>• Therefore, non-leaf nodes can be stored only up to
+index<img src=
+"../imgs/392498bd08dd1b06709a0ee930ab387cef074a74.png">. Thus the
+elements from the indexes <img src=
+"../imgs/639347ab95530d200583962359e6a05a797accbe.png">to <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">are leaf
+nodes.</p>
+<p><b>So, the leaves of the</b> <i><b>n</b></i> <b>-element heap,
+in array representation, are indexed by</b> <b>the</b> <b><img src=
+"../imgs/3fd01de744550cfdb37475140f6f788ec3c69b9d.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>Consider the following 10-element heap and its array
+representation</p>
+<p><img src="../imgs/b9954100abbc3d1f052c802f1304c2a9a994e4a7.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\18.9.2015\Kuldeep 2254\1.png"></p>
+<p><img src="../imgs/6c3c4c7c814d1abc242f360b565f23fe7f8dff35.png"
+alt="Picture 2"></p>
+<p>• Where <i>n</i>=10</p>
+<p>• Values of non-leaf nodes: 16,14,10,8,7 (indexed from 1 to
+5)</p>
+<p>• Values of leaf nodes: 9, 3, 2, 4, 1 (indexed from 6 to
+10).</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

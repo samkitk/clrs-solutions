@@ -1,0 +1,765 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 4.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Maximum sub-array problem on array of negative values</b></p>
+<p>The maximum sub-array problem is to find the sub-array in an
+array of positive and negative integers, where the sum of the
+elements of the sub-array is the maximum sum.</p>
+<p>For example, consider the array of values<img src=
+"../imgs/1ff4687c73b0ec09ad8cbd5aca43fae1741c9e82.png">. The
+contiguous sub-array is <img src=
+"../imgs/6959994f74d223f7f00875f8b758215f1758169f.png"> with the
+largest sum as 7.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Assume that the array <i>A</i> contains all negative
+values.</p>
+<p>• In each recursive call, FIND-MAXIMUM-SUBARRAY calls
+FIND-MAX-CROSSING SUBARRAY.</p>
+<p>• FIND-MAX-CROSSING SUBARRAY returns the sum of two sub
+arrays(<i>cross- sum</i>).</p>
+<p>• Since all the values in <i>A</i> are negative,
+FIND-MAX-CROSSING SUBARRAY always returns a <i>cross-sum</i> (a
+negative value) that is less than the largest negative value in
+<i>A</i>.</p>
+<p>• In lines 7-11, FIND-MAXIMUM-SUBARRAY compares the
+<i>left-sum</i> and <i>right-sum</i> with <i>cross-sum</i> and
+returns corresponding three values.</p>
+<p>• Since the largest negative value of <i>A</i> is always greater
+than the <i>cross-sum</i>, ultimately FIND-MAXIMUM-SUBARRAY returns
+the largest negative value of <i>A</i> and index of the largest
+negative value in <i>A</i>.</p>
+<p><b>Therefore, if all the elements of</b> <i><b>A</b></i> <b>are
+negative, then FIND-MAXIMUM-SUBARRAY returns the largest negative
+value in</b> <i><b>A</b></i> <b>and its index.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Maximum sub-array problem</b></p>
+<p>The maximum sub-array problem is to find the sub-array in an
+array of positive and negative integers, whose elements have the
+maximum sum.</p>
+<p>For example, consider the array of values<img src=
+"../imgs/1ff4687c73b0ec09ad8cbd5aca43fae1741c9e82.png">. The
+contiguous sub-array is <img src=
+"../imgs/6959994f74d223f7f00875f8b758215f1758169f.png"> with the
+largest sum as 7.</p>
+<p>In brute force approach, generate all the possible subarrays
+combinations and select the one with maximum sum. An array of n
+numbers has <img src=
+"../imgs/5e528bde20f067c1d7d317f01856dedff3d6cbbc.png">
+subarrays.</p>
+<p><b>Pseudo code for the brute-force method</b></p>
+<p><b>Input:</b> An array <i>A</i>[1..<i>n</i>] of numbers.</p>
+<p><b>Output:</b> The subarray in an array of <i>n</i> values whose
+elements have the maximum sum.</p>
+<p><i>S</i>0 ← 0 // the initial prefix sum</p>
+<p>for <i>i</i> ← 1 to <i>n</i> do</p>
+<p><i>Si</i> ← <i>Si−1</i> + <i>A</i>[<i>i</i>]</p>
+<p><i>max</i> ←0 // initializing maximum to 0</p>
+<p>// to find the maximum so far</p>
+<p>for <i>i</i> ← 1 to <i>n</i> do</p>
+<p>for <i>j</i> ← <i>i</i> to <i>n</i> do</p>
+<p>if <img src=
+"../imgs/49ceb69676984aa71ad284133650c48c78937e83.png"> then</p>
+<p><img src=
+"../imgs/e9efd2d8917e31b600dd9a6394c8434a0c9507f7.png"></p>
+<p>return <i>max</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the running time of the algorithm</b></p>
+<p>The algorithm examines all consecutive range of elements
+<i>A</i>[<i>i..j</i>]. For each range, it computes the sum in that
+range, and update the maximum <i>max</i> if necessary. The number
+of operations is,</p>
+<p><img src=
+"../imgs/83eca1eaa496c4524cb52b17816f33841282ad54.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The brute-force and recursive algorithms for the maximum
+sub-array problem</b></p>
+<p>Consider an example of share market. Suppose a person wants to
+buy the shares at least possible price and sell them at best
+possible price to gain maximum profit. But speculating the minimum
+and maximum price would not be an easy task for a person. This kind
+of problems can be solved using the maximum sub array approach.</p>
+<p>This approach finds out a subarray of a given array that holds
+consecutive elements of arrayin it and has the largest sum of all
+the sub arrays in the array. The following algorithms namely,
+recursive divide and conquer, Brute-Forceare two different ways of
+implementing the above said concept. Maximum sub array approach
+would find out the optimal solution for the problems like the one
+said above.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Brute Force Approach</b></p>
+<p>The algorithm below finds the maximum possible sub array of the
+array <i>A</i>. Array <i>P</i> holds the maximum possible sum in
+the first index and starts and end index of the sub-array with
+maximum sum in the second and third index.</p>
+<p>BRUTE-FORCE-ALGORITHM(<i>A</i>, <i>P</i>,<i>n</i>)</p>
+<p>//initialize the sum</p>
+<p>1. <i>sum</i>:=0</p>
+<p>//loop to check the sub-arrays</p>
+<p>2. <b>for</b> <i>i</i>=0 <b>to</b> <i>n</i>–1</p>
+<p>3. <b>for</b> <i>j</i>=<i>i</i>+1 <b>to</b> <i>n</i></p>
+<p>4. <i>P</i>[0]+= <i>A</i>[<i>j</i>]</p>
+<p>//check if the sub array sum is more than the previous sum</p>
+<p>5. <b>if</b>(<i>P</i>[0]&gt;<i>sum</i>)</p>
+<p>//save the new difference</p>
+<p>6. <i>sum</i>=<i>P</i>[0]</p>
+<p>//save the buying date</p>
+<p>7. <i>P</i>[1]=<i>i</i></p>
+<p>//save the selling date</p>
+<p>8. <i>P</i>[2]=<i>j</i></p>
+<p>//return the statistics</p>
+<p>9. <b>return</b> <i>P</i></p>
+<p>The brute force algorithm makes the permutation of every single
+pair of buying and selling prices including the fact that the
+selling date cannot be earlier or same as the buying date.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, the complexity of this algorithm would depend on the size
+of input. The algorithm would try for every possible combination of
+any two ascending days. The outer loop would run at least <i>n</i>
+times and the inner loop will run at most <i>n</i>–1 times. So, the
+complexity would be:</p>
+<p><img src=
+"../imgs/ad3b2651476819da10ed71ca9841d6a58878bb15.png"></p>
+Brute Force approach works for small number of inputs but becomes
+tedious and time consuming if the number of inputs increases. In
+such a case Divide and Conquer approach comes in handy.</div>
+<hr>
+<div class="answer">
+<p><b>Divide-and-Conquer approach</b></p>
+<p>So in the case when number of entries increases recursive
+algorithm comes into play. Here the divide and conquer rule is used
+and the complexity of this RECURSIVE-DIVIDE –AND-CONQUER-ALGORITHM
+is<img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png">.</p>
+<p>The algorithm is as below in which <i>lb</i> and <i>ub</i>
+represent the lower and upper bounds of the array <i>A</i> of
+<i>n</i> entries. The procedure FIND-MAX-CROSSING-SUBARRAY
+(<i>X</i>, <i>lb</i>, <i>mid</i>, <i>ub</i>) that is used in this
+procedure is defined in the section 4.1 of the book. Here,
+<i>lb</i>=1, <i>ub</i>=<i>n</i> initially.</p>
+<p>REC-DIVIDE –AND-CONQUER(<i>X</i>, <i>lb</i>, <i>ub</i>)</p>
+<p>//base case where the array has only one element</p>
+<p>1. <b>if</b> (<i>lb</i>==<i>ub</i>)</p>
+<p>2. <b>return</b> (<i>lb</i>, <i>ub</i>,
+<i>X</i>[<i>lb</i>]);</p>
+<p>3. <b>else</b></p>
+<p>//get the new mid-point</p>
+<p><img src=
+"../imgs/857cc4284d03acaa788c19155964c98c704772b9.png"></p>
+<p>4. //recursive call to the procedure to find the subarrays in
+the first half</p>
+<p>(<i>left-lb</i>, <i>right-ub</i>, <i>left-add</i>) =
+REC-DIVIDE-AND-CONQUER(<i>X</i>, <i>lb</i>, <i>mid</i>)</p>
+<p>//recursive call to the procedure to find the sub array in the
+second half</p>
+<p>5. (<i>right-lb</i>, <i>right-ub</i>, <i>right-add</i>) =
+REC-DIVIDE-AND-CONQUER(<i>X</i>, <i>mid</i>+1, <i>mid</i>)</p>
+<p>//recursive call to the procedure to find the subarrays crossing
+the mid-point</p>
+<p>6. (<i>cross-lb</i>, <i>cross-ub</i>, <i>cross-add</i>) =</p>
+<p>FIND-MAX-CROSSING-SUBARRAY(<i>X</i>, <i>lb</i>, <i>mid</i>,
+<i>ub</i>)</p>
+<p>//check if the concerned sub array is found in the first
+half</p>
+<p>7. <b>if</b> <i>left-add</i>&gt;=<i>right-add</i> and
+<i>left-add</i>&gt;=<i>cross-add</i></p>
+<p>8. <b>return</b> (<i>left-lb</i>, <i>left-ub</i>,
+<i>left-add</i>)</p>
+<p>//check if the sub array is in the second half</p>
+<p>9. <b>else if</b> (<i>right-add</i>&gt;=<i>left-add</i> and
+<i>right-add</i>&gt;=<i>cross-add</i>)</p>
+<p>//return the sub array</p>
+<p>10. <b>return</b> (<i>right-lb</i>, <i>right-ub</i>,
+<i>right-sum</i>)</p>
+<p>11. <b>else</b></p>
+<p>12. <b>return</b> (<i>cross-add</i>, <i>cross-ub</i>,
+<i>cross-add</i>)</p>
+<p>This algorithm, in general case, is much more efficient than the
+brute force algorithm. For the base case where there is only one
+element. The running time would be T(1). The time in dividing the
+array into smaller sub arrays would be <img src=
+"../imgs/95d4d293e2abfc196e50322e6fe890ffd8fc6d9f.png"> as there
+have to be <i>n</i> divisions.</p>
+<p>Now, when merging the array, the time taken would be half of the
+time taken in dividing the array.</p>
+<p>So, it would be<img src=
+"../imgs/83e88f6f5c5fc3354535d8d20e61e0a588da97a9.png">.</p>
+<p>So, the total time would be:</p>
+<img src=
+"../imgs/5e2d7926eeffd977f1c75f66aabbdedc4ee490fb.png"></div>
+<hr>
+<div class="answer">
+<p><b>Comparison of performances</b></p>
+<p>Now, have a look at the performances of both the algorithms.
+Theoretically, it seems that divide and conquer would always
+perform better than brute force. But practical implementations show
+that for small inputs the performance of the brute force algorithm
+is better than the divide and conquer approach. Here is the
+comparison of both the approaches using the code developed in
+C#.</p>
+<p>/**********************************************************</p>
+<p>* Program to compare the brute force and *</p>
+<p>* divine-and-conquer approach to find maximum sub array *</p>
+<p>**********************************************************/</p>
+<p>//namespace system</p>
+<p>using System;</p>
+<p>namespace max_subarray_prob</p>
+<p>{</p>
+<p>Create a class that would show the comparison of brute force and
+the divide-and-conquer approach.</p>
+<p>classProgram</p>
+<p>{</p>
+<p>Date members of the class are the variables that would be used
+to store the sum and index of the sub-array.</p>
+<p>//initialize variables</p>
+<p>int m = 0;</p>
+<p>int[] p;</p>
+<p>int[] q;</p>
+<p>int[] s;</p>
+<p>Define the brute force function for finding the maximum sub
+array. This would take as argument the array that the maximum
+sub-array has to be found within.</p>
+<p>/* function to find the maximum sub-array using</p>
+<p>Brute force</p>
+<p>@param a is the array that the sub-array is to be</p>
+<p>Found within</p>
+<p>@return the array holding the lower and upper</p>
+<p>bounds of the target array */</p>
+<p>int[] max_subarray_bruteforce(int[] a)</p>
+<p>{</p>
+<p>Initialize the variables for storing the information about the
+sub array.</p>
+<p>//initialize variables for storing the indexes</p>
+<p>int sub_sum = 0;</p>
+<p>int p1 = 0;</p>
+<p>int l = 0;</p>
+<p>int r = 0;</p>
+<p>int max_sum = 0;</p>
+<p>Run two nested for loops for finding the lower and the upper
+bound of the maximum sub array. The outer loop would run till the
+end of the loop. The inner loop would run from the current value of
+upper index to the end of the array.</p>
+<p>//outer loop to find the sub-array</p>
+<p>for (p1 = 0; p1 &lt; a.Length - 1; p1++)</p>
+<p>{</p>
+<p>sub_sum = 0;</p>
+<p>//inner loop that creates the upper bound for the sub-array</p>
+<p>for (int p2 = p1; p2 &lt; a.Length; p2++)</p>
+<p>{</p>
+<p>Store the sum of the subarray in a variable then check if this
+sum is more than the sum of previous sub array. If so, update the
+subarray sum and the upper and the lower bound.</p>
+<p>//store the sum of sub-array</p>
+<p>sub_sum += a[p2];</p>
+<p>//check if the sum is more than the previous maximum</p>
+<p>if(sub_sum &gt; max_sum)</p>
+<p>{</p>
+<p>//update the maximum sub-array</p>
+<p>max_sum = sub_sum;</p>
+<p>l = p1;</p>
+<p>r = p2;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>Create the subarray and return it.</p>
+<p>//create the sub-array</p>
+<p>int[] x = { l, r, max_sum };</p>
+<p>return x;</p>
+<p>}</p>
+<p>Define the function to find if the maximum sub array is crossing
+the crossover point. That means it is partially in the left sub
+array and rest of it is in the right sub array. The arguments are
+the concerned array, lower and upper bound and the midpoint of the
+array.</p>
+<p>/* find max sub-array across the crossover point</p>
+<p>@Param a is the array that the sub arrays is to be searched
+@param l lower bound of the array</p>
+<p>@param m is the midpoint of the array</p>
+<p>@param h upper bound of the array */</p>
+<p>int[] crossover_point(int[] a, int l, int m, int</p>
+<p>h)</p>
+<p>{</p>
+<p>Set the initial sum and the indexes.</p>
+<p>//set the initial sum and other variables</p>
+<p>int left_sum = -1000, right_sum = -1000;</p>
+<p>int sum = 0;</p>
+<p>int max_left = 0, max_right = 0;</p>
+<p>Check if the maximum sub array is in the left sub array.</p>
+<p>//loop to find the maximum sub array in the left sub-array</p>
+<p>for (int i = m; i &gt;= l; i--)</p>
+<p>{</p>
+<p>Store the sum of the current sub array and check if it is
+greater than the previous sum. If so, update the sub array indexes
+and sum.</p>
+<p>//store the sum of the sub-array</p>
+<p>sum = sum + a[i];</p>
+<p>//check if the left sub array is max</p>
+<p>if (sum &gt; left_sum)</p>
+<p>{</p>
+<p>//update the sub-array bounds</p>
+<p>left_sum = sum;</p>
+<p>max_left = i;</p>
+<p>}</p>
+<p>}</p>
+<p>sum = 0;</p>
+<p>Check if the maximum sub array is in the right half of the
+array.</p>
+<p>//loop to find the max sub array in the right sub- array</p>
+<p>for (int j = m + 1; j &lt;= h; j++)</p>
+<p>{</p>
+<p>Store the sum of the sub array and check if this is greater than
+the previous. If so, update the subarray indexes and the sum.</p>
+<p>//store the sum of the sub-array</p>
+<p>sum += a[j];</p>
+<p>if (sum &gt; right_sum)</p>
+<p>{</p>
+<p>right_sum = sum;</p>
+<p>max_right = j;</p>
+<p>}</p>
+<p>}</p>
+<p>Create the sub array and return it.</p>
+<p>//create the sub-array</p>
+<p>int[] y = { max_left, max_right, left_sum +</p>
+<p>right_sum };</p>
+<p>return y;</p>
+<p>}</p>
+<p>Define the divide and conquer method for finding the maximum sub
+array. The arguments are the array, the lower and upper bounds of
+the array.</p>
+<p>/* find the maximum sub array using divide and conquer
+approach</p>
+<p>@Param a is the array that the sub arrays is to be searched</p>
+<p>@param l lower bound of the array</p>
+<p>@param h upper bound of the array */</p>
+<p>int[] max_subarray_dnc(int[] a, int l, int h)</p>
+<p>{</p>
+<p>Check if there is only one element in the array.</p>
+<p>//base case where only one element is there in the array</p>
+<p>if (l == h)</p>
+<p>{</p>
+<p>Return the subarray.</p>
+<p>int[] z = { l, h, a[l] };</p>
+<p>return z;</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>Find the new midpoint of the array.</p>
+<p>//find the new midpoint of the array</p>
+<p>m = (l + h) / 2;</p>
+<p>Check the function recursively for left sub array and if the
+maximum sub array is in that array then return the subarray.</p>
+<p>//recursive call to check if the max sub-array is in the left
+sub array</p>
+<p>p = max_subarray_dnc(a, l, m);</p>
+<p>Call the function recursively for right sub array and return the
+sub array if maximum sub array is in that.</p>
+<p>//recursive call to check if the max sub-array is in the right
+sub array</p>
+<p>q = max_subarray_dnc(a, m + 1, h);</p>
+<p>Call the function to check is the maximum sub array is crossing
+the crossover point.</p>
+<p>//check if the max sub-array is across the crossover point</p>
+<p>s = crossover_point(a, l, m, h);</p>
+<p>//return the left sub-array</p>
+<p>if (p[2] &gt;= q[2] &amp;& p[2] &gt;= s[2])</p>
+<p>return p;</p>
+<p>//return the right sub-array</p>
+<p>elseif (q[2] &gt;= p[2] &amp;& q[2] &gt;= s[2])</p>
+<p>return q;</p>
+<p>else</p>
+<p>//return the crossover array</p>
+<p>return s;</p>
+<p>}</p>
+<p>}</p>
+<p>Define the main() function to call the above defined functions
+and compare the speed.</p>
+<p>//main method</p>
+<p>Static void Main()</p>
+<p>{</p>
+<p>Create the object of the class to call the functions. Initialize
+the variables.</p>
+<p>//create the object</p>
+<p>Program pr = newProgram();</p>
+<p>//set the array length</p>
+<p>int n = 30;</p>
+<p>//declare the variables</p>
+<p>double time0, time1, time2, time3, t1, t2;</p>
+<p>string s1, s2;</p>
+<p>int[] x;</p>
+<p>int[] a;</p>
+<p>Random ran = newRandom();</p>
+<p>a = newint[n];</p>
+<p>Generate random numbers in a given range and input them in the
+array.</p>
+<p>//input random elements in the array</p>
+<p>for (int i = 0; i &lt; n; i++)</p>
+<p>a[i] = ran.Next(-20, 20);</p>
+<p>Call the functions and calculate the time taken in the execution
+of each one of them.</p>
+<p>//call the brute force method and calculate the time taken</p>
+<p>time0 =</p>
+<p>Convert.ToDouble(DateTime.Now.ToOADate());</p>
+<p>x = pr.max_subarray_bruteforce(a);</p>
+<p>time1 =</p>
+<p>Convert.ToDouble(DateTime.Now.ToOADate());</p>
+<p>Print the array elements.</p>
+<p>//print the array</p>
+<p>Console.WriteLine("Array is: ");</p>
+<p>for (int i = 0; i &lt; n; i++)</p>
+<p>Console.Write(a[i] + " ");</p>
+<p>Console.WriteLine();</p>
+<p>Console.WriteLine();</p>
+<p>t1 = time1 - time0;</p>
+<p>Print the time taken in the execution of brute force
+algorithm.</p>
+<p>s1= string.Format("{0:0.0000000000000000000000}"</p>
+<p>, t1);</p>
+<p>Console.WriteLine("brute force: "</p>
+<p>+ s1);</p>
+<p>//call the divide and conquer method and calculate the time</p>
+<p>time2 =</p>
+<p>Convert.ToDouble(DateTime.Now.ToOADate());</p>
+<p>x = pr.max_subarray_dnc(a, 0, n - 1);</p>
+<p>time3 =</p>
+<p>Convert.ToDouble(DateTime.Now.ToOADate());</p>
+<p>t2 = time3 - time2;</p>
+<p>Print the time taken in the execution of divide and conquer
+algorithm.</p>
+<p>s2 =</p>
+<p>string.Format("{0:0.0000000000000000000000}"</p>
+<p>,t2);</p>
+<p>Console.WriteLine("divide and conquer: "</p>
+<p>+ s2);</p>
+<p>Console.WriteLine();</p>
+<p>Console.ReadKey();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Sample Output:</b></p>
+<p>Array is:</p>
+<p>-8 -17 0 14 1 -6 18 11 17 15 9 13 -10 -2 -18 -10</p>
+<p>-3 -10 -8 -13 18 2 16 -8 11 -14 17 -5 -14 11</p>
+<p>brute force: 0.0000000231520971283317</p>
+<p>divide and conquer: 0.0000000115687726065516</p>
+</div>
+<hr>
+<div class="answer">
+<p>Various values of array length yield the following results:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p>Size =<img src=
+"../imgs/f7708c3a7da3df88a48e5e933e8c6dfde70d0601.png"></p>
+</td>
+<td>
+<p>Brute Force Algorithm</p>
+</td>
+<td>
+<p>Recursive Algorithm</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>10</p>
+</td>
+<td>
+<p>0.0000000115760485641658</p>
+</td>
+<td>
+<p>0.0000000231448211707175</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>15</p>
+</td>
+<td>
+<p>0.0000000115687726065516</p>
+</td>
+<td>
+<p>0.0000000115760485641658</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>20</p>
+</td>
+<td>
+<p>0.0000000115760485641658</p>
+</td>
+<td>
+<p>0.0000000115760485641658</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>25</p>
+</td>
+<td>
+<p>0.0000000115687726065516</p>
+</td>
+<td>
+<p>0.0000000115760485641658</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>30</p>
+</td>
+<td>
+<p>0.0000000231520971283317</p>
+</td>
+<td>
+<p>0.0000000115687726065516</p>
+</td>
+</tr>
+</table>
+<p>The above results infer that for <i>n</i><sub>0</sub>&lt;30 the
+performance of brute force is better than the divide and conquer
+one. Keeping this in mind the advantage of brute force can be used
+in the divide and conquer algorithm so that it can work even
+faster. The divide and conquer algorithm can be modified to use the
+brute force algorithm till the time the input size is less than
+30.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the procedure REC-DIVIDE –AND-CONQUER just add the following
+lines after line 2 to make the changes:</p>
+<p><b>else if</b> (<i>lb</i>==0 and <i>ub</i>&lt;=30)</p>
+<p>Initialize a new array <i>P</i></p>
+<p>BRUTE-FORCE-ALGORITHM (<i>X</i>, <i>P</i>, <i>n</i>)</p>
+<p><b>return</b> <i>P</i></p>
+<p>Rest of the algorithm would remain the same. Crossover point
+would not change even if the problem size is less than
+<i>n</i><sub>0</sub>. The reason is that the crossover point is
+calculated using the mid of the array and the relative position of
+mid is not going to be affected by the value of
+<i>n</i><sub>0</sub>. It does not matter how big or small the value
+of <i>n</i><sub>0</sub> is.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Modification in maximum-sub-array problem</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The maximum sub array problem here is a concept where the target
+is to find the number of days whose combination creates the highest
+sum of prices, thus the total number of days is taken in an array
+and the aim is to find a sub array that gives the maximum sum.</p>
+<p>Here, the base case of the maximum sub array is defined to be an
+empty array. The empty array shows its value to be zero but it is
+not required to show the value of the empty array.</p>
+<p>In divide and conquer algorithm, first check if only one value
+is present in the array, then return that value. If more than one
+value is present, then take the lower bound in <i>low</i> and upper
+bound in <i>high</i> and divide the array into two sub arrays.</p>
+<p>After that, compare the values of the sub array to find the
+maximum value in the array and return that value.</p>
+</div>
+<hr>
+<div class="answer">
+<p>This algorithm does not accept an empty array, so we will modify
+it as:</p>
+<p><b>FIND-MAXIMUM-SUBARRAY (</b> <i><b>A, low, high</b></i>
+<b>)</b></p>
+<p>// if array is empty</p>
+<p>1. <b>for</b><img src=
+"../imgs/376db399fce4aa8d008d0801e1706fa10c14b857.png"></p>
+<p>2. <b>if</b><img src=
+"../imgs/15f4f438bac32c008e5dd7a4e7b9c44de76840a3.png"></p>
+<p>// array is empty</p>
+<p>3. <b>return</b> -1</p>
+<p>// base case: only one element</p>
+<p>4. <b>else if</b><img src=
+"../imgs/70f7d82aa330629213634253ea8130dd5f4678db.png"></p>
+<p>5. <b>return</b> <img src=
+"../imgs/6af6ae3fc4f91caf6affc0b6aab1054e613add84.png"></p>
+<p>6. <b>else</b></p>
+<p>7. <img src=
+"../imgs/9c226ae5e73300be7b1dad876d94ba2bd86ed164.png"></p>
+<p>8. <b>FIND-MAXIMUM-SUBARRAY</b> (<i>A</i>, <i>low, mid)</i></p>
+<p>9. <b>FIND-MAXIMUM-SUBARRAY</b> (<i>A</i>, <i>mid+1,
+high</i>)</p>
+<p>10. Compare all three sub arrays to find the <i>max</i></p>
+<p>11. <b>return</b> <i>max</i></p>
+<p>The tiny modification (First “if” section in above algorithm)
+that is required to be done in this algorithm, is that first check
+if all the elements of the array are negative, or there is no
+element in the array, then it returns the value -1 or shows an
+error message that the array is empty.</p>
+<p>Thus, the value displayed for this base case would not result in
+a zero.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Linear-time algorithm for the maximum-subarray
+problem:</b></p>
+<p>Consider that the maximum-subarray of A[1..j] is known, and by
+observation a maximum-subarray of A[1..j +1] is either a
+maximum-subarray of A[1..j] or a subbarray A[i..j + 1], for some
+<img src=
+"../imgs/bcf1bc148c6d447e8d3cf9de76774018a1028879.png">.</p>
+<p>Therefore, check from the index j+1 down to 1 to see if a
+maximum sum is changed or not. If the new maximum sum differs from
+the maximum sum of maximum-subarray of A[1..j], then
+maximum-subarray is A[i..j + 1].</p>
+<p><b>Pseudocode:</b></p>
+<p>Find-Maximum-Subarray(<i>A</i>)</p>
+<p>// maximum-subarray of A[1..j] is assigned to <i>max-sum</i></p>
+<p>1 max-sum ← A[1..j]</p>
+<p>// Initialize sum =0</p>
+<p>2 sum = 0</p>
+<p>// Initialize i =0</p>
+<p>3 i = 0</p>
+<p>// check from the index j+1 down to 1</p>
+<p>4 <b>for</b> j = j + 1 <b>downto</b> 1</p>
+<p>// Add A[j] to sum</p>
+<p>5 sum = sum + A[j]</p>
+<p>// check whether sum differs maximum-subarray of A[1..j]
+max-sum</p>
+<p>6 <b>if</b> sum &gt; max-sum</p>
+<p>7 max-sum = sum</p>
+<p>8 i = j</p>
+<p><b>Analysis:</b></p>
+<p>Line 1 initializes the variable max-sum to the maximum-subarray
+of A[1..j].</p>
+<p>Line 2 and 3 initializes the variables sum and i.</p>
+<p>Thus, lines 1-3 takes the constant time T(1) = Θ(1).</p>
+<p>Lines 4-8 use for loop to ◊nd the new sum from j+1 down to 1.
+So, it takes the running time of T (j) = Θ(j), j &gt; 0.</p>
+<p>Thus, the algorithm takes a linear- time running for the
+maximum-subarray problem.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

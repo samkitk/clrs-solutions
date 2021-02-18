@@ -1,0 +1,480 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 11.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider searching a linked list of length <i>n</i> and each
+element in the linked list consist a key <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> along with
+a hash value<img src=
+"../imgs/4c1e1ae0fbf2227cf572dc18ed3ea56012f577bd.png">. Where, key
+<i>k</i> is a long character string. Since the list contains hash
+value, using the hash values for searching the linked list is an
+advantage.</p>
+<p>• Since the key <i>k</i> is a long character string, string
+comparison operation is performed at every node along the length or
+the list. Since the string comparison is a time consuming process,
+searching the list also takes much time.</p>
+<p>• Instead of comparing the given key with key <i>k</i> of each
+node<b>, generating the hash value for the given search key</b>
+<b>and comparing it</b> with the hash value of each node in the
+list is advantageous and festers the search.</p>
+<p>• Thus, first generate the hash value for the given search key
+then compare the hash value with hash value <img src=
+"../imgs/4c1e1ae0fbf2227cf572dc18ed3ea56012f577bd.png"> of every
+node in the list along the length of the linked list.</p>
+<p>• Since the hash value is a numeric value, comparison is faster
+and search takes less time.</p>
+<p><b>Therefore, in this case, using hash values for searching
+linked list is an advantage, as</b> <b>it fasters the
+search.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following basic number theory principles of modulo
+arithmetic:</p>
+<p><img src="../imgs/b4ca464e8d55284a7beb0a66f5d57d07968e09b6.png">
+…… (1)</p>
+<p>and</p>
+<p><img src="../imgs/ca368d7aad67d49e6bbe40e500d85b679d9e6fe2.png">
+…… (2)</p>
+<p>Where, <img src=
+"../imgs/2cb2b6a953b088aa76497c6de868393c82754487.png">and
+<img src="../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">are
+integers.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider the string of <i>r</i> characters. This <i>r</i>
+characters string can be hashed using the division method with
+constant space.</p>
+<p>The conversion of any string of length <i>r</i> to a radix-128
+number takes place in the following way:</p>
+<p><img src="../imgs/4f8d7d1e6988c7256a89730288058b7967b9823d.png">
+…… (3)</p>
+<p>Where, <b><img src=
+"../imgs/1f098984ff6680f08e9667df07322c5d640090d8.png"></b><b>denotes
+the</b><i><b><img src=
+"../imgs/b61bfbbe723fb038be3d34c49f113b69f12231e7.png"></b></i><b>character
+starting from the least significant end with 0</b>. In other words
+it can also be viewed as its ASCII code’s integer.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Apply the division hashing function in the equation (3):</p>
+<p><img src=
+"../imgs/24114e768085ecaf6b8b5691945e9b65bdddb4f8.png"></p>
+<p>Therefore, from the above, it need to take modulo operation
+after every multiplication, which gives a result a constant number.
+It gives a constant number because, the term given below gives a
+number less than, equal to or greater than<img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">.</p>
+<p><img src=
+"../imgs/13b021eb8fadcfafe150bbf0ae0428e40be4c229.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, after taking the modulus <img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">of a number,
+even the number is less than, equal to or greater than, it will
+give a constant number less than<img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">.</p>
+<p><b>Therefore, the division method applied to compute the hash
+value of the given character string using more than a constant
+number of words storag</b> <b>e outside the string itself.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>It is known that permutations can be generated in a string by
+interchanging any pair of characters. This property can be proved
+in the following way:</p>
+<p>• First consider quick sort and heap sort both work by
+interchanging pair of elements. So, it can be used to generate a
+number of permutations of its input array.</p>
+<p>• Therefore, it enough to prove that two strings <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">and
+<img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">
+hash to the same value. Where string <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">is obtained
+from the string <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">by
+exchanging a pair of characters.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Suppose<img src=
+"../imgs/90cc1dbf15e82cd061ddbba8ac0cd8fe1d1c721c.png"> denotes
+the<i><img src=
+"../imgs/b61bfbbe723fb038be3d34c49f113b69f12231e7.png"></i>character
+in <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">and
+<img src="../imgs/4d8dedd525bec58a5564a994633cdc0c69cfb849.png">
+denotes the<i><img src=
+"../imgs/b61bfbbe723fb038be3d34c49f113b69f12231e7.png"></i>character
+in<img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">.
+So, the interpretation of <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">in
+radix<img src=
+"../imgs/170166f6f0b42d9b3e67e7cd2af6120b67ac2edb.png">will be
+given as<img src=
+"../imgs/05937cc5dfb51dc53dbd27f18dc4dabd06d0e17f.png">and the
+interpretation of <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">in
+radix<img src=
+"../imgs/170166f6f0b42d9b3e67e7cd2af6120b67ac2edb.png"> will be
+given as<img src=
+"../imgs/8ed12b696fabd511d1751fc12bd7c3af32e491f6.png">.</p>
+<p>• Therefore,</p>
+<p><img src=
+"../imgs/535c1686c0979acfab29b693c770dc307f2dcbcd.png">, As
+<img src="../imgs/98ea5d08f4da265ff487b0372e0566e9244612f8.png">is
+given.</p>
+<p>Similarly,</p>
+<p><img src=
+"../imgs/154ebb69b4f830de5a7b32e8607b5540591c1660.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>• Assume that <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">and<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> are
+identical strings of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">characters
+except that the characters in positions <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">and
+<img src="../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">are
+interchanged.</p>
+<p>That is, <img src=
+"../imgs/b62a079896c3a72e4613685323d38f0852017b01.png">and
+<img src="../imgs/9d42c72ef6d40417e4fb2d64900ccc436c793cce.png"> ……
+(1)</p>
+<p>• Now, suppose <img src=
+"../imgs/3a4f935766e81f1e310228bb8eec5f6742531dcc.png">then:</p>
+<p><img src="../imgs/b83929542737f9fbd399c19d5d814b382574c384.png">
+…… (2)</p>
+<p>• Now by Euclidian algorithm,</p>
+<p><img src=
+"../imgs/e158fea4e1348160227c3776d0be0e9beacacf62.png">and
+<img src="../imgs/5758ad3b8a6b3874f09613762e903609b035cc48.png"></p>
+<p>Then</p>
+<p><img src=
+"../imgs/fa1d534abd12f4c686a727ab1c379c0468e4b6c8.png"></p>
+<p>• Now, take <img src=
+"../imgs/c5b96f70ece41cec6fae88829eb6ad1b9e95b767.png"> in equation
+(2), then</p>
+<p><img src=
+"../imgs/462e013eff7c4701a07fccc21c06589ba7a9ce05.png"></p>
+<p><img src=
+"../imgs/a00f1e5aa8f5dac2dd4ba2c6f9914b673f144221.png"></p>
+<p>• As <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">and<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> are similar
+strings of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">characters
+other than the characters in position <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">and
+<img src="../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">are
+exchanged,</p>
+<p><img src=
+"../imgs/45bc90065fad672d5db6652626a8ab6d2e561b62.png"></p>
+<p>Now, use <img src=
+"../imgs/b62a079896c3a72e4613685323d38f0852017b01.png">and
+<img src="../imgs/9d42c72ef6d40417e4fb2d64900ccc436c793cce.png">from
+equation (1)</p>
+<p><img src=
+"../imgs/2e63e0b4acb2654c1ad41fe7c89dc0480ed5346e.png"></p>
+<p>• Now, multiply the above with <img src=
+"../imgs/0a3c41ea6ef25d8cb35c6eec6466be570139b72f.png">and factor
+out the<img src=
+"../imgs/5f0e6ed558bd5df2effc965b01a14017ff5c2fb8.png">, then user
+will obtained:</p>
+<p><img src=
+"../imgs/e070b86eddf91a1d4bbd0330ab0bacda3311ce2c.png"></p>
+<p>Now, factor out the<img src=
+"../imgs/5f0e6ed558bd5df2effc965b01a14017ff5c2fb8.png">,</p>
+<p><img src="../imgs/6b42f887a0cb7bd5f769ac5044430fad3ecae8a9.png">
+…… (3)</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Now consider the following equation:</p>
+<p><img src=
+"../imgs/07a63efee79526833bb7783fdec3d1e4c420b8ac.png"></p>
+<p>Now, multiply with <img src=
+"../imgs/04111b65be3e404a6421d0bbbcef01430f36ba96.png">on each
+side, then</p>
+<p><img src=
+"../imgs/0a7dfe767b43c4e5f80bb20671458ca4461f3a99.png"></p>
+<p>• Now put this value in the equation (3),</p>
+<p>Then, <img src=
+"../imgs/db6079baa03c3413a4e8e4c30fbd87a0f4da2c12.png"></p>
+<p>Now, the above expression consists <img src=
+"../imgs/2b2be667c830783c38b052f8ee8d9aa2ed6fcfae.png">as a factor,
+therefore the above value can be exactly divided by<img src=
+"../imgs/2b2be667c830783c38b052f8ee8d9aa2ed6fcfae.png">.</p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/4d4636d2b165a335e0f13cbed479d0fe3267dbb3.png">will be
+zero.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/357d5a9bcfb64c435f066de894781c11685576ab.png"></p>
+<p>Hence, it can be concluded that,</p>
+<p><img src=
+"../imgs/357d5a9bcfb64c435f066de894781c11685576ab.png"></p>
+<p>And thus, <img src=
+"../imgs/22baf84c7395ad951c28a061d3d4695e7ec669bb.png"></p>
+</div>
+<hr>
+<div class="answer">Hence, from the above result it is proved that
+<b>“</b><b>if we can derive string</b> <i><b>u</b></i> <b>(or
+string</b> <i><b>x</b></i><b>)</b> <b>from string</b>
+<i><b>v</b></i> <b>(or string</b> <i><b>y</b></i><b>)</b> <b>by
+the</b> <b>permutation of its characters, then</b> <i><b>u</b></i>
+<b>(or</b> <i><b>x</b></i><b>)</b> <b>and</b> <i><b>v</b></i>
+<b>(or</b> <i><b>v</b></i><b>)</b> <b>hash to the equal
+value”.</b></div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>Now consider the following example of a dictionary. If <img src=
+"../imgs/767c411529d9b3857c073109d0cac78a20561b8f.png">and a
+character string <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">is
+represented in radix <img src=
+"../imgs/170166f6f0b42d9b3e67e7cd2af6120b67ac2edb.png">, then two
+strings that are similar other than for a transposed character hash
+to the same value.</p>
+<p>Now, suppose</p>
+<p><b><img src=
+"../imgs/a0c32cad0ce5e77a94ce473befa88988cedb9723.png"></b></p>
+<p>Now consider two strings <i>u</i>=
+<b>“</b><i><b>abcd</b></i><b>” and</b>
+<i><b>v</b></i><b>=“</b><i><b>badc</b></i><b>”.</b> Here <i>u</i>
+can be obtained by permuting the characters in <i>v</i>.</p>
+<p>Calculate hash values using ASCII values of characters as
+follows:</p>
+<p>• The value of <i>u</i> in radix <img src=
+"../imgs/170166f6f0b42d9b3e67e7cd2af6120b67ac2edb.png">, <img src=
+"../imgs/6bd8800005d4ce6b103ddd7f489087e82ce2b974.png"><img src=
+"../imgs/c84d77cbef5fae3e22abe3187418e15bc05a8a33.png"></p>
+<p>• Now, its hash value ,<img src=
+"../imgs/d6d4ea3b84d056a850ea6741ef9abe9a86476f01.png"> <img src=
+"../imgs/1841a3e1ba587019fbb5eb67b40dfb9755dc8423.png">, <img src=
+"../imgs/0f40d7a522a3c808a05c725030d5fad0d8897f1c.png"></p>
+<p>• The value of <i>v</i> in radix <img src=
+"../imgs/170166f6f0b42d9b3e67e7cd2af6120b67ac2edb.png">,<i>,</i>
+<img src=
+"../imgs/76b3d11599d32836c4e27339721d8e1755de9ab6.png"><img src=
+"../imgs/dab0a0297420ba0ee0bea144ec6a72cb768ad012.png"></p>
+<p>• Now, its hash value ,<img src=
+"../imgs/a6b0d68850a45f2473b96c9d4fdb42cb0ac2733e.png"> <img src=
+"../imgs/83b620e1c7a0ced6c4941fc844aab7deed5e9298.png">, <img src=
+"../imgs/0f40d7a522a3c808a05c725030d5fad0d8897f1c.png"></p>
+<p>• Here, two strings <i>u</i>,<i>v</i> hash to the same value.
+That is <img src=
+"../imgs/22baf84c7395ad951c28a061d3d4695e7ec669bb.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The property</b> <b><img src=
+"../imgs/b5ce8941709e7768162406efc06d77eb15e06f14.png"></b> <b>is
+undesirable in dictionary application:</b></p>
+<p>• A dictionary contains different words such that one word is
+obtained from another by permuting the characters. For example,
+TOP, OPT and POT</p>
+<p>• If the given property is used for dictionary application, hash
+values of POT, TOP and OPT are same.</p>
+<p><b>Therefore the given property</b> <b>does not suitable to
+applications like dictionaries.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/03b513552c2dac290684c71cf2320fa06b538790.png">
+<hr>
+<img src="../imgs/7b588c195edc0c97fd9eb1338f7bfd6ffcff5756.png">
+<hr>
+<img src="../imgs/45e1c7d740c150d780e2aaa789f5e9dde9113d81.png">
+<hr>
+<img src="../imgs/f7778ec1c78065a149ff0049817c6be46cbb0374.png">
+<hr>
+<img src="../imgs/0d7c2c6e566fed719ce01dd1f1cbc367acf9b09e.png">
+<hr>
+<img src="../imgs/d9bc9ebafa09b0b1c34c9aa19cbbb9b07b56c145.png">
+<hr>
+<img src="../imgs/4d5872fb11b2b9693eea9053a56e8089c7d4af95.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>|B| and |U| are 2 finite sets from which a family H of hash
+functions has been defined to be <img src=
+"../imgs/78f953e2a39283b42abb6a198decc458f5408fa2.png"> such that
+probability of a hash function of key is less than or equal to
+<img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png">.</p>
+<p>Suppose b = |B| and u = |U| and b divides u.</p>
+<p>To prove the given inequality, we will take the contradictory
+case as true.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Contradictory case:</b></p>
+<p>Suppose <img src=
+"../imgs/9d7a11e9a542062b9cfee3a56f35a33d91273f35.png">. It
+signifies that each key value pair (<i>k</i>, <i>l</i>) that
+belongs to U. For these value, there are will be n hash functions
+that have collision on 2 elements and it satisfies the inequalities
+<img src="../imgs/d069e8d57a391ff9771fdd8c1d92f6c6fcd077c3.png">
+.</p>
+<p>Sum all such pairs.</p>
+<p>After summing up, you get</p>
+<p><img src="../imgs/70846d6120f63f9803167096c3fa444ad90c9668.png">
+……(1)</p>
+<p>With a good hash function, there should be at least <img src=
+"../imgs/891488932f2bd92a9c2e0d862a78c6d4cac5fa9d.png"> colliding
+pairs.</p>
+<p><img src=
+"../imgs/69e15092e835f3122b20bf0986c8112c8223fe33.png"></p>
+<p>It means that each slot should have at least 2 colliding
+keys.</p>
+<p>Similarly, for all hash functions, there will be at least
+<img src="../imgs/d8024ad2a44837c3d9869be22627c5da72f0dfa0.png">=
+<img src=
+"../imgs/643586200afeb04b22c646e055811a93de4ac18d.png">colliding
+pairs.</p>
+<p>Using the inequality (1), it is clear that the total number of
+colliding pairs are less than required.</p>
+<p>Thus, it is a contradiction. Hence, it is proved that <img src=
+"../imgs/7466bd8cbec1ae51236524688ede821fcc9c4288.png"> .</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

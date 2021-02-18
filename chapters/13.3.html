@@ -1,0 +1,336 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 13.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Red Black Tree:</b></p>
+<p>A binary search tree can be called as a red black tree when it
+satisfies following properties:</p>
+<p>1. Each node of tree must be either red or black in color.</p>
+<p>2. The root of tree must be black.</p>
+<p>3. The color of every leaf must be black.</p>
+<p>4. When parent node color is red, then color of its both
+children must be black.</p>
+<p>5. The number of black node from any node to leave must be
+same.</p>
+<p>Consider the Algorithm RB-INSERT() to insert a new node in
+Red-Black tree. Whenever a new node is inserted into a Red-Black
+tree, in line 16 of RB-INSERT(), the color of the new node is set
+to red so that the inserting a new node does not make any effect on
+black-height of Red-Black tree. That is , the property 4 is not
+violated.</p>
+<p>If the newly inserted node z’s color is set to black, it may
+violate the 5<sup>th</sup> red-black property. That is, the black
+height of the tree is affected.</p>
+<p><b>Hence, the color of the newly inserted node is always chosen
+to set to red in line 16 of RB-INSERT.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8894355daa163ec075d3014792e160cd3655d20a.png">
+<hr>
+<img src="../imgs/ed5d1031846bfb6c0e4f470ff6d93753e664c1fb.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Red Black Tree:</b></p>
+<p>A binary search tree is called as a red black tree, if it
+satisfies the following properties:</p>
+<p>1. Each node of tree must be either red or black in color.</p>
+<p>2. The root of tree must be black.</p>
+<p>3. The color of every leaf must be black.</p>
+<p>4. When parent node color is red, then color of its both
+children must be black.</p>
+<p>5. In a simple path, the number of black node from any node to
+leave must be same.</p>
+<p>It is given that the black heights of sub-trees<img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">,<img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png">,<img src=
+"../imgs/9b2631b1652896e221fe789f59326036068ddc63.png">,<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">and
+<img src="../imgs/8c1320fa6dc4a0b22b6e5b2fc0e29ba418813073.png"> is
+<i>k</i> in 13.5 and 13.6.</p>
+<p>Consider the following figure 13.5 to label with black heights.
+After labeling each node in the tree with black heights, the figure
+13.5 is as follows:</p>
+<p><img src="../imgs/bb2e9a02df54f9966dde2983a25b268d801ea734.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\28.9.2015\Gaurav 2254\Image\1.png"></p>
+<p>• The black height of<img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">,<img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png">,<img src=
+"../imgs/9b2631b1652896e221fe789f59326036068ddc63.png">,<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">and
+<img src="../imgs/8c1320fa6dc4a0b22b6e5b2fc0e29ba418813073.png">sub-tree
+is <i>k</i> in both figures (a) and (b). Therefore the black height
+of nodes <i>A</i>, <i>B</i> and <i>D</i> is <i>k+1</i>. The black
+height of red black tree is counted from leaves to the root.</p>
+<p>• The black height of node <i>C</i> in left tree, in both
+figures (a) and (b), is k+1 because of <i>k+1</i> black height of
+its red children.</p>
+<p>• The black height of node <i>C</i> in right tree, in both
+figures (a) and (b), <i>is k+2</i> because of <i>k+1</i> black
+height of its black children.</p>
+<p>It is observed that in both figures (a) and (b), before fixing
+the tree and after fixing the tree, the black height of the tree is
+balanced. That is, even after the tree transformation, the
+5<sup>th</sup> property of Red-Black tree is preserved.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following figure 13.6 to label with black heights.
+After labeling each node in the tree with black heights, the figure
+13.6 is as follows:</p>
+<p><img src="../imgs/2ea3a395d554082ace6c41bfd67a41b9976905da.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\28.9.2015\Gaurav 2254\Image\3.png"></p>
+<p>• The black height of<img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">,<img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png">,<img src=
+"../imgs/9b2631b1652896e221fe789f59326036068ddc63.png">, <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">and
+<img src="../imgs/8c1320fa6dc4a0b22b6e5b2fc0e29ba418813073.png">sub-tree
+is <i>k.</i> therefore the black height of nodes <i>A</i>, <i>B</i>
+and <i>C</i> is <i>k+1</i>.</p>
+<p><b>Here also it is observed that before fixing the tree and
+after fixing the tree, black height of the tree is balanced. That
+is, even after the tree transformation, the 5</b> <sup>th</sup>
+<b>property of Red-Black tree is preserved.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>RB-INSERT-FIXUP algorithm</b></p>
+<p>Professor Teach said that in the algorithm of RB-INSERT-FIXUP if
+the color of terminal node which is the child of node <i>z</i> is
+set to red then the loop in first line of algorithm will not
+terminate. And insertion of a node <i>z</i> in the RB-Tree is
+inserted as the root of the tree.</p>
+<p>Refer the page number 316 from textbook for RB-INSERT-FIXUP
+algorithm.</p>
+<p>With the help of argument that in RB-INSERT-FIXUP
+algorithm<img src=
+"../imgs/04bd245f5fe2f96fb37f27452a79e6f592c30e41.png">is never set
+to red, proving that professor’s concern is baseless.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Red Black Tree is a special type of tree in which each node
+contains an extra bit for the storage of the color of that node. So
+each node of Red Black Tree contains five fields <i>p</i> for
+parent, <i>left</i> for left child, <i>right</i> for right child,
+<i>key</i> for data value and <i>color</i> for color of the
+node.</p>
+</div>
+<hr>
+<div class="answer">In RB-INSERT-FIXUP, fix the properties of the
+RB-Tree that are violated because of inserting a new element and
+painting it red.</div>
+<hr>
+<div class="answer">This algorithm first check if the parent of the
+inserted node is red and if it is then the property of RB-Tree is
+violated because a red node will not have the red child. In this
+case this algorithm fixes the properties of the RB-Tree.</div>
+<hr>
+<div class="answer">
+<p>In the RB-INSERT-FIXUP algorithm the colors are set red only in
+two cases, in case 1 and case 3, the parent of the parent of
+<i>z</i> that is<img src=
+"../imgs/24542da519ef664ba6f0dea1f3b0564a7470add8.png">colored
+red.</p>
+<p>1. If<img src=
+"../imgs/99f93378d2da5ffcf11d041d7b863da67ec124be.png"> is the
+sentinel, then <img src=
+"../imgs/43cad17aa5fe3e0c975cfa68695aed4f5a656258.png">is the root
+and if<img src=
+"../imgs/43cad17aa5fe3e0c975cfa68695aed4f5a656258.png">is root then
+its color will be black and the loop in line 1 of algorithm will
+terminate.</p>
+<p>2. The only subtlety is in case 2, where,</p>
+<p>3. Set<img src=
+"../imgs/d45d3310e02dbe80d07fc7f1fdb4b94c7583bbb4.png">before
+coloring<img src=
+"../imgs/0079a72da9663bcdc7e6b33748cdb0055af2ad25.png">red, as we
+rotate before the again coloring, the identity of <img src=
+"../imgs/99f93378d2da5ffcf11d041d7b863da67ec124be.png">is the same
+before and after case 2, so RB-INSERT-FIXUP doesn’t sets <img src=
+"../imgs/fa8a1d57d9ad78ac58060d065eeabaad3cdbda72.png">to red
+ever.</p>
+<p>Hence professor’s consideration that “in the algorithm of
+RB-INSERT-FIXUP if the color of terminal node which is the child of
+node <i>z</i> is set to red then the loop in first line of
+algorithm will not terminate” is baseless.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following three possible cases of inserting a node
+into a Red-Black tree using RB-INSERT:</p>
+<p>1. An Empty Red-Black tree (does not have any node).</p>
+<p>2. Red-black tree with only black nodes (<img src=
+"../imgs/6078330f3814634d95b1996211d9461e02665cee.png">, where
+<i>n</i> is the number of nodes)</p>
+<p>3. Red-black tree with some black and red nodes.</p>
+<p>• <b>Consider inserting a node into an empty red-black
+tree:</b></p>
+<p>If a node is inserted into empty red-black tree using RB-INSERT,
+then the inserted node becomes the root and since the tree contains
+only one black node. But it does not satisfy the condition<img src=
+"../imgs/6078330f3814634d95b1996211d9461e02665cee.png">, where
+<i>n</i> is the number of nodes.</p>
+<p>Now, if another node is inserted into the tree, then the
+RB-INSERT assigns red-color to the second node to balance the
+black-height. Therefore, if n=2, the red-black tree contains at
+least one red node.</p>
+<p>• <b>Consider inserting a node into a red-black tree with all
+black-nodes:</b></p>
+<p>If a new node is inserted into a red-black node with all black
+nodes using the RB-INSERT function, the new node is assigned red
+color and The last line of RB-INSERT function calls the
+RB-INSERT-FIXUP().</p>
+<p>The first line of RB-INSERT-FIXUP() checks whether the parent of
+newly inserted node is red or not. Since the given tree has only
+black nodes, newly inserted node remains red in color.</p>
+<p>Therefore, in this case also the tree contains at least one red
+node.</p>
+<p>• <b>Consider inserting a node into a red-black tree with some
+black and red nodes:</b></p>
+<p>Since, the red-black tree have both red and black node, it is
+already satisfying the condition that if <img src=
+"../imgs/6078330f3814634d95b1996211d9461e02665cee.png"> then
+at-least one node is red. Even though a new node is inserted into
+this tree and RB-INSERT-FIXUP makes changes, the tree contains at
+least one red node.</p>
+<p><b>Hence, it is true that a Red-Black tree has at-least one red
+node when number of nodes in the red-black tree is greater than
+1.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

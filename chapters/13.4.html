@@ -1,0 +1,358 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 13.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>RB-Delete-Fixup is the auxiliary procedure which is called which
+helps to restore the red black properties by changing colors and
+performing necessary rotations.</p>
+<p>There are two ways through which it can be argued that after
+executing RB-Delete-Fixup, the root of the tree must be black.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• The first ways is, since x = T. root, so set x. color = BLACK
+at the end of the procedure. This is because, the root is required
+to be black according to the properties of the red-black trees.</p>
+<p>• The second ways is that in the procedure of RB-Delete-Fixup,
+the while loop ends because x. color = RED and x = T. root. Since,
+in one of the case there is no requirement to set x to be red or
+change x at all, so it cannot be the last case run. In another case
+of this procedure, nothing new is set to be RED so this cannot lead
+to exiting the while loop. In first case, sibling is made black and
+rotated such that it attains the position of the parent.</p>
+<p>So, it is not possible to make the root red.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Red-black tree:</b></p>
+<p><b>Property 4</b>: If node is red, then both its children must
+be black.</p>
+<p>• Consider a red-black tree <i>T</i> in which <i>z</i> and its
+parent are black color nodes, <i>z.left</i> is <i>T.nil</i> and
+<i>z.right</i> is a red color node.</p>
+<p>• Now, apply RB-DELETE (<i>T</i>, <i>z</i>) on <i>T</i>.
+<i>y</i> becomes <i>z</i> and <i>y</i>-orginal-color is black.</p>
+<p>• Since, <i>z.left</i> is <i>T.nil</i> in line 4, <i>x</i>
+becomes <i>z.right</i>, which is of red color.</p>
+<p>• In line 5, <i>x</i>(<i>z.right</i>) is moved up to <i>z</i>’s
+original position. That is , <i>z</i> is removed. Now, <i>x</i> and
+its parent <i>x.p</i> both are red which violates red-black
+property 4.</p>
+<p>• Since, <i>y-original-color</i> is black, in the line 22,
+RB-DELETE-FIXUP (<i>T</i>,<i>x</i>) is called.</p>
+<p>• In RB-DELETE-FIXUP(<i>T</i>,<i>x</i>) , as <i>x.color</i> is
+not black , while loop is skipped and in the line 23,
+<i>x</i>.color is changed to black so that the red-black property 4
+is restored.</p>
+<p><b>Therefore, if in the RB-DELETE both</b> <i><b>x</b></i>
+<b>and</b> <i><b>x.p</b></i> <b>are red, RB-DELETE-FIXUP (</b>
+<i><b>T</b></i> <b>,</b> <i><b>x</b></i> <b>) will restore the
+property 4.</b></p>
+<p><b>Example:</b> consider the following red-black tree.</p>
+<p><b>Let z= 9</b></p>
+<p><img src="../imgs/e24f75510ea4462975cf705d27121b35ff7e0b97.png"
+alt="Picture 1"></p>
+<p>Since <i>z.left</i> is <i>T.nil</i>, move <i>x</i> up</p>
+<p><img src="../imgs/aeb224191f0f3762241defb3dacba806cbc288a9.png"
+alt="Picture 2"></p>
+<p>Call to RB-DELTETE-FIX (<i>T</i>, <i>x)</i> to fix:</p>
+<p><img src="../imgs/025b49a8d4dfff919c0505b8e26e80ef480994a8.png"
+alt="Picture 3"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following red-black tree to perform delete
+operation:</p>
+<p><img src="../imgs/77601e26ec271107a42bc5ccd578214400bc121e.png"
+alt="Picture 5"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Required step to delete the node from red-black tree in order
+<img src=
+"../imgs/500a14ae947d9a002524d99bdec2abf23a19e4fc.png"></p>
+<p><b>Step1.</b></p>
+<p>Delete the node <img src=
+"../imgs/40cc108d022fe5f1f040436ae77d4183aba752ca.png"> from
+red-black tree.</p>
+<p><img src="../imgs/da15b916436765ba10611686d1eb05e521b26532.png"
+alt="D:\Tiffs\all files\2254-13.4-3E.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step2.</b></p>
+<p>Delete the node 12 from red-black tree.</p>
+<p>• After deletion of 12 from red-black tree the color of node 19
+will be black and color of node 31 will be red.</p>
+<p><img src="../imgs/27c9496a21505ca47d4548dceff393b5e143666e.png"
+alt="D:\Tiffs\all files\2254-13.4-3E.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step3.</b></p>
+<p>Delete the node 19 from red-black tree.</p>
+<p>• After deletion of 19 from red-black tree the right child of 19
+will become left child of 38.</p>
+<p>• Color of node 31 will be black.</p>
+<p><img src="../imgs/e9ec951d3907419ac8ee39d34f7cd7231d696b7e.png"
+alt="D:\Tiffs\all files\2254-13.4-3E.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step4.</b></p>
+<p>Delete the node 31 from red-black tree.</p>
+<p><img src="../imgs/7a90bd98db3eb3eb967e8020ab5d0d783e12f956.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step5.</b></p>
+<p>Delete the node 38 from red-black tree.</p>
+<p>• After deletion of 38 from red-black tree the right child of
+node 38 will become the parent node and color will be black.</p>
+<p><img src="../imgs/383533e2a6191e029ea690531d3d216e6434fadf.png"
+alt="Picture 12"></p>
+<p><b>Step6.</b></p>
+<p>Delete the node 41 from red-black tree.</p>
+<p>• Finally all nodes will be deleted.</p>
+<p><img src="../imgs/cb44e756a5ec4f16b50a2075460633d688865dfb.png"
+alt="Picture 13"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Examine or modify the following lines of code for sentinel
+<i>T.nil</i> in the algorithm RB-DELETE-FIXUP:</p>
+<p>1. <b>While</b> <img src=
+"../imgs/d90b562f40a19b855eb1ac088529f97f4a7992ee.png"></p>
+<p>7. LEFT-ROTATE (T, x.p)</p>
+<p>15. RIGHT-ROTATE (T,w)</p>
+<p>20. LEFT-ROTATE (T, x.p)</p>
+<p><b>Examining for</b> <i><b>T.nil:</b></i></p>
+<p>• To balance red-black tree, rotation might be required on
+deletion of a node. When a left rotation is performed on node
+<i>x</i>, right child of <i>y</i> of <i>x</i> must not be
+<i>T.nil</i> because the left rotation makes <i>y</i> as the new
+root node of the subtree.</p>
+<p>• Similarly, when the right rotation is performed on node
+<i>x</i>, the right child <i>y</i> must not be <i>T.nil</i>,
+because the right rotate operation makes the node <i>y</i> as root
+for the subtree.</p>
+<p>• In the code line 9, if <i>w</i> is <i>T.nil</i>, then
+<i>w.color=</i>RED is a flaw because <i>T.nil</i> is black.
+Similarly, the same case is true in the line 14.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The following are the properties of Red Black Tree:</p>
+<p>1. Every node must be colored red or black.</p>
+<p>2. The root node must be black.</p>
+<p>3. Every leaf (NULL) node must be black.</p>
+<p>4. If a node is red, then both children of it must be black.</p>
+<p>5. Every path from a node to a leaf must contain the same number
+of black nodes.</p>
+<p>• RB-DELETE procedure deletes a node from the red black
+tree.</p>
+<p>• After deleting a node, RD-DELTETE calls RB-DELETE-FIXUP to fix
+red-black tree violations or to restore the red black tree
+properties.</p>
+<p>• The RB-DELETE-FIXUP algorithm restores the violation of
+properties of the RB-Tree. This algorithm executes until the node
+<i>x</i> that is the child of the deleted node is painted with
+black color or it becomes the root of the tree. Here <img src=
+"../imgs/b84fa805b7375ca1c4a9a6485da9da882d4b4f07.png">denotes the
+parent of node <i>x</i> and <i>w</i> is the sibling of node
+<i>x</i>.</p>
+<p>• In the RB-DELETE-FIXUP algorithm, case 1 occurs only when the
+node <i>w</i> is red. If parent of <i>x</i> was red, then there
+would be two reds in a row, namely parent of <i>x</i> and <i>w</i>,
+and we would have 2 reds in line before calling RB-Delete.</p>
+<p>• Hence <img src=
+"../imgs/b84fa805b7375ca1c4a9a6485da9da882d4b4f07.png">must be
+black at the start of case1 and so professors should not worry
+about the color of the node <i>x</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>After insertion and after deletion resulting red-black tree may
+or may not be same as initial red-black tree because off after
+insertion or deletion resulting tree may violate the property of
+red-black tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For example, insert node <img src=
+"../imgs/b75ad47de23ded60a254a816468ab57f276faf55.png"> into
+red-black tree.</p>
+<p>• Before insertion the color of node 3 is black and color of
+node 7 is red.</p>
+<p>• After insertion of node 10 the color of all nodes will be
+black according to the rule of red-black tree.</p>
+<p><img src="../imgs/465ca727bca7f33f6a33dd8469f44b140c63cde5.png"
+alt="Picture 3"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Delete the node 10 from red-black tree.</p>
+<p>• After deletion of node 10, the property of red-black tree is
+violating.</p>
+<p>• Move the node 3 as a child of node 7 and change the color of
+child node 3 from black to red.</p>
+<p><img src="../imgs/27f486ff3a45a109b3de89dd1e0f3e2e6becd918.png"
+alt="Picture 4"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Finally the structure of initial red-black tree and final
+red-black tree are different so final red-black tree is not same as
+initial red- black tree.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

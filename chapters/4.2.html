@@ -1,0 +1,338 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 4.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/87c6c2f317cef6a90c02b72a34d4ffd0e3d8c310.png">
+<hr>
+<img src="../imgs/4293b4b75bf5469358597da0834134dcb784e6e9.png">
+<hr>
+<img src="../imgs/8301847fea66a3164667f1bc4e65d7bb99528605.png">
+<hr>
+<img src="../imgs/fac42af672756ca8173b0f504f7e5cde595a6280.png">
+<hr>
+<img src="../imgs/70c9553831cf1536b13b41aef5695dc749d77a43.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/4ec8f4bcdfd96614fa95832fc062d9745f3944ca.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The strassen’s matrix multiplication algorithm is a divide and
+conquers technique to multiply <img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png">
+matrices.</p>
+<p>• In order to compute the product, <img src=
+"../imgs/6c093c71cb061b30602eaac94a2275ba5403dcab.png">, where each
+of A, B, C are <img src=
+"../imgs/502b52664681504aa8d22f5457689baabcc810ea.png"> matrices,
+and n is not an exact power of 2. It is necessary to extend the
+size of matrices to next power of 2.</p>
+<p>• This can be done by filling the last columns and the last rows
+of the matrices with zero.</p>
+<p><b>Multiplying two</b> <b><img src=
+"../imgs/fdf4fa7b73986c78ad9cf761ac0afea7e273bfa7.png"></b>
+<b>matrices:</b></p>
+<p>• Consider computing the product of two <img src=
+"../imgs/fdf4fa7b73986c78ad9cf761ac0afea7e273bfa7.png"> matrices.
+Here, the value of n is 3 which is not an exact power of 2.</p>
+<p>• So, extend the size of matrices to next power of 2, which are
+two <img src=
+"../imgs/e5008297c60728180923cc30deec187fb99524e7.png">matrices.</p>
+<p>• This can be done by filling the last column and the last row
+of the matrices with zero.</p>
+<p>• Finally, apply strassen’s algorithm to multiply two <img src=
+"../imgs/e5008297c60728180923cc30deec187fb99524e7.png">
+matrices.</p>
+<p>• Take the top-left <img src=
+"../imgs/fdf4fa7b73986c78ad9cf761ac0afea7e273bfa7.png">sub matrix
+of the resultant <img src=
+"../imgs/e5008297c60728180923cc30deec187fb99524e7.png"> matrix as
+the result.</p>
+<p><b>Multiplying two</b> <img src=
+"../imgs/c0eb230fafdcdf41d8e400b071bafdd945dd9256.png">
+<b>matrices:</b></p>
+<p>• If two <img src=
+"../imgs/c0eb230fafdcdf41d8e400b071bafdd945dd9256.png"> matrices
+are to be multiplied, then it is necessary to extend the size of
+matrices to <img src=
+"../imgs/3bf013e312e30c31ce75af23694b9ffa4f75c809.png"> matrices,
+because 5 is not an exact power of 2 and the next power is 8.</p>
+<p>• This can be done by filling the last 3 columns and the last 3
+rows of the matrices with zero.</p>
+<p>• Finally, apply strassen’s algorithm to multiply two <img src=
+"../imgs/3bf013e312e30c31ce75af23694b9ffa4f75c809.png"> matrices
+and take the top-left <img src=
+"../imgs/c0eb230fafdcdf41d8e400b071bafdd945dd9256.png">sub matrix
+of the resultant <img src=
+"../imgs/3bf013e312e30c31ce75af23694b9ffa4f75c809.png"> matrix as
+the result.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm running time:</b></p>
+<p>As <i>n</i> cannot be extended twice or more, it increases
+constantly. Therefore, the algorithm running time is <img src=
+"../imgs/71855954b88c7cf230b46d8e65edd39cca9fd2e1.png"></p>
+<p><b>Explanation:</b></p>
+<p>Let <img src=
+"../imgs/5f02101fb746afb20b9bcdc1cbff6dc81d05e85e.png"> such that
+<img src=
+"../imgs/c409d25d8916253bffee843d31b650793b1fbd22.png"></p>
+<p>The runtime for this algorithm is<img src=
+"../imgs/03ce1781fdb855154fc356803fde64068e3be6e4.png">.</p>
+<p>Since <img src=
+"../imgs/c6b13a41f8039ba6135d7137217bb445b39f514d.png">it follows
+that<img src=
+"../imgs/2e9a40ac56e04e814d3e54ebc4e2bc39f51485d6.png">. So, the
+runtime<img src=
+"../imgs/79779a7427520802cc62d7ea9dcb92fbffc8304c.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/822a827f382f80a262295fe587816338190106e4.png">
+<hr>
+<img src="../imgs/1dd36fa5129359648cf5da8c25c2005b48f997fc.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>First, the recurrence for each case is as follows:</p>
+<p>• <img src=
+"../imgs/f482d84e0dcf954aa5dc757fe17518a32b0dea03.png"></p>
+<p><img src=
+"../imgs/a00c9e79d915160493ed8ed7ba973ab8e49b1ef2.png"></p>
+<p>• <img src=
+"../imgs/f74376333b634c3c5a30f333879f1aac28f58160.png"></p>
+<p><img src=
+"../imgs/910ca8bcb68bc2554cd98fc6216cd0bac532fdb7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>• <img src=
+"../imgs/868dc142bf645dad9b5d46dc2609c9833c397fa0.png"></p>
+<p>T<sub>3</sub>(n)=<img src=
+"../imgs/17429db108287a00df845311aabe7a7b8435ca8c.png"></p>
+<p>From the above, it is clearly proved that <img src=
+"../imgs/ea9d4b8919e5d6f2ea6965f08b4b263a35635dd4.png">.</p>
+<p>Asymptotically, the fastest one is nothing but the way of
+multiplying 70x70 matrices with the help of 143,640 multiplications
+and it is better than Strassen’s algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Strassen’s Matrix Multiplication Algorithm</b></p>
+<p>Consider a matrix <i>A</i> of order <img src=
+"../imgs/0915d3f7dd1b1ea036db1c1f62c89ba54692d029.png">and <i>B</i>
+be a matrix of order<img src=
+"../imgs/9f8632e5e7981529fa2f26a4b69ebd03e1a40da2.png">.</p>
+<p>Note that the order of <i>AB</i> will be <img src=
+"../imgs/87703d70dd6edd0a67b210f2d459f4aff5d61e54.png">and
+<i>BA</i> will be<img src=
+"../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png">.</p>
+<p>Divide the matrices <i>A</i> and <i>B</i> into sub matrices of
+order<img src=
+"../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png">.</p>
+<p><img src=
+"../imgs/49127c783648d7658774c5d025c0bf91eb7d3b6f.png"></p>
+<p><img src=
+"../imgs/c11202c210d2189d4d59d4c40376a90f8687ee7f.png"></p>
+<p>Where <img src=
+"../imgs/53084bdbc8ebf5588793d4d0c0ded7f50728126c.png"> and
+<img src="../imgs/ea3b942926f2a4fb7beeb4504842dba5ba1e9000.png"> ,
+<img src="../imgs/36ae6c9d33afb7e3b4660d062d5e358c1043654b.png">
+are matrices of order <img src=
+"../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Calculate the product of the matrices <i>A</i> and <i>B</i>
+using sub matrices form.</p>
+<p><img src=
+"../imgs/066f548f4e378f2ee0f28ab9159dee1cb2acf0b5.png"></p>
+<p>Therefore, <i>AB</i> is expressed as a matric of order<img src=
+"../imgs/a9bbe38a9aea40a4fa34cca8f6bd676610ab7b18.png">.</p>
+<p>Each element in the matrix is a product of two matrices of order
+<img src="../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png">.
+Multiplying two sub matrices of order <img src=
+"../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png"> using
+Strassen’s algorithm takes <img src=
+"../imgs/97b32b19f4e46febe5655ac6344b7d97376a7326.png"> time.</p>
+<p>To calculate the product <i>AB</i>, it requires <img src=
+"../imgs/f6d19a13f36a1b3848476d245c985aa2252d1491.png">sub matrices
+multiplications.</p>
+<p><b>Therefore, the total time required to find the product</b>
+<i><b>AB</b></i> <b>using Strassen’s algorithm is</b> <img src=
+"../imgs/7ea307f5a65e49eeb86aaeab0706c17228aef803.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Calculate the product of the matrices <i>B</i> and <i>A</i>
+using sub matrices form.</p>
+<p><img src=
+"../imgs/1b615e878c677f71198fc1a5b142847541b8501e.png"></p>
+<p>Therefore, <i>BA</i> is expressed as a matric of order<img src=
+"../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png">.</p>
+<p>(Because, the product <img src=
+"../imgs/be35d33476bcefe0cf5de88b5443789679b6d48b.png"> results
+<img src="../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png">
+matrix, and the sum <img src=
+"../imgs/7ecabced174478b80e951cef842c8455a79365e0.png">results
+<img src="../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png">
+matrix).</p>
+<p>The product of the sub matrices <img src=
+"../imgs/be35d33476bcefe0cf5de88b5443789679b6d48b.png"> of order
+<img src="../imgs/f6e84f854dc5ec4bed65454b6f46bb9e04461085.png">
+using Strassen’s algorithm takes <img src=
+"../imgs/97b32b19f4e46febe5655ac6344b7d97376a7326.png"> time.</p>
+<p>To calculate the product <i>BA</i>, it requires <img src=
+"../imgs/b062087802f743bc7199034a734b36e77566bbd9.png">sub matrix
+multiplications</p>
+<p>.</p>
+<p><b>Therefore, the total time required to find the product</b>
+<i><b>BA</b></i> <b>using Strassen’s algorithm is</b> <img src=
+"../imgs/0a1a373479dd5d2ffee61cb6ec491cf7c198052a.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/ea19cc208f62b0f6321c0515be032e18326dbe7f.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

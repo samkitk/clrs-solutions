@@ -1,0 +1,261 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 11.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The dynamic set S is represented by a direct address table
+<i>T</i> of length <i>m</i>. To find the maximum element of S, each
+time get an element <i>T[k]</i> of the direct address table
+<i>T</i> and compare it with the variable ‘<i>max’</i> (initially
+max have very smaller value)<i>.</i> If <i>T[k]</i> is greater than
+the <i>‘max’</i>, store it in ‘<i>max</i>’. Repeat this until all
+the elements of the direct-address table are compared with
+<i>‘max’</i>. The last value that is left in the ‘max’ is the
+required maximum value.</p>
+<p><b>A procedure to find the maximum element of S:</b></p>
+<p>MAX-OF-SET (<i>T, m</i>)</p>
+<p>// -∞ is a very small value</p>
+<p>1. <i>max</i> = -∞</p>
+<p>2. <b>for</b> <i>k</i> = 0 to <i>m-1</i></p>
+<p>3. <b>If</b> <i>T[k] ≠ NIL</i> <b>and</b> <i>max</i> &lt;
+<i>T[k]</i></p>
+<p>4. <i>max</i> = <i>T[k]</i></p>
+<p>5. <b>return</b> <i>max</i></p>
+<p>If the <i>m-1</i> slot is not empty, then the procedure checks
+all the <i>m</i> slots of direct address table <i>T</i> for maximum
+value.</p>
+<p><b>Thus, the worst – case time complexity of the procedure
+is</b> <b><img src=
+"../imgs/cea916836029800909a5ca71a6dbfef21c99cc5b.png"></b>
+<b>time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a bit vector <i>A</i> of length <i>m,</i> which is used
+to direct access a table. A bit vector is an array contains either
+0 or 1 as its elements.</p>
+<p>The size of <i>A</i> bit vector depend on the largest element in
+dynamic set. The bit vector <i>A</i> is used to represent whether
+<i>i</i><sup>th</sup> element is available in dynamic set or not.
+That is,</p>
+<p><img src=
+"../imgs/468d131f05a57f0ae7ff97a930c28b302a33d9f8.png"></p>
+<p>With the help of bit vector a table can access directly.
+Therefore the runtime of dictionary operation is<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider following example:</p>
+<p>Suppose following elements are present in dynamic set:</p>
+<p><img src=
+"../imgs/1c65640ec0cc2acefbfddcdc85f5affe81146be9.png"></p>
+<p>Only the above blocks are allocated and rest all blocks are
+free. The bit vector <i>A</i> corresponding to dynamic set is as
+follows:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><i>Key</i></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>6</p>
+</td>
+<td>
+<p>7</p>
+</td>
+<td>
+<p>8</p>
+</td>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>10</p>
+</td>
+<td>
+<p>11</p>
+</td>
+<td>
+<p>12</p>
+</td>
+<td>
+<p>13</p>
+</td>
+<td>
+<p>14</p>
+</td>
+<td>
+<p>15</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>bits</i></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/694b12ae2fd76e84ec4da792be03c46c6cfd8fe1.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

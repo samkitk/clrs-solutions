@@ -1,0 +1,350 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 8.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Operation of BUCKET-SORT for n=10:</b></p>
+<p>Consider the input array A[1..10] as shown below:</p>
+<p><img src=
+"../imgs/3bc2131c9ff6e85dee978fcf136c4a19d7b745bf.png"></p>
+<p><img src="../imgs/b7f4067aaf3bf8285eb3374cf1cc6b157d1bbef4.png"
+alt="Picture 1"></p>
+<p>The internal [0,1) is divided into 10 equal sized buckets such
+that bucket <i>i</i> contains values that fall in the half-open
+range [<i>i</i>/10,(<i>i</i>+1)/10].</p>
+<p>• Bucket 0 will hold the values that fall in the half-open range
+[0, 0.1]. Bucket 1 will hold the values that are<img src=
+"../imgs/131d42e6d5514562df26a11e169c5f990ab65ac1.png">.</p>
+<p>• Bucket 1 will hold the values that fall in the half-open range
+[0.1, 0.2]. Bucket 1 will hold the values that are<img src=
+"../imgs/b6c722c6ee374f06e826fef771c4b61a4bc3ae9c.png">.</p>
+<p>• Bucket 2 will hold the values that fall in the half-open range
+[0.2, 0.3]. Bucket 2 will hold the values that are<img src=
+"../imgs/728b5d536a0427ae9ed553684a3aefc2eb7e78fd.png">.</p>
+<p>• Bucket 3 will hold the values that fall in the half-open range
+[0.3, 0.4]. Bucket 3 will hold the values that are<img src=
+"../imgs/239461216a5dd152a571e70f3bfc014cc4bd50dc.png">.</p>
+<p>• Bucket 4 will hold the values that fall in the half-open range
+[0.4, 0.5]. Bucket 4 will hold the values that are<img src=
+"../imgs/728a0be73e4565270ffc29d0f6b341dddaa7a5bb.png">.</p>
+<p>• Bucket 5 will hold the values that fall in the half-open range
+[0.5, 0.6]. Bucket 5 will hold the values that are<img src=
+"../imgs/0e6dbfa7b188478715c90a60664255f254e522d5.png">.</p>
+<p>• Bucket 6 will hold the values that fall in the half-open range
+[0.6, 0.7]. Bucket 6 will hold the values that are<img src=
+"../imgs/d129223ba1755a6b254c6ab6e8d2aaf43a35686b.png">.</p>
+<p>• Bucket 7 will hold the values that fall in the half-open range
+[0.7, 0.8]. Bucket 7 will hold the values that are<img src=
+"../imgs/14f72117b520d26b7db1ffb1508cf0c1aa511eeb.png">.</p>
+<p>• Bucket 8 will hold the values that fall in the half-open range
+[0.8, 0.9]. Bucket 8 will hold the values that are<img src=
+"../imgs/d6781330fde4946db45061b93284747b46b82691.png">.</p>
+<p>• Bucket 9 will hold the values that fall in the half-open range
+[0.9, 1]. Bucket 9 will hold the values that are<img src=
+"../imgs/12cc23d9b8ef24a908469ba1bb0f73dd05b9d4dc.png">.</p>
+</div>
+<hr>
+<div class="answer">According to the lines, 5 and 6 of the
+algorithm BUCKET-SORT(A) given in the textbook, the buckets will
+contain the values as shown below:
+<p><img src="../imgs/c19b0b567880a7763b7e8b996d40c8bfc7095e97.png"
+alt="Picture 1"></p>
+<p><b>Explanation:</b></p>
+<p>• The value .79 is greater than 0.7 and less than 0.8. Hence, it
+falls into the bucket 7.</p>
+<p>• The values .13 is greater than 0.1 and less than 0.2. Hence,
+it falls into the bucket 1.</p>
+<p>• The values .16 is greater than 0.1 and less than 0.2. Hence,
+it falls into the bucket 1.</p>
+<p>• The value .64 is greater than 0.6 and less than 0.7. Hence, it
+falls into the bucket 6.</p>
+<p>• The value .39 is greater than 0.3 and less than 0.4. Hence, it
+falls into the bucket 3.</p>
+<p>• The value .20 is equal to 0.2. Hence, it falls into the bucket
+2.</p>
+<p>• The value .89 is greater than 0.8 and less than 0.9. Hence, it
+falls into the bucket 8.</p>
+<p>• The value .53 is greater than 0.5 and less than 0.6. Hence, it
+falls into the bucket 5.</p>
+<p>• The value .71 is greater than 0.7 and less than 0.8. Hence, it
+falls into the bucket 7.</p>
+<p>• The value .42 is greater than 0.4 and less than 0.5. Hence, it
+falls into the bucket 4.</p>
+</div>
+<hr>
+<div class="answer">
+<p>According to the lines 7 and 8 of the algorithm BUCKET-SORT(A)
+given in the textbook, the buckets will contain the values as shown
+below:</p>
+<p><img src="../imgs/4f93b4678fac105fc6eba3f073dfbfb4581cd446.png"
+alt="Picture 1"></p>
+<p><b>Explanation:</b></p>
+<p>• All the buckets contain only one value expect the buckets 1
+and 7.</p>
+<p>• The values of bucket 1 are already sorted.</p>
+<p>• The values of bucket 7 are not sorted. So sort the values of
+bucket 7 using insertion sort.</p>
+</div>
+<hr>
+<div class="answer">According to the line 9 of the algorithm
+BUCKET-SORT(A) given in the textbook, concatenate the lists B[0],
+B[1],B[2],..,B[9] in order.
+<p>Then the array B is as shown below:</p>
+<p><img src="../imgs/b0b5595c7bc10a65584ed8f60c06cc65264ed867.png"
+alt="Picture 1"></p>
+<p>Hence, the sorted array is <img src=
+"../imgs/ae6046de82efe11179ed80ea8894c17c70218ba6.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/6906287188d4ea61f03fbdcfe82cba4a46bddaf5.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Let <i>X</i> be a random variable that is equal to number of
+heads that appear when the coin is flipped twice.</p>
+<p>Then the random variable X takes the following values:</p>
+<p><img src=
+"../imgs/7a8de4c01b3dfa4487ad3e92e7341dc1edd73923.png"></p>
+<p>Then distribution for the random variable <i>X</i> is as shown
+below:</p>
+<p><img src=
+"../imgs/4bd40d9c1cc4357374f9e9d400f25a4ff9f4a8c6.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The expected value of a random variable X(s) on a sample space S
+is as shown below:</p>
+</div>
+<hr>
+<div class="answer">
+<p><img src=
+"../imgs/8bc0ed2ecfb4daf94131f0be3a9f8280bb0a5917.png"></p>
+<p>The expected value of a random variable X(s) that is equal to
+number of heads that appear when the coin is flipped twice is as
+shown below:</p>
+<p><img src=
+"../imgs/a8718755fbed6b3949c34a82def564c22f1129e2.png"></p>
+<p><img src=
+"../imgs/8163c62eae63447083c11094c36dbddfb019f855.png"></p>
+<p><img src=
+"../imgs/5a64f4f5e2c1d5f6bab89ce057cb6754d493efb0.png"></p>
+<p>Hence, the value of <img src=
+"../imgs/9f0575f56e551a1116e61532ebbb47a727c0e9f0.png">
+and<img src="../imgs/5888295b32bfe5a5d816a18f3284f1d4effb8e54.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Sorting points in unit circle using Bucket sort</b></p>
+<p>• We are given <i>n</i> points in the unit circle. It is already
+known that a unit circle have radius of 1 and its center is the
+origin.</p>
+<p>• It is given that the points must be uniformly distributed,
+such that the probability of finding a point in any region of the
+circle is proportional to the area of that region.</p>
+<p>• Thus, to distribute the points uniformly, the total area of
+the circle must be divided into <i>x</i> regions or disks such that
+each region have the same area.</p>
+<p>• Then, each point lies in any of the disk based on the distance
+from the origin.</p>
+<p>• Since the given circle is unit circle, the radius <i>r</i>= 1.
+Thus the area of the unit circle<img src=
+"../imgs/57404a14785e11da6d88c2985e89d1f577531851.png">.</p>
+<p>Also, the distance of each point in the unit circle from the
+origin is <img src=
+"../imgs/edbc20aceef5e8b4246959a2366b896e374a0aac.png"></p>
+<p>Now, split the area into <i>x</i> regions, each having area
+<img src=
+"../imgs/7d9e2e703fed925c08f22c269dfe55c4ec743bbd.png">.</p>
+<p><img src="../imgs/35b6cea20bc11908f149bad4ce8a5d6fb66eb727.png"
+alt="Picture 5"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Calculating Bucket sizes such that the points are distributed
+uniformly:</b></p>
+<p>• Assume that the radii of circles is <img src=
+"../imgs/5d80bc2c51bf2cb6d89cffda14d367b86b80e219.png"> .</p>
+<p>Then the area of each region or disk is as follows:</p>
+<p><img src=
+"../imgs/bafeac561b4ed904a1877b66d0c81ad7d21289b2.png"></p>
+<p>• Since we divide the circle into <i>x</i> regions and the area
+of each region or disk must be <img src=
+"../imgs/7d9e2e703fed925c08f22c269dfe55c4ec743bbd.png">, area of
+each region, <img src=
+"../imgs/1602125d0ec738b868f12ae885e79643f3cf4203.png">.</p>
+<p>• Then radius of each circle can be calculated as follows:</p>
+<p><img src=
+"../imgs/ec69da9a9eefa743b022d7010b967f503956a69a.png"></p>
+<p>• Then</p>
+<p><img src=
+"../imgs/10904f6b327a8d0b1b104c60e656b24c30181ba2.png"></p>
+<p><img src=
+"../imgs/788997795f19ffe829559a95145ff7c8f6b36c38.png"></p>
+<p><img src=
+"../imgs/b7e735cfe64a0cac09b8f01e0113008ff4535612.png"></p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p><img src=
+"../imgs/0528c6028f48639315b61af980f1598720b2031d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>• Thus,</p>
+<p>The points in the first region have the distance between 0 to
+<img src=
+"../imgs/b3429cdb0464c3a0d068e5c9939ab194cc2673e0.png">.</p>
+<p>The points in the second region have the distance between
+<img src="../imgs/b3429cdb0464c3a0d068e5c9939ab194cc2673e0.png">to
+<img src=
+"../imgs/1c5e581b970c64a2dbea890456dd8becdc6da99d.png">.</p>
+<p>And so on.</p>
+<p>The points in the last region have the distance between
+<img src="../imgs/079322c108050514cc2bc82da17ce00a1aaa07e3.png">to1.</p>
+<p>Therefore create <i>x</i> buckets for the following half opened
+intervals:</p>
+<p><img src=
+"../imgs/fd250735c63df31346ce08389bc6ef3051aab324.png"></p>
+<p>• Now, insert the each point into corresponding buckets. The
+corresponding bucket can be calculated using the distance of the
+point as follows:</p>
+<p><img src=
+"../imgs/ef8ed1fba4d3f884746376994e1dddbf548b8973.png"></p>
+<p>That is, each point is inserted into <img src=
+"../imgs/df5a4139abf127119b93ab867ed8af45689838d2.png"> .</p>
+<p>• Now, the sorted points can be obtained by sorting each bucket
+and concatenating the buckets in the order of <img src=
+"../imgs/6c4deb9b3ff578fa9672493cd969925bf7b5bd56.png"> .</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p><b><img src=
+"../imgs/d18e90dfb43ce2562ceac35a579b87c116bb9737.png" alt=
+"Picture 6"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p>• Obviously, the above sort reflects the uniform distribution of
+the points, since the area of all regions is equal.</p>
+<p>• Since the above sort uses bucket-sort, the average-case
+running time of the above sort is<img src=
+"../imgs/95d4d293e2abfc196e50322e6fe890ffd8fc6d9f.png">. Where
+<i>n</i> is the number of points in the unit circle.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

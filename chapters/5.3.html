@@ -1,0 +1,385 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 5.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/5f75422604b9824a8bb25237ab43fc995d8eec65.png">
+<hr>
+<img src="../imgs/2eb23ba502912d07ffa7e7a8664aa76bfcfc81ae.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The identity permutation is defined as the permutation of given
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">
+numbers in their natural order. The identity permutation of first
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">
+natural number is given as <img src=
+"../imgs/eb029f2c5bff741daf1dd91c4eb71405421f14bc.png">. Also, it
+is known that <i>n</i>! permutations are possible with <i>n</i>
+numbers.</p>
+<p>• Now, consider the given PERMUTE-WITHOUT-IDENTITY algorithm.
+Using this algorithm Professor Kelp wants procedure at random any
+permutation besides the identity permutation.</p>
+<p>• That is , the Professor kelp wants to produce any one of all
+possible permutations(<i>n</i>!) of array of <i>n</i> elements,
+except the identity permutation(i.e. 1,2,3,….<i>n</i>).</p>
+<p>• Thus the PERMUTE-WITHOUT-IDENTITY algorithm must produce any
+one of the <i>n</i>!-1 permutations.</p>
+<p>The given PERMUTE-WITHOUT-IDENTITY algorithm will not produce
+the identity permutation, also it fails to produce some other
+permutations.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now consider the PERMUTE-WITHOUT-IDENTITY algorithm for<img src=
+"../imgs/5e60d0858d8ac036d81cf2fce6e9349b38205c05.png">. So, for
+<img src=
+"../imgs/5e60d0858d8ac036d81cf2fce6e9349b38205c05.png">,</p>
+<p>the total number of permutation besides identity permutation
+will be calculated as:</p>
+<p><img src=
+"../imgs/33760e789aed849b4dac29539ca0c2ac92c015fc.png"></p>
+<p>That is, the PERMUTE-WITHOUT-IDENTITY algorithm must produce 5
+random permutations besides the identity permutation.</p>
+<p>For<img src=
+"../imgs/5e60d0858d8ac036d81cf2fce6e9349b38205c05.png">, the for
+loop, in the PERMUTE-WITHOUT-IDENTITY algorithm, iterates for
+<img src="../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png">and
+<img src=
+"../imgs/60ccc41b76287a8cd2e6a80cc8ca138d3749cf0c.png">.</p>
+<p><b>For first iteration (</b> <b><img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png"></b>
+<b>):</b></p>
+<p>• When,<img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png">, the
+RANDOM(2, 3) function will return the values either 2 or 3.</p>
+<p>• Thus, only two permutations are possible in the first
+iteration.</p>
+<p><b>For second iteration (</b> <b><img src=
+"../imgs/60ccc41b76287a8cd2e6a80cc8ca138d3749cf0c.png"></b>
+<b>):</b></p>
+<p>• When,<img src=
+"../imgs/60ccc41b76287a8cd2e6a80cc8ca138d3749cf0c.png">, the
+RANDOM(3, 3) function will return only a single value which is
+3.</p>
+<p>• Thus, only one permutation is possible in the second
+iteration. Also this permutation can be produced in iteration
+one.</p>
+<p>Therefore for <i>n</i>=3, the total number of possible
+permutation produced by PERMUTE-WITHOUT-IDENTITY algorithm is 2
+rather than the 5 permutations.</p>
+<p><b>Hence, the PERMUTE-WITHOUT-IDENTITY algorithm does not
+produce what Professor Kelp intended.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8119428c3f48be8e2a53e73a4f5e83b29a1ceb1e.png">
+<hr>
+<img src="../imgs/fa754698ebbf2ddb2421ae4588b84395a26a9df1.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the given PERMUTE-BY-CYCLIC algorithm.</p>
+<p>• 1<sup>st</sup> line initializes a variable <i>n</i> with the
+size of array <i>A</i>.</p>
+<p>• 2<sup>nd</sup> line declares an empty array <i>B</i> to store
+permuted elements of array <i>A</i>.</p>
+<p>• 3<sup>rd</sup> line generates a random number between 1 and
+<i>n</i> and stores in <i>offset</i>.</p>
+<p>• 4<sup>th</sup> line implements a <i>for</i> loop to permute
+elements of <i>A</i> by storing them in <i>B</i> at different
+positions.</p>
+<p>• 5<sup>th</sup> line adds <i>i</i> to <i>offset</i> and stores
+the result into <i>dest</i>.</p>
+<p>• 6<sup>th</sup> line checks the index value <i>dest</i> is
+greater than <i>n</i> or not. If condition is true, then resets the
+value of <i>dest</i> by performing modular division.</p>
+<p>• 8<sup>th</sup> line stores the <i>i</i><sup>th</sup> element
+of <i>A</i> into <i>B</i> at position <i>dest</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The PERMUTE-BY-CYCLIC algorithm randomly selects a value between
+1 and <i>n</i> as <i>offeset</i>. The index <i>dest</i> is
+determined by adding <i>i</i> to <i>offset</i>. If <i>dest</i> is
+greater than <i>n</i>, <i>dest</i> is updated by perfoming modular
+divisionon <i>dest</i> with <i>n</i>( <i>dest</i>=<i>dest-n</i> or
+<i>dest</i>= <i>dest</i> % <i>n</i>). This procedure generates a
+cyclic rotation of the array.</p>
+<p>However, each time, the value of <i>dest</i> is between 1 to
+<i>n</i>. Thus, each element of <i>A</i> may save at any one of
+<i>n</i> positions (indexes) of <i>B</i>. Therefore, the
+probability of an element <i>A</i>[<i>i</i>] to store at one
+position of <i>B</i> is 1/<i>n</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>An algorithm is said to be produces uniformly random
+permutations on a set of <i>n</i> elements, if the algorithm can
+produce <i>n!</i> random permutations with each permutation is
+equally likely to appear( That is, each permutation should have
+probability 1/<i>n!</i>).</p>
+<p>Therefore, the PERMUTE-BY-CYCLIC algorithm does not produce
+uniform random permutation, because it determined only one
+<i>offset</i>(one random number) for whole permutation with
+probability 1/<i>n</i>. Hence, it only generates <i>n</i> random
+permutations. Each of these random permutations is occurred with
+probability of 1/<i>n</i>.</p>
+<p><b>Hence, PERMUTE-BY-CYCLIC algorithm does not produce uniform
+random permutation.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the algorithm PERMUTE-BY-SORTING(). To increase the
+uniqueness, randomly choose the elements of array P between 1
+to<img src=
+"../imgs/22ec43f5c07722437f9bdc9222443eaf7057f023.png">.</p>
+<p>Here, n is the size of the array P.</p>
+<p>• For value of i, j such that<img src=
+"../imgs/d46afe19feffb149f746bc16902716b558ad98ca.png">, Consider
+<img src="../imgs/9cdf3b033858568e33531789c82c614ed7cf17a5.png">
+that will denote that an element at index i and j are identical, in
+array P.</p>
+<p>• Since elements in P are chosen independently at random from
+values 1 to<img src=
+"../imgs/22ec43f5c07722437f9bdc9222443eaf7057f023.png">, the
+probability that an element at index i and j are identical in array
+P,<img src=
+"../imgs/027865187fe4e305a0b4bde5069d01e82387dadb.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Finding the probability that all elements are unique in array
+P:</b></p>
+<p>• Assume, if elements at first <i>i</i>-1 index are unique, then
+the probability that the element at index i is unique,
+Pr{E<sub>i</sub>} <img src=
+"../imgs/07b1ea2e7cb22afe52339950e37a80caf6a0b725.png">. …… (1)</p>
+<p>• Therefore, the probability that all elements are unique is</p>
+<p><img src=
+"../imgs/37925b3d5cfb6bc72e6430b898dfd53f4c9bff3e.png"></p>
+<p>…… (2)</p>
+<p>• From equation (1) and (2), the above expression can be written
+as,</p>
+<p><img src=
+"../imgs/63d6f408ee210316355d34ab90dc5a40858ba3c2.png"></p>
+<p>• This can be further solved to,</p>
+<p><img src=
+"../imgs/b34c62b5f73009f3fa7b11c56cf51e9f84cea480.png"></p>
+<p>Hence, the probability that all elements are unique is at
+least<img src=
+"../imgs/41f9fdef1bd31543053eafc10128e93f29b40824.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Producing uniform random permutation</b></p>
+<p>Consider the PERMUTE-BY-SORTING () algorithm that permutes the
+elements of array <i>A</i> by random priorities. Where, <i>A</i> is
+an array of <i>n</i> elements. The PERMUTE-BY-SORTING () algorithm
+may possibly generate or assign same priority to one or more
+elements in the array <i>A</i>. The algorithm can be modified such
+that the algorithm produces a uniform random permutation.</p>
+<p>Now, consider the following modified algorithm of
+PERUMTE-BY-SORTING that produces a uniform random permutation.</p>
+<p>MODIFIED-PERMUTE-BY-SORTING (<i>A</i>)</p>
+<p>//Determine number of elements in the array <i>A</i></p>
+<p>1. <img src=
+"../imgs/981d2a0003f7b189e7e90cbf581eee9ea788a85e.png"></p>
+<p>2. let <img src=
+"../imgs/63d8acb76972b2f4a9f9a0b07483a2013549345d.png">be new
+array</p>
+<p>//initialize the array <i>P</i> with numbers, 1 through
+<i>n</i>.</p>
+<p>3. <b>for</b> <img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png"><b>to</b>
+<i>n</i></p>
+<p>4. <b><img src=
+"../imgs/c00d761b3a2aac9098cdc739f520af9c59f34291.png"></b></p>
+<p>5. <b>for</b> <img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png"><b>to</b>
+<i>n</i></p>
+<p><b>//</b>choose a random number between 1 and <i>n</i></p>
+<p>6. <i>k</i> = RANDOM<img src=
+"../imgs/4779ebbcbe1b4ec5056635ac06b53de24b3ffb3d.png"></p>
+<p>//swap the <i>i</i><sup>th</sup> and <i>k</i><sup>th</sup>
+elements of <i>P</i> so that no two priorities are not same.</p>
+<p>7. SWAP<img src=
+"../imgs/df9654d55b2973be4b8679948cedb78bd16bf86f.png"></p>
+<p>8. Sort <i>A</i> using priorities in <i>P</i> as sort keys</p>
+<p>Uniform random permutation is achieved by assigning the
+priorities in increasing order 1 through <i>n</i> and in each
+iteration swapping the <i>i</i><sup>th</sup> element and
+<i>k</i><sup>th</sup> elements in <i>P</i>. Where, k is the random
+number chosen in the range 1 to n.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Example:</p>
+<p>Assume <i>A</i>=<a>
+<p>P=&lt;1,2,3,4&gt;</p>
+<p>Run the algorithm on <i>A</i>.</p>
+<p>Step 1:</p>
+<p>For <i>i</i>=1, assume <i>k</i>= 2,</p>
+<p>Swap <i>P</i>[1] and <i>P</i>[2]</p>
+<p>Thus, <i>P</i>={2,1,3,4}</p>
+<p>Step 2:</p>
+<p>For <i>i</i>=2, assume <i>k</i>=4</p>
+<p>Swap <i>P</i>[2] and <i>P</i>[4]</p>
+<p>Thus, <i>P</i>={2,4,3,1}</p>
+<p>Step 3:</p>
+<p>For <i>i</i>=3,assume <i>k</i>= 4</p>
+<p>Swap <i>P</i>[3] and <i>P</i>[4]</p>
+<p>Thus , <i>P</i>={2,4,1,3}</p>
+<p>Step 4:</p>
+<p>For <i>i</i>=4, assume <i>k</i>= 1</p>
+<p>Swap <i>P</i>[4] and <i>P</i>[1]</p>
+<p>Thus, <i>P</i>={3,4,1,2}</p>
+<p>Now sort <i>A</i>, according to <i>P</i></p>
+<p>Hence, <i>A</i>=</p>
+</a></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

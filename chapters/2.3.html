@@ -1,0 +1,588 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 2.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Operation of Merge – sort on the array</b></p>
+<p>A = &lt; 3, 41, 52, 26, 38, 57, 9, 49 &gt;</p>
+<p>The operation of merge sort can be shown as follows:</p>
+<p><img src="../imgs/6acb156230e7278c5ffd07008394d8c7bad606de.png"
+alt="Picture 2"></p>
+<p>The unsorted elements which are stored in the array are first
+segregated into individual elements using the divide and conquer
+technique. The merge sort algorithm splits the array into half.
+When a single element is left, it is sorted. If the array has more
+than one element, the array is split recursively and the merge sort
+is invoked on both halves.</p>
+</div>
+<hr>
+<div class="answer">
+<p>When the halves are sorted, the merge operation is performed in
+which the elements are merged by taking the two smaller elements
+together and combining them into a sorted array which can be shown
+below:</p>
+<p><img src="../imgs/29017a825b37e7956d74ebf36a33df97b19020cd.png"
+alt="Picture 3"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Modified version of MERGE procedure that does not use
+sentinels:</b></p>
+<p>MERGE (<i>A, p, q, r</i>)</p>
+<p>// Calculate the length (<i>n1</i>) of the sub array
+<i>A</i>[<i>p</i>..<i>q</i>]</p>
+<p>1 <i>n</i><sub>1</sub> <i>= q - p+1</i></p>
+<p>// Calculate the length (<i>n2</i>) of the sub array
+<i>A</i>[<i>q</i>+1..<i>r</i>]</p>
+<p>2 <i>n</i><sub>2</sub> <i>= r – q</i></p>
+<p>// Create the left array <i>L</i> and right array <i>R</i></p>
+<p>3 <i>L [1..n</i><sub>1</sub>] and <i>R
+[1..n</i><sub>2</sub><i>]</i></p>
+<p>// Copy the elements of the subarray
+<i>A</i>[<i>p</i>..<i>q</i>] into the array <i>L
+[1..n</i><sub>1</sub>]</p>
+<p>4 <b>for</b> <i>i</i> =1 to <i>n</i><sub>1</sub></p>
+<p>5 <i>L</i>[<i>i</i>] = <i>A</i>[p+i-1]</p>
+<p>// Copy the elements of the subarray
+<i>A</i>[<i>q</i>+1..<i>r</i>] into the array <i>R
+[1..n</i><sub>2</sub><i>]</i></p>
+<p>6 <b>for</b> <i>j</i> =1 to <i>n</i><sub>2</sub></p>
+<p>7 <i>R</i>[<i>j</i>] = <i>A</i>[<i>q + j</i>]</p>
+<p>// Set the values of variable <i>i</i> and <i>j</i> to 1</p>
+<p>8 <i>i</i>=1</p>
+<p>9 <i>j</i>=1</p>
+<p>// merge the lists</p>
+<p>10 <b>for</b> <i>k</i> = <i>p</i> <b>to</b> <i>r</i></p>
+<p>// check if the index <i>i</i> is greater than <i>n1</i>. If
+true, then it indicates that the array</p>
+<p>// <i>L</i> is empty. Then copy the remaining elements of array
+<i>R</i> into array <i>A.</i></p>
+<p>11 <b>if</b> (<i>i</i> &gt; <i>n</i><sub>1</sub>)</p>
+<p>12 <i>A</i>[<i>k</i>] = <i>R</i>[<i>j</i>]</p>
+<p>13 <i>j = j</i> + 1</p>
+<p>// check if the index <i>j</i> is greater than <i>n2</i>. If
+true, then it indicates that the array</p>
+<p>// <i>R</i> is empty. Then copy the remaining elements of array
+<i>L</i> into array <i>A.</i></p>
+<p>14 <b>else if</b> (<i>j</i> &gt; <i>n</i><sub>2</sub>)</p>
+<p>15 <i>A</i>[<i>k</i>] = <i>L</i>[<i>i</i>]</p>
+<p>16 <i>i</i> = <i>i</i> + 1</p>
+<p>// Compare <i>L</i>[<i>i</i>] and <i>R</i>[<i>j</i>]. If
+<i>L</i>[<i>i</i>]&lt;= <i>R</i>[<i>j</i>], then copy the element
+<i>L</i>[<i>i</i>] into array</p>
+<p>// <i>A</i> and increment the index <i>i</i></p>
+<p>17 <b>else if</b> <i>L</i>[<i>i</i>] &lt;=
+<i>R</i>[<i>j</i>]</p>
+<p>18 <i>A</i>[<i>k</i>] = <i>L</i>[<i>i</i>]</p>
+<p>19 <i>i</i> = <i>i</i> + 1</p>
+<p>// If <i>L</i>[<i>i</i>]&gt; <i>R</i>[<i>j</i>], then copy the
+element <i>R</i>[<i>j</i>] into array <i>A</i> and increment
+the</p>
+<p>// index <i>j</i></p>
+<p>20 <b>else</b></p>
+<p>21 <i>A</i>[<i>k</i>] = <i>R</i>[<i>j</i>]</p>
+<p>22 <i>j</i> = <i>j</i> + 1</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>In the above algorithm, the use of sentinels has been removed.
+Instead of using the sentinels, the indexes <i>i</i> and <i>j</i>
+are used.</p>
+<p>• The index <i>i</i> is used to keep track of the number of
+elements of the array <i>L</i> copied into array <i>A</i>.</p>
+<p>• The index j is used to keep track of the number of elements of
+the array <i>R</i> copied into array <i>A</i>.</p>
+<p>• In each iteration of the loop, the value of the index <i>i</i>
+is compared with <i>n1</i> and index <i>j</i> is compared with
+<i>n2</i> respectively.</p>
+<p>• <i>n1</i> is the length of the array <i>L</i> and <i>n2</i> is
+the length of the array <i>R</i>.</p>
+<p>• If all the elements of the array <i>L</i> are copied, then the
+value of <i>i</i> will be greater than <i>n1</i>.</p>
+<p>• If all the elements of the array <i>R</i> are copied, then the
+value of <i>j</i> will be greater than <i>n2</i>.</p>
+<p>The line 11 checks whether the index <i>i</i> is greater than
+<i>n1,</i> which is the size of the array <i>L</i>.</p>
+<p>• If true, then it indicates that all the elements of the array
+<i>L</i> are copied back to array <i>A</i> and the array <i>L</i>
+is empty.</p>
+<p>• The lines 12 and 13 will copy the remaining elements of array
+<i>R</i> into array <i>A.</i></p>
+<p>The line 14 checks whether the index <i>j</i> is greater than
+<i>n2,</i> which is the size of the array <i>R</i>.</p>
+<p>• If true, then it indicates that all the elements of the array
+<i>R</i> are copied back to array <i>A</i> and the array <i>R</i>
+is empty.</p>
+<p>• The lines 15 and 16 will copy the remaining elements of array
+<i>L</i> into array <i>A.</i></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The recurrence relation is used to calculate the n<sup>th</sup>
+element in the given sequence. The recurrence relation is an
+equation which is recursively defines a sequence.</p>
+<p>Consider the recurrence relation:</p>
+<p><img src=
+"../imgs/6cee1d79f88847fc0ea82ca69341c05024d6330b.png"></p>
+<p><b>Base case:</b></p>
+<p>This base case is used to prove that the statement holds the
+natural number <i>n</i>.</p>
+<p><img src=
+"../imgs/fb1b0660e28726d0e1bb9be11e8a0d21711bca69.png">, when
+n=2</p>
+<p><img src=
+"../imgs/16a668ce6615ce1d2da130e25899577eea99c1ed.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The Mathematical induction Hypothesis is as follows:</b></p>
+<p><img src=
+"../imgs/8ef005f40f253ae24491f91c2be5e43e2f971f31.png"></p>
+<p>Substituting the <i>n</i> value then we get</p>
+<p><img src=
+"../imgs/9f8ec30e1bc8e0b18199876bc32f765d89d7d779.png"></p>
+<p>Hence, <img src=
+"../imgs/fb1b0660e28726d0e1bb9be11e8a0d21711bca69.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>RECURSIVE-INSERTION-SORT (<i>A,n</i>)</p>
+<p>1 if <i>n</i>&gt;1</p>
+<p>2 RECURSIVE-INSERTION-SORT (<i>A,n-1</i>)</p>
+<p>3 INSERT(<i>A,n</i>)</p>
+<p>&nbsp;</p>
+<p>INSERT(<i>A</i>,<i>k</i>)</p>
+<p>// Insert <i>A</i>[<i>k</i>] to the sorted
+<i>A</i>[1..<i>k</i>-1]</p>
+<p>// Use Insertion-Sort without outside loop</p>
+<p>1 <i>key</i>=<i>A</i>[<i>k</i>]</p>
+<p>2 <i>i</i>=<i>k</i>-1</p>
+<p>3 while <i>i</i>&gt;0 and <i>A</i>[<i>i</i>]&gt;<i>key</i></p>
+<p>4 <i>A</i>[<i>i</i>+1] = <i>A</i>[<i>i</i>]</p>
+<p>5 <i>i</i>--</p>
+<p>6 A<i>[i</i>+1] = <i>key</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>Let <i>T</i>(<i>n</i>) be the total time taken for insertion
+sort to sort a list with <i>n</i> elements.</p>
+<p>The recurrence relation for the recursive version of the
+insertion sort is,</p>
+<p><img src=
+"../imgs/66df940b63ad7db26e6bcbb98690448c2cf947a0.png"></p>
+<p>The running time for the recursive version of the insertion sort
+can be calculated using substitution method as shown below:</p>
+<p>The recurrence is <img src=
+"../imgs/cb9eaa415cd337c43017e90a9caf8bc86e428aa9.png"></p>
+<p>Substitute <i>n</i>=<i>n</i>-1 in equation (1)</p>
+<p><img src=
+"../imgs/4a11e231433339e9adc5b624d9b2d6ded14ee6bf.png"></p>
+<p>Substitute <i>n</i>=<i>n</i>-2 in equation (1)</p>
+<p><img src=
+"../imgs/0d63cf1bf379ccae151cf32b613bbd059cb307cc.png"></p>
+<p>Substitute <i>n</i>=<i>n</i>-3 in equation (1).</p>
+<p><img src=
+"../imgs/932ed01ff14e8fa13b690fa69b16d836453d908c.png"></p>
+<p>Substitute <i>n</i>=1 in equation (1).</p>
+<p><img src=
+"../imgs/56506931b6d8ccbdc74e44eafea9238dd172fb9e.png"></p>
+<p>Substitute equation (2) in equation (1).</p>
+<p><img src=
+"../imgs/b26a89c90070ffd8a5b692484f4abf3dcd106ddf.png"></p>
+<p>Substitute equation (3) in equation (6).</p>
+<p><img src=
+"../imgs/21928ca1b553383cda7830f45f62c935f3f9fa1c.png"></p>
+<p>Substitute equation (4) in equation (7).</p>
+<p><img src=
+"../imgs/4c2d228d2237962fd1f2ea0a79364e2eee3a3fcf.png"></p>
+<p><img src=
+"../imgs/a79b58e268e1f0acdae65b768884a0ff105c9d4b.png"></p>
+<p>When n=1, substitute equation (5) in the previous equation.</p>
+<p><img src=
+"../imgs/f7588bff8077423edddbd1a1a39601061f7a0fd9.png"></p>
+<p>Therefore, the running time for the recursive version of the
+insertion sort is approximately equal to <img src=
+"../imgs/2892433ec2b19d5f908320a52cce7f715c081413.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Iterative version of binary search:</b></p>
+<p>Binary Search (<i>A</i>, <i>v</i>)</p>
+<p>1. <img src=
+"../imgs/6aecced0ebfc6ff5f60692657e8694530dddfc9d.png">, <img src=
+"../imgs/a40d23c9ab6fe883feecc9f0f03ea258617e0f79.png">, <img src=
+"../imgs/98af12beea70bf7f642c7e9104f866e3f1d84cfa.png"></p>
+<p>2. while <img src=
+"../imgs/ab626e1b9e5291b83769ea9c424a81819707ca2b.png"> and
+<i>found</i></p>
+<p>//calculate the mid</p>
+<p>3. <img src=
+"../imgs/80713f99e8f77abdf7ab473a91e4d00156145d2c.png"></p>
+<p>//check whether <i>A</i>[<i>mid</i>] is equal to the search
+element <i>v</i></p>
+<p>// if <i>A</i>[<i>mid</i>] is equal to the search element
+<i>v,</i> element is found</p>
+<p>4. if <img src=
+"../imgs/44dce6f3dec0a3d6c8cb0cffc529f1c008a18a87.png"></p>
+<p>5. <img src=
+"../imgs/0536f1baa614a4139fcd19faf44f4f6f2b67e93e.png"></p>
+<p>// if <i>A</i>[<i>mid</i>] is less than the search element
+<i>v,</i> then assign <img src=
+"../imgs/7ed060d7b8b671b7f98c4cb2d041119e9682abf0.png"></p>
+<p>6. else if <img src=
+"../imgs/b20e789ad0f617b6d9c65782fbb294792616fd85.png"></p>
+<p>7. <img src=
+"../imgs/7ed060d7b8b671b7f98c4cb2d041119e9682abf0.png"></p>
+<p>// if <i>A</i>[<i>mid</i>] is greater than the search element
+<i>v,</i> then assign <img src=
+"../imgs/60771fc6400ffe54198224645028bdf481505756.png"></p>
+<p>8. else</p>
+<p>9. <img src=
+"../imgs/60771fc6400ffe54198224645028bdf481505756.png"></p>
+<p>// if <i>found</i> is true, then the element is found at
+location <i>mid</i></p>
+<p>10. if (<i>found==true)</i></p>
+<p>11. return <i>mid</i></p>
+<p>12. else</p>
+<p>13. return NIL</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Worst case running time of binary search:</b></p>
+<p>Worst case refers to the case when the element to be searched is
+not found in the list.</p>
+<p>Let <img src=
+"../imgs/8257037e361da0a7d6c6d1d0cf83dcaaac361b24.png"> denote the
+length of the sub array being searched on the <img src=
+"../imgs/945b45a742610ccb52307d0824312bbea791e7bf.png"> iteration
+of loop 2-9.</p>
+<p>The length of the subarray<img src=
+"../imgs/8257037e361da0a7d6c6d1d0cf83dcaaac361b24.png"> is halved
+in each iteration.</p>
+<p>In the first iteration, <img src=
+"../imgs/5c3a0dbad12d7a44fe9f9af2b7912afae0bd81da.png"></p>
+<p>In the second iteration <img src=
+"../imgs/b7ae6c987e072b7ae0fb287a09917a8d037b9d96.png"></p>
+<p>In the third iteration <img src=
+"../imgs/5ff9d70e5360e5ceb0a2d1212c11907733231293.png"></p>
+<p>In the fourth iteration <img src=
+"../imgs/e520bf438af3bff85c9c009e2ffb077c471a881a.png"></p>
+<p>In the k<sup>th</sup> iteration,</p>
+<p><img src=
+"../imgs/0b72a1ef3c6dfcc68e75efa86687221dca333b28.png"></p>
+<p>Iteration stops when the length of the subarray <img src=
+"../imgs/8257037e361da0a7d6c6d1d0cf83dcaaac361b24.png">is 1.</p>
+<p>In the k<sup>th</sup> iteration,</p>
+<p><img src=
+"../imgs/851f7f4d1674c0adffd5cd6fae58865c966672ce.png"></p>
+<p>From equation (1) and (2),</p>
+<p><img src=
+"../imgs/15f867f3da15a14f4ee34190d222d17453ebf922.png"></p>
+<p>Apply<img src=
+"../imgs/da2f081ceacc5febbb858527b10fbbc4b5d4717a.png"> on both
+sides.</p>
+<p><img src=
+"../imgs/db8f38da36074bcc4cad440dbf2a574497c64509.png"></p>
+<p>Therefore, the running time of Binary Search is <b><img src=
+"../imgs/42dc829a993668aadc491961ebf075f698cbaf89.png"></b> in
+worst case.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The INSERTION-SORT procedure uses a linear search to scan
+through the sorted sub array <i>A</i>[1…..<i>j-1</i>].</p>
+<p>INSERTION-SORT (<i>A</i>)</p>
+<p>1 <b>for</b> <i>j</i> = 2 <b>to</b> <i>A. length</i></p>
+<p>2 <i>key</i> =<i>A</i>[<i>j</i>]</p>
+<p>3 //Insert A[<i>j</i>] into the sorted sequence
+<i>A</i>[1…<i>j</i> – <i>1</i>].</p>
+<p>4 <i>i = j</i> – <i>1</i></p>
+<p><b>5 while</b> <i><b>i</b></i> <b>&gt;0 and</b> <i><b>A</b></i>
+<b>[</b> <i><b>i</b></i> <b>] &gt;</b> <i><b>key</b></i></p>
+<p><b>6</b> <i><b>A</b></i> <b>[</b> <i><b>i+1</b></i> <b>] =</b>
+<i><b>A</b></i> <b>[</b> <i><b>i</b></i> <b>]</b></p>
+<p><b>7</b> <i><b>i = i -1</b></i></p>
+<p>8 <i>A</i>[<i>i+1</i>] = <i>key</i></p>
+<p>To locate the insertion position
+(<i>A</i>[<i>i</i>]&gt;<i>key</i>) among the sorted sub-array
+<i>A</i>[1…<i>j</i> – <i>1</i>], the procedure INSERTION–SORT uses
+linear search technique.</p>
+<p>Because the array is already sorted using loop invariant, it can
+select the middle of <i>A</i>[1, <i>j-1</i>], check to see if value
+is greater or lower value, and recursively repeat this procedure
+until left with one element.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The pseudo code for such an algorithm is:</p>
+<p>Binary-Insertion-Sort (<i>A</i>)</p>
+<p>1 <b>for</b> <i>i</i> = 0 to <i>A. length</i> <b>do</b></p>
+<p>2 <i>temp</i> = <i>A</i>[<i>i</i>]</p>
+<p>3 <i>left</i> = 0</p>
+<p>4 <i>right</i> = i</p>
+<p>5 <b>while</b> <i>left</i> &lt; <i>right</i> do</p>
+<p>6 <i>middle</i> = (<i>left</i> + <i>right</i>)/2</p>
+<p>7 <b>if</b> <i>temp</i> <img src=
+"../imgs/4f7c983679683e765572b28d03139d30d2003e67.png">
+<i>A</i>[<i>middle</i>]</p>
+<p>8 <i>left</i> = <i>middle</i> + 1</p>
+<p>9 <b>else</b> <i>right</i> = <i>middle</i></p>
+<p>10 <b>for</b> <i>j</i> = <i>i</i> <b>to</b> <i>left</i></p>
+<p>11 <b>do</b></p>
+<p>12 <i>stemp</i> = <i>A</i>[<i>j</i><i><img src=
+"../imgs/039fcdbc771774c599bc583dd79ca1c4d839bfaf.png"></i><i>1</i>
+]</p>
+<p>13 <i>A</i>[<i>j</i><i><img src=
+"../imgs/039fcdbc771774c599bc583dd79ca1c4d839bfaf.png"></i><i>1</i>
+] = <i>A</i>[<i>j</i>]</p>
+<p>14 <i>A</i>[<i>j</i> ] = <i>stemp</i></p>
+<p>15 <i>j</i> = <i>j</i> <img src=
+"../imgs/039fcdbc771774c599bc583dd79ca1c4d839bfaf.png">1</p>
+</div>
+<hr>
+<div class="answer">
+<p>In binary search, the length of the subarray<img src=
+"../imgs/217b6f9f85865652777cf5ffefe47754cf8cebe9.png"> is halved
+in the iterations.</p>
+<p>In the first iteration, <img src=
+"../imgs/024ee7e3f9398eeb4d10d9591105290d4d062ba0.png"></p>
+<p>In the second iteration <img src=
+"../imgs/abeb7be9144b3a2b4be4a336852e6bebd746169c.png"></p>
+<p>In the third iteration <img src=
+"../imgs/aab531a081f1023078874e31d3141a7ecd3e8698.png"></p>
+<p>In the fourth iteration <img src=
+"../imgs/aec8924c5a842afde48c7d0d4932da417ea54c94.png"></p>
+<p>In the k<sup>th</sup> iteration,</p>
+<p><img src=
+"../imgs/1036ba342fb44c96e44649ae41e0dc6b02b7d8aa.png"></p>
+<p>Iteration stops when the length of the subarray <img src=
+"../imgs/217b6f9f85865652777cf5ffefe47754cf8cebe9.png">is 1.</p>
+<p>In the k<sup>th</sup> iteration,</p>
+<p><img src=
+"../imgs/d22300d17af6907879a3370de6fb6ca98783f728.png"></p>
+<p>From equation (1) and (2),</p>
+<p><img src=
+"../imgs/e3911d3639d53aaafa4f46bc538d02a9516fce2b.png"></p>
+<p>Apply<img src=
+"../imgs/cae4b6938d35cab99cdc76cd8ded99f25d7bc33c.png"> on both
+sides.</p>
+<p><img src=
+"../imgs/8696c1b29d064c482c9ee0dd9c9c5557b462ab4e.png"></p>
+<p>Therefore, binary search required <img src=
+"../imgs/5fbb035ccff23e46c8aac5f26dedc8a17e32386c.png"> comparisons
+where <img src=
+"../imgs/32d738cdbb0bc8cc582561f56c497b486eb7d45b.png"></p>
+<p>The first for loop iterates <i>n</i> times and the algorithm
+takes <img src=
+"../imgs/443e1611694865a8f50123e66a9cbfaa1b46caee.png"> times.</p>
+<p>Therefore, the running time of the algorithm is<img src=
+"../imgs/dde4c60b411880414b8ac2a579a8908e4728a6cb.png"> .<img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"></p>
+<p>The time required to find the element to be replaced is<img src=
+"../imgs/0a952ac4e2834931f9417efbcbcd9a9a17c52808.png">. In order
+to insert the element in the required position, remaining elements
+need to be shifted. The time required to shift the elements is
+<img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">.</p>
+<p><b>The total time required to find and insert the element is</b>
+<b><img src=
+"../imgs/1d35968e59eb235415ee32e625da6d9ea6cb2528.png"></b>
+<b>.</b></p>
+<p><b>Therefore, it is not possible to improve the overall
+worst-case running of insertion sort to</b> <b><img src=
+"../imgs/dde4c60b411880414b8ac2a579a8908e4728a6cb.png"></b> <b>time
+even binary search is used instead of linear search.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>It is given that the set <i>S</i> contains <i>n</i> integers. It
+is required to find two elements in <i>S</i> such that their sum is
+exactly <i>x.</i> This can be achieved using the binary-search
+algorithm.</p>
+<p>• Assume that there exist two elements such that their sum is
+<i>x</i>. Also assume <i>y</i> be the second element of those two
+elements. Then, obviously, the first element be the difference
+between <i>x</i> and <i>y</i>.</p>
+<p>• Thus, it is enough to find whether the first element
+(difference) exists in the set <i>S</i> or not using
+binary-search.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Assume that the set <i>S</i> is an array and contains positive
+integers. Then the required algorithm is as follows:</p>
+<p><img src="../imgs/2886baff8ae4ae03ea0ab0cf90bdbd27c2a8c8ba.png"
+alt="Capture"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm running time:</b></p>
+<p>• The for loop in the step 2 runs <i>n</i> times. In each
+iteration, one element(<i>y</i>) from <i>S</i> is taken and applied
+binary search to find whether the difference between <i>x</i> and
+<i>y</i> (i.e., second element), is exist in the <i>S</i> or
+not.</p>
+<p>• Obviously, the worst case run time of binary-search is
+<img src=
+"../imgs/ac93a1b7264b146957a041ea94caea5b60235a26.png">.</p>
+<p>• In each iteration of the for loop, binary-search algorithm
+will be executed. That is, binary-search algorithm runs <i>n</i>
+times in the worst case.</p>
+<p>• Since the run time of binary search is <img src=
+"../imgs/ac93a1b7264b146957a041ea94caea5b60235a26.png">and the
+binary-search algorithm runs <i>n</i> times, the overall running
+time of the given algorithm is <i>n</i>*<img src=
+"../imgs/ac93a1b7264b146957a041ea94caea5b60235a26.png">=<img src=
+"../imgs/ffccfc5f25a05fb1078188984c21be1feaa0568c.png">.</p>
+<p><b>Therefore the total running time of the algorithm is</b>
+<b><img src=
+"../imgs/b186945f9fd2e4e11ef9b0cf180e354c341f601c.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

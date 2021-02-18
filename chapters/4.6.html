@@ -1,0 +1,279 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 4.6</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The equation of the recursive division of the recursion tree
+when <i>b</i> is a positive number, which represents the size of
+the sub problem, is each of <i>a</i> number of sub problems.</p>
+<p>At every upcoming step, each of <i>a</i> divided problem divides
+themselves by size<img src=
+"../imgs/c218c8c0b4375278cebbc3b705108b459cbda089.png"><i>.</i></p>
+<p>Therefore, the equation for finding the <img src=
+"../imgs/a76a0769bd51475a8cf8ff35c5121c0110d4c3bc.png"> element in
+a sequence of <i>n</i> numbers where <i>b</i>’s value is only
+restricted to any positive value is as:</p>
+<p><img src="../imgs/dab28e51a0c89747e1ce2874cb5d8553b0121e46.png">
+…… (1)</p>
+<p>In equation (1) put the value of j</p>
+<p>For <img src=
+"../imgs/b6486cacd23e81e8586c868a14b7bef19abba6bd.png"></p>
+<p><img src=
+"../imgs/9ed994178684bc72a93821e6567838af78bfaaba.png"></p>
+<p>For <img src=
+"../imgs/0ddf2b4b00e4ca18a5062622152a8113dd720fca.png"></p>
+<p><img src="../imgs/db0702c6df97187298f4687e3827a869057eb795.png">
+…… (2)</p>
+<p>Put the value of <img src=
+"../imgs/5b4c407bbf96940dc3e40c5347b17e437ea8cc58.png"> in equation
+(2)</p>
+<p>So,</p>
+<p><img src=
+"../imgs/e2ca335ef310e71a53d0bae3ca9e09fd27479e67.png"></p>
+<p>For <img src=
+"../imgs/85c7c7b0dde72ed5391300058b32c70d333325d6.png"></p>
+<p><img src="../imgs/5d39cb862013d7d83aa28325a4b3cb79af0b162a.png">
+…… (3)</p>
+<p>Put the value of <img src=
+"../imgs/e98c65d8727a7f6021c316e02557a9201370d5b0.png"> in equation
+(3)</p>
+<p>So,</p>
+<p><img src=
+"../imgs/940454a548fc4d09e7eb65f8138d70e1c3ce508b.png"></p>
+<p><img src=
+"../imgs/8ce3b6e8c5eb2fa2b35a2fb6a81610e7c40e6106.png"></p>
+<p>Similarly calculate the value of <img src=
+"../imgs/e29621bdca78cba8b0652b8ab89f22ea1b310aa6.png"></p>
+<p>The general equation for equation (1) is as follows:</p>
+<p><img src="../imgs/47dd4c8771633c35ef95e2d444d3597228e04754.png">
+…… (4)</p>
+<p>In general equation (4) put the integer value of j to find the
+value of <img src=
+"../imgs/89ce3d41b10241e500192ff0bb15c90fa0e6957c.png"> similar to
+the value of equation (1), (2), (3) and so on.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following equation.</p>
+<p><img src="../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png">
+<img src=
+"../imgs/19d89acfb4c1e9b8bfd755f73fe7dbdfd85839c9.png"></p>
+<p>From equation (4.22) given in lemma 4.3 in the text book, a
+function <img src=
+"../imgs/7fd47c993f38c4f55df7040d6a8eab61ec2b00a1.png"> is defined
+over exact powers of <i>b</i> by,</p>
+<p><img src=
+"../imgs/5d557e583835ec764d73f8f984fc38b166b44cd7.png"></p>
+<p>Substitute <img src=
+"../imgs/05ee2fa4c34049d3d72869c14aa6c925c3e35bae.png"> in equation
+(1).</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/7ff9f944917b4c6ad5865b129cd306806f770bd9.png"></p>
+<p>Substitute the value of <img src=
+"../imgs/61feaab4a5d4ce3f5503a89fd47844b9ec855600.png"> from
+equation (3) in equation (2).</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/4d975690142fa662325c970983e31936294596e2.png"></p>
+<p>Consider <img src=
+"../imgs/fd99c9731598bf46cef2a3d74f6372772975bded.png"> as A in
+equation (4).</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/4f131c9856ec060f15d48f4721a65fde2a2b6e61.png"></p>
+<p><img src=
+"../imgs/287cd4879c35662946ea3575120e5afc9eb41d95.png"></p>
+<p>Consider <img src=
+"../imgs/b6da025baa548f3301869478c1c9631902389825.png"> as B in
+equation (6).</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/cc05873b7ecfb742d29635f4b7df2d6d4e70b5f5.png"></p>
+<p>Consider <img src=
+"../imgs/4f5a55e0c2a26e140fd2e5d26b020d5f022934c6.png"> as <i>d</i>
+in <img src=
+"../imgs/5b08605be7b53aebd45173103018c3ea9c1b295d.png">.</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/73c8f451fe692f48b5e0d467bc1518b0d74b42be.png"></p>
+<p><img src=
+"../imgs/0afb6631a111979b0b01a388f04b99a5a7f6a7b3.png"></p>
+<p>Substitute equation (7) in equation (5).</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/f91df0fb502a86650f42f7ba85aa8c48eb30d261.png"></p>
+<p>Substitute equation (9) in equation (10).</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/d423a82483c63003c4b629bdfc0aa59fcae08f55.png"></p>
+<p>Hence, proved that if<img src=
+"../imgs/a61419416de695d5fcaef3f07ad0e912981368e3.png">, then the
+master recurrence has solution <img src=
+"../imgs/01b7f9824ed3c8495f48b3bbca3b751472c7d404.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>There are certain conditions for implementing the Master’s
+theorem, that is, <img src=
+"../imgs/2cf1f381c5ef016ae004561ae830e452b8340e68.png"> has to be a
+monotonically increasing function; and <img src=
+"../imgs/cd653f626b5941f69ee65c57ca30ad630bbce736.png"> must be a
+polynomial function.</p>
+<p>Now from the above recurrence relation, we can find the
+mathematical relation as:</p>
+<p><img src="../imgs/7ffa3ff310e22843649f613c85e74c2af910b2f1.png">
+… … (2)</p>
+<p>Taking <img src=
+"../imgs/6acac780244342d2c66cddf68b98bf7576411cc8.png">in equation
+(2)</p>
+<p><img src=
+"../imgs/59d89fb8b67c03ae3c37ae4617e183b8fc6f0074.png"></p>
+<p><img src="../imgs/50cff6a5e36fddefd7022e01f76a3dd108a510ac.png">
+… … (3)</p>
+<p>Dividing equation (3) by <img src=
+"../imgs/796f2865b559cecc710deb0da97461498568130b.png"></p>
+<p><img src=
+"../imgs/3ecf82a388a272284fb48157b912d88fd518c421.png"></p>
+<p><img src=
+"../imgs/e11f125f645b8256ce14bae1039a6ce707bd7d30.png"></p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p><img src="../imgs/55587423467042bef20abb01f6f31d2fabfa6d2d.png">
+… … (4)</p>
+<p>By adding the equations (2) through (4), we get the following
+result.</p>
+<img src="../imgs/7236705fa305eac2b2e01637b13968c9de16398b.png"> …
+… (5)
+<p>There are 3 cases of the master’s theorem for equation (5).</p>
+<p>1. <img src=
+"../imgs/ea354d1e101b23be23300086a352b7efdb5fab88.png"></p>
+<p>2. <img src=
+"../imgs/b198c5115af6f3372e18cea5f14f21e93d2646f5.png"></p>
+<p>3. <img src=
+"../imgs/38ca159192abb984bdb356848f3ca48c7727a3bb.png"></p>
+<p>For case 3 of the proof of the master theorem is as follows:</p>
+<p>If <img src=
+"../imgs/38ca159192abb984bdb356848f3ca48c7727a3bb.png"></p>
+<p><img src=
+"../imgs/827f7b2e7ed2b42124d100d4ecbd1cdd5652286e.png"></p>
+<p><img src=
+"../imgs/f43f97bc940b440b3ee997eb093e700b96cd239a.png"></p>
+<p>Therefore <img src=
+"../imgs/e332b2cd09333c9eacfd198e5b81607faaf289a0.png"></p>
+<p>Thus in general if <img src=
+"../imgs/25635de3d9f14a03018102c2a82b2c35429f4b7b.png">where
+<img src="../imgs/8ccceaf4c4b0d79d377b3109f5c5e392dd99097c.png">and
+the condition is</p>
+<p><img src=
+"../imgs/aa5df48542d2c7fa065d55344fd14f50ebac02a0.png">For
+some<img src=
+"../imgs/2b5899a796b3cb5722a786293037ffa71d146a59.png">then,</p>
+<p><img src=
+"../imgs/a8d874b519baf38906ed9484d58da0955b0a8da4.png"></p>
+<p>In the third case, the<img src=
+"../imgs/cd653f626b5941f69ee65c57ca30ad630bbce736.png">in the
+recurrence relation is actually compared to an<img src=
+"../imgs/9c55e2a884b70d7dcc8840de33a8a1aea29b256c.png">; if
+<img src="../imgs/cd653f626b5941f69ee65c57ca30ad630bbce736.png">is
+greater than <img src=
+"../imgs/e10f818117127a6480b9fa4d1731693482804f61.png"> by a factor
+of log, this condition has to be there, else the <img src=
+"../imgs/cd653f626b5941f69ee65c57ca30ad630bbce736.png">function
+might be equal to the growth of<img src=
+"../imgs/e10f818117127a6480b9fa4d1731693482804f61.png">.</p>
+<p>So the condition of <img src=
+"../imgs/8ccceaf4c4b0d79d377b3109f5c5e392dd99097c.png"> must be
+there.</p>
+<p>Thus, the statement of case 3 of the masters theorem is
+overstated to have the regularity of <img src=
+"../imgs/8ccceaf4c4b0d79d377b3109f5c5e392dd99097c.png">to be there
+for <img src=
+"../imgs/25635de3d9f14a03018102c2a82b2c35429f4b7b.png">then
+the<img src=
+"../imgs/a8d874b519baf38906ed9484d58da0955b0a8da4.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,1721 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 15.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Dynamic programming approach for finding the longest weighted
+simple path from</b> <b>s</b> <b>to</b> <b>t</b> <b>.</b></p>
+<p>• Sort the given directed acyclic graph <img src=
+"../imgs/c2bd2b4b5e1e66a540b9d6d7d6f4a8a726f25e63.png"> in a
+topological manner.</p>
+<p>• Calculate the longest path to the vertices one by one which
+should be sorted.</p>
+<p>• Initialize the distance of start to zero which comes at first
+and last node which is named as <img src=
+"../imgs/174140b451af065a9736856e5208f182c0310143.png">.</p>
+<p>• Pick a vertex at every iteration and compare <img src=
+"../imgs/a2946125b9b58a70a7af4a4cd93540c5a197942c.png"> for every
+vertex u that is connected to v via an edge <img src=
+"../imgs/8be8df7254e2ca33123d9f87f497bc6ec63e723d.png"> and compute
+the longest path.</p>
+<p>• There will be a sub-problem in every iteration that is used to
+find the simple weighted path which is longest from s to the
+current node v.</p>
+<p>• Calculate all the vertices.</p>
+<p>• <img src=
+"../imgs/2d543b3aa53ee93f836164ad628a919986a9df8b.png">is (or the
+maximum distance among all the vertices) is the longest weighted
+simple path from s to t.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>To compute the longest path for every vertex:</b></p>
+<p>• The given algorithm sorts the graph in a topological manner in
+such a way that it checks all the edges by visiting every
+vertex.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Efficiency of the algorithm:</b></p>
+<p>• It takes <img src=
+"../imgs/4ba8774137468ed76c2702c358244eb9e163ab6e.png"> which is
+the efficiency of the given algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Let A [1…n] denote the array that has the word “carac”. If a
+palindrome is a subsequence, it must be divided at any position say
+j and solve for the longest common subsequence problem A [1…j]
+which is the first subsequence and A [j+1…. n] which is the second
+subsequence. Therefore, there are n positions on which there is
+possibility of splitting input word and the longest common
+subsequence takes the time <img src=
+"../imgs/940e7da6e80b678e75cae75d057ece7e501a796b.png">. The time
+for solving palindromes is <img src=
+"../imgs/9c4c2063b86d9c534d51922db12962b015b9ca20.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm</b>: Find All Palindrome Subsequences(S)</p>
+<p><b>Input:</b> A string S=<img src=
+"../imgs/fd0a0450f8105d7d0e78d1c1e0330009214f0914.png"></p>
+<p><b>Output</b>: All palindrome subsequences of S.</p>
+<p>1. //finding out matched pair <img src=
+"../imgs/d46afe19feffb149f746bc16902716b558ad98ca.png"></p>
+<p>for i=1 to n</p>
+<p>2. for j=i+1 to n do</p>
+<p>3. <img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"> if
+<img src="../imgs/3b97114230dc17ad51fc9f0d84441b09c37c6b84.png"></p>
+<p>4. W: = (i, j)</p>
+<p>5. <img src=
+"../imgs/6c1f5b01e17ebd2b9af30595d01430c97e7afdce.png"></p>
+<p>6. //finding all palindrome subsequences of S</p>
+<p>for k=2 to n/2</p>
+<p>7. <img src=
+"../imgs/aa64799abb4623c6db4883ebf107fbd9fff38d25.png"></p>
+<p>8. for all k-1-pallindrome (<img src=
+"../imgs/36b0e5e832aab3fb514ecea0a5f156d0572b0162.png">…….<img src=
+"../imgs/5460ccff7ba4852821f36adcd412f2d57f2bd909.png">from<img src="../imgs/0743833caf511465fb245e1ce651bfd10b4544a5.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Bitonic euclidean traveling-salesman problem:</b></p>
+<p>In the travelling salesman problem a set of <i>n</i> points is
+given which represents the cities that are travelled by the
+salesman to sell his products. For this set of points we find the
+path which is shortest and connects all the <i>n</i> points. This
+is the NP-hard problem and so it possesses the polynomial time
+complexity.</p>
+<p>A bitonic tour is a closed polygon chain in the Euclidean plane
+such that any vertical line will cross the chain at most twice.
+Open bitonic tour is a bitonic tour which has two end points so
+bitonic tour is an open bitonic tour with same end points.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For any two vertices in the set <i>n</i> the travelled distance
+or the length of path between two points is <img src=
+"../imgs/a1dd262510589b9e461096b9e7acabec9b74c03e.png">and
+<img src="../imgs/c7cafa7a6aa05b2a60d35c9422af6af13ffa2d4a.png">OPTIMAL-BITONIC-SOLUTION(1,
+<i>n</i>) is used to calculate the best path with minimum weight
+for the bitonic tour as it will tell us the shortest open bitonic
+tour from vertex 1 to vertex <i>n</i>.</p>
+<p>The possible cases while we go for calculating the solution for
+the travelling salesman problem are as:</p>
+<p><b>Case 1:</b></p>
+<p>if <img src=
+"../imgs/dcd3dc4903b256b0f9b621c2f5c49df0e59715bf.png"></p>
+<p>Then the only possible path from <i>i</i> to <i>j</i> will be
+covering all the points in order. For calculating
+OPTIMAL-BITONIC-SOLUTION(<i>i</i>, <i>j</i>) we need to have all
+the points which are at the left of <i>j.</i> So there is only one
+single way in which this can be done and bitonic property is also
+maintained at the same time and that way is to take all the
+vertices in order of their increasing <i>x</i> coordinates.</p>
+<p>In order to calculate OPTIMAL-BITONIC-SOLUTION(0, <i>j</i>)we
+need to calculate OPTIMAL-BITONIC-SOLUTION(0, <i>j</i>-1) which is
+as:</p>
+<img src="../imgs/42558178e7becdf66c57a3e55392b111497e8387.png">
+<p><b>Case 2:</b></p>
+<p>if <img src=
+"../imgs/f2ec83129696aaab6ed38ae0f1bc3e4ed2599671.png"></p>
+<p>Then in order to reach <i>j</i> you have to come from <i>j-1</i>
+so here also the recursion will go the same way as before. If you
+don't come from <i>j-1</i> to then either <i>j-1</i> will be an end
+point which is not possible because only end points are <i>i</i>
+and <i>j</i> or it could be connected to some point with less
+<i>x</i> coordinate which is also not possible because in that case
+it won't be bitonic any more.</p>
+<img src="../imgs/c154556ce248363d41528770c0e601a2b49ccb4e.png">
+<p><b>Case 3:</b></p>
+<p>if <img src=
+"../imgs/1e4c633c6c51ffe2ea747e4d7c55a5e6f1d645eb.png"></p>
+<p>In this case we have <img src=
+"../imgs/5bdefbd8fb7330f344c03d893f7e89a5ff957301.png">possible
+paths or <img src=
+"../imgs/5bdefbd8fb7330f344c03d893f7e89a5ff957301.png">possible
+vertices from which we can reach to <img src=
+"../imgs/a5608a7d6de4e620bb623f0b933d4c30567b0276.png">vertex so we
+will choose that for which total cost is minimum. In other word</p>
+<p><img src=
+"../imgs/5ac35f1a49c09e20e36901b9765555042181aabe.png"></p>
+<p>The procedure for the logic in case 3 is as:</p>
+<p>1. for <img src=
+"../imgs/124fa6e12a368cc13989058ce5d58a2fb015b7b0.png"></p>
+<p>2. if<img src=
+"../imgs/31fbbb0d8317d987dd2ba454de676f6a7eff9bec.png"></p>
+<p>3. <img src=
+"../imgs/6729779edd00a7c9f9a4caa4aac785b737e7ef27.png"></p>
+<p>In this algorithm the variable <i>min</i> contains the shortest
+path.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Optimal Substructure:</b></p>
+<p>The recursive relations are there in all the 3 cases in which
+the optimal solution to the problem comes from the optimal solution
+to the sub-problems.</p>
+<p>So the problem is exhibiting the optimal substructure
+property.</p>
+<p><b>Overlapping Sub-problems:</b></p>
+As for calculating the optimal solution to the problem we need to
+calculate various sub-problems many of the times which show
+overlapping sub-problems.</div>
+<hr>
+<div class="answer">So this problem exhibits both the properties
+needed to approve dynamic programming solvability.</div>
+<hr>
+<div class="answer">
+<p>The procedure for Optimal Bitonic Solution is as in which for
+all <i>n</i> points in the set,</p>
+<p><img src=
+"../imgs/b19d70071fbebd9914425317d32b320b5e0f35a1.png">, the path
+for <img src=
+"../imgs/d1d55a37f3825d7f22e0d53ee79b5e7f4f606e84.png">will include
+all the points which are at left of <i>j</i>. Initialize all the
+elements in array <i>M</i> by <img src=
+"../imgs/26a9c317d9a02328e1b91418f08330bff9f4b524.png"></p>
+<p><img src=
+"../imgs/3665361bc5536d67d6a26303a5dfd61df55087af.png"></p>
+<p>1. if <img src=
+"../imgs/4053fc37e5bc3837268449690782cfb3247e5fd5.png"></p>
+<p>2. return <img src=
+"../imgs/d1d55a37f3825d7f22e0d53ee79b5e7f4f606e84.png"></p>
+<p>3. if <img src=
+"../imgs/dcd3dc4903b256b0f9b621c2f5c49df0e59715bf.png">or <img src=
+"../imgs/f2ec83129696aaab6ed38ae0f1bc3e4ed2599671.png"></p>
+<p>// recursive calling to the function</p>
+<p>4. <img src=
+"../imgs/df3d997fd2acb6d08d84d6d1a673fd1f2ee50232.png"></p>
+<p>5. else</p>
+<p>// initial value of shortest path</p>
+<p>6. <img src=
+"../imgs/bb00814607c92152b1dbdd3ef1656b4464a2659d.png"></p>
+<p>7. for <img src=
+"../imgs/7e61b7b211d0ed76abc04d9eea5fd7df4ab45ed2.png"></p>
+<p>8. if<img src=
+"../imgs/93364d80f07114eb95626cf14243f4ae85ec4950.png"></p>
+<p>9. <img src=
+"../imgs/c21a31a4886e45e242e0c2d6a56bda351bb7e9b0.png"></p>
+<p>10. <img src=
+"../imgs/ca87700c155b6e149664b21da19072c1e2372f4c.png"></p>
+<p>11. return <img src=
+"../imgs/d1d55a37f3825d7f22e0d53ee79b5e7f4f606e84.png"></p>
+<p>Here the shortest path is calculated from vertex 1 to vertex
+<i>n</i> such that the summation of the weight of the edges
+included in the path is minimum. The number of vertices included
+are <i>n</i> so this algorithm takes a polynomial time which
+is<img src=
+"../imgs/d17fdb8fd61e4c8a257dcb37fe7513cebac739dc.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Dynamic Programming</b></p>
+<p>Dynamic programming is one of the techniques for designing
+algorithm, for providing the solution to optimization problems.
+Optimization problems are those in which there is a need to make
+number of decision. It is applied when sub-problems are dependent
+upon each other.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Dynamic Algorithm Plan:</b></p>
+<p>The dynamics programming approach is applies to that problem in
+which there are problems of sub-problem are given. In this approach
+first the sub-problems are solved and then the results are used to
+solve the main problem.</p>
+<p>If all the words fit in one line, then there is nothing to solve
+in the printing neatly problem. If the words exceed one line, then
+an optimal solution for a single line should be found as it is the
+only line to be filled.</p>
+<p>Now, add up these optimal solutions for every line in the
+complete solution to find an optimum solution to that sub-problem.
+To print,<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">words of
+<img src="../imgs/bb97cd1fd7c02c31398ec2f7c1dffa5ce6252a41.png">
+length of characters the total number of characters are as:</p>
+<p><img src=
+"../imgs/fb859c1b289dbdb1b1560d550979080873a06347.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Steps of Dynamic Programming:</b> There are different steps
+which are used for creating algorithm for dynamic programming.
+These are as follows:</p>
+<p>1. Determine the optimal solution’s structure.</p>
+<p>2. Define the optimal solution’s value recursively.</p>
+<p>3. Apply bottom-up approach for calculating the value of optimal
+solution.</p>
+<p>4. By using calculated values develop an optimal solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Printing neatly:</b> Printing neatly describes the rules for
+printing the paragraph in the formatted way that is all character
+having same width on a printer. It is required to print the
+paragraph of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">words of
+length <img src=
+"../imgs/bb97cd1fd7c02c31398ec2f7c1dffa5ce6252a41.png">characters
+and<img src="../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">
+characters per line.</p>
+<p>Criterion of “neatness” is as: a line contains words <img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png">through
+<img src="../imgs/d82627e3850254d87a2dde5fb97d4e955fc8773b.png">
+where <img src=
+"../imgs/a69ffd8886a17585d195462642a75961e5b2c063.png"> and only
+one space can be used between words. The number of spaces which are
+required additionally at the end of the line is <img src=
+"../imgs/aacffe11b5a8bf9c4822972818e43740d276f0c5.png">and it must
+be a positive value.</p>
+<p>Based on the above formatting rules; implementinga dynamic
+programming algorithm which can be used as to print the paragraph
+of <i>n</i> words and measurement of its running time and space
+requirement.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Illustration of printing neatly problem by using an
+example</b></p>
+<p><b>“</b> <i>Printing neatly describes the rules for printing the
+paragraph</i> <b>”</b></p>
+<p>Consider the above example and width of line <i>M</i> is 16.
+Optimized solution for the string is as follows:</p>
+<p>Line 1: Printing neatly</p>
+<p>Line 2: describes the</p>
+<p>Line 3: rules for</p>
+<p>Line 4: printing the</p>
+<p>Line 5: paragraph</p>
+<p>Optimized solution of the string comes in 5 lines.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, calculate the extra space in all the lines of the optimized
+arrangements.</p>
+<p><b>Consider the following tabular structure for showing extra
+space within it corresponding line:</b></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Line number</b></p>
+</td>
+<td>
+<p><b>Extra Space</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Line 1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Line 2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Line 3</p>
+</td>
+<td>
+<p>7</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Line 4</p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Line 5</p>
+</td>
+<td>
+<p>7</p>
+</td>
+</tr>
+</table>
+<p>From the above example, it is clear that all the lines used
+extra spaces. Due to extra spaces, total cost of all the lines and
+cost of one line are calculated as shown below:</p>
+<p><img src=
+"../imgs/376e79d67e44d285b4577c69b250c672a6130a0c.png"></p>
+<p>Here, <i>c</i> is the cost of one line. Hence, cost for the line
+numbers from 1 to 5 is as below:</p>
+<p><img src=
+"../imgs/6b2bb11e94e04ab01cadc4df284f17afed67d2f5.png"></p>
+<p><img src=
+"../imgs/34344c6fb8af5bd3dfa77f55551083dc3feb0f99.png"></p>
+<p>Here, <i>T</i> is the Total Cost of all the lines. Now, the
+total cost is:</p>
+<p><img src=
+"../imgs/6d411c39c970460106ed77ae8973f10fd0ca1ac9.png"></p>
+<p><img src=
+"../imgs/085efd63a6d8d2dba32b51af7b46cf7deb421b1e.png"></p>
+<p><img src=
+"../imgs/078a40e3ece423d31789ac9036810bc1177fd29a.png"></p>
+<p>From the example, it is clear that extra space consumption is
+more. So, it is needed to balance the extra spaces this is done
+with the help of cost function. This there can be represented in
+another ways by taking two same groups of words.</p>
+<p>1. There are 5 lines and there are 5 extra spaces in one line
+and remaining line have no extra spaces.</p>
+<p>Total extra spaces <i>c</i>= 5+0+0+0+0=5.</p>
+<p>Total cost of all the line <i>T</i>=5<sup>3</sup> +
+0<sup>3</sup> + 0<sup>3</sup> + 0<sup>3</sup> +0<sup>3</sup>
+=125</p>
+<p>2. There are 5 lines and there is 1extra space in all the
+lines.</p>
+<p>Total extra spaces <i>c</i>= 1+1+1+1+1=5.</p>
+<p>Total cost of all the line <i>T</i>=1<sup>3</sup> +
+1<sup>3</sup> + 1<sup>3</sup> + 1<sup>3</sup> + 1<sup>3</sup>
+=5</p>
+<p>Thus in both the situations, there are 5 extra spaces, but
+second situation is preferred as spaces are maintained in
+consecutive 5 lines. As total cost function of second situation is
+less in comparison to the first situation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>PRINTING-NEATLY</b></p>
+<p>The algorithm by considering the above dynamic algorithm plan
+and definition of printing neatly is as:</p>
+<p>// checking that all words are filled in one line or more</p>
+<p>1. <b>if</b> all words fit in one line</p>
+<p>2. <b>return</b> “no need of formatting”</p>
+<p>// <i>j</i> can be fit in line starting with word <i>i</i>.</p>
+<p>(Now, try to fit all combinations in this line and then solve
+possible combinations of the remaining words; for finding the
+optimal layout, summation of minimum cost in first line and the
+remaining sub-problem is done)</p>
+<p>// for words exceeding in more than one lines</p>
+<p>3. <b>else</b></p>
+<p>// now taking a variable <img src=
+"../imgs/611db84559a6af7c1d13c2f3278228ab438e6a32.png">because
+space which are additionally needed at the end // of the line is
+<img src="../imgs/fc968a6f55452c9a7759d20cf63658c7705e4b05.png">and
+it must be a positive value</p>
+<p><img src=
+"../imgs/611db84559a6af7c1d13c2f3278228ab438e6a32.png">be the
+largest <i>j</i> for which<img src=
+"../imgs/f81ad7121442acc581636fe5e270f16e01aa1cd1.png"></p>
+<p>4. &nbsp; Fill&nbsp;an&nbsp;<img src=
+"../imgs/cb85adb6b78915e341e8dd3880086eead8c904e0.png">array&nbsp;of<img src="../imgs/e72f5500ae425c517268cd9b8f28b712eda53be1.png">,&nbsp;</p>
+<p>where<img src=
+"../imgs/936ee1bb89d99662cf236bf150eccf6cc7a85e3a.png">is&nbsp;the&nbsp;minimal&nbsp;cost&nbsp;of&nbsp;printing&nbsp;words&nbsp;<i>i</i>
+through&nbsp;<i>n</i></p>
+<p>// now comparing <img src=
+"../imgs/611db84559a6af7c1d13c2f3278228ab438e6a32.png">to number of
+elements in array of cost <i>c</i></p>
+<p>5 <b>if</b><img src=
+"../imgs/92d674970292d69cb27ab40514ef911acf514db0.png"></p>
+<p>6. then<img src=
+"../imgs/d6fe708d4e0d43471ec8cc54f9563a2037a62bcc.png"></p>
+<p>7. <b>else</b></p>
+<p><b>//</b> now reducing the sum, in all lines leaving the last
+one, of the cubes of</p>
+<p>// number of character of extra spacein the end of lines</p>
+<p><img src=
+"../imgs/59cc8d1b9f115bc756e8b700717d1532cc467064.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time requirement analysis</b>:</p>
+<p>For calculating the running time, consider the following
+points:</p>
+<p>1. For the analysis of time complexity assume that for <img src=
+"../imgs/a69ffd8886a17585d195462642a75961e5b2c063.png">,<img src=
+"../imgs/9b7a5133e90ce11e1269c619103768b5fbfb7498.png">then
+<img src="../imgs/a07676160988328be386c872c34a0f983af4fa43.png">.
+So, the length of the characters in the line <img src=
+"../imgs/a0335e0a0de145e524d385a9fa18b325aade54fb.png">, <img src=
+"../imgs/e6cd1bad52c50e2960fa860107ef519f01f0d3c3.png">can be
+calculated in <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">time.</p>
+<p>2. In the end of each line there are some extra spaces left,
+which are <img src=
+"../imgs/fc968a6f55452c9a7759d20cf63658c7705e4b05.png">for the
+words from <i>i</i> to <i>j</i>. As from the above point <img src=
+"../imgs/fc968a6f55452c9a7759d20cf63658c7705e4b05.png">can be
+represented as<img src=
+"../imgs/9f64b6b1139b54e1bfc32c9146773afb2b4eb5a9.png"> so, the
+cost in line 4 of the algorithm can be calculated as:</p>
+<p><img src=
+"../imgs/6846e4fced25f94fa78eca0ff8282eb240b9d23c.png"></p>
+<p>The values<img src=
+"../imgs/4ed7c1658fe7394069cffd439b166b5f10502844.png">,<img src=
+"../imgs/1295fedca8ade8e4e64e9e991e1e8ecac7ba0486.png"> are already
+calculated, so it will take only <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">time to
+calculate the cost of each line.</p>
+<p>3. If all the words are comprised in the same line of paragraph
+then the line cost will be zero. In the line 7 of algorithm the
+cost <img src=
+"../imgs/d2fb0f1696ab80fbad2bf755cd85cc991c6cb8cb.png">is the
+overall optimal cost of printing the all the words in the
+paragraph.</p>
+<p>4. Now, each line has maximum of <i>M</i> characters and there
+is one apace between each word then there will be maximum of
+<img src=
+"../imgs/7ab735c1b94d45065ed9dd4a46526918da70c027.png">words. So,
+the last line will have <img src=
+"../imgs/bb5ec34dfc14708e9e49b7f9277676335c8b0337.png">to <i>j</i>
+words<i>.</i></p>
+<p>So, the printing cost of a line can be summarized as the
+printing cost of <img src=
+"../imgs/7ab735c1b94d45065ed9dd4a46526918da70c027.png">words and
+the line cost and is represented as:</p>
+<p><img src=
+"../imgs/59cc8d1b9f115bc756e8b700717d1532cc467064.png">.</p>
+<p>5. For printing <img src=
+"../imgs/7ab735c1b94d45065ed9dd4a46526918da70c027.png">words its
+cost will be<img src=
+"../imgs/af9d327646f017721d135d6571cd5793b1a97e42.png">which will
+be<img src="../imgs/f5ea4bd6e30c87bca6fed3ec38dcc03261087902.png">
+for <i>n</i> words.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The total running cost of the printing neatly problem will be
+the summation of all the costs:</p>
+<p><img src=
+"../imgs/02aa86c8431f10ff89a95e2fb803ee6d9b3052dd.png"></p>
+<p>But, <i>M</i> is constant for each line so the total running
+cost of the printing neatly problem is<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">. Hence, the
+running time of this algorithm for printing <i>n</i> words in
+format is<img src=
+"../imgs/2fff31cd52c9104b67dd05ab804e200b255fed0d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Space requirement analysis:</b> In the algorithm we have to
+store the values of<img src=
+"../imgs/e6cd1bad52c50e2960fa860107ef519f01f0d3c3.png">, length of
+each word <img src=
+"../imgs/2aac0795dd77817f680d913f2f8c15d60cd918ce.png"> and cost of
+each line<img src=
+"../imgs/69acc94c684f9d728d152cb789fdc3f92dc1f104.png">and each
+will need <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">space. So,
+the total required space will be<img src=
+"../imgs/c6e1806bf265f1070aaa4d975795657af09bc689.png">. But, 3 is
+the constant so, it can be ignored. Hence, the total required space
+for printing in the format will be<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Edit distance:</b></p>
+<p>Supposed strings are <i><img src=
+"../imgs/5e8862ba9970c9054c6e69c8cd188ecd79b37b7f.png"></i><i>and</i><img src="../imgs/462e9c243ebe5b8a2d220887aeccd6008224a95e.png"></p>
+<p>The problem of transforming one string into another string, then
+an intermediate array <i>z,</i> is uses a series of transformation
+operations.</p>
+<p>At the termination of transformation</p>
+<p><img src="../imgs/f7ab0714b978a86cec99ccd0f4af8e12fbfe66da.png">
+for<img src=
+"../imgs/1278a82576047aa6a114ed63b0ca0b76454bf53b.png">.</p>
+<p>Here <i>j</i> is the current position in array <i>z</i> and
+<i>i</i> is the current position in <i>x</i> and we examine each
+character in the array <i>x</i> so after transformation<img src=
+"../imgs/72e9cb37f6fba7d828511736092e5230082089d7.png"><i>.</i></p>
+</div>
+<hr>
+<div class="answer">In each transformation operation there is some
+cost associated which depends on its application and is constant.
+The individual costs are greater than the combined cost of some
+operations and the total cost is the sum of the costs of individual
+operations.</div>
+<hr>
+<div class="answer">
+<p>Edit distance problems are one the most famous dynamic
+programming problems having practical applications in spell
+checkers and dictionary searching.</p>
+</div>
+<hr>
+<div class="answer"><i><b>a</b></i> <b>)</b></div>
+<hr>
+<div class="answer">For two sequences of strings, the cost of
+transformation operation causes by edit-distance from one string to
+other by using less expensive operations. Supposed strings are
+<img src="../imgs/34184d8e7ca3fbf38736802be9662982a4fce441.png">and
+<img src="../imgs/9ccee412843f389d4a310a1573d66fbd2a6f172c.png">t
+The dynamic programming algorithm is to find the edit distance from
+<i>x</i> to <i>y,</i> printing the operation succession and
+analyzing the time and space taken by the algorithm to run.</div>
+<hr>
+<div class="answer">
+<p><b>Optimal Substructure:</b></p>
+<p>For this problem of string transformation from one string to
+other using a set of transformation operations a slightly complex
+but easy to understand recurrence relation holds:</p>
+<p><img src=
+"../imgs/741b25f0442608c80ec5793851fd49b91a174d7d.png">(</p>
+<p><img src=
+"../imgs/c99d36a2bb3af274f1cc6a1fae8c522552dd5215.png">,</p>
+<p><img src=
+"../imgs/cb9ef584447f0719bb18903355cedbd3c8b918cc.png">,</p>
+<p><img src=
+"../imgs/ec4e3fc48a88fffcb2feb86ceaa5aa75609e7ed1.png">,</p>
+<p><img src=
+"../imgs/c32e7f8aabf0865ad34afee3b8f6990687e7026b.png">,</p>
+<p><img src=
+"../imgs/47f9ae884e741ed59c5c4c586300aed81ea51012.png">)</p>
+<p>In this problem of finding edit distance the optimal solution
+for the sub-problems will yield optimal solution for the given
+problem. Hence the edit distance problem possesses the property of
+optimal substructure.</p>
+<p><b>Overlapping sub-problems:</b></p>
+<p>As most of the sub-problems will be repeated again and we solve
+the above recursion so</p>
+<p>the problem possessesoverlapping sub-problems property and so it
+own both the properties that makes it dynamic programming
+solvable.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm for edit distance is as:</p>
+<p><img src=
+"../imgs/6e4f8c6d99402e4235b47c378d3903936618e755.png"></p>
+<p>Initialize all the values for the 2D matrix <i>M</i></p>
+<p><img src=
+"../imgs/feddc3b991094a59e04ba944cef4968e48397e98.png"></p>
+<p>1. <img src=
+"../imgs/4239408ee692509ae747de7cbeae7da1a6afc255.png"></p>
+<p>2. return <b>0</b></p>
+<p>3. <img src=
+"../imgs/696902f933255437e9bfe2b983d325606f04dc81.png"></p>
+<p>4. return <img src=
+"../imgs/d1d55a37f3825d7f22e0d53ee79b5e7f4f606e84.png"></p>
+<p>5. else</p>
+<p>6. <img src=
+"../imgs/ca87700c155b6e149664b21da19072c1e2372f4c.png">(</p>
+<p><img src=
+"../imgs/af76960e65285a4bbaec307a2ad7487db0e54fd5.png">,</p>
+<p><img src=
+"../imgs/cb9ef584447f0719bb18903355cedbd3c8b918cc.png">,</p>
+<p><img src=
+"../imgs/484dbeadad7fa3a635c526738a7aa96dd1a55bbb.png">,</p>
+<p><img src=
+"../imgs/c32e7f8aabf0865ad34afee3b8f6990687e7026b.png">,</p>
+<p><img src=
+"../imgs/9174741b8643df8f42ba01b67c139c9519bbeaa3.png">)</p>
+7. return <img src=
+"../imgs/d1d55a37f3825d7f22e0d53ee79b5e7f4f606e84.png"></div>
+<hr>
+<div class="answer">
+<p>The total time required to run this algorithm in the
+transformation of anstring of length <i>m</i> to the string length
+<i>n</i> requires<img src=
+"../imgs/f605e161812584ffae029b42ae7a54da1375f5c1.png"> and the
+space to run this algorithm is required is<img src=
+"../imgs/f605e161812584ffae029b42ae7a54da1375f5c1.png">.</p>
+<p><i><b>b</b></i> <b>)</b></p>
+<p>The optimal alignment of an edit distance using the some
+transformation operations as substitution, insertion, killing and
+twindle.</p>
+<p>The edit distance uses the cost table</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Operation</b></p>
+</td>
+<td>
+<p><b>Cost</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Copy</p>
+</td>
+<td>
+<p>–1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Replace</p>
+</td>
+<td>
+<p>+1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Delete</p>
+</td>
+<td>
+<p>+2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Insert</p>
+</td>
+<td>
+<p>+2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Twiddle</p>
+</td>
+<td>
+<p><img src=
+"../imgs/528f676361fb50e8af654d7fbc4e2f2d11897c80.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Kill</p>
+</td>
+<td>
+<p><img src=
+"../imgs/528f676361fb50e8af654d7fbc4e2f2d11897c80.png"></p>
+</td>
+</tr>
+</table>
+<p>The DNA-alignment problem of string <i>x</i> to string <i>y</i>
+aligns the string sequences from any of the ends that is either it
+starts from left or from right end and releases the strings
+<i>x’</i> and <i>y</i>’ after alignment.</p>
+<p>For any alignment the different symbols are used in each process
+for example a space for the insert and the optimum alignment score
+is the largest of the minus value of the edit cost.The minus value
+of minimum edit cost is the negative value of the edit distance in
+the casting process.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6P">
+                <a href="#problem-6P">6P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The provided problem can be solved in linear time with the help
+of dynamic programming.</p>
+<p>Suppose <img src=
+"../imgs/26e68ac4c9c54f492f56f40818231e57c6016006.png">is the
+<i>x</i> employee conviviality and <i>P</i> is the set of employee.
+The provided problem is to determine the subset of employees whose
+sum of conviviality is more than any other subset, also subset
+contain either parent or its child.</p>
+<p>Suppose the subset which contains list of these employees
+is<img src=
+"../imgs/76081c6d92b39869bdcfba696840b90d7f318f50.png"><i>.</i></p>
+<p><img src=
+"../imgs/f8fbef9f65d028d1a6f7b82c85b1dd674dd29fc4.png"></p>
+<p>In dynamic programming, if one wants optimal solution of a
+problem then it is required to find the optimal solution of a
+sub-problem of same form.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following sub problem:</p>
+<p>Suppose <img src=
+"../imgs/f617fce00c2e6c7a729962f9aaea43d97af961cb.png">is the
+maximum possible sum of conviviality of employee of <i>x</i> rooted
+sub-tree when <i>x</i> is also invited. Suppose <img src=
+"../imgs/e3962b47f7459159a8dd4a387a71aaa52d07c6d9.png"> is the
+maximum possible sum of conviviality of employee of <i>x</i> rooted
+sub-tree when <i>x</i> is also not invited.</p>
+<p><img src=
+"../imgs/0a2bfa0e8311934ae4b057493381d8fcd02f45d4.png"></p>
+<p>The first equation contains the conviviality of all parents in
+<i>x</i> rooted sub-tree whereas the second equation contains the
+conviviality of all children in <i>x</i> rooted sub-tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The following algorithm is used to calculate the
+conviviality.</p>
+<p>CALCULATE <img src=
+"../imgs/5ae0c6909e9677af940871d1194d71bdec56601a.png"></p>
+<p>1. <img src=
+"../imgs/93edbf717052223a766b23c0e2e12e421f22d57e.png"></p>
+<p>2. <img src=
+"../imgs/aca30e7bc40ffd52008e712c7bb3b8096a33f311.png"></p>
+<p>3. <img src=
+"../imgs/fa6ccc77ed0454f122f227adea0d316f8b9bffdb.png"></p>
+<p>//loop continues iterate <i>y</i> is not null</p>
+<p>4. <b>while</b> <b><img src=
+"../imgs/cfea6cfa91ac8e6df9d9532904998006576203b1.png"></b></p>
+<p>5. <b>do</b> CALCULATE <img src=
+"../imgs/c46eb7eff5befab1b0a2e11cfd38e709376d12c0.png"></p>
+<p>//determine conviviality of presence and absence of <i>y</i></p>
+<p>6. <img src=
+"../imgs/27723646714d05bfee6a75f7cd25ada0587b9bb7.png"></p>
+<p>7. <img src=
+"../imgs/e9512f98dc53c446cf56b0ba4816820b41f33723.png"></p>
+<p>8. <img src=
+"../imgs/2fa2a098013a3f824aacf979e7c090ed34b09730.png"></p>
+<p>The above algorithm called with the president of the company. At
+the termination of the program the conviviality sum of the company
+get in terms of <img src=
+"../imgs/f617fce00c2e6c7a729962f9aaea43d97af961cb.png">and
+<img src="../imgs/e3962b47f7459159a8dd4a387a71aaa52d07c6d9.png">.
+Now call following PARTY-LIST function to determine the list of
+guest which are called for the company party.</p>
+</div>
+<hr>
+<div class="answer">
+<p>PARTY-LIST<img src=
+"../imgs/5ae0c6909e9677af940871d1194d71bdec56601a.png"></p>
+<p>//this part executes when employee get happy in presence of
+<i>y</i></p>
+<p>1. <b>if</b> <b><img src=
+"../imgs/6e373061f7af7bbab5634cebd6756dc5dcd81bd7.png"></b></p>
+<p>2. Add <i>x</i> in <i>party_list</i></p>
+<p>//check <i>x</i> have grand children or not</p>
+<p>3. <b>if</b> <i>x</i> does not have grand children</p>
+<p>4. DISPLAY(<i>party_list</i>)</p>
+<p>5. EXIT()</p>
+<p>6. <b>for</b> all grandchildren <img src=
+"../imgs/da38e76d43f97e65594a470650ea9e6bbcbba71e.png"> of
+<img src="../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"></p>
+<p>7. PARTY-LIST <img src=
+"../imgs/4313849d8688572132f275a92c06853d36e21b70.png"></p>
+<p>//this part executes when employee get happy in absence of
+<i>y</i></p>
+<p>8. <b>else</b></p>
+<p>//check <i>x</i> have grand children or not</p>
+<p>9. <b>if</b> <i>x</i> does not have children</p>
+<p>10. DISPLAY(<i>party_list</i>)</p>
+<p>11. EXIT()</p>
+<p>12. <b>for</b> all children <img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"> of
+<img src="../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"></p>
+<p>13. PARTY-LIST <img src=
+"../imgs/c46eb7eff5befab1b0a2e11cfd38e709376d12c0.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The final COMP-PARTY algorithms call both above algorithm to
+determine list of employee which are called in the company party
+and where employee conviviality is maximum.</p>
+<p>COMP-PARTY<img src=
+"../imgs/384de545d77f5ab76a8fb2e6d1fce27e098e0be3.png"></p>
+<p>Call CALCULATE <img src=
+"../imgs/384de545d77f5ab76a8fb2e6d1fce27e098e0be3.png"></p>
+<p>Call PARTY-LIST <img src=
+"../imgs/384de545d77f5ab76a8fb2e6d1fce27e098e0be3.png"></p>
+<p><b>Explanation:</b></p>
+<p>• At first call the CALCULATE <img src=
+"../imgs/5ae0c6909e9677af940871d1194d71bdec56601a.png">function to
+determine the conviviality of each node when it is added in list
+and when it is not added in the list.</p>
+<p>• After that, call PARTY-LIST algorithm to check whether
+conviviality of adding an x employee in list is more than
+conviviality of not adding employee in list.</p>
+<p>• The employee name stored in the <i>party_list</i> contains the
+name of the employee which is invited in the party.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time complexity:</b></p>
+<p>• The CALCULATE procedure traverse the whole set <i>P</i> which
+contains <i>n</i> employees. A <b>while</b> loop is used in
+CALCULATE which repeatedly call CALCULATE procedure n times.</p>
+<p>Therefore the time complexity of CALCULATE procedure is<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p>•</p>
+</div>
+<hr>
+<div class="answer">The PARTY-LIST procedure also calls itself, but
+in one call it calls either with its children or its grandchildren.
+Therefore total number of calls are <img src=
+"../imgs/118ba9a54bf02cd374425c917a664a14a2f2c540.png">. Ignore the
+constant
+<p>When <i>n</i> is too large. Therefore the time complexity of
+PARTY-LIST procedure is<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p><b>Hence, the total complexity of COMP-PARTY is</b> <b><img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7P">
+                <a href="#problem-7P">7P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8P">
+                <a href="#problem-8P">8P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Seam Carving</b></p>
+<p>In order to understand image compression by seam carving, it is
+necessary to know about seam and seam carving.</p>
+<p><b>Seam :</b> Seam is defined as connection of the pixel to form
+a path which is connected either by going from top to bottom or
+from left to right.</p>
+<p>There are two types of Seam which are as follows:</p>
+<p>1. <b>Vertical seam:</b> Vertical seam in an image is defined as
+a connection of the pixel to form a path by going from top to
+bottom. From each and every row it selects one pixel.</p>
+<p>2. <b>Horizontal seam:</b> Horizontal seam in an image is
+defined as a connection of the pixel to form a path by going from
+left to right. From each and every row it selects one pixel.</p>
+<p><b>Seam carving:</b> Seam carving is a method which helps in
+resizing images and videos. It is a technique which helps in
+preserving undesirable distortion of the image. In this, remove the
+pixels which are not so important in order to create an image of
+the smaller size.</p>
+<p><b>Process of Seam carving</b></p>
+<p><b>Computation of the energy:</b> Energy of the pixels provides
+the information about the important of the pixel. Energy function
+is directly proportional to the important of the pixel. If pixel is
+of less energy than it is least important otherwise it is of more
+important.</p>
+<p>Energy function is calculated by adding the horizontal and
+vertical seam value at each and every point with the help of filter
+of size 3 <img src=
+"../imgs/c0ece50fddeb27c6ad91a29cb5a8839f0bd7d8f5.png"> 3.</p>
+<p><img src=
+"../imgs/13e249d1ddebf342786a28143248b7ac6a8e1988.png"></p>
+<p>Here, <img src=
+"../imgs/c07fdf5c1b9e398f019965962dd293c04a2bd110.png"> represents
+the vertical seam and <img src=
+"../imgs/e2942c78ff86a4c94796cff9f4feb4debe682336.png">represents
+the horizontal seam. In this energy of each pixel is represented by
+energy matrix.</p>
+<p><b>Dynamic Programming:</b> Dynamic programming helps in finding
+horizontal or vertical seam which has lesser energy function.
+Firstly create a matrix M for storing the values of each pixel.
+After that find the seam which have minimum energy from each row
+except the first row.</p>
+<p>Now, minimum value of the bottom row is extracted from the
+matrix. Backtrack the traversing of the matrix for finding minimum
+value of the seam from each and every row.</p>
+<p><b>Making a smaller image:</b> For creating an image of smaller
+size; least important pixels in values is removed. This helps in
+maintaining the continuity in the image.</p>
+<p>Repeat all the above steps till the images is not compressed
+into required size.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Image compression by seam carving:</b></p>
+<p>In the Image compression by seam carving there is a color
+picture of <img src=
+"../imgs/4dea258e7dae5be88307f85c1b039232ea0c5e14.png"> array
+<img src="../imgs/d0a477ba257718a816755020c767534bca6ef8ed.png"> of
+pixels and every pixel specifies a triple of RGB (red, blue, and
+green) intensities. Compressing this picture and removing one pixel
+from each of <i>m</i> rows, and the picture compressed one pixel
+narrow.</p>
+<p>In this compression process the visual effect is avoided by
+removing the pixels from the adjacent pixels and those pixels are
+arranged diagonally or vertically so that they can make a seam.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In this problem, the objective is to prove that in the
+compression process, the seam grows exponentially.</p>
+<p>In order to prove this, find the valid seams from each and every
+row which is the function of matrix <i>M</i> and establish a
+recurrence for valid seams.</p>
+<p>Here, assume that in the method of seam carving, seam is carved
+out from each row. Carving of the seam starts from first row and
+the last pixels which is carved out is</p>
+<p><i>A</i> [<i>i, j</i>]</p>
+<p>If the pixel lies on boundary of the column for which of
+<i>i</i> lies between the ranges from 1 to <i>n</i>. If the value
+of <i>i</i> is 1, then two choices are there for choosing next
+pixel are as follows:<img src=
+"../imgs/0a3e61c9239391d59ac682257435180d5de1b09b.png">
+and<img src="../imgs/99c861cdfbeab11bb1066dab03dd2008ade9e909.png">.</p>
+<p>Otherwise, there are three choices for selecting next pixel
+which are as follows<img src=
+"../imgs/7747c2c435dabcb1c8d8e451b7e855cf093432cb.png">,<img src=
+"../imgs/0a3e61c9239391d59ac682257435180d5de1b09b.png">
+and<img src="../imgs/99c861cdfbeab11bb1066dab03dd2008ade9e909.png">.</p>
+<p>Suppose, <img src=
+"../imgs/a941d6197275b899641968e6c9eb6936e9b32480.png">represents
+the total number of valid seams from first row to the last row.</p>
+<p>Start from first row where value of <i>i</i>=1, When value of
+<i>i</i>=1 then<img src=
+"../imgs/bdc751900dee6933b267b41d55a378baca3b64ad.png">.</p>
+<p>By using direct substitution method it can be proved that in the
+compression process the seam grows exponentially.</p>
+<p><img src=
+"../imgs/38b4fdec75dade5472a4d716733987757c3dc86e.png"></p>
+<p>When value of <i>i</i> is greater than 1 then value of <img src=
+"../imgs/a941d6197275b899641968e6c9eb6936e9b32480.png">is as
+shown:</p>
+<p><img src=
+"../imgs/f10174244ec6dad9431afc67eb29d58b279a29ee.png"></p>
+<p>By using direct substitution method it can be proved that in the
+compression process, the seam grows exponentially.</p>
+<p><img src=
+"../imgs/84c4a3671443328bdc06d2320d03e3a581e0fe15.png"></p>
+<p>Hence, it is proved that compression process the seam grows
+exponentially.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>The algorithm for finding the seam with lowest measure of
+disruption <img src=
+"../imgs/edee0dd6330585d2e300024f98b2952fdac4b094.png"> in the
+removal process of pixels from seam: For every pixel in a single
+row, there are minimum of 2 pixels in the upcoming row; so there
+will be at least<img src=
+"../imgs/40efbaee2758b78ecabeb329fad302211c78322c.png"> number of
+seams present.</p>
+<p>The value of disruption, the measures of <img src=
+"../imgs/f9e5de76297a758cf5187a2f626a586f2f2e7b09.png">is defined
+as <img src=
+"../imgs/edee0dd6330585d2e300024f98b2952fdac4b094.png">.</p>
+</div>
+<hr>
+<div class="answer">The array <img src=
+"../imgs/0d91f737c63da3866e6a8890304bade07d9d06c6.png"> stores the
+minimum disruption in<img src=
+"../imgs/35dded3b8ed5047bc84c0f07144c1b40bb3e6a5d.png">for
+pixel<img src=
+"../imgs/3bf91ced1f1af39294e81132c9bb863b9512a8a3.png">which is
+calculated by using the following formula:
+<p><img src=
+"../imgs/b464f1fab47154e766a9b7cf87eca5e959f1cf9a.png"></p>
+<p>An algorithm to find a seam with the lowest disruption measure
+is shown below:</p>
+<p>In this algorithm the seam array and minimum disruption array
+<i>B</i> is initialized first as per their pixels using the real
+valued disruption measure <i>d</i>. So here, two levels of checks
+are used; first depends upon the seam, and the second depends upon
+the disruption array <i>B</i>.</p>
+<p>Inherently, there will be more similarities with the neighboring
+pixel if the measure of the disruption of that pixel is lower.</p>
+<p>The algorithm for the calculation of minimum disruption seam is
+shown below:</p>
+<p><b>MINIMUM-DISRUPTION-SEAM</b></p>
+<p>1<i>. S</i> is an array of size <i>m</i> to store the seam</p>
+<p>2. <img src=
+"../imgs/900a4d9675e63fd95a00426b59b2f921b13fb184.png"></p>
+<p>Such that <img src=
+"../imgs/9931cd9cb7a628fabaceddf3034c1e4c89caa744.png"> is the
+minimum of pixels<img src=
+"../imgs/9d0921bb1f71185cf38219c053c39159513ac022.png"></p>
+<p>// accessing each element of seam starting from end in the
+decreasing order</p>
+<p>3. <b>for</b><img src=
+"../imgs/911750ebff226a949c52729a2d67544669cc282d.png"> down to
+2</p>
+<p>// checking the element of seam array for the value 1</p>
+<p>4. <b>if</b><img src=
+"../imgs/1273ee6b25ae1b187f7d7ffade59632ef025f1de.png"></p>
+<p>// comparing two consecutive the elements of disruption array
+<i>B</i></p>
+<p>5. <b>if</b><img src=
+"../imgs/1e46ead70fb57076d02f4ddef0e32ee0d9501c96.png"></p>
+<p>// updating the value of seam array</p>
+<p>6. <img src=
+"../imgs/53922cf88793624f532c928f1358dde77de005f3.png"></p>
+<p>7. <b>else</b></p>
+<p><img src=
+"../imgs/2f699a44cfedb8b8d864c58501b962f33ab61853.png"></p>
+<p>// checking if the <i>i</i><sup>th</sup> element of seam is
+<i>n</i></p>
+<p>8. <b>else if</b><img src=
+"../imgs/21e3b926a07ec60bc10629a0e8b0de39e2dd0e68.png"></p>
+<p>// comparing two consecutive the elements of disruption array
+<i>B</i></p>
+<p>9. <b>if</b><img src=
+"../imgs/a498d2dc64200249501f821bda012597177905d1.png"></p>
+<p>// updating the value of seam array</p>
+<p>10. <img src=
+"../imgs/af2fe56c642caea4516470eb6f7d890744653f46.png"></p>
+<p>11. <b>else</b><img src=
+"../imgs/079868fabde78169d96b7f0a90fdd4ed513890a5.png"></p>
+<p>// finding the new value of <i>j</i> for which <i>B</i> is
+smallest</p>
+<p>12. <b>else</b></p>
+<p>Find <i>j</i> such that <img src=
+"../imgs/b474663431246f2dc8603f8c30a48185e16f8c31.png"> with
+smallest <img src=
+"../imgs/26051c4a89b62f00bc4a4bd54ea7ebc2cadb8530.png"></p>
+<p>13. <img src=
+"../imgs/16fd4877aee666d3e1507bce5b1f97d1582f86ac.png"></p>
+<p>The above algorithm takes space <img src=
+"../imgs/0ae1c1025322353db89ee35268ceffb8874d9df5.png">to run
+because it needs to maintain array of size <img src=
+"../imgs/a659c01ea9f3d4b772daa28eb5121b5f7d8f06ee.png"> and the
+building of seam in step 4 takes time<img src=
+"../imgs/bf96a0fc3117b181b4c6c3b3682ef95bfa582ae8.png">.</p>
+<p>So, the algorithm runs efficiently for finding the minimum
+disruption seam in <img src=
+"../imgs/bf96a0fc3117b181b4c6c3b3682ef95bfa582ae8.png"> time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Illustration of seam carving with the help of
+example:</b></p>
+<p><b>Consider the following diagram.</b></p>
+<p><img src="../imgs/929d9fc856f3d3bf2049f250bb587429b43044ee.png"
+alt="Picture 1"></p>
+<p>In the above diagram firstly find the minimum energy pixel in
+the first row of the matrix. Here, 2 is the minimum energy pixel in
+the first row.</p>
+<p><img src="../imgs/2d37c4da4ac970ff5382505a561afa21e02a4bcd.png"
+alt="Picture 2"></p>
+<p>It lies on the boundary of the column so there are two choices
+which are 2 and 9 for selecting the next pixel. 2 is the minimum
+value among the two choices. Compute minimum cost of the seam by
+using the given formula:</p>
+<p><img src=
+"../imgs/b63de317e904aaaa35d133bab064763c6809cafe.png"></p>
+<p><img src=
+"../imgs/123570e78aab68513f92c504f0518f540bb03c0f.png"></p>
+<p><img src=
+"../imgs/530363c2ba530ac6208f7a4b3b208d29536d6c01.png"></p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/5f3f291f2edc7c273a5c7b701f81897ebe2881b1.png" alt=
+"Picture 3">
+<p>Now move to the next row and select 9. Here, 9 lies on the
+starting of the column so, there are two choices.</p>
+<p><img src=
+"../imgs/2d268fe4786971fd65ebfa8e6ba184e3f952219c.png"></p>
+<p><img src=
+"../imgs/5cc91580cd0ffc5d7451ba087ef8adf537230a17.png"></p>
+<p><img src=
+"../imgs/58109bfc243a16d863d2bf9790a7f679d3e8e1db.png"></p>
+<p><img src="../imgs/aded45f1bb6e9c4db01f23f56b870ffcc6464b91.png"
+alt="Picture 4"></p>
+<p>Now, move to the next column and select 1. Here, 1 does not lie
+on boundary column so it has 3 choices. Compute minimum cost of the
+seam by using the given formula:</p>
+<p><img src=
+"../imgs/de844bab2b8939141b74a2ac8e3483fc3be77ef8.png"></p>
+<p><img src=
+"../imgs/6385a53d3c576c4aea9675834fdc20ad56377cdf.png"></p>
+<p><img src=
+"../imgs/8c7937aea56b63ff4689780dbd86f2120aa2b32e.png"></p>
+<p><img src="../imgs/c1cfd6dd9f321767896ab5e5eacfd687e7fffdc4.png"
+alt="Picture 5"></p>
+<p>Now, move to the next column and select 2. Here, 2 do not lie on
+boundary column so it has 3 choices.</p>
+<p>Compute minimum cost of the seam by using the given formula:</p>
+<p><img src=
+"../imgs/de844bab2b8939141b74a2ac8e3483fc3be77ef8.png"></p>
+<p><img src="../imgs/dea1d7906a479fe78aa69e28d39a739e1ddcc6fe.png">
+<img src=
+"../imgs/d2da0961ed1ede03dcb8651921f90a1757c93727.png"></p>
+<p>Similarly, compute minimum cost of all the pixels of the matrix
+is shown by the diagram:</p>
+<p><img src="../imgs/a2003e0b06af072a29d3d8e6f376598670610368.png"
+alt="Picture 6"> <img src=
+"../imgs/7d277f0e355cfec43f8ef92e8716fbc97ba1534d.png" alt=
+"Picture 7"> <img src=
+"../imgs/5bc97fe7f12f595a8016b9ecdc298cb6a53cb4af.png" alt=
+"Picture 9"></p>
+<p><img src="../imgs/6f6340b9c2cd5f832a7550843c1f79084026f1a2.png"
+alt="Picture 10"> <img src=
+"../imgs/fe5031485f0b92ae377c926e9b001072b7a2a5a3.png" alt=
+"Picture 11"> <img src=
+"../imgs/1e2a392b71dadfcaea7df29e9f7f8c9cde673c25.png" alt=
+"Picture 12"></p>
+<p><img src="../imgs/21786cf4f20e63b4b3919011454ea9ce463d0e32.png"
+alt="Picture 13"> <img src=
+"../imgs/f64a8b9c8fd2a96ef291aa90382c95e17093b0c8.png" alt=
+"Picture 14"> <img src=
+"../imgs/94c6f4bfb7dc238450c89e409fb4e9bd92f4f8b9.png" alt=
+"Picture 15"></p>
+<p>Now, backtracking mechanism is used to find minimum value of the
+seam from each and every row.</p>
+<p><img src="../imgs/b86d134a348a8ecc5c8de0da5927928e5e425c69.png"
+alt="Picture 16"></p>
+<p>In the above diagram, backtracking will be started by finding
+the minimum valued pixel from the last row. Here, 11 is the minimum
+value in the last row.</p>
+<p><img src="../imgs/bfb61835d84ada9618e3841d55e8c23c055d39cc.png"
+alt="Picture 17"></p>
+<p>Here, 11 lies on the starting of the column so there are two
+choices which are 11 and 8. Here minimum value is 8 so, select 8
+from the third row.</p>
+<p><img src="../imgs/43d73437439390e9865e7697f91e5f8f7f92daf0.png"
+alt="Picture 18"></p>
+<p>Here, 8 does not lie at the starting of the column so there are
+three choices which are 13, 5 and 6. Here, minimum value is 5 and
+thus, select 5 from the second row.</p>
+<p><img src="../imgs/dfe076269d2b26dafb4d9a4141efc5c612dc9d99.png"
+alt="Picture 19"></p>
+<p>Here, 5 does not lie on the starting of the column so, there are
+three choices which are 4, 7 and 11. Here, minimum value is 4 and
+thus, select 4 from the first row.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9P">
+                <a href="#problem-9P">9P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>String breaking problem</b></p>
+<p>Consider <i>S</i> is the string with <i>n</i> characters and
+<img src="../imgs/7d8838bbd6ed941a9540fbb337de0855bd5fad89.png"> is
+the array that contains the break points. Breaking a string of
+<i>n</i> characters, the algorithm takes <i>n</i> time.</p>
+<p>The below defined recursive algorithm is the string breaking
+algorithm that computes the lowest cost for a sequence breaks.</p>
+<p>Where,</p>
+<p>• <i>l</i> and <i>m</i> are the starting and ending indexes of
+the break points array respectively.</p>
+<p>• <i>i</i> and <i>j</i> are the starting and ending indexes of
+the string <i>S</i> array respectively.</p>
+<p>• <i>q</i> is the required least cost.</p>
+</div>
+<hr>
+<div class="answer">
+<p>BREAKING-STRING (<i>L</i>,<i>l,m,i,j</i>)</p>
+<p>// Number of characters in the sub string</p>
+<p>1 <i>n</i>=<i>j</i>-<i>i</i>+1</p>
+<p>2 <b>if</b> <i>i</i> &gt; <i>j</i> <b>or</b> <i>l</i> &gt;
+<i>m</i></p>
+<p>3 <b>return</b> 0</p>
+<p>4 <b>if</b> <i>l</i>= =<i>m</i></p>
+<p>5 if <i>L</i>[<i>l</i>] ≤ <i>i</i> <b>and</b> <i>L</i>[<i>l</i>]
+≥ <i>j</i></p>
+<p>6 <b>return</b> 0;</p>
+<p>// large positive integers</p>
+<p>7 <i>q</i>= + ∞</p>
+<p>8 <b>for</b> <i>k</i>= l <b>to</b> <i>m</i></p>
+<p>9 <b>if</b> <i>k</i> = = <i>m</i></p>
+<p>10 <i>q</i>= min(<i>q</i>,<i>n</i>+
+BREAKING-STRING(<i>L</i>,<i>l,k</i>-1<i>,i,L[k]</i>)</p>
+<p>+
+BREAKING-STRING(<i>L</i>,<i>m,m,L</i>[<i>k</i>]+1<i>,j</i>));</p>
+<p>11 <b>elseif</b> <i>k</i> = = <i>l</i></p>
+<p>12 <i>q</i>= min(<i>q</i>,<i>n</i>+
+BREAKING-STRING(<i>L</i>,<i>l,l,i,L[k]</i>)</p>
+<p>+
+BREAKING-STRING(<i>L</i>,<i>k</i>+1<i>,m,L</i>[<i>k</i>]+1<i>,j</i>))</p>
+<p>13 <b>else</b></p>
+<p>14 <i>q</i>= min(<i>q</i>,<i>n</i>+
+BREAKING-STRING(<i>L</i>,<i>l,k,i,L[k]</i>)</p>
+<p>+
+BREAKING-STRING(<i>L</i>,<i>k</i>+1<i>,m,L</i>[<i>k</i>]+1<i>,j</i>));</p>
+<p>15 <b>return</b> <i>q</i>;</p>
+<p>The algorithm consists of the basic consideration of recursive
+calling of the algorithm and the running time of loop used inside
+the algorithm.</p>
+<p>This is the problem of dynamic programming and problem is broken
+into sub problems so the running time of this algorithm is<img src=
+"../imgs/515e90ce034d0291e14296902a79c05c2be49e3e.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-10P">
+                <a href="#problem-10P">10P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>Assume that there exists a solution which is optimal and
+represented by <i>S</i>, without any loss in generality.</p>
+<p>In the solution, within 1 year, assume that <img src=
+"../imgs/37981eb73580a4686a82fd963d50e618fe5d56d8.png"> dollar is
+invested for the investment represented by <i>k</i>. And, <img src=
+"../imgs/e44d3127d5406cab6a2f4c48888e7f5c2a3d01ba.png"> is invested
+in the investment represented by <i>m</i>.</p>
+<p>Now, suppose that no money is moved for the first <i>j</i>
+years.</p>
+<p>If the following is true, then perform usual cut and paste
+maneauver and instead invest the sum of the initial dollars for the
+<i>k</i> investment for <i>j</i> years.</p>
+<p><img src="../imgs/039fb5421d783221d21fef7b128f88adcd299a69.png">
+<img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"></p>
+<p>If the investments are same, then it would may result to a
+strategy which is at-least as profitable as the solution
+<i>S</i>.</p>
+<p>But decrease the number of investments done under the time of 1
+year.</p>
+<p>Continuously doing this, the chance of considering only a single
+investment in a year by the optimal strategy will decrease.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>For a strategy which is optimal, if an investment is consider
+for one year then one must solve the following two subproblems.</p>
+<p><b>The two subproblems are as follows:</b></p>
+<p>• Without suffering with the movement of money fee, for one
+additional year a strategy needs to be maintained.</p>
+<p>• The second one is that move the money which is used to resolve
+the problems where all the information of year 1 is ignored.</p>
+<p><b>Thus, an optimal substructure is exhibited.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p><b>The algorithm for optimal investment strategy is as
+follows:</b></p>
+<p>Initialize the tables I and R with all filled with zero.</p>
+<p>//Begin the for loop</p>
+<p>for i = 10 downto 1 do</p>
+<p>a = 1</p>
+<p>for j = 1 to n do</p>
+<p>if <img src=
+"../imgs/78ab8ddfb0085fdfb171d65415f7976dc91303ca.png"> then</p>
+<p>//j contain the investment that is best for the</p>
+<p>//given year</p>
+<p>a = j</p>
+<p>end if</p>
+<p>end for</p>
+<p>if <img src=
+"../imgs/9f482f021ca5498f3968ca7aac1ef7675557f2f5.png"> then</p>
+<p>//When the money is not being moved, the</p>
+<p>//revenue is higher</p>
+<p><img src=
+"../imgs/90b529c42f06e24f692b0e974ce6b3960b7bb458.png"></p>
+<p>else</p>
+<p><img src=
+"../imgs/375d550d2781f800b20540e558e16f74d33d1081.png"></p>
+<p>end if</p>
+<p>end for</p>
+<p>Return I which is an optimal strategy with return R[1].</p>
+<p><b>The working of the above algorithm is explained
+below:</b></p>
+<p>Create two tables I and R of size 10 such that the index i of
+the table I means I[i] represents the investment of the year i, and
+R[i] represents the overall return in the investment done between
+the year i to 10.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i></p>
+<p>• The investment strategy that is being taken was not depend on
+the starting amount.</p>
+<p>• The amount which is going to be invest in the next year become
+relevant, if there is a cap on the investment amount.</p>
+<p>• If the year-one-strategy of the optimal strategy is known, and
+aware about the fact that after one year, one need to move the
+money, the problem of investing different amount money will be
+resolved.</p>
+<p>• And, hence, for every initial amount of money which is
+possible one need to solve the subproblems.</p>
+<p>Since, there is no bound on the number of subproblems and the
+returns.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-11P">
+                <a href="#problem-11P">11P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Inventory planning:</b></p>
+<p>The Rinky Dinky Company manufactures machines that resurface the
+ice rinks and the demand of these machines varies from month to
+month. So the company wants to create a plan for next <i>n</i>
+months which can give it the idea that what quantity of machines
+should be manufactured so that the demand can be fulfilled.</p>
+<p>For the <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png"> month the
+demand is <i>d</i> which is <img src=
+"../imgs/8acd9e112bfa02b09e739ba510c3d9000e5d5f80.png">for next
+<i>n</i> months.</p>
+<p>The company keeps a staff for full time which manufactures
+<i>m</i> machines in a month and if the company wants to create
+more than <i>m</i> machines in a month then it hires some more
+labors and the cost for these is <i>c</i> dollars per machine.</p>
+<p>Furthermore, if any machine in a month do not sold then it will
+be keep in the inventory and the cost of this inventory is paid by
+the company.</p>
+<p>The inventory cost for holding <i>j</i> machines is represented
+in the form of a function<img src=
+"../imgs/1e9e686fe29622046bcdfce45c130c6a630668b9.png">for
+<img src="../imgs/30b41f5b5fda5e40cb1c268118b6b234add8abe7.png">where
+<img src="../imgs/0bd603d8045702cdb65a3e91606c1950337d313c.png">
+for <img src=
+"../imgs/fffea6d32e0d144b49c125ab4ff2396b1f33968e.png">and
+<img src="../imgs/c407877825a069f1b5f0e0ed24b84f83f1efe0b1.png">for<img src="../imgs/23f39780481409f39d8c154e80fc5170335d5eb5.png">.</p>
+<p>Now developing a procedure plan for the company in the form of
+algorithm so that company can reduce its costs at the same time
+fulfills the demand of the machines in next <i>n</i> month and it
+has polynomial running time in the terms of <i>n</i> and
+<i>D</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm for finding the total cost of manufacturing
+company is designed by using the dynamic programming technique.</p>
+<p>The variables used in the algorithm are as:</p>
+<p><img src=
+"../imgs/943cf2ff0837540760a321ffd5902f8c95025723.png"></p>
+<p><img src=
+"../imgs/c3a178b81856ab917083f7b4310d891a93af3ae5.png"></p>
+<p><img src=
+"../imgs/06f06fdcd751072d803ae982b5b872515d64935d.png"></p>
+<p><img src=
+"../imgs/db10e2c249c7d2afca2e11eac0ffc4e779d28a17.png"></p>
+<p><img src=
+"../imgs/b53c769aa25c5c30caf77b163fb5938ee7ab9dac.png"></p>
+<p>COST(<i>k</i>)</p>
+<p>if<img src=
+"../imgs/76a3312eed91c76077dfb6847839386e1ac9c300.png"></p>
+<p>// returns the cost of <i>k</i> machines</p>
+<p>return <i>R</i></p>
+<p>return <b><img src=
+"../imgs/7b9ae2d3a2f14408a274a14929f15c57e195daa9.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p>A tricky recursion in two variables can be developed for the
+problem which is as:</p>
+<p><img src=
+"../imgs/f85b1452babd0d2341bdbc0ee8bec416e10d1ed9.png"></p>
+<p><img src=
+"../imgs/9df3cc3c50e0d20819da4dcb3d7061f059938b79.png"></p>
+<p>MIN-COST(<i>i, j</i>)</p>
+<p>1. <img src=
+"../imgs/0c75637947ec51d5afba0d263a984d347658f15c.png"></p>
+<p>2. <img src=
+"../imgs/0b9606d56527445f05c0a68f4bb7455370109f98.png"></p>
+<p>3. <img src=
+"../imgs/594de2ffd263585276e580a97e44e69c528b7a51.png"></p>
+<p>4. return <i>min</i></p>
+As the optimal solution for the sub-problems yields an optimal
+solution for the problem, so this cost calculation procedure
+exhibits the property of optimal substructure. And the above
+recursion shows that a lot of problems have to solve again and
+again that is for the company the cost is calculated for each month
+so the problem also exhibits the property of overlapping
+sub-problems.</div>
+<hr>
+<div class="answer">
+<p>This problem of finding cost exhibits both the property of being
+dynamic programming solvable,</p>
+<p>The following is the dynamic programming solution for the
+problem.</p>
+<p><img src=
+"../imgs/ebdba22e7f9910cdfef1921da1ec82ab6fdb6fac.png"></p>
+<p><img src=
+"../imgs/6c57ccb00ff1cf0403b125b5a8cf6feb3585a18a.png"></p>
+<p>MIN-COST(<i>i, j</i>)</p>
+<p>1. <img src=
+"../imgs/696902f933255437e9bfe2b983d325606f04dc81.png"></p>
+<p>2. return <img src=
+"../imgs/d1d55a37f3825d7f22e0d53ee79b5e7f4f606e84.png"></p>
+<p>3. for <img src=
+"../imgs/82df2b0de6b3d4523b4af68dfff851657f3c8b72.png"></p>
+<p>4. if <img src=
+"../imgs/4c23b29fe32efc3d6a23fb11b9c67e279ac6c9cb.png"></p>
+<p>5. <img src=
+"../imgs/b93326f2754678f45a382aa0189629b496cf1095.png"></p>
+<p>6. <img src=
+"../imgs/5a37383e4f061429d9fffef5ea693619827bc948.png"></p>
+<p>7. <img src=
+"../imgs/87943d29f7826d80286d850a7046296869e2e7d6.png"></p>
+<p>8. return <i>min</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>This algorithm has a for loop which runs for <i>D</i> on
+<i>n</i> numbers so the time complexity of this algorithm
+is<img src="../imgs/912fca8fc75bdddbace7c088e6542217ba112a4a.png">
+and the total space taken used in the memory is also in the form of
+<i>D</i> which is<img src=
+"../imgs/202bc63543ccb99a38a489ec0869d4573d5874e8.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-12P">
+                <a href="#problem-12P">12P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In the problem of signing free-agent baseball players a general
+manager of team is allowed to spend no more than <i>X</i> dollars
+to sign some players in the off-season. There are <i>N</i>
+positions in the team and for each position <i>P</i> players can be
+signed.</p>
+<p>The manager do not want to overload the roster so for each
+position he signs only one player and if he do not sign any player
+to a position then he sticks to the old players for that
+position.</p>
+<p>The value of the player for any position is measured by the
+sabermetric statics which is also known as VORP that is the value
+of the player which is required to make him safe from replacement
+and the player with higher VORP is more valuable and he can be less
+expensive.</p>
+<p>For a free agent player the information is as:</p>
+<p>1. The post at which the player is signed.</p>
+<p>2. The total cost to the signed player.</p>
+<p>3. The VORP value of player.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, create a procedure for the players of baseball team so that
+total VORP is maximized for the player within dollars <i>X</i> that
+are decided to spend by assuming that each signed player costs in
+the multiple of dollar 1 lacks.</p>
+<p>Suppose a 2-D array <i>M</i> having <i>N</i> rows and <i>P</i>
+columns. Each row of array stores the <i>P</i> player detail that
+plays at i<sup>th</sup> position. Each <i>player</i> object
+contains three attributes which stores VORP, cost and position of
+player.</p>
+<p>Declare another object <i>final</i> which also store three
+attributes: VORP, Total spend money and a list to store name of
+employee.</p>
+<p>The following algorithm returns the variable <i>final</i> which
+store maximum VORP, total money spend and the list of signed
+players:</p>
+<p><img src=
+"../imgs/37392ad916b1a397d958276da9d5bed021d678b7.png"></p>
+<p>//check amount exhausted</p>
+<p>1. <b>if</b> <img src=
+"../imgs/6b252558352068cdce4c68900dbac8c2a24366ca.png">or <img src=
+"../imgs/60f4e7110fb27ce5bb40ca9fe783b2f2335d92b0.png"></p>
+<p>2. <b>return</b> <i>final</i></p>
+<p>3. <img src=
+"../imgs/b4aeb45bf7914257e2916c920adb85fc21dcac3b.png"></p>
+<p>4. <img src=
+"../imgs/1949ae8fe7b3ab79fba85eac0577f1a42922f4a3.png"></p>
+<p>//use loop to check VORP of each player</p>
+<p>5. <b>for</b> <img src=
+"../imgs/695e585079d67d26560ad71c715f67d23a957be6.png">to<img src=
+"../imgs/82c6dfa509e4a2f13f0c945b7c554f025e103d35.png"></p>
+<p>//check VORP of j<sup>th</sup> player who plays at
+i<sup>th</sup> position.</p>
+<p>6. <b>if</b> <img src=
+"../imgs/f7c09f8704ba32b43174b9ec45ccd9b41d194c60.png"></p>
+<p>7. <img src=
+"../imgs/549a4eda4c0812f50c25179ddac6cf1e7d22d93a.png"></p>
+<p>//store the calculated result in <i>final</i> object</p>
+<p>8. <img src=
+"../imgs/81acbd7cc88764d759215722beb7542dd2594135.png"></p>
+<p>9. <img src=
+"../imgs/84d3633c05d9343a52da043ea8272d27f8992dfa.png"></p>
+<p>10. Add <img src=
+"../imgs/e4745d32521c0fe27bef81e3d8d19542736f6482.png">person name
+in <img src=
+"../imgs/4d95a543df9fd26e80002a2a51bf0c13c42accb0.png"></p>
+<p>//Recursive call of function</p>
+<p>11.<img src=
+"../imgs/adff2715683d1546e4230d3b0988f8ec3f5cc252.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Space and Time complexity:</b></p>
+<p>• In above algorithm a 2-D array <i>M</i> is used to store
+<img src=
+"../imgs/36c4159d8a39ba4dbdcc1e6812e083ae3fd9867b.png">player’s
+details. Therefore the space complexity of above algorithm is
+<img src=
+"../imgs/9501a86d39ac8f60d3a0c366fa2139e9f840e212.png"></p>
+<p>• A <b>for</b> loop is used in above algorithm which iterate
+<i>P</i> times. At the end of procedure a function call itself.</p>
+<p>Therefore the space complexity of above algorithm is <img src=
+"../imgs/9501a86d39ac8f60d3a0c366fa2139e9f840e212.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

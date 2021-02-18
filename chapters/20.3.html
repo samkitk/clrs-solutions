@@ -1,0 +1,995 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 20.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>vEB TREE with Duplicate Keys</b></p>
+<p>The vEB-PROTO structure (refer to the section 20.2 of the book)
+is used as the base for the actual implementation of the vEB tree.
+vEB tree is intended to achieve the running time of <img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">. The
+vEB-PROTO falls minutely short while doing this. The reason is the
+excess of recursion in the operations. Recursion takes long enough
+and the running time of the algorithms can be minimized to only a
+certain limit.</p>
+<p>The approach used in designing the real vEB tree is that if a
+few things can be kept pre-calculated. The best thing to do would
+be find out the <i>min</i> and <i>max</i> element of the structure
+in advance.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, it is already known that the leaves of the vEB tree have
+two elements only. So if <i>min</i> and <i>max</i> attributes are
+used they can represent the values easily and if any change in the
+values is to be performed, that can be done in the constant time as
+the <i>min</i> and <i>max</i> values are already known.</p>
+<p>vEB tree is a minor modification in the vEB-PROTO structure in
+order to make it achieve the desired running time. The structure of
+the vEB tree node looks like the one shown below:</p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/78ec63e295d4b28f9f1f16f8e963d8c3371cf599.png" alt=
+"C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></div>
+<hr>
+<div class="answer">For vEB tree the size of universe <img src=
+"../imgs/34402cda1f54225313a54a96a455e507c36b27d1.png">for any
+integer. Here <i>u</i> can be any exact power of 2. In the
+diagram</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/16e2b63899d1a7b48c6433f3aa4d4880ab863b9d.png"> <img src=
+"../imgs/6dfea9a7e45d3d6164f51f50f045137e2d89943c.png"></div>
+<hr>
+<div class="answer">Other modification is the inclusion of
+<i>min</i> and <i>max</i> attributes. The attributes <i>min</i> and
+<i>max</i> hold the minimum and the maximum values in the tree
+respectively. This helps reduce the recursion and improve the
+running time of the operations. An example of the simple vEB tree
+can be seen in the figure 20.6 of the textbook.</div>
+<hr>
+<div class="answer">
+<p><b>Change the Van Emde Boas Tree to support duplicate keys:</b>
+The Van Emde Boas tree does not support the duplicate keys. The
+reason is the storage structure of the tree. The tree stores a bit
+array that could contain only a 1 or 0. The keys are not physically
+stored in the tree rather the array indexes are considered to be
+the value of the key. Wherever the key is present, the related
+index is set to 1. If the key is not present the index is left
+0.</p>
+<p>In order to make the tree support the duplicate keys, the change
+in the storage structure of the tree would be required. The reason
+is that binary value can only indicate the presence or absence of
+the data. It cannot give any clue about the duplicate data.The
+changes in the storage structure of the bit array can be performed
+as specified ahead. To do this, one fundamental change must be done
+in the tree structure.</p>
+<p>It is already known that a bit array has not to be maintained in
+the vEB tree. Rather the leaves hold to attributes that are
+<i>min</i> and <i>max</i>. Since the leaf has at most two elements
+so the values are represented using these two attributes only. So,
+the change is to make the <i>min</i> and <i>max</i> elements
+support the integer values.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For duplication, an integer can be maintained. Initially all the
+indexes would be set to 0. Now, whenever the key is encountered,
+the related attribute of the node would be incremented by 1. That
+means if the value is in the <i>min</i> attribute the change in
+that should be committed or if that is in the <i>max</i> attribute,
+the max should be updated. To change the structure the elements
+<i>min</i> and <i>max</i> must be defined appropriately to make
+them support the integer values.</p>
+<p>Once this is done, the keys can be represented appropriately.
+For a given index, if the value is not present, simply set it to 0.
+If the value is there, then set the value to 1. Now, when the value
+is repeated the <i>min</i> or <i>max</i> at the corresponding index
+should be increased by 1 every time the value is repeated. This
+update depends on whether the element is <i>min</i> element or
+<i>max</i> element in that leaf.</p>
+<p>Now, the summary can be set according to this change. In normal
+scenarios, the summary is set by checking for the presence of a
+zero or nonzero element in the <i>min</i> and <i>max</i>
+attributes. Summary should now not check if there is a 1 or 0 in
+the <i>min</i> and <i>max</i> attributes. Rather it should be
+checked if there is a zero or nonzero value in the respective
+attributes.</p>
+<p>For example: a vEB tree with the values 2, 3, 4, 5, 7, 7, 14,
+15, 15 would be as below:</p>
+<p><img src="../imgs/f986b2d28e0d745b1c1d51611c479408c8eeaba4.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\12.tif"></p>
+<p>Now, it can be seen that the values 7 and 15 are represented by
+showing the max of related node with an integer 2 because both of
+the values are being repeated 2 times. This way the vEB tree can be
+modified to support the duplicate keys.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>vEB Tree with Satellite Data</b></p>
+<p>The vEB-PROTO structure (refer to the section 20.2 of the book)
+is used as the base for the actual implementation of the vEB tree.
+vEB tree is intended to achieve the running time of <img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">. The
+vEB-PROTO falls minutely short while doing this. The reason is the
+excess of recursion in the operations. Recursion takes long enough
+and the running time of the algorithms can be minimized to only a
+certain limit.</p>
+<p>The approach used in designing the real vEB tree is that if a
+few things can be kept pre-calculated. The best thing to do would
+be find out the <i>min</i> and <i>max</i> element of the structure
+in advance. Now, it is already known that the leaves of the vEB
+tree have two elements only. So if <i>min</i> and <i>max</i>
+attributes are used they can represent the values easily and if any
+change in the values is to be performed, that can be done in the
+constant time as the <i>min</i> and <i>max</i> values are already
+known.</p>
+</div>
+<hr>
+<div class="answer">
+<p>vEB tree is a minor modification in the vEB-PROTO structure in
+order to make it achieve the desired running time. The structure of
+the vEB tree node looks like the one shown below:</p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/78ec63e295d4b28f9f1f16f8e963d8c3371cf599.png" alt=
+"C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></div>
+<hr>
+<div class="answer">For vEB tree the size of universe <img src=
+"../imgs/34402cda1f54225313a54a96a455e507c36b27d1.png">for any
+integer. Here <i>u</i> can be any exact power of 2. In the
+diagram.</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/16e2b63899d1a7b48c6433f3aa4d4880ab863b9d.png"> <img src=
+"../imgs/6dfea9a7e45d3d6164f51f50f045137e2d89943c.png"></div>
+<hr>
+<div class="answer">Other modification is the inclusion of
+<i>min</i> and <i>max</i> attributes. The attributes <i>min</i> and
+<i>max</i> hold the minimum and the maximum values in the tree
+respectively. This helps reduce the recursion and improve the
+running time of the operations. An example of the simple vEB tree
+can be seen in the figure 20.6 of the textbook.</div>
+<hr>
+<div class="answer">
+<p><b>Satellite Data:</b> Satellite data, while referenced with
+respect to the vEB tree, is all of the data that is in the node
+else than the key. This might be a pointer, any integer or other
+type data. This can be of primary or a secondary type. Whenever the
+data has to be fetched, the key is used to find the data.</p>
+<p>In general scenarios, any satellite data attached with a key is
+always kept in the same node as the key. Storing it in the node in
+the case of an efficient tree structure vEB tree should be done in
+such a way that the modification does not affect the rest of the
+structure.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modification in data structure:</b> There might be several
+approaches that can be used to store the satellite data in the vEB
+tree. The selection of approach depends upon the need in terms of
+execution time and the space availability. Below are illustrated a
+few approaches that can be used to store the satellite data along
+with the possible advantages and the disadvantages of each if there
+are any.</p>
+<p><b>Inclusion of pointer:</b> To modify the vEBtree structure to
+support satellite data, configure it so that it holds a pointer to
+the satellite that has to be stored. The pointer can be defined
+according to the data that is being stored.</p>
+<p>This would not make a great impact on the size of the tree and
+would support the satellite data as well. The operations on the
+PROTO-vEB structure can be performed by taking the reference of the
+Keys. This way it could be a good deal to store the satellite data
+in the VEB tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The structure would look like the one below:</p>
+<p><img src="../imgs/48a82f12bf7a7a2eb008d1ec40db8ca82201b6bb.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p>In the above diagram, the pointer <i>ptr</i> holds the pointer
+to the satellite data. This can be set to NULL if there is no
+satellite data available. The advantage of using a pointer would be
+that it would not take a great amount of space.</p>
+<p><b>Satellite Data in Node itself:</b> Other way of modification
+is to save all the data in the structure nodes. This would make the
+access of the data faster because the data has not to be searched
+for in various disk locations. This approach however might be less
+efficient and more space consuming.</p>
+<p><b>Ordered pair approach:</b> One more and probably the most
+appropriate approach to do this is a minor modification in the
+first approach. In this entire data is treated as the key value
+pair. The keys are the keys stored in the tree itself and the value
+is the entire satellite data that is associated with the key. The
+keys are stored in the ascending order and the associated satellite
+data can be gotten by searching the related key in the pair that is
+stored on the disk. The ascending order of the keys would preserve
+the basic structure of the vEB tree that has the keys in the
+ascending order.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For this we would store matches as ordered pairs with <img src=
+"../imgs/838a2ea4bcec744d4f0ab31c1257a33c3a87a582.png">value as the
+key to be inserted in van emde boas tree and <img src=
+"../imgs/432642c640c59255d8889a1f70cef04360adf9e5.png">value we
+would insert as satellite data. With the following values there
+would be an operation of the form<img src=
+"../imgs/89dc67a70987bb0ca72e3ac38ed6163cb3253da5.png">.With the
+above value consideration <img src=
+"../imgs/838a2ea4bcec744d4f0ab31c1257a33c3a87a582.png">value and
+<img src=
+"../imgs/432642c640c59255d8889a1f70cef04360adf9e5.png">value can be
+obtained as:</p>
+<p><img src=
+"../imgs/5da34734a9f5651d4225abf1bf39530f3ace3b1f.png">Value<img src="../imgs/2be3bd2c7bdffb1a415bc75f0ef32bb7bb5d4323.png"></p>
+<p>Here, <img src=
+"../imgs/adf0d4f2cdabbfde93e8cad37fdb508a612dbaea.png">is a dummy
+value. The operation <img src=
+"../imgs/2be3bd2c7bdffb1a415bc75f0ef32bb7bb5d4323.png"> provides a
+match <img src=
+"../imgs/5b1516b6116815dc190a1c197493ed61eddf5f60.png"> with
+largest <img src=
+"../imgs/1f57e119a006dc1ec565df62c3bb4af5626ba84e.png">in<img src=
+"../imgs/74d192398c61e538a4cda08a0cc6d843877f3a17.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Inan order which supports keys with satellite data the critical
+matches in ascending order of <img src=
+"../imgs/838a2ea4bcec744d4f0ab31c1257a33c3a87a582.png">value and
+<img src=
+"../imgs/432642c640c59255d8889a1f70cef04360adf9e5.png">value will
+be in descending order to support the space complexity for
+keys.</p>
+<p>This approach can be adopted easily and the modified data
+structure would be able to support all the operations that are
+supported by the normal vEB tree. The structure of the node in this
+approach might look like below:</p>
+<p>struct satellite</p>
+<p><b>{</b></p>
+<p>int p<b>;</b></p>
+<p>float q<b>;</b></p>
+<p>satellite <b>*</b>pair_ptr<b>;</b></p>
+<p><b>}</b></p>
+<p>So, the modification in the data structure would allow the data
+to be stored in the form of the key value pair. Keys would be the
+data stored in the tree itself and the data would be associated
+with the keys nonetheless would be stored somewhere else in the
+memory. The keys would essentially be stored in the ascending
+order.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>van EMDE BOAS Tree</b></p>
+<p>The vEB-PROTO structure (refer to the section 20.2 of the book)
+is used as the base for the actual implementation of the vEB tree.
+vEB tree is intended to achieve the running time of <img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">. The
+vEB-PROTO falls minutely short while doing this. The reason is the
+excess of recursion in the operations. Recursion takes long enough
+and the running time of the algorithms can be minimized to only a
+certain limit.</p>
+<p>The approach used in designing the real vEB tree is that if a
+few things can be kept pre-calculated. The best thing to do would
+be find out the <i>min</i> and <i>max</i> element of the structure
+in advance. Now, it is already known that the leaves of the vEB
+tree have two elements only. So if <i>min</i> and <i>max</i>
+attributes are used they can represent the values easily and if any
+change in the values is to be performed, that can be done in the
+constant time as the <i>min</i> and <i>max</i> values are already
+known.</p>
+</div>
+<hr>
+<div class="answer">
+<p>vEB tree is a minor modification in the vEB-PROTO structure in
+order to make it achieve the desired running time. The structure of
+the vEB tree node looks like the one shown below:</p>
+<p><img src="../imgs/78ec63e295d4b28f9f1f16f8e963d8c3371cf599.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></p>
+<p>For vEB tree the size of universe <img src=
+"../imgs/34402cda1f54225313a54a96a455e507c36b27d1.png">for any
+integer. Here <i>u</i> can be any exact power of 2. In the
+diagram.</p>
+<p><img src=
+"../imgs/16e2b63899d1a7b48c6433f3aa4d4880ab863b9d.png"></p>
+<p><img src=
+"../imgs/6dfea9a7e45d3d6164f51f50f045137e2d89943c.png"></p>
+<p>Other modification is the inclusion of <i>min</i> and <i>max</i>
+attributes. The attributes <i>min</i> and <i>max</i> hold the
+minimum and the maximum values in the tree respectively. This helps
+reduce the recursion and improve the running time of the
+operations.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Pseudo code to design an empty vEB tree:</b> In the pseudo
+code, the following has to be coded:</p>
+<p>? Variable that stores the size of universefor the tree</p>
+<p>? Variable <i>min</i> that would store the minimum variable in
+the corresponding range</p>
+<p>? Variable <i>max</i> that stores the maximum value in the
+corresponding range</p>
+<p>? Pointer summary that stores the details of the descendent
+nodes</p>
+<p>? Array <i>cluster</i> that stores the keys in it.</p>
+<p>A pseudo code for a procedure to create an empty Van Emde Boas
+tree has to be written.</p>
+<p>There are essentially two ways to do this:</p>
+<p>1. Delete the elements from the existing tree and the tree that
+is gotten by doing this is the empty vEB tree.</p>
+<p>2. Create the New empty vEB tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Here is the pseudo code for the first approach:</p>
+<p><b>Pseudo code 1:</b></p>
+<p>CREATE-vEB-TREE(<i>vEB</i>)</p>
+<p>1. vEB-TREE-DELETE (<i>vEB, a</i>){Delete<i>a</i> from the tree,
+gives true on success}</p>
+<p>2. <b>if</b> HIGH=NULL then</p>
+<p>//if condition to check whether the tree has one element</p>
+<p>3. <b>if</b><img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">=MIN</p>
+<p>//when condition is satisfied make the current value NULL</p>
+<p>4. this<img src=
+"../imgs/7b69c5e03dcc57b6c2379d1084bf0e3b4aa131d4.png">NULL</p>
+<p>// deleting the structures</p>
+<p>5. <b>return</b> true</p>
+<p>6. <b>else</b></p>
+<p>7. <b>return</b> false</p>
+<p>//search the new minimum and delete it from the tree</p>
+<p>8. <b>if</b><img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">=MIN
+then</p>
+<p>// find the minimum value and assign it to <img src=
+"../imgs/4a5547aa3f724610a05bc57ee7d7dde69007f8e7.png"></p>
+<p>9. Variable <img src=
+"../imgs/62c81a9c9e62bf7b21f29953412b73028bbc56f5.png">HIGH.FindMin()</p>
+<p>// searches the minimum value</p>
+<p>10. Variable <img src=
+"../imgs/c1565af10f01bfd2d8c9cb0d240a6649fa17589c.png">LOW.
+Find<img src=
+"../imgs/266a37fdfda8fa9390876122338b098454b52a1a.png">.FindMin
+()</p>
+<p>11. MIN <img src=
+"../imgs/7b69c5e03dcc57b6c2379d1084bf0e3b4aa131d4.png">joins bits
+<img src=
+"../imgs/2fa4e895575f0e5dd03ac80fb616963048b94f1a.png"></p>
+<p>// continue deleting the minimum</p>
+<p>12. <img src=
+"../imgs/4e0e64a62229fd1f18f7e9a30015f6e923da5852.png">MIN</p>
+<p>13. <b>return</b> true</p>
+<p><b>Explanation of the procedure:</b> The pseudo code for
+creating an empty tree is shown above. It is done with the help of
+delete operation. To perform delete operation, call to
+vEB-TREE-DELETE (<i>vEB, a</i>) operation is there (Refer to the
+section 20.3.2 of the textbook for the code to delete the element
+from the tree). In this call, <i>vEB</i> represents tree and
+<i>a</i> represents the deleted element. The above operation takes
+<img src=
+"../imgs/fddab857e82c46f90108c7639cb1ae7b1f256e81.png">time.</p>
+<p>If the value of <i>vEB.min</i> is equal to <i>vEB.max</i> and
+both are equal to entered element <i>a</i>, then <i>a</i> is the
+single element which is stored in the tree. Deletion of this
+element makes the tree empty and the value of <i>vEB</i>.<i>min</i>
+is set to <i>M</i> and value of <i>vEB</i>.<i>max</i> is set to -1.
+If the value of <i>x</i> is equal to <i>vEB.min</i>, then find out
+second smallest value in the tree and assign it to the
+variable<i>y</i>. Now make the value of <i>y</i> equal to
+<i>vEB.min</i>. After this, deletion of <i>x</i> is there.</p>
+<p>If the value of <i>x</i> is equal to <i>vEB.max</i>, then find
+out second largest value in the tree and assign it to <i>y</i>. Now
+make the value of <i>y</i> equal to <i>vEB.max</i>. After this,
+deletion of <i>x</i> is there. In both the cases given above, the
+second largest or smallest value can be calculated in the order
+of<img src=
+"../imgs/7418ec9511142443e387b3c7aab15cc0d90353c8.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, the second and more precise approach for creating an empty
+vEB-TREE is as below:</p>
+<p><b>Pseudo code 2:</b></p>
+<p>CREATE-vEB-TREE (<i>vEB, u</i>)</p>
+<p>//initialize the tree structure</p>
+<p>1.Create Structure <i>vEB.</i></p>
+<p>//initialize the minimum and maximum</p>
+<p>2. int <i>min</i> = NIL, <i>max</i> = NIL;</p>
+<p>//find the minimum and maximum of the tree</p>
+<p>3. <i>vEB</i>.<i>min</i> = <i>min</i></p>
+<p>4. <i>vEB.max</i> = <i>max</i></p>
+<p>//create a pointer summary that holds the information about tree
+node</p>
+<p>5. <i>vEB</i> *<i>summary</i> = NIL;</p>
+<p>//Initialize the summary for the tree</p>
+<p>6. <i>vEB.summary = summary</i></p>
+<p>//set the universe size</p>
+<p>7. <i>vEB.u</i> = <i>u</i></p>
+<p>//create the cluster of the tree</p>
+<p>8. Create the cluster of pointers for the tree.</p>
+<p>9. <b>return</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the procedure:</b> First of all the variables
+for the tree have to be defined. Line 1 defines the basic structure
+of the tree. Line 2 of the procedure initializes variables for
+minimum and maximum values in the tree. Line 3 and 4 set the values
+for minimum and the maximum pointers of the tree.</p>
+<p>Line 5 sets the pointer summary to the tree node. Now, in line
+7, to make sure that the tree summary holds no information, set it
+to NIL. Create a cluster of pointers for the tree. Set the universe
+size of the tree and return the control.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>vEB tree is a minor modification in the vEB-PROTO structure in
+order to make it achieve the desired running time. The structure of
+the vEB tree node looks like the one shown below:</p>
+<p><img src="../imgs/78ec63e295d4b28f9f1f16f8e963d8c3371cf599.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></p>
+<p>For vEB tree the size of universe <img src=
+"../imgs/34402cda1f54225313a54a96a455e507c36b27d1.png">for any
+integer. Here <i>u</i> can be any exact power of 2. In the
+diagram;</p>
+<p><img src=
+"../imgs/16e2b63899d1a7b48c6433f3aa4d4880ab863b9d.png"></p>
+<p><img src=
+"../imgs/6dfea9a7e45d3d6164f51f50f045137e2d89943c.png"></p>
+<p>Other modification is the inclusion of <i>min</i> and <i>max</i>
+attributes. The attributes <i>min</i> and <i>max</i> hold the
+minimum and the maximum values in the tree respectively. This helps
+reduce the recursion and improve the running time of the
+operations.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>vEB Tree Insertion:</b> The insertion in the vEB tree takes
+place as below: The procedure below checks if the tree is empty. If
+so, then the element is inserted in the tree and both of the
+<i>min</i> and <i>max</i> attributes point to the value that is
+just inserted.</p>
+<p>vEB-EMPTY-TREE-INSERT <img src=
+"../imgs/e76e56079adce64515363586019b806969d96555.png"></p>
+<p>1 <i>V</i>.<i>min</i>= <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"></p>
+<p>2 <i>V</i>.<i>max</i>=<img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"></p>
+<p>The procedure to insert the element in a tree is as follows:</p>
+<p>vEB–INSERTION (<i>T</i>, <i>x</i>)</p>
+<p>//base case the tree is empty</p>
+<p>1. <b>if</b><i>T.min</i>==NIL</p>
+<p>//call the procedure for insertion in the empty tree</p>
+<p>2. vEB-EMPTY-TREE-INSERT(<i>T</i>, <i>x</i>)</p>
+<p>//check if the element is less than the minimum</p>
+<p>3. <b>else if</b> <i>x</i> &lt; <i>T.min</i></p>
+<p>//exchange the element with the minimum</p>
+<p>4. Exchange <i>x</i> with <i>T.min</i></p>
+<p>//check if the universe size is greater than 2</p>
+<p>5. <b>if</b> <i>T.u</i> &gt; 2</p>
+<p>//check for the empty cluster</p>
+<p>6. <b>if</b> vEB-TREE-MINIMUM (<i>T.cluster</i>
+[high(<i>x</i>)]==NIL)</p>
+<p>//update the summaryin the tree node</p>
+<p>7. vEB-INSERTION(<i>T.summary</i>, high(<i>x</i>))</p>
+<p>//insert the element in the empty tree</p>
+<p>8. vEB-EMPTY-TREE-INSERT(<i>T.cluster</i>
+[high(<i>x</i>)],low(<i>x</i>))</p>
+<p>//insert in the nonempty tree</p>
+<p>9. <b>else</b>
+vEB-INSERTION(T.<i>cluster</i>[high(<i>x</i>)],low(<i>x</i>))</p>
+<p>//check if the element is greater than the current maximum</p>
+<p>10. <b>if</b> x&gt;<i>T.max</i></p>
+<p>//update the maximum</p>
+<p>11. <i>T.max</i>=<i>x</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>The procedure works as follows: Line 1 and 2 handle the case
+where tree is empty. The element will be inserted in the empty
+tree. Line 3 checks if element is smaller than the current
+<i>min</i>. If this happens then the <i>min</i> is exchanged with
+the newly inserted item in line 4. Line 5 check if the universe
+size is greater than 2. Line 6 checks if the cluster is empty.</p>
+<p>If the cluster is empty, the summary of the current node is
+updated and the next line insertion the element in the empty
+cluster. If the tree is not empty the element is inserted using a
+recursive call in the line 9. Line 10 and 11 find out if the
+inserted element is greater than the current max.</p>
+<p><b>If the element is already present in the tree:</b> Now if the
+element is already present in the tree, then the recursive call
+would not be able to find out the appropriate position for the
+element. The reason is that the element would neither be smaller
+than the <i>min</i> nor greater than the <i>max</i>. So neither
+line 3 nor line 10 condition is satisfied. So insertion would not
+take place. So the procedure is not able to handle the case of
+duplication properly.</p>
+<p><b>Van Emde Boas Tree DELETION:</b> The procedure below would
+find the element in the tree and delete it from the tree. This uses
+the procedure vEB-TREE-MINIMUM and vEB-TREE-MAXIMUM (refer to the
+section 20.3.2 of the textbook) to find the minimum element in the
+tree.</p>
+<p>vEB-DELETE<img src=
+"../imgs/67b2f0b1e29460942824c1fb23b1ae52423169f7.png"></p>
+<p>// base case. Where tree has only element</p>
+<p>1<b>. if</b><i>T</i>.<i>min</i>==<i>T</i>.<i>max</i></p>
+<p>//set the <i>min</i> and <i>max</i> elements</p>
+<p>2. <i>T</i>.<i>min</i> = NIL</p>
+<p>3. <i>T</i>.<i>max</i> = NIL</p>
+<p>//check for the base size of universe</p>
+<p>4. <b>else if</b> <i>T.u</i>==2</p>
+<p>//check if <i>x</i> is 0</p>
+<p>5. <b>if</b> <i>x</i> == 0</p>
+<p>//update the minimum element</p>
+<p>6. <i>T.min</i>=1</p>
+<p>7. <b>else</b> <i>T.min</i>=0</p>
+<p>//check if the minimum is equal to maximum</p>
+<p>8. <i>T.max</i>=<i>T.min</i></p>
+<p>//check if the deleted element is minimum</p>
+<p>9. <b>else if</b> <i>x</i>==<i>T.min</i></p>
+<p>//set the first cluster</p>
+<p>10. <i>first-cluster</i>=vEB-TREE-MINIMUM (<i>T.summary</i>)</p>
+<p>//set <i>x</i> to the minimum value</p>
+<p>11. <i>x</i> = index(<i>first-cluster</i>,
+vEB-TREE-MINIMUM(<i>T.cluster</i>[<i>first-cluster</i>]))</p>
+<p>12. <i>T</i>.<i>min</i>=<i>x</i></p>
+<p>//delete <i>x</i> from the tree</p>
+<p>13.
+vEB-DELETE(<i>T.cluster</i>[high(<i>x</i>)].low(<i>x</i>))</p>
+<p>//check if the cluster is empty now</p>
+<p>14. <b>if</b>
+vEB-TREE-MINIMUM(<i>T.cluster</i>[high(<i>x</i>)]==NIL)</p>
+<p>//delete the cluster</p>
+<p>15. vEB-DELETE(<i>T.summary.high</i>(<i>x</i>))</p>
+<p>//check if the element is maximum value</p>
+<p>16. <b>if</b>(<i>x</i>==<i>T.max</i>)</p>
+<p>//find the cluster that has the maximum value</p>
+<p>17. <i>summary-max</i>=vEB-TREE-MAXIMUM(<i>T.summary</i>)</p>
+<p>//check if the related cluster is empty now</p>
+<p>18. <b>if</b>(<i>summary-max</i>==NIL)</p>
+<p>//set the elements accordingly</p>
+<p>19. <i>T.max</i>=<i>T.min</i></p>
+<p>20. <b>else</b> <i>T.max</i>=index(<i>summary-max</i>, vEB-TREE
+–</p>
+<p>MAXIMUM(<i>T.cluster</i>[<i>summary-max</i>]))</p>
+<p>//transfer the maximum to x and delete it</p>
+<p>21. <b>else if</b> <i>x</i>=<i>T.max</i></p>
+<p>22.
+<i>T.max</i>=index(high(<i>x</i>),vEB-TREE-MAXIMUM(<i>T.cluster</i>[high(<i>x</i>)]))</p>
+</div>
+<hr>
+<div class="answer">
+<p>The procedure gets executed as follows: The first three lines
+check for the base case where the tree has one element. Line 4 is
+to check the base case for universe size 2. Line 5 to 8 set the
+value according to that. For any tree that has more than one
+elementthe remaining code works.</p>
+<p>Line 10 to 12 makes the first cluster the one that the element
+is to be deleted from and assign the value to be deleted to
+<i>x</i>. After this the value is deleted from <i>x</i> and then it
+is checked if the cluster is empty now. If it does the cluster is
+deleted. Now, line 16 checks if the element to be deleted is the
+maximum. Line 17 sets <i>summary-max</i> to the cluster that has
+maximum value. Now update the value of <i>max</i>
+appropriately.</p>
+<p><b>If the element does not exist in the tree:</b> If the element
+is not present in the tree, recursive call will not be made and the
+loop iteration will not run. The reason being, the above algorithm
+of deletion will first try to search the element to be deleted.
+Even after all the lines of the code have been executed, the
+procedure would not find the appropriate element to delete. So
+deletion would fail whatsoever. This way the procedure would
+complete but no appropriate action would be taken.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To find out if the element to be inserted or deleted is in the
+tree, a procedure can be run that finds out if the element is in
+the tree or not. The procedure MEMBER finds out if the element
+exists in the tree or not. In the case of insertion if the
+procedure succeeds in finding the value in the tree, the procedure
+would halt then and there. In the case of deletion if the value is
+found, the procedure deletes the value; if not, the procedure
+halts.</p>
+<p>In the normal scenario, an element can be searched using the
+MEMBER function. But using that would take <img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png"> time. The
+same operation can be modified to perform the search in constant
+time. To do this, the concept of superimposing the tree should be
+used.</p>
+<p>Superimposing a tree is a procedure in which a tree of specific
+degree is built over the vEB tree. The nodes of the superimposed
+tree hold binary values 0 or 1. The nodes can hold a 1 if and only
+if any of or all the children of the node have a 1 in it. More
+precisely, the value of the node is the logical OR of values of the
+childrenof the node. The idea of superimposing can be applied over
+here in the tree. One more thing that should be applied is that the
+height of the superimposed tree should be constant.</p>
+<p>A vEB tree can be superimposed over a bit array that would hold
+a 1 in each of its indexes. If the universe size for the tree
+is<img src="../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">,
+the length of the array would be<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">. The values
+of the array would be the values in the min and max attributes of
+the tree nodes respectively. Whenever the member has to be located
+the address of the member can be directly fetched from the array
+index and true returned; return false otherwise.</p>
+<p>Now, the MEMBER function can be modified as below:</p>
+<p>MEMBER<img src=
+"../imgs/6b072da29c8a73246f40c90bc1e07ededfc7e411.png"></p>
+<p>1. <b>if</b> (<i>T</i>[<i>a</i>] == 1)</p>
+<p>2. <b>return</b> TRUE</p>
+<p>3. <b>else</b></p>
+<p>4. <b>return</b> FALSE</p>
+<p>Now, it can be observed that the MEMBER operation takes performs
+only one check. It takes the value and the array as argument and
+directly accesses the index equal to that value. If that index
+holds a 1 then the value is present in the tree and the procedure
+would return a 1. If not, the value is not present and the
+procedure would return a false. Now, for the running time of the
+procedure there is only one condition to be checked and one return
+statement is to be executed, the procedure would run in a constant
+time, that is<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>VAN EMDE BOAS TREE</b></p>
+<p>The vEB-PROTO structure (refer to the section 20.2 of the book)
+is used as the base for the actual implementation of the vEB tree.
+vEB tree is intended to achieve the running time of <img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">. The
+vEB-PROTO falls minutely short while doing this. The reason is the
+excess of recursion in the operations. Recursion takes long enough
+and the running time of the algorithms can be minimized to only a
+certain limit.</p>
+<p>The approach used in designing the real vEB tree is that if a
+few things can be kept pre-calculated. The best thing to do would
+be to find out the <i>min</i> and <i>max</i> element of the
+structure in advance. Now, it is already known that the leaves of
+the vEB tree have two elements only. So if <i>min</i> and
+<i>max</i> attributes are used, they can represent the values
+easily and if any change in the values is to be performed, that can
+be done in the constant time as the <i>min</i> and <i>max</i>
+values are already known.</p>
+</div>
+<hr>
+<div class="answer">
+<p>vEB tree is a minor modification in the vEB-PROTO structure in
+order to make it achieve the desired running time. The structure of
+the vEB tree node looks like the one shown below:</p>
+<p><img src="../imgs/78ec63e295d4b28f9f1f16f8e963d8c3371cf599.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></p>
+<p>For vEB tree the size of universe <img src=
+"../imgs/34402cda1f54225313a54a96a455e507c36b27d1.png">for any
+integer. Here <i>u</i> can be any exact power of 2. In the
+diagram</p>
+<p><img src=
+"../imgs/4ad7f4a7730091c172bd4a6d751c762b72aaed17.png"></p>
+<p><img src=
+"../imgs/bfc3b693542b5e4be69f18aee7281717e615759b.png"></p>
+<p>Other modification is the inclusion of <i>min</i> and <i>max</i>
+attributes. The attributes <i>min</i> and <i>max</i> hold the
+minimum and the maximum values in the tree respectively. This helps
+reduce the recursion and improve the running time of the
+operations. An example of the simple vEB tree can be seen in the
+figure 20.6 of the text book.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Operation performed on vEB TREE</b>: Following operations are
+performed on the vEB tree:</p>
+<p>1. MINIMUM: Minimum element is the element in the tree that has
+smallest key value. Since the value of minimum element is stored in
+the <i>min</i> attribute of the node, the operation is performed in
+the constant time.</p>
+<p>2. MAXIMUM: Maximum element is the element with the largest key
+value. Since the value of maximum element is stored in the
+<i>max</i> attribute of the node, the operation is performed in the
+constant time.</p>
+<p>3. MEMBER: The objective of this operation is to find out if the
+specific element exists in the tree. The operation returns a true
+if the element exists in the tree; false, otherwise.</p>
+<p>4. SUCCESSOR: The operation finds the smallest key that is
+greater than the current key. The searched key is called the
+successor of the current key.</p>
+<p>5. PREDECESSOR: The operation the largest key that is smaller
+than the current key. The searched key is called the predecessor of
+the current key.</p>
+<p>6. INSERTION: It is to insert a key or a value in the tree.</p>
+<p>7. DELETION: It is to delete a key or a value in the tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>All of the above discussion is for the tree that has <img src=
+"../imgs/cde803e17787cd53002924b891c39ab8ca187f44.png"> clusters
+and the size of universe for each of the cluster is<img src=
+"../imgs/57a4d052a25c7d1f01c5b26625d591758f288e26.png">. Now,
+consider the structure of the vEB tree is modified so that the
+number of cluster for the tree is<img src=
+"../imgs/05cc6aab607f742ddd9110874162840cbd0cc252.png"> and the
+size of universe for each of clusters is equal to <img src=
+"../imgs/f85fbd04907751ebb09123f4d757d701dadd2126.png"> ,where
+<img src="../imgs/d507cd47193f36b9ed96f62a8ea80a71d2e96f62.png">is
+a constant. For this new structure, there would be certain changes
+in the running time of the procedures.</p>
+<p>Here is constructed a vEB tree with <img src=
+"../imgs/df29ffb67502505e7cc5d40453c7061eae3d8441.png">clusters
+having universe size<img src=
+"../imgs/bdb63942826dd40aad983a72ce1c7f751999046a.png">. Here ,
+<img src="../imgs/d507cd47193f36b9ed96f62a8ea80a71d2e96f62.png">is
+a constant. Now, the running time of these operations needs to be
+found. Measuring down <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">by <img src=
+"../imgs/df29ffb67502505e7cc5d40453c7061eae3d8441.png">until and
+unless its size is 1.</p>
+<p>Now, <img src=
+"../imgs/0a93cad6f80b19d83a16355fee5788801a8fd982.png">
+gives<img src=
+"../imgs/879c61e78875b1cb90a92bcbc3b12f6961f6eca5.png">.</p>
+<p>Therefore, The number of tree levels is <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">.</p>
+<p><img src=
+"../imgs/d4ffd1460b82f6cbef86131f6aec5f47dcbbc1ef.png"></p>
+<p>The number of levels taken is <img src=
+"../imgs/16d83b15ea2239c43b2429eb061e24ba189011be.png">. Therefore,
+the running times are<img src=
+"../imgs/ff11a62fae79bea21645422a0c55a762d7b1d23a.png">, as known
+that <i>k</i> is a constant greater than 1.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>VAN EMDE BOAS Tree</b></p>
+<p>The vEB-PROTO structure is used as the base for the actual
+implementation of the vEB tree. vEB tree is intended to achieve the
+running time of <img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">. The
+vEB-PROTO falls minutely short while doing this. The reason is the
+excess of recursion in the operations. Recursion takes long enough
+and the running time of the algorithms can be minimized to only a
+certain limit.</p>
+<p>The approach used in designing the real vEB tree is that if a
+few things can be kept pre-calculated. The best thing to do would
+be find out the <i>min</i> and <i>max</i> element of the structure
+in advance. Now, it is already known that the leaves of the vEB
+tree have two elements only. So if <i>min</i> and <i>max</i>
+attributes are used they can represent the values easily and if any
+change in the values is to be performed, that can be done in the
+constant time as the <i>min</i> and <i>max</i> values are already
+known.</p>
+</div>
+<hr>
+<div class="answer">
+<p>vEB tree is a minor modification in the vEB-PROTO structure in
+order to make it achieve the desired running time. The structure of
+the vEB tree node looks like the one shown below:</p>
+<p><img src="../imgs/78ec63e295d4b28f9f1f16f8e963d8c3371cf599.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></p>
+<p>For vEB tree the size of universe <img src=
+"../imgs/34402cda1f54225313a54a96a455e507c36b27d1.png">for any
+integer. Here <i>u</i> can be any exact power of 2. In the
+diagram.</p>
+<p><img src=
+"../imgs/16e2b63899d1a7b48c6433f3aa4d4880ab863b9d.png"></p>
+<p><img src=
+"../imgs/6dfea9a7e45d3d6164f51f50f045137e2d89943c.png"></p>
+<p>Other modification is the inclusion of <i>min</i> and <i>max</i>
+attributes. The attributes <i>min</i> and <i>max</i> hold the
+minimum and the maximum values in the tree respectively. This helps
+reduce the recursion and improve the running time of the
+operations. An example of the simple vEB tree can be seen in the
+figure 20.6 of the textbook.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Operations performed on Van Emde Boas TREE:</b></p>
+<p>1. MEMBER: This operation is performed to find if any specific
+element exists in the vEB tree. The complexity of performing the
+member operation for the vEB-tree is<img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">.</p>
+<p>2. PREDECESSOR: This operation is performed to find out the key
+with the maximum value that is less than the key that the
+predecessor is being found for. The complexity of this operation
+for the vEB-tree is<img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">.</p>
+<p>3. SUCCESSOR: The objective of this operation is to find out the
+key with the minimum value that is greater than the key that the
+successor is being found for. The complexity of the
+SUCCESSORoperation is same as it is for the predecessor operation
+and that is<img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">.</p>
+<p>4. INSERT: It is to insert a key or a value in the tree.The
+value is inserted in the tree only if that does not exist in the
+tree already. The complexity of the operation for vEB tree
+is<img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">.</p>
+<p>5. DELETE: It is to delete a key or a value in the tree. The
+value can be deleted from the tree only if that exists in the tree.
+Nothing would happen if the value does not exist. The complexity of
+the procedure would be<img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Finding the small number of operations to achieve the
+amortized time of each operation is</b> <img src=
+"../imgs/d46235ec2b473cba053d3f8cdcaba8c18295e755.png">
+<b>:</b></p>
+<p>Constraint on number of operations on vEB tree:</p>
+<p>• Creating an empty a vEB tree of universe size u requires
+<img src="../imgs/0ef5fae4e2b21e53d664c2cafe9837c7f7dfe2b4.png">
+.</p>
+<p>• each operation on vEB tree takes <img src=
+"../imgs/87ca9e37c32d7a0876e23d80b8d7a393c8ca3bf0.png"></p>
+<p>• For small number of operations, <img src=
+"../imgs/e6c16fd58a6d4d6c5d5931bf9ec817bc243e35a1.png">. That is,
+the time required to create empty vEB tree is greater than the time
+required to perform an operation on the tree.</p>
+<p><b>Thus, the vEB tree is not used when small number of
+operations is to be performed.</b></p>
+<p>Assume that after n-1 operations, <img src=
+"../imgs/7fcafaadc8a5eba82a007c40bc5057f998dd9fe6.png">and after
+<i>n</i><sup>th</sup> operation <img src=
+"../imgs/5d1e0c84789253dd9800f43755d7a66b86551dca.png">.</p>
+<p>Where <img src=
+"../imgs/d3d8a330c2713b235d302fa49a0ce69699c240fe.png"> is the time
+required to perfume n operations on vEB tree.</p>
+<p>Now, it is asked to find the small value for <i>n</i> such that
+<img src=
+"../imgs/1ef5a5c6a4cebb355e16bc41d228ea17df2f018d.png"></p>
+<p>Suppose, <img src=
+"../imgs/5d1e0c84789253dd9800f43755d7a66b86551dca.png"></p>
+<p>Thus, <img src=
+"../imgs/f954e9f2e5c966aafb0e84fef9bee5d006ef9482.png"></p>
+</div>
+<hr>
+<div class="answer">Therefore, the minimum number of operations to
+be performed on vEB tree to achieve the amortized time for each
+operation is <img src=
+"../imgs/63c4801073dd4b90d98ba96854b08f213e215a9d.png"> is
+<img src="../imgs/52bd5bbb02b253464f59279dc6ddb0fd44176b5a.png">.
+<p>Thus, <img src=
+"../imgs/1ce1b7d05503af631b49efcf3bf2f5cd4aeeebc4.png"></p>
+<p><b>Therefore ,to achieve the amortized cost for each operation
+in vEB tree is</b> <b><img src=
+"../imgs/63c4801073dd4b90d98ba96854b08f213e215a9d.png"></b> <b>,
+the n value must be minimum</b> <b><img src=
+"../imgs/6a7b5fa2db2fc15d198bc59c83b3317b92f95bd9.png"></b> <b>.
+That is,</b> <b><img src=
+"../imgs/ee545789ead434684b0a42b686de7540ef5d6494.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

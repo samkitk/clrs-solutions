@@ -1,0 +1,952 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 13.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>PERSISTENT DYNAMIC SETS</b></p>
+<p>Sometimes during the implementation of the algorithm, we come
+across the situation that the past versions of the dynamic set need
+to be updated. This type of set is known as persistent set. There
+are various methods to implement a persistent set. One such method
+is to copy all the set when it is modified, but this causes the
+problem in terms of slowing of the program and space consuming.</p>
+<p>In order to avoid the problem, there are various operations
+which are performed by the persistent set, which are as
+follows:</p>
+<p>• Searching</p>
+<p>• Insertion</p>
+<p>• Deletion</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>a. Insertion of a key</b> <i><b>k:</b></i> When the insertion
+of key <i>k</i> is performed, then all the nodes which are found in
+case of traversing from the root to the new nodes, (new nodes are
+the nodes which are added afterward) should be changed. There is
+need for pointer for a new child, which propagates from new nodes
+to its entire parent.</p>
+<p><b>Deleting the node y:</b> When a node <i>y</i> is deleted and
+<i>z is</i> the node which is to be deleted, then in the process,
+different cases arise.</p>
+<p>1. If the child of <i>y</i> is at most one, then it is either
+removed or spliced out and the ancestor of <i>y</i> also gets
+changed.</p>
+<p>2. If the node <i>z</i> consists of two children, and <i>y</i>
+is the successor of <i>z</i>, then in this case, <i>y</i> will be
+removed and thus it is moved to the position of the successor of
+<i>z</i>.</p>
+<p>In this way, all the ancestors of both <i>y</i> and <i>z</i> are
+changed. In any case, the children of <i>y</i>’s successor are
+unchanged (if any), as it is supposed that there is no parent field
+in this case.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b. It is assumed that two procedures are called in this
+case:</b></p>
+<p>• MAKE-NEW-NODE (<i>k</i>)<i>:</i> In this, <i>key</i> values
+are <i>k</i> and the entire field whether <i>left</i> subtree or
+<i>right</i> subtree is NIL; and after that pointer to the new node
+is returned.</p>
+<p>• COPY-NODE (<i>x</i>): creates a new node whose <i>key</i>,
+<i>left</i>, and <i>right</i> fields, all have the value similar to
+the node <i>x</i>; and after that, pointer to the new node is
+returned.</p>
+<p>PERSISTENT-TREE-INSERT is written in two ways. The first is a
+version of TREE-INSERT, modified to create new nodes. The new nodes
+will traverse and will not consider the parent nodes. This helps in
+returning the new root of the tree.</p>
+<p>PERSISTENT-TREE-INSERT (<i>T, k</i>)</p>
+<p><i>z</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+MAKE-NEW-NODE <i>(k)</i></p>
+<p><i>new</i>-<i>root</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png"> COPY-NODE
+<i>(T.root)</i></p>
+<p><i>y</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png"> NIL</p>
+<p><i>x</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+<i>new</i>-<i>root</i></p>
+<p><b>while</b> <i>x</i> _= NIL</p>
+<p><b>do</b></p>
+<p><i>y</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+<i>x</i></p>
+<p><b>if</b> <i>z.key</i> <i>&lt; x.key</i></p>
+<p>then <i>x</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png"> COPY-NODE
+<i>(x.left)</i></p>
+<p><i>left</i>[<i>y</i>] <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+<i>x</i></p>
+<p><b>else</b></p>
+<p><i>x</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png"> COPY-NODE
+<i>(x.right)</i></p>
+<p><i>y.right</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+<i>x</i></p>
+<p><b>if</b> <i>y</i> = NIL</p>
+<p>then <i>new</i>-<i>root</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+<i>z</i></p>
+<p><b>else if</b> z<b>.</b><i>key</i></p>
+<p>then y<b>.</b><i>left</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+<i>z</i></p>
+<p><b>else</b> y.<i>right</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+<i>z</i></p>
+<p><b>return</b> <i>new</i>-<i>root</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>The second method is a recursive procedure, which calls
+<i>T.root</i> instead of <i>T</i> as its first arguments; and after
+that, it returns the new root of the new tree.</p>
+<p>PERSISTENT-TREE-INSERT<i>(r, k)</i></p>
+<p><b>if</b> <i>r</i> = NIL</p>
+<p>then <i>x</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+MAKE-NEW-NODE <i>(k)</i></p>
+<p><b>else</b> <i>x</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+COPY-NODE<i>(r)</i></p>
+<p><b>if</b> <i>k</i></p>
+<p>then x.<i>left</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+PERSISTENT-TREE-INSERT <i>(r.left, k)</i></p>
+<p><b>else</b> x.<i>right</i> <img src=
+"../imgs/28fe822ba4ff9414f0104007ed7de8c3c2b83235.png">
+PERSISTENT-TREE-INSERT <i>(r.right, k)</i></p>
+<b>return</b> <i>x</i></div>
+<hr>
+<div class="answer">
+<p><b>c.</b> PERSISTENT-TREE-INSERT contain constant amount of
+work. The work is done at each and every node in the path starting
+from root to the recently created node. Length of the
+PERSISTENT-TREE-INSERT is <i>h</i> and thus the complexity is
+<img src="../imgs/65198f4264a75bfbf99ea0bafe043f609278de02.png">
+time. As new node is allocated so each inserted nodes needs
+<img src=
+"../imgs/65198f4264a75bfbf99ea0bafe043f609278de02.png">space.</p>
+<p><b>d.</b> If parent fields were there, then each and every node
+will require copying of the new node when it is inserted. In order
+to know the reason why this happens, consider the following
+point:</p>
+<p>1. Children of the root would change to point to the new
+root.</p>
+<p>2. Children will again change to point to the new nodes; this
+process continues whenever a new node is inserted.</p>
+<p>As there are <i>n</i> nodes, for insertion we create <img src=
+"../imgs/066f2d0ecf2459149a9dd006db860f035f6df957.png">. New nodes
+which take <img src=
+"../imgs/066f2d0ecf2459149a9dd006db860f035f6df957.png"> time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>e.</b> Referring to part (a) and part (c) of the problem, we
+will have familiarity that when we perform insertion into a
+persistent binary search tree of height <i>h,</i> worst time of
+<img src="../imgs/65198f4264a75bfbf99ea0bafe043f609278de02.png">.
+<img src="../imgs/c4713069fdc26dcb63fd5de67cf6551ba735f9cc.png"> is
+the height of red-black tree. So the insertion will have the time
+complexity equal to<img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">. This can
+be derived by the following condition:</p>
+<p>? In order to find the parent pointer is in <img src=
+"../imgs/ea2efff0307048756d32e35eff28da1a8774d39b.png">(1) time
+without the parent field utilisation. It cannot be utilised as for
+insertion parent field will take <img src=
+"../imgs/8813317fbd8c2509f5e06c037d9dd9a523ecdbb7.png">(<i>n</i>)
+time.</p>
+<p>? And during the red black tree operation, there will not be any
+changes in the additional node. Then, <img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">additional
+nodes will change.</p>
+<p>During the insertion operations, RB-INSERT is called, which
+calls RBINSERT- FIXUP. It needs parent pointers to move along the
+path. It performs two rotations which take <img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">time to
+change nodes. Hence, the worst-case time complexity is equal to
+<img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">time.</p>
+<p>The deletion in the red-black-tree is <img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">time which
+has same time complexity as during the insertion. In deletion
+RB-DELETE-FIXUP is called in which 3 rotations are performed at
+least, which take <img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png"> time, which
+are discussed above during the insertion operations. <b>Hence, the
+worst case time complexity is equal to</b><b><img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png"></b><b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>RED BLACK TREE</b></p>
+<p><b>Red black tree is the type of binary search tree in which an
+extra attribute is colored with either red or black.</b> There are
+special properties of the red black tree, which are as follows:</p>
+<p>1. In case the red black tree node is colored with either red or
+black.</p>
+<p>2. Every leaf is black.</p>
+<p>3. The root node is black.</p>
+<p>4. If one of the nodes is red, then children are black.</p>
+<p>5. If a node is black, then it can have either black or red
+children.</p>
+<p>6. Every way from descendant node to the leaf will contain equal
+number of black nodes.</p>
+<p>7. In any path, there should not be any consecutive number of
+red nodes.</p>
+</div>
+<hr>
+<div class="answer">Total number of black nodes taken from any
+path, excluding the leaf node is called the black height of a node.
+A red-black tree with <i>n</i>-internal nodes has height of
+approximately<img src=
+"../imgs/e26036a551cca0442d24ebae79eb097c34db7d86.png">. That is
+why Red-black tree is a good search tree. We can perform insertion,
+deletion and rotation operations on Red-black tree.</div>
+<hr>
+<div class="answer">
+<p><b>JOIN OPERATION ON RED BLACK TREE:</b> We take two dynamic
+sets for join operation sets <i>S</i> and <i>B</i> and an element
+<i>m</i>; join operation is done as,</p>
+<p>Join(<i>S</i>, <i>m</i>, <i>B</i>)</p>
+<p><b>Input:</b></p>
+<p>1. Set <i>S</i> with pairs of small keys.</p>
+<p>2. Set <i>b</i> with pairs of big keys.</p>
+<p>3. An additional pair <i>m</i>.</p>
+<p>4. All keys in <i>S</i> are smaller than <i>m.key</i>.</p>
+<p>5. All keys in <i>B</i> are bigger than <i>m.key</i>.</p>
+<p><b>Output:</b></p>
+<p>1. Set that contains all the pairs of <i>S</i>, <i>B</i> and
+<i>m</i>.</p>
+<p>2. Set <i>S</i> and <i>B</i> may be destroyed.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>a</b>. In the problem, we have a Red-black tree <i>T</i>, and
+its black depth is stored in an attribute <i>T.bh</i>. And we have
+to perform the insert and delete operation without requiring extra
+storage for the nodes in a tree and without increasing the running
+times. So, now we consider that for an empty black tree we have
+initialized its black depth to be 0.</p>
+<p><b>Insertion:</b> When we insert a node its black depth will
+increase, and when we perform deletion, black depth decreases. If
+during insertion, while rebalancing goes to the root, then root
+color changes to red and after, that painted to blank. In this
+case, we increment <i>bh</i> by 1. After that, black nodes are
+added, which implies this is the only position where black node can
+be inserted.</p>
+<p><b>Deletion:</b> When deletion is performed, if the extra black
+goes to the root then we decrease <i>bh</i> by one. This is the
+only place where the black nodes are removed from the tree.Thus, it
+clarifies that <img src=
+"../imgs/ea2efff0307048756d32e35eff28da1a8774d39b.png">(1)
+production is required for maintaining <i>bh</i>. During traversing
+the tree in the downwards position, tree <i>bh</i> of a node is
+visited starting from the root node of tree and then subtracted by
+1 when the black node is encountered in case of traversing. Thus in
+this case, complexity is <img src=
+"../imgs/ea2efff0307048756d32e35eff28da1a8774d39b.png">(1) for each
+node.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b.</b> Here in the given problem, there is an assumption that
+<img src="../imgs/2504c18365c9f8d5c0df0b19329e03f25a744e33.png">;
+and we have described the algorithm that discovers a black node in
+<i>y</i> in <i>T</i><sub>1</sub> with the largest key from among
+the nodes which has its black depth as<img src=
+"../imgs/0060839aa5539c09b9920e5425199dac40f88282.png">. So in
+order to do this, we can just descend down the rightmost path of
+the tree; it means that we always go right, if during the process
+we find a right child otherwise goes to left child.</p>
+Each time we go down, the height of black node decreases by 1 each
+time we get a black node. Till we reach the black node with its
+<i>bh</i> value equal to<img src=
+"../imgs/0060839aa5539c09b9920e5425199dac40f88282.png">, when
+largest key of the black height is found, then the height of the
+red-black tree is<img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">. All this
+operation requires<img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">time.</div>
+<hr>
+<div class="answer">
+<p><b>c.</b> Here it is given that <img src=
+"../imgs/cc2cff77d2ce2b557a1c9da692b1bc7286f4c1f2.png">is the sub
+tree rooted at <i>Y</i>. So in order to replace <img src=
+"../imgs/cc2cff77d2ce2b557a1c9da692b1bc7286f4c1f2.png">by <img src=
+"../imgs/cc2cff77d2ce2b557a1c9da692b1bc7286f4c1f2.png"> <img src=
+"../imgs/c24863f133f5b1cf32ac2aa8cab99ea4df154a32.png"> <img src=
+"../imgs/6c1eb6ad66d40e68d7903ab8d2ae8db46dee4e11.png"> <img src=
+"../imgs/c24863f133f5b1cf32ac2aa8cab99ea4df154a32.png"> <img src=
+"../imgs/cbaaf7d91fea7d75ffda855e6a488bfee10e9f2b.png"> in
+<img src="../imgs/ea2efff0307048756d32e35eff28da1a8774d39b.png">(1)
+time, insert <i>x</i> into the place where <i>y</i> was in<img src=
+"../imgs/cc2cff77d2ce2b557a1c9da692b1bc7286f4c1f2.png">. By making
+the node <i>y</i> as the left child and the <img src=
+"../imgs/cbaaf7d91fea7d75ffda855e6a488bfee10e9f2b.png"> root as the
+right child of <i>x</i> and it is given that <img src=
+"../imgs/593e39a9c10b8721761d483cccb46d796bd1adcd.png">.By
+considering this, we conclude that binary tree property doesn’t
+change, which implies that it remains the same. Thus, <b>the time
+complexity is</b> <b><img src=
+"../imgs/ea2efff0307048756d32e35eff28da1a8774d39b.png"></b><b>(1).</b></p>
+<p><b>d.</b> To make an insertion into a red-black tree, we have to
+call RB-INSERT which in order will call: RBINSERT- FIXUP. As
+RB-INSERT walks down the tree to find the place to insert the new
+node, have it build a stack of the nodes it traverses and pass this
+stack to RB-INSERT-FIXUP. RB-INSERT-FIXUP needs the root pointer to
+traverse the same path, and at a particular time it requires the
+root pointer, in order to find the parents and grandparents of the
+node on which it is performed.</p>
+<p>In order to maintain the properties <b>1, 3, 5</b> of the
+Red-Black tree, we have to make <b>the colour of</b>
+<i><b>x</b></i> <b>as red</b>. To introduce properties <b>2 and
+4</b> we have to execute RB-INSERT-FIXUP (<img src=
+"../imgs/cc2cff77d2ce2b557a1c9da692b1bc7286f4c1f2.png">, <i>x</i>).
+And as we know that black depth of <img src=
+"../imgs/cbaaf7d91fea7d75ffda855e6a488bfee10e9f2b.png"> is equal to
+<img src="../imgs/cc2cff77d2ce2b557a1c9da692b1bc7286f4c1f2.png">
+so, RB-INSERT-FIXUP WORKS here. <b>And it runs in</b> <img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png"><b>time.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>e.</b> If the situation is like<img src=
+"../imgs/3978b0102c0462b9c9f938fa98985d2b39f9d5a9.png">, then in
+order to find the smallest black node which has the <i>bh</i> value
+as equal to<img src=
+"../imgs/df85a3f7563d96bab63ddfc0f33a5614ee7b5a83.png">, we will
+have to move downward in the tree <i>T</i><sub>2</sub> along the
+leftmost path. Hence, they are same.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>f.</b> RED-BLACK-JOIN will be implemented with the help of
+previous part of the problem as described. As described we have
+found that black-depth can be calculated and maintained in
+<img src="../imgs/ea2efff0307048756d32e35eff28da1a8774d39b.png">(1)
+time. And the required black node <i>y</i> can be found in
+<img src="../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">time.
+Time complexity of the “join” operation is <img src=
+"../imgs/ea2efff0307048756d32e35eff28da1a8774d39b.png">(1), and
+thus properties of red-black tree in <img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">times.
+<b>So, the overall running time is of the order</b> <img src=
+"../imgs/9a331a1b1e9f087da12366e51ade22a8d2fa03a0.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>AVL TREES</b></p>
+<p>It is such type of binary search tree which itself, is balanced.
+In an AVL tree the heights of the children subtrees of any node can
+have the difference of one at maximum. When the height difference
+is more than one, then rebalancing is done on it.</p>
+<p>Various operations can be performed on an AVL tree:</p>
+<p>1.Insertion.</p>
+<p>2.Deletion.</p>
+<p>3.Lookup.</p>
+<p>Various operations such as deletion, insertion, lookup
+take<img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png"> time in
+average and the worst cases.</p>
+<p>Here, <i>n</i> represents the number of total nodes that are in
+the tree and are measured prior to the operation. Perform various
+rotation for the making the tree balance again during the process
+of insertion and deletion. An AVL tree is a height balanced but
+neither weight balanced nor <b><img src=
+"../imgs/a2b54755435e9f1f7247c9e0357922dc2ee984c2.png"></b>
+balanced.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a</b></i> <i>.</i></p>
+<p>Consider that <i>F</i><sub>h</sub> represents the number of
+nodes with height <i>h</i> and <i>F</i><sub>h</sub> means
+<i>H</i><sup>th</sup> Fibonacci number and as in an AVL tree, a
+relationship exists that in an AVL tree the heights of two children
+subtree of any node differ by at most one. In an AVL-tree, the root
+has two children: one with height <i>h</i>–1 and the other with
+height at least <i>h</i>–2.</p>
+<p>So the following relationship holds,</p>
+<p><img src=
+"../imgs/8c8ecc74ee81490889f54dba388140e134316cbe.png"></p>
+<p>Apply log on both the sides.</p>
+<p><img src=
+"../imgs/56f0cc1a4f4bfc5a250ab1020158d10ba3ccf204.png"></p>
+<p><i>F</i> <sub>h</sub> represents number of nodes with height
+<i>h</i></p>
+<p>In this problem if <i>F</i><sub>h</sub> is replaced with
+<i>n</i> then the conclusion will be that height <i>h</i> is
+<img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>There are different cases in insertion as follows:</p>
+<p>1. Here insertion is performed at node 3. Due to which there is
+height imbalance which is balanced with the help of rotation.</p>
+<p><img src="../imgs/fc241db12f3b26306be56dc6321d4434cfeff3e6.png"
+alt=
+"http://contribute.chron.com/ver1.0/Content/images/store/7/12/07f78c68-3dc1-4963-bce9-9a1b9a1ff48b.Large.png"></p>
+<p><b>After single rotation:</b></p>
+<p><img src="../imgs/a65143cf50498723fbf48fb79b8b7057af344cd6.png"
+alt="blog post photo"></p>
+<p>2. Insertion is performed at the node 2 or 3.</p>
+<p><img src="../imgs/0f376c63eefda1fc30840a654f8a22328513b838.png"
+alt="blog post photo"></p>
+<p><b>After double rotation:</b></p>
+<p><img src="../imgs/48497563cfd29d23c9eadbcd5c41511e67e45035.png"
+alt="blog post photo"></p>
+<p>The pseudocode for the above said procedure would look like the
+following:</p>
+<p>BALANCE(<i>x</i>)</p>
+<p>// if condition to check whether the difference in height of
+left and right child is less than1 <b>if</b>
+height(<i>x</i>.<i>left</i>) – height(<i>x</i>.<i>right</i>) ≤ 1 //
+if condition is satisfied, return the value of <i>x</i></p>
+<p><b>return</b> <i>x</i> <b>else</b></p>
+<p>// if condition to check whether the height of right child is
+greater than height of left</p>
+<p>// child</p>
+<p><b>if</b> height(<i>x.left</i>) &lt; height(<i>x.right</i>)</p>
+<p><i>y</i> = <i>x.right</i> // if condition to check whether the
+value of left child is less than value of right child</p>
+<p><b>if</b> <i>y.left</i> &lt; <i>y.right</i> // return the value
+obtained after left rotation in <i>x</i></p>
+<p><b>return</b> left-rotate(<i>x</i>) <b>else</b></p>
+<p>// Make a right rotation in <i>y</i> right-rotate(<i>y</i>)
+<b>return</b> left-rotate(<i>x</i>) <b>else</b></p>
+<p><i>y</i> = <i>x.right</i> // if condition to check whether the
+value of right child is less than value of left child</p>
+<p><b>if</b> <i>y.right</i> &lt; <i>y.left</i> // Return the value
+obtained after right rotation in x</p>
+<p><b>return</b> right-rotate(<i>x</i>) <b>else</b>
+left-rotate(<i>y</i>) // Return the value obtained after right
+rotation in x</p>
+<p><b>return</b> right-rotate(<i>x</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>As directed in the question as referring through part
+(<b>b</b>).The pseudo-code for INSERT is as follows. The notion is
+to call recursively the INSERT on the proper subtree, and then
+BALANCE is called to maintain the balance.</p>
+<p>AVL-INSERT(<i>x, z</i>)</p>
+<p>// if condition to check whether the value of x is null</p>
+<p><b>if</b> <i>x</i> = = nil</p>
+<p>// Make the height of the <i>z</i> as 0 and then return the
+value of <i>z</i></p>
+<p><i>z.height</i> = 0</p>
+<p><b>return</b> <i>z</i></p>
+<p>// if condition to check whether the key stored in z is less
+than or equal to key in x</p>
+<p><b>if</b> <i>z.key</i> ≤ <i>x.key</i></p>
+<p>// Insert the value</p>
+<p><i>y</i> = AVL-INSERT(<i>x.left, x</i>)</p>
+<p><i>x.left</i> = <i>y</i></p>
+<p><b>else</b></p>
+<p>// Insert the value</p>
+<p><i>y</i> = AVL-INSERT(<i>x.right, x</i>)</p>
+<p>// Make <i>y</i> as right child of <i>x</i></p>
+<p><i>x.right = y</i></p>
+<p>// Make <i>x</i> as right parent of <i>y</i></p>
+<p><i>y.parent = x</i></p>
+<p>// The height of <i>y</i> is 1 more than the height of
+<i>x</i></p>
+<p><i>x.height = y.height</i> + 1</p>
+<p><i>x</i> = BALANCE(<i>x</i>)</p>
+<p>// Return the value of <i>x</i></p>
+<p><b>return</b> <i>x</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i></p>
+<p>It is already known that the height of the AVL tree is <img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">time. So
+insertion and the update operation will take time correspondingly
+that is equal to<img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">time. And as
+described above that in the balance operation in part
+(<i><b>b</b></i>), the height of the original unbalanced tree is
+decreases by 1 after the rotation.</p>
+<p>So it will not cause any process of rotations to the rest of the
+tree<b>.</b> In other words it can be said that only one node is
+concerned in each rotation. So that will be <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+<p><b>It satisfy the condition that AVL-INSERT take</b> <img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png"> <b>time to
+insert the node and perform</b> <b><img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"></b>
+<b>rotation.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>TREAP</b></p>
+<p><i>Treaps</i> is a type of binary search tree having a modified
+form of ordering the nodes. This is called as a <i>Treaps,</i>
+because it contains the properties of both the heap and the binary
+search tree. In <i>Treaps</i>, each node is a combination of the
+key value <i>x.key</i> and the priority value <i>x.priority</i>,
+which is any number chosen randomly for each node.</p>
+<p>The key value in the <i>Treaps</i> follows a binary search tree
+property and the priority value follow min-heap property (means the
+parent node has lower value than its child).</p>
+<p>It holds the condition:</p>
+<p>1. If <i>v</i> is a left child of <i>u,</i> then <i>v.key &lt;
+u.key.</i></p>
+<p>2. If <i>v</i> is a right child of <i>u</i>, then <i>v.key</i>
+&gt; <i>u.key.</i></p>
+<p>3. If <i>v</i> is a child of <i>u,</i> then <i>v.prionty</i>
+&gt; <i>u.priority.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p><i>Treaps</i> has unique keys and priority, the node with
+minimum priority will be root and the node with less key and more
+priority will be in the left sub tree, and in the left sub tree min
+priority node will be the root and so on.</p>
+<p>This also applies to right sub tree of root (nodes with more
+priority and more key value). And the tree resulting from the above
+process is always unique.</p>
+<p>Apply mathematical induction to prove this:</p>
+<p>Here, induction is applied on all nodes in the
+<i>Treaps</i>.</p>
+<p>Initially, the tree contains no node, then in that situation,
+the <i>Treaps</i> is trivially unique.</p>
+<p>Suppose, one node is present in the <i>Treaps</i>, then by using
+the process of mathematical induction, it can be justified that if
+value of <i>k</i>=1, then only one node is present in the
+<i>Treaps</i> which represents that the <i>Treaps</i> is
+unique.</p>
+<p>Illustrate this by using an example which is as shown below:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Key</b></p>
+</td>
+<td>
+<p><b>Priority</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>a</i></p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+</table>
+<p>In this, <i>Treaps</i> contains only one node with key and
+priority given to it as shown in the below diagram:</p>
+<p><img src="../imgs/5df9509549d5a387b3e2e718c8f9d63dea54e5c8.png"
+alt="Picture 4"></p>
+<p>In the above diagram, <i>Treaps</i> contains only one node that
+is root node. As <i>Treaps</i> has no other nodes, it satisfies all
+the property of <i>Treaps</i> and thus the <i>Treaps</i> is
+unique.</p>
+<p>Suppose, there is <i>k</i>+1 node, then, by the process of
+mathematical induction, it can be proved that if value of
+<i>k</i>=<i>k</i>+1, then the <i>Treaps</i> is unique. If the key
+of new nodes is less than the root node, then the new node is added
+to the left of the root, otherwise it is added to the right.</p>
+<p>Alternatively, uniqueness of <i>Treaps</i> can also be proved in
+the order of priority, which is shown by the example.</p>
+<p>Illustrating this by using an example which is as shown
+below:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Key</b></p>
+</td>
+<td>
+<p><b>Priority</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>a</i></p>
+</td>
+<td>
+<p>2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>b</i></p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>c</i></p>
+</td>
+<td>
+<p>3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>d</i></p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+</table>
+<p>In this, <i>Treaps</i> contains four nodes with key and priority
+assigned to it.</p>
+<p>Diagram:</p>
+<p><img src="../imgs/3fd1114196ba59a177ba1ae00b7f1f6d94130e72.png"
+alt="Picture 6"></p>
+<p><img src="../imgs/532452ac8914c995aa17f79bcac629b4f1cac66f.png"
+alt="Picture 7"></p>
+<p>In the above diagram <i>Treaps</i> contains only four nodes,
+minimum priority node should be place at the root. After that
+highest priority from the root node is assigned as the child of the
+root node.</p>
+<p>Here, 1 is smallest priority so, it is the root node. After that
+2, 3 and 4 is the highest priority from the root node. Now select
+the priority “2” and check its key value which is “<i>a</i>”.
+“<i>a</i>” is less than “<i>b</i>”, so it is assigned left to the
+root node.</p>
+<p>After that 3 and 4 is the highest priority. Now select the
+priority “3” and check its key value which is “<i>c</i>”.
+“<i>c</i>” is greater than “<i>b</i>”, so it is assigned right to
+the root node.</p>
+<p>After that 4 is the highest priority and check its key value
+which is “<i>d</i>”. “<i>d</i>” is greater than “<i>c</i>”, so it
+is assigned right to the corresponding root node.</p>
+</div>
+<hr>
+<div class="answer"><i><b>b.</b></i>
+<p>Time taken to search a key in <i>Treaps</i> is the same as
+searching in binary trees that has been randomly built. It is found
+that time taken is equal to the key’s depth of the node. In binary
+search tree, that has been randomly built, the expected depth
+is<img src=
+"../imgs/d19fa26c198ca350a2e597d470cd3dcb3f01b492.png">.</p>
+<p>Thus, the height of <i>Treaps</i> is also <img src=
+"../imgs/d19fa26c198ca350a2e597d470cd3dcb3f01b492.png"> and the
+expected time to search for a key in the <i>Treaps</i> is<img src=
+"../imgs/d19fa26c198ca350a2e597d470cd3dcb3f01b492.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>Insert elements in the binary tree to preserve priority and
+perform min heap procedure. The BST-INSERT procedure is called
+usually to insert the new node <i>x</i> into the <i>Treaps</i>.
+Then, take a glance at <i>x</i>’s parent. If priority of <i>x</i>
+is larger than <i>x</i>’s parent, then rotation is performed based
+on the condition whether <i>x</i> is a left or right child.
+<i>Treaps</i> processes the same procedure until the root node has
+been traced.</p>
+<p><b>PSEUDO-CODE:</b></p>
+<p>TREAP-INSERT<img src=
+"../imgs/67b2f0b1e29460942824c1fb23b1ae52423169f7.png"></p>
+<p>TREE-INSERT <img src=
+"../imgs/67b2f0b1e29460942824c1fb23b1ae52423169f7.png"></p>
+<p><b>while</b> <i>x</i>!= <i>T</i>.root and <i>priority.x</i> &lt;
+<i>priority.x.p</i></p>
+<p><b>do</b></p>
+<p><b>if</b> <i>x</i>= <i>x.</i>p.left</p>
+<p>then RIGHT-ROTATE<img src=
+"../imgs/3998a03ec0305efe584318f1db2b8d8f8e8ebe7b.png"></p>
+<p><b>else</b></p>
+<p>LEFT-ROTATE<img src=
+"../imgs/3998a03ec0305efe584318f1db2b8d8f8e8ebe7b.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i></p>
+<p>Firstly, TREAP-INSERT performs Binary search tree’s Insert
+procedure and after that rotation is performed in order to restore
+the property of min heap.</p>
+<p>Basically insertion algorithm of binary search tree, inserts the
+new node at a new leaf. Hence, whenever an item is inserted into a
+<i>Treaps</i> then time for the insertion of item is directly
+proportional to height of binary search tree which is built
+randomly.</p>
+<p>This procedure runs proportionally with the depth of Tree in
+time of <img src=
+"../imgs/d19fa26c198ca350a2e597d470cd3dcb3f01b492.png">which is
+proved in the upper part, after this it performs rotation. Rotation
+operations should satisfy min heap propert<i>y.</i> These Rotations
+runs in constant time,</p>
+<p><b>So running time which is expected from TREAP-INSERT is</b>
+<img src=
+"../imgs/d19fa26c198ca350a2e597d470cd3dcb3f01b492.png"></p>
+<p>Illustrating this by using an example which is as shown
+below:</p>
+<p><img src="../imgs/ddf0450f50ffbbce904c276a0b5e01c5886c3f34.png"
+alt="Picture 11"></p>
+<p><img src="../imgs/9e41b76363866aa4efe096a888a7583039233750.png"
+alt="Picture 13"></p>
+<p>In the above diagram a new node is inserted. After the insertion
+of new min heap property of <i>Treaps</i> is violated. So, it is
+rotated to satisfy the property of min heap property of the
+<i>Treaps</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>e.</b></i></p>
+<p>As when the <b>TREAP-INSERT</b> is called then the node <i>x</i>
+has no children that is <i>C</i>+<i>D</i>=0. And every time
+performs a left rotation on <i>y</i> the parent of <i>x</i>’s then
+the right child of <i>x</i> remains same. And there is change in
+left child of <i>x</i> into <i>y</i> and with <i>x</i>’s former
+left sub- tree becoming <i>y</i>’s right sub-tree.</p>
+<p>In other way. add a new node into the set of <i>C</i>+<i>D</i>
+and as <i>x</i> goes towards the root, say that <i>y</i> stays at
+the right spine of <i>x</i>’s left sub-tree forever. The same
+condition holds for the right rotations<b>.</b></p>
+<p><b>Thus, by considering that, one can say that the number of
+rotation is equal to</b> <i><b>C</b></i> <b>+</b> <i><b>D</b></i>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>f.</b></i></p>
+<p>In order to prove that <i>X</i><sub>i,k</sub>=1, all the three
+condition are proved by using contradiction.</p>
+<p>Suppose initially <i>X</i><sub>i,k</sub> = 0, then it is assumed
+that <i>y</i> does not lie on the right spine of left sub-tree of
+root node <i>x</i>. if <i>y</i> does not lie on the right spine of
+the left sub-tree of root node <i>x</i> then <i>y</i> can be found
+in any three position which is mentioned below:</p>
+<p>1. Condition 1 is contradicted, if it is assumed that <i>x</i>
+lies on the left or right sub-tree of root node <i>y</i>. Then
+according to the property of <i>Treaps</i> data structure, the
+priority of root node <i>y</i> is always less than the priority of
+<i>x</i>.</p>
+<p>But here in condition 1, it is given that priority of <i>y</i>
+is greater than the priority of <i>x</i> which is against our
+assumption.</p>
+<p>Consider the following diagram:</p>
+<p><img src="../imgs/cbb5f6cbde46a18de3f94e9f44bc72d046bcd23b.png"
+alt="Picture 9"></p>
+<p>2. Condition 2 is contradicted, if it is assumed that <i>y</i>
+lies on the right sub-tree of root node <i>x</i>. As in case of
+<i>Treaps</i> data structure key of node <i>y</i> which lie on
+right sub-tree of root node <i>x</i> is always greater that key of
+root node <i>x</i>. But here in condition 2 it is given that key of
+root node <i>x</i> is greater than key of node <i>y</i> which is
+present on right sub-tree of root node <i>x</i>.</p>
+<p>Consider the following diagram:</p>
+<p><img src="../imgs/75fc985cd73063ac0360bc438494f0cddaf69dcd.png"
+alt="Picture 14"></p>
+<p>In the above diagram, node <i>y</i> lies on the right sub-tree
+of root node <i>x</i>.</p>
+<p>3. Condition 3 is contradicted, if it assumed that <i>y</i> does
+not lie on the sub-tree of root node <i>x</i>. Both <i>x</i> and
+<i>y</i> have common ancestor say <i>z</i>. Since according to
+condition 2 <i>key[y] &lt; key[x]</i>, so, <i>y</i> should lie on
+the left sub-tree of root node <i>z</i> and <i>x</i> should lie on
+the right sub-tree of root node <i>z</i>. According to
+<i>Treaps</i> data structure condition the priority of root node is
+minimum from all the children nodes. So, the priority of root node
+z should be less than from the node <i>x</i> and <i>y</i>.</p>
+<p>But here in condition 3 priority of root node <i>z</i> is
+greater than node <i>y</i> which is present on the left sub-tree of
+root node <i>z</i>.</p>
+<p>This condition can also be proved, if <i>y</i> lies on the left
+sub-tree of root node <i>x</i>. It is also assumed that some
+ancestor say <i>z</i> of node <i>y</i> is present in the left
+sub-tree of root node <i>x</i>. Thus the key of <i>y</i> is less
+than the key of <i>z</i> and the key of <i>z</i> is less than the
+key of <i>x</i>. Hence, priority of <i>z</i> is less than the
+priority of <i>y</i>. This disproved our assumption.</p>
+<p>Consider the following diagram:</p>
+<p><img src="../imgs/3f8c8fdd45bfa4484b8b64138e94ccaceede94cb.png"
+alt="Picture 12"></p>
+<p>In the above diagram, node <i>y</i> lies on the left sub-tree of
+node <i>x</i> and node <i>x</i> lies on the left sub-tree of root
+node <i>z</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>g.</b></i></p>
+<p>Consider that <i>k</i>&gt;<i>i</i>. having<img src=
+"../imgs/1aa05e973abf9c7d2c8d8b793c793eac4906f28e.png">as the
+probability. This probability shows that all the condition in the
+given problem holds, that is ((prove <i>y.priority</i> &gt;
+<i>x.priority</i>, <i>y.key</i> &lt; <i>x.key</i>, and ∀ <i>z</i>
+such that <i>y.key</i> &lt; <i>z.</i>k<i>ey</i> &lt; <i>x.</i>key,
+<i>y.priority</i> &lt; <i>z.priority</i>).</p>
+<p>Consider all the elements with the keys (<i>i</i>, <i>i</i> + 1,
+, , , <i>k</i>).</p>
+<p>So, there are total
+<i><b>k</b></i><b>–</b><i><b>i</b></i><b>+1</b> such element. And
+since the priorities value can take any order. So it can be said
+that the total number of possible permutation is equal to
+(<b>a)</b> <b>(</b><i><b>k</b></i><b>−</b><i><b>i</b></i><b>+1)!
+(</b>all are equally likely) .</p>
+<p>In that only satisfy the condition <i>y.key</i> &lt;
+<i>z.key</i> &lt; <i>x.key</i> an here <i>x</i> and <i>y</i> have
+the least priorities so remove two element and remaining priorities
+with the keys value (<i>i</i>+1,. . . <i>k</i>-1), so the possible
+permutation for the remaining keys are(<b>b</b>)<b><img src=
+"../imgs/e3ba6ffcea785338cb07a18d1fe9e5e32ffd47ac.png"></b></p>
+<p><b>So, the ratio of</b> <b>(b)</b> <b>and</b> <b>(a)</b> <b>is
+nothing but</b> <b><img src=
+"../imgs/1aa05e973abf9c7d2c8d8b793c793eac4906f28e.png"></b> <b>,
+hence</b></p>
+<p><img src=
+"../imgs/f00a52f1ed8c5e3f442c22270b745edfa79d5ab1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>h.</b></i></p>
+<p>There is <i>x</i> node whose value of key is <i>k</i>,</p>
+<p><img src=
+"../imgs/c88967b6939122d8c022c9aefafaf8f64e22a1d6.png"></p>
+</div>
+<hr>
+<div class="answer"><i><b><img src=
+"../imgs/965a34b4b0fa34701c994fcd24210e8c3c5956f7.png"></b></i>
+<p><img src=
+"../imgs/451cb6ef99aa157624b117946b2ad8a5b1c6c312.png"></p>
+<p><i><b>i.</b></i></p>
+<p>In order to prove this equation, keys are reversed by reversing
+its ordering relationship. For the entire nodes of the tree,
+priority remains unchanged but key[<i>x</i>] is interchanged with
+<i>n</i>–key[<i>x</i>] + 1.</p>
+<p>Assume that <i>T</i> is a binary tree which is obtained by the
+insertion of the nodes by using original key values. Now, after
+inter changing the value of keys, new binary tree <i>T’</i> is
+obtained and this binary tree is the mirror image of the earlier
+binary tree <i>T</i>. In binary tree <i>T</i> key <i>k</i> is used
+for representing any node <i>x</i> but in binary tree <i>T</i> key
+<i>k</i> is replaced by</p>
+<p><i>n–k+1</i>.</p>
+<p>Expected length of the right spine of the left sub-tree of
+<i>x</i> depends on the rank <i>k</i> of the element <i>x.</i> The
+right sub-tree’s spine length has expected length has same expected
+value with respect to the rank of <i>x</i> which is<img src=
+"../imgs/bd8dd3530fd99e4bed89624c170184f407438c95.png"> thus,</p>
+<p><img src=
+"../imgs/b0375b4486208354a8a33ad5493ec9cd754c7218.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>j.</b></i></p>
+<p>From the above part (<i><b>e</b></i>), find that number of
+rotations is equal to <img src=
+"../imgs/031167f9ba167c4e7c5efa641c91d2f0b1140e6a.png"></p>
+<p>From the below equation, it is clear that number of rotations
+never exceed 2</p>
+<p>Consider the output values part (<i><b>h</b></i><b>)</b> and
+(<i><b>i</b></i><b>) ,</b></p>
+<p><img src=
+"../imgs/2e1e784d592b5fdb2d67d025a39c98c61456b0df.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

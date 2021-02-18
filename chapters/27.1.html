@@ -1,0 +1,1275 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 27.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Multithreaded Algorithms</b></p>
+<p>Serial algorithms are used when multithread algorithms concept
+was not evolved. The serial algorithms execute on the uniprocessor
+system in which only one instruction is executed at a time. In
+order to reduce the execution time of algorithm, a multithreaded
+algorithm was evolved. A multithread algorithm executes on the
+multiprocessor system in which more than one instruction can
+execute at a time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The effect of spawn on the asymptotic work, span and
+parallelism</b></p>
+<p><b>Spawn</b> is a subroutine that executes or runs at the same
+time as that of parent. So by spawning, both parent and child work
+simultaneously. The main motive behind evolving the concept of
+spawning is to achieve parallelism, which results in increment in
+the overall performance of the computer.</p>
+<p><b>Work</b> is defined as the total time required for completing
+the entire multithreaded computation on a single processor. Suppose
+in the below example, each circle represents the strands which
+takes unit time. Therefore, total work done is 25 units.</p>
+<p><img src="../imgs/cbd420884079ddd2fea4c33c147afdbb8eb7b6d0.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\13.tif"></p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. The path highlighted in the above figure is known as
+span.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">, gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the algorithm P-FIB from the textbook:</p>
+<p>If spawn is applied at the 4<sup>th</sup> line <img src=
+"../imgs/a232cdb8a11f086fbff35b03ec1d8ac864a64c32.png">of P-FIB
+algorithm rather than just calling the function without spawn then
+there will be <b>no effect</b> on work, span or parallelism; this
+is so, because this will not cause any change in its
+serialization.</p>
+<p>Consider the older version of P-FIB(<i>n</i>) algorithm as:</p>
+<p>P-FIB(<i>n</i>)</p>
+<p>1 <b>if</b><img src=
+"../imgs/8640870eefa11e10fccb2eb1edaedd00d6278128.png"></p>
+<p>2 <b>return</b> <i>n</i></p>
+<p>3 <b>else</b> <i>x</i>= <b>spawn</b> P-F<sub>IB</sub> (<img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">)</p>
+<p>4 <i>y</i>= P-F<sub>IB</sub> (<img src=
+"../imgs/62336ab039e6c87e717441ea201e2268758ff8ea.png">)</p>
+<p>5 <b>sync</b></p>
+<p>6 <b>return</b><img src=
+"../imgs/9a4dc6df229edea1944ec1de698f01cfb329fa57.png"></p>
+<p>Now in modified version of P-FIB(<i>n</i>-2) algorithm, there is
+a change in only 4<sup>th</sup> line which is as below:</p>
+<p>3 <b>else</b> <i>x</i>= <b>spawn</b> P-F<sub>IB</sub> (<img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">)</p>
+<p>4 <i>y</i>= <b>spawn</b> P-F<sub>IB</sub> (<img src=
+"../imgs/62336ab039e6c87e717441ea201e2268758ff8ea.png">)</p>
+<p>Spawn keyword is used to make operation in nested parallelism
+format. Due to this, process does not wait to finish its child
+process; and all process runs are in a parallel manner. One of the
+major problems with spawn is that it cannot use return values
+efficiently. Therefore in order to overcome this problem,
+<b>sync</b> is used. It suspends the procedure till their all
+children are not completed. That is why, applying spawn on
+4<sup>th</sup> line of code will not affect work and span.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Workof the above modified P-FIB (<i>n</i>) algorithm will be
+same as that of the execution time of its serialization in original
+P-FIB (<i>n</i>) algorithm.</p>
+<p>The number of calling of recursive function remains same in
+P-F<sub>IB</sub> algorithm as in FIB algorithm. Hence, calculate
+the work for P-F<sub>IB</sub> algorithm similar to F<sub>IB</sub>
+algorithm.</p>
+<p>Therefore, (from the equation 27.1 in the book)</p>
+<p><img src=
+"../imgs/66dc2816f073ad65365d2a467ac6f302b56cb269.png"></p>
+<p>Hence work of modified P-FIB (<i>n</i>) is <img src=
+"../imgs/0c6ff2caa570c1b542311e09de647029855d538b.png">.</p>
+<p><b>Span:</b></p>
+<p>For P-FIB the spawned call to P-FIB<img src=
+"../imgs/16d5c10a86841306fcaec0ab48b71ec481e11f1c.png">and
+P-FIB<img src=
+"../imgs/e300f17f0e211c45c587475910de79009547e38d.png">can run in
+parallel.</p>
+<p>Therefore spawn can be calculated as,</p>
+<p><img src=
+"../imgs/7bb11f857ca81cecd20f96ffde587f85c16c30b0.png"></p>
+<p>Hence span of modified P-FIB (<i>n</i>) is<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src="../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png"> by
+<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p><img src=
+"../imgs/8c22997306a35e5efb4c0529e0a6d80c89e4ab7c.png"></p>
+<p>Hence span of modified P-FIB (<i>n</i>) is<img src=
+"../imgs/dac928c0733a7c9e5adee93eaadf5a83b5f3fcd1.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Executing P-FIB (5)</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by the</p>
+<p>Spawning both parent and child work simultaneously. The main
+motive behind for evolving the concept of spawning is to achieve
+parallelism, which results increase the overall performance of
+computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor. Suppose in
+the below example each circle represents the strands which takes
+unit time. Therefore total work done is 25 units.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p><img src="../imgs/cbd420884079ddd2fea4c33c147afdbb8eb7b6d0.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\13.tif"></p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. The path highlighted in the above figure is known as
+span.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Computation of a computational dag:</b></p>
+<p><img src="../imgs/a554d5b05a9d82b1b2a887d1bf63a368ebe18409.png"
+alt="Picture 1"></p>
+<p><b>Work:</b> The figure shown above is a directed acylic graph
+of P-FIB(5). Circles in the above figure represent the strands. The
+black circle represent the base case or the procedure call
+P-FIB(<i>n-1</i>). The shaded circle represent the procedure call
+P-FIB(<i>n-2</i>).</p>
+<p>Suppose each strands take unit time. As defiend above, work is
+the total number of strand. In this case it is 29 (number of
+circles with all colors). Hence, total work in P-FIB(5) is 29.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b> Span is defined as the length of the longest path
+of the strands. In this case it is 10.</p>
+<p>Hence span in P-FIB(5) is 10 (number of boxes having light color
+than black boxes like P-FIB(0) lowest level, P-FIB(2) right corner
+second lowest).</p>
+<p><b>Parallelism:</b> Parallelism is the ratio of work by span
+that is ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Parallesim=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/189ce2a3255afabf7fc2787e413db93c7441d442.png"></p>
+<p>=<img src=
+"../imgs/a88d957a4438682a9a5d0bfe1b52a2dc93834d42.png"></p>
+<p><b>Time bound of Greedy scheduler:</b> Greedy scheduler is a
+scheduler that tries in each time step to allocate maximum number
+of strands to the processors. Suppose there are<img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">processors
+available. Now, if there are <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">strands
+which can be executed during a certain timestamp, then the greedy
+scheduler is responsible for assigning any <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">of the ready
+strands to processors. In the other case, if there are less than
+<img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">strands
+ready to execute during a time stamp, then each ready strand is
+assigned to its own processor by greedy scheduler.</p>
+<p>Since there are 3 processor therefore, at a time there can be
+atmost 3 strand in execution.</p>
+<p>In the above diagram, each strand are marked with a time stamp.
+Two strands of P-FIB<i>(5</i>) and one strand of P-FIB<i>(4</i>)
+executes at 1<sup>st</sup> time stamp. Then 1 strands of
+P-FIB<i>(4</i>) and two strands of two different P-FIB<i>(3</i>)
+executes at 2<sup>nd</sup> time stamp. Similarly all the starnds
+executes and final result get at 12<sup>th</sup> time stamp. The
+time stamp define the time of exection of a strand on a
+processor.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Multithreaded Algorithms:</b> A multithread algorithm
+executes on the multiprocessor system in which more than one
+instruction execute at a time.</p>
+<p><b>Dynamic Multithreading:</b> It gives flexibility to
+programmer to implement parallelism in application without
+concerning about load balancing and rest other things.</p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by the</p>
+<p>Spawning both parent and child work simultaneously. The main
+motive behind for evolving the concept of spawning is to achieve
+parallelism, which results increase the overall performance of
+computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor. Suppose in
+the below example each circle represents the strands which takes
+unit time. Therefore total work done is 25 units.</p>
+<p><img src="../imgs/cbd420884079ddd2fea4c33c147afdbb8eb7b6d0.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\13.tif"></p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. The path highlighted in the above figure is known as
+span.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+<p><b>Complete steps:</b> A step is said to be complete step if
+during the time step at least <i>p</i> strands are ready to
+execute.</p>
+<p><b>Incomplete step:</b> A step is said to be incomplete step if
+during the time step at least <i>p</i> strands are ready to
+execute.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time bound of Greedy scheduler:</b> Greedy scheduler is a
+scheduler that tries in each time step to allocate maximum number
+of strands to the processors.</p>
+<p>Suppose there are<img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">processors
+available.</p>
+<p>Now if there are <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">strands
+which can be executed during a certain timestamp, then the greedy
+scheduler is responsible for assigning any one of the ready strands
+to processors.</p>
+<p>In the other case, if there are less than <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">strands
+ready to execute during a time stamp, then each ready strand is
+assigned to its own processor by greedy scheduler.</p>
+<p>Consider the Scheduling and theorem 27.1 from the textbook,
+chapter 27 of section 27.1.</p>
+<p>Use work law and calculate the best running time possible for
+<img src="../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">
+processors as below:</p>
+<p><img src=
+"../imgs/ec0e47756121c014948c3776c0bb6b8cd1b94b97.png"></p>
+<p>Where <img src=
+"../imgs/fc0d91dc7b58c0c0723673d9d7b7c1296896e3e9.png">is the
+execution time of an algorithm on <i>P</i> processors.</p>
+<p>Use pan law and calculate the best running time possible for
+<img src="../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">
+processors,</p>
+<p><img src=
+"../imgs/a54ce9b2d3474ee932199ee84f97dc406b5995e7.png"></p>
+<p>Where <img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">is the
+execution time of an algorithm on unlimited number of
+processors.</p>
+<p>So, a greedy processor can execute a multithreaded computation
+in time (equation 27.4 of the textbook).</p>
+<p><img src=
+"../imgs/7d8bbda7b7fe9af629a77fb1858918740ab8d3de.png"></p>
+</div>
+<hr>
+<div class="answer">Now consider work on any processor.
+<p>Work is the total time required for completing the entire
+multithreaded computation.</p>
+<p>Using work law, calculate the best running time possible for
+<i>P</i> processors as below:</p>
+<p><img src=
+"../imgs/ec0e47756121c014948c3776c0bb6b8cd1b94b97.png"></p>
+<p>Span is defined as the maximum time required for completing the
+strands along any path in the directed acyclic graph (DAG).</p>
+<p>Use span law and calculate best running time possible for
+<img src="../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">
+processors as below:</p>
+<p><img src=
+"../imgs/bd5babb57065ca22997b625e5042381f170291c3.png"></p>
+<p>Exclude the work done by processors to calculate the total
+running time. Calculate the time required for a greedy processor
+can execute a multithreaded computation as below:</p>
+<p><img src=
+"../imgs/fc1428d3d5c7ca51f5ab909d225b440385750904.png"></p>
+<p><b>Therefore, the time bound is slightly stronger (because here
+span constraints are not override) than the bound given in theorem
+27.1. Hence proved.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Computation Dag for Two Execution Process</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by spawning, both parent and child work
+simultaneously. The main motive behind for evolving the concept of
+spawning is to achieve parallelism, which results increase the
+overall performance of computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor. Suppose in
+the below example each circle represents the strands which takes
+unit time. Therefore total work done is 25 units.</p>
+<p><img src="../imgs/cbd420884079ddd2fea4c33c147afdbb8eb7b6d0.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\13.tif"></p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. The path highlighted in the above figure is known as
+span.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following dag: Suppose there are 2 CPUs available
+for the execution.</p>
+<p><img src="../imgs/9b592f074565e2c6bd19c24e5a21cbdce1cc0e05.png"
+alt="Picture 4"></p>
+<p><b>Execution sequence 1 of dag:</b></p>
+<p><img src="../imgs/81290ae29802fbbc32b5f6a8e112759f6b8e34cf.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\1.tif"></p>
+<p>1. At the beginning there is only one strand available. So this
+strand is alloted to one of the cpu at 1<sup>st</sup> time
+stamp.</p>
+<p><img src="../imgs/6600119ed7bd1eadd0474b6c0817646bf4901f56.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\2.tif"></p>
+<p>2. Now, at 2<sup>nd</sup> time stamp there are 3 available
+strand. Since there are 2 Cpu hence 2 strand named 2 will be chosen
+as shown in above figure.</p>
+<p><img src="../imgs/2bf419d259a6e317253524eb378fe49d92b2f63e.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\3.tif"></p>
+<p>3. Again at 3<sup>rd</sup> time stamp there are 3 available
+strand (1 strand from the previous step). Since there are 2 CPUs,
+hence 2 strand named 3 will be chosen as shown in above figure.</p>
+<p><img src="../imgs/590cd6232b765007d0b22fb8e6f18a22c001cafd.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\4.tif"></p>
+<p>4. Now at 4<sup>th</sup> time stamp there are 2 available strand
+(1 from previous step) it will be scheduled to 2 CPU. Mark as 4, As
+shown in above figure.</p>
+<p><img src="../imgs/10a867b337e9494e7ca0489fb419ab9f7bdb5fb7.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\5.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>5. Since there is only 1 strand available at 5<sup>th</sup> time
+stamp hence it will be scheduled to any of the two CPU. Mark as 5
+As shown in figure.</p>
+<p><img src="../imgs/21199563b63ffe767138e31eb02bb2e5b4379df6.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\6.tif"></p>
+<p>6. At the 6<sup>th</sup> time stamp, there is only 1 strand
+available hence it will be scheduled to any of the two CPU. Mark as
+6 As shown in figure.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Execution sequence 2 of the dag:</b></p>
+<p><img src="../imgs/6e1bfe380a2c59abec31e4184fd2e1d488684dd2.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\7.tif"></p>
+<p>1. At the beginning there is only one strand available. So this
+strand is alloted to one of the cpu at 1<sup>st</sup> time
+stamp.</p>
+<p><img src="../imgs/e0cdc100efba81e8b351843bec87056ca3a7d17c.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\8.tif"></p>
+<p>2. Now at 2<sup>nd</sup> time stamp there are 3 available
+strand. Since there are 2 CPU hence 2 strand named 2will be chosen
+as shown in above figure.</p>
+<p><img src="../imgs/988a51775506ddbbbc7f33491d2367ffa3b85c91.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\9.tif"></p>
+<p>3. Again at 3<sup>rd</sup> time stamp there are 3 available
+strand (1 strand from the previous step). Since there are 2 CPU
+hence 2 strand named 3 will be chosen as shown in above figure.</p>
+<p><img src="../imgs/9d1b0cc38a470d57fcb8248d43c57fb40acd35e4.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\10.tif"></p>
+<p>4. Now, at 4<sup>th</sup> time stamp there are 2 available
+strand (1 from previous step) it will be scheduled to 2 Cpu. Mark
+as 4, As shown in figure.</p>
+<p><img src="../imgs/ef11d0d67577bb0ef3ec2c94a54fe9c7add49d78.png"
+alt="C:\Users\kaifi\Desktop\CDR Tif\11.tif"></p>
+<p>5. Since there is 2 strand available at 5<sup>th</sup> time
+stamp hence it will be scheduled to two CPUs. Mark as 5 As shown in
+above figure.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</div>
+<hr>
+<div class="answer">
+<p>Greedy scheduler is a scheduler that tries in each time step to
+allocate maximum number of strands to the processors.</p>
+<p>Suppose there are <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png"> processors
+available. Now if there are <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">strands
+which can be executed during a certain timestamp, then the greedy
+scheduler is responsible for assigning any <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">of the ready
+strands to processors. In the other case, if there are less than
+<img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">strands
+ready to execute during a time stamp, then each ready strand is
+assigned to its own processor by greedy scheduler.</p>
+<p>Consider the Scheduling and theorem 27.1 from the textbook of
+section 27.1,</p>
+<p>By work law,</p>
+<p>Best running time possible for <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">
+processors,</p>
+<p><img src=
+"../imgs/9e9f9058da6d6be1c830f70e175fedc6c03a2ed8.png"></p>
+<p>Where <img src=
+"../imgs/fc0d91dc7b58c0c0723673d9d7b7c1296896e3e9.png">is the
+execution time of an algorithm on <i>P</i> processors.</p>
+<p>By span law,</p>
+<p>Best running time possible for <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">
+processors,</p>
+<p><img src=
+"../imgs/a54ce9b2d3474ee932199ee84f97dc406b5995e7.png"></p>
+<p>Where <img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">is the
+execution time of an algorithm on unlimited number of
+processors.</p>
+<p>Therefore a greedy processor can execute a multithreaded
+computation in time (equation 27.4 of the textbook).</p>
+<p><img src=
+"../imgs/5939618e67ab15faf08460a76154cf91fbf1a567.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Given that (Three runs yielded, these are deterministic
+multithreaded algorithms on 4, 10, and 64 processors of an ideal
+parallel computer using a greedy scheduler),</p>
+<p><img src=
+"../imgs/8f169c03488818c341df032e76efe30978288779.png">Seconds
+<b>…… (1)</b></p>
+<p><img src=
+"../imgs/449425c5558563c6ef6b4d17eeaabd28419d0ccd.png">Seconds
+<b>…… (2)</b></p>
+<p><img src=
+"../imgs/00381de1c8e75ff7d9bdaf48c1f59424717a2434.png">Seconds
+<b>…… (3)</b></p>
+<p>By work law, (refer equation 27.2 of book)</p>
+<p><img src=
+"../imgs/5cc4e01c0ca6d617b6f13bd4b2e73370aece934a.png"></p>
+<p>For <i>P</i>=4,</p>
+<p><img src=
+"../imgs/5ca8b5f5176137261a77e02aaca925b4138c4cd2.png"></p>
+<p>Using the value of equation <b>(1)</b></p>
+<p><img src=
+"../imgs/1108a823b60ff0e260dcdd8b774c598c657d56fa.png"></p>
+<p><img src="../imgs/7d75a0e4fa0eb5c55739fdc513d5eaac0442d4ff.png">
+<b>…… (4)</b></p>
+<p>By span law, (refer equation 27.3 of book)</p>
+<p><img src=
+"../imgs/9fb884a7bbba1f03104e351d51c16cd12dd43899.png"></p>
+<p>For <i>P</i>=64,</p>
+<p><img src=
+"../imgs/c6b78675e2adc9f302f56c0a0f563a98c52a796b.png"></p>
+<p>Using the value of equation <b>(3)</b></p>
+<p><img src="../imgs/e01a89bf974cda7370683c4258f1543f3244f899.png">
+<b>…… (5)</b></p>
+<p>(Refer equation 27.5 of book)</p>
+<p><img src=
+"../imgs/b1e17062a8068e154df31107f9de468320410608.png"></p>
+<p>For <i>P</i>=10 and using the value of <i>T</i><sub>10</sub>
+from the equation <b>(2)</b> and considering the equation
+<b>(4),</b></p>
+<p><img src=
+"../imgs/6a2822870d12a257b1812f8d2f77f86abd316d7f.png"></p>
+<p>Which contradict the equation number <b>(5)</b> therefore,
+<b>professor is lying or incompetent</b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Multithreaded Algorithms</b></p>
+<p>Serial algorithms are used since multithread algorithms concept
+had not been evolved. The serial algorithms executes on the
+uniprocessor system in which only one instruction is execute at a
+time. In order to reduce the execution time of algorithm a
+multithreaded algorithm has been evolved. A multithread algorithm
+execute on the multiprocessor system in which more than one
+instruction executes at a time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by spawning, both parent and child work
+simultaneously. The main motive behind for evolving the concept of
+spawning is to achieve parallelism, which results increase the
+overall performance of computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. Work is the running time of a computation on a single
+processor. Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In multithreaded algorithm of matrix multiplication, basic
+concept of matrix multiplication is used. For making it into a
+multithreaded form, just use the keywords parallel, spawn and
+sync;</p>
+<p><b>Parallel</b> is used in <b>for</b> loops to make them work in
+a parallel manner;</p>
+<p><b>Spawn</b> is used to solve the expression in a synchronized
+manner; and starting point of the synchronization.</p>
+<p><b>Sync</b> makes the output more systematic in nature.</p>
+<p>In the following algorithm, the first-half recursively calls a
+new function, in which, the code recursively spawns the first half
+of the iteration of the loop, to execute in parallel with the
+second half of the iteration; and then it executes in sync.</p>
+<p><img src="../imgs/6d8d733cee22b57094e43789aba5290eeac0ca15.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\3.tif"></p>
+<p>The dynamic acyclic graph (DAG) represents the
+<b>NEW_VEC_LOOP</b><img src=
+"../imgs/5cbbedc44bc71ce1a77c6ab382af12196c1b0d2b.png"> function
+computation. The two values in each rectangle like 1, 4 represent
+the <i>j</i><sub>1</sub>and <i>j</i><sub>2</sub> which are the
+upper and lower bounds. The black circles represent the
+<b>spawn</b> NEW_VEC_LOOP<img src=
+"../imgs/2e6067b96c68ee94eddf8a8a2dde91c18756fe95.png"> line of
+code whereas shaded circle represents the NEW_VEC_LOOP <img src=
+"../imgs/8474548005d9cdbf3a498ebd23f05065cf4ceac6.png">line of
+NEW_VEC_LOOP () function which is as follow:</p>
+<p><b>A multithreaded algorithm to multiply a</b> <b><img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"></b>
+<b>matrix by an</b> <b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></b>
+<b>-vector:</b></p>
+<p><b>NEW_MAT_VEX</b> <img src=
+"../imgs/18eb2b994f3e6724c1eecaff2b466ce450aa125e.png"></p>
+<p>//find number of rows in <i>Array</i></p>
+<p><img src=
+"../imgs/e5f89f0efcc94ebd6b4a17fc24c608a4367155ba.png"></p>
+<p>let<img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png">be a new
+vector of length <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//<b>for</b> loop to initialize <i>n</i> elements of <i>p</i>
+vector with 0.</p>
+<p><b>parallel for</b> <i>i</i> =1 <b>to</b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><img src=
+"../imgs/0193dc2eda5366cf873eb890274934dcfe6cdd9d.png"></p>
+<p>//for loop to multiply all elements of <i>Array</i> matrix with
+<i>p</i> vector.</p>
+<p><b>parallel for</b> <i>i</i>=1 <b>to</b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//call NEW_VEC_LOOP() function to multiply matrix and vector</p>
+<p><img src=
+"../imgs/075eeebe887c484c97d4256685db314db2a23051.png">=NEW_VEC_LOOP
+<img src=
+"../imgs/ce942e0afd39f3d8fd05969d6403c138e0852137.png"></p>
+<p><b>return</b> <img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png"></p>
+<p><b>NEW_VEC_LOOP</b> <img src=
+"../imgs/5cbbedc44bc71ce1a77c6ab382af12196c1b0d2b.png"></p>
+<p>//if statement to check upper and lower bound are same or
+not.</p>
+<p><b>if</b> <img src=
+"../imgs/4b471a3f0bcd4bae3cb143bea8a4dfcb2abec378.png"></p>
+<p><b>return</b> <img src=
+"../imgs/fe6088e4561aff4426b28a92f53d17640c378bfa.png"></p>
+<p>//find the middle column of matrix</p>
+<p><b>else</b> <img src=
+"../imgs/bd2ce8ebfa11231018d14ba23500f9f26f38a22c.png"></p>
+<p>//first half of iteration</p>
+<p><img src=
+"../imgs/71b84c94b4f2653f96465d2485cdbbc8a1c30718.png">=<b>spawn</b>
+NEW_VEC_LOOP<img src=
+"../imgs/72e48ff7d86611f5074c164624486a291ac7fbc2.png"></p>
+<p>//second half of iteration</p>
+<p><img src=
+"../imgs/44929a55a4d2a25028a92b8f49b3a7b1035744b6.png">=
+NEW_VEC_LOOP <img src=
+"../imgs/8474548005d9cdbf3a498ebd23f05065cf4ceac6.png"></p>
+<p>//use to synchronize the spawn subroutine</p>
+<p><b>sync</b></p>
+<p><b>return</b> <img src=
+"../imgs/71b84c94b4f2653f96465d2485cdbbc8a1c30718.png"> <img src=
+"../imgs/f59a8c4ac6405e96fe78ade206308047592274e1.png"> <img src=
+"../imgs/44929a55a4d2a25028a92b8f49b3a7b1035744b6.png"></p>
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of NEW_MAT_VEX can be calculated by calculating the running
+time of its serialization.</p>
+<p>Consider the running time of NEW_VEC_LOOP is<img src=
+"../imgs/03c876af47ed07c834d99282ba8edca5854c3532.png">.</p>
+<p>So, work of NEW_MAT_VEX that is <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png"> will be</p>
+<p><img src="../imgs/a61cf68a7d3e6f2d9077469d4bc4a55873e2ba2d.png">
+<b>…… (1)</b></p>
+<p><img src=
+"../imgs/03c876af47ed07c834d99282ba8edca5854c3532.png">can be
+calculated using the following recurrence,</p>
+<p><img src=
+"../imgs/81ba05708aa023a9d28b6e1bb92c3a654909d36e.png"></p>
+<p>By applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p>Generic form of master theorem is:</p>
+<p><img src=
+"../imgs/146a755b8f9cb705de2ba48bc432b406e97738bb.png"></p>
+<p>Where, <img src=
+"../imgs/1d0c59ef3ef86deab8e6d955b9d9be18989fcbaf.png">is the sum
+of cost of dividing the problem into sub-problems and the cost of
+combining these sub-problems outside the recurrence call.</p>
+<p>Above recurrence relation is in form of <img src=
+"../imgs/7ae355ecc324b89a8da4991adf45346cc1ef86d7.png"></p>
+<p>Here, according to the master theorem,</p>
+<p><img src=
+"../imgs/dd801de016820ccd76f43741417e3882efb1be4b.png"></p>
+<p>Then the solution of the recurrence relation become</p>
+<p><img src=
+"../imgs/d9510a216b69c52dd0aaa0e55e4a595da67ebc98.png"></p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/5245e31af7f71ac3463c743cb73c88eefad5e147.png"></p>
+<p>Putting the value of <img src=
+"../imgs/25d74bf79825c2bae92878923c9f4978522853ba.png"> in equation
+<b>(1)</b></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/e4e3592544f29545344aa2f3b198b9e8bd80a58b.png"></p>
+<p>Due to dynamic-multithreading, parallel loop executes in the
+single iteration. This reduces the extra effort of recursive
+spawning. Therefore the perfect linear speedup will not effect.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>In order to analyze the span of parallel construct the extra
+burden of recursive spawning must also be count. The depth of
+recursive call is <img src=
+"../imgs/bca988685bcff7ec8743523c608d4ce661de8561.png"> which have
+n number of iteration. The span for a parallel loop having n
+iteration has</p>
+<p><img src=
+"../imgs/9093529416e1e65b3db49c09ca36f60848fe72cd.png"></p>
+<p>Since <img src=
+"../imgs/dd26c04a230b07ae59739e9ada283e39e82b4225.png">can be done
+in constant time therefore it will be consumed in <img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png"></p>
+<p>In NEW_MAT_VEX() function, each iteration of second <b>parallel
+for</b> loop call NEW_VEC_LOOP() function to multiply the matrix
+and vector. Each time the NEW_VEC_LOOP() function half the space
+between 1 and <i>n</i>. Therefore the span becomes</p>
+<p><img src=
+"../imgs/67f270d37b6936e7852e3fa6320409fa51d099f4.png"></p>
+<p>Hence the span in NEW_MAT_VEX () algorithm is<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/de518a5739b52aec073653e6529c7fe8825244bd.png"></p>
+<p>Hence the Parallelism in NEW_MAT_VEX () algorithm is<img src=
+"../imgs/de518a5739b52aec073653e6529c7fe8825244bd.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer"><img src=
+"../imgs/9cebc2cc45013c011705ce20b3c808d569c2c36a.png"></div>
+<hr>
+<div class="answer">The first column of matrix after transposing
+becomes the first row of matrix like after transposing the digit 4
+move from <i>A</i><sub>21</sub> position to <i>A</i><sub>12</sub>
+position, where <i>A</i> is a matrix.</div>
+<hr>
+<div class="answer">
+<p><b>Work of multithreaded algorithm for transposing a</b>
+<b><img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"></b>
+<b>matrix</b>,</p>
+<p>Work of P-TRANSPOSE (<i>A</i>) matrix can be determined by
+calculating the running time of its serialization. It can be
+calculated by replacing both <i><b>parallel for loop</b></i> with
+normal <i><b>for loop</b></i>.</p>
+<p><b>parallel for</b> <i>j</i>=2 <b>to</b> <i>n</i></p>
+<p><b>parallel for</b> <i>i</i>=1 <b>to</b> <i>j</i>–1</p>
+<p>Consider the algorithm P-TRANSPOSE (<i>A</i>), the above two
+lines of code state as follows:</p>
+<p>That is</p>
+<p><img src=
+"../imgs/d5c6bc3f0665bc07e47940dc6414621c6521be50.png"></p>
+<p><img src=
+"../imgs/f98650ac130470c22a68ad9b552dfc5474e070e8.png"></p>
+Hence the work of P-TRANSPOSE (<i>A</i>) matrix is <img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png"></div>
+<hr>
+<div class="answer">
+<p><b>Span of multithreaded algorithm for transposing a</b>
+<b><img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"></b>
+<b>matrix</b>,</p>
+<p>Span of P-TRANSPOSE (<i>A</i>) depends on the span of two nested
+parallel for loop.</p>
+<p>Let span of <img src=
+"../imgs/d82627e3850254d87a2dde5fb97d4e955fc8773b.png"><sup>th</sup>
+iteration of outer loop is be denoted by <img src=
+"../imgs/b34d5997cae49a1b4d12a2284609d93b91903981.png">and span of
+<img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png"><sup>th</sup>
+iteration of inner loop is denoted by<img src=
+"../imgs/fcca2f485a55c7bf027c5e7745191c755e039ff2.png">.</p>
+<p><img src=
+"../imgs/3df9e33a461e963243253ac6e9360e2b9d3ad853.png"></p>
+<p><img src=
+"../imgs/daa90ec76e3877451509a896fad88e0ac3d43b18.png">will become
+maximum when <img src=
+"../imgs/d82627e3850254d87a2dde5fb97d4e955fc8773b.png">= <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>Now,</p>
+<p><img src="../imgs/e806d5bfd911bb8620511569b960f2d7212fc961.png">
+<b>… … (1)</b></p>
+<p>Since each iteration of the inner loop is performing the
+exchange operation which is done in constant time.</p>
+<p>Therefore <img src=
+"../imgs/ee24455adbfdb13c1a46ee8a56500374fdd29e9d.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/66c4d201684deeacd2d0557e1a176224616b8277.png"></p>
+<p><img src="../imgs/c3b48be531471fab620ab12f59e027beb55764d1.png">
+<b>… … (2)</b></p>
+<p>Substituting the value of <b>(2)</b> in <b>(1)</b></p>
+<p><img src=
+"../imgs/5d10b6a22fe0cbed5a331b8ed577f678b6d92c96.png"></p>
+<p><img src=
+"../imgs/67f270d37b6936e7852e3fa6320409fa51d099f4.png"></p>
+<p>Hence the span of P-TRANSPOSE (<i>A</i>) matrix is <img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism of multithreaded algorithm for transposing a</b>
+<b><img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"></b>
+<b>matrix</b>:</p>
+<p>Parallelism is the ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png"> by
+<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">
+that is work by span.</p>
+<p>Work done in multithreaded algorithm for transposing <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"> matrix
+is:</p>
+<p><img src=
+"../imgs/f98650ac130470c22a68ad9b552dfc5474e070e8.png"></p>
+<p>Span on multithreaded algorithm for transposing a <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"> matrix
+is:</p>
+<p><img src=
+"../imgs/67f270d37b6936e7852e3fa6320409fa51d099f4.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/eb2de9e9abaa800f4b7882ee8e00b8d9e6aff924.png"></p>
+<p>Hence the parallelism of P-TRANSPOSE (<i>A</i>) matrix
+is<img src=
+"../imgs/bded286baa22cf76e5629f7fb89caf251cfa24c5.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Analyzing the work, span and parallelism of P-TRANSPOSE (</b>
+<i><b>A</b></i> <b>) pseudo code</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by the spawning both parent and child
+work simultaneously. The main motive behind for evolving the
+concept of spawning is to achieve parallelism, which results in
+increase the overall performance of computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor. Suppose in
+the below example, each circle represents the strands which takes
+unit time. Therefore, total work done is 25 units.</p>
+<p><img src="../imgs/cbd420884079ddd2fea4c33c147afdbb8eb7b6d0.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\13.tif"></p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. The path highlighted in the above figure is known as
+span.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there areunlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation. <b>Transpose of
+matrix</b> is defined as interchanging the position of rows and
+columns of matrix.</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/9cebc2cc45013c011705ce20b3c808d569c2c36a.png"></div>
+<hr>
+<div class="answer">The first column of matrix after transposing
+becomes the first row of matrix like after transposing the digit 4
+move from <i>A</i><sub>21</sub> position to <i>A</i><sub>12</sub>
+position, where <i>A</i> is a matrix.</div>
+<hr>
+<div class="answer">
+<p><b>Normal 'for' loop:</b></p>
+<p>When there is a small task that consists of subtasks which are
+same and depend upon one another, then the normal 'for' loop is
+used.</p>
+<p>It executes on a single processor sequentially and the order of
+result is defined as sequential in this loop.</p>
+<p>For example:</p>
+<p><b>for</b> (<i>i</i>=0; <i>i&lt;=n</i>; <i>i</i>++)</p>
+<p><b>print (</b> <i><b>i</b></i> <b>);</b></p>
+<p>Output: 0, 1, 2, 3,…,<i>n</i></p>
+<p><img src=
+"../imgs/d554fe9bb72670d13449d77e54356a82fafbca26.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallel 'for' loop:</b></p>
+<p>Parallel 'for' loop is used for Parallelism, which is taking a
+certain task and dividing it into a set of related tasksto be
+executed concurrently.</p>
+<p>It is used when one has a very long and intensive process that
+needs fast execution. This is possible when this process can be
+divided into independent sub-processes, and each process executes
+on a single processor.</p>
+<p>The order of result may vary as the execution is done in
+parallel.</p>
+<p>For example:</p>
+<p><b>Parallel for</b> (0, <i>n</i>, <i>i</i>=&gt;)</p>
+<p>{</p>
+<p><b>Print</b> (<i>i</i>);</p>
+<p><i>i</i>++;</p>
+<p>}</p>
+<p>Output: 0, 3, 7, 2…<i>n</i></p>
+<p><img src=
+"../imgs/38cee7832b9e3e90336fc0856f79747c5bcbfb74.png"></p>
+<p><b>Work (</b> <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png"> <b>) of
+multithreaded algorithm for transposing</b> <b><img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"></b>
+<b>matrix after removing first parallel for loop:</b></p>
+<p>Work of P-TRANSPOSE (<i>A</i>) matrix can be determined by
+calculating the execution time of its serialization. Therefore
+removing a parallel for loop from P-TRANSPOSE(<i>A</i>) will not
+make any effect on work.</p>
+<p><b>parallel for</b> <i>j</i>=2 <b>to</b> <i>n</i></p>
+<p><b>for</b> <i>i</i>=1 <b>to</b> <i>j</i>–1</p>
+<p>Consider the algorithm P-TRANSPOSE (<i>A</i>), the above two
+lines of code state as follows:</p>
+<p><img src=
+"../imgs/d9da628b533ea25f2dcf733d7c8cde970faa05d8.png"></p>
+<p><img src=
+"../imgs/f98650ac130470c22a68ad9b552dfc5474e070e8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span (</b> <img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"> <b>) of
+multithreaded algorithm for transposing a</b> <b><img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"></b>
+<b>matrix after removing first parallel for loop:</b></p>
+<p>Use of parallel 'for' loop is preferred, as there are multiple
+processors in which multiple processes can execute simultaneously,
+and the execution time will be lower.</p>
+<p>Span of the modified algorithm will be equal to the longest
+iteration of <img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png">that will
+vary from <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png">to <img src=
+"../imgs/6a2aa2dd5eef78afad67568bf3168978328d7560.png">.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/ebddc4b93b35849c86ef037d47b891ebc8e2be59.png"></p>
+<p>That is</p>
+<p><img src=
+"../imgs/c1a5f46d6e8bf29816a8cd16bc68ca7ddfdf6120.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism of multithreaded algorithm for transposing a</b>
+<b><img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"></b>
+<b>matrix</b>:</p>
+<p>Parallelism is the ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png"> by
+<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">
+that is work by span.</p>
+<p>Work of multithreaded algorithm for transposing <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"> matrix
+is:</p>
+<p><img src=
+"../imgs/f98650ac130470c22a68ad9b552dfc5474e070e8.png"></p>
+<p>Span of multithreaded algorithm for transposing a <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"> matrix
+is:</p>
+<p><img src=
+"../imgs/c1a5f46d6e8bf29816a8cd16bc68ca7ddfdf6120.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/7c5cb8ba9cf237508c9e54d3e1efcceff57a3569.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands. The path highlighted in the above figure is known as
+span.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there areunlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</div>
+<hr>
+<div class="answer">
+<p><b>Versions of chess problem:</b></p>
+<p>A chess game has many versionsthat vary according to the rule
+and the size of the boards. Example: hexagonal chess, up-side down
+chess, rhombic chess, masonic chess and so many others.</p>
+<p>So, for a particular version, there is a program to play the
+game; and considering all rules in it. In a chess problem, a
+programmer uses the concept of multithreaded algorithm to solve the
+problem in a more efficient way, because this algorithm uses the
+concept of parallelism.</p>
+<p>In multithreaded algorithm work (<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">) and span
+(<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">)
+are used to calculate the performance. Consider a version of the
+chess program which has P number of processors</p>
+<p><img src=
+"../imgs/b2985acc9cfdd1207c24562c165a8011471ae919.png"></p>
+<p>According to theorem 27.1 the best execution time for P
+processor having <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">work and
+<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">span is as
+follow:</p>
+<p><img src=
+"../imgs/1ef212d110b9cb89495727f83c10766a0328b9db.png"></p>
+<p>For the above version</p>
+<p><img src=
+"../imgs/b068d0d986dd3ba7498564610d00ab45a87ebb99.png"></p>
+<p>Now, consider that another version of the chess program which
+has the same number of processors (<i>P</i>) and</p>
+<p><img src=
+"../imgs/98c0a48c311200b3fb0891afaaa997262b1d459d.png"></p>
+<p>For this version,</p>
+<p><img src=
+"../imgs/6cfc1ec00713f385bb6ee0836494152626d9b553.png"></p>
+<p>Now, to make both the programs run equally fast</p>
+<p><img src=
+"../imgs/15f811d6ead34d16ec2297f61bb8968512000b9b.png"></p>
+<p>This is the number of processors needed to runboth the programs
+equally fast.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Numerical example:</b></p>
+<p><b>First version,</b></p>
+<p>The original program has work <i>T</i><sub>1</sub>=2048 seconds
+and critical path length, span <img src=
+"../imgs/3a58b52281e0893e0df223d9f9a99b75fafaf423.png">.</p>
+<p><img src=
+"../imgs/c7392a140a919fffe4d9b555652484be7ce02b72.png"></p>
+<p><b>Second version,</b></p>
+<p>The optimized program has work <i>T</i><sub>1</sub>=1024 second
+and critical path length <img src=
+"../imgs/ee6912288d655d79a28a4a8ba1ee08908a6cb84a.png">seconds.</p>
+<p><img src=
+"../imgs/c68fc689d79ec59e6c22336291186cb99b12b933.png"></p>
+<p>The time taken by greedy scheduler to execute multithreaded
+computation having <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png"> work and
+<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">span is as
+follows:</p>
+<p><img src=
+"../imgs/4836f0e2981a4d01f7a41e333ba9a41e70a8c1ba.png"></p>
+<p>Computer with P processors</p>
+<p>Using First Version</p>
+<p><img src="../imgs/3de7efef0fedee53306eedf9ac6b52e4075ab2e2.png">
+<b>… … (1)</b></p>
+<p>Using Second Version</p>
+<p><img src="../imgs/ffe5684002e9f48fbc994b8b7fd28e174bd0c80c.png">
+<b>… … (2)</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Considering the equality part of the Greedy scheduler,</p>
+<p><b>From</b> <b>(1)</b> <b>and</b> <b>(2)</b>, we have:</p>
+<p><img src=
+"../imgs/4d8f9426fab2380a3cb845daabb4a4646f5e1485.png"></p>
+<p><img src=
+"../imgs/f1b0aeed37d28168c6705140fb1c4cfe1e8d7eb4.png"></p>
+<p><img src=
+"../imgs/1dc0a06f6e9ea5b164d089f688bf81e53ac53513.png"></p>
+<p><img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">will vary
+from 146 to 147 processors.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

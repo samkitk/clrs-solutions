@@ -1,0 +1,409 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 17.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/049daccf4557b470e218d167e88e69d00c2e1638.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the actual cost for <i>i</i><sup>th</sup> operation as
+follows:</p>
+<p><img src=
+"../imgs/75256bfcf22cffc2985c224f4cb42f6bde0b71e6.png"></p>
+<p>Define the potential function as follows:</p>
+<p><img src=
+"../imgs/5f9db9871740f1153c13b70b03c1526eb0e17f72.png">and
+<img src="../imgs/401f8f76f6044075b2444b90010af2b4c72b5c3b.png"></p>
+<p><b>For</b> <i><b>n</b></i> <b>operations the actual cost is as
+follows:</b></p>
+<p><img src=
+"../imgs/cbe268259276ed9cd42561dccff37a81d500a496.png"></p>
+<p><b>If n is not an exact power of 2 then the amortized cost,
+for</b> <i><b>n</b></i> <b>operations, is as follows:</b></p>
+<p><img src=
+"../imgs/6f430da8fa8c1ed9340d46a2b36e9d72affbf25b.png"></p>
+<p><b>Therefore, amortized cost for each operation is ≤3.</b></p>
+<p><b>If</b> <i><b>n</b></i> <b>is an exact power of 2, then the
+amortized cost, for</b> <i><b>n</b></i> <b>operations, is as
+follows:</b></p>
+<p><img src=
+"../imgs/5be8f2ae923a092c2caf69556d459bb2ef31d5b8.png"></p>
+<p><b>Therefore, amortized cost for each operation is ≤4.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d46f6762c313815a6e51b0c40e93eeb082b962b3.png">
+<hr>
+<img src="../imgs/e798ad80d5bc7e7c24801a51dc6413231b1a8724.png">
+<hr>
+<img src="../imgs/93b2780248f1f88b02c2a35fb0c55216439f6d51.png">
+<hr>
+<img src="../imgs/8cc4824ba1c907dbfbc2e8b7a962c71fa5dec0ed.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider that <img src=
+"../imgs/6f8d13cf424ec52e6fcd55006e7a1912b5a02095.png"> be the
+potential function, which maps the number of objects in the stack
+after i<sup>th</sup> operation.</p>
+<p>• <i>D</i><sub>i</sub> is the data structure after
+i<sup>th</sup> operation.</p>
+<p>• Amortized cost for the PUSH operation is 2.</p>
+<p>• Amortized cost for the POP and MULTIPOP operations is 0.</p>
+<p>• Then the total amortized cost for sequence of <i>n</i>
+operations is,</p>
+<p><img src=
+"../imgs/2f1842a24a3960ae27c240e483cd885050aa3562.png"></p>
+<p>Rewrite the above equation as follows:</p>
+<p><img src=
+"../imgs/96cd765ace4c2c1d0beb854d35b51e013a082d7c.png"></p>
+<p><img src=
+"../imgs/81ccbb35f46508f22dc7054fdd08a6dfa87224df.png"></p>
+<p><img src=
+"../imgs/4612774e601119a464cfd52adeafec41afef4472.png"></p>
+<p><b>The total cost of executing</b> <b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></b>
+<b>stack operations, assuming the stack begins with</b>
+<b><img src="../imgs/1420bd0c2f3e5295fe74a57204a6c6653500fb95.png"></b>
+<b>objects and finishes with</b> <b><img src=
+"../imgs/cfa8a53a159687e5500907229655f32e4264d2a7.png"></b>
+<b>objects is bounded by</b> <b><img src=
+"../imgs/b218d22a3dc89fc81691761cf1b38c9786e071f5.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Calculate the cost of performing</b> <i><b>n</b></i>
+<b>INCREMENT when</b> <b><img src=
+"../imgs/382d1c08c579bc6e3de075e1735b5aace12b1785.png"></b>
+<b>.</b></p>
+<p>Consider that</p>
+<p>• The amortized cost per one increment is 2. i.e. <img src=
+"../imgs/3b9c544ef6c0ef6463278f5b347ae51ad6abc8b8.png">.</p>
+<p>• The <img src=
+"../imgs/33a1633d7760a62f529bd0dc8e99ece1bbccae0e.png">.That is,
+the counter initially have <i>b</i><sub>0</sub> 1s and<img src=
+"../imgs/7680aa8202c9014ff4d869ad5cec49da79bdc39f.png">. That is,
+after <i>n</i> increments counter has<img src=
+"../imgs/19424644b2dc02040486e9f7a35e049f2c9255fd.png">.</p>
+<p>Then, the actual cost to perform <i>n</i> INCREMENTs is,</p>
+<p><img src=
+"../imgs/0f0620c2b56439858981548503c2a6cd114ffb9d.png"></p>
+<p><img src=
+"../imgs/c05e30b6d27fc0aba0819af75116bf862a58769d.png"></p>
+<p><img src=
+"../imgs/a7cdb87f550c241945882faebc4cbd31319a88bc.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider that the counter initially has <i>b</i> 1s and
+<img src=
+"../imgs/382d1c08c579bc6e3de075e1735b5aace12b1785.png">(i.e.
+<i>n</i>=<i>c.b,</i> where constant, c ≥ 1). Here, <i>b</i> is not
+a constant value, but <i>b</i> ≤ <i>k</i> and <i>b</i> ≥ 0. Where,
+<i>k</i>= number of bits in the counter.</p>
+<p>Then, the actual cost to perform <i>n</i> INCREMENTs is,</p>
+<p><img src=
+"../imgs/70362bf546f7933616f943f3ab2b4af223a61f49.png"></p>
+<p><img src=
+"../imgs/a402b2b5f52f49ab26e310dfb92783d356e643b7.png"></p>
+<p><img src=
+"../imgs/fd1e2acc3c41d1ef0ca1d107fae20b51c2781653.png"></p>
+<p><img src=
+"../imgs/2a0cea37115fabda11034903bbf7645e02afd0cb.png"></p>
+<p><img src=
+"../imgs/371aa5a9c7363f7d2bfec2ee790b70275f0809d7.png"></p>
+<p><img src="../imgs/d2920a0d7704896cbceb88efa7e04fa043350cda.png">
+Since <i>c</i> ≥ 1, <img src=
+"../imgs/81d16b58f89fc5bd197e6e22d394271eed3c4b2d.png"> ≥ 1</p>
+<p><img src=
+"../imgs/8afbcedd1f0a44e61a8f60d42b7fbbc6d1ce9893.png"></p>
+<p><b>Hence, it is clear that whatever the initial number of 1s
+that the counter has, the cost for executing at least</b>
+<b><img src=
+"../imgs/382d1c08c579bc6e3de075e1735b5aace12b1785.png"></b>
+<b>operations is</b> <b><img src=
+"../imgs/b030e5d9ef4ecf50d4f697ef51e1d3d5c44e43a1.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/7fba23d81715d86ee8e8631eb8330626dab4222a.png">
+<hr>
+<img src="../imgs/a53b26eae3e7a1e495d43e576d0f30bda9b60c02.png">
+<hr>
+<img src="../imgs/ebd87fc49a0cc493c87520f5ce96e1234dd0c76a.png">
+<hr>
+<img src="../imgs/ed2ea85470faf322af2fcd8262a352dfda925584.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The requirement is to design a dynamic multi-set. Since it is
+dynamic and a set, it has the following properties:</p>
+<p>• The elements can be inserted into the set dynamically. So, the
+set must grow to accommodate for this feature.</p>
+<p>• Since, it is a set; there is no need to maintain an order of
+the elements. The elements can be randomly placed.</p>
+<p>• Since, it is a multi-set, repetition of the elements is
+allowed.</p>
+<p>Keeping the above properties in mind and the constraints
+provided, a proper data structure for this is a simple dynamic
+array. There is no need of sorting the array.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Dynamic array:</b> It is a simple array that grows in size to
+accommodate more elements.</p>
+<p>Let the set represented by the dynamic array be called
+<i>S</i>.</p>
+<p>The following two operations are supported by a dynamic
+array.</p>
+<p>• INSERT(<i>S</i>, <i>x</i>): To insert element <i>x</i> into
+the set <i>S</i></p>
+<p>• DELETE-LARGER-HALF(<i>S</i>): To delete the largest half
+elements of the set <i>S</i></p>
+<p>Both these operations when implemented in a sequence of <i>m</i>
+such operations takes a total of <i>O (m)</i> running time.</p>
+<p>The implementation details of the above operations are in the
+next step.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>INSERT(</b> <i><b>S</b></i> <b>,</b> <i><b>x</b></i>
+<b>):</b> The insertion is done in dynamic array at the end of the
+previous element. To accommodate for the growing property of the
+dynamic array, the array is deleted and a new array is created when
+the elements fully accommodate the current array.</p>
+<p>This new array that is created is twice the size of the old
+array. The following steps are followed:</p>
+<p>• When there is space available in current array, insert the
+element at the end of the current element. Complexity of each such
+insertion is <i>O (1)</i>.</p>
+<p>• When there is no space available, create a new array of the
+size twice that of the old array.</p>
+<p>• Copy the elements of the old array to the new array. This
+operation takes <i>O (n)</i> time.</p>
+<p>So, the worst time complexity of this operation seems to be <i>O
+(n).</i> However, each time, a new array is created, the
+probability of the next such operation occurring decreases
+significantly. So, the time complexity for a number of insert
+operations in dynamic array is given by amortized analysis.</p>
+<p>Let size of current array is <i>k.</i> And <i>k+1</i> insert
+operations are needed.</p>
+<p>• The cost of the first <i>k</i> operations = <i>k O(1)</i></p>
+<p>• The cost of the <i>k+1</i><sup>th</sup> operation =
+<i>O(k)</i></p>
+<p>So, a total of <i>2k</i> operations approximately are needed for
+<i>k</i> insert operations.</p>
+<p><b>Therefore, over a number of insert operation, the time
+complexity per INSERT operation is</b> <i>O (1)</i> <b>by amortized
+analysis.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>DELETE-LARGER-HALF(</b> <i><b>S</b></i> <b>):</b></p>
+<p>Deleting the larger half of the multi-set refers to deleting
+half of the elements which have the highest magnitude. Since, there
+is no order in a set, instead of going into sorting, just partition
+the array about the median of the array and then partition it.</p>
+<p>The following steps are followed to perform this operation:</p>
+<p>• Find the median of the array using the quick select linear
+time algorithm. This takes <i>O (n)</i> time.</p>
+<p>• Compare each element with the median found and thus partition
+the array into two halves. This also takes <i>O (n)</i> time.</p>
+<p>• One half is smaller than the median and the other half is
+larger than the median.</p>
+<p>• Delete the larger half. This takes constant time <i>O
+(1).</i></p>
+<p>So, the worst time complexity of this operation seems to be <i>O
+(n).</i> However, each time, the DELETE-LARGER-HALF is executed,
+the probability of the next such operation occurring decreases
+significantly. So, the time complexity for a number of
+DELETE-LARGER-HALF operations in dynamic array is given by
+amortized analysis.</p>
+<p>The amortized analysis of a sequence of INSERT and
+DELETE-LARGER-HALF is done in the next step.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Amortized analysis:</b></p>
+<p>Although one individual operation may have a worst case of <i>O
+(n)</i> in this procedure, the cost for performing a sequence of
+these operations come down significantly. This is shown by the
+following amortized analysis.</p>
+<p>Let there be a sequence of INSERT and DELTE-LARGER-HALF
+operations such that the total number of operations is <i>m</i>.
+The Banker’s method of amortized analysis is the following:</p>
+<p>According to the Banker’s method, when there are cheaper
+operations such as INSERT operation (which takes <i>O (1)</i>
+running time as shown in previous step), extra charge is put on it
+and that extra imposed charge is used to pay for the cost of the
+costlier operations later such as the DELETE-LARGER-HALF.</p>
+<p>• Assume the cost of INSERT be 2 tokens. So, whenever an element
+is inserted into the array, 2 token are paid for it.</p>
+<p>• When there is DELETE-LARGER-HALF operation, first partitioning
+along the median is done. This takes cost proportional to the
+number of elements in the array which is <i>O (n).</i> So, each
+element pays 1 token each for this operation.</p>
+<p>• Now 1 token remains with each element. Delete the larger half
+of the elements. This causes the tokens on the deleted elements to
+be distributed among the remaining elements. So, the amount of
+token with each element after the operations is 2.</p>
+<p>Thus, each element started with 2 tokens and at the end of the
+operation, each element still has 2 tokens.</p>
+<p>Therefore, each operation in the sequence of operations is done
+in constant time <i>O (1)</i>.</p>
+<p>Since, each operation in the sequence is done in constant time
+and there are a total of <i>m</i> operations in the sequence.</p>
+<p><b>Hence, the total time complexity for the sequence of
+operations is</b> <i><b>O (m)</b></i> <b>by amortized analysis and
+since, dynamic array is used to store the elements of the</b></p>
+</div>
+<hr>
+<div class="answer"><b>multi-set</b> <i><b>S</b></i> <b>.
+Therefore, the elements of the multi-set can be output in linear
+time which is</b> <b><img src=
+"../imgs/c27d2993cc9b1c175d8e1ee242a42485f9f26800.png"></b>
+<b>.</b></div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

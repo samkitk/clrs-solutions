@@ -1,0 +1,650 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 9.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a)</p>
+<p>Using Merge sort or Heapsort the sorting can be done in
+<img src="../imgs/e7010fba336d6c37ec0c69b0c6ee56fe7087404a.png">time.
+Here, <img src=
+"../imgs/e7010fba336d6c37ec0c69b0c6ee56fe7087404a.png">is the
+worst-case time. Do not use quicksort or insertion sort as it takes
+worst case time of <img src=
+"../imgs/bd7e5097d67911883356e745be0439e82ad57f6d.png">. Put the i
+largest elements into the output array taking <img src=
+"../imgs/b6d180e20ce2213191e40904f2ec4f29b56583ad.png"> time.</p>
+<p>Total worst case running time: <img src=
+"../imgs/9e8c21da94f5340d5323c919f8484ac623bb793a.png">= <img src=
+"../imgs/e7010fba336d6c37ec0c69b0c6ee56fe7087404a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p>Implement the priority queue as a heap. Build the heap using
+BUILD-HEAP which takes <img src=
+"../imgs/b16dd832e17af80bbb9d57595d576b670bc7b1b1.png"> time then
+call HEAP-EXTRACT MAX, <i>i</i> times to get the <i>i</i> largest
+elements in <img src=
+"../imgs/93485c12ce78a94debf185bd65a600497a13722d.png"> time and
+store them in reverse order of extraction in the output array.</p>
+<p>So, total running time: <img src=
+"../imgs/912b5cbb491a750b0325f46facdb1d2307082d18.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>c)</p>
+<p>Use SELECT algorithm to find the <img src=
+"../imgs/11db4d124e63896d1b14908210cf4bfbc32e548d.png">largest
+number in <img src=
+"../imgs/b16dd832e17af80bbb9d57595d576b670bc7b1b1.png">time. Call
+partition that takes <img src=
+"../imgs/b16dd832e17af80bbb9d57595d576b670bc7b1b1.png">time. Sort
+the i largest numbers in <img src=
+"../imgs/93485c12ce78a94debf185bd65a600497a13722d.png"> worst case
+time (with merge-sort or heap sort).</p>
+<p>Total worst case running time: <img src=
+"../imgs/912b5cbb491a750b0325f46facdb1d2307082d18.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Median</b></p>
+<p>A median is a half way point of the set. When there are <i>n</i>
+elements and <i>n</i> is an odd number then median is:</p>
+<p><img src="../imgs/8a17ad27731d56f362cbfc99c53b22cd5c67441f.png">
+, where <img src=
+"../imgs/ab8d30928f42ce9f541d35ae2fd7a322f7909fc4.png"><sup>th</sup>
+element is the median</p>
+<p>When <i>n</i> is an even number, then median point is:</p>
+<p><img src="../imgs/2036dd1a10de976f57fe558de5dc0b880b54d039.png">
+OR <img src=
+"../imgs/e2d9ba569c5e16da4d024d2e70d88621962e7d4d.png"></p>
+<p>(Upper bound) OR (Lower bound)</p>
+<p><b>Weighted median:</b> Weighted median is stated as arithmetic
+mean of all observable samples and is represented with the help of
+formula:</p>
+<p><img src=
+"../imgs/26cba91f4c15fd4b952500302f1bb487bba15c6b.png"></p>
+<p>Where <i>w</i> is the sample weight.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a</b></i> <i>.</i></p>
+<p>Let <img src=
+"../imgs/9834621315f2ac3c87ec7a8163ef523ce41078fc.png">be the
+number of elements <img src=
+"../imgs/647690954c38630d9b3b9d43b6e2ce836add79c5.png"> which are
+smaller than <img src=
+"../imgs/be390a86970f6881cf40a6f226d135eca8b5c95a.png">. When the
+weights of 1/n are assigned to each <img src=
+"../imgs/647690954c38630d9b3b9d43b6e2ce836add79c5.png">, then the
+summation <img src=
+"../imgs/5dd2b606fd27fdeaa1b7efc21040fb317b992705.png"> and
+<img src="../imgs/7504483aee23670181655f5de076673a2571fd16.png">.
+This sum is &lt;1/2 and <img src=
+"../imgs/43d928e351c06616c2c536939ffbf2c8809c6c6d.png">1/2
+respectively when <img src=
+"../imgs/3718a5deb7f65efccd01ddbf4109f9cbe06a626d.png"> and it is
+made by value of <img src=
+"../imgs/9834621315f2ac3c87ec7a8163ef523ce41078fc.png">. The value
+of x must be the median because it has equal numbers of <img src=
+"../imgs/647690954c38630d9b3b9d43b6e2ce836add79c5.png">’s that are
+smaller and larger than it</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b</b></i> <i>.</i></p>
+<p>To point out the weighted median of <i>n</i> elements in worst
+time running of<img src=
+"../imgs/bade5fd8a11faef5304ca39c76c2fcdd390336cc.png">, sort the
+items using <b>merge-sort</b> or <b>heap-sort</b> whose complexity
+is <img src=
+"../imgs/bade5fd8a11faef5304ca39c76c2fcdd390336cc.png">. For this,
+starting with the first item iterate over the items in first list,
+taking the sum of the weights of the items at the time of
+execution, until the running sum does not go over 0.5. Thus, on
+going with the algorithm as:</p>
+<p><b>Sort-Weighted- Median</b> <img src=
+"../imgs/aa482969ad3563c8f4422f17a8521a3e2ca11d7c.png"></p>
+<p>// applying any of the merge sort or heap sort on the items.</p>
+<p>1. Merge sort <img src=
+"../imgs/aa482969ad3563c8f4422f17a8521a3e2ca11d7c.png"> or heap
+sort <img src=
+"../imgs/aa482969ad3563c8f4422f17a8521a3e2ca11d7c.png"></p>
+<p>// initializing the value of variable <i>sum</i></p>
+<p>2. <img src=
+"../imgs/bbe1833b5524f4ce5dac3b0d493e05e9e8e0c519.png"></p>
+<p>// <img src=
+"../imgs/e5f7b2d86726eb6f8f692bd8b3e5b26ef1063cb6.png">- number of
+the present element</p>
+<p>3. <img src=
+"../imgs/763e27e8609c6ed9eb6759d55c79dd2865a89947.png"></p>
+<p>// iterate the loop until the less than 0.5</p>
+<p>4. <b>while</b> (<img src=
+"../imgs/14d61629d1805086ad0db7adb1a2c531bb91a683.png">)</p>
+<p>// increasing the value of <i>M</i> by one.</p>
+<p>5. <img src=
+"../imgs/c3d22cc6b56f08cee6805cf829363a2a0d8f506d.png"></p>
+<p>// adding the <img src=
+"../imgs/5f6502d15e950f562cca28066889567a9897f110.png">- weight of
+the element in the <i>sum</i></p>
+<p>6. <img src=
+"../imgs/789c2ba6b2aa69f2cac602f7c1c67b32400ec48d.png"></p>
+<p>// end of while loop.</p>
+<p>7. <b>end</b> while</p>
+<p>8. <b>return</b> <img src=
+"../imgs/e5f7b2d86726eb6f8f692bd8b3e5b26ef1063cb6.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis of algorithm:</b></p>
+<p>The analysis of the above algorithm for the calculation of
+complexity is as:</p>
+<p><b>Step 1</b> has complexity of <img src=
+"../imgs/bade5fd8a11faef5304ca39c76c2fcdd390336cc.png">as it the
+complexity of merge sort and heap sort.</p>
+<p><b>Step 2</b> and <b>step 3</b> are of <img src=
+"../imgs/47e9685092300a79dbaba66d327eac7db8d280b3.png"> since, they
+are simple assignments.</p>
+<p><b>Steps 4, 5, 6</b> are of<img src=
+"../imgs/f7457b4a35c8ed520d2e3f3f5a79b2f0fcc863fb.png"> , since
+loops for <i>n</i> items.</p>
+<p>Thus, on calculating the complexity:</p>
+<p><img src=
+"../imgs/76d7a629176f5c69a8caa5e6ff35e5ad4f752ad1.png"></p>
+<p><b>Hence, Proved.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c</b></i> <i>.</i></p>
+<p>Modify SELECT so that time is linear. Let x be the median of the
+medians. Check which one of <img src=
+"../imgs/aa454f272905216c46bd5a6523174814ba7c7336.png">and
+<img src="../imgs/48d3cc524b87333c05c59cfbdc5cd74d6619a6d9.png">is
+larger than ½. Perform recursion on the collection of smaller or
+larger elements which contain weighted median. The runtime is
+<img src=
+"../imgs/b1d9463ccee8080e05a69e3544d33e9d41233024.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d</b></i> <i>.</i></p>
+</div>
+<hr>
+<div class="answer">Let the minimizer be p and suppose p is not
+weighted median. Let <img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png"> be the
+quantity which is very small such that <img src=
+"../imgs/c661691ff387a7b581f5accaeb2607dd0261bf60.png"> where k is
+not included if <img src=
+"../imgs/c478eaed452476d311a28d4f32c8bd7a15ea1ac6.png">. If the
+weighted median is denoted by <img src=
+"../imgs/58561d3d058e84a590dbe256b6024358d02f460e.png"> and
+<img src="../imgs/89e63d7930afe77a2e61906569d6787f3a0932cc.png">,
+then choose a quantity <img src=
+"../imgs/e1ba1fb5e34eddd7e1b909d9fa6ea408b6078896.png"> otherwise
+it can be said that <img src=
+"../imgs/0763755cb23d5550b9ff149fedc67f49f11c5f86.png">. Since, p
+is chosen to minimize the cost so, the expression can be computed
+as follows:
+<p><img src="../imgs/6c0715c5c259688b2e20757166600a8ccc5bbe57.png">
+which is equal to <img src=
+"../imgs/c4f4ee9a020d2139cc6c1fd3f8cb92522368c206.png"></p>
+<p>The difference in sum will take opposite sign.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>e</b></i> <b>.</b></p>
+<p>Since,</p>
+<p><img src=
+"../imgs/04bc5d9f81bd9a861e01e8ae884bebabc1bf7529.png"></p>
+<p>Each sum is minimized which can be done as <img src=
+"../imgs/34faf80bdca0df7f7d7088c4bfdf7adbcaaf23ec.png"> and
+<img src="../imgs/3be2f949f2927770aae191606f00321b0f720c60.png">is
+to be chosen separately. Thus, take <img src=
+"../imgs/4f0bc7ea8ccc635e0217689eddafca211ed0513b.png"> such that
+<img src="../imgs/34faf80bdca0df7f7d7088c4bfdf7adbcaaf23ec.png"> is
+the weighted median of the x-coordinates of <img src=
+"../imgs/99441a3d4b1fe1292b08b14b3920d43fc7b22c01.png"> and the
+weighted median of the y-coordinates of the <img src=
+"../imgs/99441a3d4b1fe1292b08b14b3920d43fc7b22c01.png"> is denoted
+by <img src=
+"../imgs/3be2f949f2927770aae191606f00321b0f720c60.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the SELECT algorithm provided in section. This
+algorithm is used to find very efficiently the
+<i>i</i><sup>th</sup> smallest element in any unsorted <i>Arr</i>[
+].</p>
+<p>When value of <i>i</i> is very small that is the finding element
+is very small as compare to the number of elements in an array. At
+this time SELECT algorithm gets inefficient, it is because due to
+avoiding unnecessary comparison.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>a.</b></p>
+<p>Consider the following MODIFIED-SELECT algorithm to determine
+<i>i</i>th smallest element in the array of <i>n</i> number of
+elements.</p>
+<p>FIND(<i>Arr ,i ,n</i>)</p>
+<p>1. <b>if</b> <b><img src=
+"../imgs/4b1b630eace5bd4cb2196f3e06f674b8cbd01a4c.png"></b></p>
+<p>2. SELECT(<i>Arr , i, n</i>)</p>
+<p>3. <b>else</b></p>
+<p>4. MODIFIED-SELECT(<i>Arr,i,n</i>)</p>
+<p>MODIFIED-SELECT (<i>Arr</i>, <i>i</i> , <i>n</i>)</p>
+<p>1. <img src=
+"../imgs/b47efb78bd21917f301efc50779e23bd22ccb85a.png"></p>
+<p>2. When <i>n</i> is even then divide array <i>Arr</i> in two
+parts that is <img src=
+"../imgs/ae31711965d7e8a853407e870b0e204900d8680d.png">and
+<img src="../imgs/5d09ccdb5f43720699f062e342fde695b2dd7c78.png">.
+When <i>n</i> is odd then divide array <i>Arr</i> in three parts
+that is<img src=
+"../imgs/ae31711965d7e8a853407e870b0e204900d8680d.png">, <img src=
+"../imgs/e10728cf5ba7742c1b1c1ef19aa2975529ccd369.png">
+and<img src="../imgs/276e6b95c71a276a5f7a5bd64778d964a6bc0e24.png">.</p>
+<p>3. <b>for</b> <img src=
+"../imgs/3beff1ae4c05f9e9b76faf6996c5e328d46b8da6.png"><b>to</b>
+<i>m</i></p>
+<p>4. <b>if</b> <b><img src=
+"../imgs/f73586a228f479e7ea87c56525097cf06e0cf2ef.png"></b></p>
+<p>5. SWAP<img src=
+"../imgs/fb59d53498be04e53fb5c911fc9fedc5c28aeb11.png"></p>
+<p>6. Recursively called the MODIFIED-SELECT algorithm in <img src=
+"../imgs/5d09ccdb5f43720699f062e342fde695b2dd7c78.png"> to find ith
+smallest element. After this the i<sup>th</sup> smallest element of
+<img src="../imgs/d94dd5c5f0f25841ee5eca52f48b98cd7f37c7db.png">
+must be either <img src=
+"../imgs/527d2e77cca57b4746458728ad96ddf8ce7d1013.png"> or<img src=
+"../imgs/ab3ee5592d6e61df6a6e68917d049bcd28f0a13f.png">.</p>
+<p>7. Now, at last collect 2<i>i</i> elements from <img src=
+"../imgs/527d2e77cca57b4746458728ad96ddf8ce7d1013.png">
+and<img src="../imgs/ab3ee5592d6e61df6a6e68917d049bcd28f0a13f.png">,
+and put it in another array<i><img src=
+"../imgs/a2b2df7ca9ebef9d8edb77b9079cc59004420831.png"></i><i>.</i>
+Now call SELECT function to determine i<sup>th</sup> smallest
+element.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Comparison:</b></p>
+<p>• In the first two lines of above algorithm, the array will be
+partitioned into two parts.</p>
+<p>• The line 3-5, performs <i>m</i> comparisons, where<img src=
+"../imgs/b47efb78bd21917f301efc50779e23bd22ccb85a.png"></p>
+<p>• The 6<sup>th</sup> line recursively call itself with elements
+of<img src="../imgs/5d09ccdb5f43720699f062e342fde695b2dd7c78.png">,
+therefore the number of comparisons are <img src=
+"../imgs/e972568fc0d0ae52465fe55faaa42242ffeff031.png">.</p>
+<p>• The last step call the SELECT function with 2<i>i</i>
+elements, therefore the number of comparisons are<img src=
+"../imgs/27004699cb956aa1097a2c4dbdcf454c35c5d253.png">.</p>
+<p>• Hence, the numbers of comparisons in MODIFIED-SELECT
+are<img src=
+"../imgs/3a00e6fb8c9c84b6dc66ae44c27c3416b33b88b0.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b.</b></p>
+<p>According to above stated part (a), if <img src=
+"../imgs/c8504541c55a67826c9dc10128f1ff3e0893b1fc.png">, the
+numbers of comparison in MODIFIED-SELECT are:</p>
+<p><img src=
+"../imgs/0b94d6aea418d11a2f7ddc28072a833abfcece6f.png"></p>
+<p>Put <img src=
+"../imgs/e972568fc0d0ae52465fe55faaa42242ffeff031.png">value
+recursively in <img src=
+"../imgs/d901ea377fedc64ea473d57474db47ea80049b6f.png">by replacing
+<img src="../imgs/4c14fb8a9c39d7afbc75deb00962d0bc7d01b451.png">
+with <img src=
+"../imgs/e95083273fabdf9ce6e15a53680b058c56c32a51.png"></p>
+<p><img src=
+"../imgs/3e9ac3e2fab74da8fab4537ee744571f5a5b1a40.png"></p>
+<p>Put <img src=
+"../imgs/71fb9091717df1d0d680d7eaba6d383716a7222d.png"> in the
+above equation by replacing <img src=
+"../imgs/e95083273fabdf9ce6e15a53680b058c56c32a51.png"> with
+<img src=
+"../imgs/663214704275c33889041758057d1362029864f4.png"></p>
+<p><img src=
+"../imgs/953fb493dc05c3a73f9bf1cd6f37682846a79010.png"></p>
+<p>Do this recursively <i>k</i> times.</p>
+<p>Then <img src=
+"../imgs/d901ea377fedc64ea473d57474db47ea80049b6f.png"> can be
+written as,</p>
+<p><img src="../imgs/f6dfbb01e381679054cb578bf105a9290ad597c3.png">
+…… (1)</p>
+<p>From the definition of <i>i</i>th smallest element, the
+comparisons stop when the size of the array partition is equal to
+<i>i</i>. That is, when the size of the partition (<img src=
+"../imgs/033d5359523ada784911d062d88a8969dd539106.png">) is equal
+to <i>i</i>.</p>
+<p><img src=
+"../imgs/647a592fb77e684ba55946c5536a6a5fcd6097df.png"></p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/b73e7e7b49d412f3e79d03cf5768d1d581b9da27.png">
+<p>Therefore,</p>
+<p><img src=
+"../imgs/831370db51755d6a8b2c7d9ae97a9c63d4b0ccb0.png"></p>
+<p>Put this value in equation (1),</p>
+<p><img src=
+"../imgs/7eb4d3ab4c85adccc16d62abb5815312cf61c61c.png"></p>
+<p>From the geometric sum, <img src=
+"../imgs/c7a5859dc0e116a902229188df9af83ba4de933f.png">will be
+almost <i>n</i> and replace <i>n</i> in the above equation.</p>
+<p>Then</p>
+<p><img src=
+"../imgs/73bc60699c80082e4e710df87fbf514fca5393e1.png"></p>
+<p><b>Hence, proved that</b> <b><img src=
+"../imgs/d901ea377fedc64ea473d57474db47ea80049b6f.png"></b>
+<b>is</b> <b><img src=
+"../imgs/2efb2dd0191727a34776dfa621b46e98babed225.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>c.</b></p>
+<p>When value of <i>i</i> is constant then<img src=
+"../imgs/31aea61e0827aeaa9299634def6bc36280405756.png">, also</p>
+<p><img src=
+"../imgs/5f3bfe97aab33d957c92eb71757a6ac8f585a1c7.png"></p>
+<p>As value of <i>i</i> is constant therefore <img src=
+"../imgs/5c26119bff696d452226222d8d56e19e47c5cd2d.png"> is
+constant</p>
+<p><img src=
+"../imgs/2922b50c25e6a87886ee1a7b037109285364ce5e.png"></p>
+<p>Now, put the above values in equation (1), therefore</p>
+<p><img src=
+"../imgs/df82932b31edf6bb48b5936cd198ead6b581f574.png"></p>
+<p><b>Hence, proved that</b> <b><img src=
+"../imgs/d901ea377fedc64ea473d57474db47ea80049b6f.png"></b>
+<b>is</b> <b><img src=
+"../imgs/2d24ac0660a5a669913d06b08aa04c52a14f96cd.png"></b>
+<b>when</b> <i><b>i</b></i> <b>is constant.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>d.</b></p>
+<p>Consider the equation (1) when<img src=
+"../imgs/b4fa2c3f8e33f0caf62ac1e16e87c634fb732281.png">.</p>
+<p><img src=
+"../imgs/73bc60699c80082e4e710df87fbf514fca5393e1.png"></p>
+<p>Here, <img src=
+"../imgs/101ac60a0610bffdd2d8e9d60cae719f479b1091.png">where
+<img src=
+"../imgs/026eab3288bad661ac9daa7288fc6a613dac50d5.png"></p>
+<p><img src=
+"../imgs/438888d56187f9d51cf5684cf50441cef57820a7.png"></p>
+<p><b>Hence, proved that</b> <b><img src=
+"../imgs/d901ea377fedc64ea473d57474db47ea80049b6f.png"></b>
+<b>is</b> <b><img src=
+"../imgs/0487a272014fb96e1d2f525c5c4f0c2eda42f08c.png"></b>
+<b>when</b> <b><img src=
+"../imgs/101ac60a0610bffdd2d8e9d60cae719f479b1091.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Alternative analysis of randomized selection</b></p>
+<p><i><b>a.</b></i> In quick sort two elements <img src=
+"../imgs/068076bc1edc4295c16b0a778e5de5cd1ac39938.png"> and
+<img src=
+"../imgs/a3ad5d7b65c3644160c5723d9eb7d237e6198ae7.png">will be
+compared if they lie in the same partition. In other sense it can
+be said that two elements <img src=
+"../imgs/068076bc1edc4295c16b0a778e5de5cd1ac39938.png"> and
+<img src=
+"../imgs/a3ad5d7b65c3644160c5723d9eb7d237e6198ae7.png">will not be
+compared if they lie in separate partitions. That is two elements
+<img src="../imgs/068076bc1edc4295c16b0a778e5de5cd1ac39938.png">
+and <img src=
+"../imgs/a3ad5d7b65c3644160c5723d9eb7d237e6198ae7.png">will not be
+compared if a pivot element is chosen from the set<img src=
+"../imgs/6ebb610dfacbe5499d695dff5ce9972961c2a15a.png">.</p>
+<p>Now, consider that <img src=
+"../imgs/58c58eddb62678202e2727a2eb92966497172f2f.png">is defined
+as below,</p>
+<p><img src=
+"../imgs/330db45f5ee5ee85bbb2974d07c6be5c2521f500.png"></p>
+<p>It is quite obvious to see that until the pivot element is from
+set<img src=
+"../imgs/58c58eddb62678202e2727a2eb92966497172f2f.png">, each and
+every element of <img src=
+"../imgs/58c58eddb62678202e2727a2eb92966497172f2f.png">will be in
+the same partition and any element of the <img src=
+"../imgs/58c58eddb62678202e2727a2eb92966497172f2f.png">will have
+same probability to be selected as the pivot.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/5c0a2d446dbcbc30d40f90cfdb6b54ec8773275b.png">Probability
+{<img src="../imgs/068076bc1edc4295c16b0a778e5de5cd1ac39938.png">
+or <img src="../imgs/a3ad5d7b65c3644160c5723d9eb7d237e6198ae7.png">
+is the first pivot chosen from<img src=
+"../imgs/06051a8ba1c07b1778003034b46cfd7223efb189.png">}</p>
+<p>= Probability {<img src=
+"../imgs/068076bc1edc4295c16b0a778e5de5cd1ac39938.png"> is the
+first pivot chosen from<img src=
+"../imgs/06051a8ba1c07b1778003034b46cfd7223efb189.png">}</p>
+<p>+ Probability {<img src=
+"../imgs/a3ad5d7b65c3644160c5723d9eb7d237e6198ae7.png">is the first
+pivot chosen from<img src=
+"../imgs/06051a8ba1c07b1778003034b46cfd7223efb189.png">}</p>
+<p>= <img src=
+"../imgs/0b4444e0a93a8065a0ee97fcd40a42483c531fb6.png"></p>
+<img src="../imgs/a4f51f0f1860319b85b4a71f74bfd1f2849e0e77.png">
+<b>… … (1)</b></div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Consider that <img src=
+"../imgs/67247b8bb3fa98ab0f9585b91d9566d927329f28.png"> denote sum
+of the comparisons between elements of array <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png"> when
+finding<img src=
+"../imgs/fff1e3b544ffeea7bef4d4c739079e0e8aee3cb8.png">.</p>
+<p>Total number of comparisons that is <img src=
+"../imgs/fff1e3b544ffeea7bef4d4c739079e0e8aee3cb8.png"> can be
+given by following summation,</p>
+<p><img src=
+"../imgs/9f57623d6e4011f5e045bcf8118f024cf3908a0c.png"></p>
+<p>By linearity of expectation,</p>
+<p><img src=
+"../imgs/1b1bce92fdc3c0c89d4a6f62e93e0262ba786b20.png"></p>
+<p><img src=
+"../imgs/53459256429424cbbbb6ae339f7782e4e7aa8ac3.png"></p>
+<p>Substituting the value of <img src=
+"../imgs/804840beb853abc36d9401533b24f45fde53f43f.png">from
+equation <b>(1)</b> results in,</p>
+<p><img src=
+"../imgs/6e170c04394f47867c8e3bd9caf28055f12ff98e.png"></p>
+<p>In order to solve the <img src=
+"../imgs/f1b86cd783fbd9ddac3ee5d3113a29afab6192ea.png">function its
+needed to divide the summation condition in such a way as in that
+range there will be only one maximum out of the three.</p>
+<p>That is; the sum could be break in three cases:</p>
+<p>1. <img src=
+"../imgs/ad573a3b7a17908f5c4be3d9b53eed34f8e85f29.png"></p>
+<p>2. <img src=
+"../imgs/0df2386f929f142dc375dad39df6c3649f9d0955.png"></p>
+<p>3. <img src=
+"../imgs/a3dde9b23b807c0d1a9b81c029b61886edf47f9b.png"></p>
+<p>Breaking as above the result will be,</p>
+<p><img src=
+"../imgs/a12298912612521924d07af10e1b92aeb59f2f42.png"></p>
+<p>Further simplifying it results in,</p>
+<p><img src=
+"../imgs/8f84eccd22f752dfd4aee4b4a684de3b81aaf01a.png"></p>
+<p>Hence,</p>
+<p><img src="../imgs/ffa2505eb7fa58c471d20268b342b706f104dfca.png">
+<b>… … (2)</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> Since, <img src=
+"../imgs/e07aaf33f86c62c56ec89c9fd91e4e362968e9c4.png"> is a
+fraction that is strictly less than 1. Same way <img src=
+"../imgs/eca115e32031f0bc2a23918720928c2bb92bac0c.png"> is a
+fraction strictly less than 1.</p>
+<p>Therefore,</p>
+<p><img src="../imgs/614b7d2b7ea4778f5e2cdf0b393611012759283c.png">
+is summation of the fraction less than 1 for <img src=
+"../imgs/73bf707f30953087986c08944ca357bb1d2e057a.png">times <b>… …
+(3)</b></p>
+<p><img src=
+"../imgs/4bbdcc83a640227d8fcd5602c204f6513011c3e6.png">is summation
+of the fraction less than 1 for <img src=
+"../imgs/336ee3702867aa81aa8fd11a985708991ad27fca.png">times <b>… …
+(4)</b></p>
+<p>Form <b>(3)</b> and <b>(4)</b>,</p>
+<p><img src="../imgs/38b87717def87136fc023d61f13c832fa30fa82e.png">
+Will always be less than <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> <b>… …
+(5)</b></p>
+<p>Now, consider the first part of summation from equation
+<b>(2)</b>,</p>
+<p><img src=
+"../imgs/abe7b6363471dba2469b61c277c268e4e98dbc01.png"></p>
+<p>Assume that<img src=
+"../imgs/6f3bdf0b908073d4d83d4af0860e323a317c0026.png">. It is
+obvious to get that there can be at max <img src=
+"../imgs/ecb6f5c5344676c2125eb94fcffcbc49ecd54b0e.png">ways for
+<img src="../imgs/9253ecc4189a0f7e045976824a8b54a8a152a473.png">to
+be<img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">.</p>
+<p>Therefore it can be rewritten as</p>
+<p><img src="../imgs/cb22900d4c315fae8fddc93ff3dd640a5bc364d7.png">
+<b>… … (6)</b></p>
+<p><img src=
+"../imgs/ffa2505eb7fa58c471d20268b342b706f104dfca.png"></p>
+<p>From <b>(5)</b> and <b>(6)</b>,</p>
+<p><img src=
+"../imgs/655ec63bb35ec97b8966f9ef054b54aee8d0ba7e.png"></p>
+<p><img src=
+"../imgs/790deb9367a26f3fcc60c8560e79413ae98ef57f.png"></p>
+<p><b>Hence Proved.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i> To prove the following, assuming all elements
+of array <i>A</i> are distinct, RANDOMIZED-SELECT executes in the
+assumed time<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p><b>Proof:</b></p>
+<p>In order to prove that RANDOMIZED-SELECT executes in primarily
+assumed time<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">, there is
+need to apply the Lemma 7.1 for RANDOMIZED-SELECT. To do this
+replace the variable <i>X</i> in the Lemma 7.1(Refer PAGE 182) by
+the randomly selected variable <img src=
+"../imgs/67247b8bb3fa98ab0f9585b91d9566d927329f28.png">as mentioned
+above.</p>
+<p>There fore, the total execution time of RANDOMIZED-SELECT as
+expected is<img src=
+"../imgs/14f210ed9174b7dd0611d1180f4083c6e77015f3.png">which can be
+represented as<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p>Hence, the running time of the RANDOMIZED-SELECT is <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">for the
+distinct elements of array <i>A.</i></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

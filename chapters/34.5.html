@@ -1,0 +1,574 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 34.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In the graphs shown above, it can be seen that sub graph
+<img src="../imgs/882fd6207727af9bb0ead8b8f6d546ffe3e4423e.png"> of
+graph <i>S</i> is isomorphic because it has the existence of the
+graph <i>G</i> and the sub graph <img src=
+"../imgs/4d36ec860c49190b3f6f302540f18ce72897018a.png"> is not.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Sub-graph Isomorphism is a <b>NP-Complete</b> problem.</p>
+<p>• For this decision problem to be classified as NP-Complete
+problem, it must also satisfy both NP and NP-Hard category.</p>
+<p>• To prove this problem as NP-Complete problem, the following
+two things have to be proved:</p>
+<p>i. The decision problem should be in NP category (NP
+category)</p>
+<p>ii. Every problem in NP must be reducible to this decision
+problem in polynomial time (NP-hard category)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof that Sub-graph Isomorphism is in NP category:</b></p>
+<p><b>NP</b> is a set of decision problems such that the solutions
+of these problems can be verified in polynomial time.</p>
+<p>Given a description of graph sub-graph S<sub>1</sub> and the
+mapping between the vertices of the sub-graph S<sub>1</sub> and the
+vertices of the graph G, it takes polynomial time to verify
+S<sub>1</sub> is indeed isomorphic to the graph G.</p>
+<p>The mapping describes which vertices of S<sub>1</sub> correspond
+to which vertices of G. This mapping is represented by the
+function<img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">.</p>
+<p>1. For each edge (u, v) of graph S, if it belongs to
+S<sub>1</sub>, then edge <img src=
+"../imgs/0fd748653a2d65637e33900c107b24042f4edaa9.png">also belongs
+to graph G</p>
+<p>2. Repeat this for each edge of graph S.</p>
+<p>This requires traversing through all the edges of graph S, and
+then for each of these edges, matching is done with the set of
+vertices of S<sub>1</sub> and G.</p>
+<p>So, time complexity should be at most <img src=
+"../imgs/bba34a6bbd08ed46bcc61f6119e421cd970ea4a3.png"></p>
+<p>This is same as <img src=
+"../imgs/6a892b47884d59027697a0c681cb9ef59d8f23e5.png"> for dense
+graphs and <img src=
+"../imgs/ebe10a8af6b2c72ac5d918aa1ca7971a316c3401.png">for sparse
+graphs.</p>
+<p>Thus, it can be seen that sub-graph isomorphism is verified in
+polynomial time.</p>
+<p>Therefore, <img src=
+"../imgs/fe289eb948f827a76d6433a200af7d657e80bfe6.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof that every problem in NP is reducible to Sub-graph
+Isomorphism decision problem (NP-Hard category):</b></p>
+<p>All NP-complete problems belong to the NP category also.
+<b>Clique</b> problem is a known NP-complete problem. By
+definition, all NP problems are reducible to Clique problem. Thus,
+if Clique problem is reducible to the sub graph isomorphism
+problem, then the every NP category problem should also be
+reducible to the sub-graph isomorphism problem.</p>
+<p><b>Clique Problem:</b> It is a NP-complete decision problem in
+which the input is a single graph S and a number k, such that the
+question is to find out whether S contains a complete sub-graph
+with k vertices.</p>
+<p><b>Reduction:</b> Clique problem can be reduced to sub-graph
+isomorphism problem by the following steps:</p>
+<p>1. Create G as a complete graph of k vertices.</p>
+<p>2. CLIQUE (Graph, number) is given an input of S and k.</p>
+<p>If this gives the answer as “yes”, then the graph S must be
+containing a sub-graph S<sub>1</sub> such that the S<sub>1</sub> is
+a k-clique. Since, G is already a k-clique. Therefore, this
+sub-graph is isomorphic.</p>
+<p>The reduction requires having an instance of the CLIQUE which
+accepts a graph and a number. The graph S is copied to it. Copying
+a graph takes <img src=
+"../imgs/8e59d2f44a2503c183447a62e18d58930ea502c7.png">time
+complexity. There needs to be graph G specified which must be a
+complete graph. Writing a complete graph again takes a time
+complexity of<img src=
+"../imgs/ebe10a8af6b2c72ac5d918aa1ca7971a316c3401.png">. Thus, the
+whole reduction is done in polynomial time.</p>
+<p>Since, clique problem is reducible to the sub graph isomorphism
+problem, so every NP category problem must also be reducible to the
+sub-graph isomorphism problem.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Since, it is proved that sub-graph isomorphism problem belongs
+to NP category and that all the NP category problems are reducible
+to sub-graph isomorphism problem, therefore, it is true that
+sub-graph isomorphism problem is a decision problem that is
+<b>NP-complete.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/b06eeb7818ef5629aa3d765314a0a6893d99be29.png">
+<hr>
+<img src="../imgs/cb839f61905a908c9467bec72046787fa0d5d238.png">
+<hr>
+<img src="../imgs/3cc7b5f4d85f60a4d1ad680d154428e12674340c.png">
+<hr>
+<img src="../imgs/8b36247f6bd98425df104781ce41a0feff79571a.png">
+<hr>
+<img src="../imgs/0f172fb9cebbc65f89573dc0aa54d7120c7f9c66.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The 0-1 integer programming problem will be proved as
+NP-complete by using the fact that <img src=
+"../imgs/fb350e0d4738531925d28b8c033b5fbe0a0675aa.png">0-1
+integer-programming problem.</p>
+<p>Now, consider a CNF formula <img src=
+"../imgs/a0ff4a0df4189cbd359ecf4970940f34b4ab12dc.png">that
+contains <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">variables
+and <img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">clauses.
+Now, construction the corresponding matrices <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png">and<img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">are as
+follows:</p>
+<p>• First transform every clause into the inequality and,</p>
+<p>• An expression <img src=
+"../imgs/8994cce8ece0dfb5138a4de3effea3b60d7d36ed.png">and
+<img src="../imgs/994da7ff46f5a47a09fad3dc54cc339a135fc420.png">are
+used to denote every literals depends whether it is a variable or
+its negation which exists in the clause.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider the following examples:</p>
+<p>Here, the CNF formula <img src=
+"../imgs/a0ff4a0df4189cbd359ecf4970940f34b4ab12dc.png">is given
+as<img src="../imgs/80d78cf8403b00b00034e43bb3b4947478a2232c.png">.
+Then, the following will be exists:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><img src=
+"../imgs/aee248432d7c843a44cc6ffc62387a66894ec713.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/5fc1dcb0c3607b7f0d14ee5f78843de5a3362b72.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><img src=
+"../imgs/c4ad8f98d7bd04f04be80a8472c795d0cee2046b.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/5f9aa8aa8f4d21bbadac914013cd5ca017a78baa.png"></p>
+</td>
+</tr>
+</table>
+<p>Then from the above given CNF formula, matrix corresponds to
+<img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">and<img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png">are given
+as:</p>
+<p><img src=
+"../imgs/0d8865d1b49244a6ac701acaf62ae9c523504c11.png">and<img src=
+"../imgs/ed12b70ef4a2c34cfd0b3673c2dd44eecbdd3c6c.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following reduction algorithm:</p>
+<p>FREDUCTION (<img src=
+"../imgs/66aff8d0a2b0ef13f63352526fcfe5083d4369c3.png">)</p>
+<p>1. First performed checking whether the format of <img src=
+"../imgs/66aff8d0a2b0ef13f63352526fcfe5083d4369c3.png">is in 3-CNF
+or not.</p>
+<p>2. If the format is not in 3-CNF then return <img src=
+"../imgs/f9a1f12502f48682e98abc687d2e45975fee2b81.png"></p>
+<p>//for loop is used to iterate through 1 to m, where <img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">is the
+clauses.</p>
+<p>3. <b>for k=1</b> to <b>m</b></p>
+<p>//Assign value zero to the variable NUM</p>
+<p>4. NUM<img src=
+"../imgs/7b69c5e03dcc57b6c2379d1084bf0e3b4aa131d4.png">0;</p>
+<p>5. <b>for i=1</b> to <b>m do</b></p>
+<p>6. <b><img src=
+"../imgs/9d53356b49dcabedcdab32d485e2851da25d58ce.png"></b><b>;</b></p>
+<p>7. <b>for</b> every literals <b>do</b></p>
+<p>8. <b>if</b> <b><img src=
+"../imgs/136056a836a9fdb18f26fa8fbf44410788cf3c22.png"></b><b>then</b></p>
+<p>9. <b><img src=
+"../imgs/89d8c5678b3e702539a0c6912a90d01ad621525b.png"></b><b>;</b></p>
+<p>10. <b>else if</b> <b><img src=
+"../imgs/96ad29fee91b03711087290e6de9f050bb506ffd.png"></b><b>then</b></p>
+<p>11. <b><img src=
+"../imgs/4087a2f645c361265ca6d7115556bb2499a2a4df.png"></b><b>;</b></p>
+<p>12. NUM++;</p>
+<p>13. <b>end if</b></p>
+<p>14. <b>end for</b></p>
+<p>15. <b><img src=
+"../imgs/2097c5828be911cf9813a1a329d917ed643021ac.png"></b><b>;</b></p>
+<p>16. <b>end for</b></p>
+<p>17. <b>retrun</b> <img src=
+"../imgs/d7e061a1c2f892dca6a9bbebb0fecd027a2993c7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Use the algorithm in the above step to find the format of
+<img src=
+"../imgs/a0ff4a0df4189cbd359ecf4970940f34b4ab12dc.png">.</p>
+<p>Now, consider if the format of <img src=
+"../imgs/a0ff4a0df4189cbd359ecf4970940f34b4ab12dc.png">is not in
+3-CNF then <img src=
+"../imgs/f9a1f12502f48682e98abc687d2e45975fee2b81.png">and the
+system has no solution for<img src=
+"../imgs/d4420f5bcd7692c77d4f4adc24dae93d3f9ecd32.png">.</p>
+<p>• In this case, if there exists a truth assignment to <img src=
+"../imgs/e38ea5b2dd9d57e633a2a42fac57ee24f77b1a9f.png">in such way
+that every clause is satisfiable then <img src=
+"../imgs/a0ff4a0df4189cbd359ecf4970940f34b4ab12dc.png">is said to
+be satisfiable.</p>
+<p>• Then, it is true if there exists the values 0, 1 assigned to
+variables <img src=
+"../imgs/e38ea5b2dd9d57e633a2a42fac57ee24f77b1a9f.png">in such way
+that<img src=
+"../imgs/79a80b0ccaed02134ab61c085936d6c4404e1fb7.png">.</p>
+<p><b>Hence, form the above explanation it is proved that “integer
+programming problem is NP-complete”.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The subset-sum problem deals with finding out whether there
+exists a subset from the elements provided such that their sum is
+equal to a specific value.</p>
+<p>Assume <img src=
+"../imgs/ad30aa98f9019769e30b4e901cbf1d5a73ad46a1.png"> is the
+sequence of positive integers.</p>
+<p><i>n</i> is the number of elements in the set <i>A.</i></p>
+<p>Let the required sum of subsets be denoted by <i>t</i> such that
+<i>t</i> &gt; 0.</p>
+<p>Define <img src=
+"../imgs/e05660fb2add430a735f8b1eb6b859ed5d175c79.png"> for all
+<img src="../imgs/ed72a79242293f100354ee2a2102e4eecc2cdbd3.png">
+and <img src=
+"../imgs/750e44766c746f4b6f06a7b0c58e97b0bf00ecdc.png"> to
+calculate whether there is a subset with required sum or not.</p>
+<p>The value of <img src=
+"../imgs/e05660fb2add430a735f8b1eb6b859ed5d175c79.png"> will be
+true only if there is subset of <img src=
+"../imgs/a2cb6075e11facc90814206225dab2c853142768.png"> otherwise
+false.</p>
+<p>So,</p>
+<p><img src="../imgs/21124d92e5b7518246b4203bb1f805450b934cbd.png">
+…… (1)</p>
+<p>This being a Dynamic Programming algorithm, solving for smaller
+problems is done first and it is then used to solve the bigger
+problems.</p>
+<p>From equation (1), the following is observed:</p>
+<p>• <img src=
+"../imgs/c3e001f9bf903970ca7846ff258052c07ab02a7e.png"> will be
+true for all value of <i>i</i></p>
+<p>• <img src=
+"../imgs/c3e001f9bf903970ca7846ff258052c07ab02a7e.png"> will be
+false for all<img src=
+"../imgs/c93ae324369c5cfa27647382aa045eb1788b678b.png">.</p>
+<p>• For other values<img src=
+"../imgs/fba16a485ebb78334902ebadaa4f56425105e121.png">, it is
+<i>true</i> only if there is a subset of <i>A</i><sub>1</sub><i>,
+A</i><sub>2</sub><i>, A</i><sub>3</sub><i>…. A</i><sub>i-1</sub>
+summing to <i>j</i> or <i>j-A</i><sub>i</sub>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Thus, the term <img src=
+"../imgs/c6f6d345675803cb436f29c77491c90b2d3e1742.png"> gives the
+final answer to the problem.</p>
+<p>From the above algorithm, it is clear that the running time
+depends on two loops:</p>
+<p>• The value <img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png">increases
+from <i>0</i> to <i>n.</i></p>
+<p>• The value j increases from <i>0</i> to <i>t.</i></p>
+<p>The second loop is contained within the first loop.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In such a scenario, the final time complexity becomes<img src=
+"../imgs/74568628099ff4efdc2f894459b9c427177b5319.png"> where
+<i>n</i> is the number of elements and <i>t</i> is the maximum
+element.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time complexity if the target value</b> <i><b>t</b></i> <b>is
+in unary notation:</b></p>
+<p>Let the number of bits required to represent the maximum number
+<i>t</i> is <i>b.</i></p>
+<p>In case of unary notation, the number of bits required to
+represent the numbers is at most equal to the greatest number which
+is <i>t</i>. This is because <i>t</i> is represented by <i>t</i>
+number of 1s.</p>
+<p>So, number of bits required to represent the numbers is at most
+<i>t.</i> So, <i>b</i> is upper bounded by<img src=
+"../imgs/d6a2db135e95f8e5b22647abb77d4eddead44362.png"> .</p>
+<p>The final complexity becomes<img src=
+"../imgs/bbcbaa2f641c2cfda13b6d1026fc2c89394c0cd4.png">.</p>
+<p><b>Thus, if the target value</b> <i><b>t</b></i> <b>is expressed
+in unary, then the subset-sum problem is solved in polynomial
+time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/fcf2e100daf51dc18c4922cad6f78b5b2981cbb1.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/35e32ffc3a885cd88034712cc35754c80c230719.png">
+<hr>
+<img src="../imgs/7defbaf8bea31672a93e9db53c587e133f4f48b2.png">
+<hr>
+<img src="../imgs/a5e95bc49d741268bca51b47f3f891abf3c96e64.png">
+<hr>
+<img src="../imgs/0b21254599f4f67e57d2ffe0b2ff6b36c1bdc41a.png">
+<hr>
+<img src="../imgs/f44c2dcb2c5aa64cb17403912932d7a4a9c16e85.png">
+<hr>
+<img src="../imgs/34d95e01d4fa2283eebf34a958e58c9a5b8abab8.png">
+<hr>
+<img src="../imgs/c12152c1daf6952468ac644ba932e0a24de130b6.png">
+<hr>
+<img src="../imgs/3e3ced5c9186f1768a89915e36492fede2fe800a.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following decision version of the longest simple
+cycle problem:</p>
+<p>• LONGESTSIMPLECYCLE<img src=
+"../imgs/9630a5ebd7742d76f373cb73b068d524e236db2b.png">: for a
+given integer <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">and an
+undirected graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">, does
+<img src="../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">has
+a simple cycle of length minimum<img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">.</p>
+<p>• Now, to show LONGESTSIMPLECYCLE<img src=
+"../imgs/9630a5ebd7742d76f373cb73b068d524e236db2b.png"> is
+NP-complete, first consider the following definition of
+HAMCYCLE<img src=
+"../imgs/a337d3497573b49342bad209595571d2e8e746a6.png">.</p>
+<p>• HAMCYCLE<img src=
+"../imgs/a337d3497573b49342bad209595571d2e8e746a6.png">: For a
+given undirected graph <img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">does
+<img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">consists a
+Hamiltonian cycle.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>LONGESTSIMPLECYCLE</b> <b><img src=
+"../imgs/9630a5ebd7742d76f373cb73b068d524e236db2b.png"></b>
+<b><img src=
+"../imgs/cdfdcd5e4673809931fe4c6b19f2ded399fc10d2.png"></b>
+<b>:</b></p>
+<p>• Suppose an instance of LONGESTSIMPLECYCLE is denoted
+as<img src="../imgs/9630a5ebd7742d76f373cb73b068d524e236db2b.png">.
+Now, consider the certificate <i>y</i> that consists a sequence of
+vertices.</p>
+<p>• Now, simply scanning performed through the graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">in
+polynomial time to verify that <i>y</i> consists a cycle, length of
+<i>y</i> is <i>k</i> of higher and no vertex in <i>y</i> appears
+more than once.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>HAMCYCLE</b> <b><img src=
+"../imgs/a337d3497573b49342bad209595571d2e8e746a6.png"></b>
+<b><img src=
+"../imgs/34444b742cbd5b1ae26f3d7801ddb2ed10242aab.png"></b>
+<b>LONGESTSIMPLECYCLE</b> <b><img src=
+"../imgs/9630a5ebd7742d76f373cb73b068d524e236db2b.png"></b>
+<b>:</b></p>
+<p>• An instance LONGESTSIMPLECYCLE<img src=
+"../imgs/057e6a8c55c711cfda01ba120fa81bc5594864dd.png"> is
+constructed from the instance of HAMCYCLE<img src=
+"../imgs/a337d3497573b49342bad209595571d2e8e746a6.png">. It can be
+done in polynomial constant time as the instrumentation is
+trivial.</p>
+<p>• Now, the graph <img src=
+"../imgs/eb057486683e941ee82933be694fccb4ed902636.png">consists a
+Hamiltonian cycle, if its longest simple cycle length is equal
+to<img src="../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">.
+It is correct because, if <img src=
+"../imgs/eb057486683e941ee82933be694fccb4ed902636.png">consists a
+Hamiltonian cycle that cycle is a simple path, which consists a
+length<img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">.</p>
+<p>• On the other hand, the length of the longest simple in
+<img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">must be
+strictly less than<img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">if <img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">does not
+consists a Hamiltonian cycle.</p>
+<p><b>Hence, the LONGESTSIMPLECYCLE</b> <b><img src=
+"../imgs/9630a5ebd7742d76f373cb73b068d524e236db2b.png"></b> <b>is
+NP-complete can be concluded from the above proofs.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

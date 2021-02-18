@@ -1,0 +1,850 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 34.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Suppose that a polynomial time taken to solve the
+LONGEST-PATH-LENGTH problem:</b></p>
+<p>Suppose<img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png"> denotes an
+algorithm for LONGEST-PATH-LENGTH problem. Now consider the
+following algorithm <img src=
+"../imgs/c7d9cb6137a46a68a133ab3af4d0f475fcc57fc1.png">to decide
+the LONGEST-PATH.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p><b>Input:</b> The inputs taken are <img src=
+"../imgs/41b170bfe2913301bd7775efd67a1c31f94a9634.png"></p>
+<p><b>Output:</b> Here, the output will be “No” or “Yes”.</p>
+<p>1. <img src=
+"../imgs/288bb51218ebfb3f544042ef5e297599ad3929b9.png"></p>
+<p>2. <img src=
+"../imgs/01f47b0a2951e4151e6cd44d0d0fb3f131bdbbc4.png">;</p>
+<p>3. <b>if</b> <img src=
+"../imgs/f197b0b8db912fedc0ced94c8cec7ed2b4b2c6e2.png"><b>then</b></p>
+<p>4. <b>return</b> “Yes”</p>
+<p>5. <b>else</b></p>
+<p>6. <b>return</b> “No”</p>
+<p>Since, <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png"> denotes an
+algorithm for LONGEST-PATH-LENGTH problem, it takes a polynomial
+time to run. In the above algorithm, <img src=
+"../imgs/c7d9cb6137a46a68a133ab3af4d0f475fcc57fc1.png">simply calls
+the <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">then the
+algorithm <img src=
+"../imgs/c7d9cb6137a46a68a133ab3af4d0f475fcc57fc1.png">will also
+take a polynomial running time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Suppose that a polynomial time taken to decide the
+LONGEST-PATH:</b></p>
+<p>Suppose algorithm <img src=
+"../imgs/c7d9cb6137a46a68a133ab3af4d0f475fcc57fc1.png">takes a
+polynomial time to decide the LONGEST-PATH. Now, consider the
+following algorithm <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">to solve the
+LONGEST-PATH-LENGTH problem.</p>
+<p><b>Algorithm:</b></p>
+<p><b>Input:</b> The inputs taken are <img src=
+"../imgs/4aaba08d20889a09a824fb4f829a5dd70fdc5f50.png"></p>
+<p><b>Output:</b> Here, the output will be the size of the longest
+path exists between the vertices <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">and
+<img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> or
+return -1 if there exists no path between these vertices.</p>
+<p>1. <img src=
+"../imgs/373f94c80ffdad8cd4be704ee9cfafc7c3333ac5.png"></p>
+<p>2. <img src=
+"../imgs/142a4b9af357e552922d44d563e2a47374ed8b4e.png"></p>
+<p>3. <b>while</b> (<img src=
+"../imgs/3ab8caa582b8a272491f4e38873b83c00fafe953.png">) and
+<img src=
+"../imgs/8e6ab33e831a32354a0e0a2d337ebcd1b2844cc2.png">=false</p>
+<p>4. <b>do</b></p>
+<p>5. <img src=
+"../imgs/5d95445f2623567605f162fd5084e2b3a3346135.png"></p>
+<p>6. <b>return</b> <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">;</p>
+<p>Now consider the above algorithm. Here, the algorithm <img src=
+"../imgs/c7d9cb6137a46a68a133ab3af4d0f475fcc57fc1.png">are called
+at most <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">times and
+also some polynomial number of steps. Since, the algorithm<img src=
+"../imgs/c7d9cb6137a46a68a133ab3af4d0f475fcc57fc1.png"> takes a
+polynomial running time, then the algorithm <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">will also be
+run in polynomial time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Hence, from the above explanation, <b>a polynomial time can be
+used to solve the optimization problem LONGEST-PATH-LENGTH if and
+only if LONGEST-PATH</b><b><img src=
+"../imgs/cd60ad6eccc7d24888e194ade4b69c525769d71d.png"></b><b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/cdcc7d0f24ce316d20375aa23d21f63272388260.png">
+<hr>
+<img src="../imgs/08e4ed32f287d00d75a3ad66ac2d9befe0a5352d.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>A formal encoding of directed graphs as binary strings using
+an adjacency matrix representation:</b></p>
+<p>Directed graph<img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png"> is the
+graph in which every edge is represented in the form of arrow from
+one vertex to another, that is edge <img src=
+"../imgs/bd1c53ec28d4a80cfbcdcdafac33e183abb8d47c.png">has an arrow
+from <i>u</i> to <i>v</i>.</p>
+<p>Adjacency-matrix<img src=
+"../imgs/f236e9a264099b11638e05fd8267b7687597247b.png">representation
+of a graph is the representation of graphs in the form of a matrix
+by using 0, if there is no edge between vertices and 1, if there is
+a directed edge from one vertex to another.</p>
+<p><img src=
+"../imgs/b624cf9159d6145399ec95a9b8b895a4f5278f28.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following directed graph G to calculate the formal
+encoding as a binary string:</p>
+<p><img src="../imgs/02f38865b23fa6bb6e9963165b702f48ab5971ca.png"
+alt="D:\Tiffs\all files\2254-34.1-3E.png"></p>
+<p>• To calculate first row of the Adjacency matrix, there is the
+directed edge from 1 to 2 and 1 to 5 vertices, therefore, put the
+value 1 and put 0 for the rest of vertices.</p>
+<p>• For second row, there is the directed edge from 2 to 3 and 2
+to 5 vertices, therefore, put the value 1 of them and put 0 for the
+rest of the vertices.</p>
+<p>• Similarly the complete matrix can be calculated.</p>
+<p>The final Adjacency matrix representation is shown below in the
+form of the binary string:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td>
+<p><b>1</b></p>
+</td>
+<td>
+<p><b>2</b></p>
+</td>
+<td>
+<p><b>3</b></p>
+</td>
+<td>
+<p><b>4</b></p>
+</td>
+<td>
+<p><b>5</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>1</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>2</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>3</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>4</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>5</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+<p>This matrix-form of graph could be encoded as:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 1 0 0&nbsp;1 0 0 1
+0 1 0 0 0 1 0 0 0 1 0 0 0 1 1 1 0</p>
+<p>Taking the square root of the number of bits will return the
+capacity of the square matrix.</p>
+<p><b>Thus, directed graphs can be represented as binary strings
+using an adjacency matrix using</b> <b><img src=
+"../imgs/daf52979597063757d18a56b1859ca2682fdc169.png"></b>
+<b>bits.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>A formal encoding of directed graphs as binary strings using
+an adjacency List representation:</b></p>
+<p>In the adjacency-list form of a graph<img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">with
+directional edges, <img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">numbers of
+lists are created. One list is created for each vertex and for
+every vertex <img src=
+"../imgs/7ff8c02cdbe28ff5f5c72f97ee223515b1b0a0fa.png">is added to
+the list of vertex <i>v</i> if there is an edge from <i>v</i> to
+that vertex.</p>
+<p>Initially, the number of bits required to represent the graph
+using adjacency list seems very high. This is because of the
+following:</p>
+<p>• Each vertex has to be represented in binary for which a list
+of adjacent vertices has to be created.</p>
+<p>• The list for each vertex then consists of the binary
+equivalents representing each adjacent vertex.</p>
+<p>To minimize the number of bits required to encode all this, an
+ASCII text files can be used in which each line number represent a
+vertex, followed by the binary equivalents of the vertices it is
+connected to.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Using the above algorithm to find the adjacency list
+representation of the directed graph G is calculated as (See below
+Figure):</p>
+<p>• List all the vertices connected to a vertex.</p>
+<p>• Now list is stored in an ASCII file</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td></td></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>5</p>
+</td>
+<td></td></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td></td>
+<td></td></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td></td>
+<td></td></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td></tr>
+<tr>
+<td>
+<p>5</p>
+</td>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>3</p>
+</td>
+</tr>
+</table>
+<p>Since, only the edges are represented in binary and the vertex
+doesn’t have to be represented as the line number of the ASCII
+clearly shows the vertices, therefore, the binary representation of
+adjacency list takes space of the order<b><img src=
+"../imgs/10558080807441bb9fdaa553fa92003872594b68.png"></b>. And
+total number of adjacency lists is <img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">.</p>
+<p><b>Thus, directed graphs can be represented as binary strings
+using an adjacency list using</b> <b><img src=
+"../imgs/1a6f5be7e22d9ee8e2ed8ab285086208947a60e6.png"></b>
+<b>lists and a total of</b> <b><img src=
+"../imgs/10558080807441bb9fdaa553fa92003872594b68.png"></b>
+<b>binary strings.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>To prove that the adjacency matrix and the adjacency list
+representations are polynomially related, it has to be shown that
+these representations can be transformed from one form to another
+in polynomial time.</p>
+</div>
+<hr>
+<div class="answer"><b>Conversion of adjacency matrix to adjacency
+list:</b>
+<p>CONVERT_M_TO_L(M):</p>
+<p>1. For every row of the adjacency matrix, repeat the following
+two steps:</p>
+<p>2. Scan from left to right.</p>
+<p>3. Add the column number to the adjacency list if <b>value =
+1</b>.</p>
+<p>Since, 1 represents that there is a link between the two
+vertices, therefore, when 1 is encountered, add the column number
+to the adjacency list.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Conversion of adjacency list to adjacency matrix:</b></p>
+<p>CONVERT_L_TO_M(L):</p>
+<p>1. Initialize the matrix <b>M</b> with all 0’s</p>
+<p>2. Initialize <i>i</i> with the line number, and then for each
+line repeat the following:</p>
+<p>3. If a <img src=
+"../imgs/b93a42e49cf1070aa9a53be3ac353c9021c33159.png">is seen, do
+the following:</p>
+<p>4. Put 1 at <img src=
+"../imgs/aaa3b1c5a636aaecfc15d4dd26e3d967297f9931.png"></p>
+<p>Each entry in the adjacency list corresponds to a link. So
+whenever an entry is encountered, add 1 to the <i>matrix</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The following two observations are made from the above two
+procedures:</p>
+<p>• CONVERT_M_TO_L requires reading the entries of a matrix and
+writing into an ASCII file.</p>
+<p>• CONVERT_L_TO_M requires reading the lines from an ASCII file
+and writing into a matrix.</p>
+<p>Operation involving full read/write of a matrix is usually of
+the order of polynomial time. Typically it is of order<img src=
+"../imgs/982516228f85fd65abad59e2a17f6b9869044581.png">.</p>
+<p>Since, the two representations are transformable to each other
+in polynomial time; therefore, these two representations are
+polynomially related.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>If a problem can be solved by an algorithm in at most
+O(<i>n</i><sup>k</sup>) time for some integer k, then the problem
+is called polynomial-time solvable problem and the algorithm is
+called the polynomial-time algorithm. That is, if <i>n</i> is the
+size of the input to the polynomial algorithm, then the running
+time of the algorithm is the order of a polynomial of <i>n</i>.</p>
+<p>• The dynamic 0-1 knapsack algorithm described in 16.2-2 takes
+<img src="../imgs/6d3f937b41642e29fd791031b2f6028f80a83221.png">
+time to solve the knapsack problem. Where <i>n</i> is the number of
+items and <i>W</i> is the capacity of the knapsack.</p>
+<p>• The dynamic 0-1 knapsack algorithm is not a polynomial time
+algorithm, since the value <i>W</i> is not depends on the input
+size <i>n</i>. That is, we can’t express the algorithm time such
+that <i>nW=n</i><sup>k</sup>, because the length of the <i>W</i> is
+not a polynomial of <i>n</i>.</p>
+<p>• Since the length of the <i>W</i> is proportional to<img src=
+"../imgs/f3950c5c9c6e170853b7bf7db5891942cd0c9d3a.png">, the time
+complexity is <img src=
+"../imgs/4ffdd85b5469d5f7ead2235cef2ff1e400f551f0.png"></p>
+<p>• Here, <img src=
+"../imgs/9da6187476f7ada9b229bbb77c65247e888b3c16.png">is an
+exponential time, but not a polynomial time.</p>
+<p><b>Therefore, the dynamic 0-1 knapsack algorithm is not a
+polynomial-time algorithm, but it is NP-Complete. Also dynamic 0-1
+knapsack algorithm is a pseudo-polynomial time algorithm.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The proof to approach the problem is as follows:</p>
+<p>• Take an input data of size <i>n</i> and keep the count of the
+number of subroutines.</p>
+<p>• The subroutine takes the data of size <i>n</i> as input and
+returns the output.</p>
+<p>• After returning from a subroutine, any other input can be
+given to the next subroutine.</p>
+<p>• Let the subroutine be <img src=
+"../imgs/19881085f3e914a5f0feebe9e781bca71b907874.png"> with the
+input <img src=
+"../imgs/e3cb2a18340637512297f0a0f9f276e6d825b8a2.png"> having
+length as <img src=
+"../imgs/ffad3bbab5deae2c7414c73ba5a0efd19671b73b.png">. Let the
+number of operations performed on the input of size n be <img src=
+"../imgs/ba01c5c7cbd62c6fbc75f35a235a20489df13ed7.png">, where
+<img src="../imgs/64fdade6110e1e860c01a3ba97af831c636ed895.png">
+does not depend on the size of input <i>n</i>.</p>
+<p><b>Using Induction</b>: Let the upper bound be <img src=
+"../imgs/ae49e51efa252f5dbe0495be1b4eb9161aed5470.png">for the
+running time of the algorithm on the input of size <i>n</i>.</p>
+<p>o Then, the total running time of the algorithm for the input of
+size <i>n</i> is given as follows: <img src=
+"../imgs/9a0de637c591d786f8683e38f5e333ce6fa441c2.png"></p>
+<p>o Here, <img src=
+"../imgs/a14848cda3cadebf629d1e0757539480935f257c.png"> does not
+depend upon the value of the input. Let there be a quantity
+<img src="../imgs/14d036151768926188439d1bb79df900791d8dc4.png">
+which does not depend upon the size of input.</p>
+<p>o <b>Base case</b>: For i=1, <img src=
+"../imgs/3be85472f9278b961b5083137fa398cf4ab66a62.png"> the base
+case is proved.</p>
+<p>o <b>Other cases:</b> For i-1, assume that <img src=
+"../imgs/e1b3dfe8fd874df883dd99c252215952d0979410.png">, then the
+output size of the subroutine <img src=
+"../imgs/ddd2e3297f7ded542cc0d95eb081a5964dd48995.png"> is
+<img src="../imgs/087394f261327991da25316d435c69347baeba03.png">,
+so on solving further the input size becomes <img src=
+"../imgs/949febc0d6dfc67bb760bfc2bf362f18043a322d.png">.</p>
+<p>Thus, the total running time becomes:</p>
+<p><img src=
+"../imgs/975d7d5d378b2cc1d679d5b537eac993071bccb1.png"></p>
+<p>Hence, it can be concluded that the algorithm runs in polynomial
+time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To show that a polynomial number of calls to the polynomial time
+subroutine takes exponential time, the approach is as follows:</p>
+<p>Here, the output of the subroutine <img src=
+"../imgs/19881085f3e914a5f0feebe9e781bca71b907874.png"> is twice
+the size of the input and this subroutine is called <i>n</i>
+times.</p>
+<p>Start from the input of size 1 and use the previous output back
+into the subroutine. Each subroutine <img src=
+"../imgs/19881085f3e914a5f0feebe9e781bca71b907874.png"> has the
+running time of <img src=
+"../imgs/74888b8c3777358a0b124436de03f0fb364a8e5c.png">for the
+input of size n. Thus, the final output size will be <img src=
+"../imgs/c095e30d361765ce83d5c633828aa18b7a609f3e.png">.</p>
+<p>Thus, it can be concluded that the algorithm takes exponential
+time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider that <img src=
+"../imgs/add8b05115884c7f9bf63c33c062777ff3095c43.png"> are two
+languages in <i>P</i> and the algorithms<img src=
+"../imgs/5f069df32e2dddfbe4ca9c0c596c9f2e38c8f2cd.png">represents
+the algorithms that are executable in polynomial time. Then for the
+operations on these languages a new algorithm<img src=
+"../imgs/bafed9fcb44a3fb9bb672556f05329805f7ad437.png">is
+constructed that decides these operations as polynomial time. The
+union of two languages<img src=
+"../imgs/add8b05115884c7f9bf63c33c062777ff3095c43.png"> is defined
+as:</p>
+<p><img src=
+"../imgs/5a9a1a8da72d24f51a8f32ca108a57212503afde.png">.</p>
+<p>The algorithm<img src=
+"../imgs/bafed9fcb44a3fb9bb672556f05329805f7ad437.png">for the
+<b>union</b> of two languages is as:</p>
+<p>Algorithm<img src=
+"../imgs/bafed9fcb44a3fb9bb672556f05329805f7ad437.png"></p>
+<p>1. <b>if</b><img src=
+"../imgs/579edaf060be0803c2ac033f51e31a2c94e284d6.png"></p>
+<p>2. <b>return</b> 1</p>
+<p>3. <b>else</b></p>
+<p><b>return</b> 0</p>
+</div>
+<hr>
+<div class="answer">
+<p>• <img src=
+"../imgs/6a659e2883cfe31a26bdd12158b8ba99f5261968.png"></p>
+<p>This is so because we can decide if <img src=
+"../imgs/a0b61d1bddd4b0267d64458b2cb1e717cb9895cc.png"> depending
+on whether <img src=
+"../imgs/66a294d7ab4433ff130453b2048ee5004b007830.png"> and
+then<img src=
+"../imgs/66a294d7ab4433ff130453b2048ee5004b007830.png">; If either
+holds, then <img src=
+"../imgs/a0b61d1bddd4b0267d64458b2cb1e717cb9895cc.png">
+otherwise<img src=
+"../imgs/d3a3b27bb672db670d27c5a6c8022f24cb782569.png">.</p>
+<p>Here two languages <i>L</i><sub>1</sub> and
+<i>L</i><sub>2</sub>, both are in <i>P</i> and a union operation is
+the collection of every element which is present in either
+<i>L</i><sub>1</sub> or <i>L</i><sub>2</sub>. So, a new language,
+which is a collection of the union operation, must be in <i>P</i>
+because every subpart of this language is going to fall in
+<i>P</i>.</p>
+<p>The <b>intersection</b> of two sets contains the common elements
+from both the sets it is as:</p>
+<p><img src=
+"../imgs/620f318d7ec38b97131bc6b226798e89093729f8.png"></p>
+<p>The algorithm<img src=
+"../imgs/bafed9fcb44a3fb9bb672556f05329805f7ad437.png"> for the
+intersection of two languages is as:</p>
+<p>Algorithm<img src=
+"../imgs/bafed9fcb44a3fb9bb672556f05329805f7ad437.png"></p>
+<p>1. <b>if</b> <img src=
+"../imgs/1da34ad5bba11a0ac7d12b1e4e68b52551bbe6f1.png"></p>
+<p>2. <b>return</b> 1</p>
+<p>3. <b>else</b></p>
+<p><b>return</b> 0</p>
+</div>
+<hr>
+<div class="answer">
+<p>• <img src=
+"../imgs/358c9a02a5159324160cba27243a80022a31ae5e.png"></p>
+<p>The above can be concluded when we can decide if <img src=
+"../imgs/66a294d7ab4433ff130453b2048ee5004b007830.png"> and also
+<img src="../imgs/66a294d7ab4433ff130453b2048ee5004b007830.png">;
+If both hold then <img src=
+"../imgs/3798057a9d90ea184d24051c58e8977f443b2a13.png"> otherwise
+<img src=
+"../imgs/69f3c34b58925718f027f34b712ac37b0e4f2b5e.png">.</p>
+<p>Here, two languages <i>L</i><sub>1</sub> and
+<i>L</i><sub>2</sub>, both are in <i>P</i> and an intersection
+operation is the collection of every element which is present in
+both <i>L</i><sub>1</sub> and <i>L</i><sub>2</sub>. So, a new
+language, which is a collection of intersection operation, must be
+in <i>P</i> because every subparts of this language are going to
+fall in <i>P</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the <b>concatenation</b> operation of languages <img src=
+"../imgs/add8b05115884c7f9bf63c33c062777ff3095c43.png">the elements
+from languages <img src=
+"../imgs/75d974b82849020e7ec4358b6987ef9319118fed.png">are appended
+with the elements of language<img src=
+"../imgs/b9fe985688315479baeaaa1a1a1184b0079d081b.png">as:</p>
+<p><img src=
+"../imgs/3a2a9f7c8a47db74743e790d80a8ef0751a850f0.png"></p>
+<p>After the concatenation operation the new language formed is
+<i>z</i> then if the length of this is <i>n</i> then the first
+<i>i</i> elements will be from <img src=
+"../imgs/817597bc995553fca06e637069a205a70a97072c.png">and the next
+<img src="../imgs/7f8e281349b8a741c1c4f731c833663e99d4bc4c.png">to
+<i>n</i> elements from <img src=
+"../imgs/7bb830099342322d9ed21c4bab79bdf02a6abd88.png"> .</p>
+<p>Algorithm<img src=
+"../imgs/555b5c4c8e78d98ed1ab9138b45e9de0001cd69e.png"></p>
+<p>1. <b>for</b> <img src=
+"../imgs/ee71024b21601c5c951fa44cb07f47757486282f.png"></p>
+<p>2. <b>do</b></p>
+<p><b>if</b><img src=
+"../imgs/1af120fc7658406cdc7e96e153a485a0346c1379.png"></p>
+<p>3. <b>return</b> 1</p>
+<p>4. <b>else</b></p>
+<p><b>return</b> 0</p>
+</div>
+<hr>
+<div class="answer">
+<p>• <img src=
+"../imgs/0e595f6bdde07836a8ff880cd201aa7c5ed01e48.png"></p>
+<p>Consider a string <i>x</i> of length <i>n</i>; Denote its
+substring from index <i>i</i> to <i>j</i> by<img src=
+"../imgs/bf0da58837462f2efb7a9ee0a11076e1ce897fb0.png">.Then decide
+for <i>x</i> by deciding whether</p>
+<p><img src="../imgs/6667f029d28ef837385bd0ee0c98b02435fd7dc3.png">
+and <img src=
+"../imgs/4946f2a26dfcb4699718319a216392382a840c25.png"></p>
+<p>For all the <i>n</i> possible values of <i>k</i></p>
+<p>Here, two languages <i>L</i><sub>1</sub> and
+<i>L</i><sub>2</sub>, both are in polynomial time (<i>P</i>) and
+the language formed after concatenation must be in <i>P</i> because
+this operation is similar to the add operation; and two polynomial
+times sum is always polynomial in nature.</p>
+<p>The language <img src=
+"../imgs/072431e60ce3cb6442ebd8e422ed0f705f412d33.png"> is the
+inverse of <i>L</i> which contains the inverse of the elements in
+the language <i>L</i> it is as:</p>
+<p><img src=
+"../imgs/bca23d1b2ad01cbd1401715c08d1b110d0d09153.png"></p>
+<p>After the <b>inverse</b> operation of language <i>L</i> the
+polynomial time algorithm <img src=
+"../imgs/bafed9fcb44a3fb9bb672556f05329805f7ad437.png">for<img src=
+"../imgs/072431e60ce3cb6442ebd8e422ed0f705f412d33.png">is as in
+which the elements contains the inverse of the elements in the
+language <i>L</i>:</p>
+<p>Algorithm<img src=
+"../imgs/555b5c4c8e78d98ed1ab9138b45e9de0001cd69e.png"></p>
+<p>1. <b>if</b> <img src=
+"../imgs/49dec2708748c48c482179f0c0992857a550cedf.png"></p>
+<p>2. <b>return</b> 1</p>
+<p>3. <b>else</b></p>
+<p><b>return</b> 0</p>
+</div>
+<hr>
+<div class="answer">
+<p>• <img src=
+"../imgs/abad9f44a04be2f0967e342acdbea4db118c16ec.png"> since
+<img src=
+"../imgs/e5561bf84c322380b28c49d21806d77626bb4481.png"></p>
+<p>Here, an inverse language contains elements which are the
+inverse of elements of the main language, and these element are in
+<i>P</i>. If the inverse of the elements fall in <i>P</i> then the
+language formed using these inverse elements must fall in
+<i>P.</i></p>
+<p>The <b>Kleene closure</b><img src=
+"../imgs/ed254475f7e96ce63044a0c03fe8be396eea248c.png">of a
+language <i>L</i> contains all the elements that can be generated
+from concatenation operation, the elements of the language and an
+empty string. The polynomial time algorithm for kleene closure of
+the operation is written using the same concept as in the
+concatenation operation.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• <img src=
+"../imgs/41efce80afdfbf63ef26a698bb9ff96a7f475240.png">.</p>
+<p>Showing that the result holds for <img src=
+"../imgs/1f3ae0d0c259e30f2f426cf4d5781ed34ffde05a.png"> for all
+<i>k</i> and Thus for <img src=
+"../imgs/c34bc258632cd8e105079680e1e0f54c580df9bb.png">by using
+induction on <i>k</i> is enough to prove this. Here, <img src=
+"../imgs/1f3ae0d0c259e30f2f426cf4d5781ed34ffde05a.png">is always
+greater than <i>L</i> because it is formed after using the <i>k</i>
+times of concatenation operation of language <i>L</i>, which is in
+<i>P.</i> According to concatenation if both language is in
+<i>P</i> then the language formed by both languages will be in
+<i>P</i>.</p>
+<p><b>Base case step:</b></p>
+<p>If <i>k</i>=0 we only consider the empty language and the result
+is trivial.</p>
+<p><b>Induction step:</b></p>
+<p>Assume that <img src=
+"../imgs/905664b45d4e14b6c901e310360c7cb8096dc172.png"> and
+Consider<img src=
+"../imgs/17bf7e1983e759f1a9cac2faf8e0e942d545347a.png">. According
+to the right hand side, <i>L</i> is a sub-part of
+<i>L</i><sup>k</sup> and if <img src=
+"../imgs/905664b45d4e14b6c901e310360c7cb8096dc172.png">then
+<i>L</i> must be in <i>P.</i>Now, both terms of right hand side,
+that is <img src=
+"../imgs/9584422f33165b6d304d4660a3ee481d256533a0.png">are in
+<i>P</i>, so the combination must be in <i>P</i>.Now, the above
+result on concatenation gives us <img src=
+"../imgs/c0ac5aa2898f4aaba922088c6ddfda5a83ce6b08.png">.</p>
+<p>Hence, the languages in the class <i>P</i> are closed under the
+basic operations in the language.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

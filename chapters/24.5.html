@@ -1,0 +1,348 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 24.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following directed graph of Figure 24.2 provided in
+the text book to find the two shortest-path tree.</p>
+<p>• Shortest path in any directed graph is not unique and it is
+possible to have more than one shortest-path tree with same
+source.</p>
+<p>• Shortest path of any vertex <i>v</i> is updated only when
+shortest path is discovered.</p>
+<p><b>The following is the Figure 1 with first possible
+shortest-path tree:</b></p>
+<p><img src="../imgs/35d2dfc9aa162f977205a5220a5c3e2b96118e96.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\24.9.2015\Ambuj 2254\Image\1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following is the Figure 2 with second possible
+shortest-path tree:</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><img src="../imgs/9d5a58a89d9f4b9e4f1e362f689bc860f3c0a09d.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\24.9.2015\Ambuj 2254\Image\2.png"></p>
+<p>• In Figure-1 and Figure-2 the dark line indicates the shortest
+path between all nodes.</p>
+<p>• All vertices have the minimum weight between one node to
+another node.</p>
+<p>• A shortest path from root <i>s</i> is directed sub graph
+<img src="../imgs/b7052592ca66414f7eb7ef6bc0bba1fb9b073436.png">
+where <img src=
+"../imgs/6ca7f8e40118d1fb8e582aea9265a4bafa15e375.png"> is the
+subset of vertex <img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">and
+<img src="../imgs/d70bd93e4238757079e3c3723521e69a1c966f2d.png"> is
+the subset of edge<img src=
+"../imgs/785d06b44a2a7034681ca36a42913ba51658fb76.png">.</p>
+<p>• <img src=
+"../imgs/6ca7f8e40118d1fb8e582aea9265a4bafa15e375.png"> is the set
+of vertices that is reachable from source <i>s</i>.</p>
+<p>• For all vertexes<img src=
+"../imgs/93860fcc62d00afeba88d5cf7538c2ab88fd4fdf.png">, the unique
+simple path from source to vertex <img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">in graph is
+shortest path from source to destination.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A weighted directed graph <img src=
+"../imgs/f2a8b8010b4100d39a7b44e358d7926df7a5b478.png"> with weight
+function is <img src=
+"../imgs/0eea9d757da716f3b860b7b72becd0c7e411025f.png">and source
+vertex s satisfy the property: for each edge<img src=
+"../imgs/872d6905864f97ca12142818c7b9655420d92606.png">, there is a
+shortest path tree from the source <i>s</i> which contains edge
+(<i>u, v</i>) and there exists more than one shortest path tree
+with source vertex as <i>s</i> which do not contain (<i>u, v</i>)
+in its path.</p>
+<p>Graph <img src=
+"../imgs/f2a8b8010b4100d39a7b44e358d7926df7a5b478.png">is the
+collection of vertices <i>V</i> and edges <i>E</i> or it is the
+pictorial representation of related data in the form of vertices
+and edges.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Graphs are of two types directed graphs that are the graphs in
+which edges are represented with arrow from one vertex to other and
+undirected graphs in which no direction is given.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The property “for each edge<img src=
+"../imgs/872d6905864f97ca12142818c7b9655420d92606.png">, there is a
+shortest path tree from the source <i>s</i> which contains edge
+(<i>u, v</i>) and there exists more than one shortest path tree
+with source vertex as <i>s</i> which do not contain (<i>u, v</i>)
+in its path” cannot be true for acyclic graphs since acyclic graphs
+have unique edges.</p>
+<p><b>Consider the cyclic graphs:</b></p>
+<p><img src="../imgs/c1f69c6cbeeaa4b7591dd5bf1c8e5657caa95485.png"
+alt="C:\Tiiffs\2254-26.1-1E..tif"></p>
+<p><b>Example</b>:</p>
+<p>Consider the edge <img src=
+"../imgs/abb0bdc11a896b8f3ab0ba706c58b8def05f82cd.png">to find the
+path from vertex <i>a</i> to vertex <i>c</i> paths in the graph</p>
+<p><img src="../imgs/ba2d56f79601c28d257e6c1927fdcff463b8fa76.png">
+would be <img src=
+"../imgs/93fdf5c418541ac27092db35a73fadcb73806119.png"></p>
+<p>And without edge <img src=
+"../imgs/abb0bdc11a896b8f3ab0ba706c58b8def05f82cd.png">the path can
+be<img src=
+"../imgs/ba2d56f79601c28d257e6c1927fdcff463b8fa76.png">.</p>
+<p>Both the path <img src=
+"../imgs/33769fdb289f7bb6a5f79ba2a1729d7e7b1a523e.png"> and
+<img src="../imgs/8eb39722261be36bd8a8a51c2f49e68095b8d1cc.png">are
+of same weight ((2+3+3) = 8) so both are shortest paths from vertex
+<i>a</i> to vertex <i>c</i> first contains edge <img src=
+"../imgs/e2286912ac4eae2252f31c1af1742ca4145fd6cd.png">but the
+second does not contains edge <img src=
+"../imgs/e2286912ac4eae2252f31c1af1742ca4145fd6cd.png">hence it
+preserves the property.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/f033a0490847441dd5445855249709d1b0efce77.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Let u be the vertex such that <img src=
+"../imgs/cc8ee526bb18f95c55ed6335ec65120ae732abae.png"> is set to a
+non-NIL value. Then, it is necessary to have s.d&gt;u.d +
+w(u,s).</p>
+<p>Apply INITIALIZE-SINGLE-SOURCE (G, s) for the vertex s such that
+the initial distance d[s] = 0 and the distance to the other
+vertices that is v is infinite, d[v] = <img src=
+"../imgs/a1b6419992059e3a02c5b028ae2f1e3ef4cfaf63.png"> and
+<img src="../imgs/cc8ee526bb18f95c55ed6335ec65120ae732abae.png"> =
+NIL.</p>
+<p>Only if the edge (u, s) is relaxed, then only <img src=
+"../imgs/f55a45ca986aae9b5383f2a94b61605d58b00aab.png"> is set to
+non-NILL value.</p>
+<p>Suppose p is the path from the vertex s to vertex u in the
+shortest path tree and let there exist a cycle C formed by
+following path from s to u such that the edge (u, s) is taken.</p>
+<p>It can be concluded that w(C) = w(p)+w(u, s) = u.d + w(u,
+s)&lt;0 such that a negative weight cycle is formed.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In order to prove, perform induction on the number of
+relaxations. Since, G is initialized by INITIALIZE-SINGLE-SOURCE
+(G, s), the vertex in <img src=
+"../imgs/81713e8f93c169f1b51df9aea9ce2221bb8c0247.png"> is s and
+there exists a path from s to itself.</p>
+<p>For every vertex <img src=
+"../imgs/5153de729f55cef64db355a223fb425e2ff39e22.png"> a path
+exists from s to v in <img src=
+"../imgs/cdca53c0209c85c776a28f7f9a8aa172870e89f8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>On (n+1)st relaxation, if v.d&gt;u.d+w(u, v) and when v is
+relaxed, then perform the changes such that <img src=
+"../imgs/e8970c083cadc6daae438f00362df541fdfdc7ea.png">. If v is
+present in <img src=
+"../imgs/81713e8f93c169f1b51df9aea9ce2221bb8c0247.png"> and there
+exists a path from s to u followed by (u, v) = ( <img src=
+"../imgs/4aab63a7c41966b302bed0d175d7c90c6d466e4a.png">, u), then
+it means that there is a path from s to v in <img src=
+"../imgs/cdca53c0209c85c776a28f7f9a8aa172870e89f8.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/ceae4a4bb8feed14aacb6e9d9fab3cc66f5bea8f.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The negative weight cycle can be reached from the source s and v
+is the first vertex that is reachable from the source s. Let the
+vertices on the path be <img src=
+"../imgs/c1eaf9da3489cd464d9c647da099de00bb1580fd.png"> and there
+exists a path from s to v. Perform the relaxations to the vertex v
+and the shortest path estimate will always decrease from infinity
+because every vertex is encountered for first time.</p>
+<p>Since v is the first vertex that is reachable on the cycle,
+every other vertex will have shortest path estimate set to
+infinity.</p>
+<p>Create the infinite sequence of relaxations by relaxing vertices
+around the vertices. If the vertex <img src=
+"../imgs/72ae1a7612345f1f4335e212c1c1ee60ff6dbeb0.png"> is reached
+and the shortest path estimates are changed for every relaxation
+that have been made easier.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Let the vertices on the cycle be <img src=
+"../imgs/88fd120d5a0c1ad39d4864a41f23bccc8762807e.png">, then
+<img src="../imgs/9319b297751ca83abb3472031e8e549694f9526b.png">
+because the cycle has negative weight.</p>
+<p>Thus, update the shortest path estimate of <img src=
+"../imgs/72ae1a7612345f1f4335e212c1c1ee60ff6dbeb0.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

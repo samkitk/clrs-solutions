@@ -1,0 +1,672 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 34.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/16947b808bb4b4049222b9adcba366cff19d4de9.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Hamiltonian graph:</b> A graph that possesses a Hamiltonian
+cycle is called a Hamiltonian graph. In the absence of a
+Hamiltonian cycle, the graph is called non-Hamiltonian.</p>
+<p><b>Hamiltonian cycle:</b> A Hamiltonian cycle is a circuit or
+cycle that that visits each and every node of a graph exactly
+once.</p>
+<p>• Bipartite graph is a graph in which the vertices can be
+divided into two disjoint sets such that an edge originating in one
+disjoint set always moves into another disjoint set.</p>
+<p><img src="../imgs/e54434d05138e93c9f53301aad22e39f793765da.png"
+alt="D:\Ani\G\2254-34.2-2E.png"></p>
+<p>The above diagram is an example of bipartite graph. The vertices
+are divided into two disjoin sets such that edge from one set
+always moves into vertex of another set.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Owing to the above definition, every vertex has its adjacent
+vertex only in the disjoint set other than its own.</p>
+<p>• So, in a Hamiltonian cycle, the edge must move from one
+disjoint set to another all the time.</p>
+<p>• Eventually, the edge must come back to the original starting
+vertex. This requires equal number of vertices to be present in
+both disjoint sets so that the edge can travel from one disjoint
+set to other and alternate between the two and finally come back to
+the originating vertex.</p>
+<p>So, <img src=
+"../imgs/2417a91b49c9c5efd4264968dc11bc7ccbb6289c.png"></p>
+<p>Since, <img src=
+"../imgs/1712e19ab601c9aa818d34aeeb2763b270c5dfd0.png">, therefore,
+even number of vertices must present in a bipartite graph for it to
+be Hamiltonian. If number of vertices is Odd, then it can’t be
+Hamiltonian.</p>
+<p>Thus, it is proved that an undirected bipartite graph which has
+an odd number of vertices is always non-Hamiltonian.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider HAM–CYCLE = <img src=
+"../imgs/275c81445ecb50a9945595ca93b0b8e57452f48e.png"> and
+HAM–CYCLE <img src=
+"../imgs/2e5aef82a345271cb005efb221d138fcbaf83946.png">.</p>
+<p>For each node, exactly two incident edges participate in the
+cycle.</p>
+<p>Define an algorithm CHECK–HAM–CYCLE<img src=
+"../imgs/b2a33e2b933979bd863fb70000a8636e08b959c2.png"> to find the
+Hamiltonian cycles.</p>
+<p>• The algorithm takes any graph <img src=
+"../imgs/7b49578444c87a3933932d723af8b9ee002d33b4.png">.</p>
+<p>• It should return true if <img src=
+"../imgs/7b49578444c87a3933932d723af8b9ee002d33b4.png"> have a
+Hamiltonian cycle.</p>
+<p>• It should return false if <img src=
+"../imgs/7b49578444c87a3933932d723af8b9ee002d33b4.png"> doesn’t
+have a Hamiltonian cycle.</p>
+<p>• It should be a polynomial–time algorithm.</p>
+<p>Now design another algorithm GENERATE–HAM–CYCLE<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png"> that
+generates the order of a legitimate Hamiltonian cycle of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">if
+exist.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Algorithm CHECK–HAM–CYCLE<img src=
+"../imgs/b2a33e2b933979bd863fb70000a8636e08b959c2.png">:</p>
+<p>1 select a node <img src=
+"../imgs/faeebe36b5cccf194e8b65a97d1b5eed07d8123a.png"></p>
+<p>2 <img src=
+"../imgs/7f939a665bd036f46356fb99bed0c26597d01169.png">is the edges
+incident to the node <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">.</p>
+<p>3 calculate the pair <img src=
+"../imgs/3c7e2131e2839fdefc275bf094c6effd69fdab89.png"> such
+that</p>
+<p><img src="../imgs/5a694d93d6d70dd6a0abccd0efcf4b136e708300.png">
+contains a Hamiltonian cycle.</p>
+<p>4 if Hamiltonian cycle exists then</p>
+<p>5 return true</p>
+<p>6 else</p>
+<p>7 return false</p>
+<p>Clearly, the calculation of Hamiltonian cycle with all possible
+pairs requires polynomial time. So the algorithm is a polynomial
+time algorithm.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Algorithm GENERATE–HAM–CYCLE<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png">:</p>
+<p>1 for each <img src=
+"../imgs/0941cd31430376806c2a2657a53de9b637c2bff1.png"></p>
+<p>2 If CHECK–HAM–CYCLE<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png"> returns
+true then</p>
+<p>3 print the Hamiltonian cycle of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+<p>The above algorithm iterates <img src=
+"../imgs/3c6861fe7c71688a41e32683a9129eeebf98aa30.png"> times and
+calls the algorithm CHECK–HAM–CYCLE<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png"> once per
+iteration. The total running time of the algorithm will be the
+product of <img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">and
+polynomial time which is still a polynomial–time (degree of
+polynomial will be increased by 1).</p>
+<p><b>Therefore, if HAM–CYCLE</b> <b><img src=
+"../imgs/2e5aef82a345271cb005efb221d138fcbaf83946.png"></b> <b>then
+the problem of listing the vertices of a Hamiltonian cycle in order
+is solvable in polynomial–time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>There are lots of problem which does not have any algorithm to
+solve it in a polynomial time. These types of problems are
+categorizes in special type of class called as
+<b>NP-Complete.</b></p>
+<p>Suppose there are two languages <img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png">and
+<img src="../imgs/b97e3b20e653d24beda6f4c19778eb929b00d2c7.png">belongs
+to NP. There also exist 2 non-deterministic decider <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png"> and
+<img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png">such
+that<img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png"> is decided
+by<img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png">and
+<img src="../imgs/b97e3b20e653d24beda6f4c19778eb929b00d2c7.png"> is
+decided by<img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png">in their
+non-deterministic time <img src=
+"../imgs/355635b50740c983b7c154f8e6f5c73c295099e4.png">and
+<img src="../imgs/6709031639e4e752e2306b006cb64a78a3c35297.png">respectively.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Suppose <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">is an input
+to machine <i>M</i> (a non-deterministic poly-time decider). The
+same input is applied to each operation.</p>
+<p><b>Intersection:</b></p>
+<p>1. Run <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">on<img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png"></p>
+<p>//check <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png">accept the
+input</p>
+<p>2. <b>if</b> <b><img src=
+"../imgs/0ac23c7ba0a3a0d59166847c8ffd1710b89e8556.png"></b></p>
+<p>3. Run <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">on<img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png"></p>
+<p>//check <img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png"> also accept
+the input</p>
+<p>4. <b>if</b> <b><img src=
+"../imgs/ad154d29df009c30a612a38547c9e0b6b30379b9.png"></b></p>
+<p>//return accept</p>
+<p>5. <b>return</b> 1</p>
+<p>//reject</p>
+<p>6. <b>return</b> 0.</p>
+<p>In intersection, an input is accepted only when it is accepted
+by both non-deterministic poly-time deciders <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png">
+and<img src="../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png">.
+The total time taken in processing of <i>n</i> long input <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">is <img src=
+"../imgs/2beeab09bdf8f3c726054125edf65e3077c54267.png">.</p>
+<p>This shows that<img src=
+"../imgs/9a52bfb754a3729b9ac90f90f03d5364b61eb754.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Union:</b></p>
+<p>1. Run <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">on<img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png"></p>
+<p>//check <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png">accept the
+input</p>
+<p>2. <b>if</b> <b><img src=
+"../imgs/0ac23c7ba0a3a0d59166847c8ffd1710b89e8556.png"></b></p>
+<p>//return accept</p>
+<p><b>return</b> 1</p>
+<p>3. <b>else</b></p>
+<p>4. Run <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">on<img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png"></p>
+<p>//check <img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png"> also accept
+the input</p>
+<p>5. <b>if</b> <b><img src=
+"../imgs/ad154d29df009c30a612a38547c9e0b6b30379b9.png"></b></p>
+<p>//return accept</p>
+<p>6. <b>return</b> 1</p>
+<p>7. <b>else</b></p>
+<p>//return reject</p>
+<p>8. <b>return</b> 0.</p>
+<p>In union, an input is accepted when it is accepted by any one
+non-deterministic poly-time deciders <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png">
+and<img src="../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png">.
+The total time taken in processing of <i>n</i> long input <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">is<img src=
+"../imgs/2beeab09bdf8f3c726054125edf65e3077c54267.png">.</p>
+<p>This shows that<img src=
+"../imgs/9a52bfb754a3729b9ac90f90f03d5364b61eb754.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Concatenation:</b></p>
+<p>1. At first split the input <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">into 2
+inputs <img src=
+"../imgs/2ba50f1827a977fc96ba49838888b84184ab4164.png">and<img src=
+"../imgs/8757eba2681d6e1dcfa97f180d8aa34e16809146.png">.</p>
+<p>2. Run <img src=
+"../imgs/2ba50f1827a977fc96ba49838888b84184ab4164.png">on<img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png"></p>
+<p>//check <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png">accept the
+input</p>
+<p>3. <b>if</b> <b><img src=
+"../imgs/0ac23c7ba0a3a0d59166847c8ffd1710b89e8556.png"></b></p>
+<p>4. Run <img src=
+"../imgs/8757eba2681d6e1dcfa97f180d8aa34e16809146.png">on<img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png"></p>
+<p>//check <img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png"> also accept
+the input</p>
+<p>5. <b>if</b> <b><img src=
+"../imgs/ad154d29df009c30a612a38547c9e0b6b30379b9.png"></b></p>
+<p>//return accept</p>
+<p>6. <b>return</b> 1</p>
+<p>7. <b>else</b></p>
+<p>//return reject</p>
+<p>8. <b>return</b> 0.</p>
+<p>9. <b>else</b></p>
+<p>//return reject</p>
+<p>10 <b>return</b> 0</p>
+<p>In concatenation, an input <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png"> is split
+into two inputs <img src=
+"../imgs/2ba50f1827a977fc96ba49838888b84184ab4164.png">and<img src=
+"../imgs/8757eba2681d6e1dcfa97f180d8aa34e16809146.png">. An input
+<img src="../imgs/485202619f69696e748edd47318358a46657f5b8.png"> is
+accepted when <img src=
+"../imgs/2ba50f1827a977fc96ba49838888b84184ab4164.png">is accepted
+by any one non-deterministic poly-time deciders <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png"> and
+<img src="../imgs/8757eba2681d6e1dcfa97f180d8aa34e16809146.png">is
+successfully accepted by<img src=
+"../imgs/b3096f77509e81bf2d1b0f430ad7f81c602220f5.png">. The total
+time taken in processing of <i>n</i> long input <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">is<img src=
+"../imgs/2beeab09bdf8f3c726054125edf65e3077c54267.png">.</p>
+<p>This shows that<img src=
+"../imgs/9a52bfb754a3729b9ac90f90f03d5364b61eb754.png">.</p>
+</div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"><b>Kleene Star</b>
+<p>//check input is empty</p>
+<p>1. <b>if</b> <img src=
+"../imgs/3b65a67319c3aaab75080d6c102fa90ef0eb380d.png"></p>
+<p>//return accept</p>
+<p>2. <b>return</b> 1</p>
+<p>3. Select <i>k</i> between <img src=
+"../imgs/84b7fd022056281263dc2d1d6a54d2a49d0c2330.png"></p>
+<p>4. Now, Split <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">into
+<i>k</i> inputs<img src=
+"../imgs/e71eb159ba74e4447826021bdcdd4d2360c9f36e.png">.</p>
+<p>//use for loop to check all inputs</p>
+<p>5. <b>for</b> <b><img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png"></b><b>to</b>
+<i>k</i></p>
+<p>6. Run <img src=
+"../imgs/c57719c83a7c3be3e7514f55396a21767b6f82d7.png">on<img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png"></p>
+<p>//check <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png"> accept the
+input</p>
+<p>7. <b>if</b> <b><img src=
+"../imgs/830b779a1afc97116aedc6a19da1609411f14e14.png"></b></p>
+<p>//return reject</p>
+<p>8. <b>return</b> 0</p>
+<p>//return accept</p>
+<p>9. <b>return</b> 1</p>
+<p>Initially an input <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">is <i>n</i>
+bit long. A single ‘<b>for</b>’ loop is used to process <img src=
+"../imgs/e71eb159ba74e4447826021bdcdd4d2360c9f36e.png"> inputs.
+Non-deterministic poly-time deciders <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png">process the
+each input. The time taken by <img src=
+"../imgs/ff7d7cea3ecf134c71115da2ba5ede0a485b2152.png">in
+processing one input is <img src=
+"../imgs/355635b50740c983b7c154f8e6f5c73c295099e4.png">. Therefore
+the total processing time is<img src=
+"../imgs/ff7fcaecd75a963e7e14d2d4af7dd9b9330020f9.png">.</p>
+<p>This shows that<img src=
+"../imgs/9a52bfb754a3729b9ac90f90f03d5364b61eb754.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>NP under Complement:</b></p>
+<p>Many researcher have studied about the NP problem but they does
+not found any conclusion whether NP class closed under
+complement.</p>
+<p>If <i>P</i> is closed under complement then P=NP. This means NP
+is also closed under complement. If P is not closed under
+complement then NP also does not closed under complement.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Any language <i>L</i> is decidable by an algorithm ‘<i>A’</i>
+only when</p>
+<p>• If there exist an item ‘<i>a</i>’ which belongs to ‘<i>A’</i>
+(<img src="../imgs/a94ed010b30377970bd6dffde0f73ed2ccfad59b.png"> )
+and <i>A (a) = 1.</i></p>
+<p>• If x<img src=
+"../imgs/9ccbeff2e6fa8467fcb4c7cf9bbef3944b5df713.png"> L then A(a)
+= 0</p>
+<p>As per the definition of the NP class, a language <i>L</i>
+belongs to NP only if :</p>
+<p>• There exist a two-input polynomial time algorithm <i>A</i> and
+a constant <i>c</i>.</p>
+<p>• The Language <img src=
+"../imgs/ffefa11a421f71e3bba029d0824da95bc5aa003f.png"></p>
+<p>• Let y be a certificate with |y| = O(|a|<sup>c</sup>) such that
+<i>A(a, b) =1</i></p>
+<p>If the above constraints are satisfied, then the algorithm
+<i>A</i> verifies the language <i>L</i> in polynomial time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Design an algorithm A’, for a language L in NP to decide L in
+times of <img src=
+"../imgs/649016f62eef60372f858355a5bf7ad5e41091f3.png"> for some
+constant k.</p>
+<p><b>Algorithm A’:</b></p>
+<p>For different values of ‘ <i>y</i>’</p>
+<p>If A(a, b) = = 1</p>
+<p>return 1</p>
+<p>else</p>
+<p>return 0</p>
+<p><b>Calculating the running time:</b></p>
+<p>• Number of possible y are 2<sup>|y|</sup></p>
+<p>• Here, |y| = O(|x|<sup>c</sup>)</p>
+<p>• Therefore, numbers of possible y are <img src=
+"../imgs/ea1c61513dcdbe4d11b4922fd228312d8d2fbf4a.png"> .</p>
+<p>• For each y, the algorithms runs <i>A(x, y</i>) once, in
+polynomial time of O(|x|<sup>t</sup>) for some constant t.</p>
+<p>• Therefore, the total running time of the algorithm is
+<img src="../imgs/95678557d2301ff6123882cd019745fb428e0568.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/7fce806159f422ea0401d08594a471a1e222f492.png">
+<hr>
+<img src="../imgs/6cba0dee6957da4b29e15e980e3e26e2ac2fab50.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Hamiltonian Path Problem</b></p>
+<p>Consider a directed acyclic graph having a Hamiltonian path then
+proving by an algorithm takes polynomial time to run for:</p>
+<p><img src=
+"../imgs/9fb0ccbc4880b52a5bec5e5fc9afbe6f7f58a27c.png">.</p>
+<p>Hamiltonian graph is the one which possess the Hamiltonian path
+and Hamiltonian path is the longest path in the graph that is the
+path which contains all the vertices of the graph.</p>
+<p>A directed acyclic graph must have at least one vertex with
+indegree 0. Note that a vertex with indegree 0 must be at the
+beginning of every path and in particular at the start of a
+Hamiltonian path. So if a DAG has two vertices <img src=
+"../imgs/a6ed8ec0d3b0e1b7a90a5e2c1c46fffd70fdebea.png">with
+in-degree 0 then it can’t have a Hamiltonian path since they both
+would have to be at the start of the path.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, suppose that a DAG <i>G</i> does have a Hamiltonian path
+<img src="../imgs/6deead17bc7a9f0b1c77e992d72edaae1112655f.png">
+then node <i>s</i> must be the unique node with indegree 0 in
+<i>G</i> so it can easily be identified. Furthermore<img src=
+"../imgs/2d55f9a38d95aa14ed824e2abe1d9fc7629c1d70.png">must be a
+Hamiltonian path in the DAG <i>G’</i> that results after deleting
+from <i>G</i> vertex <i>s</i> and all of the edges leaving it. From
+above we see that if <i>G’</i> has a Hamiltonian path then it must
+contain a unique vertex s’ with in-degree 0 and s’ is the start of
+Hamiltonian path. From the above discussion the algorithm is
+as:</p>
+<p>1. Create an array in[<i>v</i>] which stores the in-degree of
+vertex <i>v</i></p>
+<p>2. Search for vertex with <img src=
+"../imgs/6e721945f843c2e1418117b582ae29c5227db494.png">and assign
+<i>v</i> to <img src=
+"../imgs/11b937a720539d5e921a8f8827d71d29d9ae379a.png"></p>
+<p>3. If more than one vertex with <img src=
+"../imgs/6e721945f843c2e1418117b582ae29c5227db494.png"></p>
+<p>// if no path found</p>
+<p>4. return ‘NO HAMILTONIAN PATH’</p>
+<p>5. set <img src=
+"../imgs/66309f65b8acd94461edf8eaa476e3da1f269552.png"></p>
+<p>6. for <img src=
+"../imgs/e14b61af71a6087b41803c240734326d093bbe01.png"></p>
+<p>7. <img src=
+"../imgs/573a303e7d12d17ace04c3a346ba22e161644c25.png"></p>
+<p>// NumZeroIn represents the number of nodes with indegree 0.</p>
+<p>8. <img src=
+"../imgs/dbb7ba9ac4236f490867cd220422ac9b6619dd50.png"></p>
+<p>// check each vertex with indegree 0</p>
+<p>9. for all vertices with degree 0 making edges</p>
+<p>10. <img src=
+"../imgs/70fea0c9e7643eba91f8ad25dc1639fae8226e8b.png"></p>
+<p>11. if <img src=
+"../imgs/6e721945f843c2e1418117b582ae29c5227db494.png"></p>
+<p>12. <img src=
+"../imgs/7d3182484eca9f2937801c398b18775658721c4b.png"></p>
+<p>13. <img src=
+"../imgs/345789a5abb31ed1cec511e94a8cf8b81cbec889.png"></p>
+<p>// more than one vertex with indegree 0</p>
+<p>14. if <img src=
+"../imgs/bf5d6f847c7da2d9a219631475a346fccc0e08b3.png"></p>
+<p>15. return “NO HAMILTONIAN PATH”</p>
+<p>16. else</p>
+<p>17. <img src=
+"../imgs/4c15f9e6f4b1ac9176c1e3561691408d73f2220c.png"></p>
+18. return <i>HP</i></div>
+<hr>
+<div class="answer">
+<p>For the creation of an empty array it takes<img src=
+"../imgs/ea0b708cd5eb3a30a4af041141d1ca6508a603d6.png"> time and in
+the second step for the search of each vertex in the graph for
+indegree as 0 it again takes <img src=
+"../imgs/ea0b708cd5eb3a30a4af041141d1ca6508a603d6.png">time. The
+for loop in this algorithm takes time in the form of <img src=
+"../imgs/aef67c29df2d50010767d19e6734e1d0591026f7.png">that is
+<img src=
+"../imgs/ed4ca7ef6a1b3f45be20c793a6cd555c00a2a95b.png">which is a
+polynomial and so this algorithm is the polynomial time algorithm.
+Hence, the algorithm for <img src=
+"../imgs/9fb0ccbc4880b52a5bec5e5fc9afbe6f7f58a27c.png">is the</p>
+<p>polynomial time algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/6f8f23e7523b810ff2fc13395505c93201c6be19.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-10E">
+                <a href="#problem-10E">10E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/5c8140f9b294d3c8ae2c6234b6d200d0e13285cf.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-11E">
+                <a href="#problem-11E">11E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

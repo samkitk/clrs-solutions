@@ -1,0 +1,594 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 28.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/12e8bdcc2847e6d53333c17ec64b6d203ad36bbf.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/b77b072254ced4103b364fe2c256b13322688ea8.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Computing LUP decomposition:</b></p>
+<p>• Consider a matrix A to find the Lower-triangular matrix,
+Upper-triangular matrix and permutation matrix to be
+calculated.</p>
+<p>• Initially find the nonzero element <img src=
+"../imgs/53f6152456fa14390318b04612899df1cdd6a793.png"> from matrix
+A such that the element in first column A (1, 1) is greatest
+value.</p>
+<p>The general equation of LUP decomposition is as follows:</p>
+<p><img src=
+"../imgs/3a346cef5b546a4cc9eac52d9590b2f25b7639bc.png"></p>
+<p>• Now, choose <img src=
+"../imgs/53f6152456fa14390318b04612899df1cdd6a793.png"> such that
+the value of A (1, 1) is greatest value.</p>
+<p>Or,</p>
+<p><img src=
+"../imgs/4f485016179e0f1ecfafc8a1237eb67a13d5903f.png"></p>
+<p>Where <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> is
+<img src="../imgs/78cd9ff9413cfa67733b6b0b35f2b5442ed2171f.png">
+column vector, <img src=
+"../imgs/c63908d47ef3a0a291a163baa9dac3aa1d838383.png">is <img src=
+"../imgs/78cd9ff9413cfa67733b6b0b35f2b5442ed2171f.png"> row vector,
+<img src="../imgs/6580d1b23f8ba3feeaa4bedb815512c2ecbd05b0.png"> is
+a <img src=
+"../imgs/bb79066b23d40717ff35ec8c0e89e6609597f031.png"></p>
+<p>matrix and<img src=
+"../imgs/50e81c434d5566702271dab05af791ab0e902321.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following given equation to solve using LUP
+decomposition:</p>
+<p><img src="../imgs/ecd60f4ac03639525d6589bfac12359297e9f1bc.png">
+…… (1)</p>
+<p>Where</p>
+<p><img src="../imgs/782f7a8ae84bfa30a5b8b6dd3beca0400ec4bb18.png">
+and <img src=
+"../imgs/fec0c83b1cf60853384d89073d9f9b8d4d548982.png"></p>
+<p>• To solve the above equation, it is required to find LUP
+decomposition. That is, for <img src=
+"../imgs/782f7a8ae84bfa30a5b8b6dd3beca0400ec4bb18.png"> ,
+Upper-triangular matrix and Lower-triangular matrix and permutation
+matrix need to be find first.</p>
+<p>• Swap <img src=
+"../imgs/0eb12ae32c996699587d9a5293685d7627638fc0.png"> with
+<img src="../imgs/9f98a86b748644a9c2e95f2a1230a7518a4f1fdf.png"> to
+find the greatest absolute value of A (1, 1).</p>
+<p>So,</p>
+<p><img src=
+"../imgs/a54887827e59ade070ff877b57e737bd9efad8cb.png"></p>
+<p>Now, select the value <img src=
+"../imgs/1f65450e39537a278a94d41273c7c1e7b42023a1.png"> and find
+the value of <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> by using
+<img src="../imgs/5e1596f6bae93f7dca3560974f3d81bb32babae7.png">
+and<img src=
+"../imgs/50e81c434d5566702271dab05af791ab0e902321.png">.</p>
+<p>So,</p>
+<p><img src="../imgs/0c7118711bea8b3f6e8c5f67095f105695621760.png"
+alt="D:\Ani\G\2254-28.1-3E.png"></p>
+<p>• Now, again swap the value of <img src=
+"../imgs/b20cd87626cf8cbed5f183445b5bf6177729250f.png"> with
+<img src="../imgs/0eb12ae32c996699587d9a5293685d7627638fc0.png"> to
+find the greatest absolute value of A (2, 2).</p>
+<p>So,</p>
+<p><img src="../imgs/b4fc2ffacba556d3af6db78d84992170de83cdee.png"
+alt="D:\Ani\G\2254-28.1-3E.png"></p>
+<p>Now, again select the value <img src=
+"../imgs/1f65450e39537a278a94d41273c7c1e7b42023a1.png"> and find
+the value of <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> by using
+<img src="../imgs/5e1596f6bae93f7dca3560974f3d81bb32babae7.png">
+and<img src=
+"../imgs/50e81c434d5566702271dab05af791ab0e902321.png">.</p>
+<p><img src="../imgs/edb54d3cba9e65c4705f097c8422df91de25ca67.png"
+alt="D:\Ani\G\2254-28.1-3E.png"></p>
+<p>• From the above matrix, the Lower Triangular Matrix and Upper
+Triangular Matrix are as follows:</p>
+<p><img src="../imgs/ef5c6d7334463476c3f7355b96fc4c14d055e505.png">
+<img src=
+"../imgs/4f0f39f73535a956aef9680e9b0013372e16f3f5.png"></p>
+<p>• <b>Permutation matrix</b> P is the matrix which has exactly
+one 1 in each row or column and 0 elsewhere.</p>
+<p>Therefore,</p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/563fd4a28020b10d7d67d5288c0aec133b8f1d11.png"></div>
+<hr>
+<div class="answer">
+<p>From the above LUP decomposition, the following matrices are
+obtained:</p>
+<p><img src=
+"../imgs/ef5c6d7334463476c3f7355b96fc4c14d055e505.png"><img src=
+"../imgs/4f0f39f73535a956aef9680e9b0013372e16f3f5.png"><img src=
+"../imgs/563fd4a28020b10d7d67d5288c0aec133b8f1d11.png"></p>
+<p>Now, the given equation can be solved, by solving the following
+two triangular liner systems:</p>
+<p><i>Ly</i>=<i>Pb</i> (Forward substitution)</p>
+<p>And</p>
+<p><i>Ux</i>=<i>y</i> (Back substitution)</p>
+<p><b>Forward substitution:</b></p>
+<p>• Consider the value of <i>L</i>, <i>P</i> and <i>b</i> to
+calculate the value of <i>y</i>.</p>
+<p>Put the value of <i>L</i>, <i>P</i> and <i>b</i> in
+<i>Ly</i>=<i>Pb</i> as follows<i>:</i></p>
+<p><img src=
+"../imgs/f13408249a3da59aaac0d85a19c028c9ee2b466e.png"><img src=
+"../imgs/a5d1d0f5e43ff6286f5332b3f9f96fdd86368be7.png">= <img src=
+"../imgs/50893cb1abff2cb526380fe5aa98c71a0c3bb178.png"><img src=
+"../imgs/7fb67adf50e146621963456b0dd3512f4e3d93a6.png"></p>
+<p>Or,</p>
+<p><img src=
+"../imgs/f13408249a3da59aaac0d85a19c028c9ee2b466e.png"><img src=
+"../imgs/a5d1d0f5e43ff6286f5332b3f9f96fdd86368be7.png">= <img src=
+"../imgs/9bbe18c407bc5b48ff9ede854b98c007bf08e755.png"></p>
+<p>• Now, perform the matrix multiplication and solve the equations
+to obtain
+<i>y</i><sub>1</sub><i>,y</i><sub>2</sub>,<i>y</i><sub>3</sub></p>
+<p><img src=
+"../imgs/d9cdd19ac7ccc173a3cb5393f6e93cac165b81d7.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/d9cdd19ac7ccc173a3cb5393f6e93cac165b81d7.png"></p>
+<p>• Calculate the value of <img src=
+"../imgs/9a2df5454e0d31ee363af3dc168f74e5ebd8075e.png"> by
+substituting the value<img src=
+"../imgs/89c5cceb713bc24b61893a65db70d065cff312f0.png">.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/23db1b464a040f0dbd4688f2391b07dda60402a7.png"></p>
+<p>• Now, put the value of <img src=
+"../imgs/89c5cceb713bc24b61893a65db70d065cff312f0.png"> and
+<img src="../imgs/4adcb3400a9d8a27ff80997374fee5cfaa32ea62.png"> to
+find the value of <img src=
+"../imgs/5f3c9569e7cf93e1059dfe3d1249d650475ebef0.png"> .</p>
+<p>So,</p>
+<p><img src=
+"../imgs/dfd5717abfb8efa38c3431081372706bdf0cbc56.png"></p>
+<p>Hence,</p>
+<p><img src=
+"../imgs/54674379d4632de044d6460bce4137544c7c8f00.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Back substitution:</b></p>
+<p>So consider the values of U and <i>y</i> to calculate the values
+of <i>x</i>.</p>
+<p>Put the value of <i>U</i> and <i>y</i> in <img src=
+"../imgs/b4f33e3cc877fdfad608379f7381622a93cf8bb9.png">as
+follows:</p>
+<p><img src=
+"../imgs/3666655752fbda3f7623ed2ed6024a6de5398699.png">= <img src=
+"../imgs/d96f4d1b2d39dca53dafe948f65f33b3924d253a.png"></p>
+<p>Now, perform the matrix multiplication to compute
+<i>x</i><sub>1</sub><i>, x2,</i> and <i>x3</i></p>
+<p><img src=
+"../imgs/e693c534cfed38a2254c3937ca2cf0a97c75af38.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/38d9b0815f3bc59c7ce23e74032728613be974c0.png"></p>
+<p>• Put the value of <img src=
+"../imgs/0f59a57a0dd36596bf1f0d60b371f89e53286636.png"> to
+calculate the value of <img src=
+"../imgs/86728541025b49ef1a90045e026e85d137d07ed7.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/e966e2a439f1729770ad2e377226b60f53256020.png"></p>
+<p>• Now, find the value of <img src=
+"../imgs/86728541025b49ef1a90045e026e85d137d07ed7.png"></p>
+<p><img src=
+"../imgs/dc0e2feec395363548cc6b691e43d3ebac5a04c4.png"></p>
+<p>• Put the value of <img src=
+"../imgs/0f59a57a0dd36596bf1f0d60b371f89e53286636.png"> and
+<img src="../imgs/0e120978b5a5525d0bc71e81d042cedef4a6732c.png">to
+calculate the value of <img src=
+"../imgs/eaf21336610cc086911810ca301fdab1ea50d295.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/201d876f254057e1efcab1bf73f0771555170c64.png"></p>
+<p>• Now, calculate the value of<img src=
+"../imgs/eaf21336610cc086911810ca301fdab1ea50d295.png">,</p>
+<p><img src=
+"../imgs/13e98a6ba5cfc103c21e7894a60de3161642e494.png"></p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/e1ec2e7324ce499f5eb23220811a725c349b8328.png"></p>
+<p><b>Therefore the solution for the given equation is</b>
+<b><img src=
+"../imgs/e1ec2e7324ce499f5eb23220811a725c349b8328.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>If we consider A is a diagonal matrix, i.e.</p>
+<p><img src=
+"../imgs/ceb132b90477bff065ca83ddbbcaf9be5e36afbb.png"></p>
+<p>The LUP decomposition of the diagonal matrix A is A = IAI where
+I is the identity matrix.</p>
+<p>Then this system is extremely easy to decompose in LU
+matrix.</p>
+</div>
+<hr>
+<div class="answer">
+<p>If a matrix is taken i.e., diagonal then the LUP decomposition
+have no effect on the lower triangular matrix, and no effect on the
+upper triangular matrix.</p>
+<p>Thus, A = LDU where D is the diagonal matrix and L and U are the
+unit matrices which are triangular which means that they are
+identity matrices</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A <i>LU</i> decomposition of a permutation matrix <i>A</i> means
+that the matrix <i>A</i> is the decomposition of a lower triangular
+matrix (L) and an upper triangular matrix (U)</p>
+<p>Let there be 3 matrices: <i>P</i> (inverse matrix), <i>A</i>
+(permutation matrix), <i>LU</i> (identity matrix)</p>
+<p>and PA=LU</p>
+<p>A <i>LU</i> decomposition looks like:</p>
+<p><img src=
+"../imgs/284f7c3e5f8f1d8f5b79afa5186349ae32bd50d6.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>• <i>A</i> is the non-singular matrix and possesses an inverse
+<img src="../imgs/0114a4b63c76497dc391565d7e0539a88afd0307.png">and
+U is the upper triangular matrix that has non-zero elements at its
+diagonals. The computation of the LUP decomposition has the
+advantage that the linear system of equations can be solved more
+easily as the matrices <i>L</i> and <i>U</i> are triangular.</p>
+<p>• Let there be some non-zero elements off the diagonal in
+<i>L</i> which is the lower triangular matrix, which means
+<img src="../imgs/b1580cd7cced889d34fc52fda820bc3ab75c955e.png">for
+i<img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png">j.</p>
+<p>• In the matrix <i>LU,</i> there is a non-zero entry both at the
+row <i>i</i> and the column <i>j</i>.</p>
+<p>• Since, there are more than one non-zero entries in the matrix
+<i>LU</i> so it cannot be transformed into a permutation matrix by
+permuting the rows.</p>
+<p>• Similarly, the matrix <i>U</i> cannot have any zero entries at
+the diagonals.</p>
+<p>• Since, the permutation matrix <i>A</i> only has one as its
+non-zero entries and its purpose is to avoid dividing by 0 and
+<i>LU</i> is the identity matrix(<i>I</i>). This means:</p>
+<p>PA=I …… (Since, PA=LU)</p>
+<p><img src=
+"../imgs/3280d475b8a001d2ac3c6abb2a0514e12a84eb31.png">P=<img src=
+"../imgs/bb0a3ae3fe6c418dede5634d17438381642aec60.png"></p>
+<p>This shows that the decomposition is unique.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>LU DECOMPOSITION</b>:</p>
+<p>LU decomposition is a procedure for decomposing or factorizing
+a<img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrix.</p>
+<p><img src=
+"../imgs/e97bef504db92c82d3af381502cf9406f7da55e4.png"></p>
+<p>For example:</p>
+<p><img src=
+"../imgs/24284de2a4ef13b0f44fcd2721ff6404f9c5b41f.png"></p>
+<p>It is decomposed into two parts, upper triangular matrix
+<i>U</i> which has 0s below the diagonal and lower triangular
+matrix <i>L</i> which has 0s above the diagonal. As the
+decomposition is there by applying the properties of matrix, there
+will be no change in the result of the matrix.</p>
+<p>We have to show that for all<img src=
+"../imgs/675481490cddc337f9f2ef48ad409b7fa0ca3486.png">, there
+exists a singular<img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrix that
+has an LU Decomposition.</p>
+</div>
+<hr>
+<div class="answer">
+<p>A singular matrix is a square matrix (<img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrix)
+which does not have inverse. A matrix is singular matrix if and
+only if its determinant is zero.</p>
+<p>For considering such a matrix, we take a matrix shown below:</p>
+<p>For <img src=
+"../imgs/5c50dabb770f8d038aa39ed9c9e0224f78c9a291.png">matrix,</p>
+<p><img src=
+"../imgs/3c9d95bbd95901d1dde63884a56a6548a7ce902e.png"></p>
+<p>One way to solve for <i>LU,</i> using the linear equation:</p>
+<p><img src=
+"../imgs/f07acd4aa8cd5aa061c49fece7131294d940481d.png"></p>
+<p>Now taking a singular matrix (determinant is zero and does not
+have inverse),</p>
+<p><img src=
+"../imgs/e1ca899d0d99056f197ded6b5ac9ce510d62fe0b.png"></p>
+<p><img src=
+"../imgs/f345311aa2120a3ea7b20c544ae87d4d2dca191e.png"></p>
+<p><img src=
+"../imgs/168b014913c47c50c879ca342a95ed65bf6a9ea0.png"></p>
+<p>After solving the above equations, one possible solution that
+comes out is:</p>
+<img src=
+"../imgs/5f714937966a54ac1d45567ac6fe561009ef56c1.png"></div>
+<hr>
+<div class="answer">
+<p>For a<img src=
+"../imgs/fdf4fa7b73986c78ad9cf761ac0afea7e273bfa7.png">matrix,</p>
+<p><img src=
+"../imgs/e97bef504db92c82d3af381502cf9406f7da55e4.png"></p>
+<p><img src=
+"../imgs/47b4df8b74560aca30b92cacfc9111ccfee1d124.png"></p>
+<p>Step wise process to convert the matrix in <i>LU</i>
+decomposition form:</p>
+<p>Consider the LU-DECOMPOSITION (A) algorithm and its process
+given in the book.</p>
+<p><img src=
+"../imgs/57f302d976dd6ad26c580f3b080acc0d313296ac.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For <img src=
+"../imgs/e5008297c60728180923cc30deec187fb99524e7.png">matrix (a
+singular matrix),</p>
+<p><img src=
+"../imgs/4b6a74f09add9d6d193f523a86075ca9fe860048.png"></p>
+<p>Now, the above matrix performs an LU decomposition, whose
+resultant is shown as (either use the above method or here diagonal
+elements are zero; so during the decomposition only gives the
+alternate combination of 0 and 1 on diagonal of <i>L</i> and
+<i>U</i>):</p>
+<p><img src=
+"../imgs/014f00f9acfc9a2addd90725d34730e4af3309dd.png"></p>
+<p><img src=
+"../imgs/b0947939bb4291b3246b48cad3086af1b93a851a.png"></p>
+<p>Thus, similarly for all <img src=
+"../imgs/675481490cddc337f9f2ef48ad409b7fa0ca3486.png">there exists
+a singular<img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png">matrix that
+has LU decomposition.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><i><b>LU</b></i> <b>DECOMPOSITION</b></p>
+<p><i>LU</i> decomposition is a procedure for decomposing or
+factorizing a <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrix.</p>
+<p><img src=
+"../imgs/e97bef504db92c82d3af381502cf9406f7da55e4.png"></p>
+<p>It is decomposed into two parts, upper triangular matrix
+<i>U</i> which has 0s below the diagonal and lower triangular
+matrix <i>L</i> which has 0s above the diagonal.</p>
+<p>To perform <i>LU</i> decomposition, a process called Gaussian
+elimination is performed. This is basically used for finding the
+determinant of matrix or for inverting a matrix</p>
+<p>In <i>LU</i> decomposition algorithm, after making the lower and
+upper matrix of given matrix, the following algorithm is
+followed:</p>
+<p>Consider the <i>LU</i>-DECOMPOSITION from the text book and here
+are the loops of that algorithm;</p>
+<p><b>for</b> <i>k</i> = 1 to <i>n</i></p>
+<p><i>u</i><sub>kk</sub> = <i>a</i><sub>kk</sub></p>
+<p><b>for</b> <i>i</i> = <i>k</i>+1 to <i>n</i></p>
+<p><i>l</i><sub>ik</sub> = <i>a</i><sub>ik</sub> /
+<i>u</i><sub>kk</sub></p>
+<p><i>u</i><sub>ki</sub> = <i>a</i><sub>ki</sub></p>
+<p><b>for</b> <i>i</i> = <i>k</i>+1 to <i>n</i></p>
+<p><b>for</b> <i>j</i> = <i>k</i>+1 to <i>n</i></p>
+<p><i>a</i> <sub>ij</sub> = <i>a</i><sub>ij</sub> –
+<i>l</i><sub>ik</sub>.<i>u</i><sub>kj</sub></p>
+<p><b>return</b> <i>L</i> and <i>U</i></p>
+<p>The loop will be executed <i>n</i> times for <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png"> matrix. For
+updating the matrix, the loop should trace all the elements of
+matrix. This is possible only when the value of loop will iterate
+till <img src=
+"../imgs/99bee66217938c92618618fb2da047332d888790.png">.</p>
+<p>So, there is necessity of outermost <b>for</b> loop iteration
+when<img src=
+"../imgs/99bee66217938c92618618fb2da047332d888790.png">.</p>
+<p>Suppose the matrix is of<img src=
+"../imgs/fdf4fa7b73986c78ad9cf761ac0afea7e273bfa7.png">, then the
+value of <i>n</i> is 3. This helps in updating the value of upper
+and lower matrix.</p>
+<p>Within this algorithm the upper and lower matrix are initialized
+before for loop. The rest of the ‘<b>for</b>’ loops will not work;
+when<img src=
+"../imgs/99bee66217938c92618618fb2da047332d888790.png">. It is
+because the values takes by them is<img src=
+"../imgs/96c3ede788593a3a88f479acfe418e7f58f75cc7.png">.</p>
+<p>So the outermost <b>for</b> loop has to be performed otherwise
+the triangular matrix <i>L</i> and triangular matrix <i>U</i> will
+not get updated.</p>
+<p>Due to which time complexity of <i>LU</i> decomposition will
+increase from<img src=
+"../imgs/bc72e212648319a95fdc57d6c317415489556fc9.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>LUP DECOMPOSITION</b>:</p>
+<p>In <i>LUP</i> decomposition we find three <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrices
+namely <i>L</i>, <i>U</i> and <i>P</i> following:</p>
+<p><img src=
+"../imgs/96e2de626c5025e07cec9769f8df59950887b897.png"></p>
+<p>Here,</p>
+<p><i>U</i>= Upper triangular matrix</p>
+<p><i>L</i>= lower triangular matrix</p>
+<p><i>P</i>= Permutation matrix</p>
+<p>This is known as <i>LUP</i> factorization of Matrix
+<i>A</i>.</p>
+<p>In <i>LUP</i> decomposition algorithm, the <i>LU</i> procedure
+has been replaced by recursion of iteration loop. In this algorithm
+the array has been build in such a manner that<img src=
+"../imgs/976f636c23124cf0e3b6860d7523b7339e01d18e.png">. This means
+that the matrix <i>P</i> has a value 1 at <i>i</i><sup>th</sup> row
+and <i>j</i><sup>th</sup> column.</p>
+<p>Consider the <i>LUP</i> algorithm from the text book and here
+are the loops used in that algorithm;</p>
+<p><b>for</b> <i>k</i> = 1 to <i>n</i></p>
+<p><i>p</i> = 0</p>
+<p><b>for</b> <i>i</i> = <i>k</i> to <i>n</i></p>
+<p><b>if</b> |<i>a</i><sub>ik</sub>| &gt; <i>p</i></p>
+<p><i>p</i> = |<i>a</i><sub>ik</sub>|</p>
+<p><i>k’</i> = <i>i</i></p>
+<p><b>if</b> <i>p</i> == 0</p>
+<p><b>error</b> “singular matrix”</p>
+<p>exchange <img src=
+"../imgs/d0e304e7c1caa4c7337408d350512667dd57e1f6.png"> with
+<img src=
+"../imgs/2c94013f047405dd492276f7408b04c8ca1178f5.png"></p>
+<p>The outermost for loop will not work in the case when<img src=
+"../imgs/99bee66217938c92618618fb2da047332d888790.png">.</p>
+<p>Suppose the matrix order is<img src=
+"../imgs/fdf4fa7b73986c78ad9cf761ac0afea7e273bfa7.png">, means the
+value of <i>n</i> is 3. When the value of <i>k</i> is 3, recursion
+process will not re-initialized and therefore the dynamically
+maintained matrix <i>P</i> will not be able to implement the
+code.</p>
+<p>As a result the <i>LUP</i> decomposition will not be performed
+and the above algorithm will fail.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

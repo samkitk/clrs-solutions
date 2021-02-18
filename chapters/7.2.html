@@ -1,0 +1,272 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 7.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d8388a0ac4773d0c8f99b8df0f902ff13b043a5d.png">
+<hr>
+<img src="../imgs/66993eabbcd545bd90eb9bb9b9f535fe72a73851.png">
+<hr>
+<img src="../imgs/a42400c1295332f75296a2c0ac5a59d122dd560a.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In the QUICKSORT procedure, <i>A</i> is an array of <i>n</i>
+elements, <i>p</i> is the first index in the array, and <i>r</i> is
+the last index in the array.</p>
+<p>• All values in the array <img src=
+"../imgs/30b33d12b866d83e4717c32186bdb9b2fb901d47.png"> are the
+same. The QUICKSORT procedure calls the PARTITION procedure every
+time if the condition<img src=
+"../imgs/841a72668f52d90d49767e177a34d183721597a4.png"> is
+satisfied.</p>
+<p>• For each call of PARTITION procedure, the condition <img src=
+"../imgs/4e1db389e62cbbd783ccf848e2053ac815183e51.png"> in the
+PARTITION procedure always satisfies and the variable <i>i</i>
+increments every time. This yields the worst case partitioning.</p>
+<p>• An array looks like sorted in non-descending order when all
+elements in array are the same.</p>
+<p>• If the number of elements in the array is <i>n</i>, <i>p</i> =
+0 and <i>r</i> = <i>n</i> - 1, then the PARTITION procedure returns
+<img src="../imgs/6e3ae7e0a6a1d90d9276998947bf11f5b08d610b.png">
+for the first call, <img src=
+"../imgs/62336ab039e6c87e717441ea201e2268758ff8ea.png"> for the
+second call and so on as the value of pivot index <i>q</i>.</p>
+<p>• Each recursive call of the PARTITION procedure produces two
+sub-problems, one sub-problem contains <img src=
+"../imgs/6e3ae7e0a6a1d90d9276998947bf11f5b08d610b.png"> elements
+and other sub-problem contains 0 elements. And each recursive call
+produces an unbalanced partioning and its cost is <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</p>
+<p>Therefore, the total running time of QUICKSORT procedure is,</p>
+<p><img src=
+"../imgs/9141860062f6212f0ee14b03b14a98c86e7a3f54.png"></p>
+<p>Therefore, the total running time of the QUICKSORT procedure
+when all the elements is,<img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>When the elements are in decreasing order, PARTITION procedure
+performs a ’worst – case partitioning’.</p>
+<p>• At each step, the size of the sub-array is reduced by 1. It
+has the running time of<img src=
+"../imgs/40271ff19cd1e6a10602386ce5c791be41939784.png">.</p>
+<p>• When a subarray <i>A[p..r]</i> in which the elements are
+distinct and are in descending order is given to PARTITION
+procedure, it outputs an empty partition <i>A[p..q-1]</i>, places
+the pivot into <i>A[p]</i> which is originally in <i>A[r]</i> and
+outputs a partition <i>A[p+1..r].</i></p>
+<p>• Thus at each step, it outputs a partition a <i>A[p+1..r]</i>
+which has only one element less than the subarray
+<i>A[p..r]</i>.</p>
+<p>• The recurrence for QUICKSORT becomes <img src=
+"../imgs/f3a0634c4bb56aaeb890cbdd6563982243b0f45c.png">.</p>
+<p><img src=
+"../imgs/3e4450c69d987e4a4aa85968f19c31f9506c8a5c.png"></p>
+<p>Hence the running time of QUICKSORT is<img src=
+"../imgs/47652b9a01b56dde3bdd07ca647eb6fcba0549a2.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The problem of converting time-of-transaction ordering to
+check-number ordering is the problem of sorting almost sorted
+input.</p>
+<p>• The INSERTION-SORT takes <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> time to
+sort an input that is already sorted. Hence, the INSERTION-SORT
+will take <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> to sort an
+input that is almost sorted.</p>
+<p>• The QUICK-SORT takes <img src=
+"../imgs/642d6ebcb1f14248615aeb12b1532f92f47e12a6.png"> time to
+sort an input that is already sorted. Hence, the QUICK -SORT will
+take <img src=
+"../imgs/642d6ebcb1f14248615aeb12b1532f92f47e12a6.png"> to sort an
+input that is almost sorted.</p>
+<p>Hence, it can be concluded by considering the running times that
+for the problem of converting time-of-transaction ordering to
+check-number ordering, performance of INSERTION-SORT is better than
+QUICK-SORT.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/fd39c74c941a4169b2332e4a1ebe7ad6526067e7.png">
+<hr>
+<img src="../imgs/687c201d4e31b48d557706a6b639563f965c2f4b.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In Quicksort, for any random input array the best case occurs
+when an array is split with 0.1 to 0.9 ratio.</p>
+<p>For example, if 9:1 or better split is required then compute the
+values as:</p>
+<p><img src=
+"../imgs/c1defbe1234cc56cf518ed4fd29bc239b53da784.png"></p>
+<p>Probability<img src=
+"../imgs/48d9b77cc36daaa67523443f866f653f9362f6a8.png"></p>
+<p>It means that if the split has the constant that is, <img src=
+"../imgs/a939457349720b8048c8e530f6e4ce3b2597d8a3.png">proportionality,
+then the run time will be <img src=
+"../imgs/3d84f4d0f16ecbf1462ebf5912ee62ca8f73e200.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>It can be shown that for a random input array the probability
+that the partition is better than <img src=
+"../imgs/d9ffb665a79a74c074b85310fdda03bbe69bb4e2.png">to <img src=
+"../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png"> for
+<img src="../imgs/246f79f4c1aa2a926dd2231ecc208eb1510fd8c9.png"> is
+<img src=
+"../imgs/d4f6073dfa4d06cf1622cdaca3064eb75d7b99fc.png">.<img src=
+"../imgs/d4f6073dfa4d06cf1622cdaca3064eb75d7b99fc.png"></p>
+<p>In Randomized Quicksort, for a random input the pivot element
+can be in any position of the array after a partition.</p>
+<p>If the pivot element is within the position <img src=
+"../imgs/b27068f3b20ef0c619613e78f54ad302834fbbe0.png">, then the
+split or the partition is more balanced.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof</b>: The PARTITION produces a split more balanced than
+<img src="../imgs/d9ffb665a79a74c074b85310fdda03bbe69bb4e2.png">to
+<img src="../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">,
+if <img src="../imgs/3d84f4d0f16ecbf1462ebf5912ee62ca8f73e200.png">
+,where <i>m</i> represents the number of entries of the array which
+lie within the range and are less than the other elements of the
+array.</p>
+<p>The probability that on a random input array, PARTITION produces
+a split more balanced than <img src=
+"../imgs/d9ffb665a79a74c074b85310fdda03bbe69bb4e2.png"> to
+<img src="../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png">,
+can be computed as follows:</p>
+<p><img src=
+"../imgs/94ef53f29fd68cea293b57bc2ba76fec1ffc4d19.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

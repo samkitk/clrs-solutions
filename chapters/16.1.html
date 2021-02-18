@@ -1,0 +1,366 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 16.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/db7c57135a4ddd1cf52c6924d46c56126827e653.png">
+<hr>
+<img src="../imgs/4281ffc1e5a9e8df101fec89b7a01048afddb77c.png">
+<hr>
+<img src="../imgs/599dbe8229e02e9510bdb381d108d5de2f910a94.png">
+<hr>
+<img src="../imgs/633f36385d259ff20f58f658711ac196c2a35e30.png">
+<hr>
+<img src="../imgs/b9cfc0fac0b70cff82f1830189503da64179745a.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Suppose s = {<i>a</i><sub>1</sub><i>,
+a</i><sub>2</sub><i>,…,a</i><sub>n</sub>} is a set of activities
+and each <i>a</i><sub>i</sub> = [<i>s</i><sub>i</sub>,
+<i>f</i><sub>i</sub>). Consider that the activities are sorted by
+finish time. Now, the goal is to find the largest possible set of
+non-overlapping of activities by selecting the activities from
+ending instead selecting from beginning.</p>
+<p>Thus, it will become the same if the time is running in reverse
+and the optimal solution is produced. Since, the best-looking
+choice is considered so it is greedy.</p>
+<p>The following is the algorithm that finds optimal solution by
+selecting last activity to start:</p>
+<p><b>Proposed Algorithm</b>:</p>
+<p>GREEDY-ACTIVITY-SELECTOR<img src=
+"../imgs/962380497ad85324c54bb7a75c0fbd93d17fb3fb.png"></p>
+<p>1. <i>n</i>=<i>s.length</i></p>
+<p>2. <i>A</i>={<i>a</i><sub>n</sub>}</p>
+<p>3. <i>k</i> = <i>n</i></p>
+<p>4. <b>for</b> <i>m</i>= <i>n</i>-1 <b>down to</b> 1</p>
+<p>5. &nbsp; &nbsp; <b>if</b> <i>f</i>[<i>m</i>] ≤
+<i>s</i>[<i>k</i>]</p>
+<p>6. &nbsp; &nbsp; &nbsp; <i>A</i>=<i>A</i><img src=
+"../imgs/9bbc5fc918856821003d8b9287209b7b5cd0fbc6.png">{<i>a</i><sub>n</sub>}</p>
+<p>7. &nbsp; &nbsp; &nbsp; &nbsp; <i>&nbsp;k</i> = <i>m</i></p>
+<p>8. <b>return</b> <i>A</i></p>
+<p>• The above algorithm takes starting times and finishing times
+of activities as input. They are sorted by finish time.</p>
+<p>• The algorithm initially selects last activity to start
+first.</p>
+<p>• Then the algorithm scans through the activities in descending
+order and finds a compatible activity to add it to set
+<i>A</i>.</p>
+<p><b>Since, the above algorithm tries to find an optimal solution
+in each stage. This approach is obviously a greedy
+algorithm.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Optimal solution:</b></p>
+<p>Consider <i>s</i><sup>1</sup> is a sub set of
+{<i>a</i><sub>1</sub><i>, a</i><sub>2</sub><i>, …., an</i>}, is an
+optimal solution obtained by the approach that selects the first
+activity to start. <i>s</i><sup>1</sup> can also be obtained by the
+proposed approach. That is, the solution produced by the approach
+that selects first activity to start can also be obtained by the
+proposed approach.</p>
+<p><b>Therefore, the proposed approach also produces an optimal
+solution.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/3ffd22184cf7ea9ed94db9db8cc86a9ff1cf1c2c.png">
+<hr>
+<img src="../imgs/f43ff24a8995dfe3b502c0ec00a2f6f39ebd2a4e.png">
+<hr>
+<img src="../imgs/792a5829a9f0a3ca1f6cb73813a93f663cd700e2.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Solution using GREEDY-ACTIVITY-SELECTOR:</b></p>
+<p>Assume that S be the set of <i>n</i> activities. The
+GREEDY–ACTIVITY–SELECTOR finds a maximum size set <i><img src=
+"../imgs/9fba323d395c397c8011b75f929bd7e0385c6209.png"></i> of
+compatible activities from <i>S.</i></p>
+<p>• Since the activities in the set <i><img src=
+"../imgs/9fba323d395c397c8011b75f929bd7e0385c6209.png"></i> are
+compatible each other, first lecture hall can be allocated to the
+activities in<i><img src=
+"../imgs/9fba323d395c397c8011b75f929bd7e0385c6209.png"></i><i>.</i></p>
+<p>• Run the GREEDY–ACTIVITY–SELECTOR again on <img src=
+"../imgs/449f582d4a4999bf9ebbaf3dc4c23115fe968bf8.png">to find a
+maximum–size set <img src=
+"../imgs/65dc6c09035a5c7207d68283494437a406b5cf1b.png">of
+compatible activities. Since the activities in the set <img src=
+"../imgs/65dc6c09035a5c7207d68283494437a406b5cf1b.png"> are
+compatible to each other, the second lecture hall can be allocated
+to the activities in<img src=
+"../imgs/65dc6c09035a5c7207d68283494437a406b5cf1b.png">.</p>
+<p>• Repeat the above step, until the set S-S<sub>i</sub> is
+empty.</p>
+<p>LECTURE-HALL-SCHEDULER(S)</p>
+<p>1 <i>d</i> =1</p>
+<p>2 <b>while</b> S ≠ <img src=
+"../imgs/406109f74343e8fb894b826b78ba52819c298512.png"></p>
+<p>3 S<sub>d</sub> = GREEDY–ACTIVITY–SELECTOR(<i>s,f</i>)</p>
+<p>4 <b>If</b> S<sub>d</sub> ≠ <img src=
+"../imgs/406109f74343e8fb894b826b78ba52819c298512.png"></p>
+<p>5 Allocate lecture hall <i>d</i> for the activities in the set
+S<sub>d</sub></p>
+<p>6 <i>d</i>= <i>d</i>+1</p>
+<p>7 S= S-S<sub>d</sub></p>
+<p>Where, <i>s</i> and <i>f</i> are the starting and finishing
+times of activities in the set S.</p>
+<p>LECTURE-HALL-SCHEDULER() runs the while loop in <img src=
+"../imgs/9b1d1f14db8b4ad645e10172aa3778edc12d9d62.png">in the worst
+case. And the GREEDY–ACTIVITY–SELECTOR() runs in
+GREEDY–ACTIVITY–SELECTOR(<i>s,f</i>).</p>
+<p><b>Hence the above simple algorithm requires</b> <b><img src=
+"../imgs/dd4f39f79c97ef098dc5afaf6ee4a10eefe4435f.png"></b> <b>time
+in the worst case.</b></p>
+<p><b>Alternative greedy algorithm:</b></p>
+<p>There is a better algorithm that schedules the activities in few
+lecture halls in the<img src=
+"../imgs/5c2da6b3fc73a7f229f03b8a71ca81e3d1fdce5c.png">.</p>
+<p>• Here, the idea is to go through the activities in order of
+start time, and assigning each activity to any lecture hall that
+had already a scheduled activity and it is available at the
+starting time of the activity.</p>
+<p>• If no such lecture hall is found, schedule the activity in a
+new lecture hall. This guarantees that the algorithm uses as few
+lecture halls as possible and all the activities in a lecture hall
+are compatible.</p>
+<p>• Thus, this problem can be compared with the
+<i><b>interval-graph coloring problem.</b></i> In the
+interval-graph coloring problem, all the activities or intervals,
+which are compatible, are colored with the same color such that the
+no two incompatible activities (vertices) have the same color.</p>
+<p>The algorithm will terminate when all the activities are
+scheduled to any one of the lecture hall. Assume S has the
+activities that are sorted by start time.</p>
+<p>LECTURE-HALL-SCHEDULER(S)</p>
+<p>1 <i>k</i> =1 // initially, first activity <i>a</i><sub>1</sub>
+is scheduled in lecture hall <i>H</i><sub>k</sub> =
+<i>H</i><sub>1</sub>.</p>
+<p>2 <b>for</b> <i>i</i> = 2 <b>to</b> <i>n</i></p>
+<p>3 <b>if</b> <i>a</i><sub>i</sub> is compatible with activities
+in some lecture hall H<sub>k</sub></p>
+<p>4 then schedule the activity <i>a</i><sub>i</sub> in the lecture
+hall H<sub>k</sub></p>
+<p>5 <b>else</b></p>
+<p>6 Schedule the activity <i>a</i><sub>i</sub> in the new lecture
+hall H<sub>k</sub> <sub>+1</sub></p>
+<p>7 <i>k</i>= <i>k</i>+1.</p>
+<p><b>Running time</b>:</p>
+<p>The above algorithm schedules all the given activities in few
+lecture halls in <i>O</i> (<i>n</i> log <i>n</i>) time for
+arbitrary times. The algorithm may possibly run in <i>O</i>
+(<i>n</i>) if the times are small integers.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Modification for Activity selection problem:</b></p>
+<p>• In this problem, each activity<img src=
+"../imgs/57ee9c515778d0efcc664429615861a6762382ea.png"> contains
+three variables and <img src=
+"../imgs/83cda31ac7af09c0b30c86614ff5103aabfe4321.png">is the set
+of start times of <img src=
+"../imgs/e3d50243b18b92d94818a1f29d1a959685b28bab.png">activities
+that are to be completed.</p>
+<p>• <img src=
+"../imgs/cd031397a5d3138d4912f8f7ef6e55ee1edcfb1b.png">be the set
+of finish times of <img src=
+"../imgs/e3d50243b18b92d94818a1f29d1a959685b28bab.png"> activities
+that are to be completed and <img src=
+"../imgs/20e394a558a5e9a45ece5295f2e9b810acbb8392.png">be the set
+of all the activity values.</p>
+<p>• The objective of this problem is to choose the activities from
+the set such that the working times of these activities are not
+same and the variable <i>V</i> can have the maximum value.</p>
+<p>• That is, for the set, which contains the final activities
+selected, the sum of the values of the activities in the set should
+be maximum.</p>
+<p>• Greedy Algorithm is dependent on greedy choice.</p>
+<p>• In each step choose greedy optimal choice from set of input
+available.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Activity selection procedure:</b></p>
+<p>• First sort the activity:</p>
+<p>• Sort activity on the basis of their finishing time, such that
+activity which takes less time must be available first.</p>
+<p>• Select least time taking activity and store it.</p>
+<p>• For each activity element:</p>
+<p>• Select next least finishing time activity and store it.</p>
+<p>• The activities are chosen from a set of activity such that
+they can be performed at the same time without any conflict.</p>
+<p>• It means only those activities, which can be done by only one
+person at a time, are selected.</p>
+<p>• The optimal solution for this problem can be found by finding
+the maximum value that could be reached and then by including the
+activities that contributed to it in the solution set.</p>
+<p>• The sub routine <img src=
+"../imgs/a66112ad1c6d473e99cebb0d3569f0c4c3c8b063.png"> = the
+maximum value that can be reached by including activities that end
+only after the <img src=
+"../imgs/4f5635bf4358370dacd54c71ca53963c269a745b.png"> second.</p>
+<p>• Arrange the activities in decreasing order by their finish
+times. Now, either the maximum value could be reached by including
+the <img src=
+"../imgs/4f5635bf4358370dacd54c71ca53963c269a745b.png">activity or
+by including activities after it that do not overlap with the
+<img src="../imgs/4f5635bf4358370dacd54c71ca53963c269a745b.png">
+activity.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p>• Let <i>as[i]</i> be the maximum total value before the time
+<i>i,</i> which is given below:</p>
+<p><img src=
+"../imgs/a079702bbbdffe35ae99702fb83b93ca4c52b621.png"></p>
+<p>• Here, f[] is used for storing finish time, and s[] is used to
+store start time of each activity.</p>
+<p><b>Polynomial time algorithm:</b></p>
+<p>1. FUNCTION ACTIVITY_SELECTION<b>(</b>s<b>,</b> f<b>,</b>
+v<b>)</b></p>
+<p>2. as <b>=</b> <b>{}</b></p>
+<p>3. n <b>=</b> length <b>(</b>s<b>)</b></p>
+<p>4. last <b>=</b> empty</p>
+<p>5. <b>for</b> each i in sorted<b>(</b>list<b>(</b>set<b>(</b>s
+<b>+</b> f<b>))):</b></p>
+<p>6. <b>if</b> last is empty<b>:</b></p>
+<p>7. as<b>[</b>i<b>]</b> <b>=</b> 0</p>
+<p>8. <b>else</b></p>
+<p>9. as<b>[</b>i<b>]</b> <b>=</b> last</p>
+<p>//l is length of s[]</p>
+<p>10. int
+x<b>=</b>find<b>((</b>f<b>[</b>j<b>],</b>s<b>,</b>l<b>)</b></p>
+<p>11. <b>for</b><b>(</b>int
+y<b>=</b>o<b>;</b>y<b>&lt;</b>x<b>;</b>y<b>++)</b></p>
+<p>11. If f<b>[</b>j<b>]</b> <b>&lt;</b> s<b>[</b>i<b>]:</b></p>
+<p>12. as<b>[</b>i<b>]</b> <b>=</b> max<b>(</b>as<b>[</b>i<b>],</b>
+as<b>[</b>s<b>[</b>j<b>]]</b> <b>+</b> v<b>[</b>j<b>])</b></p>
+<p>13. last <b>=</b> as<b>[</b>i<b>]</b></p>
+<p>14. <b>return</b> last</p>
+</div>
+<hr>
+<div class="answer">
+<p>1. FUNCTION
+find<b>(</b>f<b>[</b>j<b>],</b>s<b>,</b>l<b>)</b></p>
+<p>//binary Search would return index</p>
+<p>2. int i<b>=</b>
+binarySearch<b>(</b>s<b>,</b>f<b>[</b>j<b>};</b></p>
+<p>3. <b>return</b> i<b>;</b></p>
+<p>Hence, the time complexity of the algorithm is
+<b>O(nlogn).</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,650 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 29.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Proof of lemma 29.4</b></p>
+<p>Lemma 29.4 states that if <img src=
+"../imgs/72d1fea1142148da3615e9ad69c88738b8c517f4.png"> is the
+standard form of a linear program and <i>B</i> is a set of
+variables, the slack representation of the same would be uniquely
+determined.</p>
+<p>It is to be proved that the same holds for <img src=
+"../imgs/a133bbc91e2686b756bde0b321f820509087094f.png">and<img src=
+"../imgs/202c93aafba3e59a3d553c63858774886d675fa9.png">.</p>
+<p><b>Proof of Identical Slack Form</b></p>
+<p>It can be proved that for <img src=
+"../imgs/a133bbc91e2686b756bde0b321f820509087094f.png">and<img src=
+"../imgs/202c93aafba3e59a3d553c63858774886d675fa9.png">, the slack
+form can be determined uniquely, as below.</p>
+<p>Consider the proof of lemma 29.4 (refer to section 29.3 of the
+textbook). For the basis of contradiction, consider the two slack
+forms for the same set of the basic variables. Suppose that the set
+of basic variables is <i>B</i>. There must be an identical set of
+non-basic variables and that is<img src=
+"../imgs/00068c450f31a40dc0dfbf82ce1caf5258c378b6.png">.</p>
+<p>Now, the slack form for both of the identical and the
+non-identical variables can be written as:</p>
+<p>First slack form:</p>
+<p><img src="../imgs/5fe1d8ec5421f71973be5574e7b9790d91f221a3.png">
+<b>… … (6)</b></p>
+<p><img src="../imgs/77b6b93c93f3a5c3bcb55c25d71ae43b10ae8a4c.png">
+<b>… … (7)</b></p>
+<p>Now, replacing the values as <img src=
+"../imgs/a133bbc91e2686b756bde0b321f820509087094f.png">and<img src=
+"../imgs/202c93aafba3e59a3d553c63858774886d675fa9.png">, the second
+slack form of the same would be as:</p>
+<p><img src="../imgs/04852c9cd1f91c669ce80d23a7208783ee1e18d9.png">
+<b>… … (8)</b></p>
+<p><img src="../imgs/d63936ee06829b8672e97197e12f8f2568cfe469.png">
+<b>… … (9)</b></p>
+<p>Now, subtract the equation <b>(8)</b> from <b>(6)</b> and the
+equation <b>(9)</b> from <b>(7)</b>. This will yield the following
+result:</p>
+<p><img src=
+"../imgs/b22b03bd388c1f0d28fc0f411ec33044a715c658.png"></p>
+<p><img src=
+"../imgs/6eb012f323290ea003d14741905e51cc15129ad4.png"></p>
+<p>This can be further written in the following form:</p>
+<p><img src="../imgs/81378fc3651c66c6b520365eade306951a65f151.png">
+<b>… … (10)</b></p>
+<p>Now, compare the equation <b>(10)</b> with the one that is given
+in the lemma 29.3 (refer to the section 29.3 of the textbook).</p>
+<p>The comparison yields the following simulations:</p>
+<p><img src=
+"../imgs/1c0d9dc516d9285a23d961f0860dfa4a17c98ed9.png"></p>
+<p><img src=
+"../imgs/b7d85f0534cbcf76155d9d9e8c820a683d613b69.png"></p>
+<p><img src=
+"../imgs/202c93aafba3e59a3d553c63858774886d675fa9.png"></p>
+<p><img src=
+"../imgs/a95126114cfd6198a660abbe080cb6113c9de6ce.png"></p>
+<p>The lemma in 29.3 says that the value of <img src=
+"../imgs/9b2631b1652896e221fe789f59326036068ddc63.png">should be 0
+and that makes the following to happen:</p>
+<p><img src=
+"../imgs/83116d00345840c5c1c21263a669b872453720de.png"></p>
+<p>That is,</p>
+<p><img src=
+"../imgs/202c93aafba3e59a3d553c63858774886d675fa9.png"></p>
+<p>According to this result, the following can be speculated. The
+left hand side of the equation <b>(6)</b> and <b>(8)</b> is equal.
+This means the right hand side of the equation would obviously be
+equal to each other.</p>
+<p>Now, the first term of the right hand side of equation
+<b>(6)</b> and equation <b>(8)</b> have already been proved to be
+equal to each other. So, the second term of each one of them should
+be equal to the each other.</p>
+<p>That leads to the result:</p>
+<p><img src=
+"../imgs/4a77f4212f5f786b047a9eb53c00597eec44cf38.png"></p>
+<p>That would mean:</p>
+<p><img src=
+"../imgs/a133bbc91e2686b756bde0b321f820509087094f.png"></p>
+<p>So, this proves that for the two slack forms if,</p>
+<p><img src=
+"../imgs/202c93aafba3e59a3d553c63858774886d675fa9.png"></p>
+<p><img src=
+"../imgs/a133bbc91e2686b756bde0b321f820509087094f.png"></p>
+<p>Then, the slack form can be uniquely determined.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Simplex Procedure</b></p>
+<p><b>Effect of call to PIVOT on the value of</b> <i><b>v</b></i>
+<b>:</b></p>
+<p>Consider the smallest subscript rule which is applied to prevent
+the cycling. Considering the cycles of dictionaries and denote by
+the symbol<img src=
+"../imgs/b2147bcdc1b1969019a34894fa2ceb256640c6b0.png">.</p>
+<p>It is the case of degeneracy of cycle which identifies the same
+basic viable solution. In the case of pivoting of<img src=
+"../imgs/378dd773d8c6fa5a7f949b064de91aa4c0a3ccc5.png"> and
+<img src="../imgs/adfba1735119c88eb792689531fbf3f8ece512fa.png">
+the variables may leave or enter. But as the leaving variable is in
+the basis of<img src=
+"../imgs/378dd773d8c6fa5a7f949b064de91aa4c0a3ccc5.png">, whereas
+the entering variable does not lay in it, so the leaving variable
+enters at least once in the basis of the cycle.</p>
+<p>Hence it can be concluded that in the cycle<img src=
+"../imgs/727a3b55016d347973d16857c06f29f11aa08d46.png"> the
+variables, which can enter or leave the cycle at least once in the
+cycle, exist. These variables are termed as the fickle
+variables.</p>
+<p>Any variable which either leaves or enter the cycles are termed
+as the fickle variables. And if these variables are non-basic then
+the values associated with these basic feasible solution is
+zero.</p>
+<p>As the basic viable solution which is identified in the cycle
+always remains fixed throughout and the fickle variables holds the
+value as 0 in the cycle.</p>
+<p>So consider the dictionary which is associated as,</p>
+<p><img src=
+"../imgs/e4c4f8a1a7877597e7ea6c1b139c6e1a9ee6298d.png"></p>
+<p><img src=
+"../imgs/6c6e8c62d5b563576b0b339c38295e66a1bb2d6b.png"></p>
+<p>In the above equation</p>
+<p><img src=
+"../imgs/62fb00b750544a50c182ebf53c29e1d36f512d8e.png">= leaving
+variable and</p>
+<p><img src=
+"../imgs/d0ee46135a29c48bee3b2607d54bfae1c5af4cbe.png">=entering
+variable</p>
+<p>As the <img src=
+"../imgs/d0ee46135a29c48bee3b2607d54bfae1c5af4cbe.png"> is among
+the fickle variable so <img src=
+"../imgs/78d3bf232a8a77c4ececb9d21ef7d312f3f9ba46.png">and</p>
+<p>Consider <img src=
+"../imgs/bd66aa66a532cc0ee1cde3a897a70a50fb5dea9a.png"> be a
+dictionary in which there is<img src=
+"../imgs/d4e009670ab180b2dbec50e96654bbf88b51cf5a.png"> as entering
+the root.</p>
+<p>It is visibly seen that the entire dictionary in the cycle
+signifies the same basic feasible solution so the value of <i>z</i>
+remains constant.</p>
+<p>Now as the value at the left hand side of the equation remains
+constant, it is obvious that the value of the equation at the right
+side would remain constant.</p>
+<p>There are two terms at the right hand side. The value of the
+second term would remain constant because if any of the individual
+variables go up or down, the addition of the set would always be a
+constant. If that happens, there remains only one more of the
+terms.</p>
+<p>Intuitively, the value of the other term would always be
+constant and that is <i>v</i>.</p>
+<p>So, the value of <i>v</i> would never be decreased when PIVOT is
+invoked in the line 12 of the procedure.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The input linear program to the PIVOT procedure is of the
+form<img src=
+"../imgs/d539e08121ed49c2f368d6f27f3f8a2ac1ce4def.png">.</p>
+<p><b>The following is the PIVOT procedure:</b></p>
+<p>PIVOT <img src=
+"../imgs/d539e08121ed49c2f368d6f27f3f8a2ac1ce4def.png"></p>
+<p>1 //compute the equation’s coefficient for the new basic
+variable<img src=
+"../imgs/6a2b8aad8d2eca53d5219bffc3637080480f219c.png"></p>
+<p>2 Consider<img src=
+"../imgs/388cf64085dfba4286444f6961962053ba851640.png"> to be a new
+<img src=
+"../imgs/a659c01ea9f3d4b772daa28eb5121b5f7d8f06ee.png">matrix</p>
+<p>3 //calculate the value of <img src=
+"../imgs/284fcb5513047194ad5fa4571d5018b86daf541e.png"></p>
+<p>4 <img src=
+"../imgs/e05b1345cef9302dbb36409ff6adb95d2919f689.png"></p>
+<p>5 //loop for all the values of <i>j</i> that are a part of
+<i>N</i> except {<i>e</i>}</p>
+<p>6 <b>for each</b><img src=
+"../imgs/66fbc06242ac24e6feef456059eb6c6d3d2921c9.png"></p>
+<p>7 //calculate the value of <img src=
+"../imgs/688591dbc61e536ea0504411111681209752a459.png"></p>
+<p>8 <img src=
+"../imgs/41c246bcaea5459023bc6c4d4fd20df39417c55b.png"></p>
+<p>9 //update the value of <img src=
+"../imgs/688591dbc61e536ea0504411111681209752a459.png"></p>
+<p>10 <img src=
+"../imgs/a762e3858d4d1c2dcb108feadd0589cf91ed7e1d.png"></p>
+<p>11 //calculate the values for constraints</p>
+<p>12 //loop for all the value of <i>i</i> that are a part of
+<i>B</i> except {<i>l</i>}</p>
+<p>13 <b>for each</b><img src=
+"../imgs/3ef17b753fdce72671976c0557356cccb189d762.png"></p>
+<p>14 //calculate the value of<img src=
+"../imgs/f1eda6a783df3b51f3c26b7c9b593d94daebabb8.png"></p>
+<p>15 <img src=
+"../imgs/9882764d9df86a6dd77a70c632c2d21491648868.png"></p>
+<p>16 //loop for all the values of <i>j</i> that are a part of set
+<i>N</i> except {<i>e</i>}</p>
+<p>17 f<b>or each</b><img src=
+"../imgs/66fbc06242ac24e6feef456059eb6c6d3d2921c9.png"></p>
+<p>18 //calculate the value of <img src=
+"../imgs/b3b1584a6d4f61a905024895b5a1daf72a796944.png"></p>
+<p>19 <img src=
+"../imgs/33cec18f39a0e18f6090f58ae311650a56176c4e.png"></p>
+<p>20 //update the value of <img src=
+"../imgs/b3b1584a6d4f61a905024895b5a1daf72a796944.png"></p>
+<p>21 <img src=
+"../imgs/3ca20cba07f145642144e762420415877ed82d15.png"></p>
+<p>22 //calculate the new version of objective function and
+calculate the value of <img src=
+"../imgs/1757b98cccdec84e13b8b7e3bb0c2653358ec9e4.png"></p>
+<p>23 <img src=
+"../imgs/8e7ed4c79c41a29cdbcbd2af934ee2025332246a.png"></p>
+<p>24 //loop for all the values of <i>j</i> that are a part of set
+<i>N</i> except {<i>e</i>}</p>
+<p>25 <b>for each</b><img src=
+"../imgs/66fbc06242ac24e6feef456059eb6c6d3d2921c9.png"></p>
+<p>26 //calculate the value of <img src=
+"../imgs/647089b396a2d1b32175b89b9807f2f41d3eed35.png"></p>
+<p>27 <img src=
+"../imgs/ea2aa989291b6a04e56b5193481a13fb402ca47b.png"></p>
+<p>28 //update the value of <img src=
+"../imgs/647089b396a2d1b32175b89b9807f2f41d3eed35.png"></p>
+<p>29 <img src=
+"../imgs/fcdec0a60ce3c6221eff2e97e73f72de64fd778f.png"></p>
+<p>30 //calculate the new non-basic variables</p>
+<p>31 <img src=
+"../imgs/f16748fb29585ac82d1833e3732d0f445d9fcdc0.png"></p>
+<p>32 //calculate the new basic variables</p>
+<p>33 <img src=
+"../imgs/619ba630767334190ea0f07120b2f72e37d6c769.png"></p>
+<p>34 //return the new slack from of the linear program</p>
+<p>35 <b>return</b><img src=
+"../imgs/b6397350d60271518e21cac0ec05992898c6553a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The similarity in the input and the output slack
+form:</b></p>
+<p>The PIVOT procedure takes slack form of the linear program as
+input.</p>
+<p>The input is represented by the tuple <img src=
+"../imgs/d539e08121ed49c2f368d6f27f3f8a2ac1ce4def.png">, where
+<i>l</i> is the index of leaving variable <i>x</i><sub>1</sub> and
+<i>e</i> is the index of entering variable<i><img src=
+"../imgs/6a2b8aad8d2eca53d5219bffc3637080480f219c.png"></i>.</p>
+<p>The procedure generates and returns the tuple which is of the
+form<img src=
+"../imgs/100623d3154b447c56099519795340a7f6304f08.png">.</p>
+<p>Show that the slack forms given to the PIVOT procedure, and
+those returned by it, are equivalent. Consider the following three
+conditions:</p>
+<p><img src="../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png">
+denotes the solution which is returned after the call.</p>
+<p>1. <img src=
+"../imgs/b738e5b7c9a25694d9e21dfbc5d6f0f09adf0d3d.png"> for each
+<i>j</i> that belongs to<img src=
+"../imgs/7705beddb1f844d77ec8ace2b1b33bc8d31da1ef.png">.</p>
+<p>2. <img src=
+"../imgs/5a461f61f4d32bab4410aa53af428cad1a85216e.png"></p>
+<p>3. <img src=
+"../imgs/551dfb506edfd31e397138fbfada74f3521e16ce.png"> for
+each<img src=
+"../imgs/936387b3f78dc4080d09bd58f3d9f137bb660635.png">.</p>
+<p>It is enough to prove that the above three statements hold, in
+order to prove that the slack forms given to the PIVOT procedure,
+and those returned by it, are equivalent.</p>
+<p>The first statement holds since the basic solution is available
+which always sets all the non-basic variables to zero.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the calculation process, when all the non-basic variables are
+set to zero in the given constraints, then,</p>
+<p><img src=
+"../imgs/2015598e9353878415220eb9b1015876dcc1584e.png"></p>
+<p>Since<img src=
+"../imgs/69e832ca58873544d9d69ee2e65298bbb3fccec3.png"> , line 4 of
+the PIVOT procedure replaces<img src=
+"../imgs/ec41b945397fc45bb6d06e70664d59aa90fd68cd.png"> with the
+new value to get the new slack form as follows:</p>
+<p><img src=
+"../imgs/991888186fa20d8f00232e2aa2cc2eca612fd6a5.png"></p>
+<p>Here, <img src=
+"../imgs/628db371db1c4b4d26bef3dd51c296616bae5f46.png"></p>
+<p>Hence, the second statement is proved.</p>
+</div>
+<hr>
+<div class="answer">For line 13, <img src=
+"../imgs/4cd58e1092d76b74e41e78f158fe65ea1529a123.png">. Therefore,
+<p><img src="../imgs/14f7667e196a2cbeedd6d7cb3ee390727cdbee86.png">
+and <img src=
+"../imgs/8077c6d6dad4430edec5d18e6a84a93dccb81156.png"></p>
+<p>Hence, the three conditions hold.</p>
+<p><b>Therefore, the slack form that procedure PIVOT takes as
+input, and the slack form that the procedure returns, is
+same.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d9407408c866d5aa0b9f5306efa35a88badd5f45.png">
+<hr>
+<img src="../imgs/97d56163a99e090f446dbea18da8fa3553f8b843.png">
+<hr>
+<img src="../imgs/fbce7d9c827feab09dc0e520b005f0cf984d5ba4.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/6bd07af8f255156a25795501402ba41eb798c582.png">
+<hr>
+<img src="../imgs/3908415dcbd871d296995e92df36ea08fc1ff21b.png">
+<hr>
+<img src="../imgs/e543016771ea385570bfbc8e14c57895de4a0266.png">
+<hr>
+<img src="../imgs/ef1e6be828b46c89241ffec8cb589a63bc7adf38.png">
+<hr>
+<img src="../imgs/f2e40beee825588ce3255b49b44a62204e48cd38.png">
+<hr>
+<img src="../imgs/3aaaed3c5d1a1439c650ef38d91f755ab3c49dd7.png">
+<hr>
+<img src="../imgs/a7ef09ea52ef0cd62aa7012055488242e92679fd.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Optimal value:</b> Optimal value refers to the desired value
+of the linear program. In the current case, the optimal value
+refers to maximizing the problem.</p>
+<p>• A problem is a standard maximizing problem, if it has the
+following characteristics:</p>
+<p>• The objective is to find the maximum of the objective
+function</p>
+<p>• All the variables are non-negative</p>
+<p>• All the constraints are of linear form and less than equal to
+0.</p>
+<p><img src=
+"../imgs/8338ee07532dfbf8b724ad84a74064a942dbadcd.png"></p>
+<p>The given problem satisfies all the above characteristics, so it
+is a standard maximizing problem. To solve it, the following steps
+are followed:</p>
+<p>• Convert the Linear program to a system of linear
+equations.</p>
+<p>• Create the table for the above system of linear equations.</p>
+<p>• If pivoting is possible, then proceed to create new tables as
+long as pivoting can be done.</p>
+<p>The final table gives the optimal solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Step 1: <b>Convert the linear problem to a system of linear
+equations:</b></p>
+<p>The characteristic that each constraint is less than equal to 0
+helps to convert the given problem into a system of linear
+equations. This is done by introducing slack variables. The slack
+variables are added to the inequalities to convert them into
+equalities.</p>
+<p>Even the objective function which is to be maximized is
+presented here.</p>
+<p>The following is the system of linear equations formed:</p>
+<p><img src=
+"../imgs/0f477e97c8f057dbc9804bb881b2a38c50044b2e.png"></p>
+<p>In the above, the <b>slack</b> variables are<img src=
+"../imgs/a89f228f8f3e53c27f0e8e88e0e96449fe33505d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Step 2: <b>Create table for the system of linear
+equations:</b></p>
+<p>The table for the system of linear equations is the
+following:</p>
+<p><b><img src=
+"../imgs/56ad206d2515b83643da75adcbc0d2cd37c56c9f.png" alt=
+"1"></b></p>
+<p>From the above table, it is observed that there are negative
+values in the last row.</p>
+<p>So, pivoting is possible. By the process of pivoting, the
+solution keeps improving until no more pivoting can be done.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Step 3: <b>Pivoting:</b></p>
+<p>Pivoting involves first finding out the pivot using the
+following method:</p>
+<p>• Find out the pivot column.</p>
+<p>• Find out the pivot.</p>
+<p><b>Pivot column:</b> In last row, find out the value (except in
+the Ans column) which is negative and has the highest magnitude.
+The column that contains this element is called the pivot column.
+So, the pivot column is column<img src=
+"../imgs/eaf21336610cc086911810ca301fdab1ea50d295.png">.</p>
+<p><b>Pivot element:</b> Pivot element has the property of being a
+values greater than 0. At this point there are two values 1 and 2
+which are greater than 0. To break the tie, find out the <b>test
+ratio</b>.</p>
+<p><b>Test Ratio:</b> It is the ratio of the value in Ans. Column
+and the candidate for the pivot element.</p>
+<p>The table bellows displays the test ratio of each candidate.</p>
+<p><b><img src=
+"../imgs/cd9e261ee031868e62bbf2081a9a9aa2b07f9217.png" alt=
+"2"></b></p>
+<p>It is found out that the test ratio for both the candidates is
+same. So, any one of it can be chosen as the pivot element. Here 1
+in <i>row1</i> has been chosen as the pivot element.</p>
+<p>After finding out the pivot element, the process of pivoting
+involves performing row operations on the table to create a new
+table where the pivot column has all values equal to zero except
+the pivot element.</p>
+<p>The following row operations have to be performed:</p>
+<p><img src=
+"../imgs/f0785f3188e8b4cf589b935189fcd9de03f38dfe.png"></p>
+<p>The new table is the following:</p>
+<p><b><img src=
+"../imgs/f2b0bf0ff3331910545508cb7ad02af81e40a954.png" alt=
+"3"></b></p>
+<p>From the above table, it is observed that further pivoting is
+possible because the last row of the table has a negative value. It
+is the pivot column. There is only one positive value in that
+column which is 3. So, the pivot element becomes 3. It has been
+clearly shown in the table above.</p>
+<p>Now perform the required row operations to make the different
+values of the pivot column zero except the pivot element
+itself.</p>
+<p>The row operations to be performed are the following:</p>
+<p><img src=
+"../imgs/6bf180c1b6c4baa86c6c04b512ed9f3c8eff4264.png"></p>
+<p>The new table is the following:</p>
+<p><b><img src=
+"../imgs/fbd0c1de43cc2141df254a1d5d31d8580f0ea48f.png" alt=
+"4"></b></p>
+<p>There are no negative values in the last row of the table above.
+Hence, there is no more pivoting to be done. The optimal solution
+can be found from this table as given in the next step.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Step 4: <b>Calculate the optimal solution:</b></p>
+<p>Every table shown till now has a basic solution associated with
+it but all those solutions can be improved further to obtain the
+optimal solution by pivoting. In the previous step, a stage is
+reached from where no more pivoting is possible, so, this final
+table gives the optimal solution.</p>
+<p>To find the optimal solution, the following steps are
+followed:</p>
+<p>• Find out the <b>cleared</b> column.</p>
+<p>• Find out the active variables and inactive variables</p>
+<p>• Find out the value of the active variables.</p>
+<p><b>Cleared column:</b> The columns those contain only one
+non-zero and all others being zero are called cleared columns. In
+the above table, the cleared columns are the columns under<img src=
+"../imgs/a2ee1299ed2dd1084e797a7eedcf88ad99e02d07.png">.</p>
+<p>The variables <img src=
+"../imgs/a2ee1299ed2dd1084e797a7eedcf88ad99e02d07.png"> are called
+the active variables and the rest are the inactive variables.</p>
+<p>Find the ratio of<img src=
+"../imgs/7e826f752c3f920fc73323b4e0ab30a6087af5ae.png">. This gives
+the value of the variable.</p>
+<p>The following table shows the cleared columns, active variables
+and the ratio.</p>
+<p><b><img src=
+"../imgs/fbd0c1de43cc2141df254a1d5d31d8580f0ea48f.png" alt=
+"4"></b></p>
+<p>From the above table, optimal solution is<img src=
+"../imgs/bd16b825c1b101575c06ec0c54b8a03c516e34c2.png">.</p>
+<p><b>Hence, it is seen that the linear program has been maximized
+using the Simplex method with the maximized value being</b>
+5<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/4923a1cbbcf5e4b3adf16c27fffe4fd005097fe1.png">
+<hr>
+<img src="../imgs/c0d6fc35d4b6ea24a570d9423aab2cbd0cb4ddd9.png">
+<hr>
+<img src="../imgs/02556f3d039eb21bb8c87e4ebc796fea36f18841.png">
+<hr>
+<img src="../imgs/1d1d6df7aee246ef75b43a44be72a7b79c295eb1.png">
+<hr>
+<img src="../imgs/e31a6f7d3dbb8754a32519fa275293e3f31a29ce.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/38536b9e4baf0656ab1e1c28fee217212132bf25.png">
+<hr>
+<img src="../imgs/b2d7bdc346b609213a7e180cbc40bc1b764ef458.png">
+<hr>
+<img src="../imgs/90359bd7e4644077c077a0bdb3dd9d294e04a1a6.png">
+<hr>
+<img src="../imgs/8c765a9d1d2ac8d07c5fefc322c55732c1837dbc.png">
+<hr>
+<img src="../imgs/d51d0187b2bbd5204c9098fd146619b1f91180f3.png">
+<hr>
+<img src="../imgs/68a4ef0a0f487d0d72b548c2a07ea1d0ce75fffd.png">
+<hr>
+<img src="../imgs/1d532340d82db55af2eff631c0ca8cbbfffa9327.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

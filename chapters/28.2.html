@@ -1,0 +1,445 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 28.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/695e8988b07336e3b5a064d6a996359da336f361.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Let M be an n*n matrix and assume <img src=
+"../imgs/4cf4dc724610afb297d136120e0400cb3c79b69e.png"> and
+regularity condition is imposed such that <img src=
+"../imgs/5590f7b1a791d7f582f9530f2e0fbba0fc704178.png"> where c
+&lt; ½ and L(n) is the time taken to find an LUP decomposition of
+n*n matrix. Decompose L such that:</p>
+<p><img src="../imgs/d55da80e67053cb2b9d492eed3bb5d7c0c901b2d.png">
+where <img src=
+"../imgs/c3937d9a65194494c3633ac1cd36c92ddbde1679.png">is <img src=
+"../imgs/797821c51fb0b864bdee491fcd5862dfd59aff81.png">. Let the
+decomposition of <img src=
+"../imgs/c3937d9a65194494c3633ac1cd36c92ddbde1679.png">be <img src=
+"../imgs/2c7613c52c342939505b1f2a6477912ea66dd0a3.png"> where
+<img src="../imgs/69dc89107ef2e3de2e06b85068814bb1dc6488df.png"> is
+equal to <img src=
+"../imgs/eb89c957f4237f2e6c932b6b7e361d333e0242ef.png">, <img src=
+"../imgs/aa330a499c21e91cbfb329c0149abcc9f25937e6.png"> is equal to
+<img src="../imgs/797821c51fb0b864bdee491fcd5862dfd59aff81.png">
+and <img src=
+"../imgs/9e556ac5002cc9d24fc38d120dc99726159e2fd9.png"> is equal to
+<img src=
+"../imgs/b11b4219fe581c26fac8821c903d4895600fd97f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To attain the LUP decomposition of M, perform two LUP
+decompositions that are of half size, number of matrix
+multiplication and inversions that are constant.</p>
+<p>The equivalence of matrix inverse and multiplication concludes
+that the run time is O(M(n))</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a6913ab33d10353e83337b3b2831c1a00cb77dbe.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>BOOLEAN-MATRIX MULTIPLICATION (BMM) AND TRANSITIVE-CLOSURE
+RELATIONSHIP</b></p>
+<p>A Boolean matrix is also called as a <img src=
+"../imgs/0d1cdf9ebd3d5961f16053806b6f11bd3eb723e9.png">matrix
+having entries with domain<img src=
+"../imgs/42ed36b6512b4e24a618aeff9817264d6de7017e.png">. It is a
+matrix which is used to establish a relationship between various
+sets.</p>
+<p>For better understanding of binary relation, consider a binary
+relation <i>R</i> for the finite sets of elements, then use
+adjacency matrix <i>A</i> whose row and the column are indexed as
+<i>P</i> and <i>Q</i> <img src=
+"../imgs/264f975e435c9021c2503de77f691beeba771962.png">
+respectively to represent the <i>R</i>.</p>
+<p>The entries of <i>A</i> are represented as,</p>
+<p><img src=
+"../imgs/08f37c449e9dfc9c5b9dd6bc7c59226f16b77c6f.png"></p>
+It is 1 when <img src=
+"../imgs/4526b9f8aabb51e7d6ddd5cd0d0ec179314f063f.png"> and 0
+when<img src=
+"../imgs/bd70776ec885567f7a75dfd17894bc7d4f3168af.png">.</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>A binary relation is said to exist if the relationship as
+<i>uRv</i> holds if <i>u</i> divides <i>v</i> completely. Here,
+<i>x</i> and <i>y</i> belongs to different sets and <i>R</i> is the
+relation between them. For the set <img src=
+"../imgs/8fe7376541f5a88b80bb9f78a2992d22ec9514e0.png"> holds, the
+set of pairs are as:</p>
+<p><img src=
+"../imgs/365fd135ac664f048cf63e112e734b23fb7bfe41.png">.</p>
+<p>The Boolean matrix representation is as:</p>
+<p><img src=
+"../imgs/24824f7a420724136c027e522444d1eccaa42158.png"></p>
+<p><b>TRANSITIVE CLOSURE:</b></p>
+It is defined for a binary relation <i>R</i> on a set. It is
+denoted as<img src=
+"../imgs/05026f8e2631a2686301b9c5738aba2b80887e97.png">. It is such
+that for a given set <img src=
+"../imgs/05026f8e2631a2686301b9c5738aba2b80887e97.png"> have R and
+<img src="../imgs/05026f8e2631a2686301b9c5738aba2b80887e97.png"> is
+the minimal.</div>
+<hr>
+<div class="answer">
+<p><b>Boolean Matrix Multiplication (BMM) Algorithm:</b></p>
+<p>Consider <i>X</i>, <i>Y</i> is the two <img src=
+"../imgs/4e0d49293519de0b21e311947d03ba2c46e0c15b.png"> Boolean
+matrices then the multiplication <i>Z</i>=<i>X</i><img src=
+"../imgs/c0ece50fddeb27c6ad91a29cb5a8839f0bd7d8f5.png"><i>Y</i> is
+defined as,</p>
+<p><img src="../imgs/4424f728fa377a6b13957517bd4da279d09459b8.png">
+and implemented as,</p>
+<p><i>BMM</i> (var <i>x</i>, <i>y</i>, <i>z</i>: nnboolean);</p>
+<p>var <i>p</i>, <i>q</i>, <i>r</i>: integer</p>
+<p><b>begin</b></p>
+<p><b>for</b> <i>p</i>:=1 to <i>n</i> <b>do</b></p>
+<p><b>for</b> <i>q</i>: =1 to <i>n</i> <b>do</b></p>
+<p><b>begin</b></p>
+<p><img src=
+"../imgs/dba1b1fef42ce5f0a1674a28c0d39880726bb68a.png">: =false</p>
+<p><b>for</b> <i>r</i>: =1 to <i>n</i> <b>do</b></p>
+<p><img src=
+"../imgs/dba1b1fef42ce5f0a1674a28c0d39880726bb68a.png">:=<img src=
+"../imgs/dba1b1fef42ce5f0a1674a28c0d39880726bb68a.png"> or
+<img src="../imgs/c804e1a7428205660983a92b53ddabaff30ca880.png"></p>
+<p><b>end</b></p>
+<p>According to the question <img src=
+"../imgs/04a7281c36f7240c50656db71b66257e32c1fca7.png"> is the time
+to multiply two <img src=
+"../imgs/09ce3b95095c4f76314763c1ff6d2d2b24740352.png"> matrices
+and <img src=
+"../imgs/78c04fb03cc7f8eb5fcecefe57937b2459c8e9d4.png">be the time
+to find the transitive closure of the matrix.</p>
+<p>1. keep on multiplying the matrix, <i>p</i> to <i>q</i> to
+obtain in exactly 2 steps.</p>
+<p>2. After the begin statement in above algorithm there is a
+checking step which divide the process in two parts and similarly
+it make the process of length log <i>n</i> (because of tree
+structure).</p>
+<p>3. By keep on multiplying, transitive closure in the time
+<img src="../imgs/833e64f32823359fcd0bd136e3cfd7b6dc9bcf92.png"> is
+obtained. Generally, it is obtained by multiplying the matrix log
+<i>n</i> times (checking after begin process).</p>
+<p>4. Each multiplication uses the concepts of Strassen’s
+multiplication.</p>
+<p>Hence the <img src=
+"../imgs/04a7281c36f7240c50656db71b66257e32c1fca7.png">Boolean time
+multiplication requires <img src=
+"../imgs/833e64f32823359fcd0bd136e3cfd7b6dc9bcf92.png"> <b>time for
+transitive closure operation.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the section 28.2 of the textbook,</p>
+<p>The transitive closure <img src=
+"../imgs/db3e63987c93d160d714e91dd23db513d06a20d6.png">for a square
+matrix <i>C</i> has to satisfy the condition</p>
+<p><img src=
+"../imgs/d4bd79c7e264fe014361942edb1bd1e5d1da4bb3.png">,</p>
+<p>Where <i>I</i> is the identity matrix and it can be defined
+as:</p>
+<p><img src=
+"../imgs/5962bddf920eb126e39687330287b3d145e33655.png">, <img src=
+"../imgs/f9d263833bf53407c5ae218fc42f53065c94db0d.png"> for
+<img src="../imgs/2186dac157f71410d2fd9c36e1ec9d8acfeb9a3b.png">
+And</p>
+<p>As product of Boolean matrix is associative, it can also be
+written as:</p>
+<p><img src=
+"../imgs/1be771b2ce22cce3761e18ac8b1c44b507c225c4.png">.</p>
+<p>Now as given in the question <img src=
+"../imgs/78c04fb03cc7f8eb5fcecefe57937b2459c8e9d4.png"> is the time
+for computing transitive closure so according to the condition as
+described above <b><img src=
+"../imgs/7ae470ddab7eb2e7492e72815172fe00029f3f48.png"></b> <b>time
+is required for Matrix-multiplication algorithm</b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Refer textbook section 28.2 of chapter 28 for theorem 28.2.</p>
+<p>The theorem 28.2 states that “matrix inversion is not harder
+than multiplication.”</p>
+<p><b>The matrix inversion algorithm based on theorem 28.2 still
+works when elements are drawn from the fields of integer modulo
+2.</b></p>
+<p>Consider <img src=
+"../imgs/66771244224d367c5b6481d5dc6d69aacaacb250.png">.</p>
+<p>Consider the following matrix <i>K</i> that contains the
+elements from <i>F</i>.</p>
+<p><img src=
+"../imgs/2de96ad965bc529228b4179b016e2ead5a8dc13f.png"></p>
+<p>Here, <img src=
+"../imgs/9470051b0ac0d42b2ede575e85670d155b1ff687.png">.</p>
+<p>The regularity condition does not get affected by the division
+or multiplication of matrix elements by a specific number.</p>
+<p>Hence, the condition for inversion gets satisfied.</p>
+<p>The relevant positions of the elements are not changed. This
+fact can be used in the proof of the theorem for the matrix that
+contains elements of <i>F</i>.</p>
+<p>The determinant is calculated as follows:</p>
+<p><img src=
+"../imgs/68ca460984cecf139b415f8fa2ebd5455886a26a.png"></p>
+<p>and</p>
+<p><img src=
+"../imgs/f3520f2a5299721727f72e8c1e2109e38ca18a07.png"></p>
+<p>It is evident that, for a particular matrix element, this value
+is not going to be affected, except the sign. The reason is that
+the value of <i>i</i> and <i>j</i> for a particular element would
+remain same regardless of the change in location.</p>
+<p><b>Therefore, it can be said that matrix inversion algorithm
+would work, even if the elements of the matrix are drawn from</b>
+<i><b>F</b></i> <b>(field of integer modulo 2).</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>MATRIX INVERSION METHOD</b></p>
+<p>The main aim of matrix inversion algorithm is to change a matrix
+into its inverse form. It can also be used for proving that such
+inverses do not exist.</p>
+<p><b>MATRIX INVERSION ALGORITHM FOR COMPLEX NUMBERS:</b></p>
+<p>Generalize this algorithm using a numerical manipulation. Take a
+<img src="../imgs/6c0682e2b83e3b65ca21301421d683822dd21461.png">
+complex number array in following form:</p>
+<p>(Real part, Imaginary part: imaginary part, real part)</p>
+<p>Now invert the above array. So, the inverse of original array is
+<img src=
+"../imgs/0676188da4b41d5f1d4a00a918496e3976909831.png">upper half
+of the resultant array we got from inversion:</p>
+<p>(Real part of inverse, imaginary part of inverse: imaginary part
+of universe, real part of universe)</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now following algorithm can be applied to get inversion of
+complex number:</p>
+<p>1. Float inputreal[ ], inputimaginary[ ];</p>
+<p>// enter the first array</p>
+<p>2. Float outputreal[ ], outputimaginary[ ];</p>
+<p>// entering the real part of complex number</p>
+<p>3. int <i>N</i>;</p>
+<p>4. int <i>i</i>, <i>j</i>;</p>
+<p>5. Float <i>m</i> [<img src=
+"../imgs/48e530096cde45c575246d48fee32bcca5ad735f.png">,<img src=
+"../imgs/48e530096cde45c575246d48fee32bcca5ad735f.png">];</p>
+<p>// entering the second array</p>
+<p>6. <b>for</b> (<i>i</i>=0; <i>i</i>&lt;<i>N</i>; <i>i</i>++)</p>
+<p>7. <b>for</b> (<i>j</i>=0; <i>i</i>&lt;<i>N</i>; <i>i</i>++)</p>
+<p>// complex number representation in matrix</p>
+<p>8. <i>m</i> [<i>i</i>, <i>j</i>] = inputreal [<i>i</i>,
+<i>j</i>];</p>
+<p><i>m</i> [<i>i</i>, <i>j</i> +<i>N</i>] = inputimag[<i>i</i>,
+<i>j</i>];</p>
+<p>9. <i>m</i> [<i>i</i>+<i>N</i>, <i>j</i>] = – inputimag
+[<i>i</i>, <i>j</i>];</p>
+<p><i>M</i> [<i>i</i>+<i>N</i>, <i>j</i>+<i>n</i>] =
+inputreal[<i>i</i>, <i>j</i>];</p>
+<p>/ / inverting the matrix formed from above</p>
+<p>10. matrix_invert(<i>m</i>);</p>
+<p>// for inversion, either use the Cramer’s rule or theorem 28.2
+of the book</p>
+<p>11. <b>for</b> (<i>i</i>=0; <i>i</i>&lt;<i>N</i>;
+<i>i</i>++)</p>
+<p>12. <b>for</b> (<i>j</i>=0; <i>i</i>&lt;<i>N</i>;
+<i>i</i>++)</p>
+<p>13. outputreal[<i>i</i>, <i>j</i>] = <i>m</i>[<i>i</i>,
+<i>j</i>]; outputimag[<i>i</i>, <i>j</i>] = <i>m</i>[<i>i</i>,
+<i>j</i>+<i>N</i>];</p>
+The above algorithm will yield us Matrix inversion method for
+complex numbers.</div>
+<hr>
+<div class="answer">
+<p>To know whether this method work correctly, consider a single
+complex number of form <img src=
+"../imgs/bc33a0c3f9a98661602c33e6ba88fa3b63fb5245.png"> that we
+want the inverse of. That is <i>p</i> and <i>q</i>, such
+that<img src=
+"../imgs/29a009ab79d0460848cec66d25dc1094dac21b03.png">.</p>
+<p>Using the format sample of the above algorithm (line 8 and
+9)</p>
+<p>Make the matrix <i>M</i>:</p>
+<p><img src=
+"../imgs/ce34e37a680c04b5c344032bb22893288d38a12c.png"></p>
+<p>Now compute the inverse of the above array, which is to
+solve<img src=
+"../imgs/d8b036038aca7cdcf8cbdbcaed9a69b2adfafdc0.png">,</p>
+<p>Here <i>I</i> is the identity matrix.</p>
+<p>Further using Cramer’s rule, the inverse of matrix <i>M</i>
+is:</p>
+<p><img src=
+"../imgs/9f8ab11a123fd30bbe9bcd3cf4c7ebd337fde0a6.png"></p>
+<p>Where Det. <i>M</i>= determinant of matrix <i>M</i></p>
+<p>Further, select the upper row of the matrix as the real parts
+and imaginary parts:<img src=
+"../imgs/3da1b22cf727a991c98de02a6eaaff9a6243439b.png"></p>
+<p>So, the output we have (consider the line 13 of the above
+algorithm)<img src=
+"../imgs/0d228510f690c74cc9f183d85a14ee6231930201.png"></p>
+<p>The result got by above steps is the inverse of (<img src=
+"../imgs/bc33a0c3f9a98661602c33e6ba88fa3b63fb5245.png">).</p>
+<p>Hence, generalization is true.</p>
+<p>Above explanation is one method to solve the matrix inversion of
+a complex number.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the theorem 28.2 of the book,</p>
+<p>Consider a complex number matrix (can be formed from line 8 and
+9 of the above algorithm),</p>
+<p>Matrix of a complex number = <i>A</i></p>
+<p>A transpose of a complex matrix is equal to the matrix whose
+entries are replaced by its complex conjugate. This matrix is known
+as a Hermitian matrix.</p>
+<p><i>A</i> is a Hermitian matrix if,</p>
+<p><img src=
+"../imgs/c2cac774fe224fbdbc6a96554677ae9e8faf2e42.png"></p>
+<p>Now consider the equation (28.11) of the book.</p>
+<p><img src=
+"../imgs/bca772bb51e07f8914085a787ca1b0f96fec318f.png"></p>
+<p>In the complex matrix, <i>B=D</i> and <i>C</i><sup>T</sup>=
+–<i>C</i> (so <i>C</i> is a skew symmetric matrix)</p>
+<p>And from the Hermitian matrix, <img src=
+"../imgs/3c9156be44304e3bb352ebd673ddd6f6901fdd0a.png"></p>
+<p>Now consider the equation (28.12) of the book, apply the above
+comparison on it.</p>
+<p><img src=
+"../imgs/87d1bc4ad650da6210d611d99633e11caf8d3eaf.png"></p>
+<p>Now consider the equation (28.13) of the book.</p>
+<p><img src=
+"../imgs/e3064f5f075ea7e85f0b921f62a0c71e45d75734.png"></p>
+<p>This is the inversion of the matrix of a complex number.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

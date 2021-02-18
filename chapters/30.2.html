@@ -1,0 +1,804 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 30.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>To Prove</b>: <img src=
+"../imgs/27faac56276ef6f8a3b0e3a34df21245de4292e8.png"></p>
+<p>Here, <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">is the
+<img src="../imgs/2eee6e58b43280613ee968f0c0f8ab2a3b9acb25.png">
+complex root of unity such that: <img src=
+"../imgs/a5539d39c18a8d495e64d0423031bdf3cc994fde.png">.</p>
+<p>There are exactly <i>n</i> complex <img src=
+"../imgs/2eee6e58b43280613ee968f0c0f8ab2a3b9acb25.png">roots of
+unity: <img src=
+"../imgs/2c86a340b110fd4ec42e7321c290dfa020d1ead9.png"> for
+<img src=
+"../imgs/2a1ed53ddec9863e67598d9c065a021b7d820de6.png">.</p>
+<p>Therefore, <img src=
+"../imgs/9a532938156a5757aa1e4c70fd8f06f4d1206062.png"> is the
+principal <img src=
+"../imgs/2eee6e58b43280613ee968f0c0f8ab2a3b9acb25.png">root of
+unity.</p>
+<p><b>Step 1</b>: Let <img src=
+"../imgs/a2c26106a3b48ab3eb6706297ee2b45d46619dfd.png"></p>
+<p>Now substituting the value of <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">as <img src=
+"../imgs/a40e862bfe6337c397d76dd8694d9c1d086b670a.png"></p>
+<p><img src=
+"../imgs/944a1fbd199de5f86f4a7398eba24f8af744a0b8.png"></p>
+<p>For <img src=
+"../imgs/bdba0200f7d7f8fbb4fdb1baba006a4d2f67c9c8.png">, the
+expression in <img src=
+"../imgs/e3c7ca8156b41abc7dd47ad070d0bd5f04640681.png"> can be
+written as: <img src=
+"../imgs/3ac293133695abb30ccc487a717399c36d7925cb.png">.</p>
+<p>Therefore, <img src=
+"../imgs/8eb2ac3dd0a739f8a17a56c6eaf8c8b100855537.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step 2</b>: According to the definition of the exponential of
+a complex number:</p>
+<p><img src=
+"../imgs/5b95f6f2c1a44ebd5ddaec097c492e10c83f5af1.png"></p>
+<p>Since, <img src=
+"../imgs/522b0a4217ed95ebadca6ff546098a8de31bdf38.png"></p>
+<p><img src=
+"../imgs/4fd430ccf59c3a035d2a73d672e9bd27de0f3064.png"></p>
+<p>Hence, <img src=
+"../imgs/31c27e3eff1b4186709881e75444cf6909afe80d.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the given coefficient vector <i>a</i> = (0, 1, 2, 3).
+The Discrete Fourier transformation (DFT) is the vector
+<i>y</i>=<img src=
+"../imgs/d1db1dfa389a38a27cbe0d1fc077c68b2e9384a2.png">. The DFT
+can be expressed in the general form(<i>y</i>=<img src=
+"../imgs/e1a69d48e2a92f0f745fc04fc907b13b12f0b79c.png"> ) as
+follows:</p>
+<p><img src=
+"../imgs/041771b5c39abb73f038b70b4675acd6ccdd0ee8.png"></p>
+<p>Now, multiply the <img src=
+"../imgs/caba4ba5f8a9100879915be3e2852f3fb4096852.png">vandermonde
+matrix and <img src=
+"../imgs/090295d5c0f50471915f3e826f59009d6e132744.png"> coefficient
+matrix. Thus, the resultant <img src=
+"../imgs/090295d5c0f50471915f3e826f59009d6e132744.png">matrix is as
+follows:</p>
+<p><img src="../imgs/e85341721dae230c0a9b4e1443e289b686f81a3c.png">
+…… (1)</p>
+<p>Each row value is equals to corresponding element in the left
+side matrix. Therefore solve the right hand side matrix to
+calculate the values of <img src=
+"../imgs/edb776dc0382af00541c3358257aa3875c2aace3.png">
+and<img src="../imgs/5f3c9569e7cf93e1059dfe3d1249d650475ebef0.png">.</p>
+<p>Consider the values <img src=
+"../imgs/d6034630b3e2ab79c1600bffa0811907e8f2b8a6.png"> and
+<img src="../imgs/9035c1d11c071b3091e7c132886413bfa8a9c3ba.png"> to
+calculate the vector elements.</p>
+<p>Thus, <img src=
+"../imgs/c7924b830b1034835a2d27a1c148d14be2bfd409.png"> …… (2)</p>
+<p>Similarly calculate the value of <img src=
+"../imgs/870fa1051d1c8dedf24340d579d1e3fc47440715.png"></p>
+<p><img src=
+"../imgs/f1e5689174db7f7cf9dab0dc31b85353a8f6284f.png"></p>
+<p><img src="../imgs/fb81f28d7c2b9bbd5b9d0a9d4aec26f1b1243a77.png">
+…… (3)</p>
+<p>Put the value <img src=
+"../imgs/9035c1d11c071b3091e7c132886413bfa8a9c3ba.png"> in equation
+(3)</p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/267ac71cc5397f98155b42e181b671dea0449cef.png"></p>
+<p>Calculate the value of <img src=
+"../imgs/9a2df5454e0d31ee363af3dc168f74e5ebd8075e.png"> as
+follows:</p>
+<p><img src=
+"../imgs/01344f148aba58746f8a49c4cb39cdc5f8c8519f.png"></p>
+<p>Hence, <img src=
+"../imgs/22327ac4cd74b41d4096be1d747ec1557f31d47b.png"> …… (4)</p>
+<p>Calculate the value of <img src=
+"../imgs/5f3c9569e7cf93e1059dfe3d1249d650475ebef0.png"> as
+follows:</p>
+<p><img src=
+"../imgs/8140cb8cc6de79efcd9d6b4621f8c0b5785f008b.png"></p>
+<p><img src=
+"../imgs/f53b41cee462615183b5cc2d9f943c02a30ad638.png"></p>
+<p>Hence, <img src=
+"../imgs/b5ca9de5edd9e1204217911c75223418bd1e5120.png"> …… (5)</p>
+<p><b>From equation</b> <b>(2)</b> <b>,</b> <b>(3)</b> <b>,</b>
+<b>(4)</b> <b>and</b> <b>(5),</b> <b>the</b> <b>value of</b>
+<b><img src=
+"../imgs/edb776dc0382af00541c3358257aa3875c2aace3.png"></b>
+<b>and</b> <b><img src=
+"../imgs/5f3c9569e7cf93e1059dfe3d1249d650475ebef0.png"></b> <b>are
+as follows:</b></p>
+<p><b><img src=
+"../imgs/a6ffd34c6a858e8600d7e8c0a079225760f531fc.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The polynomials are as follows:</p>
+<p><img src="../imgs/0dc77b197f6022ae0e1f9e9ba5eede11189350bc.png">
+and <img src=
+"../imgs/824ff9198f9af5c6dc329c3c6eb17d2d48a5a170.png"></p>
+<p>The evaluation is done using the fourth roots of unity that is,
+<img src=
+"../imgs/1d456083269494225ac1b87aa6383985a9b46fcf.png">.</p>
+<p>• Call RECURSIVE-FFT ((-10, -1,0,0)) and evaluate to (-11,
+-10-i, -9, -10+i)</p>
+<p>• Now evaluate the original function call, the values are
+<img src=
+"../imgs/40b3305346bba6a731dae798fc3c4e43a86c65c6.png">,.</p>
+<p>• On changing the values, we have <img src=
+"../imgs/4cb2873462a529a3fe16aae23b5d5ebece2c800c.png"> and
+<img src=
+"../imgs/5add05be1d315aee4e3e17ad3a76272e07e521c6.png"></p>
+<p>• Similarly, if it is required to compute the FFT of other
+polynomial, get the FFT of B(x) as <img src=
+"../imgs/aab4139a7b40525068d93414c5a39c6babaf2334.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>On interpolation, the result is as follows:</p>
+<p><img src=
+"../imgs/9d029f9a1a9df0ad3efe180edce981b7c3f760f5.png"></p>
+<p><img src=
+"../imgs/d01c07b3e9bcc4ecd73e64b16dbb0539ef88601f.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The polynomial is: <img src=
+"../imgs/ecdc36de5f054b39e6175b03e1fdea998be31635.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Discrete Fourier transform (DFT) is invertible with</p>
+<p><img src=
+"../imgs/39981c23db20ab7e5991d40a1f4e40d510463d9e.png"><img src=
+"../imgs/c427bd1167d7bfdcc0ef700ad40c8d4e8ad73d19.png"><img src=
+"../imgs/09140dd63ec3fa25e11f19b64bc3d392695d8e0c.png">=<img src=
+"../imgs/1a4a41ed48366d045d6e0cb789bbbeb056f65532.png"></p>
+<p>where <img src=
+"../imgs/ef6d3706bf5654b58eedca2ccb205f61d034ec18.png"> is the
+inverse of vandermonde matrix<img src=
+"../imgs/312059a261785cd6a86ac33f3aeba154f4bdc23c.png">.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/2b1e90cbfa90f36a6f4cdaf104ecaab68571cf84.png"></p>
+<p>where <img src=
+"../imgs/46025ab7c2c791416939d5001d8a12a99a2d2cef.png"> is the root
+of unity.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The inverse DFT which is <img src=
+"../imgs/208cd017366ea5474e6fe5fbc35606f409be0f2a.png"> is
+calculated as follows.</p>
+<p><img src=
+"../imgs/bbbf33ab2d2e3990f33174f2cd3d2c4fd2b9cb3f.png"></p>
+<p>where <img src=
+"../imgs/e86e347da62ca6ef44f6afacceb72e625eb671f4.png"> is the
+inverse DFT, <img src=
+"../imgs/732b0ed8af8fcee9acbd8c43d0bf7a6cc1e30535.png">is the
+coefficient vector. <img src=
+"../imgs/2aa7423e7d4840bde2a76c829b92857618dd6504.png"> is the
+<i>n</i>th root of unity.</p>
+</div>
+<hr>
+<div class="answer">
+<p>At first compute the Discrete Fourier transform (DFT) to obtain
+the value of<img src=
+"../imgs/94746c012170e514a85306946f8c2413127053f8.png"> then flip
+the sequence <img src=
+"../imgs/e95c5114fc77dd1892b9384e5a2c0be743231133.png"> by fixing
+the <img src=
+"../imgs/704d64b0da0111be4d50c1ccde162cb419afecb0.png">.</p>
+<p>Pseudo code of <img src=
+"../imgs/d147f2ec563e1a7e974eae455b35c8ac6199268e.png"> is as
+follows:</p>
+<p>INV-DFT (y)</p>
+<p>// store length of vector <i>y</i></p>
+<p>1. <i>n= y. length</i></p>
+<p>// check the value of variable n</p>
+<p>2. <b>if</b> <i>n==1</i></p>
+<p><b>//</b>return the value of vector</p>
+<p>3. <b>return</b> <i>y</i></p>
+<p><b>//</b> <b><img src=
+"../imgs/7629116ea8498e1cc57793b7f9e0ad9e625db001.png"></b> is the
+principle nth root of unity and <img src=
+"../imgs/70c7e6ffe3190116c4f9f08f7f6b4681be88a6bb.png">is its
+inverse</p>
+<p>4. <img src=
+"../imgs/8923d4b2a6a03afca11badad6dc19f0ee0403c4c.png"></p>
+<p>5. <img src=
+"../imgs/1fad58033f704d053c84f9e87b66a4fc9170682e.png"></p>
+<p>//split the vector into even and odd part and store it into
+coefficient vector of <i>y</i></p>
+<p>6. <img src=
+"../imgs/c28c8672868bbce59e8497d96aaeca9bc4d7081a.png"></p>
+<p>7. <img src=
+"../imgs/3e77d86155eb045a227796e7e5def0f315200c70.png"></p>
+<p>//for loop is used to flip the sequence</p>
+<p>8. <b>for</b> <i>j=0</i> <b>to</b> <i>n/2-1</i></p>
+<p>9. <b><img src=
+"../imgs/df93794fa1d41cbf326ff4da78161dceefa86a50.png"></b></p>
+<p>10. <b><img src=
+"../imgs/184f34804bdf2e7b000b4dddbb84d5b1616bb767.png"></b></p>
+<p><b>//</b>it is used for mapping</p>
+<p>11. <b><img src=
+"../imgs/e74a1c869a62b93cc700a955100d1e583b78bc01.png"></b></p>
+<p><b>//</b>if statement is used to find the value of coefficient
+vector</p>
+<p>12. <b>if</b> <i>j=0</i></p>
+<p>13. <b><img src=
+"../imgs/4ca3071f4ae8cb4e462ca476bf8057e5d2672574.png"></b></p>
+<p>14. <b>else</b></p>
+<p>15. <b><img src=
+"../imgs/a29f230255d08cde035146ae106bd0cccca38162.png"></b></p>
+<p><b>//</b>return the column vector</p>
+<p>16. <b>return</b> <i>a</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>• In line first store the length of vector <i>y</i> into
+variable <i>n</i> so the worst case complexity will be<img src=
+"../imgs/efb6674ac913132f788d0a2f64491de57b4e4360.png">.</p>
+<p>• Line 2-3 is used to check the element of DFT, so the
+complexity will be<img src=
+"../imgs/efb6674ac913132f788d0a2f64491de57b4e4360.png">.</p>
+<p>• Line 5-6 of pseudo-code is used to define the coefficient
+vector for polynomial so the complexity will be<img src=
+"../imgs/cb47640aab0710f6d8c0ea6bfe762b75a3b21eb3.png">.</p>
+<p>• Line 8-9 is used to find the value of <img src=
+"../imgs/c4ec5da8804fe8b18efb87ce1d52d3268d96bb6b.png">so each
+invocation takes<img src=
+"../imgs/56b126f2943de384b4483bb76a20427946683c41.png">.</p>
+<p>• Line 12 and 14 calculate the value of <img src=
+"../imgs/1f098984ff6680f08e9667df07322c5d640090d8.png"> by dividing
+every term to <i>n</i>. This creates another factor which can be
+neglected by doing the division step along with the previous
+step.</p>
+<p>So the total time complexity will be as follows:</p>
+<p><img src=
+"../imgs/fa6e5d3f0e0a9bc5a79d1c1abd9f659ac0c7d1b8.png"></p>
+<p>By using master’s theorem, the following time complexity is
+obtained:</p>
+<p><img src=
+"../imgs/6a8d2ba45ef48a7ed612080e86b72019ad5844d9.png"></p>
+<p>The highest order term decides the complexity.</p>
+<p><img src=
+"../imgs/38e5cabadff19b462637a824b6e1c2f1af0a9b86.png"></p>
+<p>In the above recurrence of running time, <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> represent
+the length of input vector. Evaluate a polynomial of degree
+<i>n</i> at <i>n</i>th root using inverse DFT.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>By using FFT (Fast Fourier Transform) which takes the advantage
+of the special properties of the complex roots of unity.</p>
+<p>FFT method employs a divide and conquer strategy using even
+index and odd index coefficients of A(x) separately to define the
+three-new degree bound n/3 polynomials <img src=
+"../imgs/65432525d24a0f179d73b634a5af81c1ae39671e.png">,<img src=
+"../imgs/4231feba736ef4eb1ae2ec375b08da621bef74ba.png"> and
+<img src=
+"../imgs/a4166f54aba2d6400cc099fca5c581fdfb037fd3.png"></p>
+<p>These polynomials are expanded as follows:</p>
+<p><img src=
+"../imgs/6242364b3c3c93f59c27f3bb2d75fa0f6c2570e4.png"></p>
+<p>Evaluate the degree bound n/2 polynomials <img src=
+"../imgs/ea13786b6268fa9a448b83d26f9acb7ac6c0193f.png">and
+<img src="../imgs/a4166f54aba2d6400cc099fca5c581fdfb037fd3.png"> at
+the points <img src=
+"../imgs/245208229dffe1902986db6897c25a44cdcee72b.png"></p>
+<p>Combine the results obtained.</p>
+</div>
+<hr>
+<div class="answer">
+<p>By applying the halving lemma, the list of values consists not
+of <i>n</i> distinct values but only of the n/3 complex <img src=
+"../imgs/daea21fcda8abf69a65b468b0848c5574fe4ac34.png"> roots of
+unity with each root occurring exactly twice.</p>
+<p>Therefore, the polynomials <img src=
+"../imgs/65432525d24a0f179d73b634a5af81c1ae39671e.png">,<img src=
+"../imgs/4231feba736ef4eb1ae2ec375b08da621bef74ba.png"> and
+<img src="../imgs/a4166f54aba2d6400cc099fca5c581fdfb037fd3.png"> of
+degree bound n/3 are recursively evaluated at the n/3 complex
+<img src=
+"../imgs/daea21fcda8abf69a65b468b0848c5574fe4ac34.png">roots of
+unity.</p>
+<p>These sub problems have the same form as the original problem
+but are half the size.</p>
+<p>Thus, an <i>n</i> element <img src=
+"../imgs/7931bc1b67262073dfee27097a7614a4a166743e.png"> computation
+is divided into two n/3 elements <img src=
+"../imgs/d086619e19cb6456d322e0d94b0f81379c0c4d53.png">
+computations.</p>
+<p>This decomposition is the basis for the following recursive FFT
+algorithm which computes DFT of an <i>n</i> element vector
+<img src="../imgs/5b491a98ed2eeef38a2baca3b82b855118bfe4c3.png">where
+<i>n</i> is the power of 3.</p>
+<p>For <i>n</i> to be a power of 3, that the cube of the <img src=
+"../imgs/2eee6e58b43280613ee968f0c0f8ab2a3b9acb25.png"> complex
+roots of unity are the n/3 complex <img src=
+"../imgs/daea21fcda8abf69a65b468b0848c5574fe4ac34.png"> roots of
+unity apply the cancellation lemma,</p>
+<p><img src=
+"../imgs/67186346f8ae27b18f3f7151e461d4ed24b5230f.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/7ec584cc37fea896c2705322bb3daf30d7fcbc71.png"></p>
+<p>Now, write <img src=
+"../imgs/414c6279dd8ba3e5368fd3023e4e9546b3538f20.png"> and define
+<img src="../imgs/5493262105a504aa87a4b09d4d39cc0b4426c75e.png">
+for i=1,2,3…</p>
+<p><img src=
+"../imgs/2c74399170d74f816bcad512059f7c60f3b88988.png"></p>
+<p>The recurrence which is obtained is:</p>
+<p><img src=
+"../imgs/28cb745ab4cf57afdc9c7aaec1f56142b49fe810.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Solving the recurrence relation using <b>Master’s
+theorem:</b></p>
+<p>Compare the above recurrence by standard formula:</p>
+<p><img src=
+"../imgs/33bd0159298f11b0a5c84cd64ae47f4a4a323600.png"></p>
+<p>Here, a=3, b=3 and f(n)=n. Computing the value of <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png"> the value
+obtained is <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png">=1</p>
+<p>On comparing the values of <img src=
+"../imgs/ad093910eb5550534b5a40a91a0c858f14f492d0.png"> and f(n)
+which are same the case 2 of master’s theorem is applied.</p>
+<p>So, the final running time complexity is: <img src=
+"../imgs/37bf3c1020445ce30f5ffd2dac0eed4f889ee30a.png"></p>
+<p>The procedure is described by the following algorithm:</p>
+<p><b>RECURSIVE-FFT-INVERSE(y)</b></p>
+<p>1 n=y. length</p>
+<p>2 <b>if</b> n==1</p>
+<p>3 <b>return</b> y/n</p>
+<p>4 <b>end if</b></p>
+<p>5 <img src=
+"../imgs/37d066667757f503577908407bb51391172e5ad9.png"></p>
+<p>6 <img src=
+"../imgs/d04e3c0fae3b33792936b8c5bc83d5f3428ba77c.png"></p>
+<p>7 <img src=
+"../imgs/83d03bcef2cee23e789eb27e7aa8d366b0ba8e8e.png"></p>
+<p>8 <img src=
+"../imgs/46ff2b26e5c331737380f33e1227f8885859cf85.png"></p>
+<p>9 <img src=
+"../imgs/5b379f73215036bdfe264628a9862d43c58a1629.png"></p>
+<p>10 <b>for</b> k = 0 to <img src=
+"../imgs/6e27eeefbb8a02062c9d18100daf23a7cc343932.png"> do</p>
+<p>11 <img src=
+"../imgs/ffb68af940ad8e25c51639e710df6c04fefd9d08.png"></p>
+<p>12 <img src=
+"../imgs/aaa84611568e815b46e3a4e4e470845b4e8e3c89.png"></p>
+<p>13 <img src=
+"../imgs/340fdfb5ffe064c6b9b4fce37600a0a6bf88fec3.png"></p>
+<p>14 <b>end for</b></p>
+<p>15 <b>return</b> a</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>To prove that <img src=
+"../imgs/f107312e9ad9e393de8c65c642afc3c1aaa01dbd.png"> and inverse
+<img src="../imgs/f107312e9ad9e393de8c65c642afc3c1aaa01dbd.png">are
+well defined in the given system , suppose <img src=
+"../imgs/494b2750d076ab1a606ce8bc61139b4594a954b8.png"> be the ring
+of integers <img src=
+"../imgs/e1b891b7235a821bb348a8c5c5bfa57df8f3a6ec.png">.</p>
+<p>Where<img src=
+"../imgs/9d5028bc553acb32b5c723d13d83a65efaa6e89d.png">, <img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png"> is a
+positive integer and <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> is even
+integer</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/8be570fdd205eee5a2816e2a9a6fba030ee7906e.png"></p>
+<p>Now, construct a polynomial <img src=
+"../imgs/2263111ec136a4f938297aa7669e06ff81bd481d.png"> such
+that</p>
+<p><img src=
+"../imgs/06df02bc7304d701ed89f15b94e7fbd1dd816a70.png"></p>
+<p>Where <img src=
+"../imgs/41ef1d5b60f4243ccb4a8df3d95112596e82c520.png"> and
+polynomial <img src=
+"../imgs/2263111ec136a4f938297aa7669e06ff81bd481d.png"> is of
+degree-bound <img src=
+"../imgs/42d1d4c5ef279a63d78749f2cab9d866cd4cc337.png">with
+coefficients from<img src=
+"../imgs/7c2eb912e8aa9f198d8fa0d34323e894b3bdda30.png"></p>
+<p>Now, define <img src=
+"../imgs/9f6618ea30f877fd693c1c6b81353353bed1f590.png"> such
+that</p>
+<p><img src=
+"../imgs/de71cd763fc9fdb2a08844a255030158ba4d36f6.png"></p>
+<p>Then, the vector<img src=
+"../imgs/1e208566a7c539da519e3cca7f692d113784d69b.png"> is discrete
+Fourier transformation of the coefficient vector <img src=
+"../imgs/7c2eb912e8aa9f198d8fa0d34323e894b3bdda30.png"></p>
+<p>Now, show that product and sum of two distinct tuples of the
+vector <img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"> is again
+the tuple of <img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"></p>
+<p>Since,</p>
+<p><img src=
+"../imgs/1381483bb791d7809092ec70f5582dca38b05ea1.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/e21198e4529eb44417a31d2b84fe5bed3edca7ab.png"></p>
+<p>Then, take product and sum of <img src=
+"../imgs/3e53ce70b911d08f5fc445f297e1730cc19c7009.png"></p>
+<p><img src=
+"../imgs/2174fecd6a36fb42c31066e67b46b5799f3b5811.png"></p>
+<p>And</p>
+<p><img src=
+"../imgs/6bc7d9c72626e9a7e3144df2099d3dd3a492564a.png"></p>
+<p><img src=
+"../imgs/8fbb9d6d0b47b08271def73f779060fe7db690ad.png"></p>
+<p>Then, the product and the sum of two distinct tuples of the
+vector <img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"> is again a
+tuple of<img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"></p>
+<p>Therefore, discrete Fourier transformation (<img src=
+"../imgs/f107312e9ad9e393de8c65c642afc3c1aaa01dbd.png">) is well
+defined</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, write the discrete Fourier transformation as the matrix
+product</p>
+<p><img src=
+"../imgs/e87337bf5a3f0f628195a9bfd28a931dbd1b5301.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/cc50f282cd1ff0494a2a8a48ec2defb2f304e747.png"></p>
+<p>Where, <img src=
+"../imgs/c3fb282b086fd241f791f227f9633b9b09077f9e.png"> as the
+principal <img src=
+"../imgs/98770ab5b2b68d9ecdd9a809fb2e832208100327.png"> root of
+unity <img src=
+"../imgs/e1b891b7235a821bb348a8c5c5bfa57df8f3a6ec.png"></p>
+<p>Since, the square matrix <img src=
+"../imgs/e679abf5815851278aa54538a7ca7ed7cce81198.png"> is a
+non-singular matrix in <img src=
+"../imgs/e1b891b7235a821bb348a8c5c5bfa57df8f3a6ec.png"></p>
+<p>That is</p>
+<p><img src=
+"../imgs/801ce67b89c3b36ec46db0c484095c7777b01745.png"></p>
+<p>Then, <img src=
+"../imgs/bd0b85b1784d58b7e99fb0ab7b570836610e179e.png"> exists</p>
+<p>Now, multiply from left side by <img src=
+"../imgs/bd0b85b1784d58b7e99fb0ab7b570836610e179e.png"> in the
+equation <img src=
+"../imgs/e87337bf5a3f0f628195a9bfd28a931dbd1b5301.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/7cc884a6f63b9dc2bb403265335aa8f5296038dc.png"></p>
+<p>Or</p>
+<p><img src=
+"../imgs/60b3ff619c9ab541fceb8704ff40ca7bcbe15347.png"></p>
+<p>Then, it can be written as</p>
+<p><img src=
+"../imgs/b49e79235a8e3ac06106930d08a4307959e444d7.png"></p>
+<p>Since, <img src=
+"../imgs/a57a98c5ed63bc93f32a713d8f31177dd45ee931.png"> exists</p>
+<p>Therefore, <img src=
+"../imgs/a57a98c5ed63bc93f32a713d8f31177dd45ee931.png"> is well
+defined in <img src=
+"../imgs/e1b891b7235a821bb348a8c5c5bfa57df8f3a6ec.png">.</p>
+<p><b>Hence,</b> <b><img src=
+"../imgs/f107312e9ad9e393de8c65c642afc3c1aaa01dbd.png"></b> <b>and
+inverse</b> <b><img src=
+"../imgs/f107312e9ad9e393de8c65c642afc3c1aaa01dbd.png"></b> <b>are
+well defined in the system.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Finding the coefficient of a polynomial of bounded
+degree</b></p>
+<p>MULTIPLYING-OUT algorithm is used to find the coefficients of
+polynomial <i>P</i>(<i>x</i>) of degree bound <i>n</i>+1 that has
+zeroes. This algorithm uses the property of recursive calls; every
+recursive call made here is of size<img src=
+"../imgs/72055822cddeb6817decb8432bd0862ea22c2c5d.png">.</p>
+<p>The Multiplying-Out algorithm takes input as the list of values
+that are provided by the user. After this, it is checked whether
+the list has one single item or not, if the condition satisfies,
+return the value of. It is returned because the polynomial has the
+value zero at <i>z</i><sub>j</sub>, only when the polynomial will
+be a multiple of<img src=
+"../imgs/7483518e98b9ab0233ddf068269b4dc928c73a15.png">. After
+this, the list has been divided into two lists
+(<i>P</i><sub>2</sub>(<i>x</i>) and <i>P</i><sub>2</sub>(<i>x</i>))
+and recursion is done in list items.</p>
+<p>After this, fast Fourier Transform is done on both lists and
+their values is stored in variables <i>y</i><sub>1</sub> and
+<i>y</i><sub>2</sub>. Make use of for loop to calculate the value
+of <i>y</i> and then perform Fourier transform inverse storing
+values in <i>P</i>(<i>x</i>).</p>
+</div>
+<hr>
+<div class="answer">
+<p>Multiplying-Out algorithm is given below:</p>
+<p><b>MULTIPLYING-OUT ALGORITHM</b>: (<img src=
+"../imgs/8c4f9f04f6d8c89c6278d47d61978c5d19d46eb1.png"></p>
+<p>// use of if condition to check whether list has a single
+element or not</p>
+<p>1. <b>if</b> <i>n</i> = 1</p>
+<p><b>return</b> <img src=
+"../imgs/d92718cdb83164c79206fb8f58945b75d9fc5c9c.png"></p>
+<p>2. <b>else</b></p>
+<p>// Divide the list into two parts, where
+<i>P</i><sub>1</sub>(<i>x</i>) contains list items 1 to
+<i>n</i>/2</p>
+<p>// and <i>P</i><sub>2</sub>(<i>x</i>) contains rest of them and
+recursion is performed on both list items</p>
+<p>3. <i>P</i><sub>1</sub>(<i>x</i>) = Multiplying Out <img src=
+"../imgs/26d9551a2dcdec4bda190d35cd1681a7a33aa2ba.png"></p>
+<p>4. <i>P</i><sub>2</sub>(<i>x</i>) = Multiplying Out <img src=
+"../imgs/4378335526637879886128bfab7e3c676a38edee.png"></p>
+<p>// perform fast Fourier transform on
+<i>P</i><sub>1</sub>(<i>x</i>) and
+<i>P</i><sub>2</sub>(<i>x</i>)</p>
+<p>5. <img src=
+"../imgs/d70d743872ec98202e945e8c71a6ca8aca7c427c.png">
+(<i>y</i><sub>1</sub> is a vector of 2<i>n</i> values).</p>
+<p>6. <img src=
+"../imgs/318d23c4d20436d83cd71d4718606ce603a49674.png"> (same for
+<i>y</i><sub>2</sub>)</p>
+<p>// Compute the point wise product <i>y</i> of
+<i>y</i><sub>1</sub>; <i>y</i><sub>2</sub> in linear time</p>
+<p>7. <b>for</b>(<img src=
+"../imgs/feb1c7d18437bc21721047f7cbc277620ad81a30.png">)</p>
+<p><img src=
+"../imgs/4010dd9c46c9fc4056bdbed71ece564c196b36e5.png"></p>
+<p>// Perform inverse of evaluation to find the coefficient of
+polynomial using</p>
+<p>// point-value representation</p>
+<p>8. <img src=
+"../imgs/fee3a8e9cbd737428e8da153f74f55686cd39791.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For determining the runtime, following should be taken into
+consideration:</p>
+<p>1. Lines 1, 2, 7 take <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> time in
+total.</p>
+<p>2. There are 2 recursive calls to Multiplying Out of size
+<i>n</i>=2 each (lines 3, 4).</p>
+<p>3. There will be a total of three calls FFT (fast Fourier
+transform) of size 2<i>n</i></p>
+<p>(lines 5, 6, 8).</p>
+<p>Therefore, total running time will be:</p>
+<p><img src=
+"../imgs/5eb4fbf6f84e5398e8a11230d29a77cac181dd85.png"></p>
+<p>Considering the recursion tree of Multiplying-Out, the height of
+this tree will be<img src=
+"../imgs/ff3300aadb4fbd30b9f225fa1e3c1557bb8b7359.png">. It is so
+because at every recursive call made, the input size is partitioned
+into half. This can be performed only in <img src=
+"../imgs/ff3300aadb4fbd30b9f225fa1e3c1557bb8b7359.png">times before
+n is minimized to the base 1.</p>
+</div>
+<hr>
+<div class="answer">
+<p>At each level <img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png"> (with
+<img src="../imgs/b5334998e114414e140c80fd2ae650a51b477702.png"> =
+0 making it the top level). The algorithm will make <img src=
+"../imgs/b7158b4db2b7f88c08aa4b3c2790b06416a3c854.png"> recursive
+calls of size <img src=
+"../imgs/2f9fdb374124276df96d97b71d9e8e473e7dba6e.png">. The
+algorithm will have <img src=
+"../imgs/f332c16e59bae04d895b4f15c03c5de62cb60951.png"> cases of
+<img src=
+"../imgs/aa4d29cbb9f15f817f80ccff64c9df0a36d8c8d3.png">extra work
+for level <img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png">, the FFT
+(fast Fourier transform) of current active calls have been carried
+out making use of <img src=
+"../imgs/43adee71f9e745b0a216f0bba8e5dd7dd01141bf.png">roots of
+unity point.</p>
+<p>In reality, it is found that it is useless to add any value for
+the recursive calls stated in since their work is counted in the
+extra work in lower branches of the tree.</p>
+<p>So, at level 0, the total work is <img src=
+"../imgs/7f2c61834204771cc0b10ce6a75704825cdb8bb9.png"></p>
+<p>At level 1, the running time can be given as:</p>
+<p><img src=
+"../imgs/5e5b2d2651a74708860e77bbda2e5cace6c27ec1.png"></p>
+<p><img src=
+"../imgs/5da09468af0b63e019ac72d4924864b598aca9a6.png"></p>
+<p>At level <i>l</i>, the running time can be given as:</p>
+<p><img src=
+"../imgs/2ac3c605d68ba20de0c56a6757cc59196a19ec0b.png"></p>
+<p><img src=
+"../imgs/cc48398c7e237c56fe9b5e6f83bcb1b7444eac80.png"></p>
+<p>Therefore, the running time at any particular level <img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png"> is<img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png">.</p>
+<p>There will be <img src=
+"../imgs/ff3300aadb4fbd30b9f225fa1e3c1557bb8b7359.png">levels in
+the algorithm which takes time of<img src=
+"../imgs/1f75ac7866619e6ef8b15dc6d6e7560e216ae6dd.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/03ffc31e19e3bda27ebd90dc0726d6817f5bc983.png">
+<hr>
+<img src="../imgs/d5ebe23a8536875bc3c5051d48ed81ffc40f9a24.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

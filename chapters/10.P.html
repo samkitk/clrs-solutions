@@ -1,0 +1,352 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 10.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/0afa41e022e911d3d2941cc7b85174724b0cdc30.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Searching elements a sorted compact list</b></p>
+<p><i><b>a.</b></i> Consider that COMPACT-LIST-SEARCH <img src=
+"../imgs/49123b870778267198e6135d65cec837d00835a2.png">(refer
+textbook, problem 10-3) takes <img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png"> iteration
+of “while” loop of line 2-8</p>
+<p>Now depending on value of<img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">, there are
+two cases:</p>
+<p>1. <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> is in
+list</p>
+<p>2. <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">does not
+exist in the list</p>
+<p><b>Case1:</b> <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">is stored in
+the list</p>
+<p>Since <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">is there in
+the loop, therefore, COMPACT-LIST-SEARCH<img src=
+"../imgs/49123b870778267198e6135d65cec837d00835a2.png"> will take
+<img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">iterations
+and return the object. COMPACT-LIST-SEARCH’<img src=
+"../imgs/78644884127f3f53e96607ba2298283a326efb09.png"> will do the
+same in the ‘for’ loop of line 2-7. It may has to do one more
+iteration of the while loop hence total iterations are more
+than<img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">.</p>
+<p><b>Case2:</b> <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">is not in
+the list</p>
+<p>In this case COMPACT-LIST-SEARCH<img src=
+"../imgs/49123b870778267198e6135d65cec837d00835a2.png">will get
+<img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png">=NIL or no
+<img src="../imgs/4e48e5be3bdef5137909d2de2c813fe22ece1ff1.png">
+less than <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> in
+<img src="../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">
+iteration. COMPACT-LIST-SEARCH’<img src=
+"../imgs/78644884127f3f53e96607ba2298283a326efb09.png"> will get
+the same in at least <img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png"> iteration
+since while loop will add more iteration.</p>
+<p>Hence, conclusion is that COMPACT-LIST-SEARCH’ <img src=
+"../imgs/78644884127f3f53e96607ba2298283a326efb09.png"> would yield
+an answer same as that of COMPACT-LIST-SEARCH<img src=
+"../imgs/49123b870778267198e6135d65cec837d00835a2.png"> and total
+number of iterations done in both of them ‘for’ and ‘while’ loops
+within COMPACT-LIST-SEARCH’ would be at least<img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">.</p>
+<p><i><b>b.</b></i> Procedure COMPACT-LIST-SEARCH<i>’</i><img src=
+"../imgs/78644884127f3f53e96607ba2298283a326efb09.png"> is
+comprised of two loops,</p>
+<p>1. ‘for’ loop from line 2 to 7. Assume that it takes <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png"></p>
+<p>2. ‘while’ loop from line 8 to 9. Assume that it takes <img src=
+"../imgs/baedcd98f1dd65a4ad9bc1a60339e09d552d855e.png"></p>
+<p>3. Rest of the line can be executed in constant time.</p>
+<p>So it will take<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+<p>Therefore from 1, 2 and 3, total time will be:</p>
+<p><img src="../imgs/752ca2b08f2a0c4ec004fdadea7010dc8f44b500.png">
+<b>… … (1)</b></p>
+<p>Calculation of 1,</p>
+<p>Since for loop runs for <i>t</i> time doing a constant work each
+time, therefore total time in executing this loop will be<img src=
+"../imgs/3b708db2acb9ad865f1baaa625e84fb51b2a67ec.png">.</p>
+<p>That is<img src=
+"../imgs/c173459f4f3ec4582ca827f267509abeb070aaf8.png">.</p>
+<p>Therefore,</p>
+<p><img src="../imgs/8b3e9f214e5d0e1858fe24c2628e413a1dac88e9.png">
+<b>… … (2)</b></p>
+<p>Calculation of 2,</p>
+<p><b>After</b> <img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">
+<b>iterations</b> <i><b>i</b></i> <b>will at a distance of</b>
+<img src="../imgs/ab07aceeafee651b60651cf7bcc11436362c9249.png">
+<b>to the desired key</b> <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">.</p>
+<p>Therefore,</p>
+<p>It will get the <b>expectation as</b><img src=
+"../imgs/c59d959fc479d5b492c7fe20cf80eb876905c1d6.png">. In other
+word, implication is that there is while loop which will run
+<img src="../imgs/c59d959fc479d5b492c7fe20cf80eb876905c1d6.png">
+times, each time doing a constant work.</p>
+<p>Therefore total running time of this while loop will be</p>
+<p><img src="../imgs/7c82049f0efbf3a521817bffffba913ec56653a0.png">
+<b>… … (3)</b></p>
+<p>Putting the values got in equation <b>(2)</b> and <b>(3)</b> in
+<b>(1)</b></p>
+<p>Equation comes as,</p>
+<p><img src=
+"../imgs/7a7ca07f5731ee3b120537bf5ac47aad99aa6b5c.png"></p>
+<p><img src=
+"../imgs/da6482b928fd9837ab5c2de8e937d4bb66fb1e19.png"></p>
+<p>So above explanation conclude that expected running time of
+COMPACT-LIST-SEACH’<img src=
+"../imgs/78644884127f3f53e96607ba2298283a326efb09.png"> is<img src=
+"../imgs/a6b8cf97411d7dcd82f0e2161ad343dba1a3aebd.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> <img src=
+"../imgs/621aa3ef2f05b75ca2d2f3a2ca87bff5261a0482.png"> is defined
+in section C.3 of the text book (equation (C.25)) as following:</p>
+<p><img src=
+"../imgs/d04535ac6f6ad685fe9c4347b5dd52d6949e8f25.png"></p>
+<p>In present scenario, the above equation could be as below,</p>
+<p><img src="../imgs/72023d119aab3f4f41a8acd1ec617df8438e0fe5.png">
+<b>… … (4)</b></p>
+<p>Probability of <img src=
+"../imgs/df9f5d939edc43e8f3d1512e1e05fbc1cbc6843e.png"> is
+equivalent to the probability<img src=
+"../imgs/391519c41bb787a506826d0ca319562e1e040a50.png">,
+probability <img src=
+"../imgs/7df94a06b4d2e68ceb6aeb11be715aa4a480ea96.png">…...
+probability<img src=
+"../imgs/443d42a872de29afa4915a66b18f804c980b09a0.png"></p>
+<p>Each of these will have a maximum possibility of<img src=
+"../imgs/4fb16073b556ed3b3646000a48b9dfe498920e20.png">.</p>
+<p>Therefore, probability of getting <img src=
+"../imgs/df9f5d939edc43e8f3d1512e1e05fbc1cbc6843e.png"> will always
+be greater than or equal to<img src=
+"../imgs/b52963fb3261b8e1506f75f3a87eced93d9c2dd4.png">.</p>
+<p>Therefore it can be rewritten equation <b>(4)</b> as bellow,</p>
+<p><img src=
+"../imgs/52728f87cd30a27f6e9d4a756754c9d75d4baefb.png"></p>
+<p><i><b>d.</b></i></p>
+<p>Consider the following:</p>
+<p><img src="../imgs/2d97cacbc7aa29642b4141c04063572f4ac53d17.png">
+<b>… … (5)</b></p>
+<p>(It is quite obvious to observe that <img src=
+"../imgs/50425e72ef34a395e46f5fcf13fe24cb6f2baefa.png"> is
+summation just over the integral part on the other hand <img src=
+"../imgs/8c6c11160e591f0e2031d5798185a0454763c55b.png">is summation
+over fraction also.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/8c6c11160e591f0e2031d5798185a0454763c55b.png">Will always
+be greater or equal to<img src=
+"../imgs/50425e72ef34a395e46f5fcf13fe24cb6f2baefa.png">)</p>
+<p><img src=
+"../imgs/632622696ad9325b572de4d4d26d576ac5c33448.png"></p>
+<p><img src="../imgs/dc582273ad609ae442cc4b3e70cf0748c5411786.png">
+<b>… … (6)</b></p>
+<p>Now, consider the below inequality expression,</p>
+<p><img src="../imgs/3f988d003219a11a5696d61768f3dced765b184e.png">
+<b>… … (7)</b></p>
+<p>From <b>(6)</b> and <b>(7),</b></p>
+<p><img src="../imgs/c4debc9eebe74d56278669a55831e05a3087a67b.png">
+<b>… … (8)</b></p>
+<p>From <b>(5)</b> and <b>(8),</b></p>
+<p><img src=
+"../imgs/f72ec1328168aa46d623e9769ffb07a019fc3ded.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>e</b></i> <b>.</b></p>
+<p>From part <i><b>c</b></i><b>,</b></p>
+<p><img src="../imgs/24e1c28195e084c22d0de82c0e3977837b81f778.png">
+<b>… … (9)</b></p>
+<p>Now, changing the limit,</p>
+<p><img src="../imgs/571a55b7b9898228a46ede3937b5778e21d106a2.png">
+<b>… … (10)</b></p>
+<p>From the part <i><b>d</b></i>,</p>
+<p><img src="../imgs/f72ec1328168aa46d623e9769ffb07a019fc3ded.png">
+<b>… … (11)</b></p>
+<p>Substituting the value of (<b>11)</b> in <b>(10)</b></p>
+<p><img src=
+"../imgs/ac8901912ee1958cef478cc7db4144c03a90e238.png"></p>
+<p>Or, <img src=
+"../imgs/93258c633bb8bb9757b379996572e8c41a46d1c0.png"></p>
+<p>Or<img src=
+"../imgs/0d9012a04bde65cfb70b1d37e0158fce13c41a0d.png"> <b>… …
+(12)</b></p>
+<p>From equation <b>(9)</b> and <b>(12),</b></p>
+<p><img src=
+"../imgs/961ae5b476f622318a002c2df1fd3dda6073e845.png"></p>
+<p><b>Hence proved</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>f.</b></i></p>
+<p>In part <b>b</b>, it is already shown that expected running time
+of COMPACT-LIST-SEARCH’<img src=
+"../imgs/78644884127f3f53e96607ba2298283a326efb09.png"> is</p>
+<p><img src="../imgs/a6b8cf97411d7dcd82f0e2161ad343dba1a3aebd.png">
+<b>… … (13)</b></p>
+<p>In part <i><b>e</b></i> already proved that</p>
+<p><img src=
+"../imgs/961ae5b476f622318a002c2df1fd3dda6073e845.png">.</p>
+<p>Substituting the value of <img src=
+"../imgs/c59d959fc479d5b492c7fe20cf80eb876905c1d6.png"> in equation
+<b>(13)</b></p>
+<p>=<img src=
+"../imgs/a6b8cf97411d7dcd82f0e2161ad343dba1a3aebd.png"></p>
+<p>=<img src=
+"../imgs/029f09fe32c5747b9f7c3194379ef6dcb9cad6aa.png"></p>
+<p>=<img src=
+"../imgs/a04b36d75a9b39577b74c592ce4ee4867a23f064.png"></p>
+<b>Hence proved</b></div>
+<hr>
+<div class="answer">
+<p><i><b>g.</b></i></p>
+<p>Since COMPACT-LIST-SEARCH has same running <i>for</i> and
+<i>while</i> loop, its running time will be same as that of
+COMPACT-LIST-SEARCH.</p>
+<p>Hence,</p>
+<p>Running time of COMPACT-LIST-SEARCH=<img src=
+"../imgs/a04b36d75a9b39577b74c592ce4ee4867a23f064.png"></p>
+<p>Now out of <img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">and<img src=
+"../imgs/1c2719e67f2279faff9b1a903ccac44ce870eb05.png">,</p>
+<p>One having bigger value will dominate the total running
+time.</p>
+<p>Assuming that</p>
+<p><img src=
+"../imgs/21008142b9cc9db0009f799414047ee2054277dc.png"></p>
+<p>Hence,</p>
+<p><img src=
+"../imgs/3f74dd8fb4a1d86e2812632106d96b88f0eeb63b.png"></p>
+<p>Or<img src=
+"../imgs/198bd3106e3713ffb6edab564f89260755925cee.png"> <b>… …
+(14)</b></p>
+<p>Since running time of COMPACT-LIST-SEARCH=<img src=
+"../imgs/a04b36d75a9b39577b74c592ce4ee4867a23f064.png">,</p>
+<p>Therefore substituting the value of <img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png"> form
+equation <b>(14)</b></p>
+<p>= <img src=
+"../imgs/a04b36d75a9b39577b74c592ce4ee4867a23f064.png"></p>
+<p>=<img src=
+"../imgs/ec089556aa5e7fbddf73d8e133afe299f1a9f487.png"></p>
+<p>=<img src=
+"../imgs/2fc7ada6451c0ab6bf194a7f5adc57909023fee9.png"></p>
+<p>=<img src=
+"../imgs/9a98fd076c3b28c8e8d8e2dc1059a2ea7e0de98a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>h.</b></i></p>
+<p>Assumed no two keys in COMPACT-LIST-SEARCH are same, so that
+skip performed by RANDOM<img src=
+"../imgs/4779ebbcbe1b4ec5056635ac06b53de24b3ffb3d.png"> has more
+significance.</p>
+<p>Consider that there are duplicate keys in the list. In that case
+when the skip is performed by RANDOM<img src=
+"../imgs/4779ebbcbe1b4ec5056635ac06b53de24b3ffb3d.png">, the worst
+case possibility is that the next key that is accessed is same as
+the key from which the skip was performed.</p>
+<p>Now, the next thing to do would be that the while loop has to
+move the pointer backward step by step. If this happens, the skip
+does not come in handy and cannot fulfill the need that it was
+meant for.</p>
+<p>So when the lists are created, it is taken care of that all the
+keys are different.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

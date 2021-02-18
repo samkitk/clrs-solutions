@@ -1,0 +1,454 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 24.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/57a76e9b35f45ae4e73f32e7a3b7c9b206510418.png">
+<hr>
+<img src="../imgs/34248deeef5948b5886d7536806c11166558603e.png">
+<hr>
+<img src="../imgs/5b9d919bcb59beade4afc2778ce236114279870e.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a)</p>
+<p>Consider the boxes with dimensions: <img src=
+"../imgs/ce04ba53932357c47b88ea1c772c48754a8aae80.png"> and
+<img src="../imgs/ada0a6029a6d961f5600ae98912f88fcb9686ca6.png">.
+Suppose there exists a permutation <img src=
+"../imgs/e6bd39953a8d5587a04887a1cf47264dcb655786.png"> such that
+<img src="../imgs/88a3007bd031a2d2abe067afbf11d3e446756ec6.png">
+for <img src=
+"../imgs/b3526fef691e2272acf1ce67679a47f40b00d04f.png">and there
+exists a permutation <img src=
+"../imgs/2b7f0e3c9bab92e88f2f8a969dbb9330347a5435.png"> such that
+<img src="../imgs/667a7534d76a60eedd229fd1584941f6b4cfa80b.png">
+for <img src=
+"../imgs/b3526fef691e2272acf1ce67679a47f40b00d04f.png"> so that
+<i>x</i> nests inside <i>y</i> and <i>y</i> nests inside
+<i>z.</i></p>
+<p>Construct a permutation <img src=
+"../imgs/b50ec38486cdc1d36a00d97d7a18a84507d6658a.png">, where
+<img src="../imgs/1df42dddc4640cb37a8c073a617a48abede944f5.png">.
+Then for <img src=
+"../imgs/b3526fef691e2272acf1ce67679a47f40b00d04f.png">, <img src=
+"../imgs/6f2797e6595e3a32da892bc916254c10f22db38e.png"> and so
+<i>x</i> nests inside <i>z</i>.</p>
+<p>b)</p>
+<p>A box X with sorted dimensions <img src=
+"../imgs/0fb98b1402caebc57c076cbabc10dc32b146ad46.png">nests inside
+a box Y with the sorted dimensions <img src=
+"../imgs/382ff93ba01726e98bb249db76ade6db0a3b21ab.png"> and only if
+<img src="../imgs/5164c777e852d5eaf8cd343b25fb42f40ecd15e7.png">
+for <img src=
+"../imgs/b3526fef691e2272acf1ce67679a47f40b00d04f.png">that is, the
+dimensions of <i>x</i> are component-wise less than the increasing
+sequence of dimensions of <i>y.</i></p>
+<p>To prove that a one-dimensional box nests inside another or not,
+do the following:</p>
+<p>• Sort the dimensions of each box from the longest to shortest
+and the sorting can be done in <img src=
+"../imgs/dddf08020a97bd393a150e2470ac3eb8ce0465d9.png"> time.</p>
+<p>• Since, each box is compared sequentially such that <img src=
+"../imgs/5164c777e852d5eaf8cd343b25fb42f40ecd15e7.png"> in
+<img src="../imgs/149ba2dfd7ca100e57af0893b9d71c5b3c8688cb.png">time,
+so the orientation of the boxes is possible.</p>
+<p>c)</p>
+<p>To find the longest sequence of boxes the algorithm is as
+follows:</p>
+<p>• Sort each box in <img src=
+"../imgs/dddf08020a97bd393a150e2470ac3eb8ce0465d9.png"> time using
+radix sort and find the relations to prove that the boxes are
+nested inside each other. If the box <img src=
+"../imgs/cf146a18148d225fa631889bec42ceb52f06c805.png"> nests
+inside <img src=
+"../imgs/7d9e2149673948e6a523e7455df7161a94bdd055.png"> then draw
+the arrow from <img src=
+"../imgs/cf146a18148d225fa631889bec42ceb52f06c805.png"> to
+<img src="../imgs/7d9e2149673948e6a523e7455df7161a94bdd055.png">otherwise
+do vice-versa.</p>
+<p>• Do the pairwise comparison in <img src=
+"../imgs/149ba2dfd7ca100e57af0893b9d71c5b3c8688cb.png"> time, such
+that <img src=
+"../imgs/5164c777e852d5eaf8cd343b25fb42f40ecd15e7.png"> , for each
+of the <img src=
+"../imgs/60c8b3d3a634dd6126bfcbba9036708d72586c97.png"> pairs.</p>
+<p>Thus, a partial relation is produced and a DAG (Directed Acyclic
+Graph) is obtained in <img src=
+"../imgs/deee92efb266dc8d76838ff9a0d7ec5c0ec3b148.png"> time which
+finds the longest path. Thus, the total running time is: <img src=
+"../imgs/69742068d12445fe642acc33d40e51bd1f878f58.png">. It
+includes the summation of the time obtained by sorting, for
+pair-wise comparison and for each of the pairs.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/34a52306cc8a41cda58c2744fbec61f46ce5a5db.png">
+<hr>
+<img src="../imgs/4e97c596e2c9028e797bd8bc70d1b5e580787e33.png">
+<hr>
+<img src="../imgs/01348ac88368d3817b8d4833be13d4c5c6d172c7.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a)</p>
+<p>Here, Dijkstra’s algorithm can be used since all the edges are
+positive to find the shortest path from the start vertex to all
+vertices. The running time of Dijkstra’s algorithm using a binary
+heap is O(E lg V). The term lg V comes from the V calls to extract
+min and the E calls to decrease the key.</p>
+<p>It is given that the edge weights are integers and the shortest
+path is given by |E|, the running time can be much better. The
+counting sort method can be used to main the list of vertices. It
+is known that the weights of the path to each vertex are always an
+integer between 0 to |E|. Maintain an array SHORT of linked list
+for each possible value, INSERT, KEY_DECREASE, and MIN_EXTRACT
+functions.</p>
+<p>Inserted vertex which is reachable in length I, are added to the
+beginning of the linked list SHORT[i], which is O(1).</p>
+<p>KEY-DECREASE function on vertex v is invoked by removing v from
+its current linked list, decrease it key to i, and insert it into
+SHORT[i] for the total time of O(1).</p>
+<p>MIN –EXTRACT always extract vertices with shortest paths of
+non-decreasing value. The actual extraction time is O(E). Since,
+there are E lists, scanning for a non-empty list could take time of
+O (E).</p>
+<p>Since, there is no backtracking for scanning, this O(E) scan of
+lists is averaged to O(V) calls to MIN_EXTRACT. The amortized cost
+is O(E/V) each list.</p>
+<p>Therefore, the total running time includes V calls to
+INSERT(O(V)), E calls to KEY_DECREASE(O(E)) and V calls to
+MIN_EXTRACT(O(E+V)) for total running time of O(E+V). Since, |E|
+&gt; |V|-1, the running time is O(E).</p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p><img src="../imgs/91eebf68dafe228edb2ef944b698fda1d7ac11d3.png">
+is computed by using the edge weight function w<sub>1</sub>, which
+uses the first significant bit of the edge weights. The weights of
+w<sub>1</sub> are either 0 or 1.</p>
+<p>The maximum number of edges on as shortest path is |V|-1. if the
+weight of w<sub>1</sub> is equal to 1 then the maximum weight of a
+shortest path is |V|-1.</p>
+<p>Therefore, <img src=
+"../imgs/7a2e7265b89bca22d40e0e7bf61740dd84069536.png"> for all
+vertices v<img src=
+"../imgs/915f36d7768d61e105d8860c5e283f15fc672bfe.png"> V. From (a)
+it is shown that <img src=
+"../imgs/91eebf68dafe228edb2ef944b698fda1d7ac11d3.png"> can be
+computed in O(E) for v<img src=
+"../imgs/915f36d7768d61e105d8860c5e283f15fc672bfe.png"> V.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c)</p>
+<p>w<sub>i</sub> can be defined as <img src=
+"../imgs/3c52e14e26ae83d2f327b398eb75e6c59313ea4e.png"> .Here, it
+is enough to show that either <img src=
+"../imgs/eb421e15bfe4f745018a2fca40d360aedfeb528f.png"></p>
+<p><b>To Prove:</b></p>
+<p><img src="../imgs/b56adfa9ac6c54e7439217f5cc8a8917d3e1660f.png">
+. The weight of the shortest path is given below:</p>
+<p><img src=
+"../imgs/24dd50165d541d1842d1c3f80e825f4cf192731d.png"></p>
+<p>Similarly,</p>
+<p><img src=
+"../imgs/6bbb4a6c53959b470ae543ef3c88ed24302c7c8a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>d)</p>
+<p><b>Proof:</b></p>
+<p><b><img src=
+"../imgs/3ca7160fdc71eeefe93cc140ef2803b02d594796.png"></b></p>
+<p>Therefore, w<sub>i</sub> can never be negative.</p>
+</div>
+<hr>
+<div class="answer"><b>e)</b>
+<p>This can be proved as shown below:</p>
+<p><img src=
+"../imgs/7acbc7b8f64ae8a7c35a176e81edcaf26a99fd5b.png"></p>
+<p>The terms <img src=
+"../imgs/ca3f64df31d535b0ba6ea948792f9a9c08e0c3c9.png"> because the
+path from a node to itself is zero, and the minimum path length
+from s to v using w<sub>i</sub> function is <img src=
+"../imgs/8b5729f317dc7e6ac6fb57768eaa52fa87022c33.png">.</p>
+<p>Therefore, from (c) it can be proved that <img src=
+"../imgs/e1b8d03f0e5cb1c942e2fb9e8fa8ebb08c069d96.png">.</p>
+<p><img src=
+"../imgs/c1a18fdd3f48bb7865ec982537bdc57071a44270.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>f)</p>
+<p>If <img src=
+"../imgs/bc3e9be693b4a73a9468e307b3ae60f9a1dfb780.png"> is known
+then <img src=
+"../imgs/24cc4d2fe0b74529ff5dda58912e946962c0a4ed.png"> can be
+computed by using the equation in part (d) in time O(E).</p>
+<p>For each edge calculate w<sub>i</sub>(u,v)</p>
+<p>From part (e) it is clearly shown that <img src=
+"../imgs/999c82d5e90f15e6f1b13ba84b5a7a488b5ced3d.png"> is bounded
+by |E|.</p>
+<p>By using part (a) we can compute the shortest path distance
+<img src="../imgs/999c82d5e90f15e6f1b13ba84b5a7a488b5ced3d.png">in
+time O(E).</p>
+<p>By using part (e) compute the shortest path distance <img src=
+"../imgs/8b5729f317dc7e6ac6fb57768eaa52fa87022c33.png">in tine O(V)
+for each vertex.</p>
+<p>Therefore, <img src=
+"../imgs/ac7a2392b9688f8aac6913df929d9e91375b2743.png">can be
+calculated in time O(E lg W). From (b) it is shown that <img src=
+"../imgs/8b5729f317dc7e6ac6fb57768eaa52fa87022c33.png">in time
+O(E).</p>
+<p>Calculate <img src=
+"../imgs/e7b6321b280345f64459e7b682a0d3bccf47c227.png">from
+<img src="../imgs/a1ec1b845d0da104fc58dea1b7abda4d69ca44cd.png">in
+time O(E) up till <img src=
+"../imgs/41a525b84059015bcfe920f618dfc39c82127bfa.png">. Here,
+k=O(lg W), the running time of the algorithm is O(E lg W).</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/be6629abea3bab6db2788f634d5bcb7b8d749ff7.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6P">
+                <a href="#problem-6P">6P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Bitonic shortest paths</b></p>
+<p>There can be a maximum of two changes in direction for bitonic
+sequence. That is bitonic sequence can increase, and then decrease
+and then increase or bitonic sequence can decrease, then increase
+and then decrease. Before going to solve complex bitonic problem
+let’s make simple changes to the given problem.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Suppose instead of given condition of bitonic sequence, consider
+a condition like for each vertex <i>v</i>, where<img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png">, the
+weights of edges along any shortest path from <i>s</i> to <i>v</i>
+are increasing.</p>
+<p>For example consider the weighted graph shown below,</p>
+<p><img src="../imgs/387629414e3913682554043b324b99808719545c.png"
+alt="C:\Users\Kaifi\Documents\Tiffs\2254.tif"></p>
+<p>Here there are two shortest paths from <i>s</i> to <i>d</i>.</p>
+<p>There are <img src=
+"../imgs/1c1b65b18ca3673e91daab44a5761397966ec129.png">and<img src=
+"../imgs/9743d9f89c4ea0c7d6f3caf1e249e9671cf220f2.png">. These
+shortest paths are in increasing order. Now to sort edges in the
+increasing order, call INITIALIZE-SINGLE-SORCE and then relax all
+edges one at a time. Then edges that are along every shortest path
+are relaxed.</p>
+<p>For example,</p>
+<p>In the given graph, the edges are added in the order (2, 3, 4,
+5, 6, 8, and 10). Then both shortest paths <img src=
+"../imgs/1c1b65b18ca3673e91daab44a5761397966ec129.png"> and
+<img src="../imgs/9743d9f89c4ea0c7d6f3caf1e249e9671cf220f2.png">
+will be covered in single pass.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now consider the condition like weights of edges along shortest
+paths increases and then decreases as shown in graph below.</p>
+<p><img src="../imgs/af85cd3561de3f960c25b3d51c2b28d91fa8146e.png"
+alt="C:\Users\Kaifi\Documents\Tiffs\2254.tif"></p>
+<p>Now if the edge is relaxed again increasing order of edges then
+the starting edge would be edge 1 and it cannot be added to
+shortest path because its weight remains<img src=
+"../imgs/7e34a007bd835dc92ad9c46a7cd5fa86919a169b.png">. Next edge
+2 also cannot be added. Now edge 3 onwards could be added. So in
+the computed shortest path only the path <img src=
+"../imgs/1c1b65b18ca3673e91daab44a5761397966ec129.png"> will be
+there.</p>
+<p>Now if the edge is relaxed again in decreasing order then both 2
+and 1 will be added and one shortest path is achieved and that is
+<img src=
+"../imgs/9743d9f89c4ea0c7d6f3caf1e249e9671cf220f2.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>From the two examples above, to handle increasing sequence, only
+one pass is needed. To handle an increasing and decreasing
+sequence, it requires two passes.</p>
+<p>So in the case of bitonic sequence to cover all the shortest
+paths, four passes are needed, in which pass one and three will be
+in increasing order of edge weight and pass two and four will be in
+decreasing order of edge weight.</p>
+<p>For example see the graph given below,</p>
+<p><img src="../imgs/fca06b7da621a50aa006122371946a449f8b9323.png"
+alt="C:\Users\Kaifi\Documents\Tiffs\2254.tif"></p>
+<p>Here there are two shortest paths from <i>s</i> to <i>f</i>
+having equal weights. They are <img src=
+"../imgs/d0156ef05ab2482d0d86aaad1e5e886c42a00711.png">which are an
+increasing, then decreasing and then increasing. Bitonic sequence
+(8, 9, 1, 2) and <img src=
+"../imgs/85c4847b837920316486ed9e6c510c4391f61441.png">which is
+decreasing, then increasing and then decreasing bitonic.</p>
+<p>In pass one (increasing order) edges having weights (7, 8, 9,
+and 10) will be added. In pass 2 (decreasing order) edges 3 will be
+added and so on.</p>
+<p>So, the algorithm for, two given conditions</p>
+<p>1: Edge weights are in bitonic sequence.</p>
+<p>2: Edge weights are unique is given below.</p>
+<p><b>Algorithm:</b></p>
+<p>BITONIC SHORTEST PATH <img src=
+"../imgs/73bb1b7c31d79a439562459bc75bb9dea7f88d6d.png"></p>
+<p>SORT (<i>E</i>)</p>
+<p>INITIALIZE-SINGLE-SOURCE</p>
+<p><b>for</b> each edge (<i>u</i>, <i>v</i>) in <i>E</i> in
+increasing order</p>
+<p><b>do</b></p>
+<p><b>relax</b> (<i>u</i>, <i>v</i>, <i>w</i>)</p>
+<p><b>for</b> each edge (<i>u</i>, <i>v</i>) in <i>E</i> in
+decreasing order</p>
+<p><b>do</b></p>
+<p><b>relax</b> (<i>u</i>, <i>v</i>, <i>w</i>)</p>
+<p><b>for</b> each edge (<i>u</i>, <i>v</i>) in <i>E</i> in
+increasing order</p>
+<p><b>do</b></p>
+<p><b>relax</b> (<i>u</i>, <i>v</i>, <i>w</i>)</p>
+<p><b>for</b> each edge (<i>u</i>, <i>v</i>) in <i>E</i> in
+decreasing order</p>
+<p><b>do</b></p>
+<p><b>relax</b> (<i>u</i>, <i>v</i>, <i>w</i>)</p>
+<p><b>Analysis of above algorithm:</b></p>
+<p>Time to sort <img src=
+"../imgs/2bd7adfbfd925f45cc05f764fe398bcd4d010b4a.png"> edge by
+weight is <img src=
+"../imgs/fed2433975d7e4be542a8dba41e8067e167dccdc.png">because<img src="../imgs/991f3c54c7d53adee5c7fe954d1fb46894d2ff02.png">.
+INITIALIZE-SINGLE_SOURCE will take <img src=
+"../imgs/41137937758cfdcf7c0102292281cc8faa503d68.png"> time.</p>
+<p>Each pass will take <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png"> time.</p>
+<p>So, total time for BITONIC SHORTEST PATH <img src=
+"../imgs/73bb1b7c31d79a439562459bc75bb9dea7f88d6d.png"> is
+<img src="../imgs/677b05f91924fcc11359dbe788f3d1f2cd9cff3d.png">
+=<img src=
+"../imgs/2a2851b4417e2bc2c201cd79a2c79b09bc3f9abd.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

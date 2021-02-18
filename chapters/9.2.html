@@ -1,0 +1,182 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 9.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/ce1497f244ac57bc754b39bdeeac6ef0faed1150.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/f3ab9241f90b1bf0dc1a2e674ffbeee937bec1b0.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Iterative Algorithm for RANDOMIZED-SELECT</b></p>
+<p>The following algorithm demonstrates an iterative version of the
+RANDOMIZED-SELECT algorithm. This algorithm returns <img src=
+"../imgs/c9d3e29468484258562a3faf954d69cbbef4fa47.png"> smallest
+element in the array <i>A</i>.</p>
+<p>In this algorithm,</p>
+<p><i>A</i> - an array of elements</p>
+<p><i>p</i> - lower position of the array</p>
+<p><i>q</i> - higher position of the array</p>
+<p><i>i</i> - position of an element which is to be returned</p>
+<p>RANDOMIZED-SELECT(A, p, r, i)</p>
+<p>1. <b>while</b> <img src=
+"../imgs/806d333592390d0289018e5f9ab03fcfabb6caec.png"> // verify
+whether the <i>p</i> is less than <i>r</i>, if yes repeat the
+statements 2 to 8</p>
+<p>2. <img src=
+"../imgs/c2a5cf3f670a4bd991df457b9df5cf1b02860ba6.png">RANDOMIZED-PARTITION(A,
+p, r) // get partition position</p>
+<p>3. <img src=
+"../imgs/5e4c3d5b74472d352775bf9d11ba959fcadfa653.png"></p>
+<p>4. <b>if</b> <img src=
+"../imgs/5a3f42b1605ad7b762152f1811230171ed26ef6d.png"> // desired
+element is at lower side if true</p>
+<p>5. <img src=
+"../imgs/6f5fa3600c84736f78bb8ffe59eff357fd84e2f7.png"> // update
+the value of <i>r</i></p>
+<p>6. <b>else</b> // desired element is at higher side</p>
+<p>7. <img src=
+"../imgs/0b4b9bad0fa2c22c3a3a7ff830028b8c26169118.png"> // update
+the value of <i>p</i></p>
+<p>8. <img src=
+"../imgs/52d119e5b1fbff2ed298a975b7fc2ced556bd03b.png"></p>
+<p>9. <b>return</b> <img src=
+"../imgs/6c1a9f573332a74301f3850274315410cc233284.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Note:</b></p>
+<p>For RANDOMIZED-PARTITION algorithm in the RANDOMIZED-SELECT
+algorithm, refer the text book, page number - 179.</p>
+<p>For PARTITION algorithm in the RANDOMIZED- PARTITION algorithm,
+refer the text book, page number - 171.</p>
+<p>For RANDOM(<i>p</i>, <i>r</i>) in the RANDOMIZED- PARTITION
+algorithm returns a ranom value between <i>p</i> and <i>r</i>
+(inclusive), and refer the text book, page number - 117.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In Randomized-Select algorithm, need to select a random number
+as a pivot point. After selection of randomly pivot point divide
+the array in two parts the pivot point and the rest of the
+list.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the given problem, apply Randomized-Select algorithm in worst
+case, then the number selected as a pivot will be the maximum
+number. In this case, each time the randomly selected pivot number
+will be maximum. And each time array will be divided in two
+categories pivot number and rest of the list.</p>
+<p>Pivot 9 3, 2, 1, 0, 7, 5, 4, 8, 6, || 9</p>
+<p>Pivot 8 3, 2, 1, 0, 7, 5, 4, 6, || 8</p>
+<p>Pivot 7 3, 2, 1, 0, 6, 5, 4, || 7</p>
+<p>Pivot 6 3, 2, 1, 0, 4, 5, || 6</p>
+<p>Pivot 5 3, 2, 1, 0, 4, || 5</p>
+<p>Pivot 4 3, 2, 1, 0, || 4</p>
+<p>Pivot 3 0, 2, 1, || 3</p>
+<p>Pivot 2 0, 1, || 2</p>
+<p>Pivot 1 0, || 1</p>
+<p>Return 0.</p>
+<p>It means 0 is the minimum number in the array. In worst case,
+the Randomized-Select algorithm complexity will be
+O(n)<sup>2</sup>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

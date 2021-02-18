@@ -1,0 +1,1351 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 26.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a)</p>
+<p>Consider a network flow <i>G = (V, E)</i> with edge capacity
+<img src="../imgs/5c23267eebcc6b67b8b4e43e82add5c9b6561d5d.png">
+and vertex capacity <img src=
+"../imgs/0fa745d914ce13692d77b60078e9cfaa6e9ab5e4.png"></p>
+<p>Keep the edge capacity constraint, skew symmetry and flow
+conservation same.</p>
+<p>Consider the new requirement: for every <img src=
+"../imgs/2f3a117a752aaa89e246c9de3ed26a040dd254e0.png">there is a
+need for <img src=
+"../imgs/c2a4304389831722724e090c60e666ea010cb356.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider, <i>G’= (V’, E’)</i> with only edge capacity be a new
+flow network. The maximum flow in <i>G</i> is equal to a maximum
+flow in <i>G’</i> and vice-versa.</p>
+<p>G’ is the edge capacity given by<img src=
+"../imgs/542a16141d76fd9e58d5be4e147f83d714a66864.png">.</p>
+<p>To construct <i>G’</i> from <i>G</i>, it is necessary to
+splitting every vertex <img src=
+"../imgs/e1d8955ac11f4f6da504251136f3778dc5dc0cdb.png"> into two
+vertices v<sub>in</sub> and v<sub>out</sub>.</p>
+<p>After splitting, insert a new edge <i>(v</i><sub>in</sub><i>,
+v</i><sub>out</sub>) with capacity <i>c’(v</i><sub>in</sub><i>,
+v</i><sub>out</sub><i>) = d(v)</i> between the two parts of the
+split vertex.</p>
+</div>
+<hr>
+<div class="answer">
+<p>From the above constraints,</p>
+<p><img src=
+"../imgs/9660b9949248a4e36123a4232fb010fe22456dab.png"></p>
+<p>Let, ‘s’ and ‘t’ be the source and the sink vertex in G
+respectively, the source vertex and the sink vertex in G’ is
+s<sub>in</sub> and t<sub>out</sub>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In order to reduce the escape problem, let there be n starting
+points on the grid and 4m-4 boundary points. Now, construct G= (V,
+E) considering the below points:</p>
+<p>• Assume s as a temporal source vertex and connect it to each of
+the n starting points.</p>
+<p>• Assume t as a temporal sink vertex and connect it to each of
+the 4m-4 boundary points to t.</p>
+<p>• Each undirected edge between point’s u and v in the original
+grid is changed into directed edges (u, v) and (v, u) in G.</p>
+<p>• The edge capacity is assigned to 1 to each vertex in G.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p>Efficient algorithm to solve the escape problem running
+time:</p>
+<p>• Number of points in the input grid has = n<sup>2</sup>
+points</p>
+<p>• Number of undirected edges = 2n<sup>2</sup> -2n</p>
+<p>• Therefore, G has 2+n<sup>2</sup> = O(n<sup>2</sup>) vertices
+and m+(4n<sup>2</sup>-4)+2(2n<sup>2</sup>-2n)=m+8n<sup>2</sup>-4n-4
+=O(n<sup>2</sup>) edges.</p>
+<p>• Hence, the running time is O(n<sup>2</sup>).</p>
+<p>• By applying ford-Fulkerson method on G’ the cost is O(E’.|f*|)
+= O((E+V).|f*|), here f* is maximum.</p>
+<p>• In this case, |F*|<img src=
+"../imgs/3081f96b96452b3f9e855e4eaa133db44408bc37.png">4n-4 and
+|E|+|V|=O(n<sup>2</sup>).</p>
+<p>• Therefore, for higher bound running time is
+O((E+V).|f*|=O(n<sup>3</sup>)</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/3d7c0684c14bfa0569c1821dac6d318602ff48e5.png">
+<hr>
+<img src="../imgs/9f0e9f96b4a1daafa269803474530324952e7f54.png">
+<hr>
+<img src="../imgs/c3e11e73c178caad9ad030821d1e8343e6f8129e.png">
+<hr>
+<img src="../imgs/4ec39ea8df22403615210c7fb1e7470ffc223cf3.png">
+<hr>
+<img src="../imgs/5129d358a9e6769693e8cafcc3bb775f559702e2.png">
+<hr>
+<img src="../imgs/1e3166e46f91216e8f00fd0a9357482dc227d6ff.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Flow Network</b></p>
+<p>A flow network, in the most basic form, is a directed graph.
+Each of the edges has a capacity assigned to it. In the network a
+certain amount of flow goes from each edge of the network. There
+are certain nodes in the graph from which the flow starts and to
+which the flow ends. These two nodesare known as the sourceand sink
+of the network respectively.</p>
+<p>In the diagram below the node <i>s</i> is the source of the
+network and the node <i>t</i> is the destination or sink of the
+network. Each of the graph edge has a capacity. The capacity
+defines the data value that can go through that edge. The capacity
+is always a positive integer. One more thing is that if there
+existsan edge from a vertex <i>v</i><sub>1</sub> to vertex
+<i>v</i><sub>2</sub> than there can be no edge from
+<i>v</i><sub>2</sub> to <i>v</i><sub>1</sub>.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p>In the above diagram the vertex <i>s</i> is called the source of
+the network and the vertex <i>t</i> is called the sink or
+destination of network. The capacity of each edge is shown
+alongside the edge. As the edge from <i>s</i> to
+<i>v</i><sub>1</sub> has the capacity of 16. A flow network has
+various applications in practicality. It is used in data
+warehouses, scientific research and electricity distribution
+etc.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm consulting:</b> Consider that in an algorithm
+consulting company there are <i>n</i> important subareas of
+algorithms. For a particular area <img src=
+"../imgs/e7a5cdd7a36c072c2fabef6a9deee2eff16545fe.png">of
+algorithms the<img src=
+"../imgs/1661625668d6c7234840c0515e90c0633d5d4621.png">dollars are
+being paid to hire an expert. The company has lined up of potential
+job. To perform a job, experts are hired from the subsets of
+subareas. These experts can work on multiple jobs at a time. It
+gives the company the revenue in dollars (<i>p</i><sub>i</sub>).
+The area in which the hiring of algorithm experts is required is
+as:</p>
+<p><img src=
+"../imgs/f5e907ddc67bce9fbafd35d36a0b96c6e75ce6d1.png"></p>
+<p>The potential jobs set that are defined by the hiring company
+as:</p>
+<p><img src=
+"../imgs/2746d07fb0fe2ce404eab8851b1f92af67ccfa2e.png"></p>
+<p>The company’s target is to maximize the revenue. The maximum net
+revenue of the company is calculated by subtracting the cost
+incurred in the employing the experts from the total income of
+accepted jobs.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>A flow network</b> <i><b>G</b></i> <b>for algorithm
+consulting:</b> The flow network created for the algorithm company
+has a source network <i>s</i>, vertices<img src=
+"../imgs/d719090cbfa4f7a836353fa27280c799b60c3a62.png">, vertices
+<img src="../imgs/23c3542d2556d625541b336bb0c71b3fd940ef14.png">
+and a sink vertex <i>t</i>. The edges of this network are defined
+as:</p>
+<p>For <img src=
+"../imgs/abbf7206aa699dacafabe07948f477987846da90.png"> there is an
+edge <img src=
+"../imgs/9b8e847547a9763adf48d529cc8ad47515cf0755.png"> with
+capacity <img src=
+"../imgs/90b8af25838dbdfe7aacbb358d60ed17fff5f3e0.png">as shown
+below:</p>
+<p><img src=
+"../imgs/48ffcb69d8c16c1e1deea174963fc3ef45e88291.png"></p>
+<p>For<img src=
+"../imgs/81477996987fbc01580ae2845e7d63b94559545a.png"> there is as
+edge <img src=
+"../imgs/2d1d1b3056195509f099120c9d35bdab530a120f.png">which has
+the capacity <img src=
+"../imgs/6335fbeb74c8905881bec16a2be7a018903e204e.png"> as
+shown:</p>
+<p><img src=
+"../imgs/dab23b6b5655e359f3959aa49dc72d4f35bcf2d1.png"></p>
+<p>There is one more condition in the flow network that is
+<img src="../imgs/abbf7206aa699dacafabe07948f477987846da90.png">and<img src="../imgs/81477996987fbc01580ae2845e7d63b94559545a.png">if
+the vertex <img src=
+"../imgs/c3f32e4a550eb2a060d1cf6b1f8de1c838532d82.png">then there
+is an edge from vertex <img src=
+"../imgs/e7a5cdd7a36c072c2fabef6a9deee2eff16545fe.png">to
+vertex<img src=
+"../imgs/d00b69d734d13e1b49953c451e7120fdc5b75662.png">which has
+infinite capacity.</p>
+<p><img src=
+"../imgs/6c4c93c64e294b8e46f4160451d1d2dee90998f0.png"></p>
+<p>The flow network created from the above description is as:</p>
+<p><img src="../imgs/9c3e2e10deae22d808cc58d9d3d38828652fc0b6.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p><i><b>a.</b></i> Suppose that for a finite capacity-cut, one of
+the vertices is on the <i>S</i> side. <i>S</i> side refers to the
+vertex partitions in which source <i>s</i> is present. Now, if a
+vertex is present on the <i>S</i> side, then the edge connecting
+<img src=
+"../imgs/e7a5cdd7a36c072c2fabef6a9deee2eff16545fe.png">with the
+vertex <img src=
+"../imgs/a97abcd017dcc051aa912edb442a061a4f28f7bc.png"> will be
+counted when calculating the value of the cut. To recall, it can be
+stated that a cut involves the sum of edges between vertices of
+<i>S</i> and <i>T</i> (corresponding to sink). The capacity of the
+cut (<i>S</i>, <i>T</i>) is:</p>
+<p><img src=
+"../imgs/f1cfad6302b4283b969ea4893c92a8be5d2fc15d.png"></p>
+<p>Now, since the vertex will be on <i>S</i> side and the edge will
+be counted, the capacity cannot be finite, since the edge weight is
+not finite for the connection of <img src=
+"../imgs/e7a5cdd7a36c072c2fabef6a9deee2eff16545fe.png">with<img src="../imgs/a97abcd017dcc051aa912edb442a061a4f28f7bc.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Other approach-Proof by contradiction:</b> For the
+contradictory proof consider that in a graph having finite capacity
+cut (<i>S</i>, <i>T</i>) it is true that<img src=
+"../imgs/26336e3b08e685f522c55636b2b08381c2cde51e.png">for the
+vertices<img src=
+"../imgs/c3f32e4a550eb2a060d1cf6b1f8de1c838532d82.png">.</p>
+<p>Now, if <img src=
+"../imgs/26336e3b08e685f522c55636b2b08381c2cde51e.png">then it must
+be in the set of <i>S</i> that is<img src=
+"../imgs/ef44b768e2d6a89467b218218b90fe13ce306ff4.png">.</p>
+<p>Now, it is known that<img src=
+"../imgs/cab893a0613b803144905c9eb4a17fa761579277.png">. So, the
+cut (<i>S</i>, <i>T</i>) will be on the edge<img src=
+"../imgs/f531c19ad071f8d70c17580961523afdf80c58d5.png">in the
+network <i>G</i> as shown in the figure:</p>
+<p><img src="../imgs/81fdd01acf5250d6def3107a315d022981531515.png"
+alt="Picture 1"></p>
+<p>From the graph it is clear that the capacity of the edge
+<img src=
+"../imgs/f531c19ad071f8d70c17580961523afdf80c58d5.png">is<img src=
+"../imgs/a5ec39f6409ccd917a185f991af7e234278ca548.png">. So, the
+capacity of cut (<i>S, T</i>) will be infinite. The assumption is
+contradicted here. Hence, the cut (<i>S, T</i>) will be of finite
+capacity cut if <img src=
+"../imgs/fe18163b9280e2a08ad80ed08a42bd46dc019e46.png">for<img src=
+"../imgs/c3f32e4a550eb2a060d1cf6b1f8de1c838532d82.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b</b></i> <b>.</b> Consider a flow network graph <i>G</i>
+(<i>V</i>, <i>E</i>) with the capacity <i>c</i>(<i>u</i>, <i>v</i>)
+from node <i>u</i> to <i>v</i> having source <i>s</i> and sink
+<i>t</i>. For maximum amount of flow, this is sentfrom <i>s</i> to
+<i>t</i> through the network.</p>
+<p><img src=
+"../imgs/aecf379b4587ff07058d9f923f4335bfcb54cb86.png"></p>
+<p>Now, considering the above expression of maximum flow, the
+problem can be modeled as a flow graph. In the model <i>M</i> of
+problem there will be two attributes first is the set of accepted
+jobs <i>M.J</i> and the other denotes the set of experts hired
+<i>M.A</i>. The model for the problem will be valid only if all the
+hired experts are required for the jobs.</p>
+<p>Consider <i>M</i> as a valid project plan that is in this
+project plan the requirement for the experts is fulfilled. Now, if
+<img src="../imgs/d00b69d734d13e1b49953c451e7120fdc5b75662.png">is
+the accepted job set that is <img src=
+"../imgs/ac394d71e45b9d3a45a24b159dc029fc59fd86fd.png">then for
+each<img src=
+"../imgs/c3f32e4a550eb2a060d1cf6b1f8de1c838532d82.png">, the expert
+<img src=
+"../imgs/e7a5cdd7a36c072c2fabef6a9deee2eff16545fe.png">will be the
+part of hired experts that is<img src=
+"../imgs/fe3055fe629c576f55faf1e0185469fd81631a75.png">.</p>
+<p>The edges from <i>s</i> to <img src=
+"../imgs/e7a5cdd7a36c072c2fabef6a9deee2eff16545fe.png">is
+representing the cost<img src=
+"../imgs/90b8af25838dbdfe7aacbb358d60ed17fff5f3e0.png"> and the
+edges from vertices <img src=
+"../imgs/a97abcd017dcc051aa912edb442a061a4f28f7bc.png"> to sink
+<i>t</i> would represent income, that is:</p>
+<p><img src=
+"../imgs/6335fbeb74c8905881bec16a2be7a018903e204e.png"></p>
+<p>The maximum net revenue of the company is calculated by
+subtracting the cost incurred in the employing the experts from the
+total income of accepted jobs. For finding the project plan with
+maximum net revenue the lemma will be used which is setting up the
+relationship between the minimum cut capacity and the valid project
+plan revenue.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Lemma:</b> In a flow network <i>G,</i> for a minimum cut
+<img src="../imgs/2fe1d628cd3b4740ebb095202722b504c36c57cd.png">of
+finite capacity there must be a valid model of project having total
+<img src=
+"../imgs/05a8b2167621d38d24246b6823e0b037688fe7cd.png">revenue.</p>
+<p>The <b>proof of lemma</b> will be done in two parts in the first
+part the project model will be created for a network having a
+finite capacity cut. While in the other part the minimum cut of
+finite capacity for a valid project model will be created.</p>
+<p>Now, for the first side consider that (<i>S, T</i>) is a minimum
+cut of finite capacity <img src=
+"../imgs/2fe1d628cd3b4740ebb095202722b504c36c57cd.png">in a flow
+network <i>G</i>. Creating the project model <i>M</i> for this
+graph which contains the job set <img src=
+"../imgs/d00b69d734d13e1b49953c451e7120fdc5b75662.png">in the
+attribute <i>M.J</i> in the condition when <img src=
+"../imgs/cab893a0613b803144905c9eb4a17fa761579277.png">. It also
+includes the expert <img src=
+"../imgs/e7a5cdd7a36c072c2fabef6a9deee2eff16545fe.png">in the
+attribute <i>M.A</i> for<img src=
+"../imgs/fe18163b9280e2a08ad80ed08a42bd46dc019e46.png">. As it is
+proved in the previous part that the project model <i>M</i> is
+valid because for each<img src=
+"../imgs/ac394d71e45b9d3a45a24b159dc029fc59fd86fd.png">it is true
+that<img src=
+"../imgs/fe3055fe629c576f55faf1e0185469fd81631a75.png">if and only
+if<img src=
+"../imgs/c3f32e4a550eb2a060d1cf6b1f8de1c838532d82.png">.</p>
+<p>It is assumed that the cut(<i>S</i>, <i>T</i>) is of finite
+capacity<img src=
+"../imgs/2fe1d628cd3b4740ebb095202722b504c36c57cd.png">, so there
+will not be any edge <img src=
+"../imgs/f531c19ad071f8d70c17580961523afdf80c58d5.png">which
+crosses the cut for<img src=
+"../imgs/ef44b768e2d6a89467b218218b90fe13ce306ff4.png">and<img src=
+"../imgs/cab893a0613b803144905c9eb4a17fa761579277.png">. In the
+finite cut (<i>S</i>, <i>T</i>) the edges joining the vertices of
+set <i>S</i> to set T must be either in the form of<img src=
+"../imgs/0fa7460f87a0fb5e6000170be97d8b3a045753d0.png">or<img src=
+"../imgs/1622e09c713c35de7fbb1869d6d011bbce6493ae.png">.</p>
+<p>Now, suppose that <img src=
+"../imgs/5e043950c17b03fbf11de62786862d5faf998424.png">and<img src=
+"../imgs/7dd1cb4cdaaf1ce5fcace3d3476ff124f8adc996.png">are edges
+set of the form<img src=
+"../imgs/0fa7460f87a0fb5e6000170be97d8b3a045753d0.png">and<img src=
+"../imgs/1622e09c713c35de7fbb1869d6d011bbce6493ae.png">
+respectively and these edges are crossing the cut. So the capacity
+of cut:</p>
+<p><img src="../imgs/f3699cbcca69bd434bd76248cb8ab55a9d698dc6.png">
+<b>… … (1)</b></p>
+<p>Consider that<img src=
+"../imgs/a1fb9ab0cdd4d5ed169115b214a55d3ebbd969c8.png"> is possible
+only when<img src=
+"../imgs/fe18163b9280e2a08ad80ed08a42bd46dc019e46.png">which is
+possible if <img src=
+"../imgs/fe3055fe629c576f55faf1e0185469fd81631a75.png"> and from
+the graph <i>G,</i><img src=
+"../imgs/cc76aa4fa19dd47ebda3e1ea1960338f68b3af8f.png">.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/b87d1712fa8d89ee60225ca9c5eefbe970cea890.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Similarly for the edges of the form <img src=
+"../imgs/1622e09c713c35de7fbb1869d6d011bbce6493ae.png">the
+possibility that<img src=
+"../imgs/f73b0f4d7bb085aa06354df233eee91736fc5891.png"> is true
+only when <img src=
+"../imgs/6b9a7db5a7a7523d3fd03a2612c73ca6548d8d15.png">it
+means<img src=
+"../imgs/dc158d6d14fa74c5836600a50ac481b5992c26d8.png">which in
+turn proves that<img src=
+"../imgs/82614a9d4b192dea39c3c29de27a61124735b2dc.png">. From the
+constructed graph <i>G</i> the capacity of edge <img src=
+"../imgs/1622e09c713c35de7fbb1869d6d011bbce6493ae.png">is<img src=
+"../imgs/df09ea12f04fed58bbc19b72d00dc4aa58ba97b4.png">that is
+<img src=
+"../imgs/9d0d4c4b534ba385eaee239ccef18e15b1945e3c.png">.So,</p>
+<p><img src=
+"../imgs/d7e76d5623829562ae3b592fe49c136355b0f05d.png"></p>
+<p>Suppose that <i>r</i> is the total revenue of the project model
+<i>M</i> then from the definition of revenue:</p>
+<img src=
+"../imgs/f5d0f3339c454d5daad8d906d90f4ba656c142e2.png"></div>
+<hr>
+<div class="answer">By using equation <b>(1)</b>,</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/0193511336495f912a0f9eb4ef3da96d1581ff0c.png"></div>
+<hr>
+<div class="answer">Now, the proof of other sidethat is the
+creation of cut from the valid project model is as: Consider that
+the cut (<i>S</i>, <i>T</i>) is created as for each job set
+<img src=
+"../imgs/ac394d71e45b9d3a45a24b159dc029fc59fd86fd.png">assume
+that<img src=
+"../imgs/cab893a0613b803144905c9eb4a17fa761579277.png">and for each
+expert <img src=
+"../imgs/fe3055fe629c576f55faf1e0185469fd81631a75.png">assume
+that<img src=
+"../imgs/fe18163b9280e2a08ad80ed08a42bd46dc019e46.png">.For the
+proof of cut (<i>S</i>, <i>T</i>) to be of finite capacity,
+consider that the edges <img src=
+"../imgs/e3c6e355adf1717ad7941cb8dbc4db11ce9c47cf.png">are the only
+edges having infinite capacity. It is considered that there are no
+edges <img src=
+"../imgs/e3c6e355adf1717ad7941cb8dbc4db11ce9c47cf.png">such
+that<img src=
+"../imgs/ef44b768e2d6a89467b218218b90fe13ce306ff4.png">and<img src=
+"../imgs/cab893a0613b803144905c9eb4a17fa761579277.png">are present
+in the graph. So, the capacity of minimum cut is finite.</div>
+<hr>
+<div class="answer">For the contradictory proof suppose that for
+<img src=
+"../imgs/ef44b768e2d6a89467b218218b90fe13ce306ff4.png">and<img src=
+"../imgs/cab893a0613b803144905c9eb4a17fa761579277.png"> there is an
+edge<img src=
+"../imgs/e3c6e355adf1717ad7941cb8dbc4db11ce9c47cf.png">. From the
+project model the job set <img src=
+"../imgs/ac394d71e45b9d3a45a24b159dc029fc59fd86fd.png">and the
+expert<img src=
+"../imgs/fd8ccd17dd3ef960d9d9c812e6039ac37fcde47e.png">. But for
+the edge <img src=
+"../imgs/e3c6e355adf1717ad7941cb8dbc4db11ce9c47cf.png"> it is clear
+that<img src=
+"../imgs/c3f32e4a550eb2a060d1cf6b1f8de1c838532d82.png">. Since
+<i>M</i> is valid project model so, the expert<img src=
+"../imgs/fe3055fe629c576f55faf1e0185469fd81631a75.png">. For the
+calculation of total revenue of project model the analysis is as
+above that is the total revenue. <img src=
+"../imgs/0193511336495f912a0f9eb4ef3da96d1581ff0c.png"></div>
+<hr>
+<div class="answer">Hence, it can be said maximum revenue problem
+can be changed to the problem of finding the minimum cut. As from
+the analysis the maximum revenue for the project model is:</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/05a8b2167621d38d24246b6823e0b037688fe7cd.png"></div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> Consider the graph <i>G</i> drawn above
+containing the source <i>s</i> and sink <i>t</i> and the edges</p>
+<p><img src="../imgs/ba5851f81bf1b9e25d73131bc633496bdf537f93.png">
+Having capacity <img src=
+"../imgs/7fcfd8b173dbb10ff29682457c037e93f069bd3e.png"> which
+represents the cost of hiring expert <img src=
+"../imgs/e7a5cdd7a36c072c2fabef6a9deee2eff16545fe.png"> and the
+edges<img src=
+"../imgs/b1557b88a64c54974a9b4d6db6f0071754346425.png">having
+capacity<img src=
+"../imgs/df09ea12f04fed58bbc19b72d00dc4aa58ba97b4.png">,
+representing the revenue for job plan<img src=
+"../imgs/d00b69d734d13e1b49953c451e7120fdc5b75662.png">.</p>
+<p>For finding the right job selection and the eligible expert for
+that job first of all finding the maximum flow in the created flow
+graph. After that minimum cut set is discovered by using the depth
+first search algorithm. If any expert who belong to the minimum cut
+set but is not hired yet then hire that expert. Similarly if a job
+doesn’t belong to the minimum cut then accept that job.</p>
+<p><b>The algorithm for the selection of right job and expert can
+be written as follows:</b></p>
+<p>1. Find the maximum flow and the residual network for the
+graph.</p>
+<p>2. Find the minimum cut set<img src=
+"../imgs/ddda23111007f3556855db06a3def2b72a17f9a2.png">using the
+depth first search (DFS) traversal.</p>
+<p>// check if the edge belongs to the minimum cut.</p>
+<p>3. <b>if</b> E<img src=
+"../imgs/ce15ba8aa0f141d9421e5914d9cdc38b2c80f839.png"></p>
+<p>4. Hire the expert</p>
+<p>// check if the edge do not belong to minimum cut.</p>
+<p>5. <b>if</b> E<img src=
+"../imgs/04667217f3172d4eb9b5e1e9b39cfc494feb4c86.png"></p>
+<p>6. Accept the job</p>
+<p><b>7. end</b></p>
+<p>The DFS method used in the above algorithm is as follows: The
+depth first search is a searching method which starts its process
+of searching from the root node and explores all the nodes till the
+end before returning back. The depth first search algorithm
+initially all the nodes are painted with white color and the parent
+of each node is set to NIL. The initial time to visit the node is
+also set to zero. After that each white node is explored and the
+status is updated by calling the process DFS-VISIT.</p>
+<p><b>DFS (</b> <i><b>G</b></i> <b>)</b></p>
+<p>// run the loop for each vertex of graph</p>
+<p>1. <b>for</b> each vertex <img src=
+"../imgs/c45711395a789bec9c5546e5516a91b52a9bd8cd.png"></p>
+<p>// assign the color to each node</p>
+<p>2. <i>u.color</i>= white</p>
+<p>// store nil in the parent field of each node</p>
+<p>3. <img src=
+"../imgs/bc5f4d66beab175bc503c8642d024f578feb0ec4.png"></p>
+<p>// initial time of discovering the node</p>
+<p>4. time = 0</p>
+<p>// execute loop once for each node</p>
+<p>5. <b>for</b> each vertex <img src=
+"../imgs/c45711395a789bec9c5546e5516a91b52a9bd8cd.png"></p>
+<p>// check if the color of the node is “white”</p>
+<p>6. <b>if</b> <i>u.color</i> = white</p>
+<p>// call the method to discover the node</p>
+<p>7. DFS-VISIT (<i>G</i>, <i>u</i>)</p>
+<p>So the above two “if” conditions give the accepted jobs</p>
+<p><img src=
+"../imgs/234f5482d48ec4279d298d621b339d75265c15c7.png"></p>
+<p>And the hired expert</p>
+<p><img src=
+"../imgs/2ede0729db76b69a756e95b886d78f1ad5694426.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis of algorithm:</b> The total complexity of the
+algorithm would depend on the implementation of the maximum flow
+algorithm. Here, <i>n</i> and <i>m</i> refer to the range of value
+of <i>i</i> and <i>k</i> used in the algorithm stated above. Above
+algorithm set has length of <i>n</i> and potential job associated
+with these subareas have length <i>m</i>.</p>
+<p>So, total option comes out to be <i>mn</i>. And this is the
+worst case because here consideration is up-to last option.
+Finally, for hiring the expert, again set <i>A</i> comes in the
+picture which has length <i>n</i>. Now, taking all considerations
+which are mentioned above gives the final running time
+of<b><img src=
+"../imgs/5a439877631f00ab41e3ace4f5e540b954a652db.png"></b>. This
+is the extreme case, and it will not exceed the range. So, this is
+an optimal and efficient approach. Hence, the total time of
+execution of the algorithm which selects which expert to hire and
+which job to choose would be<b><img src=
+"../imgs/1b661854fbdedb7127b579f3817663bb3106e184.png"></b><b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d2feb652cffd0b8b1e27d4f77619b1ed90364f75.png">
+<hr>
+<img src="../imgs/2af1e16faae4ae02818a96524afe76809c23b255.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Flow Network</b></p>
+<p>A flow network, in the most basic form, is a directed graph.
+Each of the edges has a capacity assigned to it. In the network, a
+certain amount of flow goes from each edge of the network. There
+are certain nodes in the graph from which the flow starts and where
+the flow ends. These two nodes are known as the origin and
+destination of the network respectively.</p>
+<p>In the diagram below, the node <i>s</i> is the origin of the
+network and the node <i>t</i> is the destination or sink of the
+network. Each of the graph edge has a capacity. The capacity
+defines the data value that can go through that edge. The capacity
+is always a positive integer. If there exists an edge from a vertex
+<img src="../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">to
+vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">, than there
+is an edge from <i>v</i><sub>2</sub> to <i>v</i><sub>1</sub>.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p>In the above diagram, the vertex <i>s</i> is called the origin
+of the network and the vertex <i>t</i> is called the sink or
+destination of network. The flow limit of each edge is shown
+alongside the edge. As in the graph, the flow limit of edge
+<i>s</i> to <i>v</i><sub>1</sub> is 16. The flow for an edge is
+defined as the amount passed from a vertex to the other vertex. For
+any edge of the network, the total value of flow is either smaller
+than or equal to the flow limit of concerned edge. The total flow
+is the total amount being passed through the network.</p>
+<p><img src=
+"../imgs/92c85b7b7ae90e92d8b719aed4fdd48c988f64d9.png"></p>
+<p><b>Maximum flow</b>: For a flow network, maximum flow is defined
+as the largest quantity of flow that could pass from the origin
+vertex to the destination.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Cut and minimum cut:</b> For a flow network, the cut
+(<i>S</i>, <i>T</i>) is the division of the vertices of the network
+into two groups <i>S</i> and<img src=
+"../imgs/a93d6865c00dd28cc77843002b67bdfc30e00b0a.png"> such that
+the source vertex <i>s</i> is contained in set <i>S</i> and the
+sink vertex <i>t</i> is contained in set <i>T</i>.</p>
+<p>The flow value<img src=
+"../imgs/024aab75a26702dcaf8011ebf4480c8f71d4808f.png">of the cut
+is defined as the sum of flow of every edge<img src=
+"../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png">for
+which<img src=
+"../imgs/29572315660c253e0955805895bdcabf702a63bd.png">and<img src=
+"../imgs/a8b0dd67db17d53f7f3e1c49a995b7745468aa1a.png">. It means
+that the total flow of a cut is the total of the flow of edges from
+<i>S</i> side to <i>T</i> side. The formula of calculation of flow
+of cut is as follows:</p>
+<p><img src=
+"../imgs/efbc697fc53b60ab969f4cdbcfe582b9a6a42b97.png"></p>
+<p>The limit of flow of the cut in a flow network is the sum total
+of the capacities of the edges involved in the cut. The formula for
+the cut capacity is,</p>
+<p><img src=
+"../imgs/f1cfad6302b4283b969ea4893c92a8be5d2fc15d.png"></p>
+<p>Minimum cut is that cut of the flow network for which the sum of
+capacity of cut edges is minimum.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Maximum flow by scaling:</b> Consider that <img src=
+"../imgs/38b9c6e2abdc2b703a6b08be70698b705c62ac9c.png">as a flow
+network. Source (it is considered as the origin of flow) as
+<img src="../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">and
+sink (it is considered as the end point, that is, the point where
+flow gets accumulated at the end) as<img src=
+"../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">. Each edge,
+say <img src=
+"../imgs/bd1c53ec28d4a80cfbcdcdafac33e183abb8d47c.png"><img src=
+"../imgs/6265c5a9083d1f7ff512be0e291bc1f75e30e11d.png">, has some
+integer capacity denoted by<img src=
+"../imgs/ad26d83e5fa0b12aa545d16be4a9dfeef937fdeb.png">. <img src=
+"../imgs/9004886286af59169980925a50e052a8a63d2909.png"> is defined
+as<img src=
+"../imgs/3b0c51e7fc4f8597377f617cca4de353e5b9a8a5.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> Minimum cut of a graph <i>G</i> is that for
+which the total sum of capacity of edges involved in the cut set in
+is minimum. That is, the edges are selected in such a way that
+their sum is minimum.</p>
+<p>As in the graph <i>G</i> there are <i>E</i> edges, therefore
+maximum number of edges that are leaving <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">and entering
+<img src="../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">
+cannot be greater than<img src=
+"../imgs/2bd7adfbfd925f45cc05f764fe398bcd4d010b4a.png">.Since,
+<i>C</i> is defined as<img src=
+"../imgs/3b0c51e7fc4f8597377f617cca4de353e5b9a8a5.png">, is the
+largest possible flow limit of any edge in the network therefore
+the flow limit of edges can be more than <i>C</i>.</p>
+<p>Now, if the cut(<i>S</i>, <i>T</i>) is lowest capacity cut of
+the network is crossing all the edges then the capacity of cut;</p>
+<p><img src=
+"../imgs/fa4428e1d2ab8efc8d24fbc119edfbfa243e7013.png"></p>
+<p>Therefore, maximum flow of graph can be at most<img src=
+"../imgs/e92f106c8ab132e68085b69c09205bd57c39e6bf.png">.Hence, by
+max-flow min-cut theorem, the minimum cut of graph <i>G</i> can
+have greatest value of capacity <img src=
+"../imgs/e92f106c8ab132e68085b69c09205bd57c39e6bf.png">.</p>
+</div>
+<hr>
+<div class="answer"><i><b>b.</b></i>
+<p>An augmenting path of a Graph <i>G</i> is a simple path in a
+graph starting from source <i>s</i> and ending at sink <i>t</i>
+which has a non-negative capacity. Hence, if there is a possibility
+of an augmenting path, the flow of a graph is not a max-flow. Thus,
+it can be concluded that flow of a graph is a max flow if no
+augmenting path is possible in the flow network. The capacity of
+any augmenting path is always equal to the flow limit of that edge
+which has minimum flow limit in the augmenting path.</p>
+<p><b>For example:</b> Suppose that<img src=
+"../imgs/eb756ebb11840dd61e3593b9db5bdfc325d8524f.png">is an
+augmenting path in the flow network. Then its capacity can be
+calculated by the edge belonging to the path with minimum capacity.
+For finding out an augmenting path of capacity not less than
+<i>K,</i> search for those edges having capacity at least <i>K</i>.
+If there is any edge in the graph which has capacity less than
+<i>K</i> then ignore that edge.</p>
+<p>Breadth first search will be applied to find a path by
+considering only those edges having residual capacity at least
+<i>K</i>. Breadth first search is the method of searching in a
+graph. In this method, each node of the graph is explored in a
+sequential order. The time taken by breadth first search for a
+graph having <i>V</i> vertices and <i>E</i> edges is<img src=
+"../imgs/c1c562e326649af8a751796a334ded9cbb6e4f1b.png">. Since for
+a flow network, <img src=
+"../imgs/2797eecfd907da0e8dd7783b847ba17fed531781.png">, therefore
+total time is <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">.</p>
+<p>Hence, breadth first search is an efficient way to search for an
+augmenting path which has minimum capacity <i>K</i>, and it takes
+<img src="../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">
+time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>As in the MAX-FLOW-BY-SCALING method, the search for the path
+having capacity from <img src=
+"../imgs/3a4f916361ade930a4168799696546621f45b455.png">down to 1 is
+done. If such path, with an augmenting path having capacity greater
+than 1 is found, then the flow is augmented with that path.</p>
+<p>This is the same concept as in FORD-FULKERSON method, so it is
+clear that the MAX-FLOW-BY-SCALING algorithm uses FORD-FULKERSON
+method. It is true that the flow value in a network will always be
+an integer. Thus, the capacity of augmenting path is a positive
+value, and hence, the augmenting path is not found in the residual
+network. Therefore, MAX-FLOW-BY-SCALING method always returns a
+largest value of flow.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Illustration of MAX-FLOW-BY-SCALING algorithm:</b></p>
+<p>1. The graph below shows the flow network in which the dark
+black continuous show an augmenting path of minimum capacity 4.</p>
+<p><img src="../imgs/e9bf763118e2b8a883092387447fa2b809556a94.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\12.tif"></p>
+<p>2. Pass the flow equivalent to the flow limit of the augmenting
+path through the path and update the flow value as shown in the
+graph below:</p>
+<p><img src="../imgs/3bf5e05f5540548bcee11fed8a0273639a4c9199.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\5.tif"></p>
+<p>3. Now, the residual network of flow graph again shows an
+augmenting path of the network with minimum capacity 6.</p>
+<p><img src="../imgs/f9e07c7d88fb0742fa696c3bf675c3f0334570b6.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\15.tif"></p>
+<p>4. Again, pass the flow through the path equal to the minimum
+capacity of augmenting path.</p>
+<p><img src="../imgs/a5a0fb3943bf3b246c13610b520356c28f1e2909.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\17.tif"></p>
+<p>Now, as the edges towards sink <i>t</i> are saturating edges
+with no more flow that can be passed through them, the greatest
+value of flow in the network is 10. Hence, the algorithm
+MAX-FLOW-BY-SCALING returns the largest value of flow in the
+network.</p>
+</div>
+<hr>
+<div class="answer"><i><b>d.</b></i>
+<p>As there are <i>E</i> edges in the graph and each time line 4 is
+executed, the greatest flow limit of the residual network <img src=
+"../imgs/e572ceca88715458f5aa87f6e24154492a84c733.png">can be
+2<i>K.</i> This is because, in a flow network, flow between edges
+has two phases. One is sink and the other is source, and the
+maximum capacity of a flow is <i>K</i>. Thus, the final outcome is
+2<i>K</i>.</p>
+<p>In (<i><b>b</b></i><b>)</b> part, it has been shown that there
+is an augmenting path of capacity at least <i>K</i> in <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">time. Here,
+the change is in the value of <i>K</i>. Thus, minimum cut of the
+residual network <i>G</i><sub>f</sub> can have the capacity at most
+<img src="../imgs/e23a2e8f1b9d63f87bd62f7b15dc6c19cf24a893.png">,
+that is, <img src=
+"../imgs/47c229a32f222a6f14085783f617a731508fa982.png">.</p>
+<p><i><b>e.</b></i></p>
+<p>As in the part <i><b>d,</b></i> it is been calculated that for
+residual network <img src=
+"../imgs/e572ceca88715458f5aa87f6e24154492a84c733.png">, the flow
+limit of the cut with lowest capacity cannot be greater than
+<img src=
+"../imgs/47c229a32f222a6f14085783f617a731508fa982.png">whenever the
+line 4 of the algorithm MAX-FLOW-BY-SCALING executes. The value of
+largest flow in the network <i>G</i> is the sum of the flow value
+in the network <i>G</i> and the largest flow value in the residual
+network of <i>G</i>. That is,</p>
+<p><img src=
+"../imgs/e4b683a3437bb5759c3f7d42652f896234fd40fa.png"></p>
+<p>Here, <i>f</i> is the flow in network <i>G</i>, and <i>f’</i> is
+the flow in residual network<img src=
+"../imgs/e572ceca88715458f5aa87f6e24154492a84c733.png">. By max
+flow min-cut theorem, the maximum flow of <img src=
+"../imgs/e572ceca88715458f5aa87f6e24154492a84c733.png">is at
+most<img src=
+"../imgs/47c229a32f222a6f14085783f617a731508fa982.png">.</p>
+<p>Now, by definition, each time line 5 is executed, <i>K</i>
+capacity is calculated of augmented path, which is capacity of
+residual network<img src=
+"../imgs/5e8d119d258fc8a418acdf0742ac52599b6584ce.png">. Therefore,
+for each value of <i>K,</i> loop of lines 5-6 runs at most
+<img src="../imgs/e76183841b8d01ad55054b2b575866ccfe59c5e3.png">
+times, that is, <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png"> times.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>f.</b></i></p>
+<p>The total running time of MAX-FLOW-BY-SCALING algorithm depends
+on the following 3 factors:</p>
+<p>1. Execution time of while loop in line 4.</p>
+<p>2. Execution time to find an augmenting path of capacity at
+least <img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png"> of line
+5.</p>
+<p>3. Execution time of while loop of line 5 for each
+fixed<img src="../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png">.</p>
+<p><b>1.</b> Initially,<img src=
+"../imgs/3a4f916361ade930a4168799696546621f45b455.png">. Each time
+value of <img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png"> is reduced
+to half of its original value that is<img src=
+"../imgs/8c6ac0f8f83183699fc0a89a8be519fc19835410.png">. It can be
+said that above sequence is a geometric progression (<i>GP</i>)
+with ratio being ½. Now, minimum value of <img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png">is 1, that
+is,<img src=
+"../imgs/995975af33647e5950c436b7e77e79a624410545.png">. Thus, the
+sequence is as follows:</p>
+<p><img src="../imgs/f01800b6036607c448173edd7325b13115819d37.png">
+<b>… … (1)</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, calculate number of terms that will be equal to the number
+of times loop is running. By definition of GP,</p>
+<p><img src=
+"../imgs/ca0efa3611728566a02d9d7dd7d67788cd2664e9.png"></p>
+<p>Here,</p>
+<p><img src=
+"../imgs/a9c14fcd64b30b80c4ffa24801f4f682ff9c6b26.png">=<img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png"></p>
+<p><img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png">=1</p>
+<p><img src=
+"../imgs/26ad1b042bdc92c1a1529fef084e4351be47d69f.png"></p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/52b9f2aa44302f0df3aa7678ea0d506c4d54fc54.png"></p>
+<p>Substitute the value of<img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png">.</p>
+<p><img src=
+"../imgs/c47db3489afc31b5ecf536823241ed71a5086391.png"></p>
+<p><img src=
+"../imgs/e9765cd0655adf3108c924dfb2e20c165d13f901.png"></p>
+<p><img src=
+"../imgs/e7d3eff61c1586cd978a70ab320fbe9c8be09ed2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2.</b> By part <i><b>b,</b></i> for a given <img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png">, to find an
+augmenting path of capacity at least <img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png">, will
+take</p>
+<p><img src="../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">
+time.</p>
+<p><b>3.</b> By part <i><b>e,</b></i> for each value of <img src=
+"../imgs/0b39b5956b16968b899bf0459b85650f4630bea1.png">, while loop
+of line 5 will take <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png"> time.</p>
+<p>Combine the time calculated from equations <b>(1)</b><b>,</b>
+<b>(2)</b> and <b>(3)</b><b>.</b></p>
+<p>Total time is <img src=
+"../imgs/3d437298e0a1ad520f5153dad8cddde92250e9e5.png">that
+is<img src=
+"../imgs/d305a2ebecaa98893e967740bcb0b8d7e6781f0b.png">.</p>
+<p>Hence, the MAX-FLOW-BY-SCALING algorithm can be implemented as
+it will take<img src=
+"../imgs/d305a2ebecaa98893e967740bcb0b8d7e6781f0b.png"> for its
+execution.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6P">
+                <a href="#problem-6P">6P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Bipartite Graph</b></p>
+<p>A graph <i>G</i> (<i>V</i>, <i>E</i>) is the bipartite graph in
+which <i>V</i> is made up of two collection of vertices such
+that<img src=
+"../imgs/0d1a092af8c76ece103c09587a7ad35cd20c66de.png"> and each of
+the edges of graph is as it joins a vertex from set <i>P</i> to the
+vertex that lies in set <i>Q</i>. Consider the graph.</p>
+<p><img src="../imgs/c9eb0c407749e939dd4cddd34dbeb99358056bad.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p>In the graph discussed above, the concerned set of
+vertices<img src=
+"../imgs/0d1a092af8c76ece103c09587a7ad35cd20c66de.png">where
+<img src=
+"../imgs/1fa9c87cd75912ec67024978174acdf85518248a.png">and<img src=
+"../imgs/9c5748b350926ce3041894738661a987f5fea79c.png">both the
+vertex sets are disconnected mutually.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Matching:</b> In a bipartite graph the matching is a group of
+edges such that any of its edges do not share the same end points.
+A vertex, included in the matched set of edges, is the vertex is
+used in creation of a matched edge is called as the saturated
+vertex.</p>
+<p><b>For example:</b> See the graph below which highlights the
+edges of matched set <i>M</i>.</p>
+<p><img src="../imgs/12ea0ad470ebfb0b4b39855138f6a67fe97b8627.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\2.tif"></p>
+<p>The matching set is as:<img src=
+"../imgs/9ff3900679f8675d6e244753b9ac6c51e8cb796d.png">.</p>
+<p>Matching is also called as maximal matching if there are no more
+edges that can be included into the matching set <i>M</i> and it is
+called the ideal or the perfect matching if no unmatched vertex is
+found.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>For example:</b> Consider the above graphand notice its
+highlighted edges:</p>
+<p><img src="../imgs/bc284536d4ad1a5ba9f8075df677e34ad459d498.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\3.tif"></p>
+<p>The matching set is as:<img src=
+"../imgs/14e8ae33241e919be74f650f1f5f26860837ca7f.png">. The
+matching shown in the above graph is maximal matching but not the
+perfect matching because vertex <i>c</i> is not matched with any
+other vertex.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The Hopcroft-Karp bipartite matching algorithm:</b> The
+algorithm of Hopcroft-Karp bipartite matching is the faster
+algorithm to search a maximum matching in a bipartite graph. More
+specifically for a given bipartite graph say <img src=
+"../imgs/556500c4c42a52f3243be12e23355890a09b6f7b.png"> it takes
+<img src="../imgs/55eb2199381ab2921d4c66007f13396b9e7f6ee6.png">
+time to find a maximal matching.</p>
+<p>Consider that <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">is a
+matching then a simple path <i>P</i> in <i>G</i> is called an
+augmenting path with concern to the matching <i>M</i> if it starts
+at a vertex which does not exist in the set of matched vertex and
+end at an unmatched vertex and for every pair of subsequent edges
+on <i>P</i> one of them is in <i>M</i> and another one is not. In a
+graph a least possible augmenting path with reference to <i>M</i>
+is the one which holds the lowest quantity of edges in it.</p>
+<p><b>Symmetric Difference</b> of two collections of elements is a
+set of elements which has only those items that are inexactly one
+of the two concerned sets. That is given two sets <i>A</i> and
+<i>B</i> the symmetric difference <img src=
+"../imgs/30405e41c65bb068e96472b662a6dba833a3b437.png"> is defined
+as<img src=
+"../imgs/4eab3d720724e9e4e478397e9808d80780a78570.png">.</p>
+<p><i><b>a.</b></i> Consider that <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">as a
+matching set and <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">is an
+augmenting path with concern to <i>M</i> that is the starting and
+ending vertex of path <i>P</i> are not the vertices joining the
+edges in the matching set of edges and there is alternate matched
+and unmatched edges.</p>
+<p>Now, since every augmenting path <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">is
+alternating and it starts at unmatched vertex and end at an
+unmatched vertex. So, it must have possibly one edge more in its
+unmatched edge that is <img src=
+"../imgs/d56dc17e1148d581a10b2d119e7ad1e8ad5c5fc4.png">compared to
+matched edges. So, <img src=
+"../imgs/d56dc17e1148d581a10b2d119e7ad1e8ad5c5fc4.png">is a
+matching and<img src=
+"../imgs/1b2413e2cd6eec55edd050c607ed8b0561cde3a7.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>For example:</b> Consider the following a bipartite
+graph:</p>
+<p><img src="../imgs/d1076ddef0258c61424e16bfa5aeca8018e7892a.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+<p>In this graph the matching <img src=
+"../imgs/c75c70a0088cde5fb67cba1f0ffd411868c74cdc.png">and the
+path<img src=
+"../imgs/d70b1104a899de3fdc2d11c399833cb449e62879.png">is an
+augmenting path and the edge set of path<img src=
+"../imgs/8cb642489c3ba28ab0046b6593267900b26bfb63.png">.</p>
+<p><img src=
+"../imgs/30e4a0f40059a58b67866118e1dd30c84195f680.png"></p>
+<p>In the set <i>M</i> there are only three edges while in set
+<img src=
+"../imgs/d56dc17e1148d581a10b2d119e7ad1e8ad5c5fc4.png">there are
+four edges which is one more than the edges in <i>M</i> so<img src=
+"../imgs/1b2413e2cd6eec55edd050c607ed8b0561cde3a7.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider<img src=
+"../imgs/90550754ea13aa1f36464dc7b7d5d78c81297e42.png">are the
+augmenting paths such that no two paths are having same vertices
+with respect to<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">. Vertex
+disjoint paths are the one having no internal vertex as common
+among them.</p>
+<p><img src=
+"../imgs/08d77202c7151e1939a5a6f4b7f0906a9b2f7690.png"></p>
+<p>Now, in order to get the cardinality.</p>
+<p><img src=
+"../imgs/bf2ac341c833bb4531c3d7a954f645437c4b6387.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Consider that <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">and
+<img src="../imgs/4b06f18cf0f8877bc89a96c922aa2509e5dd1502.png">are
+two matching in<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">. Since each
+of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">and
+<img src="../imgs/4b06f18cf0f8877bc89a96c922aa2509e5dd1502.png">
+can contribute at most 1 each to vertex’s degree of set<img src=
+"../imgs/67b9640f5f276a55f23d6f56a7dd1d2fe07fbc78.png">. So degree
+can be at most 2 that are every vertex in graph<img src=
+"../imgs/57c439f44198400a6c9d6b26ce9986a2148a77c3.png"> has a
+degree at most 2.</p>
+<p>Since <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png"> is graph of
+vertices whose degree can be at most 2 so components of graph
+should be either a path or a cycle or an isolated point. So it can
+be concluded that <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png">is a
+disjoint union of simple paths or cycle. Edges of set <img src=
+"../imgs/3469f639c8eaa31948c897cc90af2f89989ae84d.png">are
+alternatively belong to <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">and<img src=
+"../imgs/4b06f18cf0f8877bc89a96c922aa2509e5dd1502.png">. So each
+cycle of above graph is even. Given that<img src=
+"../imgs/5ede03a25478efab91244be0d8f1c3875b851e84.png">.</p>
+<p>Since every path of <img src=
+"../imgs/3469f639c8eaa31948c897cc90af2f89989ae84d.png"> which is
+not augmenting path with respect to <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png"> must have
+equal number of edges form <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">and
+<img src="../imgs/4b06f18cf0f8877bc89a96c922aa2509e5dd1502.png">since<img src="../imgs/5ede03a25478efab91244be0d8f1c3875b851e84.png">.
+It can also be said that each such path has exactly one edge more
+form <img src=
+"../imgs/4b06f18cf0f8877bc89a96c922aa2509e5dd1502.png">than
+from<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">. So there
+is the need of at least <img src=
+"../imgs/207f7b098322ff5e10899b34a9f87354c6da4e70.png"> such paths.
+Since all these paths are vertex disjoint augmenting path having
+starting and ending at unsaturated points.</p>
+Therefore, if<img src=
+"../imgs/5ede03a25478efab91244be0d8f1c3875b851e84.png">then
+<img src=
+"../imgs/3469f639c8eaa31948c897cc90af2f89989ae84d.png">contains
+least possible<img src=
+"../imgs/207f7b098322ff5e10899b34a9f87354c6da4e70.png">vertex-disjoint
+augmenting path with respect to<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">.</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> Consider that <img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png"> is the
+length of the smallest augmenting path with the respect of
+matching<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">of the graph
+<i>G</i>. Let <img src=
+"../imgs/168e00b71b898306dd6e1bab1f52868604f54d3f.png"> be a
+largest set of augmenting paths of uncommon vertices having length
+<img src="../imgs/b5334998e114414e140c80fd2ae650a51b477702.png">
+with respect to<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">.
+Let<img src=
+"../imgs/44e8d496b0e3f03eebf1af4ca7b55590347e5885.png">=<img src=
+"../imgs/f0a59f1519afe4cc32c2a9794f8d15bcd9af4ecd.png">and suppose
+that <i>P</i> is a shortest augmenting path with respect
+to<img src="../imgs/44e8d496b0e3f03eebf1af4ca7b55590347e5885.png">.</p>
+<p>Since path <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">is which may
+have some common vertices with<img src=
+"../imgs/168e00b71b898306dd6e1bab1f52868604f54d3f.png"> therefore
+<img src="../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">has
+more than <img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png"> edges
+otherwise it will oppose the fact that<img src=
+"../imgs/168e00b71b898306dd6e1bab1f52868604f54d3f.png">be a
+ultimate set of vertex-disjoint augmenting paths of length<img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i> Consider that <img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png">is the
+length of the least possible augmenting path with reference to the
+matching<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">. Assume
+that<img src=
+"../imgs/168e00b71b898306dd6e1bab1f52868604f54d3f.png"> be a
+superlative set of augmenting paths that have no vertex in common,
+of length <img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png"> with
+respect to<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">. Let
+<img src=
+"../imgs/44e8d496b0e3f03eebf1af4ca7b55590347e5885.png">=<img src=
+"../imgs/f0a59f1519afe4cc32c2a9794f8d15bcd9af4ecd.png">and suppose
+that <i>P</i> is a shortest augmenting path with respect
+to<img src="../imgs/44e8d496b0e3f03eebf1af4ca7b55590347e5885.png">.</p>
+<p>Consider that the concerned path <i>P</i> may have some common
+vertices with<img src=
+"../imgs/168e00b71b898306dd6e1bab1f52868604f54d3f.png">that are
+path <i>P</i> is not vertex disjoint with other paths. Assume that
+<i>A</i>is the collection of edges<img src=
+"../imgs/3d4fcc286a8dec8e8f9ee51e9fb2d4421d067192.png">.Now,
+<img src=
+"../imgs/d6de49a52929b1096c6cdcff4101e83c663a8196.png">.</p>
+<p>Therefore,<img src=
+"../imgs/243168ffc5750bb0d4cfb44dfff2480e49893d42.png"></p>
+<p><img src=
+"../imgs/1574bb91ec9774f4fb6bb0d7757eb0060d94ba75.png"></p>
+<p>Now, consider <img src=
+"../imgs/3d4fcc286a8dec8e8f9ee51e9fb2d4421d067192.png"> as an edge
+set of a connected component <img src=
+"../imgs/a2915c91cfdd5e42361ce9f10051227f8fdcee9c.png">of the
+graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">so,
+since<img src=
+"../imgs/3e80fa72a795a6a6e1434d5cdbec0c7ff7fdd132.png">, therefore
+<img src="../imgs/a2915c91cfdd5e42361ce9f10051227f8fdcee9c.png">
+contains lowest of<img src=
+"../imgs/03d8da8b74b5cb84200b7503490d31834490ea1e.png">
+vertex-disjoint augmenting path with respect to least possible
+length of each of such path is<img src=
+"../imgs/b5334998e114414e140c80fd2ae650a51b477702.png">.
+Therefore,</p>
+<p><img src=
+"../imgs/00967154846de9fb281a9a358ce66017d6fed0b4.png"></p>
+<p>Now, since <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png"> is not a
+vertex-disjoint from other paths therefore it should have
+necessarily a matching edge with some path corresponding
+to<img src="../imgs/44e8d496b0e3f03eebf1af4ca7b55590347e5885.png">.
+Hence, the path <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png"> has more
+than <i>l</i> edges.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>e</b></i> <i>.</i> Consider the compact augmenting path in
+the reference of matching<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png"> has
+<img src="../imgs/b5334998e114414e140c80fd2ae650a51b477702.png">
+edges. Suppose that <img src=
+"../imgs/4b06f18cf0f8877bc89a96c922aa2509e5dd1502.png"> be another
+matching. Since symmetric difference between <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">and
+<img src="../imgs/a29bd02e40a80ebe55664078995a582ad3c36039.png">
+will have at-least <img src=
+"../imgs/207f7b098322ff5e10899b34a9f87354c6da4e70.png">augmenting
+paths have no vertex in common. Each of the above paths will have
+at least <img src=
+"../imgs/52e83d74b4966ff6f2bc4df62835004ebb0f031f.png">vertices.
+Therefore,</p>
+<p><img src=
+"../imgs/fba8482dcf63f583aacc97a08d885d3f9cdc5c2f.png"></p>
+<p><img src=
+"../imgs/e2171868c0204dd5c1352e3564be6ab4483b4c5b.png"></p>
+<p>Hence, the cardinality of maximum number of matching in the
+graph will be:</p>
+<p><b><img src=
+"../imgs/e2171868c0204dd5c1352e3564be6ab4483b4c5b.png"></b>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>f.</b></i> Finding augmenting paths, the HOPCROFT-KARP
+algorithm repeatedly increases the size of a matching. This
+algorithm avoids finding the augmenting path in each it executes
+because its purpose is to find the ultimate set of smaller paths.
+For this, only <img src=
+"../imgs/9a98fd076c3b28c8e8d8e2dc1059a2ea7e0de98a.png">numbers of
+iterations are needed.</p>
+<p>In this algorithm, every phasehas a single BFS (breadth first
+search) and DFS (depth first search). Due to this, phases run in a
+linear time fashion. Therefore, in a graph with <img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">vertices and
+<img src=
+"../imgs/2bd7adfbfd925f45cc05f764fe398bcd4d010b4a.png">edges, and
+for the first<img src=
+"../imgs/c3a50b57c8ef5d1f5e1d29cbfd117a2697261d2d.png">phases, it
+will take a time of<img src=
+"../imgs/09f9c64d9796abc89ccb3512befcdf49e60dc073.png">.</p>
+<p>Each phase increases the length of lowest path that is
+augmented, by one and searches biggest value length inthe provided
+length. So in the completion of<img src=
+"../imgs/c3a50b57c8ef5d1f5e1d29cbfd117a2697261d2d.png">phase, there
+are at least<img src=
+"../imgs/c3a50b57c8ef5d1f5e1d29cbfd117a2697261d2d.png">edges of the
+shortest augmenting path.</p>
+</div>
+<hr>
+<div class="answer">
+<p>So, in the collection, if the path length is lowest of<img src=
+"../imgs/c3a50b57c8ef5d1f5e1d29cbfd117a2697261d2d.png">, then there
+will be no more than a<img src=
+"../imgs/c3a50b57c8ef5d1f5e1d29cbfd117a2697261d2d.png">path length
+and the most favorable matching differs from the span of <i>M</i>
+by at most<img src=
+"../imgs/c3a50b57c8ef5d1f5e1d29cbfd117a2697261d2d.png">edges.After
+iterations, the length of the lowest augmenting path will be at
+least<img src=
+"../imgs/c3a50b57c8ef5d1f5e1d29cbfd117a2697261d2d.png">.</p>
+<p>Therefore, the required number of <b>repeat</b> loop iterations
+will be at most<img src=
+"../imgs/0aff11f83e5bd2ceb561eeb7d2f082fe5892653d.png">.</p>
+<p>In this algorithm every phase increases the matching length by
+atleast one.</p>
+<p>So, an<img src=
+"../imgs/c3a50b57c8ef5d1f5e1d29cbfd117a2697261d2d.png"> additional
+phase is added to it before the algorithm terminates. Hence, there
+are maximum<img src=
+"../imgs/e07d85e8346fec7a10ccb452af8f8fab6a797e7d.png">iterations
+of repeat loop are possible in the algorithm.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>g.</b></i> Consider that the graph<img src=
+"../imgs/6f3a30f9255a175153c84363fdcafce36eb51646.png">be a
+bipartite graph. Let <img src=
+"../imgs/eb702402b70220c2467a5b7b9ec32258d685ac96.png">be a set of
+incomparable vertices in<img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">. For
+searching the augmenting path having no two vertices in common, the
+breadth first search and greedy approachcan be used. The algorithm
+is as:</p>
+<p><b>Breadth first search:</b></p>
+<p>// execute the loop for each vertex in graph</p>
+<p><b>for</b> every vertex<img src=
+"../imgs/4d98c6b52fdbe3fcae03969ed8420d30cd34a46b.png"></p>
+<p>that alternates between matching and non matching edges,</p>
+<p><b>stop</b> the breadth first search at <img src=
+"../imgs/46df861f7865ee6a0bd7d1c64a79e49eb8245bd3.png"> level.</p>
+<p>In this case <img src=
+"../imgs/fe295bcaa4edd0d08aae8cbbf50b62e0b4f44b25.png">will be the
+smallest form source to the free vertex in<img src=
+"../imgs/eba2ab067b168a07951abedb78996e61fc86ecb0.png">.</p>
+<p>Let <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">donates the
+set of all vertices that are not matched and present in<img src=
+"../imgs/eba2ab067b168a07951abedb78996e61fc86ecb0.png"></p>
+<p>that are discovered at <img src=
+"../imgs/46df861f7865ee6a0bd7d1c64a79e49eb8245bd3.png">level.</p>
+<p>Now performing a greedy approach,</p>
+<p>// execute the loop for all the vertices that are not
+matching</p>
+<p><b>for</b> every vertex say <img src=
+"../imgs/e646f710d527b06d64bf657c12860950bdaa5644.png"></p>
+<p>It is needed to do backtracking along its predecessor until the
+vertex <img src=
+"../imgs/e90731a55d72afbd3c62142183c13315dd0fd652.png">is found
+successfully.</p>
+<p>Now</p>
+<p>// check for an unmarked vertex</p>
+<p><b>if</b> <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">is
+unmarked</p>
+<p>then saving the path between <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">and
+<img src="../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png"></p>
+<p>mark vertex <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"> as
+taken.</p>
+<p>Since there is maximum <i>E</i> edges in the graph sothe
+searching of the paths can be done in <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">time. That
+is it will take <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">time to find
+a maximal set of vertex-disjoint smallest augmenting path <img src=
+"../imgs/90550754ea13aa1f36464dc7b7d5d78c81297e42.png">for a given
+matching<img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">. From above
+the <b>repeat</b> loop will run at most <img src=
+"../imgs/de5f1ec0939c6ee6e8afd509acf2d058dab2dc11.png"> times.
+Hence, the actual time taken by the HOPCROFT-KARP algorithm for its
+execution will be<img src=
+"../imgs/55eb2199381ab2921d4c66007f13396b9e7f6ee6.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

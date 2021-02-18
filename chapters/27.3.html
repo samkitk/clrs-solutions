@@ -1,0 +1,1447 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 27.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Coarsen the base case of P-MERGE</b></p>
+<p>In order to coarsen the base case of P-MERGE, switch to the
+ordinary serial sort when the size of the array is small. In other
+words use quick sort if size of the array is significantly
+small.</p>
+<p>In practice, the recursion is coarsened to minimize overheads.
+P-MERGE could be coarsened by using function calls and in-lining
+near the leaves of recursion, rather than spawning. It is used to
+make algorithm more efficient.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p>The following procedure merges two sub arrays that lie within
+the same array.</p>
+<p>The procedure P-MERGE sorts an array <i>T</i> and stores the
+output in array <i>A</i>. The array would be frequently divided
+into sub arrays. The lower and upper bounds of the concerned sub
+arrays are <i>p</i><sub>1</sub><i>, r</i><sub>1</sub> and
+<i>p</i><sub>2</sub><i>, r</i><sub>2</sub>. The lower bound of the
+output array is <i>p</i><sub>3</sub>.</p>
+<p>// Parallel merging</p>
+<p>P-MERGE<img src=
+"../imgs/2e0b6436c0ff448fa8e8676220cdfc32634092f7.png"></p>
+<p>//calculate the size of sub arrays and stores them in
+<i>n</i><sub>1</sub> and <i>n</i><sub>2</sub></p>
+<p><img src=
+"../imgs/dccfd1ccdd5d568f181287fa40f3310e4cb21720.png"></p>
+<p><img src=
+"../imgs/11dc5f2be3c11fb6e491f8ba3252d0e1c1091cad.png"></p>
+<p>//check the combined size of two arrays. If they are very small
+then do the quick sort</p>
+<p>// coarsen</p>
+<p><b>if</b> <img src=
+"../imgs/b95ed00bcdc6428534e99fcb1752a8f6b64aeee9.png">is very
+small</p>
+<p>//apply the quick sort (refer the text book)</p>
+<p>Quick-Sort<img src=
+"../imgs/2e0b6436c0ff448fa8e8676220cdfc32634092f7.png"></p>
+<p>//to insure that <img src=
+"../imgs/84441d012907eb3dc88c7491a298fa9da4de50ee.png">is larger
+than <img src=
+"../imgs/48ad3a3f1ab105514c6962b745e78d696f717767.png">.If not then
+swap.</p>
+<p><b>else</b> <b>if</b> <img src=
+"../imgs/52a3af25ef5c7ab84fdd6d995dd1020d0e624f16.png"></p>
+<p>//check if the size of the first sub array is lesser than the
+size of the second sub</p>
+<p>//array then exchange the arrays bounds</p>
+<p>exchange<img src=
+"../imgs/1b90f2767908095b894293bb1ca3e6b0d12fe666.png">with
+<img src=
+"../imgs/e9d55d9f534c16514a6b6731db480ab8a363f132.png"></p>
+<p>exchange<img src=
+"../imgs/18c10a7737960472362599dc7be8083a9aad4ce8.png">with
+<img src=
+"../imgs/ab44d8f5864736cde36a9c85950df9766973cb2a.png"></p>
+<p>exchange<img src=
+"../imgs/84441d012907eb3dc88c7491a298fa9da4de50ee.png">with
+<img src=
+"../imgs/48ad3a3f1ab105514c6962b745e78d696f717767.png"></p>
+<p>//check if array is empty</p>
+<p><b>else</b> <b>if</b> <img src=
+"../imgs/5d7da08d2a47eafb6c62dd94bbfa68928809664d.png"></p>
+<p><b>return</b></p>
+<p><b>else</b></p>
+<p>//get the mid of the first sub array</p>
+<p><img src=
+"../imgs/4d8b402244f4134df06a47bcd16e98728dae71c5.png"></p>
+<p>//apply the binary search to find the mid location of the second
+sub array</p>
+<p><img src=
+"../imgs/8fe851c5bfb4382eb7dc15741e2e925a28ba69a1.png">BINARY_SEARCH<img src="../imgs/548c89593b7a4588760c3f0fcf1faeb3b7da682b.png"></p>
+<p>//get the mid-point for the output array so that the element
+must be placed at</p>
+<p>// proper location in sorted array</p>
+<p><img src=
+"../imgs/28a3e7be2064d2ed75fb537f61513767e4fd14f1.png"></p>
+<p>//store the elements in the output array</p>
+<p><img src=
+"../imgs/27c8faf0e475e8cc219b61421690050186a075df.png"></p>
+<p>//parallel recursive call to merge the entire arrays in
+parallel</p>
+<p><b>Spawn</b> P-MERGE<img src=
+"../imgs/b406004b7e838f9d7ff5df933629442b281a8df4.png"></p>
+<p>P-MERGE<img src=
+"../imgs/50cfc190d28f27d8a117c907eec1e8dabb2bc3cc.png"></p>
+<p><b>sync</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>P-Merge uses the procedure BINARY_SEARCH to find the <i>mid</i>
+of the array. The location of the mid element <i>x</i> is found in
+the array T that has the lower bound <i>p</i> and upper bound
+<i>r</i>.</p>
+<p>BINARY_SEARCH<img src=
+"../imgs/5d811f64b71465d4702831cc1beb591c8d7c5f70.png"></p>
+<p>//set the pointer low to the startindex of thearray</p>
+<p><img src=
+"../imgs/963ab4616a814cc09e3d1ea29e660dafc36c032e.png"></p>
+<p>//set high to <i>p</i> or <i>r</i>+1; whichever is greater</p>
+<p><img src=
+"../imgs/eafb41fa09b207c655d9a7764ed82fd64c8f07fe.png"></p>
+<p>//check whether elements are there in the array</p>
+<p><b>while</b> <img src=
+"../imgs/cdde6492a7768403e9abfab4298d448710d04fce.png"></p>
+<p>//set the mid to the middle of the array</p>
+<p><img src=
+"../imgs/c562c80462b3bf3fc39bb34a9eb00e8535e20b8c.png"></p>
+<p>//check if the parameterized element is smaller than the mid
+element</p>
+<p><b>if</b><img src=
+"../imgs/f33d8383e9057bc1fafc32ccbc8bb3b4c339ed61.png"></p>
+<p>//update value of <i>high</i> to <i>mid</i></p>
+<p><img src=
+"../imgs/611a90d965c12732c3c6abb0cbe0928c09a3413b.png"></p>
+<p><b>else</b></p>
+<p>//update value of <i>low</i> to one more than <i>mid</i></p>
+<p><img src=
+"../imgs/cc12b920669c419c433851e7480a5d1c95ddfff5.png"></p>
+<p><b>return</b> <img src=
+"../imgs/9b880b6d04a1d2b22b35782a19c59d222e9ad20e.png"></p>
+<p>In the above algorithm of P-MERGE, coarsen start at first “if”
+clause and close after the Quick-sort. Remaining part of the
+algorithm is same as old version of P-Merge.</p>
+<p>Here the base case form coarsenis “the size of the array is
+small” and to operate this condition, quick-sort concept comes in
+picture.</p>
+<p><b>Illustrate the example of P-MERGE:</b></p>
+<p>When size of two arrays is large, then the array get merged by
+using the P-MERGE(). If size of two arrays is not too large then it
+gets sorted by quick sort.</p>
+<p>Suppose T<sub>1</sub> and T<sub>2</sub> are two sorted array
+which has to be merge by P-MERGE() function defined above to get a
+single sorted array.</p>
+<p><img src=
+"../imgs/9317a2a23a51942c5c1fb98b5e1de31617043cad.png"></p>
+<p><img src=
+"../imgs/9f490ceec4a3b1c8f97468a014c4b9e29555a209.png"></p>
+<p>In above sorted arrays <i>T</i><sub>1</sub> and
+<i>T</i><sub>2</sub>, the value of <i>p</i><sub>1</sub>and
+<i>p</i><sub>2</sub> is 0 and value of <i>r</i><sub>1</sub> and
+<i>r</i><sub>2</sub> is 4.</p>
+<p><img src=
+"../imgs/f501b4ad2b0ebe1f04a73e2712c78d7be2b2b3b8.png"></p>
+<p><img src=
+"../imgs/2723a50b297a922c40df28ef130f405e6bc4bc11.png"></p>
+<p>In P-MERGE( ) function the statement inside <b>else</b> part get
+execute. First calculate the value of <img src=
+"../imgs/23c5a4f69cc5d34eca071f00e06862e69b046dff.png"> which is
+the mid element of array <i>T</i><sub>1</sub>.</p>
+<p><img src=
+"../imgs/1917a09f064f6f7bb5fc795dbbb651f9be7c0fe0.png"></p>
+<p>Therefore, the mid element of <i>T</i><sub>1</sub> array is at
+index 2 that is 40.</p>
+<p>After finding the <img src=
+"../imgs/23c5a4f69cc5d34eca071f00e06862e69b046dff.png">, find the
+first element from <i>T</i><sub>2</sub> array which is greater than
+<i>T</i><sub>1</sub>(<i>q</i><sub>1</sub>) that is <img src=
+"../imgs/42a4b29f560fa3bb61161882392b803461e7e4f5.png">. Call
+BINARY_SEARCH() function to find a <img src=
+"../imgs/42a4b29f560fa3bb61161882392b803461e7e4f5.png">.</p>
+<p>So call BINARY_SEARCH<img src=
+"../imgs/4818b69ef67d8490a089b4561135ab61a528b71a.png"> function
+with the parameters BINARY_SEARCH<img src=
+"../imgs/60e4eada12e322bcae9ae8778bea40910f6a5a4b.png">. In
+BINARY_SEARCH() first set the l<b>ow</b> and <b>high.</b></p>
+<p><img src=
+"../imgs/7a7778f901bfe37db5b1a47359a4a09a01cc65d0.png"></p>
+<p><img src=
+"../imgs/1e9fb8ddc0c6989e7ed552329f46be9ed35bb23d.png"></p>
+<p>After this use <b>while</b> loops to check whether <i>low</i> is
+lesser than <i>high</i> or not. In this case condition is true
+therefore calculating <i>mid</i> value of T<sub>2</sub>.</p>
+<p><img src=
+"../imgs/f656a677ca7a91968d84c44926872b216b7a57c0.png"></p>
+<p><img src=
+"../imgs/3028650c0918abdc9e112503f88016af25621e1a.png"></p>
+<p>This implies that mid element of T<sub>2</sub> array is at index
+2 that is 34. Then check <img src=
+"../imgs/f33d8383e9057bc1fafc32ccbc8bb3b4c339ed61.png">that is</p>
+<p><img src=
+"../imgs/e11a4977ca5dee19f61de2ba79c21875770e2ff0.png"></p>
+<p>As <b>if</b> condition is false, <b>else</b> block of
+BINARY_SEARCH() function executes. Now value of l<i>ow is</i>
+updated to <i>mid+1</i> that is 3. Again <b>while</b> loop iterate
+and check whether <i>low</i> is lesser than <i>high</i> or not that
+is<img src="../imgs/cdde6492a7768403e9abfab4298d448710d04fce.png">.
+So again mid value is calculated.</p>
+<p><img src=
+"../imgs/7d07300e84ee7c666e56ec6b8bf4247c93b4c1d3.png"></p>
+<p><img src=
+"../imgs/4c1df8b019c346fcb3bb4ebd700fe22d3511fb16.png"></p>
+<p>This implies that new mid element of T<sub>2</sub> array is at
+index 4 that is 78. Then check <img src=
+"../imgs/f33d8383e9057bc1fafc32ccbc8bb3b4c339ed61.png">that is</p>
+<p><img src=
+"../imgs/d1a17ea557f97c1fe0698faec6f5023801aa1dc4.png"></p>
+<p>As <b>if</b> condition is <i>true,</i> if block of
+BINARY_SEARCH() function executes. Now value of <i>high</i> is
+updated to <i>mid</i> that is 4. Again <b>while</b> loop iterate
+and check whether <i>low</i> is lesser than <i>high</i> or not that
+is<img src="../imgs/cdde6492a7768403e9abfab4298d448710d04fce.png">.
+So again mid value is calculated.</p>
+<p><img src=
+"../imgs/67d86e07e0d979de5b3cf40e544aa28351110c24.png"></p>
+<p><img src=
+"../imgs/a6d47527c3c0430069faf0ccf959e22bbc1fd8ba.png"></p>
+<p>This implies that new mid element of T<sub>2</sub> array is at
+index 3 that is 65. Then, check<img src=
+"../imgs/f33d8383e9057bc1fafc32ccbc8bb3b4c339ed61.png">that is</p>
+<p><img src=
+"../imgs/718def9212c4e1508392d9f029fcd209ffd8cbf1.png"></p>
+<p>The <b>if</b> condition is <i>true.</i> Therefore <b>if</b>
+block of BINARY_SEARCH() function executes. Now value of
+<i>high</i> is updated to <i>mid</i> that is 3.Then again
+<b>while</b> loop iterate and check whether <i>low</i> is lesser
+than <i>high</i> or not that is <img src=
+"../imgs/cdde6492a7768403e9abfab4298d448710d04fce.png">. This time
+the condition is false. Therefore value of <i>high</i> return to
+P-MERGE() which is <img src=
+"../imgs/42a4b29f560fa3bb61161882392b803461e7e4f5.png">.</p>
+<p><img src=
+"../imgs/d0f1257dc6cd87a3e0aceceb6e43b2e6f932c9b1.png"></p>
+<p>Now, calculate the position of <img src=
+"../imgs/dadc3c0cb8c702cf8a940677905fe4ec01339f11.png"></p>
+<p><img src=
+"../imgs/df7dcf2b7bde954af4cfee7f18956855942d478d.png"></p>
+<p>Now, store<img src=
+"../imgs/23c5a4f69cc5d34eca071f00e06862e69b046dff.png"> index
+elements of T1 array into <i>A</i> array at <img src=
+"../imgs/dadc3c0cb8c702cf8a940677905fe4ec01339f11.png"> index.</p>
+<p><img src=
+"../imgs/8b07546a991a4aaae94632afa6e766d6ab0f36a2.png"></p>
+<p>Now again call <b>Spawn</b> P-MERGE<img src=
+"../imgs/526233deb88fcbb7a081c18ea3a7accc791832d4.png"> and
+P-MERGE<img src=
+"../imgs/91043a24a4fc5590c4b46f9c5e109ead39e6b6d0.png">. This time,
+in <b>Spawn</b> P-MERGE<img src=
+"../imgs/526233deb88fcbb7a081c18ea3a7accc791832d4.png"><b>else
+if</b> condition gets true because <img src=
+"../imgs/52a3af25ef5c7ab84fdd6d995dd1020d0e624f16.png">therefore
+both these sub-array exchange. The P-MERGE<img src=
+"../imgs/91043a24a4fc5590c4b46f9c5e109ead39e6b6d0.png">get sorted
+by the Quick-sort() because <img src=
+"../imgs/b95ed00bcdc6428534e99fcb1752a8f6b64aeee9.png"> is very
+small that is 4. Hence at last, the sorted array <i>A</i> is as
+follow:</p>
+<p><img src=
+"../imgs/cd6ec194584360813f17b3c3bdaa1cc2ba6761ad.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Pseudocode for an efficient multithreaded merging procedure
+that uses</b></p>
+<p><b>median finding procedure</b></p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the execution time of a computation on a single
+processor. Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.<b>Median</b> is
+defined as a value which is present or lie at the mid of any
+series. Example as shown below: <img src=
+"../imgs/5bdf9e5b4a274fd692cca4c4bff8982e00bead34.png"> The series
+shown above is the series of seven elements. 23 is the first
+element of this series and 98 is the median of this series.</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p>// Parallel merging</p>
+<p>P-MERGE<img src=
+"../imgs/2e0b6436c0ff448fa8e8676220cdfc32634092f7.png"></p>
+<p>//calculate the size of sub arrays and stores them in
+<i>n</i><sub>1</sub> and <i>n</i><sub>2</sub></p>
+<p><img src=
+"../imgs/dccfd1ccdd5d568f181287fa40f3310e4cb21720.png"></p>
+<p><img src=
+"../imgs/11dc5f2be3c11fb6e491f8ba3252d0e1c1091cad.png"></p>
+<p>//check the combined size of two arrays. If they are very small
+then do the quick sort</p>
+<p>// coarsen</p>
+<p><b>if</b> <img src=
+"../imgs/b95ed00bcdc6428534e99fcb1752a8f6b64aeee9.png">is very
+small</p>
+<p>//apply the quick sort (refer the text book)</p>
+<p>Quick-Sort<img src=
+"../imgs/2e0b6436c0ff448fa8e8676220cdfc32634092f7.png"></p>
+<p>//to insure that <img src=
+"../imgs/84441d012907eb3dc88c7491a298fa9da4de50ee.png">is larger
+than <img src=
+"../imgs/48ad3a3f1ab105514c6962b745e78d696f717767.png">.If not then
+swap.</p>
+<p><b>else</b> <b>if</b> <img src=
+"../imgs/5d7da08d2a47eafb6c62dd94bbfa68928809664d.png"></p>
+<p><b>return</b></p>
+<p><b>else</b></p>
+<p>//call function to find the median of two arrays</p>
+<p><i>Val</i>=TWO-ARRAY-MEDIAN<img src=
+"../imgs/27bddbfd70ffad3bed6e3754decaa992b0d7cfbd.png"></p>
+<p><b>for</b> <i>j</i>=0 to <i>n</i><sub>1</sub></p>
+<p><b>if</b> <i>val</i>==<i>T</i>[<i>j</i>]</p>
+<p><img src=
+"../imgs/3e406a69ee9811e00d92c6b841741f5547be28ec.png"><i>j</i></p>
+<p>//apply the binary search to find the mid location of the second
+sub array</p>
+<p><img src=
+"../imgs/8fe851c5bfb4382eb7dc15741e2e925a28ba69a1.png">BINARY_SEARCH<img src="../imgs/4818b69ef67d8490a089b4561135ab61a528b71a.png"></p>
+<p>//get the mid-point for the output array so that the element
+must be place at proper</p>
+<p>//locationin sorted array</p>
+<p><img src=
+"../imgs/28a3e7be2064d2ed75fb537f61513767e4fd14f1.png"></p>
+<p>//storethe elements in theoutput array</p>
+<p><img src=
+"../imgs/27c8faf0e475e8cc219b61421690050186a075df.png"></p>
+<p>//parallel recursive call to merge the entire arrays in
+parallel</p>
+<p><b>Spawn</b> P-MERGE<img src=
+"../imgs/b406004b7e838f9d7ff5df933629442b281a8df4.png"></p>
+<p>P-MERGE<img src=
+"../imgs/50cfc190d28f27d8a117c907eec1e8dabb2bc3cc.png"></p>
+<p><b>sync</b></p>
+<p><b>//</b> binary search to find the first element larger than
+<i>x</i> in second sub-array.</p>
+<p>BINARY_SEARCH<img src=
+"../imgs/5d811f64b71465d4702831cc1beb591c8d7c5f70.png"></p>
+<p>//set the pointer low to the startindex of thearray</p>
+<p><img src=
+"../imgs/963ab4616a814cc09e3d1ea29e660dafc36c032e.png"></p>
+<p>//set high to p or r+1; whichever is greater</p>
+<p><img src=
+"../imgs/eafb41fa09b207c655d9a7764ed82fd64c8f07fe.png"></p>
+<p>//check whether elements are still remaining to be checked in
+the array</p>
+<p><b>while</b> <img src=
+"../imgs/cdde6492a7768403e9abfab4298d448710d04fce.png"></p>
+<p>//set the mid to the middle of the array</p>
+<p><img src=
+"../imgs/c562c80462b3bf3fc39bb34a9eb00e8535e20b8c.png"></p>
+<p>//check if the parameterized element is smaller than the mid
+element</p>
+<p><b>if</b><img src=
+"../imgs/f33d8383e9057bc1fafc32ccbc8bb3b4c339ed61.png"></p>
+<p>//update value of <i>high</i> to <i>mid</i></p>
+<p><img src=
+"../imgs/611a90d965c12732c3c6abb0cbe0928c09a3413b.png"></p>
+<p><b>else</b></p>
+<p>//update value of <i>low</i> to one more than <i>mid</i></p>
+<p><img src=
+"../imgs/cc12b920669c419c433851e7480a5d1c95ddfff5.png"></p>
+<p>//return index of first element in second sub array which is
+greater than <i>x</i></p>
+<p><b>return</b> <img src=
+"../imgs/9b880b6d04a1d2b22b35782a19c59d222e9ad20e.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the result of the exercise 9.3-8 in textbook,</p>
+<p>// function which find two array median</p>
+<p>TWO-ARRAY-MEDIAN<img src=
+"../imgs/e30468c87fc7dd0537b506735bdd5f8d9b2db01b.png"></p>
+<p>//Call FIND-MEDIAN() function to find the median.</p>
+<p><i>median</i>=FIND-MEDIAN<img src=
+"../imgs/99efe06e8e6b670328acf01ca7d897c9fead9938.png"></p>
+<p>//check median found or not, if not exchange both sub arrays</p>
+<p><b>if</b> <i>median</i> == NOT-FOUND</p>
+<p>//Again Call FIND-MEDIAN() function to find the median.</p>
+<p><i>median=</i>FIND-MEDIAN<img src=
+"../imgs/617af37226cddd7c04b201b734a72081e6105e16.png"></p>
+<p>//return median to calling function</p>
+<p><b>return</b> <i>median</i></p>
+<p>// finding median</p>
+<p>FIND-MEDIAN<img src=
+"../imgs/3078fb53bd8673763b0f6eb7efff264412f9b91f.png"></p>
+<p>//check low is smaller than high or not</p>
+<p><b>if</b> <img src=
+"../imgs/d48b14fea69e9e7f89d70fa86b34a98654d73286.png"></p>
+<p><b>//</b>return to calling function</p>
+<p><b>return</b> NOT-FOUND</p>
+<p><b>else</b></p>
+<p>//find mid value index</p>
+<p><img src=
+"../imgs/ce03ddd234a36aa79fecd5628ee6a1a049800fb4.png"></p>
+<p>//compare value of <i>k, n</i> and value of <i>T</i>array at
+different index</p>
+<p><b>if</b><img src=
+"../imgs/79b3006fbc8506e95aea299888228db9b4a7d5d4.png">and
+<img src="../imgs/97eec4325285b7d892ad2e6ab44bad6ff233fc2e.png"></p>
+<p><b>return</b><img src=
+"../imgs/634367c8e5c417bf8876c13d081690f47db13b39.png"></p>
+<p><b>else if</b></p>
+<p><img src=
+"../imgs/3819d219d31681df2ae957f9ee9193b76351c6a8.png">and<img src=
+"../imgs/d7d2f6e4c40da4a177b0cd164fc9f2998f455e84.png"></p>
+<p><b>return</b><img src=
+"../imgs/76a4e6727622d21ec94b0babe9ea7c500afe0e61.png"></p>
+<p><b>else if</b></p>
+<p><img src=
+"../imgs/e46a6d827bae361cf5effac926e8180970b0aee2.png"></p>
+<p>//again call function to find median in lower half</p>
+<p><b>return</b> FIND-MEDIAN<img src=
+"../imgs/bc49e281d9adb8acc57b92f049908ea789d33e5c.png"></p>
+<p><b>else</b></p>
+<p>//again call function to find median in upper half</p>
+<p><b>return</b> FIND-MEDIAN<img src=
+"../imgs/279370a83ceb82f5953dfdff4b907ccc6cbe5534.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of the above Mt-FLOYD-WARSHALL (<i>W</i>) will be same as
+that of the execution time of its serialization. So in order to
+compute work, parallel for loop must be replaced with ordinary for
+loop.</p>
+<p>TWO-ARRAY-MEDIUM will cost additional work of<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">because this
+forms a binary tree structure and a binary tree structure takes
+that much of time.</p>
+<p>Consider the analysis of multithreaded merge sort in the
+textbook,</p>
+<p><img src=
+"../imgs/b37de183e198156dc4805d6540e701b4d455b2af.png"></p>
+<p>And,</p>
+<p><img src=
+"../imgs/1ce3b258d34c1f35652f1ad92b1f21d058921b0b.png"></p>
+<p>Now in analyzing part the only difference is that the addition
+work of <img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">needed due
+to the TWO-ARRAY-MEDIUM.</p>
+<p>Therefore total work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png">will be,</p>
+<p><img src=
+"../imgs/9934cba73e6bb83caef9a0770244f931719a1731.png"></p>
+<p>Hence total work of modified P-MERGE is <img src=
+"../imgs/ae272fa033027c2b88462d8191f84a9b0dac67b7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>TWO-ARRAY-MEDIUM will cost additional span of<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</p>
+<p>Therefore total span <img src=
+"../imgs/daa90ec76e3877451509a896fad88e0ac3d43b18.png">will be,</p>
+<p><img src=
+"../imgs/3666f7e27ddac7fcdc1a222c82eeb6e5289cb158.png"></p>
+<p>Hence span of modified P-MERGE is<img src=
+"../imgs/5e2b89d0cfbc63e2a364de450346fdac11928998.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p><img src=
+"../imgs/15704b3edd47b17eebca53564dd4fd9ed1c9e6eb.png"></p>
+<p>Hence parallelism of modified P-MERGE is<img src=
+"../imgs/5e2b89d0cfbc63e2a364de450346fdac11928998.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>An efficient multithreaded algorithm for partitioning an
+array around a pivot</b></p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the execution time of a computation on a single
+processor. Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation. <b>Pivot</b> element
+in the array is that element in array where actual calculation,
+operation like sorting in quick sort starts. In quick sort pivot
+element is the element which is placed at their proper correct
+position (in sorted order) in array.</div>
+<hr>
+<div class="answer">
+<p>Consider the procedure of Partition, section 7.1 of the text
+book,</p>
+<p>The algorithm below is going to use the concept of partition and
+multithreaded algorithm. In partition procedure there is two ‘for’
+loops. So here those loops are going to be parallel to make it
+efficient multithreaded algorithm.</p>
+<p><b>Algorithm:</b></p>
+<p>// partition in parallel fashion</p>
+<p>Parallel_partition<img src=
+"../imgs/e8fd214c3d0b89ea8037841ad96c2faa3cc3a29e.png"></p>
+<p><img src=
+"../imgs/c5cfcc5f68ee1d45eee61eef75061e0b8a9ed86a.png"></p>
+<p>//check whether array having only one element</p>
+<p><b>if</b> <img src=
+"../imgs/8c8827b011543c94da195f0f8be3e0e01e505bcb.png"></p>
+<p><b>return</b> <img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png"></p>
+<p>//taking auxiliary arrays array <img src=
+"../imgs/dfba94b0b18fe9cb920cc965b4fb710ca9c9e1f0.png">,<img src=
+"../imgs/ded05f7c445c74d7f2519e72e8202533d505079d.png">,<img src=
+"../imgs/10df8f7e48a1b4b69c0b304d5df1ae79f142d97a.png"></p>
+<p>//use for loop to copy elements in auxiliary array</p>
+<p><b>parallel for</b><img src=
+"../imgs/fcb65af04716ff388b045c7a33990197da41a7b8.png"> to
+<img src="../imgs/57595f7255e1731cb1558450173a2d5cf46ee609.png"></p>
+<p><img src=
+"../imgs/fa6b0926b8c32f9ca60307845d9d15ad7bf8af3a.png"></p>
+<p><b>if</b><img src=
+"../imgs/58aa6f96f3d8ae696e7fd49a2d943cf6bba057f5.png"></p>
+<p><img src=
+"../imgs/4da8b3af4ac05eb14b2ed6f2c84f43389c45d90b.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/2c0007d1bff49542b23954c585d630830841e70f.png"></p>
+<p><b>if</b><img src=
+"../imgs/56178213f9b721d7235107fa2618da9afa975f3c.png"></p>
+<p><img src=
+"../imgs/c7b495e71cceb5b72a1f2671ea43231f0d88ee46.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/4fc37423b8f84e47c9e34658073ba519f71adb11.png"></p>
+<p>//call function to apply sum operation</p>
+<p><img src=
+"../imgs/c4621d4ec23bad32d19c814af6482e525abd4862.png">parallel_prefix_sum<img src="../imgs/06860d163da07ad91ea9cd399274c4253d7c204d.png"></p>
+<p><img src=
+"../imgs/e4da1769d573e49304d0bcf9b5ec7475b969650e.png">parallel_prefix_sum<img src="../imgs/7a1179bb03569ba150d66d05de53459e985f68e7.png"></p>
+<p><img src=
+"../imgs/3661716aad5cb749194dae8dbf7fb65b52c183db.png"></p>
+<p><img src=
+"../imgs/aaeec48b14ef95d2dd2b57a19e045aa97a8cdc4c.png"></p>
+<p>//loop to compare all element of auxiliary array <i>X[]</i> with
+<i>x</i>.</p>
+<p><b>parallel for</b> <img src=
+"../imgs/fcb65af04716ff388b045c7a33990197da41a7b8.png">to <img src=
+"../imgs/57595f7255e1731cb1558450173a2d5cf46ee609.png"></p>
+<p>//check <i>i</i><sup>th</sup> index element of <i>X</i> [ ]
+array is lesser than <i>x</i>.</p>
+<p><b>if</b><img src=
+"../imgs/58aa6f96f3d8ae696e7fd49a2d943cf6bba057f5.png"></p>
+<p><img src=
+"../imgs/90e00a2254861fecb0d3eab53f7ea68f3599bda9.png"></p>
+<p>//check i<sup>th</sup> index element of <i>X</i> [ ] array is
+greater than <i>x</i>.</p>
+<p><b>else if</b> <img src=
+"../imgs/56178213f9b721d7235107fa2618da9afa975f3c.png"></p>
+<p><img src=
+"../imgs/16fb53b2487ad75e4a6bd3be15b85506dd396b14.png"></p>
+<p><b>return</b> <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The example below shows the concept and implementation of
+parallel prefix sum.</p>
+<p>There is a set of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">elements say
+<img src="../imgs/9f25b2b5b1c71010cd33ac33181d4a0ea16670b8.png">and
+<img src="../imgs/eba2ab067b168a07951abedb78996e61fc86ecb0.png">be
+another set which is defined on <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">element set
+using binary associative operation<img src=
+"../imgs/10c03c3478f5f5d0dfc952916046b4145f50d112.png">.</p>
+<p>Set will be defined as,</p>
+<p><img src=
+"../imgs/f4f7652d3f5266110d3fd0fbeb263dab2a116140.png">for
+<img src="../imgs/bfed0929dbaa79a2e153f688ccf768e54fda0108.png">.</p>
+<p><b>For example</b>, the set is given below,</p>
+<p><img src=
+"../imgs/4dd8fb0e31603082ecca3e7b8b3948901fe1a121.png"></p>
+<p><img src=
+"../imgs/10c03c3478f5f5d0dfc952916046b4145f50d112.png">=binary
+addition</p>
+<p>Then set <img src=
+"../imgs/eba2ab067b168a07951abedb78996e61fc86ecb0.png">will be
+given by,</p>
+<p><img src=
+"../imgs/d4fe9a2f72d3cd8cf55979f56838af70ac424ac3.png"></p>
+<p><img src=
+"../imgs/230ac7e81cfc31fccd84403f46073412be0b1b7e.png"></p>
+<p>// applying sum operation on parallel partition arrays</p>
+<p>Parallel_prefix_sum<img src=
+"../imgs/833b20b9332b8d24365d8091355e1453364173e9.png"></p>
+<p>//Check if number of element in array is 1</p>
+<p><b>if</b><img src=
+"../imgs/9b4d6fe93ec992fb65253350d922d4f8594ea910.png"></p>
+<p><img src=
+"../imgs/a029fbda48843f43930ccd82caee0da96cbe693a.png"></p>
+<p><b>else</b></p>
+<p><b>parallel for</b><img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png"> to
+<img src="../imgs/f26e9af3520b86d1e3dc4457fd7df8b7753742cf.png"></p>
+<p><img src=
+"../imgs/45106968b27c625c9a0b66d6f000ec1b946abf12.png"></p>
+<p><img src=
+"../imgs/ccdef19a59de54ff754d12ccd216d84eae46663a.png">parallel_prefix_sum<img src="../imgs/0f62f728176942f6dffecb9ddd97ea0390fc180c.png"></p>
+<p><b>parallel for</b><img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png">to <img src=
+"../imgs/64bddfe257c4e0d41e94c5a9b7fdcb2fbc129814.png"></p>
+<p><b>if</b><img src=
+"../imgs/98b4f98dd32c8174d6eefef0aef92c2d3351b095.png"></p>
+<p><img src=
+"../imgs/a029fbda48843f43930ccd82caee0da96cbe693a.png"></p>
+<p><b>else if</b> <img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png"> is even</p>
+<p><img src=
+"../imgs/72486b80d57a548919595dcb6fd6b2b88f217b3f.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/754fd77f569fbefe061160a8d4ee6a4520fb9846.png"></p>
+<p><b>return</b> <img src=
+"../imgs/47f818d7fd364bb6c6a33ac48763281836fdc5a7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above algorithm:</b></p>
+<p>Three methods work, span and parallelism are used for analyzing
+the algorithm.</p>
+<p><b>Work:</b></p>
+<p>Work of the above algorithm can be calculated by computing the
+execution time of its serialization.</p>
+<p>As parallel for loop of the above algorithm are not nested,</p>
+<p><img src="../imgs/2807285e5183b978847faa235b76df5c6c95399e.png">
+<b>… … (1)</b></p>
+<p>Work of parallel_prefix algorithm can be calculated by replacing
+the parallel for loop with ordinary for loop and then computing the
+running time of algorithm.</p>
+<p>Since parallel for loop of the parallel_prefix algorithm are not
+nested,</p>
+<p><img src=
+"../imgs/bd57d0a59164d3ec741d8bdc9fa8dcd99035d8d0.png"></p>
+<p>Applying master theorem,</p>
+<p><img src="../imgs/219939652c5709ea9a2bb9410aa2f41156a0474e.png">
+<b>… … (2)</b></p>
+<p>Putting value of equation <b>(2)</b> in <b>(1)</b></p>
+<p><img src=
+"../imgs/b3b13938a0b67d36ebcc9a9f1530641a6e927d59.png"></p>
+<p><img src="../imgs/38cee7832b9e3e90336fc0856f79747c5bcbfb74.png">
+<b>… … (3)</b></p>
+<p>Hence total work of Parallel_partition algorithm is <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of the above algorithm will be given by,</p>
+<p><img src="../imgs/93515ad02a4da3211b7c9277d048d80057131c4a.png">
+<b>… … (4)</b></p>
+<p>Span of the parallel_prefix_algorithm will be given by,</p>
+<p><img src=
+"../imgs/151ca282ae78f00ed8d4cd962f823a08fac7aef2.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src="../imgs/de3c4303506c9bc936cb59cb9e6a13b799f2ac18.png">
+<b>… … (5)</b></p>
+<p>From equation <b>(4)</b> and <b>(5),</b></p>
+<p><img src=
+"../imgs/cf1475afba9c52f0fee3c0f869cbefbc82930f4b.png"></p>
+<p><img src=
+"../imgs/af706ffdd69fb3e270e53f6eadd540d56897e25e.png"></p>
+<p>Hence span of Parallel_partition algorithm is<img src=
+"../imgs/c4c88c1d94bf31653943cf06d6b69dd620bdbfaa.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>= <img src=
+"../imgs/322ea0f5bb2bb01896c732d7e3ee0298043f3f5c.png"></p>
+<p>= <img src=
+"../imgs/e177fae7e6f3e31a4dafbccdac0c7631a97f9f8b.png"></p>
+<p>Hence parallelism of Parallel_partition algorithm is<img src=
+"../imgs/e177fae7e6f3e31a4dafbccdac0c7631a97f9f8b.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Multithreaded version of RECURSIVE- FFT</b></p>
+<p>Fast Fourier transform is an algorithm to calculate discrete
+Fourier transform (DFT) and also to calculate inverse discrete
+Fourier transform.</p>
+<p>Fourier transformation changes time to frequency and frequency
+to time. It is one of the important numerical algorithms.</p>
+<p>In Discrete Fourier Transformation (DFT), the polynomial that
+should be evaluated is given as:</p>
+<p><img src=
+"../imgs/bec33431e19707814810543aa501adbf2fe5b419.png"></p>
+<p>Here, the polynomial has a degree bound of <i>n</i> and the
+roots of unity in the complex form will be<img src=
+"../imgs/3f1bd14c7a2c03928ba8aa259546721ea8e59b16.png">. If the
+result is represented as<img src=
+"../imgs/9f6618ea30f877fd693c1c6b81353353bed1f590.png">, then DFT
+for the given polynomial can be given as:</p>
+<p><img src=
+"../imgs/5c9f7254846a9c7a534d94b54977b44c25c17624.png"></p>
+<p><img src=
+"../imgs/2cf33a7d05325f920e30cae305aeb319f3e34225.png"></p>
+<p>The DFT given above is for 1-dimension only. If the polynomial
+has more than 1 dimension, then discrete Fourier transform for
+d-dimensions can be given as:</p>
+<p><img src=
+"../imgs/e369f8ac6c81049b74a4535f7cd822423863ccd2.png"></p>
+<p>The above expression requires <img src=
+"../imgs/8bbf043c46b47e68a7ca9ab8f7b50b03f4a98593.png"> operation
+for evaluation. This means that it requires <img src=
+"../imgs/8bbf043c46b47e68a7ca9ab8f7b50b03f4a98593.png"> execution
+time.</p>
+<p>The FFT can do the same work in <img src=
+"../imgs/2064062f753c025403022318477e88695e90a2df.png">time. In
+other words, can say that FFT algorithm only require <img src=
+"../imgs/2064062f753c025403022318477e88695e90a2df.png">operations.
+The FFT work on divide and conquer rule which divide polynomial
+into polynomial of odd and even indexes coefficients of <img src=
+"../imgs/2263111ec136a4f938297aa7669e06ff81bd481d.png">.</p>
+<p><img src=
+"../imgs/1e4c7cc124c70a3f9670e471a36a1819edcd5f4b.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the execution time of a computation on a single
+processor. Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</div>
+<hr>
+<div class="answer">
+<p><b>Multithreaded version of RECURSIVE-FFT:</b></p>
+<p>Consider the algorithm Recursive-FFT on section 30.2 from the
+textbook. Given below is the multithreaded version of this
+algorithm. To make it multithreaded, spawn keyword used before the
+recursive function to make its implementation in parallel.</p>
+<p>// multithreaded version of recursive FFT</p>
+<p>RECURSIVE-FFT<img src=
+"../imgs/bc4ca132fea4a1ac2d29475fb243ae2bb2088ce1.png"></p>
+<p>//Find length of polynomial which must be a power of 2</p>
+<p><img src=
+"../imgs/19083a308a855a29a3f59bc5d9d2dec0ec2c8b44.png"></p>
+<p><b>//</b> check length is equal to 1 or not.</p>
+<p><b>if</b> <img src=
+"../imgs/b3d273cca3a9a3ad255be65682f211043920a299.png"></p>
+<p><b>return</b> <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"></p>
+<p><img src=
+"../imgs/25e6c58edb954cebfd4c1f00053970e2ff59179a.png"></p>
+<p><img src=
+"../imgs/5fdedc1383705c2d6bbeef05f736218a076a84a6.png"></p>
+<p>//divide polynomial into polynomial of odd and even indexes
+coefficients</p>
+<p><img src=
+"../imgs/8594179cb7e6d7867bb00ab2431dce942d0258c7.png"></p>
+<p><img src=
+"../imgs/73e07da0e851465cdf7d5c21514f78cb5c28c166.png"></p>
+<p>// using the concept of parallelization to making algorithm
+multithreaded</p>
+<p><b>Spawn</b> <img src=
+"../imgs/6569d7050ca160b736a3244be141409e1596110a.png">RECURSIVE-FFT(<img src="../imgs/c081645a32c4d6f2ba340d41fabb2d55e82f3035.png">)</p>
+<p><img src=
+"../imgs/5b5492e4bf6383dc8e39446a636c4ec5ddef22d4.png">RECURSIVE-FFT(<img src="../imgs/dc4dc0ecac910231736b5c3385a7bdc17325b76b.png">)</p>
+<p>//use loop to combine the output of even and odd index terms
+subscript.</p>
+<p><b>for</b><img src=
+"../imgs/971825be157d36f905cee5f8ba54f090ad2d3e59.png"><b>to</b>
+<img src=
+"../imgs/aae55e4654eb77b0610814a7f9e0e4995072e380.png"></p>
+<p><img src=
+"../imgs/7ca195b61d09e368d26eb04435167452a039c5f0.png"></p>
+<p><img src=
+"../imgs/27d367dbf6731a2d53c9709c1c0899dd4cc96ee8.png"></p>
+<p><img src=
+"../imgs/c54cd4fda9a36d89cc6be29dca0c2fdd3447fdea.png"></p>
+<p><b>//</b> <i>y</i> is assumed to be a column vector</p>
+<p><b>return</b> <img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of the above algorithm can be calculated by computing the
+running time of its serialization.</p>
+<p>That is the other than recursive call, there is work of
+<img src="../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">because
+of the ‘for’ loop.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/679d8c4992eddcdea674793cb5b7dbad7948ef37.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p>So,</p>
+<p>Total work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png">will be as
+follow (in above recursion equation the first part make the tree
+structure having length (lg<i>n</i>))</p>
+<p><img src="../imgs/db00644e8e1fe6ce7811286a8fac6af8cfd1eb5b.png">
+<b>… … (1)</b></p>
+Hence total work of Multithread RECURSIVE- FFT is <img src=
+"../imgs/f95e55d3fa6bd53f484ff1c50368488033c5aba4.png"></div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of the above algorithm will be <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> because
+each of the call will has to do a minimum work of executing the
+‘for’ loop in term of<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.</p>
+<p>Therefore,</p>
+<p><img src="../imgs/c1a5f46d6e8bf29816a8cd16bc68ca7ddfdf6120.png">
+<b>… … (2)</b></p>
+Hence span of Multithread RECURSIVE- FFT is<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"></div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Parallelism= <img src=
+"../imgs/69ee234f1b74c2b40a74e688dbb9c2cae82e11a1.png"></p>
+<p>By EQUATION <b>(1)</b> and <b>(2)</b></p>
+<p>=<img src=
+"../imgs/af004a6c0c61540bd503c4faa6439300e8a6e0ef.png"></p>
+<p>= <img src=
+"../imgs/d916e29959fe2e402241656e63bc1f5233a5848b.png"></p>
+<p>=<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png"></p>
+<p>Hence span of Multithread RECURSIVE- FFT is<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Multithreaded version of Randomized selection</b></p>
+<p><b>Randomized Selection:</b></p>
+<p>It is a process used to find minimum element in an array which
+has <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">execution
+time. It also depends on divide-and-conquer algorithms, similar to
+quick sort. But Randomized selection processes only one side of
+partition unlike quick sort which processes both sides of
+partition. That is why the execution time of Randomized select is
+<img src="../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">
+instead of<img src=
+"../imgs/f95e55d3fa6bd53f484ff1c50368488033c5aba4.png">.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the execution time of a computation on a single
+processor. Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p>//consider the algorithm Randomized-Select on section 9.2 of the
+textbook</p>
+<p>// randomize selection using parallel algorithmt</p>
+<p>Parallel_randomized_select<img src=
+"../imgs/604776d64935e3e33b505228cda56996f194d92d.png"></p>
+<p>//find number of element in array</p>
+<p><img src=
+"../imgs/c5cfcc5f68ee1d45eee61eef75061e0b8a9ed86a.png"></p>
+<p>//check size of array</p>
+<p><b>if</b> <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> is very
+less say <img src=
+"../imgs/7ae766b66a7236945d4be65418788784aba920a5.png"></p>
+<p>sort<img src=
+"../imgs/352ee0d58bb20f255b7bed3d014e8808e9fa2d0d.png"> using any
+sorting algorithm</p>
+<p><b>else</b></p>
+<p>//select <i>x</i> element from array</p>
+<p>Select a random element <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">from
+<img src=
+"../imgs/352ee0d58bb20f255b7bed3d014e8808e9fa2d0d.png"></p>
+<p>//call function to divide the array</p>
+<p><img src=
+"../imgs/3273e6e17bd65b34122767fbe601c56579704448.png">Parallel_partition<img src="../imgs/e8fd214c3d0b89ea8037841ad96c2faa3cc3a29e.png"></p>
+<p><img src=
+"../imgs/e26572a1b45d968716c2e9b5208ddba76ccf9c03.png"></p>
+<p><b>if</b> <img src=
+"../imgs/4d0948d9fd250e97783f803f07154add3b4c291c.png"></p>
+<p><b>return</b> <i>A</i>[<i>k</i>]</p>
+<p><b>else if</b> <img src=
+"../imgs/e3737c71fe4c5b0ac986fdbb12a732ae142605b6.png"></p>
+<p><b>return</b></p>
+<p><b>spawn</b> Parallel_randomized_select<img src=
+"../imgs/c75d7f65ad988868e4885f21e8edd44e7712fee3.png"></p>
+<p><b>else</b></p>
+<p><b>return</b> Parallel_randomized_select<img src=
+"../imgs/a78fa804fc3b404a205b61c6ba6bf2211fc2343e.png"></p>
+<p><b>sync</b></p>
+<p>// parallel partitioning</p>
+<p>Parallel_partition<img src=
+"../imgs/e8fd214c3d0b89ea8037841ad96c2faa3cc3a29e.png"></p>
+<p><img src=
+"../imgs/c5cfcc5f68ee1d45eee61eef75061e0b8a9ed86a.png"></p>
+<p>//check whether array having only one element</p>
+<p><b>if</b> <img src=
+"../imgs/9b4d6fe93ec992fb65253350d922d4f8594ea910.png"></p>
+<p><b>return</b> <img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png"></p>
+<p>//taking auxiliary arrays</p>
+<p>array <img src=
+"../imgs/dfba94b0b18fe9cb920cc965b4fb710ca9c9e1f0.png">,<img src=
+"../imgs/ded05f7c445c74d7f2519e72e8202533d505079d.png">,<img src=
+"../imgs/10df8f7e48a1b4b69c0b304d5df1ae79f142d97a.png"></p>
+<p>//use for loop to copy elements in auxiliary array</p>
+<p><b>parallel for</b> <img src=
+"../imgs/fcb65af04716ff388b045c7a33990197da41a7b8.png"> to
+<img src="../imgs/57595f7255e1731cb1558450173a2d5cf46ee609.png"></p>
+<p><img src=
+"../imgs/06aa13b16fd0e327166bfc49d2604316a2672bd7.png"></p>
+<p><b>if</b><img src=
+"../imgs/58aa6f96f3d8ae696e7fd49a2d943cf6bba057f5.png"></p>
+<p><img src=
+"../imgs/4da8b3af4ac05eb14b2ed6f2c84f43389c45d90b.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/2c0007d1bff49542b23954c585d630830841e70f.png"></p>
+<p><b>if</b><img src=
+"../imgs/83c9854013a907d17bd4b3e2be21c89587e34d20.png"></p>
+<p><img src=
+"../imgs/43ba98c942090de0718d8e4d7b366747d2f3b9ec.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/96af5d418492add88ab89a42c8fc85a4c85c8abc.png"></p>
+<p>//call function to apply sum operation</p>
+<p><img src=
+"../imgs/69bd90ee15571ce7f84ea7f2bca194ebc3f96f45.png">parallel_prefix_sum<img src="../imgs/5570835ab4a29252e1bb23827b2c2fd9e3d5889a.png"></p>
+<p><img src=
+"../imgs/d7e864996645ec68a880c99fd2e11bcf161cc118.png">=parallel_prefix_sum<img src="../imgs/7cb9e62014ddc509dacf930bc5051d26b3cfb852.png"></p>
+<p><img src=
+"../imgs/3661716aad5cb749194dae8dbf7fb65b52c183db.png"></p>
+<p><img src=
+"../imgs/aaeec48b14ef95d2dd2b57a19e045aa97a8cdc4c.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/fcb65af04716ff388b045c7a33990197da41a7b8.png">to <img src=
+"../imgs/57595f7255e1731cb1558450173a2d5cf46ee609.png"></p>
+<p>//check if <i>i</i><sup>th</sup> index element of <i>X</i> [ ]
+array is lesser than <i>x</i>.</p>
+<p><b>if</b> <img src=
+"../imgs/58aa6f96f3d8ae696e7fd49a2d943cf6bba057f5.png"></p>
+<p><img src=
+"../imgs/90e00a2254861fecb0d3eab53f7ea68f3599bda9.png"></p>
+<p>//check if <i>i</i><sup>th</sup> index element of <i>X</i> [ ]
+array is greater than <i>x</i>.</p>
+<p><b>else if</b> <img src=
+"../imgs/56178213f9b721d7235107fa2618da9afa975f3c.png"></p>
+<p><img src=
+"../imgs/16fb53b2487ad75e4a6bd3be15b85506dd396b14.png"></p>
+<p><b>return</b> <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"></p>
+<p>The example below shows the concept and implementation of
+parallel prefix sum.</p>
+<p>There is a set of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">elements say
+<img src=
+"../imgs/6ba1d2efa1dc90ee3758ece39113d5c1f1e76fb8.png">and<img src=
+"../imgs/eba2ab067b168a07951abedb78996e61fc86ecb0.png">be another
+set which is defined on <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">element set
+using binary associative operation<img src=
+"../imgs/10c03c3478f5f5d0dfc952916046b4145f50d112.png">.</p>
+<p>Set will be defined as,</p>
+<p><img src=
+"../imgs/c383a567e9e1ec3a9521cba8b567566a2a1f6b62.png">for
+<img src="../imgs/bfed0929dbaa79a2e153f688ccf768e54fda0108.png">.</p>
+<p><b>For example,</b></p>
+<p>Consider the set is given below,</p>
+<p><img src=
+"../imgs/4dd8fb0e31603082ecca3e7b8b3948901fe1a121.png"></p>
+<p><img src=
+"../imgs/10c03c3478f5f5d0dfc952916046b4145f50d112.png">=binary
+addition</p>
+<p>Then set <img src=
+"../imgs/eba2ab067b168a07951abedb78996e61fc86ecb0.png">will be
+given by,</p>
+<p><img src=
+"../imgs/d4fe9a2f72d3cd8cf55979f56838af70ac424ac3.png"></p>
+<p><img src=
+"../imgs/230ac7e81cfc31fccd84403f46073412be0b1b7e.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>// function calculation sum operation in parallel fashion</p>
+<p>Parallel_prefix_sum<img src=
+"../imgs/833b20b9332b8d24365d8091355e1453364173e9.png"></p>
+<p>//check if array contains only one element.</p>
+<p><b>if</b> <img src=
+"../imgs/9b4d6fe93ec992fb65253350d922d4f8594ea910.png"></p>
+<p><img src=
+"../imgs/a029fbda48843f43930ccd82caee0da96cbe693a.png"></p>
+<p><b>else</b></p>
+<p><b>parallel for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png"> to
+<img src="../imgs/f26e9af3520b86d1e3dc4457fd7df8b7753742cf.png"></p>
+<p><img src=
+"../imgs/45106968b27c625c9a0b66d6f000ec1b946abf12.png"></p>
+<p><img src=
+"../imgs/ccdef19a59de54ff754d12ccd216d84eae46663a.png">parallel_prefix_sum<img src="../imgs/f16eb21c2807e91ec06af59a7a3ddc6572022c3f.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png">to <img src=
+"../imgs/64bddfe257c4e0d41e94c5a9b7fdcb2fbc129814.png"></p>
+<p><b>if</b> <img src=
+"../imgs/98b4f98dd32c8174d6eefef0aef92c2d3351b095.png"></p>
+<p><img src=
+"../imgs/a029fbda48843f43930ccd82caee0da96cbe693a.png"></p>
+<p><b>else if</b><img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png"> is even</p>
+<p><img src=
+"../imgs/72486b80d57a548919595dcb6fd6b2b88f217b3f.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/754fd77f569fbefe061160a8d4ee6a4520fb9846.png"></p>
+<b>return</b> <img src=
+"../imgs/47f818d7fd364bb6c6a33ac48763281836fdc5a7.png"></div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above algorithm:</b></p>
+<p>Three methods work, span and parallelism are used for analyzing
+the algorithm.</p>
+<p><b>Work:</b> Work can be calculated by computing the execution
+time of its serialization.</p>
+<p>Work of parallel randomized algorithm can be following
+recurrence,</p>
+<p><img src="../imgs/93f76c1234854091b1a5dc25284d2d8507b22b13.png">
+<b>… … (X)</b></p>
+<p>Work of above Parallel partition can be calculated by replacing
+the parallel for loop with ordinary for loop and the computing of
+the running time of algorithm.</p>
+<p>As parallel for loop of the above algorithm are not nested ,</p>
+<p><img src="../imgs/f47fbcb0df77915cb2b5ce40ccb556c15f48c786.png">
+<b>… … (1)</b></p>
+<p>Work of parallel_prefix algorithm can be calculated by replacing
+the parallel for loop with ordinary for loop and the computing of
+the running time of algorithm.</p>
+<p>As parallel for loop of the parallel_prefix_algorithm algorithm
+are not nested,</p>
+<p><img src=
+"../imgs/bd57d0a59164d3ec741d8bdc9fa8dcd99035d8d0.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src="../imgs/219939652c5709ea9a2bb9410aa2f41156a0474e.png">
+<b>… … (2)</b></p>
+<p>Putting value of equation <b>(2)</b> in <b>(1)</b>,</p>
+<p><img src=
+"../imgs/d90c9babb4bbfd6fcc67854aec50002f648f5637.png"></p>
+<p><img src="../imgs/16fa2507906665afcf61bd89f6f30e8336a598bb.png">
+<b>… … (3)</b></p>
+<p>From <b>(X)</b> and <b>(3)</b>,</p>
+<p><img src=
+"../imgs/bb9acc98f2b42b1ce21862a06febc8fd238f53e5.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src=
+"../imgs/db00644e8e1fe6ce7811286a8fac6af8cfd1eb5b.png"></p>
+<p>Hence total work of Parallel_Randomized_Select algorithm
+is<img src=
+"../imgs/f95e55d3fa6bd53f484ff1c50368488033c5aba4.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of the Parallel_randomized_select algorithm are given by
+following recurrences.</p>
+<p><img src="../imgs/ab2c601dd221226d22954283583c1ed26ccc6ce8.png">
+<b>… … (Y)</b></p>
+<p>Span of the Parallel_partition algorithm will be given by,</p>
+<p><img src="../imgs/f4556e2b0678917b4f090d4fb579ba0cab526a33.png">
+<b>… … (4)</b></p>
+<p>Span of the parallel_prefix_algorithm will be given by,</p>
+<p><img src=
+"../imgs/151ca282ae78f00ed8d4cd962f823a08fac7aef2.png"></p>
+<p>Applying master theorem,</p>
+<p><img src="../imgs/de3c4303506c9bc936cb59cb9e6a13b799f2ac18.png">
+<b>… … (5)</b></p>
+<p>From equation <b>(4)</b> and <b>(5)</b>,</p>
+<p><img src=
+"../imgs/43935d4562c7e7887065bbcf92abb480c210edf0.png"></p>
+<p><img src="../imgs/10b26718c4b78a3778467cfaa86b0bbf9f12a737.png">
+<b>… … (6)</b></p>
+<p>From equation <b>(Y)</b> and <b>(6),</b></p>
+<p><img src=
+"../imgs/a0a40a41ec9aac6d03eb02f7660cf4dd489f0612.png"></p>
+<p><img src=
+"../imgs/a39b7867a3d466b7da6a12938c28127d57a97282.png"></p>
+<p>Hence span of Parallel_Randomized_Select algorithm is<img src=
+"../imgs/634fd7062d474bfe4f8b427bc8d25af0b83f7694.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>= <img src=
+"../imgs/a95c26477a662db2cde5b8b947083599806db71a.png"></p>
+<p>= <img src=
+"../imgs/e177fae7e6f3e31a4dafbccdac0c7631a97f9f8b.png"></p>
+<p>Hence parallelism of Parallel_Randomized_Select algorithm
+is<img src=
+"../imgs/e177fae7e6f3e31a4dafbccdac0c7631a97f9f8b.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Multithread SELECT Algorithm</b></p>
+<p>The serial algorithms are executed on the uniprocessor system in
+which only one instruction is executed at a time. In order to
+reduce the execution time of algorithm, a multithread algorithm was
+evolved. A multithread algorithm executes on the multiprocessor
+system in which more than one instruction can be executed at a
+time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Multithreading of the SELECT:</b></p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p>// consider the section 9.3 of the textbook.</p>
+<p>// SELECT procedure using parallel algorithm concept.</p>
+<p><i>Parallel_Selection</i> <img src=
+"../imgs/9c59b83aefca21e297e255e900dc9452bb75f496.png"></p>
+<p><img src=
+"../imgs/c5cfcc5f68ee1d45eee61eef75061e0b8a9ed86a.png"></p>
+<p><b>if</b> <img src=
+"../imgs/61769464e6e7c6259acc35f770e621cf785cd309.png"></p>
+<p>//Return the first element as smallest element because array
+contains only one</p>
+<p>//element</p>
+<p><b>return</b> <img src=
+"../imgs/fb9f22a7167bdaa7f80ad0e33a535d7d811874c8.png"></p>
+<p><b>else</b></p>
+<p>Divide elements of<img src=
+"../imgs/16c1377049b724c8f304352f19ea39637a6da4c5.png"> into
+<img src="../imgs/d49ad6f8565a91e60fe80cf980a27bb534af544e.png">
+groups, each group having 5</p>
+<p>elements. Last group have remaining <i>n mod 5</i> elements.</p>
+<p><b>parallel for</b><img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png">to<img src=
+"../imgs/5c09ecefc5698da92199b377bdfce0cbcddbb93b.png"></p>
+<p>//Consider section 9.3 for selection algorithm</p>
+<p>first sort each group using merge sort and then find median of
+each group</p>
+<p>and also store it simultaneously into <img src=
+"../imgs/d739efb4b982152faef1f97cd031e531895974d4.png"></p>
+<p>//Consider section 27.3 for multithreaded merge sort</p>
+<p>Calculate the median <img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">among all
+median of <img src=
+"../imgs/971661ebf9c31976eaee17aa2556e44b046902bf.png"></p>
+<p><img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">=<i>Par-Partition</i>
+<img src=
+"../imgs/3dc391f0e3847476ee10bbe4383def018219db05.png"></p>
+<p><img src=
+"../imgs/072e7c7a5068aec91cd5ecc226a3ad5725763754.png"></p>
+<p><b>if</b> <img src=
+"../imgs/4aac0adcaea28f4469a00a60394f2f64a40691f4.png"></p>
+<p><b>return</b> <img src=
+"../imgs/5d8e965a54a267dcb506a2f24f4dca45bd1d1a54.png"></p>
+<p><b>else if</b> <img src=
+"../imgs/60ac098c9e7ac2c316e626dd9e735a3ba0aded88.png"></p>
+<p><b>return</b> <i>Par-Selection</i> <img src=
+"../imgs/e84dca5202218287e0f4bb065614469a8f90e9bf.png"></p>
+<p><b>else</b></p>
+<p><b>return</b> <i>Par-Selection</i> <img src=
+"../imgs/d0007a2ae5889cae81794bf2ee1853cb7314add2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p><img src="../imgs/fdb3c5143f2b103f4c7f57207721b4bc2c82bcca.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p>Assume an array A contains 23 elements which is represented as
+small circles in the above figure. According to
+<i>parallel_Selection</i> algorithm first divide the elements into
+groups, each group containing 5 elements each. The last group
+contains n mod 5 elements.</p>
+Then sort each group using merge sort algorithm. The arrows shown
+that moves from larger element to smaller element. The white circle
+represents the median of that group. The white circle which is
+denoted by <i>m</i> is the median of the median. The elements in
+the shaded portion are greater than <i>m</i>.</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above algorithm</b></p>
+<p>Three methods work, span and parallelism are used for analyzing
+the algorithm.</p>
+<p><b>Work:</b></p>
+<p>Work can be calculated by replacing the parallel for loop with
+ordinary for loop and calculating the running time of the
+algorithm.</p>
+<p>According to the section 9.3,</p>
+<p>The generalizations form of the above algorithm:</p>
+<p><img src=
+"../imgs/25466458acc6abf1aebbadcb0f3b874fa3d1af0b.png"></p>
+<p><img src=
+"../imgs/d21ec78dcfde3b32f61b8d4672f01ec047c53100.png"></p>
+<p>Hence, work of <i>Parallel_Selection</i> algorithm is<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</p>
+<p><b>Span:</b></p>
+<p>Consider the analysis of multithreaded merge sort on page
+803,</p>
+<p><img src=
+"../imgs/8ed48f51eef853fca15c31da39f5abb55285cfc4.png"></p>
+<p>Span of the above algorithm can be given by,</p>
+<p><img src=
+"../imgs/a5ab4c6398a160ae5d0368f428d2f4eb8672d7e6.png"></p>
+<p>= <img src=
+"../imgs/1fd3b3a47353cb08b9df5de50cf4e95322e98331.png"></p>
+<p>Hence work of <i>Parallel_Selection</i> algorithm is<img src=
+"../imgs/1fd3b3a47353cb08b9df5de50cf4e95322e98331.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore, Parallelism= <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p><img src=
+"../imgs/f840eb5ed1cd9a55be4177d3ef432b7b4914a7c1.png"></p>
+<p>Hence work of <i>Parallel_Selection</i> algorithm is<img src=
+"../imgs/edc804747508afa0b1d5676bd8b1073b89b2c5a0.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

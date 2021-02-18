@@ -1,0 +1,238 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 19.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Fibonacci Heap</b></p>
+<p>Fibonacci Heap is a data structure which is collection of
+binomial trees which are <b>min- heap</b> ordered. In the Fibonacci
+heap the key of child node is more than or equal to the key of its
+parent node. It is used for various applications such as
+calculating minimum spanning tree, single source shortest path as
+it is asymptotically faster. Its running time is far better than
+the normal heap.</p>
+<p><b>Marked Fibonacci Heap:</b> In Fibonacci heap, there are two
+fields for every node: marked and unmarked. In the beginning,
+entire nodes of the heap are unmarked. If a node of Fibonacci heap
+has lost its child, then the parent of corresponding node is
+marked.</p>
+<p><b>Example to illustrate Marked Fibonacci Heap in Deletion:</b>
+Initially, all the nodes are unmarked and are satisfying the heap
+property. A heap property implies that the value of parent node is
+less than the value of its child node. In order to violate heap
+property so replace the node value from 50 to 19. This replacement
+violates the heap property as value of the parent node is greater
+than the value of its child node.</p>
+<p><img src="../imgs/f2ddc56a44dd40f23de7e435a3c20d42036388ab.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\12.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>After the violation of heap property, <b>CUT</b> the child nodes
+from its parent node. Then mark the parent node, and by using
+<b>CASCADING-CUT</b> method insert the child node into the root
+list.</p>
+<p><img src="../imgs/f56279c52baef62b05276a5796050623ec6626cb.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\2.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Remove node 20 and store the node in root list and then further
+marked node 39 becomes the root node. Thus, x node reaches to the
+marked node.</p>
+<p><img src="../imgs/662b8272180a9667840fa6a16683348f50a682c0.png"
+alt="Picture 1"></p>
+<p>This is the case, when deletion happens. And a node is
+selected.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Another Example to illustrate Marked Fibonacci Heap in
+Insertion:</b> Initially, all the nodes are unmarked and are
+satisfying the heap property. A heap property implies that the
+value of parent node is less than the value of its child node. Now
+take the initial tree and insert a new node with value 10. Then
+following procedure will be followed. Node 10 is inserted at the
+place to insert a new node.</p>
+<p><img src="../imgs/03610ae14cd8c35c4576f825339242898686c0ee.png"
+alt="Picture 3"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now another step is to follow the Fibonacci Heap guidelines. Now
+need to exchange marked node with the parent node because parent
+node is greater than the marked node. Now check again and exchange
+marked node with the root node as root node is greater than marked
+node. Now marked node 10 becomes the root node and there is the x.
+Thus, x reaches to the marked node. Look at the given figure:</p>
+<p><b><img src=
+"../imgs/0098c4d52ba98bfdd897afbaf1c6bb13968c86e1.png" alt=
+"Picture 4"></b></p>
+</div>
+<hr>
+<div class="answer">Now arguing about marking of a node does not
+decide and matter to define if a node is root or not. Use the
+asymptotic upper-bound concept with the help of the potential
+function of cascading-cut. Under the amortized analysis, the factor
+<img src="../imgs/02037ca589fcc65f1f00b260ee812fdb6316ca75.png">in
+the mathematical function <img src=
+"../imgs/11ab01d15145531eb1990f9193ec3c3766e3e5fc.png">depicting
+marks is marked by 2 to pay for two works in FIB-HEAP-DECREASE-KEY;
+one division pays for the cut and removing of the mask bit, and the
+other division pays for the increase in potential because of
+node<img src=
+"../imgs/c755e67f47792b77e683fc46c8d1f1c16fff4eaf.png">becoming a
+root.
+<p>As <img src=
+"../imgs/32339e2e478551055fc3629be529be20e584bf01.png"> is marked,
+it represents extra unused potential. It functions only for
+loosening the asymptotic upper-bound found in amortized analysis.
+But the function is not able to loosen it (for this, see the
+cascading-cut potential function shown below). This unneeded growth
+in potential is paid, for the analysis of
+FIB-HEAP-DECREASE-KEY.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Cascading-Cut Potential Function:</b></p>
+<p>Cascading cuts means, when key value of a node decreases and
+become smaller than its father, then that part is cut from the tree
+and is made to join with the root list.</p>
+<p>Now, checking this node ancestor, till we reach the marked node
+that is going to cut,</p>
+<p>The potential function = number of trees + 2 times number of
+marked nodes.</p>
+<p>Consider that <i>a</i> be the number of trees added to the root
+list. Then <i>a</i>–1 was marked (last call makes node unmarked in
+cascading-cuts).</p>
+<p>Number increases by <i>a</i> and marked node decreases by at
+least <i>a</i>–2.</p>
+<p>Then change in potential function is:</p>
+<p><img src=
+"../imgs/710b12d54f043978c43b10fef3814ed8bc8dd042.png"></p>
+<p>Finally, the total amortized cost is equal to the actual cost
+plus change in potential.</p>
+<p>Here, the actual cost is <img src=
+"../imgs/a04b874e9941dd90ef8b39575bd904ef6b0fd8ce.png">and the
+change is potential is linear in nature, which is not going to
+change whether node is marked or not, even though it is not a root
+that was first linked to other nodes and then lost one child. Thus,
+the amortized cost is:</p>
+<p><img src=
+"../imgs/9904a052a4c994840b5c4e4647e4980c84329b87.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>FIB-HEAP-DECREASE-KEY</b></p>
+<p>Consider the FIB-HEAP-DECREASE-KEY algorithm by applying the
+amortized analysis for its analysis so that we can find the average
+cost for each function that it performs by using aggregate analysis
+and justifying the amortized time<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">.</p>
+<p>Fibonacci heap is a type of data structure in which the min
+heaps are arranged in an order that is the collection of
+min-heap-ordered trees is called the Fibonacci heap.</p>
+<p>Min-heap-property is the condition which says that for any node
+the value of its key is larger than or equal to the value of its
+parent node.</p>
+<p>The root node in the Fibonacci heap points to the tree with
+minimum key value and the children of Fibonacci heap are connected
+in the circular doubly linked list.</p>
+<p>Decreasing the key <i>x</i> in the Fibonacci heap by the key
+<i>k</i> where<img src=
+"../imgs/84a3b2a3cc59e2e6af5ddeb07414dc88ec321d7c.png">.</p>
+<p>The HEAP-DECREASE-KEY algorithm calls the function CASCADING-CUT
+and CUT for the disconnection of links between nodes.</p>
+<p>Each of the CASCADING-CUT and CUT functions run in a linear time
+because of the general algebraic operations of subtraction and
+assignment and because of absence of any loops.</p>
+<p>Hence their time complexity is<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">.</p>
+<p>If there are a total of <i>n</i> nodes in the heap <i>H</i>,
+then this operation would be called for a maximum of <i>n</i> times
+in the worst case. Therefore, the worst case time complexity of the
+total number of calls made would be<img src=
+"../imgs/413cb0852d021748e131813a93e716b3d8ea7621.png">.</p>
+As per the aggregate analysis, for <i>n</i> operations the total
+cost per operation=<img src=
+"../imgs/9724b5c9cd9833300b83276cda794f25464aef5b.png"> Thus the
+average cost per operation comes out to be <img src=
+"../imgs/cc14558758164c60cbe508799e3139922cd13ea9.png"> which is
+equal to<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">. This time
+complexity provides an upper bound to the maximum time taken for
+the specified operations.</div>
+<hr>
+<div class="answer">
+<p>Thus from the amortized analysis for running time of
+FIB-HEAP-DECREASE-KEY as mediate cost for each function from the
+aggregate analysis is<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

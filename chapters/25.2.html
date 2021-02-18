@@ -1,0 +1,1178 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 25.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following directed and weighted graph that is given
+as Fig 25.2</p>
+<p><img src="../imgs/e33b97e4551630ecfcc2b9a8f9ca85661b7533ba.png"
+alt="Picture 4"></p>
+<p>From the above graph, weight matrix, <img src=
+"../imgs/69c8b0e98de63b70127261e8b63dad9f19c65e4f.png"></p>
+<p>Consider the FLOYD-WARSHALL (W) algorithm.</p>
+<p>Then <i>n</i> = 6</p>
+<p>And the initial distance matrix, <img src=
+"../imgs/2bfcba8ec1393af89e64506d01b727bba12572c5.png"></p>
+<p><img src="../imgs/cad04ce4215e630f1e31e39db3d97ff8def82321.png">
+gives the lengths of the shortest paths between every pair of nodes
+with no intermediate vertices.</p>
+<p>For <i>k</i> =1:</p>
+<p><img src=
+"../imgs/c2a6dbd0b7d9474aca884c19ab5d1ce99d9e55bc.png"></p>
+<p><img src="../imgs/d4b5b7342d60abcea8d121717629a42c75dc9f65.png">
+gives the lengths of the shortest paths between every pair of nodes
+with intermediate vertices numbered not more than 1.</p>
+<p>For <i>k</i> =2:</p>
+<p><img src=
+"../imgs/8975f56e4373b0549bce0d2b365b653a26baba55.png"></p>
+<p><img src="../imgs/b536a8a41c4ca119c565cfeef07e21e60d3d36d1.png">
+gives the lengths of the shortest paths between every pair of nodes
+with intermediate vertices numbered not more than 2.</p>
+<p>For <i>k</i> =3:</p>
+<p><img src=
+"../imgs/991f582f599c18bdc8344219a3eea706d46b8082.png"></p>
+<p><img src="../imgs/0fcdc83ea9afe432b6305e8587a81979901b36b6.png">
+gives the lengths of the shortest paths between every pair of nodes
+with intermediate vertices numbered not more than 3.</p>
+<p>For <i>k</i> =4:</p>
+<p><img src=
+"../imgs/01ccad1664ea0394e51fcb02062270a338ae60e2.png"></p>
+<p><img src="../imgs/330d485956c64a00dcb88008659db1bf145fc80d.png">
+gives the lengths of the shortest paths between every pair of nodes
+with intermediate vertices numbered not more than 4.</p>
+<p>For <i>k</i> =5:</p>
+<p><img src=
+"../imgs/c361514cd01d822df97063d442a49ea0df4b6a55.png"></p>
+<p><img src="../imgs/a0563d8f2b2b5f7a26b3f9dc6af550f694ad28e3.png">
+gives the lengths of the shortest paths between every pair of nodes
+with intermediate vertices numbered not more than 5.</p>
+<p>For <i>k</i> =6:</p>
+<p><img src=
+"../imgs/c8b5320140ddae146b7dd3a474405012b91f6192.png"></p>
+<p><img src="../imgs/699f7196766c3fa04893d29898fdd8c763994dcf.png">
+gives the lengths of the shortest paths between every pair of nodes
+with intermediate vertices numbered not more than 6.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Computing the Transitive Closure</b></p>
+<p>Transitive closure of a graph <i>G</i>, having <i>n</i>
+vertices, is a <img src=
+"../imgs/318890f091d73938051508b5bde31e4d62618d6f.png"> matrix
+<i>A</i> and <img src=
+"../imgs/4947ede3cc352a71bf7290bc04187d046953f35c.png"> if there is
+path from <i>i</i> to <i>j</i>. To find transitive closure of a
+graph using adjacency matrix of a graph; the algorithm to find
+transitive closure works as follows.</p>
+<p>It accepts a graph <i>G</i> as input and gives transitive
+closure matrix <img src=
+"../imgs/8288f2f21f56dd1c9174df6d8b4a387953c26fb0.png"> as output
+matrix and<img src=
+"../imgs/8288f2f21f56dd1c9174df6d8b4a387953c26fb0.png">is computed
+as follows. For a <i>x</i> in edges 0 to <i>n</i>, <img src=
+"../imgs/7b1a1a3f1635c4fe06128b69c317914af16a065a.png">be the
+adjacency matrix such that:</p>
+<p><img src=
+"../imgs/013e7a04a2e8e163c25dc76ce646c673feb2aea3.png">; <b>if</b>
+there is path from vertex <i>i</i> to vertex <i>j</i> going
+through</p>
+<p>vertices (1,2…,<i>x</i>).</p>
+<p><img src=
+"../imgs/2f91ab6f0aca7d53b20078dbb405ff9d9659c4ca.png">;
+Otherwise</p>
+<p>The recursive rule to compute <img src=
+"../imgs/4212f40135085191eda97aa2b86565ce5cee178f.png">is given
+below:</p>
+<p><img src=
+"../imgs/a3334e11c2ccb0b41ece06e1279587ed7e28e66f.png"></p>
+<p>The main idea behind transitive closure is as follows:</p>
+<p>1. If there is any edge from vertices <i>i</i> to <i>j</i> then
+path will also exist between them.</p>
+By going through any intermediate vertices, one can reach from
+vertices <i>i</i> to <i>j</i> then, there exists a path between
+them.</div>
+<hr>
+<div class="answer">
+<p>Algorithm to compute transitive closure is given below:</p>
+<p><i>TRANSITIVE-CLOSURE</i> (<i>G</i>)</p>
+<p>// assign total number of vertices in the variable <i>n</i></p>
+<p><i>n</i> = |<i>v</i>|</p>
+<p>// Create an adjacency matrix for the graph <i>G</i> and assign
+it to <i>t</i> <sup>(0)</sup></p>
+<p><i>t</i> <sup>(0)</sup> = <i>ADJACENCY–MATRIX</i> (<i>G</i>)</p>
+<p>// initialize the entries in the adjacency matrix of the Graph
+<i>G</i></p>
+<p><i>INITIALIZE</i> (<i>t</i><sup>(0)</sup>)</p>
+<p>// iterate for loop for all the vertices of the graph</p>
+<p><b>for</b> <i>x</i>=1 <b>to</b> <i>n</i> <b>do</b></p>
+<p>// iterate for loop for all the rows of the adjacency matrix</p>
+<p><b>for</b> <i>i</i>=1 <b>to</b> <i>n</i> <b>do</b></p>
+<p>// iterate for loop for all the column of the adjacency
+matrix</p>
+<p><b>for</b> <i>j</i>=1 <b>to</b> <i>n</i> <b>do</b></p>
+<p>// Check the condition that whether path exists between vertex
+<i>i</i> and <i>j</i></p>
+<p>// then assign the value 1 to the adjacency matrix</p>
+<p><b>if</b> <i>t</i> <sup>(</sup> <sup>x</sup>
+<sup>–1)</sup>[<i>i</i>, <i>j</i>] = 1</p>
+<p>then <i>t</i><sup>(</sup><sup>x</sup><sup>)</sup>[<i>i</i>,
+<i>j</i>] = 1</p>
+<p>// Otherwise check the condition that whether path exists
+between vertex <i>i //</i> and <i>j</i> by going through an
+intermediate vertex <i>x</i>. If path exists then</p>
+<p>// assign the value 1 to the adjacency matrix</p>
+<p><b>else if</b> <i>t</i> <sup>(</sup> <sup>x</sup>
+<sup>–1)</sup>[<i>i</i>, <i>x</i>] = 1 and
+t<sup>(</sup><sup>x</sup><sup>–1)</sup>[<i>x</i>, <i>j</i>]</p>
+<p>then t<sup>(</sup><sup>x</sup><sup>)</sup>[<i>i</i>, <i>j</i>] =
+1</p>
+<p>// otherwise assign 0 if path does not exists between vertex
+<i>i</i></p>
+<p><b>else</b></p>
+<p><i>t</i> <sup>(</sup> <sup>x</sup> <sup>)</sup>[<i>i</i>,
+<i>j</i>] = 0</p>
+<p>// Return transitive closure of the Graph <i>G</i></p>
+<p><b>return</b> <i>t</i> <sup>(</sup> <sup>n</sup>
+<sup>)</sup></p>
+<p>The Procedure <i>ADJACENCY-MATRIX</i> (<i>G</i>) will find the
+initial adjacency matrix of the given graph <i>G</i> and the
+procedure <i>INITIALIZE</i><img src=
+"../imgs/2230f54192dfdd4858312785522f08d063bc05ef.png">will
+initialize diagonal of the matrix <i>t</i> to 1.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Illustration of the above algorithm:</b></p>
+<p>Consider the graph given below:</p>
+<p><img src="../imgs/4db9f5a8cd04e89c7e6e5f491824b3da57b28c31.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\22.tif"></p>
+<p>In the above graph, there are 6 vertices represented with the
+circle and the connection between two vertices is represented by
+edges. The arrow represents the path between the vertices from its
+tail to head. Tail part represents the starting vertex <i>i</i> and
+head part represents the final vertex <i>j</i>. In this, vertex “1”
+is the starting vertex and vertex “6” is the final vertex. The
+transitive closure of the given graph constructed in each iteration
+of <i>x</i> value is as shown below:</p>
+<p><img src=
+"../imgs/697d903da1eac5165a9ed949ebbeba1f67be81d6.png"></p>
+<p>In the above adjacency matrix, if there is any edge from vertex
+<i>i</i> to <i>j</i>, then path will also exist between them and
+assign value 1 in (<i>i</i>, <i>j</i>)<sup>th</sup> position in the
+adjacency matrix. If the value of <i>i</i> and <i>j</i> are same
+(<i>i</i>=<i>j</i>) then also assign the value 1 otherwise assign
+the value 0.</p>
+<p><img src=
+"../imgs/74919e5bdf458474d9244fce0117b03fa37e49d1.png"></p>
+<p>In the above adjacency matrix, if there is any edge from
+vertices <i>i</i> to <i>j</i> which is going through intermediate
+vertices “1”, then path will also exist between them and assign
+value 1 in (<i>i</i>, <i>j</i>)<sup>th</sup> position in the
+adjacency matrix.</p>
+<p><img src=
+"../imgs/e458283edd72d8a7ce5756eea9cf2c413d86e8b6.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>In the above adjacency matrix, if there is any edge from
+vertices <i>i</i> to <i>j</i> which is going through intermediate
+vertices “2”, then the path will also exist between them and assign
+value 1 in (<i>i</i>, <i>j</i>)<sup>th</sup> position in the
+adjacency matrix.</p>
+<p><img src=
+"../imgs/45314e6776db59e39b105af7e26d42ed3189969f.png"></p>
+<p>In the above adjacency matrix, if there is any edge from
+vertices <i>i</i> to <i>j</i> which is going through intermediate
+vertices “3”, then path will also exist between them and assign
+value 1 in (<i>i</i>, <i>j</i>)<sup>th</sup> position in the
+adjacency matrix.</p>
+<p><img src=
+"../imgs/ea44ab50c0d2a0c7ad67e9897ed8437dc9bc789f.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>In the above adjacency matrix, if there is any edge from
+vertices <i>i</i> to <i>j</i> which is going through intermediate
+vertices “4”, then path will also exist between them and assign
+value 1 in (<i>i</i>, <i>j</i>)<sup>th</sup> position in the
+adjacency matrix.</p>
+<p><img src=
+"../imgs/d01128a9c20e1d3602c5c9c0d968b6609122836f.png"></p>
+<p>In the above adjacency matrix, if there is any edge from
+vertices <i>i</i> to <i>j</i> which is going through intermediate
+vertices “5”, then path will also exist between them and assign
+value 1 in (<i>i</i>, <i>j</i>)<sup>th</sup> position in the
+adjacency matrix. Vertices “5” have no outgoing edges to any other
+vertices of the graph. So, the value of adjacency matrix is not
+changing.</p>
+<p><img src=
+"../imgs/86d50d9f569eb1364cb84d1ef029e5579ab3e806.png"></p>
+<p>In the above adjacency matrix, if there is any edge from vertex
+<i>i</i> to <i>j</i> which is going through intermediate vertices
+“6”, then path will also exist between them and assign value 1 in
+(<i>i</i>, <i>j</i>)<sup>th</sup> position in the adjacency matrix.
+Vertex “6” has no outgoing edges to any other vertices of the
+graph. So, the value of adjacency matrix is not changing.</p>
+<p><b>Application to transitive closure:</b> Transitive closure
+serves various purposes in various application of computer science
+which are as follow:</p>
+<p>1. Transitive closure is reachability analysis of a transition
+graph. Reachability analysis is the ability to move from one vertex
+to another vertex in a directed graph. It is an approach used for
+finding whether a path exists between two pair of vertices or not.
+It is determined by assigning certain labels to the vertices.</p>
+<p>2. It is used for formulation of parsing automata which is
+present in compiler. Parsing automata is a device which acquire a
+language. It has several states for going from one place to other
+places by using different path. States are represented by the
+vertices in the transitive closure matrix and different path for
+going from one state to another state is connected with the help of
+edges.</p>
+<p>3. It is used for estimating the database queries which is
+recursive in nature. Recursive database queries are the query which
+references itself. With the use of transitive closure in recursive
+database queries one can find the shortest path from one place to
+other, it’s running cost as the entire vertex and edges are
+connected to each other.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>FLOYD WARSHALL ALGORITHM</b></p>
+<p>The&nbsp;<b>Floyd–warshall algorithm</b>&nbsp;is an algorithm
+which is used for calculating the shortest path in a weighted graph
+having positive or negative weight on their edges. Even this can be
+used for finding the transitive closure for a relation <i>R</i>. It
+is an algorithm related to dynamic programming. It is the only
+algorithm which helps us to find path with negative edge
+weight.</p>
+<p>This algorithm is also used widely for finding transitive
+closure.</p>
+<p>Its best case performance complexity is <img src=
+"../imgs/4f5af69f59c501eb7866fd8627b4cee6351731e6.png"></p>
+<p>Its worst case performance complexity is <img src=
+"../imgs/950d5b9edb9164803469169ff9c5ec7e0ed616e2.png"></p>
+<p>Referring to algorithm FLOYD-WARSHALL (<i>W</i>) from the
+section 25.2 of the textbook:</p>
+<p>Modifying the above algorithm to compute the <img src=
+"../imgs/e6301f79b1045ec941fe80ece6b784317096b30f.png"> matrices,
+this is as following:</p>
+<p>1 <img src=
+"../imgs/99594b41ee0ea75f365d3ca7730a5fd0e4cb8a45.png">row</p>
+<p>2 Let <img src=
+"../imgs/f85da456b214efaf9a0825637e975c320ea7cd02.png"> be a new
+<img src="../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">
+matrix</p>
+<p>// initializing a new matrix</p>
+<p>3 <b>for</b><img src=
+"../imgs/81b3e8c133239f99f33955aadc0705a97bb9dd9a.png"><b>to</b><img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>4 <b>for</b><img src=
+"../imgs/99124852cf321db712c4ca2800bc8db539cefd36.png">
+<b>to</b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>5 <b>if</b><img src=
+"../imgs/f1517e8dc1aa60b27de5f58024ce898fcb1f4c72.png">or <img src=
+"../imgs/b1707055dd28b9069de92e4513ed38b907642689.png"></p>
+<p>// implementing the weight on its edges</p>
+<p>6 <img src=
+"../imgs/5b5afb21346e9ec781edb9995c7f0dcc4f81e22c.png">NIL</p>
+<p>7 <b>else</b></p>
+<p>8 <img src=
+"../imgs/5b5afb21346e9ec781edb9995c7f0dcc4f81e22c.png"><img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png"></p>
+<p>9 <img src=
+"../imgs/1917e48ef27f57b969bd338237d6063cb53e7b93.png"></p>
+<p>10 <b>for</b><img src=
+"../imgs/b45c91f8ffd4576da9d7024d1ec039db4f3fe6f1.png">
+<b>to</b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>11 Let <img src=
+"../imgs/00fe013ef514492d1b3c3455bec6632e0fb139f2.png"> be a new
+<img src="../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">
+matrix</p>
+<p>12 <b>for</b><img src=
+"../imgs/81b3e8c133239f99f33955aadc0705a97bb9dd9a.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>13 <b>for</b><img src=
+"../imgs/99124852cf321db712c4ca2800bc8db539cefd36.png"><b>to</b><img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>14 <b>if</b><img src=
+"../imgs/e2ebe6e6b6ce0dbed6bafd764cc521569d01bbd2.png"></p>
+<p>// comparing the distance</p>
+<p>15 <img src=
+"../imgs/b3b5839959e9999eda25c24653b08c66c0cb992a.png"></p>
+<p>16 <b>else</b></p>
+<p>17 <img src=
+"../imgs/01647ad1a3b023c38d20db43e8857f16c7ca4319.png"></p>
+<p>18 <img src=
+"../imgs/6f53ae42e15b919254da1758861ca126725bbe0e.png"><img src=
+"../imgs/039fcdbc771774c599bc583dd79ca1c4d839bfaf.png">Minimum
+<img src=
+"../imgs/30ef47c5b63e4f407289c07496c5b140d9d882da.png"></p>
+<p>// finds the minimum path to be traced</p>
+<p>19 <b>return</b><img src=
+"../imgs/f71511c64144b18e9db3a0d9282c38f5b6236dc8.png"> // outputs
+the matrix</p>
+The above algorithm will output the new matrix<img src=
+"../imgs/e6301f79b1045ec941fe80ece6b784317096b30f.png">. In older
+version “for” loop runs from 1 to <i>n</i> but here is little bit
+difference and this difference divide the algorithm in two parts.
+First part execution gives the result in line 9 and second gives
+the result in line 18 but in earlier versions it gives on line 2
+and line 7 (consider the algorithm of section 25.2 from the
+textbook). Implementation of equation (25.6) used in above
+algorithm from line 5 to line 8 that is first “if-else”
+construction.</div>
+<hr>
+<div class="answer">
+<p>Now prove that for all <img src=
+"../imgs/2573a8568bc92533d46558bb01310f6442174a8d.png"> entire
+predecessors sub-graph is a shortest path tree. Initially prove
+that <i>G</i><sub>p</sub> is acyclic graph. This is proved by using
+contradiction. Assume that graph <i>G</i> contains a cycle and take
+any pair of vertices from the graph.</p>
+<p>Assume that some steps of relaxation generate a cycle where a
+final vertex is equal to starting vertex. Every vertex in cycle is
+reachable from source node <i>i</i> because every vertex has a
+predecessor.</p>
+<p>By checking the values of <i>d</i>[<i>v</i>] for every vertices
+which are belonging to the cycle, before invoking the <b>RELAX</b>
+method.</p>
+<p>There exists, two path <i>p</i><sub>1</sub> (connecting vertices
+<i>i</i> to <i>j</i>) and <i>p</i><sub>2</sub> (connecting vertices
+<i>j</i> to <i>i</i>) it contradicts the assumption which is given
+that is there exists a unique path for joining each set of
+vertices.</p>
+<p>Consider the following diagram:</p>
+<p><img src="../imgs/9110039a17ad1cae2f34967989d17391e15a3ca2.png"
+alt="Picture 2"></p>
+<p>In the above diagram there are two paths, one is from “iabcj”
+and another is from “iadcj”.</p>
+<p>These are two different paths (<i>p</i><sub>1</sub>?
+<i>p</i><sub>2</sub>).</p>
+<p>Thus it is concluded that our assumption is false and given
+graph <i>G</i> is an acyclic graph. <i>G</i><sub>p</sub> consists
+of unique path from source node to final node.</p>
+<p>Thus, <i>G</i><sub>p</sub> generates tree rooted at source
+node.</p>
+<p>Consider the equation 25.5,</p>
+<p><img src=
+"../imgs/fa0e3e74012e17d81f3c9981b3f5f30d1631a781.png"></p>
+<p>Now, consider the equation 25.7,</p>
+<p><img src=
+"../imgs/70f2b6c2c44b4c7e831a9a6b9868f4767b4a7a58.png"></p>
+<p>This part of the equation used in last “if-else” statement of
+the above algorithm (line 14 to 17); here we take the differences
+because “pi” function is the predecessor of vertex on a shortest
+path from another vertex with all intermediate vertices.</p>
+<p>From the above algorithm, we have <img src=
+"../imgs/6f53ae42e15b919254da1758861ca126725bbe0e.png"> recursively
+as:</p>
+<p>Using the line 9 and line 18 from the above modified algorithm,
+and also <img src=
+"../imgs/d89afb43623b782042548c06bf6d3e9f813d2750.png"></p>
+<p><img src=
+"../imgs/2dbee0986c8588799567756c854ee54b39ddfecc.png"></p>
+<p>The matrix <img src=
+"../imgs/00fe013ef514492d1b3c3455bec6632e0fb139f2.png">gives the
+shortest path <img src=
+"../imgs/07cf9ee63c55f9df9959bca6b3a1b43690ea5152.png"> for
+<img src=
+"../imgs/4dba86dc6447135fd9a02aaf5750ba737ca08ecd.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Floyd-Warshall Procedure</b></p>
+<p>• The space complexity of FLOYD-WARSHALL algorithm is <img src=
+"../imgs/b8cdffbae2c6f1ca60dd348a6b8d09d3d80a5206.png"> as the
+algorithm uses <i>n</i> matrices to compute<img src=
+"../imgs/ebb336da2bb843f3d91e071315f13fb147f2b8a5.png">.</p>
+<p>• The algorithm given in the question drops all the superscripts
+and overrides the result of the previous computation.</p>
+<p>• Overriding the result of the previous computation does not
+alter the correctness of the algorithm.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>For example, consider the graph as shown below:</b></p>
+<p><img src="../imgs/db3ecc278b47ce6af8245c7e8fcccd250ad75e00.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, compute matrix <i>D</i> using given algorithm.</p>
+<p>Initially, the matrix <i>D</i> will be <i>W</i> matrix as shown
+below:</p>
+<p><img src=
+"../imgs/6f3e871d40d653b5b3d6666ac5eaf61bc8347e11.png"></p>
+<p>In the above matrix, if there is any edge from vertices <i>i</i>
+to <i>j</i> then path will also exist between them and assign value
+of weight in (<i>i</i>, <i>j</i>)<sup>th</sup> position in the
+matrix.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now for</b> <i><b>k</b></i> <b>= 1, vertex “1” can be an
+intermediate node.</b></p>
+<p>1. The value i=1, and the value of j execute n times to funds
+shortest path.</p>
+<p>2. The value of i increment by one i=1+1=2 and again the value
+of j execute n times to finds shortest path and so on.</p>
+<p>3. The value of i increment by one until i=n and the value of j
+execute n times to finds shortest path.</p>
+<p>There are <img src=
+"../imgs/b11b4219fe581c26fac8821c903d4895600fd97f.png"> or
+<img src="../imgs/8d7bebb5e494be1faa3dc5224708fe2c840e7d6d.png">
+number of iterations possible to calculate for each k value. So in
+this problem, important iterations perform to calculate.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the above matrix, weight of <i>d</i><sub>4,2</sub> and
+<i>d</i><sub>4,5</sub> have been changed which are calculated by
+using the given formula:</p>
+<p><img src=
+"../imgs/9821da9eb6332cebf82df3fc3aea8ef04858e907.png"></p>
+<p><img src=
+"../imgs/e04d1ead7c768ccc8d128d7aebe66860412967f4.png"></p>
+<p>Superscript can be dropped in our computation as for neglecting
+the cycles in the graph, <i>k</i> cannot be used as an intermediate
+vertex, moving from vertices <i>i</i> to <i>j</i>.</p>
+<p>• As in the above example, when <i>d</i><sub>4,2</sub> is
+calculated, then in that case, vertex ‘1’ is an intermediate
+vertex.</p>
+<p>• Here, <i>d</i><sub>4,2</sub> position is reached by going
+through <i>d</i><sub>4</sub><sub>,</sub><sub>1</sub> and after that
+<i>d</i><sub>1,2</sub>. At the end, intermediate vertex 1 is
+dropped.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Then, the corresponding matrix <i>D</i><sub>1</sub> will be as
+shown:</p>
+<p><img src=
+"../imgs/3bcfcdc4b90d5dc86943a5f1e28180edeb1b402a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now for</b> <i><b>k</b></i> <b>=2, vertex “2” can be an
+intermediate node.</b></p>
+<p>1. The value i=1, and the value of j execute n times to funds
+shortest path.</p>
+<p>2. The value of i increment by one i=1+1=2 and again the value
+of j execute n times to finds shortest path and so on.</p>
+<p>3. The value of i increment by one until i=n and the value of j
+execute n times to finds shortest path.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the above matrix, weight of <i>d</i><sub>1,4,</sub>
+<i>d</i><sub>3,4</sub> and <i>d</i><sub>3,5</sub> have been changed
+which are calculated by using the given formula:</p>
+<p><img src=
+"../imgs/aac06d2e9facf4e9037c333bd04fa8fc89f53b6b.png"></p>
+<p><img src=
+"../imgs/2d1707a97357bf0efa343354d815e605f83139f9.png"></p>
+<p><img src=
+"../imgs/a38b9a5ad2963b8412a870c9855d1cc2d5ed50cd.png"></p>
+<p>Then the corresponding matrix <i>D</i><sub>2</sub> will be as
+shown:</p>
+<p><img src=
+"../imgs/f330206588b55b11deafaec147b5f432dbfed6a2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now for</b> <i><b>k</b></i> <b>=3, so, vertex “3” can be an
+intermediate node.</b></p>
+<p>1. The value i=1, and the value of j execute n times to funds
+shortest path.</p>
+<p>2. The value of i increment by one i=1+1=2 and again the value
+of j execute n times to finds shortest path and so on.</p>
+<p>3. The value of i increment by one until i=n and the value of j
+execute n times to finds shortest path.</p>
+<p>In the above matrix, weight of <i>d</i><sub>4,2</sub> has been
+changed which is calculated by using the given formula:</p>
+<p><img src=
+"../imgs/24ea49c58ded682f568e49ab25af198bdea6c120.png"></p>
+<p>Then the corresponding matrix <i>D</i><sub>3</sub> will be as
+shown:</p>
+<p><img src=
+"../imgs/c26daf97da08d41830aca6f69d52a6af40251e8a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now for</b> <i><b>k</b></i> <b>=4, so, vertex “4” can be an
+intermediate node.</b></p>
+<p>1. The value i=1, and the value of j execute n times to funds
+shortest path.</p>
+<p>2. The value of i increment by one i=1+1=2 and again the value
+of j execute n times to finds shortest path and so on.</p>
+<p>3. The value of i increment by one until i=n and the value of j
+execute n times to finds shortest path.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the above matrix, weight of <i>d</i><sub>2,1</sub>,
+<i>d</i><sub>2,3</sub><i>, d</i><sub>2,5</sub><i>,
+d</i><sub>3,1</sub><i>, d</i><sub>3,5</sub><i>,
+d</i><sub>5,1</sub><i>, d</i><sub>5,2</sub> and
+<i>d</i><sub>5,3</sub> have been changed which are calculated by
+using the given formula:</p>
+<p><img src=
+"../imgs/27a9ea5936a9654d3bca02f58180e73d6cdff7ee.png"></p>
+<p><img src=
+"../imgs/9ff989286fb040625c8b53c37c069d6fecf65f1e.png"></p>
+<p><img src=
+"../imgs/17c6d422273d4b7ba347366eb6df34e1756f6314.png"></p>
+<p><img src=
+"../imgs/1b5b2ee83d0cf17c7e6b4831c263fed76248bcd8.png"></p>
+<p><img src=
+"../imgs/cd16cd5089d93d4bae5af2d1c1703c38cd16a829.png"></p>
+<p><img src=
+"../imgs/2f4f22671022664be02c2173e51739e7717d233d.png"></p>
+<p><img src=
+"../imgs/cd7167f2992b4ae224905d471eb9a595b4d20d59.png"></p>
+<p><img src=
+"../imgs/cec188b7c9915138ba0eeb77daa6087c949c4308.png"></p>
+</div>
+<hr>
+<div class="answer">Then the corresponding matrix
+<i>D</i><sub>4</sub> will be as shown:
+<p><img src=
+"../imgs/30b3aee2045d721862247f9c89645062d5e3e642.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now for</b> <i><b>k</b></i> <b>=5, vertex “5” can be an
+intermediate node.</b></p>
+<p>1. The value i=1, and the value of j execute n times to funds
+shortest path.</p>
+<p>2. The value of i increment by one i=1+1=2 and again the value
+of j execute n times to finds shortest path and so on.</p>
+<p>3. The value of i increment by one until i=n and the value of j
+execute n times to finds shortest path.</p>
+<p>Weight of <i>d</i><sub>1,2</sub>, <i>d</i><sub>1,3</sub> and
+<i>d</i><sub>1,4</sub> have been changed which are calculated by
+using the given formula:</p>
+<p><img src=
+"../imgs/cc6249704be6c8eb52af3ad981fa9a70d9448678.png"></p>
+<p><img src=
+"../imgs/18126d08b5b75ee85be0bcb1a8a73792cb71a7ab.png"></p>
+<p><img src=
+"../imgs/db843f35f4f231330610e87b96aba07eebc2e3d9.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Then the corresponding matrix <i>D</i><sub>5</sub> will be as
+shown:</p>
+<p><img src=
+"../imgs/d9667563736f17c89e09850fefa048620515bf06.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Since only one matrix is used to compute the matrix</b>
+<i><b>D</b></i> <b>, over all space complexity is reduced to</b>
+<b><img src=
+"../imgs/7c6661323d1e38720407d51b7fd18af242c13d7b.png"></b>
+<b>.</b></p>
+<p>• Because matrix implementation needs two nested <i>for</i>
+loops which runs up-to <i>n</i><i>.</i></p>
+<p>• If the value of the <i>d</i><sub>ij</sub> is min then there is
+no change in the algorithm as array remains unchanged.</p>
+<p>• If the value of <img src=
+"../imgs/3e6f2a814963dd69697bfe1a9ee4e157505a6794.png"> is
+min<i>,</i> where <i>k</i> is any intermediate vertex of graph, by
+going through the intermediate vertex <i>k</i> if any new shortest
+path is found, then previous value is replaced with the new value
+in the matrix.</p>
+<p>• So, this will give the result of <img src=
+"../imgs/92b91b1f25e736bd4c482531b52f0f001cfbcf57.png"> as the
+space required by the matrix <i>D</i> is <i>n</i><sup>2</sup>.</p>
+<p>• As the above example, shortest path from vertices <i>i</i> to
+<i>j</i> is found using intermediate vertex.</p>
+<p>• So, superscript can be dropped in our computation as for
+neglecting the cycles in the graph, <i>k</i> cannot be use as an
+intermediate vertex moving from vertices <i>i</i> to <i>j</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>FLOYD WARSHALL RECONSTRUCTION FOR SHORTEST PATH</b></p>
+<p>The&nbsp;<b>Floyd–Warshall algorithm</b>&nbsp;is an algorithm
+which is used for calculating the shortest path in a weighted graph
+having positive or negative weight on their edges. Even this can be
+used for finding the transitive closure for a relation <i>R</i>. It
+is an algorithm related to dynamic programming.</p>
+<p>In this algorithm, comparisons are made between each pair of
+vertices for all possible paths in the graph. The number of
+comparisons made in the graph is equal to <img src=
+"../imgs/fbe2946999ad0e4261079dda429ad29c4a0c5180.png">and the
+number of edges can be up to<img src=
+"../imgs/82d462c7f13a4153839c77e9f2dbe229680dc4e5.png">, and it is
+such, that all the combinations of edges are tested. It is done so
+by improving the estimate on the shortest path incrementally till
+the estimate which is obtained is optimal.</p>
+</div>
+<hr>
+<div class="answer">Consider a graph <i>G</i> having <i>V</i>
+vertices, which is numbered from 1 to <i>N</i>. And with the help
+of this algorithm, find a shortest path for the graph. There are
+different ways for calculating the shortest path in a graph. As
+first, compute the matrix <i>D</i> of the shortest-path weights,
+and then the predecessor matrix <i>p</i><sub>i</sub> is calculated
+with the help of the <i>D</i> matrix; also compute the predecessor
+matrix <i>p</i><sub>i</sub> and the given algorithm can compute the
+matrix <i>D</i><sub>K</sub>.</div>
+<hr>
+<div class="answer">
+<p>Here, according to the question, deal with the modification of
+the computation of the predecessor matrix for Floyd-Warshall.</p>
+<p>So as mentioned in the question, for the original predecessor
+matrix (refer equation 25.7, of the textbook) and for the modified
+one, by approaching towards the algorithm, it will find that</p>
+<p><img src="../imgs/1a7fce72dddd1287c8d9fd23c60d5329898cacbe.png">
+Where <img src=
+"../imgs/d20cf44753af8bc0baea106fdf9bbcba4f162d6e.png"></p>
+<p>And set</p>
+<p><img src=
+"../imgs/02b59e37eb3e4bbb9b93d2503aa39fec5708048a.png">to be
+<img src="../imgs/624c418b3613d3dc0b16f1b0b6f20a7e3d0a66c0.png">
+instead of<img src=
+"../imgs/b7c4dc2afb56c24ba46819dac043afcd566b8694.png">,</p>
+<p>The predecessor matrix<img src=
+"../imgs/f6e6ad48923b92a43abe97ef7b78033ce315c97c.png">would still
+prove to be correct.</p>
+<p>As mentioned earlier,</p>
+<p>When<img src=
+"../imgs/d20cf44753af8bc0baea106fdf9bbcba4f162d6e.png">,</p>
+<p><img src=
+"../imgs/ef9ea04a60578e55518628c27f42d0dd3fd03b64.png">,</p>
+<p>So it does not have any effect in the case of equality, that of
+the two paths, which one is taken, as the weights of both paths are
+same. It would really mean that one should go from <i>i</i> to
+<i>j</i> through <i>k</i>, instead of not through <i>k</i>,</p>
+<p>So in both cases, the path is the valid shortest path; it means
+that the <img src=
+"../imgs/f6e6ad48923b92a43abe97ef7b78033ce315c97c.png"> matrix
+would still hold the shortest path.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Detecting negative-weight cycle in a graph using
+Floyd-Warshall algorithm:</b></p>
+<p>The output matrix of the Floyd-Warshall algorithm helps to find
+whether there is any negative-weight cycle in a graph.</p>
+<p>• Floyd-Warshall algorithm is used to find all-pairs shortest
+paths. That is, for each pair of vertices (<i>i</i>, <i>j</i>), a
+shortest path will be calculated. Floyd-Warshall algorithm returns
+a matrix (<i>D</i><sup>(</sup><sup>n</sup><sup>)</sup>) that
+represents all the shortest paths between each pair of vertices
+(<i>i</i>, <i>j</i>).</p>
+<p>• Since a shortest path is a simple path that has no repeating
+vertices, if there is a diagonal value <img src=
+"../imgs/15db009fe834c3727bcbae0ad2c1b0ba58b143c3.png">with
+<i>i</i>=<i>j</i> (repeating vertex)<i>,</i> there is a cycle with
+negative weight in the graph.</p>
+<p>• Thus, check the main-diagonal entries of the resultant matrix
+to find whether there is any negative value. If there is a negative
+value, for some vertex <i>i</i>, then there is a path weight from
+<i>i</i> to itself. If it is a negative value, there is a path from
+<i>i</i> to itself (i.e., cycle), with negative weight.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Therefore by observing diagonal entries of the output matrix
+of Floyd-Warshall algorithm, it is possible to detect whether there
+is a negative –weigh cycle or not.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><img src="../imgs/aaf07acdc6e4fa13299913d748d123a4420f741e.png">
+is used to determine the predecessor of any vertex <i>j</i> for all
+intermediate vertices in the set<img src=
+"../imgs/082c14b5bcc5adf4bacbc28290342db64819b6e7.png">.</p>
+<p>The recursive formula for <img src=
+"../imgs/04f021d86075774b7d3725e6eee5a264f3900b41.png"> is as
+follows:</p>
+<p><img src=
+"../imgs/8e6603d0302ceb54aeb603e2880032d01af30661.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The modified algorithm of FLOYD-WARSHALL to compute<img src=
+"../imgs/bfb30c18d6b608ef82d7361123884132ff1409a0.png"> values is
+as follow:</p>
+<p>FLOYD-WARSHALL (W)</p>
+<p>//copy all rows of initial directed graph.</p>
+<p>1. <i>n</i>= W. <i>rows</i></p>
+<p>//initialize the initial matrix <img src=
+"../imgs/cad04ce4215e630f1e31e39db3d97ff8def82321.png"></p>
+<p>2. <img src=
+"../imgs/cad04ce4215e630f1e31e39db3d97ff8def82321.png">= W</p>
+<p>//initialize the value of <img src=
+"../imgs/8f462f7ab853cec4c542cdd3d3d3bbf37f41be45.png"> by
+<i>NULL</i></p>
+<p>3. <img src=
+"../imgs/0d653b74e2899e230905ddc39a1c6b076654eb61.png"></p>
+<p>//for loop is used to traverse all vertices of graph.</p>
+<p>4. <b>for</b> k<i>=1</i> <b>to</b> <i>n</i></p>
+<p>// initialize the new matrix <img src=
+"../imgs/d459b2490f04ac6cadd34ce9fc6770f06fbc3f5e.png"> and
+<img src=
+"../imgs/302bfd2b17450c5a941e43cb138c590a86197b5b.png"></p>
+<p>5. let <img src=
+"../imgs/576c8ac4365aae55df2643b0972e71a216c5cef1.png"> is a new
+<img src="../imgs/318890f091d73938051508b5bde31e4d62618d6f.png">
+matrix</p>
+<p>6. let <img src=
+"../imgs/766c38e6aceb14302dc7ca8ed5e50ed1637c6b1a.png"> is a new
+<img src="../imgs/318890f091d73938051508b5bde31e4d62618d6f.png">
+matrix</p>
+<p>// for loop is used to traverse each rows of matrix.</p>
+<p>7. <b>for</b> i<i>=1</i> <b>to</b> <i>n</i></p>
+<p>// inner for loop is used to traverse each column of matrix.</p>
+<p>8. <b>for</b> j<i>=1</i> <b>to</b> <i>n</i></p>
+<p>//if statement is used to check minimum.</p>
+<p>9. <b>if</b> <img src=
+"../imgs/d9e2e04223356397d11d84de39c818ac93205a95.png"></p>
+<p>//update the value of <img src=
+"../imgs/6a19ba420d4e993235ad2fcd7c0c378123e921d6.png"></p>
+<p>10. <img src=
+"../imgs/530c282d6d2e4598eb6f2b34ff93a71c27b3be99.png"></p>
+<p>// update the value of intermediate node.</p>
+<p>11. <img src=
+"../imgs/49a1e9a34d99eb5425043a92cfc42951e5cbfafc.png"></p>
+<p>12. <b>else</b></p>
+<p>//update the value of <img src=
+"../imgs/6a19ba420d4e993235ad2fcd7c0c378123e921d6.png">
+and<img src="../imgs/aaf07acdc6e4fa13299913d748d123a4420f741e.png">
+from previous matrix value.</p>
+<p>13. <img src=
+"../imgs/84b0fd1593a400b859ccd03b39ca8c9bee20cd6c.png"></p>
+<p>14. <img src=
+"../imgs/689d5ca53828c6cc75052fc36334f3f3ced77210.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the Algorithm:</b></p>
+<p>• In the above algorithm <img src=
+"../imgs/aaf07acdc6e4fa13299913d748d123a4420f741e.png"> is used to
+determine the all internal node of shortest path.</p>
+<p>• The value of <img src=
+"../imgs/aaf07acdc6e4fa13299913d748d123a4420f741e.png"> will be 0
+if the value of internal vertex <i>k</i> are null.</p>
+<p>• If the value of internal node <i>k</i> is greater than 0 and
+the value of <img src=
+"../imgs/2541d35786c42e7fdfbdcd43cea28f161c9bac29.png"> is less
+than the value of <img src=
+"../imgs/f27b8292461d7707465c24a3b1de75b8c0374310.png">then the
+value of <img src=
+"../imgs/aaf07acdc6e4fa13299913d748d123a4420f741e.png"> will be
+<i>k</i>.</p>
+<p>In the above algorithm outer for loop is used to traverse all
+vertices of directed graph so the time complexity of outer loop
+will be <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"> and inner
+for loop is used to traverse all rows and column of shortest path
+matrix so the time complexity of both inner loops will be <img src=
+"../imgs/3fb36da52885d12a388c752193ed5bb1578d0e36.png"></p>
+<p><b>So, the total time complexity of algorithm will be</b>
+<b><img src=
+"../imgs/054ea1686081c5b13850ee2ac7e563ecda68db79.png"></b> .</p>
+</div>
+<hr>
+<div class="answer">
+<p>The modified algorithm of PRINT-ALL-PAIRS-SHORTEST-PATH to take
+<img src="../imgs/c23f8f43b87b983abb7856883a54a26ab5bd6187.png">as
+an input is as follow:</p>
+<p>PRINT-ALL-PAIRS-SHORTEST-PATH (<img src=
+"../imgs/131e26b92cb93e978f41a6f9de272425f716a579.png">, i, j)</p>
+<p>//compare the value of particular row and column</p>
+<p>1. <b>if</b> <i>i</i>== <i>j</i></p>
+<p>//if the value of row and column are same then display the value
+of row.</p>
+<p>2. print <i>i</i></p>
+<p>//if the value of <img src=
+"../imgs/aaf07acdc6e4fa13299913d748d123a4420f741e.png"> is null</p>
+<p>3. <b>elseif</b> <img src=
+"../imgs/83a82eb8b3d72bf7538a936994f64b4bb5118156.png"></p>
+<p><b>//</b> display there is no shortest path exist between source
+to destination.</p>
+<p>4. print “no path from” <i>i</i> “to” <i>j</i> exists</p>
+<p>5. <b>else</b></p>
+<p><b>//</b>run all pairs shortest path algorithm to find the
+shortest path between source to</p>
+<p><b>//</b>destination.</p>
+<p>6. PRINT-ALL-PAIRS-SHORTEST-PATH (<img src=
+"../imgs/131e26b92cb93e978f41a6f9de272425f716a579.png">, i,
+<img src=
+"../imgs/2d5dc3ad346eaf8c4072e57091cd16599e69b7bc.png">)</p>
+<p>7. Print j</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the Algorithm:</b></p>
+<p>• All pair shortest path algorithm is used to print the all
+internal vertices between source to destination.</p>
+<p>• In the above algorithm if statement is used to compare the
+value of row and column to display the path.</p>
+<p>• Based on the table entries <img src=
+"../imgs/1988fd32c59cddb96e4b4f2672b58ad28f96fd31.png">, shortest
+paths are printed.</p>
+<p><b>In the above algorithm if statement is used to compare the
+value of</b> <i><b>i</b></i> <b>and</b> <i><b>j</b></i> <b>so the
+total time complexity will be</b> <b><img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer"><b>Comparison with s table:</b>
+<p>• s table in matrix chain multiplication is used store the
+indexes where the optimal cost is achieved. Thus, s table is used
+to print the optimal solution (optimal parenthesization of
+matrices).</p>
+<p>• Here in <img src=
+"../imgs/131e26b92cb93e978f41a6f9de272425f716a579.png"> is also
+used to store the intermediate vertices in the shortest path. That
+is, like s table, <img src=
+"../imgs/131e26b92cb93e978f41a6f9de272425f716a579.png"> table is
+used to print the vertices in the shortest path.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/fc2ea8523f1b48d61013a957fd6820786ef15577.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>An algorithm which is used to calculate the transitive closure
+(TC) of the directed graph, same algorithm can be used for
+computing the TC (Transitive closure) of any kind of directed
+graph. Follow the below steps to evaluate the transitive closure of
+any kind of directed graph:</p>
+</div>
+<hr>
+<div class="answer">
+<p>• First of all split the directed graph into the graph <img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png"> (Strongly
+Connected Component Graph). In the Textbook, section 22.5 provides
+the Pseudocode algorithm to generate the component graph <img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png"> of a graph
+<img src="../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">
+with the help of two DFS running search algorithm.</p>
+<p>• DFS first applied on graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">and after
+that apply on the transpose of the graph<img src=
+"../imgs/039d5da33bb5187d26fff56d1d92ac679e00473c.png"><sub>.</sub>
+Both times, it will take the total <img src=
+"../imgs/9492fc751e7e7575f46f3d2c8159659dbf98fb4c.png"> time with
+at most <img src=
+"../imgs/785d06b44a2a7034681ca36a42913ba51658fb76.png"> edges and
+<img src="../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">
+vertices.</p>
+<p>• There is a need to use the provided function <i>f</i> as the
+generated component graph (CG) turns out to be dag. Component graph
+vertices represent the one or more vertices from graph which create
+the Strongly Connected Component (SCC) (refer the figure 22.9 in
+Textbook).</p>
+<p>• As the one vertex of CG is designed from the one or more
+vertices of the graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">, therefore
+in the graph<img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png">, number of
+vertices must be equal or less than the number of vertices in the
+graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+<p>• In the graph<img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png">, number of
+edges must also be equal or less than the graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> as the
+algorithm is continued by deleting the edges of those vertices
+which are same in the strongly connected component (SCC). Thus,
+running time of function <img src=
+"../imgs/6a3cd55483f5f1c8f2738c9c89098c7ce29a526c.png"> on the
+graph <img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png"> can never
+exceed the<img src=
+"../imgs/5bf07be0a28aa9cd6a97c6b04982b58958a02395.png">.</p>
+<p>• Now there is need to keep track one set of vertices in the
+graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> which is
+mapped to the every vertex in the graph <img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png"> and call TC
+algorithm on <img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png"> graph. This
+complete process will take <img src=
+"../imgs/56f8c181b45bdb7a0d12c9d16a42ddb6b9ea0467.png"> running
+time.</p>
+<p>• All that which is left need to transform back into TC
+(Transitive Closure) of graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> from TC of
+graph<img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png">. In the
+graph<img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png">, if there
+is defined edge <img src=
+"../imgs/8cbf077912c25ab951fe2b0408e456eb7db94db9.png"> then there
+is also an edge in TC of graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> and edge is
+define as<img src=
+"../imgs/29920df19f2ab74aa6b7c822e3c753a780e53178.png">. Thus, the
+forward direction approach is easy to use.</p>
+<p>• If a path which is defined from <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"> to
+<img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">
+exist in the graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">, then a
+path between the components of the graph<img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png"> must be
+exist. Thus, reverse direction approach is easy to use.</p>
+<p>• If a path between the SCC of <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"> and SCC of
+<img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> in
+the graph <img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png"> is exist,
+then a path between the some vertex <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"> in
+<img src="../imgs/2a726253b455631be05a555963d26e20c2475596.png">
+and the some vertex <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png"> in<img src=
+"../imgs/45c4848742bf6a4144d5e664350dfc126293f759.png"> must be
+exist.</p>
+<p>• As vertex <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"> and vertex
+<img src="../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">
+are exist in the same graph<img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png">, so there
+is a defined path from <img src=
+"../imgs/be0b12630a88a9c7d7c65802df63d7863e80e574.png"> and as
+<img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">
+and <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png"> are also
+existing in the same strongly connected component, so there is also
+a path from<img src=
+"../imgs/d3ead9bca0f2780d87cd864f83390a7384e55ba3.png">. Thus, path
+<img src="../imgs/be0b12630a88a9c7d7c65802df63d7863e80e574.png">
+and <img src=
+"../imgs/d3ead9bca0f2780d87cd864f83390a7384e55ba3.png"> are the two
+paths which is exist in the graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Generally, calculating the TC of the graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> in this way
+need <img src=
+"../imgs/27e28c743f01ff03533c5b318d96956ba0cc2a21.png"> time as it
+require to look at the all pairs. Therefore, instead of it need to
+look at the TC of the graph<img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png">.</p>
+<p>• Now for the every edge which is defined as <img src=
+"../imgs/f1caf9aa4f6a6964c6e8dbcad4971bfbe700498c.png"> in TC of
+graph<img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png">, consider
+that set of vertices in graph G is known which are mapped to
+the<img src=
+"../imgs/7b13f92760216e3656c32d187c82bf3f5780390c.png">. And these
+set of vertices are respectively called as <img src=
+"../imgs/2ddfa97973284c0f1cf308ddf2fc9de1621a5975.png">and<img src=
+"../imgs/4debecb94ea1c9c2b48dd642df54b33a38086d25.png">.</p>
+<p>• Now add another edge <img src=
+"../imgs/19fbe19180829a07cd91e49fce92ff63d885ea73.png"> for all
+vertices where <img src=
+"../imgs/046ba8b4928fe24dd3f1bdac4d3a32bf94cadba6.png">
+and<img src="../imgs/aa468b3ad7d7cbc9f3262f1dc7d3b3c82dac64f3.png">.
+This process will also take the equal time to the number of edges
+in TC of graph <i>G</i>, which is<img src=
+"../imgs/b47a0cb16170eef421035084201beeafcdf94eab.png">.</p>
+<p><b>Thus, total remaining execution time for the algorithm is
+equal to the construct the SCC in</b> <b><img src=
+"../imgs/9492fc751e7e7575f46f3d2c8159659dbf98fb4c.png"></b>
+<b>time, and time to execute the TC algorithm on graph</b>
+<b><img src=
+"../imgs/5d9c4881bd2767286fd9e282408dd694172418b0.png"></b>
+<b>is</b> <b><img src=
+"../imgs/6bdcbab48cb1a6e865d2e823aab9f480954499d2.png"></b> <b>and
+total time for transforming back to the TC of graph G is</b>
+<b><img src=
+"../imgs/b47a0cb16170eef421035084201beeafcdf94eab.png"></b> <b>.
+Thus, it is evaluated that</b> <b><img src=
+"../imgs/133f89454eb8263ec263352333ab0ec65ed149c7.png"></b> <b>and
+total evaluated time is equal to</b> <b><img src=
+"../imgs/cdb601c234f6adc39d482e2a4018906d31157284.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

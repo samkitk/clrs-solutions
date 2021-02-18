@@ -1,0 +1,618 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 14.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following pseudocode for Left-Rotation to interval
+tree.</p>
+<p>In the following pseudocode MAX procedure is used to update the
+max attribute.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In left rotation first check the right child of node <i>x</i>
+and perform the left rotation according to the property of
+tree.</p>
+<p>LEFT-ROTATE (<i>T</i>, <i>x</i>)</p>
+<p>//store the right child of node <i>x</i> into variable y</p>
+<p>1 <i>y</i><img src=
+"../imgs/7a624ffcea5fd1d2f58f54dd2f39aec5cabd739e.png"><i>right</i>
+[<i>x</i>]</p>
+<p>//store the left child of <i>y</i> into right child of
+<i>x</i></p>
+<p>2 <i>right</i>[<i>x</i>]<img src=
+"../imgs/7a624ffcea5fd1d2f58f54dd2f39aec5cabd739e.png"><i>left</i>[<i>y</i>]</p>
+<p>//check if left child of <i>x</i> is not null</p>
+<p>3 <b>if</b> <i>left</i>[<i>x</i>]!=<i>NILL</i>[<i>T</i>]</p>
+<p><b>//</b>add <i>x</i> as a parent node of left of <i>y</i></p>
+<p>4 <i>p</i>[<i>left</i>[<i>y</i>]]<img src=
+"../imgs/7a624ffcea5fd1d2f58f54dd2f39aec5cabd739e.png"><i>x</i></p>
+<p>//copy parent of <i>x</i> into parent of <i>y</i></p>
+<p>5 <i>P</i>[<i>y</i>]<img src=
+"../imgs/7a624ffcea5fd1d2f58f54dd2f39aec5cabd739e.png"><i>p</i>[<i>x</i>]</p>
+<p><i>//</i>if parent of <i>x</i> is null</p>
+<p>6 <b>if</b> <i>p</i>[<i>x</i>]= <i>NILL</i>[<i>T</i>]</p>
+<p><b>//</b>copy the node <i>y</i> into root of tree.</p>
+<p>7 <i>root</i>[<i>T</i>]<img src=
+"../imgs/7a624ffcea5fd1d2f58f54dd2f39aec5cabd739e.png"><i>y</i></p>
+<p>//else if is used to check the left of parent of <i>x</i></p>
+<p>8 <b>else if</b> <i>x</i>=<i>left</i>[<i>p</i>[<i>x</i>]]</p>
+<p><b>//</b>copy <i>y</i> into left of parent of <i>x</i></p>
+<p>9 <i>left[p</i>[<i>x</i>]]<img src=
+"../imgs/7a624ffcea5fd1d2f58f54dd2f39aec5cabd739e.png"><i>y</i></p>
+<p>//max function is used to update the max field of node
+<i>x</i></p>
+<p>10 <i>Max</i>[<i>x</i>] = <i>MAX</i> (<i>max</i>
+[<i>int</i>[<i>x</i>]], <i>max</i> [<i>left</i>[<i>x</i>]],
+<i>max</i> [<i>right</i>[<i>x</i>]])</p>
+<p>11 <b>else</b></p>
+<p><b>//</b>copy the node <i>y</i> in right of parent of
+<i>x</i></p>
+<p>12 <i>right</i>[<i>p</i>[<i>x</i>]]<img src=
+"../imgs/7a624ffcea5fd1d2f58f54dd2f39aec5cabd739e.png"><i>y</i></p>
+<p>//copy the node <i>x</i> into left of <i>y</i></p>
+<p>13 <i>Left</i>[<i>y</i>] <img src=
+"../imgs/7a624ffcea5fd1d2f58f54dd2f39aec5cabd739e.png"><i>x</i></p>
+<p>// max function is used to update the max field of node
+<i>y</i>.</p>
+<p>14 <i>Max</i>[<i>y</i>] = <i>MAX</i> (<i>max</i>
+[<i>int</i>[<i>y</i>]], <i>max</i> [<i>left</i>[<i>y</i>]],
+<i>max</i> [<i>right</i>[<i>y</i>]])</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the above code no loop is used, the value of max attribute
+gets updated by calling the function MAX. The MAX function requires
+time complexity of <img src=
+"../imgs/777d926403fca8b69c6cdf4a3142785a284f8451.png">.</p>
+<p>All the remaining statements take time complexity of <img src=
+"../imgs/777d926403fca8b69c6cdf4a3142785a284f8451.png"></p>
+<p><b>Therefore, the time complexity of above pseudocode</b> <b>is
+order of 1 so the time complexity of LEFT-ROTATION is</b>
+<b><img src=
+"../imgs/343261cb2117f5a5227d960e1122b20080cc32e8.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following algorithm of interval search tree when
+all intervals are open.</p>
+<p>INTERVAL-SEARCH (<i>T</i>, <i>i</i>)</p>
+<p>//store the root of red- black tree into variable <i>x</i></p>
+<p>1 <i>x=</i> <i>root</i> [<i>T</i>]</p>
+<p>//while loop is used to check tree is not null and node of tree
+does not overlap the //interval <i>i</i></p>
+<p>2 <b>while</b> <i>x</i>!= <i>NILL</i> [<i>T</i>] and <i>i</i>
+does not overlap <i>int</i> [<i>x</i>]</p>
+<p><b>//</b>if statement is used to check the left node of tree and
+maximum of left sub tree is</p>
+<p><b>//</b>greater than the lower point of interval.</p>
+<p>3 <b>if</b> <i>left</i>[<i>x</i>]! = <i>NILL</i> [<i>T</i>] and
+<i>max</i> [<i>left</i>[<i>x</i>]]&gt; <i>i</i>. <i>low</i></p>
+<p><b>//</b>store left of <i>x</i> in variable <i>x</i></p>
+<p>4 <i>x</i>= <i>left</i> [<i>x</i>]</p>
+<p>5 <b>else</b></p>
+<p><b>//</b>store right of <i>x</i> in variable <i>x</i></p>
+<p>6 <i>x</i>= <i>right</i>[<i>x</i>]</p>
+<p>7 <b>return</b> <i>x</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of algorithm:</b></p>
+<p>• In open interval search tree there is no low endpoint and high
+endpoint.</p>
+<p>• Change only in line three of the INTERVAL-SEARCH tree
+algorithm provided in the text book when all intervals are
+open.</p>
+<p>• In line 3<sup>rd</sup> of algorithm, if statement is used to
+check the maximum endpoint in left sub tree of root node <i>x</i>
+which is always greater than the <i>i. low.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>• The left sub tree of root node <i>x</i> never overlap the low
+endpoint of interval which user wants to search because <i>max</i>
+[<i>left</i>[<i>x</i>]]&gt; <i>i</i>. <i>low.</i></p>
+<p><b>In line 1</b> <sup>st</sup> <b>of algorithm assignment
+operator is used so the time complexity will be</b> <b><img src=
+"../imgs/7b99e19d963de528f0f8e8939e4000e6548dd147.png"></b> <b>and
+in line 2</b> <sup>nd</sup> <b>of the algorithm while loop is used
+to traverse the each node of tree. Since the height of tree is</b>
+<b><img src=
+"../imgs/85a019ecc6a7531798dea6808a3ecee5789ae2f7.png"></b> <b>so
+the total time complexity of algorithm will be</b> <b><img src=
+"../imgs/85a019ecc6a7531798dea6808a3ecee5789ae2f7.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In the INTERVAL-SEARCH procedure, it is checked whether the
+current node, <i>y</i> overlaps the interval <i>i</i> or not. The
+explanation of the procedure is as follows:</p>
+<p>• If the overlap does not exist, traverse either to the left
+child or the right child.</p>
+<p>• <b>MIN-LOW-ENDPOINT</b>: Return the overlapping interval with
+the minimum low end point, if the current node <i>y</i> overlaps
+the interval <i>i</i>, and when some nodes in the right subtree
+overlap <i>i,</i> but no node in the left subtree overlaps <i>i</i>
+because, the keys are the low-end-points.</p>
+<p>• If the current node, <i>y</i> is checked before the left
+subtree and if there is an interval that overlaps <i>i</i> in the
+left subtree of the node <i>y</i>, then it might return an interval
+whose low-end-point is not the minimum of the nodes overlapping
+<i>i</i>.</p>
+<p>• Therefore, create the left subtree first.</p>
+<p>• Check the right subtree in the same manner as in the
+INTERVAL-SEARCH that is, the left subtree cannot contain an
+interval that overlaps <i>i</i>, and the node, <i>y</i> does not
+overlap <i>i</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Use an auxillary recursive algorithm MIN-INTERVAL-SEARCH-AUX (T,
+<i>y</i>, <i>i</i>) which returns an interval overlapping <i>i</i>
+with the minimum low endpoint or T.nil, if no such interval
+exists.</p>
+<p><b>ALGORITHM:</b> The algorithm is as follows:</p>
+<p>MIN-INTERVAL-SEARCH (T, i)</p>
+<p><b>return</b> MIN-INTERVAL-SEARCH-AUX (T, <i>y</i>,
+<i>i</i>)</p>
+<p>MIN-INTERVAL-SEARCH-AUX(T, <i>y</i>, <i>i</i>)</p>
+<p>1 <b>if</b> <i>y.left</i><img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png">T.nil and
+<img src=
+"../imgs/c8c0b1fca9a9dd4ce4427c563491ee6b8705394d.png"></p>
+<p>2 <i>x</i>=MIN-INTERVAL-SEARCH-AUX (T, <i>y left</i>,
+<i>i</i>)</p>
+<p>3 <b>if</b> <i>x</i><img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png">T.nil</p>
+<p>4 <b>return</b> <i>x</i></p>
+<p>5 <b>else if</b> <i>i</i> overlaps <i>y</i></p>
+<p>6 <b>return</b> <i>y</i></p>
+<p>7 <b>else</b> <b>return</b> T.nil</p>
+<p>8 <b>else if</b> <i>i</i> overlap <i>y</i></p>
+<p>9 <b>return</b> <i>y</i></p>
+<p>10 <b>else return</b> MIN-INTERVAL-SEARCH-AUX (T,
+<i>y.right</i>, <i>i</i>)</p>
+<p>Height of the tree<b>:</b> <img src=
+"../imgs/1f6bf4f18f001b45bc03e3028ae95de3d7aa2efa.png"></p>
+<p>Time complexity of MIN-INTERVAL-SEARCH (T, i): <img src=
+"../imgs/1f6bf4f18f001b45bc03e3028ae95de3d7aa2efa.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Interval Tree</b></p>
+<p>Interval tree is an augmented data structure which, in very
+essence of it, is a binary tree. Every node has two kids and the
+values in the left kids are always less than the parent and in the
+right kid the values are greater than the root.</p>
+<p>The difference is that in an interval tree the intervals are
+kept in the nodes rather than the single values.</p>
+<p>An extended definition of the interval tree is as follows.</p>
+<p>Interval tree is a red black tree used to maintain a dynamic set
+of elements, in which each element <i>x</i> contains an interval
+<i>x</i>.int.</p>
+<p>Intervals are used for representation of various events that
+occupy continuous period of time.</p>
+<p>Intervals <img src=
+"../imgs/3075b8a6dadc3f7b9969de0be28f7af62383d552.png"> are
+represented as an object <i>i</i>,</p>
+<p>Where <img src=
+"../imgs/3ce00a1491c8108387f7e021fc4d3ebaa91a7dba.png"> represents
+the low endpoint and</p>
+<p><img src="../imgs/656367b6f01f4809e2c405219d0c287145ce046f.png">
+represents the high endpoint.</p>
+<p>Two interval <i>i</i> and <i>i’</i> overlap,</p>
+<p><b>if</b><img src=
+"../imgs/9e44bc024d7a271d389330e891d8c0018e370825.png"></p>
+<p>That is,</p>
+<p><img src=
+"../imgs/8a57fd7f58b065eafaf7702bbfd298333a6b94eb.png"></p>
+<p>Two interval <i>i</i> and <i>i’</i> satisfies the interval
+trichotomy,</p>
+<p>If one of the properties hold exactly</p>
+<p>1. <i>i</i> and <i>i’</i> overlap.</p>
+<p>2. <i>i</i> is to the left of <i>i’</i> (that is<img src=
+"../imgs/51b7080c9443312e7c2435d27f5dc3f517b37dac.png">).</p>
+<p>3. <i>i</i> is to the right of <i>i’</i> (that is<img src=
+"../imgs/a3373507612900d01f575db50fa2c1dbb511f673.png">).</p>
+<p>It supports different operations:</p>
+<p>1. Interval-insert.</p>
+<p>2. Interval-delete.</p>
+<p>3. Interval-search.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Left traversing:</b></p>
+<p>In order to check the overlapping intervals in the left child;
+if the left child is not <i>t.nil</i> and the low endpoint of the
+search intervals is less than the <i>left_child.max</i> then there
+could be overlaps in the left child.</p>
+<p><b>Right traversing:</b></p>
+In order to check overlapping intervals in the right child; if the
+search interval does not overlap the left child then there could be
+overlaps in the right child.</div>
+<hr>
+<div class="answer">
+<p>If there is interval overlap with the search node, then during
+the searching; delete that interval node from the tree, and
+continue the searching from the tree.</p>
+<p><b>ALGORITHM FOR INTERVAL SEARCH</b></p>
+<p>INTERVAL_SEARCH (<i>T</i>, <i>i</i>)</p>
+<p><img src=
+"../imgs/13fe647d0e50692548a9a3feb0c7e8be66528284.png"></p>
+<p><b>while</b> <img src=
+"../imgs/eec5194d7b72fc55c059bae7560a3c33ab135d82.png">and <i>i</i>
+does not overlap <i>x</i>.int</p>
+<p><b>do</b></p>
+<p><b>if</b> <img src=
+"../imgs/4be770f37dcc03b8b8e9598312572dead7b96fa7.png">and
+<img src="../imgs/789e6c1a19928f21ce9e724067f46f144f990d8f.png"></p>
+<p><img src=
+"../imgs/c24897e9fe811ed3a82614254317afbb1a223c5c.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/02c5decc011e884340ece86acc6c24dc4bd05084.png"></p>
+<p><b>return</b></p>
+<p><b>ALGORITHM FOR INTERVAL OVERLAPPING:</b></p>
+<p>INTERVAL-OVERLAP-LIST (<i>T</i>, <i>x</i>, <i>i</i>)</p>
+<b>if</b> <i>i</i> overlaps <i>x</i>.int <b>print</b> <i>x</i>
+<b>if</b> <img src=
+"../imgs/4be770f37dcc03b8b8e9598312572dead7b96fa7.png">and
+<img src="../imgs/789e6c1a19928f21ce9e724067f46f144f990d8f.png">
+INTERVAL-OVERLAP-LIST(<i>T</i>, <i>x</i>.<i>left</i>, <i>i</i>)
+<b>if</b> <img src=
+"../imgs/1657b5615b19a312be5a59b2522235ced0f34458.png">
+INTERVAL-OVERLAP-LIST(<i>T</i>, <i>x</i>.<i>right</i>, <i>i</i>)
+<b>return</b> <i>x</i></div>
+<hr>
+<div class="answer">
+<p><b>Running time of the algorithm:</b></p>
+<p>The running time of the algorithm can be calculated as
+below:</p>
+<p>Have a look at the procedure for searching for the overlapping
+interval. For the first overlapping interval to occur it might take
+up-to the end of the list. This makes the worst possibility for the
+search to be successful equal to<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p>The tree has a total of <i>k</i> intervals. When the procedure
+runs, every recursive call would access the next interval. The
+runtime for this would remain the same as this is for binary tree.
+When the same implication is applied to an interval tree, the cost
+of execution for the code and search for value within the interval
+would be added to the complexity making it<img src=
+"../imgs/988b17fb73efd2de3b291b8abe7b3bd88a57e59d.png">.</p>
+<p>So when the overlapping is to be checked, the possibility to
+find an overlapping would be equal to the minimum possibility of
+the successful search for an overlapping.</p>
+<p>So, this would be equal to<img src=
+"../imgs/aeadc5c84d28764a84466d33e66db6d71e1c17a8.png"><b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Interval Tree:</b></p>
+<p>The color of the node in interval tree is same as red black
+tree, parent and children node do not have same color. In interval
+tree a node contain ordered pair of real integer <img src=
+"../imgs/acc42de02b04756d71c654919e33248a4bf90120.png">where<img src="../imgs/d9c76681bace5285c54006bac25a7b26c3e3ecf9.png">.</p>
+<p>The interval stored in the tree is represented with the help of
+object. Suppose <i>k</i> is an object which represent the
+interval<img src=
+"../imgs/acc42de02b04756d71c654919e33248a4bf90120.png">, where
+<img src=
+"../imgs/1f613a3987e509deec9eed56a05d4b44a9e3222f.png">and<img src=
+"../imgs/306b04e2eb64713612ae1834b536b61e61eb503e.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following modified INTERVAL-SEARCH() algorithm to
+find exactly interval <i>i</i> in tree <i>T</i>, the modification
+is highlighted with grey color.</p>
+<p>INTERVAL-SEARCH-EXACTLY (<i>T</i>, <i>i</i>)</p>
+<p>1. <img src=
+"../imgs/ba49cbdffe7254bc6a57289f1655671fa6712b53.png"></p>
+<p>2. <b>while</b> <img src=
+"../imgs/8e5b9870eac58eacdf85dc94126f7a38d56f53d1.png"><img src=
+"../imgs/461b0f4cff9ed8e38b12eecda5953bf55f386ec9.png"></p>
+<p>3. <b>if</b> <img src=
+"../imgs/5277332e6f6399fa34616d95ace990f3ef357d01.png"><b>and</b>
+<img src=
+"../imgs/81e469f9ecb876eec12010a02e8a65e41094d635.png"></p>
+<p>4. <img src=
+"../imgs/7538a9d209c99ac49c8c69e57713ec4dc3527097.png"></p>
+<p>5. <b>else</b></p>
+<p>6. <img src=
+"../imgs/afd4deb9166c30495fd207985f8bc9f7bc9dd0ac.png"></p>
+<p>7. <b>if</b> <img src=
+"../imgs/315ec0e11665992086a1abe89d9c893dbfe236c6.png"> <b>and</b>
+<img src=
+"../imgs/0baf35744baea117c7f0545922903288b5eddfdf.png"></p>
+<p>8. <b>return</b> <i>x</i></p>
+<p>9. <b>else</b></p>
+<p>10. <b>return</b> <img src=
+"../imgs/548ad742287eb0b10cceff1d2d72f03d4d57b246.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>• At first store the reference of root node in <i>x</i>.</p>
+<p>• Implement a <b>while</b> loop to determine the interval in the
+tree. A loop continue iterate interval is not found or tree is not
+get completely traversed.</p>
+<p>• In each iteration check left child exist or not and left child
+of current node is greater than low of <i>i</i>.</p>
+<p>• After the termination of loop, if current node (<i>x</i>)
+interval is same as interval of <i>i</i> then <b>return</b> the
+pointer to that node otherwise <b>return</b> <img src=
+"../imgs/548ad742287eb0b10cceff1d2d72f03d4d57b246.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time Complexity:</b></p>
+<p>• The above INTERVAL-SEARCH-EXACTLY algorithm has one while
+loop. Each iteration, of <b>‘while’</b> loop takes <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">time.</p>
+<p>• The height of <i>n</i> node tree is<img src=
+"../imgs/ff3300aadb4fbd30b9f225fa1e3c1557bb8b7359.png">, in worst
+case the number of iteration in above algorithm is equal to height
+of tree.</p>
+<p><b>Therefore the running time required by above algorithm is</b>
+<b><img src=
+"../imgs/5d05f4b9cfe958928d1551475ee91aad44b649b5.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>MIN-GAP operation</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider a dynamic set that is a set which does not have fixed
+elements that set support the MIN-GAP operation on set elements.
+MIN-GAP is the operation which returns the difference between a
+pair of closest elements of the set. Red Black Tree is a special
+type of tree in which each node is colored with either using red
+color or by black color that is all nodes contain an extra bit for
+the storage of the color of that node.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For implementing the dynamic set, that can support the MIN-GAP
+operation on its elements, use the Red Black tree in which the
+number of dynamic sets are implemented as the keys of nodes. The
+searching for a key is a simple operation, as the TREE-SEARCH runs
+in <img src=
+"../imgs/a1d7a0df265803a887b904fc3d62a92ccdf143bb.png">time in the
+red black tree; and will be like this after augmenting.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To insert a new node to the augmented tree with min-gap
+operation, it must contain some more information with each node in
+the tree. That is, the red-black tree is increased by the
+subsequent fields in every node.</p>
+<p><b>1.</b> The variable min-gap [NODE] contains the minimum gap
+within the subtree unmoving at the Node. If Node may be a leaf that
+is its youngsters are all <img src=
+"../imgs/1a07775fd20d29c5852560908655104584a12cde.png">,
+then<img src=
+"../imgs/a4f722abc192c32c4e8c792480f1e9b0d3c3e096.png">.</p>
+<p><img src=
+"../imgs/485c5622e84716759bee746c5d88dc828d29040e.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2.</b> A variable min-value [NODE] contains the key with
+minimum worth within the subtree at NODE.</p>
+<p><img src=
+"../imgs/abeab1f232cff45c3014dcb291bce7dff897312b.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>3</b>. The variable max-value [NODE] contains the most worth
+(key) within the subtree at NODE.</p>
+<p><img src=
+"../imgs/63221e9382409d251c1aa3403b36e835d175b2a5.png"></p>
+<p>All the three variables must be associated with each and every
+node of the tree, and when a node is inserted or deleted from the
+tree, this information must be maintained with each node. That is,
+the new variable will be maintained throughout insertion and
+deletion, while not moving the <img src=
+"../imgs/a1d7a0df265803a887b904fc3d62a92ccdf143bb.png">period of
+time.</p>
+<p>The rationale for outlining the <i>min-value</i> and maximum
+value is to make it double to calculate the minimum gap from info
+at the node and its youngsters. MINIMUM GAP of the node merely
+returns the MINIMM GAP held on at the tree root. Thus, it takes
+the<img src=
+"../imgs/47e9685092300a79dbaba66d327eac7db8d280b3.png">time to
+return the min-gap of any node in the tree.</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td></td></tr>
+</table>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following assumptions to define the algorithm whose
+time is<img src=
+"../imgs/7567b7b56f0d33f67df1dc0f3e0a010d1d00eea4.png">:</p>
+<p>Define two sets L and R.</p>
+<p>L represents the set of the left coordinates of the rectangle
+and R represents the set of the right coordinates of the
+rectangle.</p>
+<p>• Now, sort both the sets in such a way that it will take
+<img src="../imgs/7567b7b56f0d33f67df1dc0f3e0a010d1d00eea4.png">
+time.</p>
+<p>• Consider two pointers. One points to the set L and the other
+point to the set R.</p>
+<p>• If the pointer that points to L is small, then call the
+interval search on T for the interval which is in the form of
+up-down and correspond to the left-hand side.</p>
+<p>• If it consists of something that will intersect the bounds
+which are of up-down, then there is an intersection, therefore,
+stop.</p>
+<p>• Otherwise, add the above intersection to T and increment the
+pointer that points to L.</p>
+<p>• If the pointer points to R is the one which is small, then
+remove the interval which is up-down and correspond to the
+right-hand side and increase the pointer that points to R.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Since, the operations performed by the interval tree take the
+time of<img src=
+"../imgs/1654fc4ddf38336bd484f99f3b9e305484be2185.png">, and this
+will call for at-most <i>3n</i> times.</p>
+<p><b>Hence, the runtime will be</b> <b><img src=
+"../imgs/3da15869119bc93b8820148ceae25fc18683a54a.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

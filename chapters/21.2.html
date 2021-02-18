@@ -1,0 +1,264 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 21.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/fcc7136d2e6ecfd66f5e0d9dc26dbd75500a8ba9.png">
+<hr>
+<img src="../imgs/fb7c407124274ea498da0cf670dcd24182d788ab.png">
+<hr>
+<img src="../imgs/4b28bf352f6f19d8c14108d3b90f72ce3062a33c.png">
+<hr>
+<img src="../imgs/a34e71ca1ad63f987e9a2eb087523484ce18d5f1.png">
+<hr>
+<img src="../imgs/78b165684bab12b9c131466d5c0f62281c211c45.png">
+<hr>
+<img src="../imgs/67c9db1178d0b5ade1fd34d60315b643f6cec9d5.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>FIND-SET operation:</b></p>
+<p>• It is a data structure.</p>
+<p>• It stores a set of elements which are partitioned into the
+number of non-overlapping subset.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Linked list representation:</b></p>
+<p>• It stores data in sequence manner.</p>
+<p>• It is group of nodes.</p>
+<p>• The linked list is of three types.</p>
+<p>• Singly linked list</p>
+<p>• Its each node has one data and one address part.</p>
+<p>• The address part holds the address of next node.</p>
+<p>• Doubly linked list</p>
+<p>• Its each node has one data and two address part.</p>
+<p>• The first address part holds the address of previous node.</p>
+<p>• The second address part holds the address of next node.</p>
+<p>• Circular linked list</p>
+<p>• The address of last node holds the address of first node.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Weighted-union heuristic:</b></p>
+<p>• It stores the length of each list.</p>
+<p>• The shorter list appended to longer list.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>At the end of execution:</b></p>
+<p>• There is a single set that contains all the elements.</p>
+<p>• These elements are {x1, x2, x3, x4, x5, x6, x7, x8, x9, x10,
+x11, x12, x13, x14, x15, x16}</p>
+<p>• xi is linked to xi+1 for each i.</p>
+<p>• x1 is the representative of set.</p>
+<p>• The pointer to x1 is returned by the both of two FIND-SET
+operations.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/08732556600854738384e6ac1efbd48363e8566d.png">
+<hr>
+<img src="../imgs/9c7a2a1b82c8b3364806fb07fd33c99bfd507f57.png">
+<hr>
+<img src="../imgs/d9a22609d8633dac6617263ff734f039b207e0c3.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In the linked list representation of a set it is possible to
+keep just one pointer in each set object rather than two, while
+keeping the number of pointers in each list element to two only in
+cases when there is no constraint on the representative. It means
+that there is no condition as the representative must be the
+smallest or the largest element in the set.</p>
+<p>Refer figure 21.2 in the textbook for the linked list
+representation of sets.</p>
+<p>In this case, a representation of linked list with the
+difference that instead of two pointers in the set object, only one
+pointer used which references to the tail of the linked list.</p>
+<p>The reference variable will be the representative of our linked
+list and all list elements will have two pointers. One of them is
+pointing to the upcoming element in the list and the other to the
+set object.</p>
+The point to note here is that the representative in this new
+structure is the <i>tail</i> and not the <i>head</i>.</div>
+<hr>
+<div class="answer">
+<p>All the operations that are MAKE-SET, FIND-SET and UNION will
+take the same time as they take when there are two pointers in a
+set.</p>
+<p>The proof for the fact is as:</p>
+<p><b>MAKE-SET(</b> <i><b>x</b></i> <b>):</b></p>
+<p>This operation of set creates a new linked list containing the
+only object <i>x</i> in it and this will be done in<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">time.</p>
+<p><b>FIND-SET(</b> <i><b>x</b></i> <b>):</b></p>
+<p>This operation just returns the pointer from <i>x</i> back to
+its set object and return the object where set object points to
+that pointer to the tail of the list.</p>
+<p>This operation also takes<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">time.</p>
+<p><b>UNION(</b> <i><b>x, y</b></i> <b>):</b></p>
+<p>Suppose <i>x</i> is contained in list <i>A</i> and <i>y</i> in
+<i>B</i> and the representative of <img src=
+"../imgs/b9e69de022e9dfe52b406127e890b671a1aea154.png"> is the
+representative of <i>A</i>.</p>
+<p>Now, rather than appending <i>B</i> to the end of <i>A</i>,
+instead splice <i>B</i> into <i>A</i> right at the end of <i>A</i>.
+The list <i>B</i> is traversed to update pointers to the set object
+anyway, so we can just make the last element of <i>B</i> point to
+the tail of <i>A</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The weighted union heuristic will apply here in the same manner.
+We will make the tail of smaller list point to the tail of longer
+list so that minimum updates need to be done to the internal
+nodes.</p>
+<p>So, a list with <i>n</i> nodes and <i>m</i> MAKE-SET, UNION and
+FIND-SET operations will take no more than<img src=
+"../imgs/68682e8f850f0f57e6019009deaf238054470c57.png">which is
+similar as in case of two pointes one for <i>head</i> and other for
+<i>tail</i> of linked list.</p>
+<p>Here <img src=
+"../imgs/1fc54e920a8f2d8a727d2c409743e83ea3bee0f2.png"> time comes
+in UNION operation in which each objects pointer is updated at most
+<img src=
+"../imgs/13725004ef5f0c7e61de5f5bb71067d167bde506.png">times over
+all the UNION operations.</p>
+<p>Hence professor Gomper’s doubt is true that is it is possible to
+implement a set in the form of linked list with only one pointer in
+every set object. And this will be possible in the same time as it
+takes when two pointers are implemented in a set.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d84d7527fa6253bdef68897a9afb8df7957d38ef.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

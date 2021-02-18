@@ -1,0 +1,488 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 30.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p>To multiply two linear polynomials <img src=
+"../imgs/21e8eb60cf018c59e76d90616441091b021a93e5.png"> and
+<img src="../imgs/4fc5178d7c186646b3c0eb88c88c4b6d4b41255a.png">
+using only 3 multiplications:</p>
+<p><img src=
+"../imgs/f737888a21e4e076c087bb7d8518e996a7bd14df.png"></p>
+<p>So, compute ac and cd. Thus, the product of two polynomials is
+as follows:</p>
+<p><img src=
+"../imgs/2d6a94b05cca9f2dc689ba09116c7b8abc9059a5.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p><b>For first method</b>, that is, the algorithm to divide the
+input polynomial coefficients into a high half and low half is as
+follows:</p>
+<p>Suppose that two polynomials are required to be multiplied and
+let the two polynomials be <img src=
+"../imgs/8671bbad1b9b3ee16c5fb162a610cfe625f0d8ce.png"> and
+<img src=
+"../imgs/15a0f41020583cf8936db76f1ea2a53f48e3d795.png">such that,
+<img src="../imgs/8d9f488a30fccd2fbb6736fa18053b1cdbe6c349.png">
+and <img src=
+"../imgs/91333f7fd10a8ea303586d8a5391b978cf114f18.png">. The high
+half will be set as:</p>
+<p><img src="../imgs/742faaf8c2209af255b40709eb64c9bca25e5a4c.png">
+and the low half will be set as: <img src=
+"../imgs/cfc1bad52246ccd7f2f606629a5bee8dccdc8d40.png"> for
+<i>i</i> =1,2….</p>
+<p>Since, it is known that <img src=
+"../imgs/65480f8dc2d70b39a0f2bbca80000159ef0e7064.png"> for
+<i>i</i> =1,2…and so on.</p>
+<p>Thus, by multiplication of two polynomials:</p>
+<p><img src=
+"../imgs/22e0fbd98b9ae1c0a1358f5b6aebaa42d14c5323.png"></p>
+<p>So, by using master’s theorem the recurrence to calculate the
+running time is as follows:</p>
+<p><img src=
+"../imgs/87b8b87129fbed843921394715f3a61297707753.png"></p>
+<p><b>For the second algorithm</b>, that is, to divide the input
+polynomial coefficients according to whether the index is even or
+odd the procedure is as follows:</p>
+<p>Let the odd index be denoted by <img src=
+"../imgs/76f9c132cc1fd0e1cc47e5fd8475e4ed60cc60b6.png">and even
+index be denoted by <img src=
+"../imgs/5ee77182de33c341b62731dc453b5cd41bba6dbb.png">such that,
+<img src="../imgs/3e52b81961edbdf179cf571f6d1f2ba79f49e8ef.png">
+and <img src=
+"../imgs/d7997b536f31ba48e7cd1cc74e3b4e633b7bfac7.png"> for
+<i>i</i>=1,2…</p>
+<p>Then, for the polynomials <img src=
+"../imgs/ac3cbd7d6e09e75a79c176371f35315830ba3a71.png"></p>
+<p>Therefore, <img src=
+"../imgs/9472d649afb758840d758a488c435e7302848f7b.png"></p>
+<p>Therefore, the recurrence relation for the above algorithm
+is:</p>
+<p><img src=
+"../imgs/fd9f8115a392bd7108bd9a6fb10d9fa70cd142e7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>c.</p>
+<p>To multiply two n-bit integers in <img src=
+"../imgs/c20a47bb4c193cc80cd1a7d59fe2aad989711b07.png">steps, the
+two integers which are taken are:</p>
+<p><img src="../imgs/60f9b45490f7b1c615a8018875e87f33564075de.png">
+and <img src=
+"../imgs/d1f25939e1808e9b2d0ac73e7c59391ba7c15d86.png">. The
+generalization of the polynomial is:</p>
+<p><img src=
+"../imgs/85dcb696dbff687094bfaf74ceab62642c97fdc7.png">.</p>
+<p>Thus, the two n-bit integers are taken as: <img src=
+"../imgs/ca1d2e3ffb68ee128fefc555ae0b1d5904d378cc.png"> and
+<img src=
+"../imgs/c9b770fa59fb822a226647d990d2966bf22f28cb.png">where
+<img src="../imgs/8958ba5e24720040612ad635627a65f5784cb828.png">
+and <img src=
+"../imgs/43d9974b04eea8db9dcc789cda48e1da82b83e51.png">. The
+<img src=
+"../imgs/511e0639ecb03cca3f1501ab071ed29cbff693ef.png">and<img src=
+"../imgs/3cd86bc512baf3a08fa8e30e1a9f0aaeb5090c37.png">represent
+the number on every digit <i>i</i> = {1,2,3…n}</p>
+<p><img src=
+"../imgs/ff39e8a30e80be4193188b1ee53fb9a352669cca.png"></p>
+<p>By using divide and conquer, the two algorithms are designed to
+solve the polynomial multiplication problem with run time of
+<img src="../imgs/cc0cf3df4235891103841394663475796ad7ce94.png">.
+For each operation, deal with either <img src=
+"../imgs/8671bbad1b9b3ee16c5fb162a610cfe625f0d8ce.png">or<img src=
+"../imgs/077bb3c8567689375b624bdffc99a5528d0d6ce3.png">, they are
+of 1 bit values.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p>The sum of two Toeplitz matrices is Toeplitz. Suppose there are
+2 matrices A and b.</p>
+<p>In A, <img src=
+"../imgs/8e607b2ecfd78041835d9ab62807d099db54f873.png">for i, j =
+2…n. Similarly, in B, <img src=
+"../imgs/6fdff2afd1c7af9069508b40bacddec2064d1abc.png">. Suppose
+the resultant matrix is C. Then, the sum of the values <img src=
+"../imgs/bcb81e6587ad5fefa8e95a7706ece6d3c6e8f4d2.png"> will also
+be equal to <img src=
+"../imgs/80a5d7b733d45522bebb3cc3579cae57de2f5ffd.png">.</p>
+<p>But, the product will not be Toeplitz matrix. It is shown below
+using an example:</p>
+<p><img src=
+"../imgs/b291864a770169f5d9e9cd37f104cc46991ebcdb.png"></p>
+<p>The resultant matrix is not Toeplitz matrix.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>In a Toeplitz matrix only values of first column and first row
+needs to be calculated. Other values will be same due to the only
+property of Toeplitz matrix.</p>
+<p>To do this, add first rows of both matrix that can be added in
+O(n) time like adding any 2 row vectors. Then add first columns of
+both matrix like adding 2 column vectors. It can also be done in
+O(n) time.</p>
+<p>thus, the total time for addition will be 2O(n) = O(n) time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c.</p>
+<p>To solve this problem, use divide and conquer approach. A matrix
+can be interpreted as polynomials and the resultant matrix can be
+found through multiplication of polynomials.</p>
+<p>The algorithm is given below:</p>
+<p><b>Algorithm:</b></p>
+<p>1. Write matrix A as polynomial P<sub>1</sub>(x) = <img src=
+"../imgs/181e571922725666f013f3a4edce783c7bc92bca.png"> .</p>
+<p>2. Let the vector B be <img src=
+"../imgs/c8e1feed836f56497d2c048ba393b4fa23b83677.png">.</p>
+<p>3. Write B as P<sub>2</sub>(x) = <img src=
+"../imgs/be86f192fe288f71e86599e615c01cf7c889a281.png">.</p>
+<p>4. A(x)B(x) = <img src=
+"../imgs/0b1c2be166a7080544ad76b4b5b888ce7c46c5ba.png"></p>
+<p>5. Use divide and conquer method as follows.</p>
+<p>6. PolynomialMulti(A(x),B(x))</p>
+<p>7. {</p>
+<p>8. <img src=
+"../imgs/ee4350772f10f63ac340e6e588d3a95fbb296bbc.png"></p>
+<p>9. <img src=
+"../imgs/f8e3721e00cf081b86e1e0cdee1325731a3e2e6c.png"></p>
+<p>10. <img src=
+"../imgs/f4e3cd1f20334dd64a9a9d60f4b2ed760013f5f8.png"></p>
+<p>11. <img src=
+"../imgs/bce81f519d0b9c2f456a4f021d5b9dc354b11329.png"></p>
+<p>12. Mul1(x) =
+PolynomialMulti(A<sub>0</sub>(x),B<sub>0</sub>(x))</p>
+<p>13. Mul2(x) =
+PolynomialMulti(A<sub>0</sub>(x),B<sub>1</sub>(x))</p>
+<p>14. Mul3(x) =
+PolynomialMulti(A<sub>1</sub>(x),B<sub>0</sub>(x))</p>
+<p>15. Mul4(x) =
+PolynomialMulti(A<sub>1</sub>(x),B<sub>1</sub>(x))</p>
+<p>16. return <img src=
+"../imgs/0c7cbc0d4ca5ba6d1a02772634139d7ea74e8f60.png"></p>
+<p>17. }</p>
+<p><b>Explanation:</b></p>
+<p>Since, multiplication follows O(n log n) time. Thus, the total
+time of this algorithm is O(n log n).</p>
+</div>
+<hr>
+<div class="answer">
+<p>d.</p>
+<p>Same algorithm will be used for multiplication of 2 <img src=
+"../imgs/f2327b613f97c0239ed69df60549f54d70c27587.png"> matrices.
+Write both matrices in polynomial form and multiply. Since,
+multiplication of polynomial takes follows O(n log n) time. Thus,
+the total time of this algorithm is O(n log n).</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a. The normal discrete Fourier transforms a one dimensional
+series<img src=
+"../imgs/81722c389b8a86c647e6c9d3b2a31e1141322620.png"> which will
+be a function of only one discrete variable<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.The
+multidimensional discrete Fourier transform of a given
+multi-dimensional array <img src=
+"../imgs/759d11e9a2eb077567a64c77f7100f49530abcc9.png">which is a
+series having function of <i>d</i> discrete variable <img src=
+"../imgs/02d3d50a68395f277977eda28222e6777ee9f727.png"> for
+<img src="../imgs/b5334998e114414e140c80fd2ae650a51b477702.png">in
+<img src="../imgs/db4d56b20a8199a4851e589008f70be3a7679ef3.png">is
+given by:</p>
+<p><img src=
+"../imgs/e9d878dda1db43dc617766f84898ec57f1bb207c.png"></p>
+<p>Here,</p>
+<p><img src=
+"../imgs/d12804158d9d18ba6327cd2dcc4d4d5eae3066e8.png"></p>
+<p>And <img src=
+"../imgs/f42faa495a84c51e4735d142a7151a075de2051d.png"> expands up
+to</p>
+<p><img src=
+"../imgs/9544a126651bc975b405a459cb3bcb1c5043d6ec.png"></p>
+The <i>d</i>-dimensional DFT will be computed with the help of
+combination of a series of 1-dimensional DFT . In the 2-dimensional
+case <img src=
+"../imgs/0224963b0f95117878870d931b26360534a08351.png">are not
+depending on the rows to form a new array<img src=
+"../imgs/b827eeb0d66bcde1c90009f4e16d6e12a4e59a3d.png"> Similarly
+it can be done for other d dimensional DFT.</div>
+<hr>
+<div class="answer">
+<p>b. While calculating discrete Fourier transform for <i>d</i>
+dimensions, it is found that the ordering of dimension will not
+matter while computing a <i>d</i>-dimensional DFT by computing the
+1 dimensional DFT.</p>
+<p>Suppose discrete Fourier transform is calculated for series in
+which <img src=
+"../imgs/f42faa495a84c51e4735d142a7151a075de2051d.png"> expands up
+to:</p>
+<p><img src=
+"../imgs/9544a126651bc975b405a459cb3bcb1c5043d6ec.png"></p>
+<p>Now, break the series of <i>k</i> in any order, say0 to 100 and
+the rest in the other. It would not put an effect as the total
+factor will sum up to the above given series. Each and every
+dimension is independent of one another.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c. To compute a 1-dimensional DFT using fast Fourier transform,
+the time taken will be<img src=
+"../imgs/6e77afe35baf228fb5d4e5cbb60a8272de5ce0e7.png">.It is so
+because as seen in the above parts computing a single sequence
+would involve <img src=
+"../imgs/18206b3392775faa0addc0735276065c8af97cb9.png">elements and
+we compute the single equation say for <i>n</i> number of
+dimension. This sums up the total complexity to<img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png">.</p>
+<p>This concludes that the running time of the procedure would
+be<img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6P">
+                <a href="#problem-6P">6P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>FFT using Modular arithmetic</b></p>
+<p>The complex numbers are computed by using discrete Fourier
+transform. But it results into loss of precision. It is because of
+rounding-off integers. If FFT is used by using modular arithmetic,
+then the result will be more exact. Fast Fourier transform is an
+algorithm to calculate Discrete Fourier Transform (DFT) and also to
+calculate inverse discrete Fourier transform. Fourier
+transformation changes time to frequency and frequency to time. It
+is one of the important numerical algorithms.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>Heuristic argument that <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> to be
+approximately<img src=
+"../imgs/9a465637f5ae5a11cb7521f499266b72352a8425.png">: Consider
+the prime number <i>p</i> given below:</p>
+<p><img src=
+"../imgs/e488e141a64914357b62218df2f025850ea5be91.png"></p>
+<p>It is clear that multiplication of integers (<i>k</i> and
+<i>n</i>) is there. For this, the time taken by modular arithmetic
+will be <img src=
+"../imgs/f24a8bd7baba1af7123aa9ebb5ec101cd7609851.png">. In FFT
+circuit, use of butterfly operations is there instead of
+comparators. For butterfly operations, refer to the figure 30.3
+from textbook.</p>
+<p>In this case, the depth notation is applied. According to this
+depth notation, for <i>n</i> inputs, bit-reverse permutation will
+be there. Also the number of stages that will be followed equals to
+<img src="../imgs/18206b3392775faa0addc0735276065c8af97cb9.png">.
+If there is execution of <i>n/2</i> butterflies in parallel form,
+then depth will be equal to <img src=
+"../imgs/ad39c92f0dbfa626d5e8fd15768350d83b31eba8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>To show that discrete Fourier transform and inverse Fourier
+transform are inverse operation, consider the Fourier transform and
+its inverse given below:</p>
+<p><img src=
+"../imgs/b458d6423adc5e2daf2a1f9b6ed0ed02ed944ce8.png"></p>
+<p><img src=
+"../imgs/95cd757be3cad02f6d3568ac61b03905bb24fea7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Here, <img src=
+"../imgs/485202619f69696e748edd47318358a46657f5b8.png">is principal
+<img src="../imgs/c4e2e1707a0aed47bd322fc0404cdaed4b846e33.png">
+root of unity. The summation of this can be given as:</p>
+<p><img src=
+"../imgs/0844a62f4a198ce6f15c5354c2ab02de7e832663.png"></p>
+<p>Now, to show that they are well defined inverse, consider the
+equation given below:</p>
+<img src=
+"../imgs/8a0eb2018b40a95d668d3695d9b68c8f3030e560.png"></div>
+<hr>
+<div class="answer">As it is clear that the final equations provide
+that the result will be 1 when<img src=
+"../imgs/40036e7be23ac6932e01f9c141338cf4474f3b97.png">, this means
+that inverse DFT and DFT are well-defined operations for modulo
+p.</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>By using, arithmetic over complex numbers, running time achieved
+will equal to <img src=
+"../imgs/f24a8bd7baba1af7123aa9ebb5ec101cd7609851.png">. For
+increasing efficiency, the running time can be obtained up to
+<img src="../imgs/4e8d22742f4b7e44253ac046ca99ab5734e05c24.png">bit
+operations by using arithmetic modulo. Now, showing FFT and inverse
+of FFT works modulo <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">work in time
+<img src=
+"../imgs/acb99b03646fc3e448fe474772c70f88df383869.png">.</p>
+<p>FFT and inverse FFT work in same manner,</p>
+<p>As <img src=
+"../imgs/d5d818db6379ec9d97081ae4753c0fd730fd36f0.png">(g is the
+generator).</p>
+<p>All are in modulo <i>p</i>. There execution takes place of a
+single transformation in <img src=
+"../imgs/18206b3392775faa0addc0735276065c8af97cb9.png"> time. There
+are a total of <i>n</i> numbers. So, when <img src=
+"../imgs/18206b3392775faa0addc0735276065c8af97cb9.png"> is added n
+times, the result obtained will be equal to<img src=
+"../imgs/272e9c9593dd737a45948ee153bc8c0e04dfaf96.png">.</p>
+<p><i><b>d.</b></i></p>
+<p>The DFT modulo <img src=
+"../imgs/358e5c9c8287857494577863bcf2c112b883823b.png"> with the
+vector <img src=
+"../imgs/c012b01b42024d74fd6f466a54cd025c93ebfb05.png"></p>
+<p>For a given prime number</p>
+<p><img src=
+"../imgs/60bdc91e72b8ac5573e002fcc0f8b0d6278191a5.png"></p>
+<p>As there are 8 vectors of the prime number, the value of
+<i>n</i> will be 8. Putting the respective values:</p>
+<p><img src=
+"../imgs/2fbc3e4e8db10174e736a4def673b0f515a06cb0.png"></p>
+<p>For the given generator <img src=
+"../imgs/3092297d34f873ead94c65bed85f3a5131f91615.png"></p>
+<p><img src=
+"../imgs/021aa464930637c4976c31fecd485e1a28c3e05d.png"></p>
+<p>Thus the DFT modulo <i>p</i> will be equal to 9.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

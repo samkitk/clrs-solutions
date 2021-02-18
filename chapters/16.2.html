@@ -1,0 +1,827 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 16.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Greedy algorithm:</b> In such an algorithm, optimal choice is
+made locally at each state hoping that it leads to a global optimal
+solution.</p>
+<p>The problem has to exhibit the following two properties for it
+to be solved optimally using greedy approach:</p>
+<p>• Greedy choice property</p>
+<p>• Optimal substructure</p>
+<p>Knapsack problem comes with a set of items. Each item has a
+weight and value attached to it. The solution involves finding the
+items whose collection leads to the maximum value while keeping
+within the maximum possible weight limit.</p>
+<p>Fractional knapsack problem allows breaking the item to add a
+fraction of it so as to have the maximum total value possible. The
+algorithm involves sorting the items in decreasing order of
+<img src="../imgs/00e5a6e31260a2838e0620acc0961ccf95e6a549.png">
+and then adding them in a greedy fashion according to the sorted
+order. When adding the next item isn’t possible anymore due to the
+size of the knapsack, break the item and add a fraction of it.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Greedy Choice Property:</b> If <i>g</i><sub>1</sub> is the
+first greedy choice, then it should be part of an optimal
+solution<i>.</i></p>
+<p>Let there be a total of <i>n</i> items.</p>
+<p>The set of items be denoted by<img src=
+"../imgs/4c4f445c708f598f727e8217ae2b781cc583b177.png">.</p>
+<p>Weight of the items is denoted by <img src=
+"../imgs/aac0b1bf0d364345856ff7b9fc5fe78b2c1cf711.png"></p>
+<p>Values of the items are denoted by<img src=
+"../imgs/7c44e8d2b6c114c34254d68473ee6b5fca38cb44.png">.</p>
+<p>Let the optimal solution be called <img src=
+"../imgs/3647381ac681c7fd2274462335dcb6737f13b60c.png"> which
+includes the following items <img src=
+"../imgs/dcfd46e4c2ad4d2a20a5f049d46ab0d86b6301cd.png">.</p>
+<p>Let the solution created using greedy approach be denoted by
+<img src="../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">and
+includes the items <img src=
+"../imgs/6a2b3ea87fa8f519dd7ccca0bdff74ecd6e07ee5.png">.</p>
+<p>The item <img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> has the
+maximum <img src=
+"../imgs/00e5a6e31260a2838e0620acc0961ccf95e6a549.png">ratio.
+Therefore, its inclusion will give better total value than any
+other item. So, it should be present in the optimal solution.</p>
+<p>Objective of this step is to show that <i>g</i><sub>1</sub> is
+part of an optimal solution <i>O.</i></p>
+<p>Since this is fractional knapsack problem, it allows fraction of
+the items to be added, so, there are two cases:</p>
+<p>• <img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> is an
+integer</p>
+<p>• <img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> is a
+fraction</p>
+<p><b>Case1:</b> <b><img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"></b> <b>is
+an integer</b></p>
+<p>• If the item <img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> is already
+present in the optimal solution <i>O</i>, then the greedy solution
+is optimal till now atleast.</p>
+<p>• If the item <img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> is not
+present in the optimal solution <i>O</i>, then it should be added
+to the optimal solution, so remove some items from <i>O</i> worth
+the weight equal to<img src=
+"../imgs/03e1bab3d9750df47b5b98c5702a1d48ef9f411c.png"><sub>.</sub>
+Then put the item <img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> in its
+place. This creates a new solution called<img src=
+"../imgs/ba6513e6e78dadc21ecce8ee542c67d1205fff53.png">.</p>
+<p><b>Case2:</b> <img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> <b>is a
+fraction of an item</b></p>
+<p>The weight to be included is<img src=
+"../imgs/d9436375270623a7cbd7dc8af8f157289a2f1b66.png">.</p>
+<p>• If <img src=
+"../imgs/45fce1ecdd8b14d41781e97df5bf08b949b6f931.png">part of
+item<img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> is already
+present in the optimal solution <i>O</i>, then the greedy solution
+is optimal till now atleast.</p>
+<p>• If anything less than <img src=
+"../imgs/45fce1ecdd8b14d41781e97df5bf08b949b6f931.png">part of
+item<img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> is present
+in the optimal solution <i>O</i>, then it should be added to the
+optimal solution, so remove some items from <i>O</i> worth the
+weight equal to<img src=
+"../imgs/d9436375270623a7cbd7dc8af8f157289a2f1b66.png"><sub>.</sub>
+Then put the <img src=
+"../imgs/45fce1ecdd8b14d41781e97df5bf08b949b6f931.png">part of
+item<img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png"> in its
+place. This creates a new solution called<img src=
+"../imgs/ba6513e6e78dadc21ecce8ee542c67d1205fff53.png">.</p>
+<p>But the solution <img src=
+"../imgs/3647381ac681c7fd2274462335dcb6737f13b60c.png">is already
+optimal solution. So this improvement couldn’t have created any
+better solution. However, the new solution should be atleast as
+good as <img src=
+"../imgs/3647381ac681c7fd2274462335dcb6737f13b60c.png">because of
+the addition of<img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png">. So the new
+solution <img src=
+"../imgs/ba6513e6e78dadc21ecce8ee542c67d1205fff53.png"> is exactly
+as good as the solution <img src=
+"../imgs/3647381ac681c7fd2274462335dcb6737f13b60c.png"> as it can’t
+be better than an optimal solution. So <img src=
+"../imgs/ba6513e6e78dadc21ecce8ee542c67d1205fff53.png"> is in
+itself an optimal solution. Thus, the greedy choice <img src=
+"../imgs/aad232f5114329567af3a42df52a6e32199eee4e.png">is part of
+an optimal solution.</p>
+<p><b>Hence, it is proved that fractional</b> <b>knapsack problem
+has the greedy choice property.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Optimal substructure of 0-1 Knapsack Problem</b></p>
+<p>• If a problem exhibits optimal substructure, the problem can be
+solved using dynamic programming.</p>
+<p>• 0-1 knapsack problem exhibits the optimal- sub structure
+property. Thus, if thief selects a most valuable item <i>i</i> from
+<i>n</i> items, then the thief can select optimal set of most
+valuable items from the reaming (<i>n</i>-1) items such that the
+weight at most <i>W</i>-<i>w</i><sub>i</sub>. Where, each item is
+associated with a value (<i>v</i>) or price and a weight (<i>w</i>)
+and <i>W</i> is the maximum capacity of the knapsack.</p>
+<p>Therefore, we can solve the 0-1 knapsack problem using recursive
+structure.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Recursive definition for 0-1 knapsack problem:</b></p>
+<p>• Consider that <i>V</i>[<i>i</i>,<i>w</i>] is the optimal value
+for items 1,2,3,...,<i>i</i> and the weight is at most
+<i>w</i>.</p>
+<p>• Now, define a recursion structure such that an item <i>i</i>
+is selected , if an optimal value can be selected form the
+remaining items and their weight is at most
+<i>w</i>-<i>w</i><sub>i</sub>. Otherwise, the item <i>i</i> does
+not selected and optimal values are selected form the reaming
+1,2,…<i>i</i>-1 items up to the weight <i>w</i>.</p>
+<p>This can be represented using a recursion as follows:</p>
+<p><img src=
+"../imgs/4d4dc6a6b0159703b4bd07a0165d0cd34edaffe4.png"></p>
+<p>Where <img src=
+"../imgs/bf615e9dbadbee37129b3b7e33eedc3b43e9a7d8.png"> is the
+value of the item <i>i</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Dynamic algorithm for 0-1-Knapsack problem:</b></p>
+<p>• Consider <i>n</i> items of weights <img src=
+"../imgs/7f22d20c648f756e79899144568c415597e6e06e.png"> and values
+<img src="../imgs/006ff8f05fcdd75ae0d5e8a47a3029786c496105.png">
+and a maximum capacity of knapsack(<i>W</i>).</p>
+<p>• The following algorithm computes and stores the optimal
+solutions in the table <img src=
+"../imgs/7bae53b4531b644577276fecf5f07ccd7c30bed0.png">whose
+entries are computed in a row-major order. At the end of the
+computation, <i>V</i>[<i>n</i>,<i>w</i>] contains the maximum value
+that can be picked into the knapsack.</p>
+<p>0-1-KNAPSACK-DYNAMIC (<i>W</i>,<i>n</i>,<i>v</i>,<i>w</i>)</p>
+<p>//Let <i>V</i>[0…<i>n</i>,0…<i>W</i>] is the new array to store
+solutions</p>
+<p>1 <b>for</b> <i>w</i>=0 <b>to</b> <i>W</i></p>
+<p>2 <i>V</i>[0,<i>w</i>]= 0</p>
+<p>3 <b>for</b> <i>i</i>=1 <b>to</b> <i>n</i></p>
+<p>4 <i>V</i>[<i>i</i>,0]=0</p>
+<p>5 <b>for</b> <i>w</i>=1 <b>to</b> <i>W</i></p>
+<p>6 <b>if</b> <img src=
+"../imgs/45910aab6ff311faad1919eb4f2d8b012c6a75f6.png"></p>
+<p>7 <b>if</b><b><img src=
+"../imgs/acb1c8f9455b69dc906479a6edc58e1b4bff0877.png"></b></p>
+<p>8 <img src=
+"../imgs/93a1695a4168914d6c649a90376a6fd7e1f24ca4.png"></p>
+<p>9 <b>else</b></p>
+<p>10 <img src=
+"../imgs/d58c0ba5467eea7ee4daa7297093b435e2c5b2ff.png"></p>
+<p>11 <b>else</b></p>
+<p>12 <img src=
+"../imgs/d58c0ba5467eea7ee4daa7297093b435e2c5b2ff.png"></p>
+<p>13 <b>return</b> <i>V</i></p>
+<p>The value <i>V</i>[<i>n</i>,<i>W</i>] is the required solution.
+The algorithm traces the table <i>V</i> to find the set of items
+that are part of the solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time complexity:</b></p>
+<p>The two nested for loops in the lines 3 and 4 runs (n+1).(W+1)
+times and computes the entries of the table <i>V</i>. Thus,
+obviously the running time of the above algorithm is<img src=
+"../imgs/19d41e714b6ac6b23d63d614754f032fa7b32c40.png">.</p>
+<p><b>Hence, the ru</b> <b>nning time of a 0-1 knapsack algorithm
+is</b> <b><img src=
+"../imgs/36861909b6be6b0e13b546dd45137eaaf373318d.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following greedy-type algorithm to find an optimal
+solution to the given variant of the knapsack problem.</p>
+<p>Assume that <img src=
+"../imgs/313e973215367342cfc214aabaa43c5e9306842a.png">denotes the
+<img src="../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">
+items with the <img src=
+"../imgs/afd1157e9887b0803c976c3c7bf411806bc6fca0.png">and
+<img src="../imgs/e573db748dec9659874d7d2087cda2ae165eacb9.png">as
+their values and weight respectively. Suppose that the maximum
+knapsack weight is given as<img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">. Then,</p>
+<p><img src="../imgs/e2fd617506c322dbf1f03b30c99336ae0bed1d37.png">
+<img src=
+"../imgs/d6c4493a3fd8d169735338f83e02fc6301b1d7d7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now consider the linear-time algorithm to find the optimal
+solution to the given variant of the knapsack problem.</p>
+<p><b>Greedy-Type-Algorithm:</b></p>
+<p>//Initialize the knapsack weight</p>
+<p>1 <img src=
+"../imgs/247353086f95e33042eceaa6afb6469c2ee5c23c.png"></p>
+<p>// Initialize the content of knapsack with NULL</p>
+<p>2 <img src=
+"../imgs/bef3e0f654d39eb377037418fca42213c246b13a.png"></p>
+<p>//for loop is used for iteration till less than equal to
+<img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"></p>
+<p>3 <img src=
+"../imgs/a49570dfcacecd66fdc795fb5c2386f771ca8b4d.png"></p>
+<p>//if conditional statement is used to check” is the sum of
+weight is less than</p>
+<p>//or equal to the maximum knapsack weight”.</p>
+<p>4 <img src=
+"../imgs/0a4756c6d6acfa1caa80831a67ded5fb8578a996.png"></p>
+<p>//if the above if condition is true then increase the weight</p>
+<p>5 <img src=
+"../imgs/22b1e1041877801503e2610c28382df6229feace.png"></p>
+<p>6 <img src=
+"../imgs/f02b6f7ba9b33e979a5d9b2a049e116f279cb1e2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The above algorithm finds the optimal solution to the given
+variant of the knapsack problem. The proof of correctness of the
+algorithm generally consist two steps:</p>
+<p>• The greedy choice property.</p>
+<p>• The optimal substructure property.</p>
+<p><b>The greedy choice property:</b></p>
+<p>• Assume that the knapsack load is denoted as<img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">. Therefore,
+it can be shown that the one can assume <img src=
+"../imgs/e37456a8c2720bd18bb08dbf06633bc924b2e0f2.png">without
+losing of generality.</p>
+<p>• Actually, if <img src=
+"../imgs/64478f828f96b015ab7f58077c7b9476c5905b27.png">, assume the
+smallest index of an item of <img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">be <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">.</p>
+<p>• Now, consider the packing<img src=
+"../imgs/14f9137e0cdf71b598195bc0dbb5ca513eb94441.png">.</p>
+<p>• As, <img src=
+"../imgs/98d302d6fe943a2347e893b0de95064c8971aa5b.png">, then
+<img src="../imgs/f9b76b06a36368a6508dfdd0ceb79dca9bc10e20.png">,
+therefore <img src=
+"../imgs/f3371977d72eeb44259c38a26d171ff1be476491.png">will be a
+legal packing.</p>
+<p>• In the same way, <img src=
+"../imgs/24581a4f70af93d0acc76220a718fd399ffdc00b.png">which
+implies that<img src=
+"../imgs/876431e12213225e5b822e9dc19f19251e24580a.png">. Therefore,
+<img src="../imgs/f3371977d72eeb44259c38a26d171ff1be476491.png">
+will also be optimal.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The optimal substructure property:</b></p>
+<p>• Now consider for the optimal packing <img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">which
+consists<img src=
+"../imgs/e37456a8c2720bd18bb08dbf06633bc924b2e0f2.png">, the
+packing <img src=
+"../imgs/444a018124df0ba8742c4ec17d62146810d940fa.png">is optimal
+for the given item <img src=
+"../imgs/acc764c628174ed89ee53ef22d024b8980eb6a50.png">and
+<img src="../imgs/9ab5ddb5c688419208891659954bb8efaf92cb1c.png">.</p>
+<p>• Actually, if <img src=
+"../imgs/aacb73b0de8011666a64b152c1e2f171b6119053.png">is not
+optimal, which a user can enhance the original packing<img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">by
+enhancing<img src=
+"../imgs/aacb73b0de8011666a64b152c1e2f171b6119053.png">.</p>
+<p>The algorithm satisfies both greedy choice and optimal
+substructure properties.</p>
+<p><b>Therefore, the algorithm is correct and finds the optimal
+solution to the present variant of knapsack problem.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Algorithm to find the shortest possible root using greedy
+approach</b></p>
+<p>The optimal strategy of the given scenario should be a Greedy
+one.</p>
+<p>Suppose there is <i>k</i> refilling locations beyond the start
+that are within <i>m</i> miles of the start. The greedy solution
+chooses the <i>k</i><sup>th</sup> location as its first stop. No
+station beyond the <i>k</i><sup>th</sup> works as a first stop.</p>
+<p>Since Professor Gekko would run out of water first. The
+professor will try to cover the maximum distance before his water
+runs out.</p>
+</div>
+<hr>
+<div class="answer">
+<p>At Grand Forks, the professor has all the possible routes in
+front of him.He now first eliminates the stops which are more than
+<i>m</i> miles away from him.</p>
+<p>From the rest of the stops, he will choose the stop that
+traverses the maximum distance that is less than <i>m</i>.</p>
+<p>Doing this for all the further stops, the Professor will be able
+to stop at minimum stops.</p>
+<p>The algorithm for this is given below:</p>
+<p>The algorithm below gives the minimum number of water stops that
+the professorcan go through.</p>
+<p>MIN-WATER-STOP(<i>N</i>)</p>
+<p>1 //Initialize the distance of current stops to 0</p>
+<p>distance_current = 0;</p>
+<p>2 //for loop to trace all the stops</p>
+<p><b>For</b> stops 1 <b>to</b> <i>n</i></p>
+<p>3 //condition to check whether the distance is more than 2
+miles.</p>
+<p><b>if</b> (distance_current + distance_to_next_stop&gt; 2
+mile)</p>
+<p>4 //Mark the current stop, means the stop should be there</p>
+<p>mark_current_stop();</p>
+<p>5 //Make increment in the number of stops</p>
+<p>number_of_water_stops++;</p>
+<p>6 //Make the distance_current equal to 0 so that in other
+iteration the distance</p>
+<p>//remain 0</p>
+<p>distance_current = 0</p>
+<p>7 <b>else</b></p>
+<p>8 //add the distance of next stop in the current distance.</p>
+<p>distance_current = distance_current + distance_to_next_stop;</p>
+<p>9 //after calculating the stops, return the number of marked
+stops.</p>
+<p><b>Return</b> marked_stop</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the algorithm given above, the water stop is made by
+professor if the distance between the upcoming refill and last
+refill is more than 2 miles. If he can easily reach to next stop,
+there is no need to make any stop there.</p>
+<p>So, this leads to the property of sub-optimality, this property
+makes <i>m</i> number of minimal stops.</p>
+<p>Suppose that there exists another solution with requirement of
+<i>m</i>–1 stops. It is not possible to cover the distance when a
+stop is omitted because the water will not be there. It is because
+the distance will become more than 2 miles.</p>
+<p>If the number of available stops is represented by <i>n</i>, the
+complexity of the algorithm can be calculated as below:</p>
+<p>If <i>n</i>=1, then the loop would be running only one time
+making the time:</p>
+<p><img src=
+"../imgs/cc475bd6af5a4e52fd2a727d69497f4e5c24e684.png"></p>
+<p>If <i>n</i>=2, then there would be 2 repetitions of the loop and
+the time taken would be:</p>
+<p><img src=
+"../imgs/78e6fb31fea87000715591c242a613f554fba4fe.png"></p>
+<p>…</p>
+<p>…</p>
+<p>For the n repetitions of the loop there would be <i>n</i>
+calculations and the time taken would be equal to</p>
+<p><img src=
+"../imgs/ad3d6c9a6ec18ce2703d223ad7ea0560b4315aa4.png"></p>
+<p>Thus the running time of the algorithm for <i>n</i> stops would
+be<img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>This greedy algorithm can be described to solve the finding unit
+intervals problem. At each stage, it finds an interval <img src=
+"../imgs/1c0dbec18437ca72d2a36fd03bd5d4f6adc2a521.png"> and a new
+optimal set to solve (smaller than earlier set), which contains the
+elements not covered in the interval<img src=
+"../imgs/1c0dbec18437ca72d2a36fd03bd5d4f6adc2a521.png">.</p>
+<p>The following algorithm describes who to find the smallest set
+of unit-length interval that covers all the points in the given
+set.</p>
+<p><u>Algorithm</u>:</p>
+<p>1. Sort the points in the given set of points on real line <i>X
+=</i><img src=
+"../imgs/8747a6750fe3f2cb6889a1d23a61b3958f459d36.png">.</p>
+<p>2. The first interval is <img src=
+"../imgs/5f066c796f4bdf24eeeb596aafbf462f8067fdce.png">. Add the
+interval to a set <i>UI</i>, which is initially empty.</p>
+<p>3. Remove all the points, which are not covered in the unit
+interval <img src=
+"../imgs/5f066c796f4bdf24eeeb596aafbf462f8067fdce.png">.</p>
+<p>4. Repeat step 2 and 3 until the given set is not empty.</p>
+<p>5. Return the set <i>UI</i>, which is the small set of
+unit-length closed intervals that covers all the points in the
+given set <i>X</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Pseudo code:</b></p>
+<p>GREEDY-FIND-UNIT-INTERVALS(<i>X</i>)</p>
+<p>1. Sort the points in the set <i>X</i> such that <img src=
+"../imgs/0a6cd3330473481637308845d37a4447e8318e2b.png"></p>
+<p>2. Let <i>UI</i> be the set and initially <i>UI</i>= <img src=
+"../imgs/d06cabb9f2d512d54341c588dc5c272985617647.png"></p>
+<p>3. <b>while</b> <i>X</i> ≠ <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png"> //repeat
+the loop until the set <i>X</i> is not empty</p>
+<p>4. <img src=
+"../imgs/2dd171d6b3f50d40bcaa9da072e6ab7951e7504a.png">= smallest
+number in the set <i>X //</i> <img src=
+"../imgs/2dd171d6b3f50d40bcaa9da072e6ab7951e7504a.png">=first
+element in <i>X</i></p>
+<p>5. <img src=
+"../imgs/721ee55505f93b128e322e399411f145a47a02d0.png"> //add the
+unit interval <img src=
+"../imgs/1c0dbec18437ca72d2a36fd03bd5d4f6adc2a521.png"> to
+<i>UI</i></p>
+<p>6. <b>for</b> i=0 to <i>X.length</i></p>
+<p>7. <b>if</b> <img src=
+"../imgs/1f7d619cec824feb4fabd7424a773996f783e837.png"><b>and</b>
+<img src=
+"../imgs/86525144707e2e35b7c2989137ed4114100c9124.png"></p>
+<p>8. remove the point <img src=
+"../imgs/5601276658079e221fb31c45e40af9e09c021203.png"> from the
+set <i>X</i></p>
+<p>9. <b>return</b> <i>UI</i></p>
+<p><b>Proof of correctness:</b></p>
+<p>Since the given set is sorted, <img src=
+"../imgs/2dd171d6b3f50d40bcaa9da072e6ab7951e7504a.png">=
+<i>x</i><sub>1</sub>, where <i>x</i><sub>1</sub> is the first
+element in the given set <i>X</i>. Then each time an interval
+<img src="../imgs/1c0dbec18437ca72d2a36fd03bd5d4f6adc2a521.png">is
+found. That is, each time at least one
+element(<i>x</i><sub>1</sub>) is removed from the set and a new sub
+problem or a subset <i><img src=
+"../imgs/d131678ffb04c91a26fe1ac15e1e2e6fd2492515.png"></i>(i.e.
+<i><img src=
+"../imgs/d131678ffb04c91a26fe1ac15e1e2e6fd2492515.png"></i><i>=</i><i><img src="../imgs/8187f1870bb8192bc36d1fddb43f8355b63e9b34.png"></i>-
+<i>x</i><sub>1</sub> ) is produced. Therefore, each time the
+algorithm produces an optimal solution (a unit-length interval).
+When the set <i>X</i> is empty, the set <i>UI</i> contains the set
+of unit-length intervals that cover all the given points.</p>
+<p>Optimal substructure is important for greedy algorithms. The
+above GREEDY-FIND-UNIT-INTERVALS algorithm have optimal
+substructure, because each time a unit interval is found from the
+subset, the final solution is the union of all the intervals found
+in the sub problems.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider <i>n</i> be the number of items, valuable load<img src=
+"../imgs/ba4bdfd6ea5721a3d244be4b7c9bc4d7cbb04565.png">, and the
+weight <img src=
+"../imgs/2016c4bd98bb76722e33502db621af3e91c527ae.png"> of the item
+<i>j</i> in the knapsack fractional problem.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Use a linear-time quicksort- like median selection algorithm to
+calculate the median <i>m</i> on the ratio <i><img src=
+"../imgs/fa45df1ac9ac04a163051a8f1b5c43a4d9b2a269.png"></i>, for
+every <img src=
+"../imgs/752b872909fde60fdfe92fc5ee6a8a0123478cdb.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Sorting these ratio into decreasing order and added the item
+into the knapsack greedy.</p>
+<p>Initially start, with largest ratio and then added the items int
+the left blank space.</p>
+</div>
+<hr>
+<div class="answer">
+<p>If there is any space left, then fractional of these items until
+to fit the knapsack.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Knapsack problem requires running time is <i>O(n log n)</i> due
+sorting the step.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Avoid the sorting step, using the quicksort-like median
+selection algorithm to solve the knapsack problem in the linear
+time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Consider the set</b> <img src=
+"../imgs/ab088d6a6e040913862467de04db1eaafa91a4b8.png"> be the
+ratio of valuable load/ weight.</p>
+<p><b>Suppose, input of the knapsack:</b> A set of m of n ratios,
+with knapsack capacity W.</p>
+<p><b>Assume expected output:</b> A set of items, to show the
+optimum solution of knapsack.</p>
+<p>There are some steps to solve the fractional knapsack problem
+into the O(n) time.</p>
+<p><b>Step 1:</b> Choose an element <i>k</i> from the set <i>m,</i>
+using quicksort-like median selection algorithm.</p>
+<p><b>Step 2:</b> Evaluate these cases one by one is as shown below
+according to the condition and set the fraction maximization
+knapsack value:</p>
+<p><b>Case 1:</b> <b><img src=
+"../imgs/7ca32e12900868d5357dc33416f9052e1925b6cc.png"></b></p>
+<p><b>Case 2:</b> <b><img src=
+"../imgs/4b0ebd3dcff28d0867c2279cf7efacab38c7ec72.png"></b></p>
+</div>
+<hr>
+<div class="answer"><b>Case 3:</b> <b><img src=
+"../imgs/243bd974fefe3cba5e8f291ca47247de09af04ba.png"></b>
+<p><b>Step 3:</b> When at most valuable load weight W1 and
+remaining the weight w<b>.</b></p>
+<p><b>if</b> <i><b>W</b></i> <sub>1</sub> <i><b>&gt; W</b></i></p>
+<p><i>then recursive the case 1, and after that return the computed
+solution.</i></p>
+<p><b>else</b></p>
+<p><b>while</b> (Check there is blank space available in</p>
+<p>knapsack and m2 still have some item(element))</p>
+<p><i>then add some items from the m2</i></p>
+<p><b>if</b> (<i>when knapsack is full</i>)</p>
+<p><i>return the items in case 1 and the item just added from the
+case 2.</i></p>
+<p><b>else</b></p>
+<p><i>now, add the optimum knapsack capacity</i> <i><img src=
+"../imgs/a6ee7d134a565be462990b0847abce5f322ac3ad.png"></i><sub>.</sub></p>
+<p><i>recursion on the case 3 and then return the items in</i>
+<i><img src=
+"../imgs/2caa3850ddea1818b70b86921a736d18f1f0476d.png"></i>
+<i>.</i></p>
+<p><i>and the items returned from the recursive call.</i></p>
+<p><b>Step 4:</b> Repeat the above steps until found the optimum
+knapsack result.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To analyze this algorithm, recursive the fraction knapsack 0-1
+problem. Firstly, apply the quicksort-like median algorithm to
+selection the median element. When there is a recursive call for
+any above given three cases. After that check, the half of the
+knapsack problem of the recursive size.</p>
+<p>Thus, the problem solved in linear time by the recurrence
+<img src="../imgs/025a2c2dd0bcc8470c544a86d46b9b68fb7680cc.png">
+whose solution is <img src=
+"../imgs/77b0c0e16d7317e847a5e0374e94b7afee6fe9b9.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider <i>A</i> and <i>B</i> are two sets contain <i>n</i>
+positive elements each. Now use following MAX-CALCULATE ()
+algorithm to maximize the payoff.</p>
+</div>
+<hr>
+<div class="answer">
+<p>MAX-CALCULATE( )</p>
+<p>1. Consider <img src=
+"../imgs/201a0e5818e8021a3f95dfcff0ab4bc8cfb597d8.png"> and
+<img src="../imgs/71ae8b8a3ef8f65681a9d8fe9956e7e46947ac2b.png">are
+two arrays contain <i>n</i> elements.</p>
+<p>//call sorting algorithm to sort <i>n</i> elements of both array
+either in increasing order or</p>
+<p>//decreasing order</p>
+<p>2. Call MERGE-SORT (A)</p>
+<p>3. Call MERGE-SORT (B)</p>
+<p>4. <img src=
+"../imgs/83dd5d8c0767526e3a091827fb207a1190110841.png"></p>
+<p>5. <b>for</b> <img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png"><b>to</b>
+<i>n</i></p>
+<p>//use <i>pow</i>() function to calculate power and then multiply
+it with <i>payoff</i></p>
+<p>6. <img src=
+"../imgs/e20bef69b4ddfebd42ac3417bf46956cb651927a.png"></p>
+<p>7. <b>return</b> <img src=
+"../imgs/f49aad2a72553fa8a3ce033b02198a0636e40af3.png"></p>
+<p><b>Explanation:</b></p>
+<p>• In line 2 and 3, the above program sort both of the arrays in
+increasing order using merge sort.</p>
+<p>• In line 4, program declares the variable <i>payoff</i> to
+calculate the amount and initialize it to 1.</p>
+<p>• After that, the <i>for</i> loop calculates and multiply the
+value of <img src=
+"../imgs/b03244d2d67ebe22b51f4463cf6b548a91bd6193.png"> and
+multiply it to <i>payoff.</i></p>
+<p>• In the line 7 program returns the calculated value.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof of Correctness:</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>• Consider any indices <i>i</i> and <i>j</i> and<img src=
+"../imgs/8b9ae480312858e05352d287d62aa387b3fee795.png">.</p>
+<p>• Now consider the element of A and B at these indices. Since
+both of these arrays are sorted <img src=
+"../imgs/5876405b72a225dc93030d0684623321279c1ac5.png"> and
+<b><img src=
+"../imgs/4c936a57a567f369322a4ddd1b3784fd15b2840d.png"></b><b>.</b></p>
+<p>• Also <b><img src=
+"../imgs/26504ad8832b37037f0d59a5c00c3f286399f4eb.png"></b> and all
+elements in array <i>A</i> are non-negative integers.</p>
+<p>• So, raising the values of <img src=
+"../imgs/845652c6e9fad8b5fcf5ebf726d25eac09e7a65c.png"> to
+<img src="../imgs/e03b1a3d88f96977e1da37ca02498b091aec8b15.png">,
+user will have</p>
+<p><img src="../imgs/b3788cc703fe684511dcfb5a305777bfff119cac.png">
+…… (1)</p>
+<p>• Multiplying both side with <img src=
+"../imgs/ff4fd7d3b824f4a89ed95c5b9f7d6f30febd7286.png"> in equation
+(1) , the value will become</p>
+<p><img src="../imgs/79024f131311816f45725a60583448555ddfa86b.png">
+…… (2)</p>
+<p>• From equation (2), the value will produce the best result.</p>
+<p>• Also the order of multiplication does not matter, so one can
+sort the above arrays in decreasing order too.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time complexity:</b></p>
+<p>• Program uses merge sort twice to sort the arrays and uses a
+single loop which goes from 0 to <i>n.</i></p>
+<p>• So, the complexity of the above program is as follow:</p>
+<p><img src=
+"../imgs/86e7a5d3848608b583b16008a128ca16b49ac836.png"></p>
+<p><b>So, the complexity of above program is</b> <b><img src=
+"../imgs/0380391dc4e0607207e1d98146c472f0deaa245b.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>Consider the following two sets:</p>
+<p><img src=
+"../imgs/3c7d76e98657dec90919ec7d9e7c15e99307dcc1.png"></p>
+<p>• Both the sets <i>A</i> and <i>B</i> contains 4 elements,
+therefore the value of <i>n</i> becomes 4.</p>
+<p>• According to 2<sup>nd</sup> and 3<sup>rd</sup> line of
+MAX-CALCULATE() algorithm, call MERGE-SORT() procedure to sort
+elements of <i>A</i> and <i>B</i> set.</p>
+<p>• The element of A and B set after sorting is as follow:</p>
+<p><img src=
+"../imgs/38a75d9f27a44cd8b59c7277a8f93952f760b836.png"></p>
+<p>• Now, according to 5<sup>th</sup> line a <b>for</b> loop get
+started. Before the first iteration of <b>for</b> loop the value of
+<i>payoff</i> is 1.</p>
+<p>• In first iteration,<img src=
+"../imgs/ffad6c5bc309f8d8cea4b01636a59d510041ca02.png">is
+calculated with the help of <i>pow</i>() function and then multiply
+resultant with <i>payoff</i> value. At the end of first iteration
+the value of <i>payoff</i> variable becomes 2.</p>
+<p>• Similarly, after second iteration the value of <i>payoff</i>
+variable becomes 128.</p>
+<p>• After third iteration the value of <i>payoff</i> variable
+becomes 995328.</p>
+<p>• After fourth iteration the value of <i>payoff</i> variable
+becomes 2087354105856. After the 4<sup>th</sup> iterations the
+<b>for</b> loop get terminates.</p>
+<p>At the end, MAX-CALCULATE () procedure returns 2087354105856
+value to its calling program which is greater than any other
+arrangement.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

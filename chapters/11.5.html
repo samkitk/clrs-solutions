@@ -1,0 +1,124 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 11.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Inserting the keys into hash table</b></p>
+<p>Open addressing is the hashing technique in which for inserting
+an element in the table firstly we search for the elements if it is
+already contained in it, the search returns either the element or
+the free space in the array to fill that element.</p>
+<p>In uniform hashing technique sequence of elements to be search
+can be any of the <i>m</i>! permutation in<img src=
+"../imgs/fb61a91ac1ca363983109d4c937b512940544c91.png">that is this
+technique gives the method of searching which search in the full
+list for the single element in the generalized way.</p>
+</div>
+<hr>
+<div class="answer">
+<p>When the first key inserted, it has <i>m</i> choices out of
+<i>m</i>, the second key has <img src=
+"../imgs/6dcf22d86eb9ddef11aae10090f85303d3817abf.png">choices out
+of <i>m</i> so on, key <i>n</i> has <img src=
+"../imgs/0d14d079b630223c62e9fdfc0eb93d88326d1e42.png">choices out
+of <i>m</i>. The insertion of these keys is independent of each
+other,</p>
+<p>Thus probability:</p>
+<p><img src=
+"../imgs/b94d84e555a0b701a9a73db019f271b7c07287b8.png"></p>
+<p><img src="../imgs/5a8cb72353c9993588222bb1888576ce47d99b72.png">
+……(1)</p>
+<p><img src=
+"../imgs/7d9c6bec5d50f4f170da10ae202c6f6ad9130454.png"></p>
+<p>Hence from equation (1) the probability is as:</p>
+<p><img src=
+"../imgs/dd9e43399b86db0dc146e082314cad7dc4bc7978.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>By theorem for the <i>n</i> keys to be inserted in a table where
+<img src="../imgs/4505a46e909abcbd43f0ebd75094be81ff406179.png">
+then the probability of occurring a match in the table is less
+than<img src=
+"../imgs/9c740480062e33718d165ce2da41f7539380e600.png">, it is very
+efficient to find the hash function for which there is no
+collisions in a static set <i>K</i> containing <i>n</i> keys.</p>
+<p>When the number of key values <i>n</i> exceeds<img src=
+"../imgs/612f571bb0e43d0dc7f7090c4a69045b6037f000.png">, that is a
+hash table of size <img src=
+"../imgs/c44527e5a18bad35d42cb5e493ca7cb7a3df12f0.png">that is
+<img src="../imgs/c44527e5a18bad35d42cb5e493ca7cb7a3df12f0.png"> is
+excessive. Hence in this case we use the hashing technique at the
+two levels, in the first level or at the outer level the hash
+function <img src=
+"../imgs/3daa92dc56f95d8dbfb8ba9ed9851a3cc5c44bff.png">to hash the
+keys into <img src=
+"../imgs/2eacaefd4575b3f34ff2d315f3489f6489ecd536.png"> slots.
+Then, if <img src=
+"../imgs/b5fd09176a9e66367563c6c92ebeb4c061041877.png">
+the<i><img src=
+"../imgs/a4ed946854c4ef0e2b85dbe925ee0e036f6acb5e.png"></i> keys
+hash to slot <i>j.</i> we use a secondary hash table <img src=
+"../imgs/3053f5896bc3adcb6a628d6687fb6186f01cd00f.png"> of size
+<img src="../imgs/ef1bd6e76308276f895fdc72f67a94f72b61a366.png"> it
+gives a set having invariant or constant time without any
+collisions in the table.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Hence, in a hash table of capacity <i>m</i> for inserting
+<i>n</i> keys by open addressing and uniform hashing techniques
+then the probability of collisions to occur is <img src=
+"../imgs/babc861e5f246973f1c6a05f12ae1f2e9fb0f4b8.png">where<img src="../imgs/61fe01d0e94943623db1e9d3d0cb15882f2262dc.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

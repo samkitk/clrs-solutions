@@ -1,0 +1,586 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 22.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/c770a72753c3aeba3027885bbab908a797edd464.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d6aaff2595e6c6f686f3f6ca3e9e21d345726fe6.png">
+<hr>
+<img src="../imgs/8a82b78ac6995bbb6c2c2bc307b6805cc4a0b4f9.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following graph to prove that simple algorithm does
+not produce correct result always.</p>
+<p><img src="../imgs/edbc3b93af669cece51280124a596ae5cfd16b58.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\24.9.2015\Bibek 2254\Image\4.png"></p>
+<p>• Assume that the first DFS is started at the point<img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">. Then the
+order of increasing finishing times is <img src=
+"../imgs/0bd2c9de6926a90cd40ca13651bc92e2d2917cee.png"> after the
+first DFS.</p>
+<p>• If the original graph is given to the second DFS and the
+vertices scanning is performed in the order of increasing finishing
+time(that is, <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">is the
+starting point), then the algorithm gives a SCC (Strongly connected
+component) <img src=
+"../imgs/d12a409c5aacec36793a23624e04781a03d923a0.png">.</p>
+<p>• But this is incorrect result. The graph consists two strongly
+connected components (SCCs) <img src=
+"../imgs/d13b73d870a20292879d3308c7113af693be217a.png">and<img src=
+"../imgs/03ff1922f1fe6daa205e75049c3366f0efb52bee.png">.</p>
+<p><b>Hence, the simpler algorithm may not always produce the
+correct results.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a directed graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">. In a
+directed graph, the strongly connected relationship is an
+equivalence relation.</p>
+<p>• Suppose, <img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png">denotes the
+transpose of component graph, then as per the equivalence relation,
+<img src="../imgs/a244a4175949ace853a3cd8598199503b03de723.png">and
+<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">will always
+have the same strongly connected component.</p>
+<p>• Thus, <img src=
+"../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png">and
+<img src="../imgs/db52f9c272e43de10894193c393f897cb43e3b10.png">have
+the same vertex sets and therefore, the vertex sets of <img src=
+"../imgs/202cefd31e10f5f76ae4fe699196ba12dbd970bd.png"> and
+<img src="../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png">are
+the same.</p>
+<p>• This implies that their edge sets are the same.</p>
+<p>• Since, <img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png"> is the
+transpose of the graph <i>G</i>, <img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png"> has the
+edges that are reverse of edges in the G.</p>
+<p>• C is the strongly connected component of G if and only if it
+is strongly connected component of <img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png"></p>
+<p>• <b>The key property of component graph is as follows:</b></p>
+<p>Consider <i>G</i> is a directed graph and <img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png"> is a
+transpose of the directed graph <i>G</i>.</p>
+<p>Assume, directed graph <i>G</i> has the strongly connected
+components<img src=
+"../imgs/616fb0875146461914a118a7faade6b5592463fa.png">. That
+is,<img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png">also have
+the same connected components. Consider <img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png"> has
+vertices<img src=
+"../imgs/7d6803114dab7dffec752eb3d879123934232190.png">.</p>
+<p>However, for vertices <i>x</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png"><i>C</i><sub>i</sub>
+and <i>y</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>C</i><sub>j</sub>, if there is an edge (<i>v</i><sub>i</sub>,
+<i>vj</i>) in <img src=
+"../imgs/202cefd31e10f5f76ae4fe699196ba12dbd970bd.png">, then there
+is an edge <img src=
+"../imgs/02b2458dcbedd7e81415b9787ff6fbfb0adf82cb.png">in the
+component graph <img src=
+"../imgs/db52f9c272e43de10894193c393f897cb43e3b10.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proving</b> <b><img src=
+"../imgs/452387aa6721c93500de831cb729badf3462d14b.png"></b>
+<b>:</b></p>
+<p>Consider the above key property to prove the given equation.</p>
+<p>• If there is an edge (<i>x</i>, <i>y</i>) in <i>G</i> for
+<i>x</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png"><i>C</i><sub>i</sub>
+and <i>y</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>C</i><sub>j</sub>, there is an edge (<i>y</i>, <i>x</i>) in
+<img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png">.</p>
+<p>• Since, for <i>x</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png"><i>C</i><sub>i</sub>
+and <i>y</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>C</i><sub>j</sub> and (<i>x</i>, <i>y</i>) in <i>G</i>, there is
+an edge (<i>v</i><sub>i</sub>, <i>vj</i>) in <img src=
+"../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png">.</p>
+<p>• Similarly, for <i>x</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png"><i>C</i><sub>i</sub>
+and <i>y</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>C</i><sub>j</sub> and (<i>y</i>,<i>x</i>) in <img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png">, there must
+be an edge (<i>v</i><sub>j</sub>, <sub>vi</sub>) in the component
+graph of <img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png">, <img src=
+"../imgs/16f7fbb34f7fc3a114ab08bff3c3cbd5cf873035.png">.</p>
+<p>• It is observed that the edges in the component graph of
+<img src=
+"../imgs/a244a4175949ace853a3cd8598199503b03de723.png">,<img src=
+"../imgs/16f7fbb34f7fc3a114ab08bff3c3cbd5cf873035.png">are reverse
+of edges in the component graph of <i>G</i>, <img src=
+"../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png"> .</p>
+<p>• That is, by calculating transpose of <img src=
+"../imgs/16f7fbb34f7fc3a114ab08bff3c3cbd5cf873035.png">, <img src=
+"../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png">can be
+obtained.</p>
+<p><b>Hence, for any directed graph</b> <b><img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"></b> <b>,
+the transpose of the component graph</b> <i><b>G</b></i>
+<sup>T</sup> <b>is the same as the component graph of</b>
+<i><b>G</b></i> <b>. That is,</b> <b><img src=
+"../imgs/9ebefaa06e9a7efb51471f652d869158925872f5.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Algorithm to Compute the Component Graph of a Directed
+Graph</b></p>
+<p>Considering directed graph <img src=
+"../imgs/b15ebf4f0d663cd966ad30a2317628282ba5a7aa.png"> for finding
+the algorithm which computes its connected components in <img src=
+"../imgs/142a5963fbfefe75a0b4051686e8906858bc985d.png"> time. For
+this it is first confirmed that all the components are connected by
+at least one edge between them.</p>
+<p>Connected component or strongly connected component <i>C</i> of
+a graph <i>G</i> are those components in which for vertices
+set.</p>
+<p><img src=
+"../imgs/ee0d495ddd610defe1789ec754891a8ce5b84379.png"></p>
+<p>Such that for a pair of vertex (<i>u, v</i>) there would be the
+edges from <i>u</i> to <i>v</i> and <i>v</i> to <i>u</i>.</p>
+<p><img src="../imgs/cf5324c356a22fadd59ee5b0290aee49615af8b8.png">
+and<img src=
+"../imgs/2dd63de11ff851916540fc2e0e91a91d65568f23.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>It means in a connected component <i>C</i> for vertices <i>u</i>
+and <i>v</i>, <i>u</i> can be reached from <i>v</i> and vice versa.
+In more simple words it can be said there are edges in both the
+directions from <i>u</i> to <i>v</i> and from <i>v</i> to
+<i>u</i>.</p>
+<p><img src="../imgs/b9b9179d569a4ee7eeafe0de2d7f144864ed5ccd.png"
+alt="C:\Tiiffs\2254-22.5-5E..tif"></p>
+<p><b>Directed graph</b></p>
+<p><img src="../imgs/5f47725b7715b8cc180fa4e53de5af53685b925e.png"
+alt="C:\Tiiffs\2254-22.5-5E..tif"></p>
+<p><b>Strongly connected graph</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Procedures:</b></p>
+<p>To create the algorithm the combination of two procedures can be
+used as:</p>
+<p>One for creating the ordered set of all the vertices from
+different strongly connected components in the graph and the other
+one for getting the distinct strongly connected components from
+that set.</p>
+The output of the procedure should be considered to be the
+arrangement <i><img src=
+"../imgs/5a3b4267bbd6f0d1d8e2b1e9796605b9498278f2.png"></i> that
+yields the number of components that are strongly connected and
+having the vertex <i>u</i> for each <i>u</i>. Without losing its
+general form, suppose that <i><img src=
+"../imgs/5a3b4267bbd6f0d1d8e2b1e9796605b9498278f2.png"></i>is an
+integer that gets any value from the set<img src=
+"../imgs/1132c48a9df039e74e249b9bc99a24c0d9c76716.png">.</div>
+<hr>
+<div class="answer">
+<p>To calculate the time taken by the algorithm,
+consider<i><img src=
+"../imgs/7cd5bb5822255c1e9756a30b1f90b78127ddf0f7.png"></i>denotes
+the number of components that are strongly connected, containing
+vertex <i>u</i>, for itself. Construct the set <i>T</i>; it is a
+set retaining similar values many times.</p>
+<p><img src=
+"../imgs/fa69ab7dc15f25cabb33dd2f51fb006019e15f41.png"></p>
+<p>The values that it contains are integers in the range from 1
+to<img src="../imgs/7a22e95a201409abba0115b96fa688683f4c3daf.png">;
+the time taken in sorting these values is<img src=
+"../imgs/b27008173cd94a59017d942651b3d9272fad74bf.png">.</p>
+<p>In the sorted multi-set <i>T</i> for each iteration an element
+<i>x</i> is found that is distinct from the one before it, add
+<i>x</i> to<img src=
+"../imgs/5c4652849688dc416c219100cef654eae8cf57fb.png">. It
+takes<img src=
+"../imgs/b27008173cd94a59017d942651b3d9272fad74bf.png"> time in
+creating<img src=
+"../imgs/5c4652849688dc416c219100cef654eae8cf57fb.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Complexity and explanation:</b></p>
+<p>Construct the set having ordered pairs of edges of two different
+connected components</p>
+<p><img src=
+"../imgs/5bc4320894323c7b8d6b72e1526854abfe6f19cf.png">.</p>
+<p>To construct this set in<img src=
+"../imgs/c248f2826efa3c9eea9b018e2d0e55b13c066bbd.png">time by
+visiting or scanning all edges in the edge set <i>E</i> and
+searching the<img src=
+"../imgs/7cd5bb5822255c1e9756a30b1f90b78127ddf0f7.png">and<i><img src="../imgs/d6fbaba598386d4a507c3adf9db67d858b2320bb.png"></i>
+for each edge<img src=
+"../imgs/97e0ff82ea75e79a1c4fccbd7ec35209ba4f5e81.png">. One thing
+to be noted about this set is that it would hold same objects more
+than once.</p>
+<p>Construction of <i>S</i>, remove all elements that have the
+form<img src=
+"../imgs/57cad25a2c6006a6d4d2560ea8e937a7cd327371.png">.
+Alternatively, when <i>S</i> is constructed, do not put an element
+in <i>S</i> when an edge <img src=
+"../imgs/955771547392df46efe298ad9d3b30ec2c9329de.png">is to be
+found or which<img src=
+"../imgs/a03391079797c46879608ec8269b353a0b78be59.png"> . Now,
+<i>S</i> has at most<img src=
+"../imgs/75f975da48d3309727fac0a193e9a099b4efb1f5.png"> elements.
+In the repeating execution of sort the time taken in execution
+is<img src="../imgs/6f0f85ea834e7d376a1f63f9e95679d14b6a3614.png">.
+This is because the values being sorted are integers from 1
+to<img src=
+"../imgs/2fb1b726493716fdcf3ff66dc5a0ad33c88c7fff.png">.</p>
+<p>In the set <i>S</i>, which is sorted already, each time an
+element <img src=
+"../imgs/8b721d4df431cd0815eb95fed5c822b5488e8d94.png">is found
+that is not same as the element just before it adds
+element<img src="../imgs/8b721d4df431cd0815eb95fed5c822b5488e8d94.png">to<img src="../imgs/1acf51572fcba61e72ed10d9f9cce71d7881394e.png">.
+It takes <img src=
+"../imgs/925acb9e33987a013730f23eb2975ca640d1b9f1.png">time to
+visit each and every element of <i>S</i> in this way, once <i>S</i>
+has been sorted.</p>
+<p>That is why the total time that would be required to run the
+procedure would be equal to the sum of the time taken by each of
+the above procedures making it<img src=
+"../imgs/142a5963fbfefe75a0b4051686e8906858bc985d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p>The algorithm can be recapitulated as below: The procedure
+COMP-GRAPH finds graphs that are the components of the graph
+<i>G</i>. The procedure uses the procedures COUNTING-SORT and
+RADIX-SORT to sort the concerned sets.</p>
+<p>Refer to the section 8.2 of the book for the earlier one and the
+section 8.3 for the later one.</p>
+<p>COMP-GRAPH (<i>G</i>)</p>
+<p>//store the contents of the set <i>T</i> to an array</p>
+<p>1. Copy elements of multi-set <i>T</i> to an array <i>A</i></p>
+<p>//sort the array <i>A</i> and store the sorted result in array
+<i>T</i>.</p>
+<p>// <i>k</i> is the number denoting total elements in the
+array.</p>
+<p>2. COUNTING-SORT (<i>A</i>, <i>T</i>, <i>k</i>)</p>
+<p>//make the set of ordered pairs of vertices from separate
+strongly connected</p>
+<p>//components</p>
+<p>3. <b>for</b> each edge <img src=
+"../imgs/6ba2b8d2893af01f8aaa22a39724b18c1d99322b.png"></p>
+<p>Construct a set <i>S</i> = (<i>x</i>, <i>y</i>)</p>
+<p>Here <img src=
+"../imgs/37daffaf7fd52d23ae5f3a7e920e14a41391e883.png"></p>
+<p>//remove the duplicates from <i>S</i></p>
+<p>4. for all <img src=
+"../imgs/30f0b0e41b44f20911561c7c0b361f196136a014.png"></p>
+<p><b>if</b> <img src=
+"../imgs/91c06bff661b13e050f4cf4168205ab336c30a4e.png"></p>
+<p><b>remove</b> <img src=
+"../imgs/ce5ce321b1e9729978cb3d06c8d635bbe0baee37.png"> from
+<i>S</i></p>
+<p>//sort the result</p>
+<p>5. RADIX-SORT (<i>S</i>, <i>d</i>)</p>
+<p>6. <b>add</b> first content of <i>S</i> to
+<i>E</i><sup>SCC</sup></p>
+<p>//insert distinct values in the resultant graph</p>
+<p>7. for remaining<img src=
+"../imgs/f6841e46ea615a521b0f56725313e63b87864725.png"></p>
+<p><b>if</b> <img src=
+"../imgs/d7c15f1a99922e2ccd26dcf6fe63389d3109c320.png"></p>
+<p><b>add</b> <i>p</i>(<i>x, y</i>) to <i>E</i><sup>SCC</sup></p>
+<p>The time taken in executing this algorithm would intuitively be
+equal to the time that has been taken in running the first part and
+the second part of the procedure. That is,</p>
+<p><img src=
+"../imgs/22b4d03f0f448ac83e16ea85cafa7b0665adef2c.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Create a graph <img src=
+"../imgs/a1b5cd229f3a5ac4793221b8fb3dfe29bb44d639.png"> from
+graph<img src=
+"../imgs/e01510fec299806387e7147e057485b547c34064.png"> as
+follows:</p>
+<p>• Replace the edges within each SCC by one simple, directed
+cycle.</p>
+<p>• Identify the redundant edges between SCC’s and remove
+them.</p>
+<p>• <i>k</i> edges within an SCC will have <i>k</i> vertices.
+Hence, a single directed cycle of <i>k</i> edges gives the <i>k</i>
+– vertex SCC with the fewest possible edges.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm to compute <img src=
+"../imgs/a1b5cd229f3a5ac4793221b8fb3dfe29bb44d639.png"> is as shown
+below:</p>
+<p>1. First, identify all the strongly connected components SCC’s
+of <i>G</i>. It will take <img src=
+"../imgs/f360400307d8a0a5dcba54540a184e1736fa7605.png"> time using
+the SCC algorithm. Refer to section 22.5 in the textbook.</p>
+<p>2. Next, construct the component graph<img src=
+"../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png">using the
+information from step 1. It will take <img src=
+"../imgs/f360400307d8a0a5dcba54540a184e1736fa7605.png">. Refer to
+problem 22.5.5 in the textbook.</p>
+<p>3. Initialize<img src=
+"../imgs/84c8472eabd8cdc19a16d474c42837cc442ac274.png">. It will
+take <img src=
+"../imgs/ec5c1d30fb839960faed6f150b1ac906377d4430.png">.</p>
+<p>4. Consider each SCC of <i>G</i>. Let the vertices in the SCC be
+<img src="../imgs/cb23da65cac95f93293f4eeea7a5d912f6c79c97.png">.
+The directed edges <img src=
+"../imgs/b24a60cea512703624f60f10b7efbc5c3e3e3341.png"> are added
+to <img src=
+"../imgs/900a36ca28c35e2d0cb0063b83f06cd982b93e54.png">. A simple
+directed cycle is formed by all the edges that include all vertices
+of the SCC. It will take <img src=
+"../imgs/65ad46afe35b433c7b11ae9d45a81c319db8ed3f.png">.</p>
+<p>5. For each edge (<i>u,v</i>) in the component graph <img src=
+"../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png">, select any
+vertex <i>x</i> in <i>u</i>’s SCC and any vertex <i>y</i> in
+<i>v</i>’s SCC. Add the directed edge (<i>x</i>, <i>y</i>)
+to<img src="../imgs/900a36ca28c35e2d0cb0063b83f06cd982b93e54.png">.
+It will take <img src=
+"../imgs/b99bca0dc7fb81ff2807339c7e023ba093da6655.png">.</p>
+<p>Hence, the total time taken is <img src=
+"../imgs/6071ef1e908b305162d104c0657ed42c5d7174de.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Semi connected graph:</b> a graph <i>G</i> can be called as
+semi-connected graph when all <img src=
+"../imgs/fb9615305d6785f87ee832b30174413c32d4500a.png">pair of
+vertices are reachable from each other (that is vertex <i>u</i> is
+reachable from vertex <i>v</i> or vice versa).</p>
+<p>Consider a graph <img src=
+"../imgs/38b9c6e2abdc2b703a6b08be70698b705c62ac9c.png">having
+<img src=
+"../imgs/fb9615305d6785f87ee832b30174413c32d4500a.png">pair of
+vertices. Use following algorithm to check graph G is semi
+connected or not.</p>
+<p>CHECK-SEMICONNECTED (<i>G</i>)</p>
+<p>1. Call STRONGLY-CONNECTED-COMPONENTS (<i>G</i>)</p>
+<p>2. After that, construct strongly connected components of
+<i>G</i> that is<img src=
+"../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png">.</p>
+<p>3. Topologically sort the graph component that is <img src=
+"../imgs/36f2468a13dd74b6e55451e2b21b600cb9d9a0fa.png">.</p>
+<p>4. <b>for</b> <img src=
+"../imgs/203d083bde014afb90e902e446cb511b73d72b9c.png">to
+<i>E</i></p>
+<p>5. <b>if</b> edges does not exist from <img src=
+"../imgs/bf615e9dbadbee37129b3b7e33eedc3b43e9a7d8.png">to <img src=
+"../imgs/7cf4b4849b1ca32a20109d51f1276759be9ae0df.png"></p>
+<p>6. <b>return False</b></p>
+<p>7. <b>return True</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Refer section 22.5, of chapter 22 from the textbook for
+STRONGLY-CONNECTED-COMPONENTS (<i>G</i>).</p>
+</div>
+<hr>
+<div class="answer">
+<p>Refer section 22.3, of chapter 22 from the textbook for
+DFS(<i>G</i>) and DFS-VISIT(G, <i>u</i>).</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>• At first call the function and then create strongly connected
+components of graph which are reachable from every vertex.</p>
+<p>• After that, sort the components of graph.</p>
+<p>• At last use for loop to check vertices form a linear chain by
+checking existence of edges from vertex <i>i</i> to <i>i</i>+1.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof of algorithm:</b></p>
+<p>Strongly connected component (SCC): It is a maximal set of
+vertices of graph <i>G</i>, in which each pair of vertices are
+reachable from each other.</p>
+<p>• In above CHECK-SEMICONNECTED algorithm strongly connected
+component are constructed.</p>
+<p>• All vertices in graph maximal set of <i>G</i> are SCC. The
+vertices of SCC are reachable to each other. So after sorting when
+these vertices form a linear chain, then this graph is a
+semi-connected.</p>
+<p>• The maximal set of <i>G</i> contains maximum vertices of
+<i>G</i> but does not contain all vertices. So there are some
+vertices which are not part of SCC.</p>
+<p>Hence, it shows that the above algorithm is correct.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time complexity:</b></p>
+<p>• In CHECK-SEMICONNECTED algorithm a
+STRONGLY-CONNECTED-COMPONENTS function is called whose complexity
+is<img src=
+"../imgs/4368c96a564303171973c5ea823a6b5097e1678a.png">.</p>
+<p>• One for loop is also used to traverse the all vertices which
+take <img src=
+"../imgs/41137937758cfdcf7c0102292281cc8faa503d68.png">time.</p>
+<p><b>Hence, time complexity of CHECK-SEMICONNECTED algorithm
+is</b> <b><img src=
+"../imgs/4368c96a564303171973c5ea823a6b5097e1678a.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

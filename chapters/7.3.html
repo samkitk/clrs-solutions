@@ -1,0 +1,218 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 7.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>There is a difference between deterministic algorithms and
+randomized algorithms in calculating running time. A deterministic
+algorithm may have best, worst and average case running times. But
+a randomized algorithm only have expected (or average case) running
+time.</p>
+<p>• When a deterministic algorithm runs multiple times with the
+same input, the running time is same in all executions. Because the
+running time of a deterministic algorithm depends on the input
+provided.</p>
+<p>• Unlike deterministic algorithms, a randomized algorithm makes
+random choices while running. Thus when the random algorithm is run
+multiple times with the same input, the number of steps executed on
+each execution may vary.</p>
+<p>• Therefore the running time of a random algorithm does not
+depend on input, but on random choices that the algorithm made.</p>
+<p>• Thus, regarding randomized algorithms, there is no case of
+best case inputs and worst case inputs. But, the random algorithm
+may choose any one of all possible permutations of the input
+equally likely.</p>
+<p>• Thus, all running times for all possible permutations of input
+are considered for running time calculation. This is equal to
+average-case running time calculation.</p>
+<p><b>Hence, for a randomized algorithm, only the expected (or
+average-case) running time is calculated.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In case of average case behavior of the quicksort algorithm, the
+analysis is done with the assumption that the partitioning is
+completely random because every permutation of the input numbers is
+equally likely.</p>
+<p>However, in practice, the partitioning isn’t as random as
+expected. So, in order to obtain the expected performance,
+randomization can be incorporated. In order to do this, replace the
+call to PARTITION procedure with a call to the RANDOMIZED-PARTITION
+procedure. The RANDOMIZED-PARTITION is turn calls the RANDOM
+procedure.</p>
+<p>So, the call to the RANDOM procedure is done once each time a
+call to the RANDOMIZED-PARTITION is made. Therefore, the number of
+calls to procedure RANDOM is same as the number of calls to the
+RANDOMIZED-PARTITION procedure. So, consider the number of
+RANDOMIZED-PARTITION calls to determine the total number of calls
+to the procedure, RANDOM.</p>
+<p><b>Assumption made for this instance of the problem:</b> It is
+assumed that the elements are all distinct from each other. If they
+are not distinct and all are same, then no call to the RANDOM
+procedure is needed at all. And thus, it defeats the purpose of
+finding the number of calls needed for best case scenario.</p>
+<p>The total size of the input list is<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Worst Case:</b> The worst case in case of quicksort occur
+when the partition returns a sub-list of size 0 and another
+sub-list of size<img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">.</p>
+<p>The partitioning itself takes care of one element which becomes
+the pivot element.</p>
+<p>Then the RANDOMIZED-QUICKSORT is called recursively on both
+these lists independently.</p>
+<p>So, the following recurrence relation determines the number of
+calls made to the RADOM procedure (which is inside the
+RANDOMIZED-PARTITION procedure):</p>
+<p><img src=
+"../imgs/7adc5735762cd7c2d592e91c49a02dc83db24c2a.png"></p>
+<p>To do this partition, one pivot element is chosen using the
+RANDOMIZED-PARTITION procedure. This process takes care of one
+element. This is just one call done in constant time.</p>
+<p><img src=
+"../imgs/42ce139c64e50cd571a1356d850487b71ddc6a79.png">= 0 because
+on a sub-list that is of size = 0, RANDOMIZED-QUICKSORT is not
+called recursively.</p>
+<p>So, the recurrence relation becomes the following:</p>
+<p><img src=
+"../imgs/1da7894959ab93efac6f8f1586555ca3eb562543.png"></p>
+<p>The following observations are made on the above recurrence
+relation:</p>
+<p>• The initial size of the problem is <i>n.</i></p>
+<p>• The size of the problem decreases by 1 each time.</p>
+<p>• Constant cost <img src=
+"../imgs/bd9a30aadee6b053c77ced961bc48e638e1d3b39.png"> is required
+for division of the problem at each stage.</p>
+<p>Thus, to completely eliminate the problem, the problem needs to
+be subdivided <i>n</i> times. And each time incurs<img src=
+"../imgs/bd9a30aadee6b053c77ced961bc48e638e1d3b39.png">. Therefore,
+in worst case, <img src=
+"../imgs/f31e91ee12a01a37f29d173ba6c81f368404e679.png">.</p>
+<p><b>Hence, the number of calls made to the random number
+generator RANDOM in the worst case in terms of</b> <b><img src=
+"../imgs/9ef64217384e6a886c937c748723b6f4a4e3b92e.png"></b> <b>-
+notation is</b> <b><img src=
+"../imgs/95d4d293e2abfc196e50322e6fe890ffd8fc6d9f.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Best Case:</b> The best case in case of quicksort occur when
+the partition returns two sub-lists, each of size at most<img src=
+"../imgs/2bf1db10763a898c094dcc3b68a6cdf904856c3b.png">.</p>
+<p>If <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> is odd then
+the size of the sub problems are<img src=
+"../imgs/7529c5d2fe610e09aea8bc1711bb64b5abfea0e0.png">.</p>
+<p>If <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> is even
+then the size of the sub problems are <img src=
+"../imgs/2bf1db10763a898c094dcc3b68a6cdf904856c3b.png">and<img src=
+"../imgs/109566725093f56829b7a02fd224d1ec823b0ac1.png">.</p>
+<p>The partitioning itself takes care of one element which becomes
+the pivot element.</p>
+<p>Then the RANDOMIZED-QUICKSORT is called recursively on both
+these lists independently.</p>
+<p>So, the following recurrence relation determines the number of
+calls made to the RADOM procedure (which is inside the
+RANDOMIZED-PARTITION procedure):</p>
+<p><img src=
+"../imgs/9a791512ccbc7acbeaae30cf1d3b9ac7d04c00e0.png"></p>
+<p>The above recurrence relation can be solved using the Master
+Theorem.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The Master theorem states the following:</p>
+<p>If the recurrence relation is of the form<img src=
+"../imgs/e72e1fa833e5e98d5f87755b8cdcd35e0b7df7cb.png">, then the
+asymptotic solution of the recurrence relation is the
+following:</p>
+<p><img src=
+"../imgs/a706cc49de33dd2a789a2eacd22fbe350d488150.png"></p>
+<p>The recurrence relation is <img src=
+"../imgs/9a791512ccbc7acbeaae30cf1d3b9ac7d04c00e0.png"></p>
+<p>So, <img src=
+"../imgs/d3326230f106ca9079a246b6d7fe618b1556bbf7.png"></p>
+<p>Since, <img src=
+"../imgs/a8118340f781fa255637a10c76ac4f5ab697daaa.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/ae86b5e8e05b935203daa5629356619242068c76.png"></p>
+<p><b>Hence, the number of calls made to the random number
+generator RANDOM in the best case in terms of</b> <b><img src=
+"../imgs/9ef64217384e6a886c937c748723b6f4a4e3b92e.png"></b> <b>-
+notation is</b> <b><img src=
+"../imgs/95d4d293e2abfc196e50322e6fe890ffd8fc6d9f.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,430 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 12.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>BINARY SEARCH TREE</b></p>
+<p>Binary search tree is of two types; the sorted binary tree and
+the ordered binary tree.</p>
+<p>There are different properties of a binary search tree:</p>
+<p>• The right subtree of the binary search tree contains the nodes
+having its key values which are greater than the key node.</p>
+<p>• The left sub-tree of the binary search tree contains the nodes
+having its key values less than the key node.</p>
+<p>• Both left and the right sub-tree are parts of the binary
+search tree.</p>
+<p>Condition for the binary search tree is that a duplicate node
+should not be present. There are various benefits of a binary
+search tree in comparison to the other tree in relation to
+searching and sorting. As searching and sorting a binary search
+tree is fast in comparison to others. There are various operations
+involved in a binary search tree, such as insertion, deletion,
+traversing and all other searching and sorting techniques.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Binary search tree with equal keys</b></p>
+<p>a. In case of binary search trees, search starts when insertion
+in the binary search tree is started. In this, we compare key
+values with the node of the tree. If the key value is not equal to
+the root node of the tree, then in this case, searching can be
+performed from the left sub-tree or from the right sub-tree.</p>
+<p>In case of searching, if we reach the external node of the tree,
+then left and right sub-tree is added with the key and value pair
+by matching the corresponding value related to the key. Condition
+of a binary search tree is that if the value is less than the root
+node, then the recent value, if it is smaller, is added to the left
+hand side, otherwise it will be added to the right hand side.</p>
+<p>In case of duplicates in the value at time of searching, the
+search time of the binary search tree will increase. When insertion
+of the <i>n</i> items is performed in the binary search tree, when
+tree is initially empty and the entire identical key is to be
+inserted, then in this case all the nodes are present in the right
+hand side of the tree. Thus, asymptotic performance in this case is
+<img src=
+"../imgs/c5ba9f134d205f01d8d2a91d2b33c9da06785bc5.png">(<i>n</i>).</p>
+<p><b>Improvement of insertion of tree in binary search
+tree</b></p>
+<p>b. As stated in the question, the following test is performed
+regarding <i>x.key=z.key</i> and <i>y.key=z.key</i>. In the
+problem, we have Boolean flag <i>b.x</i> at node <i>x</i>. In this,
+we set <i>x.left</i> or <i>x.right</i> on the base of <i>b.x</i>,
+which gives the value as either false or true. At the time of
+insertion, whenever <i>x</i> is visited, it has same key value.
+During the process we will have a balanced binary tree.</p>
+<p>Here we have to insert elements level wise, that is <i>k</i>th
+level will be inserted only when (<i>k</i>–1)th level is filled
+completely. And for a balanced binary tree, we have the height of
+the tree proportional to the <img src=
+"../imgs/c5ba9f134d205f01d8d2a91d2b33c9da06785bc5.png">(log
+<i>n</i>); and as we have to insert <i>n</i> items, so it will
+finally be proportional to <img src=
+"../imgs/c5ba9f134d205f01d8d2a91d2b33c9da06785bc5.png">(<i>n</i>
+log <i>n</i>).</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>c.</b> If there are a list of nodes which have equals keys at
+a specific node, which is <i>x</i>, then in this case <i>z</i> is
+inserted as shown below:</p>
+<p>First, <i>z</i> value is compared with the <i>x.key</i>, if the
+value is less than <i>x.key</i>, then in this case, it is inserted
+to the left of the node <i>x</i>, otherwise it will be inserted to
+the right.Here in this case, TREE-INSERT is actually done to insert
+an element to the end of the linked list.</p>
+<p>Thus, in this case, asymptotic performance is <img src=
+"../imgs/c5ba9f134d205f01d8d2a91d2b33c9da06785bc5.png">(1).</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>d.</b> Here, the node <i>x</i> is set randomly to either
+<i>x.left</i> or <i>x.right</i> in the given TREE-INSERT</p>
+<p>operation. In the random order for insertion, we have: In the
+worst case, it can be in ascending order; so all the insertion will
+happen on the left or on the right side. In this case, the number
+of nodes is proportional to <i>n</i>; so the worst case performance
+is <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">. So, the
+final tree after the insertion of elements is of same height as in
+a randomly built binary search tree. Thus height in this case is
+(log <i>n</i>). Average performance of TREE-INSERT is <img src=
+"../imgs/c5ba9f134d205f01d8d2a91d2b33c9da06785bc5.png">(log
+<i>n</i>).</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td></td></tr>
+</table>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/e9707e24fadf91844b613f0c17fc81802b6e5f17.png">
+<hr>
+<img src="../imgs/f264df210a37aad1acf69ffc5afac7909787a847.png">
+<hr>
+<img src="../imgs/22af0f4aa81fdaf1ab64fb2672b5ffd670f77b54.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/cd160238427cce72b6a65eef5006af6cbd3c2c6c.png">
+<hr>
+<img src="../imgs/2c225e03aadce74df5114932a0a0c875f8a449c5.png">
+<hr>
+<img src="../imgs/551e758d5e8051b40b26a5d16b4579a69f0cbe51.png">
+<hr>
+<img src="../imgs/e9ac6fb7a3d53fb0a632e3a27ba94fdcb9062793.png">
+<hr>
+<img src="../imgs/c0fdbde784bbc30efaa08c67c679bbd06ad6ce99.png">
+<hr>
+<img src="../imgs/5e439fa0b488d7986f109cdf1c08121b18f09852.png">
+<hr>
+<img src="../imgs/562bca27453c26c681d00a9d5924befa2cd786dd.png">
+<hr>
+<img src="../imgs/a83f70abd72b3b50c7cd28a759f1991f90b19cc5.png">
+<hr>
+<img src="../imgs/59a29a7e2383b3b34b8ed8178105325096544ae7.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Number of different binary trees</b></p>
+<p>Catalan numbers are the special type of numbers which are used
+in various counting programs and these are represented as:</p>
+<p><img src=
+"../imgs/9870a526a86a200ff730b43bf560419404a24b90.png">These
+numbers are generated in various mathematical situations such
+as</p>
+<p>No of binary search trees possible with0, 1, 2, 3… nodes</p>
+<p>No of binary trees possible with 0 node is 1</p>
+<p>No of binary trees possible with 1 node is 1</p>
+<p>No of binary trees possible with 2 nodes is 2</p>
+<p>No of binary trees possible with 3 nodes is 5and so on</p>
+<p><img src="../imgs/964e2461a99b9f996858f0ac585e7825906b47c7.png"
+alt="F:\Tiffs\all files\2254-12-fig.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a</b></i> <i>.</i> For the proof of the equation:</p>
+<p><img src="../imgs/fa05fc3fb64481193871d1c1e664687a3c6473c0.png">
+<b>… … (1)</b></p>
+<p>Where<img src=
+"../imgs/0fa2c20637e7dd7dd7a3a77fcb80c35f38972dcb.png"></p>
+<p>Substituting the values <img src=
+"../imgs/59f5ceacb5dd9bf69e5336c5377bb2f9c747012b.png">in equation
+(<b>1)</b> as:</p>
+<p><img src=
+"../imgs/bf19e413ebd914acb0b19cd047aca468dda94e65.png"></p>
+<p><img src=
+"../imgs/c997da7b1e523a9a4e604c04de82b68324ac6641.png"></p>
+<p><img src=
+"../imgs/7ab914380896fa4725c0b0ee1ab17d51e0cda4df.png"></p>
+<p><img src=
+"../imgs/e0976d6ac5810c737738fac54d6e5289c277c816.png"></p>
+<p>…</p>
+<p>…</p>
+<p><img src=
+"../imgs/3bb310a38c0d41906d09e21a5e0266fb9ff9b50b.png"></p>
+<p>This expression can be summed up as:</p>
+<img src=
+"../imgs/bf693db218ec99001543063b6beab7bb53edaae6.png"></div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Consider the generating Function,</p>
+<p><img src="../imgs/7d06d11a2527921f6470fa7f83057a62c385beb3.png">
+<b>… … (2)</b></p>
+<p>Squaring equation <b>(2),</b></p>
+<p><img src=
+"../imgs/c7c75649ace82ba28ff0ba57307f9baa9df29006.png"></p>
+<p>From above problem,</p>
+<p><img src=
+"../imgs/271f28fc45a331bf6c586ab8e94006337115283c.png"></p>
+<p><img src=
+"../imgs/e4eaa781d5bba6ef09adae6614d98ea10cdae2e3.png"></p>
+<p><img src=
+"../imgs/5513d9569a0edf185ffdc11496175d64fb38c2f4.png"></p>
+<p><img src=
+"../imgs/19a8e96cc42f6a80ed9e86a579499193dba59dd4.png"></p>
+<p><img src=
+"../imgs/86dc05998286f0a320effa32db85051c086f5ecf.png"></p>
+<p>Multiplying above equation with <i>x</i>,</p>
+<p><img src="../imgs/eccfdbfe6b307e8d1bd5180ae83ba33c51638ee6.png">
+<b>… … (3)</b></p>
+<p>Then from equation <b>(2)</b> and equation <b>(3)</b>,</p>
+<p><img src=
+"../imgs/6ba63bfa5d9895ac09bde86252a68ce727bb0140.png"></p>
+<p>But <img src=
+"../imgs/0fa2c20637e7dd7dd7a3a77fcb80c35f38972dcb.png"></p>
+<p><img src="../imgs/3800d4c586f0b7921abdbc2014161d2698c13771.png">
+<b>… … (4)</b></p>
+<p>Comparing equation <b>(4)</b> with Quadratic equation which is
+as:</p>
+<p><img src=
+"../imgs/16fe3985e90f46ef9a3436e81b0093258446e139.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/da4c21b699d32cea4267c3a44f2a4ba99a27f9e4.png"></p>
+<p>A formula for the solution of quadratic equation for variable
+<i>x</i> is as:</p>
+<p><img src=
+"../imgs/6c1c6f650185b884945e6333cd8eed26615380ac.png"></p>
+<p>Applying this formula on equation <b>(4)</b><b>,</b></p>
+<p><img src=
+"../imgs/0dc4062d257c07d41b32da34a53e1d7f62306e29.png"></p>
+<p>Instead of <img src=
+"../imgs/59a711e35cbb2f45fc3473d293f189a27815c582.png">, use ‘–‘
+the same way as + instead of – as<img src=
+"../imgs/3026774fda9fcbbbc73914c6bb16039ad9ca3b6e.png"><img src=
+"../imgs/20bc6b4ee5eda2f5725c73a53b6a66021801e465.png"></p>
+<p>Hence,</p>
+<p><img src=
+"../imgs/0a8a3c081b22d6351c0135dfc9df4a7fd2728cb3.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c</b></i> <b>.</b> The formula <img src=
+"../imgs/ff9bc4ed76940bdf0d2a2d0cb7cdb2fcee51f637.png"> is used to
+produce the Catalan numbers for its proof. Use the concept of
+Counting Diagonal-Avoiding Paths (Lattice paths).</p>
+<p>In this problem, a number of paths have to be found. These are
+from origin <img src=
+"../imgs/56b7b5e8c7887aa410ee2eb8d3eb9b2c86c3369b.png"> to a point
+in space <img src=
+"../imgs/82e3f1a5bafc8430a6781691597ab8e0bdccfd7e.png">which stays
+on the path on or above the diagonal from origin <img src=
+"../imgs/56b7b5e8c7887aa410ee2eb8d3eb9b2c86c3369b.png">to a point
+in space<img src=
+"../imgs/82e3f1a5bafc8430a6781691597ab8e0bdccfd7e.png">.</p>
+<p>These paths always stay on or above the diagonal.</p>
+<p>Number of paths from origin to <img src=
+"../imgs/56b7b5e8c7887aa410ee2eb8d3eb9b2c86c3369b.png"> is 1</p>
+<p>Number of paths from origin to <img src=
+"../imgs/efa9caf4c32d1a6d056bb158540923a920d54523.png"> is 1</p>
+<p>Number of paths from origin to <img src=
+"../imgs/60c075389d35d669c8ad36b13b3cfdfe583b2bfd.png"> is 2</p>
+<p>Number of paths from origin to <img src=
+"../imgs/1726c6ed06626c3a6a9a0fa89cf55baa53a4bb5e.png"> is 5. (5
+paths cannot be showed in graph but there are 2 more paths could be
+draw easily)</p>
+<p><img src="../imgs/2d426e7e94b119a7cebfdc5531f6cbead5c839ba.png"
+alt="Picture 5"></p>
+<p>So, finding number of paths from origin <img src=
+"../imgs/56b7b5e8c7887aa410ee2eb8d3eb9b2c86c3369b.png"> to a point
+in space <img src=
+"../imgs/82e3f1a5bafc8430a6781691597ab8e0bdccfd7e.png"> which stay
+on or above the diagonal will be the <img src=
+"../imgs/2eee6e58b43280613ee968f0c0f8ab2a3b9acb25.png"> Catalan
+number</p>
+<p><img src=
+"../imgs/ff9bc4ed76940bdf0d2a2d0cb7cdb2fcee51f637.png"></p>
+<p>Total number of paths from origin to<img src=
+"../imgs/186f73d614d288ce22957773263844de67d923ac.png"> is<img src=
+"../imgs/54f6e86f12f0ea1b2561d295efd7dc0320760348.png"></p>
+<p>Total number of paths from origin<img src=
+"../imgs/56b7b5e8c7887aa410ee2eb8d3eb9b2c86c3369b.png"> to
+<img src="../imgs/82e3f1a5bafc8430a6781691597ab8e0bdccfd7e.png">
+is<img src=
+"../imgs/67dc4412f7ab1b65c04c2c0e010741add69c2cac.png"></p>
+<p>But from this removing the number of paths which cross diagonal
+are necessary.</p>
+<p>To find the Number of paths that cross the diagonal, mirror
+technique is going to be used, now draw another line parallel to
+diagonal</p>
+<p><img src="../imgs/bc009e336ccad2b83c33bda1009be68188c0297c.png"
+alt="Picture 1"></p>
+<p>Paths which cross the diagonal always end up at <img src=
+"../imgs/d98fc13e1c6dc645e2f4ce7c0ab9e2af6f67c709.png"></p>
+<p>So total no of paths from <img src=
+"../imgs/56b7b5e8c7887aa410ee2eb8d3eb9b2c86c3369b.png"> to<img src=
+"../imgs/d98fc13e1c6dc645e2f4ce7c0ab9e2af6f67c709.png"> is
+<img src="../imgs/6db80adf2b488ee75ba7b0a92a36bbca0e51cd52.png"></p>
+<p>Number of paths from origin<img src=
+"../imgs/56b7b5e8c7887aa410ee2eb8d3eb9b2c86c3369b.png"> to a point
+in space <img src=
+"../imgs/82e3f1a5bafc8430a6781691597ab8e0bdccfd7e.png">which stay
+on or above the diagonal<img src=
+"../imgs/75efbf9344bcd95f312a41a359da78529276166b.png"><img src=
+"../imgs/76418488bf65ee9958d090c5113a9a8b81d28aa6.png"> (Total
+paths form origin to <img src=
+"../imgs/82e3f1a5bafc8430a6781691597ab8e0bdccfd7e.png">–Total
+number of paths that cross diagonal)</p>
+<p><img src="../imgs/44548b788c7eb324e6517dfd1008e4fbd0be623e.png">
+<b>… … (5)</b></p>
+<p>From combination formula as:</p>
+<p><img src=
+"../imgs/ec5f962f81c41961c7c185d4cd2a3a57dcc2755c.png"></p>
+<p>Applying the combinational formula on equation <b>(5)</b>
+as:</p>
+<p><img src=
+"../imgs/a3398c490aacacf06a131feef2eeec8b3f1659bb.png"></p>
+<p><img src="../imgs/9a08d98b24e759c00137015cbf2b38fe1a0dd06c.png">
+<b>… … (6)</b></p>
+<p>Again from combinational formula <img src=
+"../imgs/d88b71ffaa1760d2044a87de6a5a5fbe2c4d6822.png"> putting
+this value in equation (2),</p>
+<p><img src=
+"../imgs/ff9bc4ed76940bdf0d2a2d0cb7cdb2fcee51f637.png"></p>
+<p>Hence, it shows that</p>
+<p><img src=
+"../imgs/ff9bc4ed76940bdf0d2a2d0cb7cdb2fcee51f637.png"></p>
+<p><i><b>d</b></i> <b>.</b>For the proof of equation <img src=
+"../imgs/492ebccb7f4d4f66735de28be3644d255933b63d.png"> use the
+Stirling’s approximation formula which is as:</p>
+<p><img src=
+"../imgs/81648788078406e980fe0f809761e2de343dadca.png"></p>
+<p>The formula for <img src=
+"../imgs/19424644b2dc02040486e9f7a35e049f2c9255fd.png">has been
+proved earlier in part <i>c</i> as:</p>
+<p><img src="../imgs/ff9bc4ed76940bdf0d2a2d0cb7cdb2fcee51f637.png">
+<b>… … (7)</b></p>
+<p>Applying combination formula <img src=
+"../imgs/ec5f962f81c41961c7c185d4cd2a3a57dcc2755c.png">to expand
+<img src="../imgs/67dc4412f7ab1b65c04c2c0e010741add69c2cac.png">in
+equation <b>(7)</b> as:</p>
+<p><img src="../imgs/1b7ba980636efa08b59d4bdfdcc7a92f6673d408.png">
+<b>… … (8)</b></p>
+<p>Now applying stirling’s formula<img src=
+"../imgs/81648788078406e980fe0f809761e2de343dadca.png">on equation
+<b>(8)</b> as:</p>
+<p><img src=
+"../imgs/a8c4dcf46cec1442641b78b3933ffdf231c8c585.png"></p>
+<p><img src=
+"../imgs/8d27f7d6efcc16b7b039502612c12bf43d7c4b3b.png"></p>
+<p>As <img src=
+"../imgs/5ec757183f8f56ac3e87af885c008417300375ac.png"></p>
+<p>Hence, it is proved that<img src=
+"../imgs/98fb34a6045e52bbb6801267a80dd54d4bd4e362.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

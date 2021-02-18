@@ -1,0 +1,1013 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 34.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a circuit of size <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.</p>
+<p>Describe a circuit with the variables <img src=
+"../imgs/a73b7c90a6495f023964cba9b1d3b23208f248f8.png"><img src=
+"../imgs/e3cb2a18340637512297f0a0f9f276e6d825b8a2.png"> where
+<img src="../imgs/5f21eef96e2ca34167bbe00541bad4fb928960ad.png"> as
+follows:</p>
+<p><img src=
+"../imgs/13a1c0ab5a07028a096ca7cd3094b03a5c36504c.png"></p>
+<p>Since the total number of variables <img src=
+"../imgs/a73b7c90a6495f023964cba9b1d3b23208f248f8.png"> and
+<img src="../imgs/e3cb2a18340637512297f0a0f9f276e6d825b8a2.png"> is
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">,
+the size of the circuit described in (1) will be <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.</p>
+<p>Refer chapter 34, section 34.4 of textbook for the theorem
+34.9.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To show that CIRCUIT–SAT<img src=
+"../imgs/ccac68557c68457a117e271e997efc7dafabd8ee.png">SAT, the
+theorem reduces any instance of circuit satisfiability to an
+instance of formula satisfiable in polynomial time.</p>
+<p>Consider, if the theorem uses non-polynomial time
+straightforward reduction.</p>
+<p>If there are <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> variables,
+then <img src=
+"../imgs/c095e30d361765ce83d5c633828aa18b7a609f3e.png"> assignments
+are possible.</p>
+<p>The problem described in (1) has <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> variables.
+So, the total number of possible combinations will be <img src=
+"../imgs/c095e30d361765ce83d5c633828aa18b7a609f3e.png">.</p>
+<p>Hence, the size of the Boolean formula that can be constructed
+using <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> variables
+is <img src=
+"../imgs/c095e30d361765ce83d5c633828aa18b7a609f3e.png">.</p>
+<p>By using induction it can be proved that the formula describing
+the variable <img src=
+"../imgs/a73b7c90a6495f023964cba9b1d3b23208f248f8.png"> and
+<img src="../imgs/e3cb2a18340637512297f0a0f9f276e6d825b8a2.png">
+forming a circuit of size <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> has size at
+least <img src=
+"../imgs/c095e30d361765ce83d5c633828aa18b7a609f3e.png">.</p>
+<p>Since the theorem uses non-polynomial time straightforward
+reduction, the size of the formula can’t be reduced and the size
+remains <img src=
+"../imgs/c095e30d361765ce83d5c633828aa18b7a609f3e.png">.</p>
+<p><b>Therefore, for a circuit of size</b> <b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></b>
+<b>,</b> <b>the size of the formula is exponential in</b>
+<b><img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Definition of 3 CNF-SAT</b>: - It is known as the
+3-Conjuctive Normal Form Satisfiability.</p>
+<p>A literal in a Boolean formula is the occurrence of a variable
+or its negation. A Boolean formula is in CNF if it is expressed as
+a conjunction (AND ) of clauses each of which is the disjunction
+(OR) of one or more literals. 3 CNF means that each clause has
+exactly 3 literals.</p>
+<p>For example: <img src=
+"../imgs/ba56d105bed6b1a2ad9ebd23c5a16a3fb6732c86.png"></p>
+<p>As per the Theorem 34.10</p>
+<p>• 3-CNF-SAT<img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">NP [ Proof
+same as SAT]</p>
+<p>• 3-CNF-SAT <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">NP-Hard:
+SAT<img src=
+"../imgs/589c2b80c4cea67b8816a5781d1d2bc70481df19.png">3-CNF-SAT.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Break the reduction steps into 3 steps as follows:</p>
+<p><b>Step 1</b>:</p>
+<p>• Construct a “binary parse tree” for the input formula
+<img src="../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">.
+The tree corresponds to the formula <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">. The tree
+corresponds to the formula:</p>
+<p><img src=
+"../imgs/0f7121753f41bcc23e84f5e22cc534eb691ae437.png"></p>
+<p><img src="../imgs/f257ca386c56c083229d8c5f20134102d3089b98.png"
+alt="Picture 2"></p>
+<p>• If the formula contains the AND or OR of several literals,
+then it is guaranteed that that the internal nodes has just one/
+two children by the parenthesis and associativity.</p>
+<p>• The binary tree can be interpreted as a circuit for the
+computation of <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png"> . In order
+to obtain a 3-CNF expression, introduce a variable <img src=
+"../imgs/e3cb2a18340637512297f0a0f9f276e6d825b8a2.png">
+corresponding to the output of each internal node.</p>
+<p>• Rewrite <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png"> as AND of
+the root variable and a conjuction of clauses corresponding to
+<img src="../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">
+becomes:-</p>
+<p><img src=
+"../imgs/ef0102f46727e8c93d28841ddca041dfeb49133b.png"></p>
+<p><img src="../imgs/0f8811cd5e3ce1308e69ec677b14f5c014e114dd.png">
+is a conjuction of clauses <img src=
+"../imgs/5e7c5832645de8f0cf32612c88e92a21069306cb.png"> each with
+atmost three literals .</p>
+<p>Change <img src=
+"../imgs/5e7c5832645de8f0cf32612c88e92a21069306cb.png"> such that
+each clause has exactly 3 literals connected with OR’s</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step 2</b>:</p>
+<p>• Change each clause <img src=
+"../imgs/5e7c5832645de8f0cf32612c88e92a21069306cb.png"> into CNF.
+Construct the truth table for each <img src=
+"../imgs/5e7c5832645de8f0cf32612c88e92a21069306cb.png">. Each row
+of the truth table consists of possible assignment of variables of
+clause, together with the value of the clause under that
+assignment. The truth table is as follows:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><img src=
+"../imgs/870fa1051d1c8dedf24340d579d1e3fc47440715.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/9a2df5454e0d31ee363af3dc168f74e5ebd8075e.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/86728541025b49ef1a90045e026e85d137d07ed7.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/90208d3113c76cf60c8c7913049f81f8a08e768e.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+</table>
+<p>• Using the table entries that evaluate to zero, build a formula
+in DNF equivalent to <img src=
+"../imgs/5e7c5832645de8f0cf32612c88e92a21069306cb.png">.</p>
+<p>The DNF formula equivalent to <img src=
+"../imgs/23b1c1f62aa4d20e177596a13190e76ee7e9c3dc.png">is:</p>
+<p><img src=
+"../imgs/866dddb065f7d34536db0e82de08f0ca3a57940f.png"></p>
+<p>• Use Demorgan’s law to get the CNF formula:</p>
+<p>In the above example, convert the clause <img src=
+"../imgs/2c8da2dcb7c2404af3b13d6ab33eaca9c9549db9.png"> into CNF
+and the</p>
+<p>CNF formula is as follows:</p>
+<p><img src="../imgs/95520c1052bcb323284bf8ebc5be57e7f55a2f0f.png">
+which is</p>
+<p>equal to the original clause <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">.</p>
+<p>Convert all other formulae <img src=
+"../imgs/5e7c5832645de8f0cf32612c88e92a21069306cb.png">into CNF.
+Each clause has no more than 3 literals corresponding to two input
+and one output associated with the nodes of binary parse tree for
+<img src=
+"../imgs/ee6d49a03f545d3371c0a87aa9dfeb0ae1cccd8d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Step 3</b>:</p>
+<p>• Modify <img src=
+"../imgs/2d7314e17104bf42ccc1859440c6bd7cc6127f0c.png">so that all
+its clauses have exactly 3 distinct literals.</p>
+<p>Perform this transformation in several steps.</p>
+<p>Modify each clause <img src=
+"../imgs/1d6111839f733660dd3e436b9194ec6921555967.png"> of
+<img src="../imgs/2d7314e17104bf42ccc1859440c6bd7cc6127f0c.png">after
+introducing new variables <i>p</i> and <i>q</i>.</p>
+<p>o If <img src=
+"../imgs/1d6111839f733660dd3e436b9194ec6921555967.png"> has 3
+distinct literals: do nothing.</p>
+<p>o If <img src=
+"../imgs/1d6111839f733660dd3e436b9194ec6921555967.png"> has 2
+distinct literals: <img src=
+"../imgs/961b5b09ec002db8bc5c38929e021b189eff17b0.png">. Replace
+<img src="../imgs/1d6111839f733660dd3e436b9194ec6921555967.png">by
+<img src="../imgs/e3f2e9399462b6e9b1b410f5de39b12a5b39bcbc.png">
+which is equivalent to <img src=
+"../imgs/1d6111839f733660dd3e436b9194ec6921555967.png"></p>
+<p>o If <img src=
+"../imgs/1d6111839f733660dd3e436b9194ec6921555967.png"> has 1
+literal: <img src=
+"../imgs/336ac6ea08e8d60311972ddf9e8f7378944e501a.png">. Replace
+<img src="../imgs/1d6111839f733660dd3e436b9194ec6921555967.png">
+by</p>
+<p><img src=
+"../imgs/6f9441ab792fa1f9909e71874d87e5772cee5261.png">.</p>
+<p>Now, show that the 3-CNF formula of <img src=
+"../imgs/854f31d3ab273b10b861b0337380f6841ee816d1.png">is
+satisfiable, if <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">is
+satisfiable .</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Examine the 3 reduction steps as follows</b>:</p>
+<p><b>Step 1</b>: The binary tree circuit is another representation
+of the formula. It will be satisfiable if the formula <img src=
+"../imgs/2d7314e17104bf42ccc1859440c6bd7cc6127f0c.png">is
+satisfiable. Apply the induction proof on the number of
+clauses.</p>
+<p><b>Step 2:</b> Demorgan’s law is used to produce a formula which
+is algebraically equivalent to the original one, that is, <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">.</p>
+<p><b>Step 3</b>: The new formula is effectively equivalent to the
+one produced in the Step 2, since a formula algebraically
+equivalent to that produced in Step 2 is produced by the assignment
+of the new variables <i>p</i> and <i>q.</i></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The 3-SAT is a satisfiability problem where the Boolean formula
+has only 3 literals or variables ORed to each other in each clause
+that are ANDed. The output of each of the clauses should give the
+output of the whole problem as 1.</p>
+<p>It means that we should choose the values of the literals or
+variables used in the formula so that the output is 1 then only the
+formula is satisfiable.</p>
+<p>The 3-CNF SAT is a SAT problem with 3 such literals as
+variables, and 2 CNF SAT is a SAT problem with two literals as
+variables.</p>
+<p>For the proof of 3-CNF SAT to be NPC, consider the following
+3-CNF SAT given in equation form by using 3 literals <img src=
+"../imgs/3f4c0076ad70f4773edbebfa81950ed919175e73.png">as:</p>
+<p><img src=
+"../imgs/2bcfbcb83dacb753ea668f7ee6941c1b3cdf47e3.png"></p>
+<p>Now for each clause we need to draw a parse tree and find the
+corresponding truth table as for example the first clause is been
+described as follows.</p>
+<p>We draw a parse tree and treat the connectives as nodes and the
+leaf nodes as the literals:</p>
+<p><img src="../imgs/059d091c311975577b1f0875dab569932665d5d9.png"
+alt="D:\Tiffs\New folder\2254-34.4-3E.tif"></p>
+<p>Corresponding to the above parse tree the result <img src=
+"../imgs/26a0022f0a6546a80cc4cd29de31fc19c919c1c9.png">of the
+expression <img src=
+"../imgs/09f9048caaad4971a63749e05a0c8fd912bb2b5c.png">is derived
+and represented as:</p>
+<p><img src=
+"../imgs/7a8dc85dfe6ca2dfc76a638c452e10c52295dd24.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The truth thus derived for the 1<sup>st</sup> clause that is the
+truth table for <img src=
+"../imgs/c50fbfeb0400c657d660c24804ce89eab44eb284.png"> is as:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><img src=
+"../imgs/09e7ee059093362b741040a3f3d7198fcc1e172a.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/a89e0b9ffd617fb7a493562c1277bb1cba070577.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/37a6b4ec0f84f560b2e093c6ed74681b1af69462.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/c50fbfeb0400c657d660c24804ce89eab44eb284.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+<p>We know that the length of the parse tree is the total height
+traversed, that is, of the form <img src=
+"../imgs/6db60ed87eb98efee71389361247bdecddddadaa.png">where
+<i>n</i> is the number of leaves. Now this is of the form <img src=
+"../imgs/c4b195a8a5a146a375741de93cdac09b150ab64c.png">which is a
+non- polynomial form.</p>
+<p>So to find out the total value of the formula we need to perform
+the same task for every clause. This results in a non-polynomial
+degree.</p>
+<p>The 3 CNF form is:</p>
+<p><img src=
+"../imgs/0dd3893a66bf8e50592759ad249fc79c90f06fa5.png"></p>
+<p>Hence by taking the values of the truth table the number of
+values increases creating a non polynomial reduction. So this
+strategy does not yield a polynomial time reduction.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Determining Whether a Boolean Formula is a Tautology is
+Complete for co-NP</b></p>
+<p><b>Boolean Formula:</b> It is the logic or a combination of the
+variables as inputs and the different binary or unary operators. It
+is a form of the algebraic expressions that can have only two
+possible forms or results as either true or false. It is a
+combination of the operators such as OR<img src=
+"../imgs/10fd3c2da8f3727cacf24e59d1c0fa6722cac79d.png">,
+AND<img src=
+"../imgs/c0e9937b270aeeef7f727e3b4ad4d6433540f846.png">,
+NOT<img src=
+"../imgs/88886d0f5c0fe3ee9a7ad17c94cd31c54bc4857d.png">and many
+more.</p>
+<p><b>For example:</b> Consider the Boolean formula given
+below:</p>
+<p><img src="../imgs/467448841fed35e6c6743eb5e19a1f0fc2a4c7ea.png">
+is a valid Boolean formula and <i>P</i> is not an example of a
+valid Boolean formula.</p>
+<p>The result obtained is either true or false, 0 or 1 depends
+mainly on the type of operators and the input variables of the
+Boolean formula or expression.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Tautology:</b> It denotes a compound preposition or a formula
+which uses the combination of different input variables to generate
+a true value for all the possible combinations. It is one of the
+simple examples of the NP- complete problem. Thus, it is a way or
+form of achieving a true or 1 value in a predicate calculus.</p>
+<p><b>For example:</b> Consider the Boolean formula or expression
+<img src="../imgs/0c3fea39daefd62a6c0c61be4612947334477863.png">
+which is a tautology as shown in the truth table given below:</p>
+<p><img src=
+"../imgs/f8afa4b880b5dc92484f2a806b44bb4388a42219.png"></p>
+<p>As the value of the Boolean formula <img src=
+"../imgs/0c3fea39daefd62a6c0c61be4612947334477863.png"> is coming
+out to be 1, so it can be stated that this is a tautology. In case
+of a Boolean formula, it can be considered as a tautology or
+unsatisfiability depending on the values provided to the input
+variables. The formula will be a tautology in case when the formula
+evaluates to 1 or true.</p>
+<p>In other words, it can be said that whenever the variables are
+assigned or provided with the values in the form of true or false
+this operation always yields a result or an outcome as a True
+statement. This is similar to the problem of determining or finding
+that whether at least one assignment of such type is present or
+not. Thus, in order to verify whether a Boolean formula is a
+tautology or not, certification in the form of Boolean variables
+can be used.</p>
+<p>Hence, this proves that <img src=
+"../imgs/268ae0b7159bd2da8ea7e1c6ac1ff5c420f71672.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Co-NP:</b> Co-NP stands for NP problems that are NP complete.
+Co-NP complete represents the class of problems or languages whose
+complement belongs to NP.</p>
+<p><img src="../imgs/480c71f260e93a8d723999ffd8a65023109de419.png"
+alt="Picture 2"></p>
+<p>Consider&nbsp;<img src=
+"../imgs/a0ff4a0df4189cbd359ecf4970940f34b4ab12dc.png">be a Boolean
+formula constructed from the following terms stated below:<b>a.</b>
+The Boolean input variables&nbsp;<img src=
+"../imgs/3fac77c581667f81297491dd50021b58f7d1643a.png">;</p>
+<p><b>b.</b> OR’s <img src=
+"../imgs/10fd3c2da8f3727cacf24e59d1c0fa6722cac79d.png"></p>
+<p><b>c.</b> AND’s <img src=
+"../imgs/10fd3c2da8f3727cacf24e59d1c0fa6722cac79d.png"></p>
+<p><b>d.</b> Negations <img src=
+"../imgs/88886d0f5c0fe3ee9a7ad17c94cd31c54bc4857d.png"></p>
+<p><b>e.</b> At most, one pair of Parentheses present in the
+Boolean formula per Boolean connective which are OR’s<img src=
+"../imgs/10fd3c2da8f3727cacf24e59d1c0fa6722cac79d.png">, AND’s
+<img src="../imgs/10fd3c2da8f3727cacf24e59d1c0fa6722cac79d.png">and
+Negations<img src=
+"../imgs/88886d0f5c0fe3ee9a7ad17c94cd31c54bc4857d.png">.
+The&nbsp;<img src=
+"../imgs/a0ff4a0df4189cbd359ecf4970940f34b4ab12dc.png">Boolean<b>&nbsp;</b>formula
+will be a tautology if and only if it outputs to 1 for every
+assignment of 1and 0 for all the input variables.</p>
+</div>
+<hr>
+<div class="answer">
+<p>As it is known that, co-NP belongs to the set of languages,
+which follows that <i>L</i>-complement<img src=
+"../imgs/cdfdcd5e4673809931fe4c6b19f2ded399fc10d2.png">; further
+if, it can be shown that TAUTOLOGY-complement<img src=
+"../imgs/cdfdcd5e4673809931fe4c6b19f2ded399fc10d2.png">, then that
+will prove the statement or fact that<img src=
+"../imgs/268ae0b7159bd2da8ea7e1c6ac1ff5c420f71672.png">. Set not
+TAUTOLOGY=TAUTOLOGY-complement.</p>
+<p>Now, it is known that a language <i>L</i> belongs to NP, only if
+there exists two-input polynomial-time algorithm <i>A</i> and
+constant <i>c</i> so that:</p>
+<p><b><img src=
+"../imgs/974635b89aed755725987f46b37aecc420d16961.png"></b>
+<b>There exists a certificate</b> <b><img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"></b>
+<b>with</b> <b><img src=
+"../imgs/68759e6557b244118968947eb8fbf729ec685755.png"></b> <b>such
+that</b> <b><img src=
+"../imgs/cb8923691bb7a3bb8fc70d10bfa8ac7c6a23a1c8.png"></b></p>
+<p>Now, try to find for each formula <i>x</i>, to find out
+if<img src="../imgs/722f9c20a4225c109e4f7e244d15cdd6221ca908.png">,
+try all possible combinations of 0 and 1 assignments to input
+variables unless any one assignment finds out that comes to be
+FALSE.</p>
+<p>Hence, to know whether a given formula belongs to <i>not
+TAUTOLOGY</i>, it is required to use a certificate <img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png">of
+length<img src=
+"../imgs/b460608e768c61f2dd2ee5cf70abbe5dd9ff78f3.png">of at least
+<img src="../imgs/23a6a25dbd186b5efefd817c9950ea75b412e9e8.png">for
+algorithm <i>A</i> to be verified for all the combination possible
+made from 0 and 1 for all <i>k</i> input variables of <i>x</i>.</p>
+<p>Therefore, no certificate <i>y</i> with<img src=
+"../imgs/68759e6557b244118968947eb8fbf729ec685755.png"> containing
+<i>c</i> constants can be done for an algorithm <img src=
+"../imgs/62c5b623813f71837a12916e3c6e9f5b43bbafbc.png">to check it
+up for whether <i>x</i> is accepted or not.</p>
+<p>Hence, <b><img src=
+"../imgs/93289a19f4a29dd82e1cad96c1e730bb96d62d38.png"></b> and
+thus, it is proved that<img src=
+"../imgs/5c6df3fa44406679151dbf66d170ebf815a93543.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Disjunctive Normal Form (DNF):</b></p>
+<p>A Boolean formula that is composed of OR of clause of ANDs is
+known as DNF.</p>
+<p>The Boolean formula of the form DNF is satisfiable if any of its
+clause can be evaluated as 1.</p>
+<p>For some variable <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">such that
+the clause contains <img src=
+"../imgs/0f4c4394a4a85bbf9a73e574832540e50883ec7a.png">
+irrespective of the Boolean value <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">will be
+evaluated to 0. Otherwise, for some assignment of values 0 and 1
+the clause will be evaluated to 1.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The following is the algorithm to determine the satisfiability
+of Boolean formula in DNF:</p>
+<p><b>Algorithm DNF–SAT</b> <b><img src=
+"../imgs/8421b6fbe5c8e7f058241a40827bf4d1edb18b79.png"></b>
+<b>:</b></p>
+<p>1 for each clause <img src=
+"../imgs/1d6111839f733660dd3e436b9194ec6921555967.png"> of
+<img src="../imgs/e5bbc626c18a6499e767f466bacfcaf862af4df3.png"></p>
+<p>2 for variable <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">such that
+<img src=
+"../imgs/0f4c4394a4a85bbf9a73e574832540e50883ec7a.png"></p>
+<p>3 if <img src=
+"../imgs/0f4c4394a4a85bbf9a73e574832540e50883ec7a.png">exists in
+the clause <img src=
+"../imgs/1d6111839f733660dd3e436b9194ec6921555967.png"> of
+<img src="../imgs/e5bbc626c18a6499e767f466bacfcaf862af4df3.png"></p>
+<p>4 retrun false</p>
+<p>5 else</p>
+<p>6 retrun true</p>
+<p>7 end for</p>
+<p>8 end for</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running Time Analysis:</b></p>
+<p>• Consider <img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png"> be the
+total number of clauses and each clause has at most <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> (literals)
+variables in <img src=
+"../imgs/b57e42f9417d41a7c38e255b7bf5f9a861d655c6.png">.</p>
+<p>• The loop in the line 1 and its block in the lines 2–8 runs at
+most <img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">times.</p>
+<p>• The loop in the line 3 and its block in the lines 2–7 runs at
+most <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> times.</p>
+<p>• The block in the lines 3–6 takes at most <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">time as the
+existence of <img src=
+"../imgs/0f4c4394a4a85bbf9a73e574832540e50883ec7a.png"> in the
+clause <img src=
+"../imgs/1d6111839f733660dd3e436b9194ec6921555967.png">will take
+<img src="../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">
+steps.</p>
+<p>• So the running time of the algorithm is <img src=
+"../imgs/c5bcf75ec99b2b46f5f0b462584da7d388a5c5d5.png">.</p>
+<p>• Hence the time complexity of the algorithm DNF–SAT<img src=
+"../imgs/8421b6fbe5c8e7f058241a40827bf4d1edb18b79.png">is <img src=
+"../imgs/2f08b901f1eb6d51f9f5ad5e3ae17d3453bcafb7.png">.</p>
+<p>Therefore, the problem of determining whether the satisfiability
+of Boolean formulas in DNF form is polynomial-time solvable.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The language for formula satisfiability problem is SAT=<img src=
+"../imgs/ef55bba792f11989bc6773e75591ab3c020e007a.png">.</p>
+<p>Let A denote the polynomial time algorithm which returns 1 if
+the input x is a satisfiable formula and 0 otherwise.</p>
+<p>In addition, assume <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">has at most
+n variables denoted as <img src=
+"../imgs/5b8a366a99c4f8c8dab2531d69e22f1821b6d982.png">.</p>
+<p>The following procedure can be used to find satisfying
+assignments in polynomial time:</p>
+<p>• Apply the polynomial time algorithm A on the Boolean formula
+<img src="../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">to
+determine whether <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png"> is
+satisfiable or not. If it is not satisfiable return 0 else
+continue.</p>
+<p>• Initialize a variable, i =1.</p>
+<p>• Let the variable <img src=
+"../imgs/42f79f0128479fe970c3a52999d8a697db52f69a.png"> then the
+condition that <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">is a Boolean
+formula with n-i variables is satisfied.</p>
+<p>• Apply the algorithm A to check the satisfiability that is,
+there must be an assignment of <img src=
+"../imgs/e3cb2a18340637512297f0a0f9f276e6d825b8a2.png"> that
+satisfies <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">.</p>
+<p>• Replace the variable <img src=
+"../imgs/e3cb2a18340637512297f0a0f9f276e6d825b8a2.png">in Boolean
+formula <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png"> by the
+recorded value from the previous step and then increment the
+variable i by 1, repeat the previous step until i = n.</p>
+<p>• Return the recorded assignments for all the variables
+<img src="../imgs/5b8a366a99c4f8c8dab2531d69e22f1821b6d982.png">.</p>
+<p>• Since, the algorithm A runs in polynomial time, so the above
+procedure runs in polynomial time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>2-CNF-SAT- PROBLEMS</b></p>
+<p>A Satisifiability problem represents the class of problems in
+which the formula is passed as an input having the conjunction of
+clauses. A Boolean formula in which each clause is a disjunction of
+literals containing the variables having the values either as true
+or false is known as the CNF (Conjunctive Normal Form). In case of
+Boolean formulas, CNF is mainly used for describing the clause set
+representation.</p>
+<p><b>For Example:</b> The Boolean formula given below is in
+Conjunctive Normal Form (CNF)</p>
+<p><img src=
+"../imgs/402343cbe630c9d34058210c6b2854cc74f95192.png"></p>
+Satisfiability problem can be expressed and known in various types
+or forms such as CNF SAT, <i>k</i>-CNF-SAT, MAX <i>k</i>-CNF SAT
+where<img src=
+"../imgs/026eab3288bad661ac9daa7288fc6a613dac50d5.png">.</div>
+<hr>
+<div class="answer">
+<p>The word 2-SAT refers to 2-satisfiability which refers to that
+class of problem having a group of two-valued variables (that is
+Boolean or binary) which satisfies the constraints on the
+variables. The instances of 2-satisfiability problem can be
+expressed as 2-CNF (Conjunctive Normal Form) in which the numeric
+value 2 denotes the number of terms per clause.</p>
+<p>If a collection of sub-expression called clauses, that are
+combined or arranged using AND contains at most two literals in
+case of a Boolean formula then a variant of SAT problem is known as
+the <b>2</b><b>-CNF-SAT PROBLEM,</b> which is a well-known
+restriction of the CNF-SAT. This problem can be easily explained
+using the Boolean expression having some restriction in the form of
+a conjunction of disjunction which basically denotes AND<img src=
+"../imgs/c0e9937b270aeeef7f727e3b4ad4d6433540f846.png"> of
+OR’S<img src=
+"../imgs/10fd3c2da8f3727cacf24e59d1c0fa6722cac79d.png">.</p>
+<p>Consider the two arguments for each disjunction operation (or
+operation) which may be a variable or its negation. The word term
+and clauses will be used frequently in this problem which is
+defined as,</p>
+<p><b>Terms:</b> It is the appearance of variables and their
+negation.</p>
+<b>Clauses:</b> It is the pairs of terms in the disjunction.</div>
+<hr>
+<div class="answer">
+<p>Consider the input having a Boolean formula <img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png"> in the
+conjunctive normal form in which each clause contains two literals
+(one is variables and the other is its negation) and the size of
+the formula is defined by the number of clauses. The clause
+in<img src="../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png">
+has the variables <i>m</i> and <i>n</i> and the literal is set in
+such a way that <i>m</i> appears to be 0. The value of <i>n</i>
+must be fixed in order to have the clause to be true.</p>
+<p>After fixing the value of <i>n</i> it may be possible that a
+case arises when any other clause containing <i>n</i> requires the
+other value of literal to be fixed. And in this way there will be
+the requirement of the exchange operation.</p>
+<p>Now, if during the process a clause <img src=
+"../imgs/ad03387dcaa1c25401acdfe9a9610a847b434964.png">is
+encountered, it signifies that the decision that was taken or
+considered for the variable <i>m</i> does not proceed towards the
+Satisifiability.</p>
+<p>So it is required to look or opt for an opposite choice for
+variable <i>m</i>. And if the clause <img src=
+"../imgs/ad03387dcaa1c25401acdfe9a9610a847b434964.png">has been
+found again then it is sure that the Boolean formula<img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png"> is not
+satisfiable. Thus, whole process will be repeated till all the
+variables from the Boolean formula<img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png">are removed
+or eliminated.</p>
+Therefore, <img src=
+"../imgs/026eab3288bad661ac9daa7288fc6a613dac50d5.png">represents
+the time complexity of the algorithm and the formula is traversed
+twice for settingthe value of the variable.</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p><b>for</b> each variable <i>v</i></p>
+<p><b>if</b> a path from <img src=
+"../imgs/78e83cfd9362556cfc6a8700608739e67b2a3c3d.png"> and
+from<img src=
+"../imgs/0bbc29d229485b6857fe333c3c6b254c7e9bddb6.png"></p>
+<p><b>return</b> “rejection”</p>
+<p><b>else</b></p>
+<p><b>return “</b>accept”</p>
+<p>As per the above algorithm the Boolean formula will be
+satisfiable only in a case that there should not be any pair of
+complementary literals present in the same strongly connected
+graph. In other words, it can be said that an interpretation will
+exist for the formula if and only a variable and its negation are
+not a part of a strongly connected component. The algorithm first
+determines that for each variable <i>v</i> if there is a path from
+<img src="../imgs/fdb6240cf14be82fff43cbcee9c0885ccb99660f.png">
+and from<img src=
+"../imgs/0bbc29d229485b6857fe333c3c6b254c7e9bddb6.png">.The
+rejection is done if we have a success for any of these tests,
+otherwise the acceptance is done.</p>
+<p><b>Above explanation implies that</b> <b><img src=
+"../imgs/1fc1916abab21f003ff342b6e1b046481beee1d1.png"></b> <b>is
+solvable in polynomial time and thus, it is polynomial time
+decidable</b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

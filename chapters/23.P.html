@@ -1,0 +1,412 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 23.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p>To show that the minimum spanning tree is unique, but that the
+second spanning need not be unique do the following:</p>
+<p>Consider the following graph having 4 vertices. Suppose the
+vertices are {a, b, c, d} and the edge weights are as follows:</p>
+<p><img src="../imgs/23e5bc332ea037e792ce519061480e0746dc5b15.png"
+alt="Picture 1"></p>
+<p>The weight of the minimum spanning tree is 7 while there are two
+spanning trees having second minimum weight of 8.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>Let T be the minimum spanning tree of G. It is required to prove
+that G contains edges <img src=
+"../imgs/67a545ab8b03aa12e5241dcb148313fab146f20d.png"> and
+<img src="../imgs/6e7da31555ff4a389fd0274e9e14c29ffc3cf63f.png">
+such that <img src=
+"../imgs/4a3c661c343024150fdadade7bae8a4d7625fb51.png">is a second
+best minimum spanning tree of G.</p>
+<p><b>Proof:</b> Insert an edge <img src=
+"../imgs/2112202f61d5bfbae43bd426b4fed16e5fde7b03.png">by removing
+some other edge on the unique path between u and v. Such a
+replacement must increase the weight of the tree. If two or more
+edges are replaced, it will not produce a tree better than the
+second best minimum spanning tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c.</p>
+<p>An <img src=
+"../imgs/8f4995c26a61cce836da29acdf094a12cb75808e.png"> algorithm
+that given T computes max [u, v] for all <img src=
+"../imgs/fd8047f6bddcab8ee815209834a9bdcb38c05bac.png">is as
+follows:</p>
+<p>Use dynamic programming approach. Suppose it is required to find
+it for (u, v). First identify the vertex x that occurs immediately
+after u in the path from vertex u to v. Equate max [u, v] to max of
+w ((u, x)) and max [w, v].</p>
+<p>Consider the case that u and v are adjacent. If x can be found
+in constant time, then the entire dynamic program will run in
+<img src=
+"../imgs/8f4995c26a61cce836da29acdf094a12cb75808e.png">time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d.</p>
+<p>The second best minimum spanning tree can be computed using the
+idea of b) and c).</p>
+<p>Compute max (u, v) for all vertices in T. Compute max (u, v) for
+all vertices in T. Compute for any edge (u, v) not in T the
+difference w (u, v)-max [u, v]. The two edges yielding the smallest
+positive difference must be replaced.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Minimum spanning tree in sparse graphs</b></p>
+<p>Minimum spanning tree is the set of all vertices such that the
+resultant tree is connected and having minimum weight over all
+other spanning tree.</p>
+<p>a)</p>
+<p>Since, every minimal-incident edge belongs to any MST for a
+vertex say<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">, therefore
+the edge that is returned by the call MST-REDUCE also called as
+minimal edges are all cross the cut. Here, <i>A</i> is the minimum
+spanning tree that has been formed by MST-Prim and in the union
+operation with <i>T</i> (set of edges), all the edges of minimum
+spanning tree are taken into consideration. So, this always leads
+to formation of minimum spanning tree.</p>
+<p>Since PRIM-MST returns the safe edges. This leads to the
+completion of the tree to MST.</p>
+<p>Therefore, the resultant tree defined by <img src=
+"../imgs/a3ff1c07a4d5dff9c05398524c4c0cedd7d0e7b1.png">is a minimum
+spanning tree of graph G.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p>A value has been entered in <i>G’</i> if the node has more than
+one node that is making a minimum span of the tree. It is because
+if there were more ways by which the spanning of tree would have
+been done, it was taken into consideration.</p>
+<p>Therefore, no of components that are stored in <i>G’</i> are
+always less than<img src=
+"../imgs/8e10f5b2a474bfd2be612a92e8341132566a0a65.png">.</p>
+<p>That is <img src=
+"../imgs/863b127aaf1f59f8bda59aacf7c829b9e0301e03.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>c)</p>
+<p>MST-REDUCE can be implemented using the simple data structure
+such as UNION, MAKE_SET and FIND_SET. Running time of thus
+implemented algorithm will be<img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png"></p>
+<p>MAKE_SET<img src=
+"../imgs/53457de0c432d4c62532ee40d39211b6b84b67b3.png"></p>
+<p>FIND_SET<img src=
+"../imgs/f6e1a10e5185da2e2d749c93aecdfd867986672d.png"></p>
+<p>UNION<img src=
+"../imgs/73fef7355b24de7cef66820994199303fab71398.png"></p>
+<p><b>if</b> <img src=
+"../imgs/1f805b01fe6df64425474fe271fdfe4f3bb09327.png"> then</p>
+<p><b>begin</b></p>
+<p><img src=
+"../imgs/9cd1bc6e4480bfd42152f7bdfbd433eb981aedc1.png"></p>
+<p><b>end</b></p>
+<p><img src=
+"../imgs/f5f9da2c4da84ec600396ccef542bd5ab2072d98.png"></p>
+<p>Running time of(MST-REDUCE)=COST of for loop in line 1+COST of
+for loop in line 4+building <img src=
+"../imgs/3bc1889ff94715a48d4e7ee77c5a5a403cb1c0e6.png">+ COST OF
+for loop in line 12+COST(constructing adjacency list for <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png">)</p>
+<p>= <img src=
+"../imgs/2f18e534ad13ff71ddaf592f6efbd0f64f4e44f5.png"></p>
+<p>Since,</p>
+<p><img src=
+"../imgs/849b2ecd9f083397329054dea1876e6022c8dfbe.png">For
+connected graphs</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/f44e9eda2c61a719b220318a799b6bd2a3c01515.png"></p>
+<p><b>Hence proved</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>d)</p>
+<p>In above part it has been proved that MST-REDUCE running time
+is<img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">.</p>
+<p>In the <img src=
+"../imgs/47a63d0603351a87df826a579b8842af3f91fae2.png">stage,
+suppose there are edges <img src=
+"../imgs/5ee77182de33c341b62731dc453b5cd41bba6dbb.png"></p>
+<p>Since,</p>
+<p><img src=
+"../imgs/4be8b015e8131df49dea3998c15e4027c7b30800.png"></p>
+<p>And,</p>
+<p><img src=
+"../imgs/fb4ae7ccd96a4b292b75a0dd107dae103f6469fb.png"></p>
+<p>Therefore,</p>
+<p>Running time of the <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> stages will
+be <img src="../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">
+times <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png"></p>
+<p>That is <img src=
+"../imgs/480b568696092a5500e663e4677537b094f4d2c7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>e)</p>
+<p>It can be picked up that<img src=
+"../imgs/95f1d3efa289f2209a48b43d0ca533d0d57cb1d1.png">.</p>
+<p>Now, running time of Prim’s algorithm after <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">stages-</p>
+<p><img src=
+"../imgs/9309d2f5d891b1b93b52bcd130fa337764adf766.png"></p>
+<p>Or,</p>
+<p>=<img src=
+"../imgs/5c184dc7a2db5da6caed3298fd81dc5740b22036.png"></p>
+<p>=<img src=
+"../imgs/9d58101a4375f4d0d0d07177edc86cae9240c7e2.png"></p>
+<p>Consider,</p>
+<p><img src=
+"../imgs/e8536643165e469ba0a4d400fa2e99fdb33d9cc0.png"></p>
+<p>Differentiating <img src=
+"../imgs/95574ab555c7da9c7abeb9260abaa8885d3e4a84.png">
+and<img src="../imgs/943b0eb3af5a81695d07c2ade34dd59c15b164f1.png">,
+the result is</p>
+<p><img src=
+"../imgs/cf9d02223bfc3c56aab4573b0ec7a779c16794c1.png"></p>
+<p>Since,</p>
+<p><img src=
+"../imgs/59ed822c551b6294f2812dc5440d38775d40fe30.png"></p>
+<p><img src=
+"../imgs/0d9e28525d70a49597736965da68010cfbc6d88c.png"></p>
+<p><img src=
+"../imgs/a382985c307d87d67bce0baf35349132c59ab665.png"></p>
+<p>The value <img src=
+"../imgs/b0ab8c3d54cd5f98182a954d432d712e179d7ae9.png">will be
+minimum value when <img src=
+"../imgs/21eebdbfc6cb53302bec18012b497e3bc54698d5.png"></p>
+<p><img src=
+"../imgs/f54fcf5f2536c7e91f5bd17483bdf6cf68c75efd.png"></p>
+<p>Therefore, <img src=
+"../imgs/95f1d3efa289f2209a48b43d0ca533d0d57cb1d1.png">minimizes
+the total asymptotic running time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>f)</p>
+<p>Prim’s algorithm with preprocessing has running time<img src=
+"../imgs/838065669a5e1ae0d175bfc42cc2c57ab9a5f1b8.png">. On the
+other hand, Prim’s algorithm without preprocessing has running
+time<img src=
+"../imgs/0f3588ca27a82878ec4c26db654f44b714d657c8.png">.</p>
+<p>Therefore, the former is better than latter.</p>
+<p>Hence,</p>
+<p><img src=
+"../imgs/e5000ed7ec29ac6982718b3e267bec39595dfab7.png"></p>
+<p><img src=
+"../imgs/1ac798a1862f37b738365710ab62f84c7eb2d934.png"></p>
+<p>Till the time the above formula is satisfied, preprocessed
+Prim’s algorithm would win over the Prim’s algorithm without
+preprocessing.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Bottleneck spanning tree</b></p>
+<p>For an undirected graph<img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">, a
+bottleneck spanning tree is a spanning tree of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">in such a
+manner that the weight of largest edge is minimum when compared to
+all spanning trees of<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+<p>That is the maximum-weighted value edge in <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">is equal to
+the value of the bottleneck spanning tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>a.</b> Suppose that the graph<img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">has a
+minimum spanning tree <img src=
+"../imgs/45a182120d964700ddad0f798bd2064429cf6a32.png">which is not
+a BST (Bottleneck Spanning Tree).</p>
+<p>Consider the graph given below:</p>
+<p><img src="../imgs/51acfb225bccbfd89fb559bf801d9c6e46228ab9.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\3.tif"></p>
+<p>The minimum spanning tree of the graph given above will be:</p>
+<p><img src="../imgs/c7e318c27c66178602d88e1e0bf986bf3b6337ca.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+<p>Assume that the maximum weight edge in <img src=
+"../imgs/45a182120d964700ddad0f798bd2064429cf6a32.png"> is<img src=
+"../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png">.</p>
+<p>Removing this edge will result in set of disconnected vertices
+and that edge can be viewed as a cut of graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+<p>This can be given as:</p>
+<p><img src="../imgs/7cdfc7d598f24f0db4d7297ea3e6b4caae953188.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\5.tif"></p>
+<p>Now since this edge forms a cut therefore each minimum spanning
+tree must contain that edge or an edge having weight less than that
+of<img src=
+"../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png">.</p>
+<p>This leads to the contradiction.</p>
+Hence we can say a bottleneck spanning tree is a MST (Minimum
+Spanning Tree).</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Consider that <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">is a graph
+and <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">is an
+integer value.</p>
+<p>A linear time algorithm is used to decide whether the value
+provided by bottleneck spanning tree is at most<img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">.</p>
+<p>1. <b>remove</b> all the edges from graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">.</p>
+<p>2. <b>for</b> each edge,</p>
+<p>3. <b>if</b> (its weight<img src=
+"../imgs/c7fdb698f65d6c67b07d6378994a65b501c2b6be.png">)</p>
+<p><b>add</b> it to graph</p>
+<p><b>end</b> for</p>
+<p>If the graph say <img src=
+"../imgs/62d601305c2175ffb82e2fc0cb6c828c18a89824.png">constructed
+in above fashion is connected then we can say that we can create a
+spanning tree having no edges of weight more than<img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">.</p>
+<p>Since we are checking for each edges of graph the above
+algorithm will take <img src=
+"../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png">time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c. Initialize</b></i> <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png"> with the
+maximum weight edge of the graph<img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">.</p>
+<p>Now,</p>
+<p>Check</p>
+<p><b>if</b> <i>b</i> is possible (can be checked by above
+algorithm)</p>
+<p><b>if</b> yes</p>
+<p><b>decrement</b> value of <i>b</i></p>
+<p><b>else</b></p>
+<p><i>b</i> will be the maximum weight of the bottleneck minimum
+spanning tree</p>
+<p>In this case, every value of <i>b</i> is checked until the
+condition is not satisfied. Since it is being checked for each
+edges of the graph the above algorithm will take <img src=
+"../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png">time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d266da0c70b00afc6b0ac6edd162667f4bc712f6.png">
+<hr>
+<img src="../imgs/4c33266a475b8b5f6481ccc18d75676ac9d161a0.png">
+<hr>
+<img src="../imgs/f863170f0b7d98782cc9ee7069c8c73210bb5ff5.png">
+<hr>
+<img src="../imgs/9eccf10a28b0c54914aeac68510f1bc10808c46e.png">
+<hr>
+<img src="../imgs/385af3bd64095507e9b7a758ffc66cb4129e445d.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

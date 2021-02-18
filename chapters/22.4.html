@@ -1,0 +1,625 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 22.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Topological Sorting</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Topological sorting is a method of linear ordering of the
+vertices of a directed graph, such that if there is a directed edge
+<i>xy</i> from vertex <i>x</i> to vertex <i>y</i>, then <i>x</i>
+comes before <i>y</i> in the ordering. This sorting technique is
+based on the strategy of Depth First Search (DFS).</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider a task that is to be performed. In a directed acyclic
+graph (dag), the vertices of the directed graph represent the
+tasks, the edges represent the constraint to be performed on the
+task, and a topological ordering is the valid sequence of the
+task.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Topological sorting is only possible if the graph has no
+directed cycles, that is, it is a directed acyclic graph. The
+vertices are ordered in a horizontal line such that all the
+directed edges go from left to right. In this linear ordering of
+vertices or nodes, if any edge or set of edges direct to left, then
+it is not a valid solution or ordering.</p>
+</div>
+<hr>
+<div class="answer">
+<p>It is also possible for a graph to have more than one valid
+linear ordering of vertices for a topological sort.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p><b>//</b> Topological sort algorithm in a graph using DFS
+concept</p>
+<p><i>E</i> <img src=
+"../imgs/4fdca010c9a1b2f943490197a2cbb95e53e1a006.png"> Empty list
+that contains the sorted elements</p>
+<p><i>I</i> <img src=
+"../imgs/4fdca010c9a1b2f943490197a2cbb95e53e1a006.png">Set of all
+nodes which have no incoming edges</p>
+<p><b>while</b> <i>S</i> is non-empty</p>
+<p><b>do</b></p>
+<p>remove a node <i>n</i> from <i>I</i></p>
+<p>insert <i>n</i> into <i>E</i></p>
+<p><b>for</b> each node <i>m</i> with an edge <i>e</i> from
+<i>n</i> to <i>m</i></p>
+<p><b>do</b></p>
+<p>remove edge <i>e</i> from the graph</p>
+<p><b>if</b> <i>m</i> has no other incoming edges then</p>
+<p>insert <i>m</i> into <i>I</i></p>
+<p><b>if</b> graph has edges then</p>
+<p><b>return</b> error (graph has at least one cycle)</p>
+<p><b>else</b></p>
+<p><b>return</b> <i>E</i> (a topologically sorted order)</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the diagram given below:</p>
+<p><img src="../imgs/6709c8bb18680931da698e134750689b9d34b730.png"
+alt="C:\Users\ankaiah.e\Desktop\2.jpg"></p>
+<p>Start traversing the directed acyclic graph given above from
+node <i>m</i> which is the starting node of the graph. Being a
+starting or a source node, its discovery time is taken as 1.</p>
+<p>After visiting the source node <i>m</i>, the next node traversed
+is <i>q.</i> Thus, its discovery time is after node <i>m</i>, which
+is 2.</p>
+<p>The node that will be traversed next is t, and its discovery
+time is taken as 3.</p>
+<p>After <i>t</i>, there is no path or an edge directed towards any
+other node. Hence, the search or traversing cannot proceed in the
+forward direction and backtracking will start from this point.</p>
+<p>Thus, after visiting <i>t</i>, backtrack to <i>m</i> and proceed
+in this way, incrementing the discovery time of each node
+accordingly, as per the order of traversing.</p>
+<p>During the process, <b>Finishing Time</b> of each node is also
+considered which is the total time taken when all the vertices
+adjacent to a particular vertex are completely traversed in the
+process.</p>
+<p>Here, finishing time for vertex <i>t</i> is 4 because traversing
+is done from <i>m</i> to <i>t</i> via <i>q</i> and again back to
+<i>m</i>. Thus, this time is considered when roles of <i>q</i> and
+<i>t</i> are completed during the track.</p>
+<p>Table showing the Discovery Time and Finishing Time of each node
+is given below:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Vertex</b></p>
+</td>
+<td>
+<p><b>Discovery time</b></p>
+</td>
+<td>
+<p><b>Finishing time</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>m</i></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>20</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>n</i></p>
+</td>
+<td>
+<p>21</p>
+</td>
+<td>
+<p>26</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>o</i></p>
+</td>
+<td>
+<p>22</p>
+</td>
+<td>
+<p>25</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>p</i></p>
+</td>
+<td>
+<p>27</p>
+</td>
+<td>
+<p>28</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>q</i></p>
+</td>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>r</i></p>
+</td>
+<td>
+<p>6</p>
+</td>
+<td>
+<p>19</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>s</i></p>
+</td>
+<td>
+<p>23</p>
+</td>
+<td>
+<p>24</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>t</i></p>
+</td>
+<td>
+<p>3</p>
+</td>
+<td>
+<p>4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>u</i></p>
+</td>
+<td>
+<p>7</p>
+</td>
+<td>
+<p>8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>v</i></p>
+</td>
+<td>
+<p>10</p>
+</td>
+<td>
+<p>17</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>w</i></p>
+</td>
+<td>
+<p>11</p>
+</td>
+<td>
+<p>14</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>x</i></p>
+</td>
+<td>
+<p>15</p>
+</td>
+<td>
+<p>16</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i></p>
+</td>
+<td>
+<p>9</p>
+</td>
+<td>
+<p>18</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>z</i></p>
+</td>
+<td>
+<p>12</p>
+</td>
+<td>
+<p>13</p>
+</td>
+</tr>
+</table>
+<p>Thus, the topological order obtained is according to the
+finishing time of the vertices of the graph as shown in the table.
+As the finishing time of <i>p</i> is maximum, it is in the first
+position of the order. The second maximum is <i>n</i> and hence, it
+is next in the order. Similarly, other points are placed in the
+traversing process according to the descending order of their
+finishing time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The resulting order is,</p>
+<p><img src="../imgs/c48f7c31f815a072208bc892da823d934b3ee89d.png"
+alt="C:\Users\ankaiah.e\Desktop\21.jpg"></p>
+<p>The above order has <i>p</i> as the starting point and <i>t</i>
+as the ending point. According to the above table, <i>p</i> has a
+finishing time of 28 units (maximum of all the vertex points) and
+<i>t</i> has a finishing time of 4 units.</p>
+<p><b>Thus, this ordering of vertices is produced by
+TOPOLOGICAL-SORT, when it runs on the dag of the above diagram
+(graph).</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The algorithm COUNT_SIMPLE_PATHS (x, y) is as follows:</p>
+<p>COUNT_SIMPLE_PATH(x, y)</p>
+<p>1 <b>if</b> (x==y)</p>
+<p>2 <b>return</b> 1</p>
+<p>3 <b>else if</b> x.path<img src=
+"../imgs/5138bf858f9ebe5424ba2f77e8021a088e553dbd.png">NIL</p>
+<p>4 <b>for</b> each <img src=
+"../imgs/789cd3c87063c25292097f97b0b6a1800ef40c37.png">do</p>
+<p>5 x.path=x.path+COUNT_SIMPLE_PATH(z, y)</p>
+<p>6 <b>end for</b></p>
+<p>7 <b>return</b> x.path</p>
+<p>8 <b>end if</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm works as follows:</p>
+<p>• If the starting and the ending nodes are the same, return
+1.</p>
+<p>• Count the path, starting from the vertex x. At each point, the
+value of x is updated but the value of y is fixed.</p>
+<p>• Now, sum the number of paths recursively, which leave from the
+starting node x’s neighbors, that is the nodes which are adjacent
+to x.</p>
+<p>• Do not add the partially completed paths as there are no
+cycles.</p>
+<p>• Return the number of paths which have been counted starting
+from the vertex x to y.</p>
+<p>• The total number of executions are <img src=
+"../imgs/bc68010b9721dc30ccb2544664475f33464c9e88.png"></p>
+<p>• Thus, call the algorithm recursively.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A TOPOLOGICAL-SORT is a type of sorting algorithm which works on
+directed graphs. If the TOPLOGICAL-SORT is applied on a directed
+graph then it sorts the vertices of the graph in the linear order.
+That is, if the graph G contains an edge (<i>u, v</i>) then vertex
+<i>u</i> must come before vertex <i>v</i> in the linear order or
+sorted list.</p>
+<p>• TOPOLOGICAL-SORT algorithm uses depth first search algorithm
+to find the finishing times of all vertices.</p>
+<p>• Then adds a vertex to the sorted list, as soon as the vertex
+is finished.</p>
+<p>• Finally it returns a linked list, in which there are edges
+from right to left only.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>TOPOLOGICAL-SORT produces no</b> <b>linear ordering, if the
+graph contains a cycle:</b></p>
+<p>• If the graph contains a cycle, then the
+<b>TOPOLOGICAL-SORT</b> cannot produces linear ordering, because
+the ordering contains inconsistent edges or bad edges.</p>
+<p>• Here, bad edges are nothing but the back edges. A back edge is
+edge from a vertex to its ancestor.</p>
+<p>• For example, consider a simple graph with three vertices a, b
+and c. and there are edges from <i>a</i> to <i>b</i>, <i>b</i> to
+<i>c</i> and <i>c</i> to <i>a</i>. Thus, the graph contains a cycle
+<i>a-&gt;b-&gt;c-&gt;a.</i></p>
+<p>• If DFS is applied on the graph, <i>c</i> finished first, then
+b and finally <i>a</i>.</p>
+<p>• According to <b>TOPOLOGICAL-SORT</b> c is added first to the
+list, and then <i>b</i> is added next. Finally <i>a</i> is added
+last to the list. That is, the order is <i>a-b-c.</i></p>
+<p>• From the definition of linear order, if there is an edge
+(<i>u,v</i>) in the graph, then vertex <i>u</i> must appear before
+vertex <i>v</i> in the ordered list.</p>
+<p>• There is an edge (<i>c,a</i>) in the graph, thus <i>c</i> must
+appear before <i>a</i> in the order. But, vertex <i>a</i> is
+appeared before <i>c</i> in the ordered list.</p>
+<p><b>Therefore, TOPOLOGICAL-SORT does not produce linear order, if
+the graph contains a cycle.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>TOPOLOGICAL-SORT does not minimize the bad edges:</b></p>
+<p>• TOPOLOGICAL-SORT calls DFS first to find the finishing times
+of all vertices.</p>
+<p>• According to Lemma 22.11, DFS yields back edges, if the graph
+G contains cycles. The number of back edges yielded equals to
+number of cycles in the graph.</p>
+<p>• If TOPOLOGICAL-SORT is applied on the graph that contains
+cycles, then it produces a vertex ordering that contains back edges
+(bad edges).</p>
+<p>• That is, the ordering contains edges from left to right. Here,
+the number of bad edges equals to number of back edges.</p>
+<p>• Since the number of bad edges equals to number of cycles in
+the graph, TOPLOGICAL-SORT did not minimizes the bad edges.</p>
+<p><b>Hence it is disproved that “if the graph contains cycles,
+TOPOLOGICAL-SORT produces vertex ordering that minimizes the number
+of bad edges”.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A Graph <i>G</i> has a cycle if and only if a back edge is
+encountered while DFS is running on that graph. An edge
+(<i>u</i>,<i>v</i>) is said to be a back edge, if <i>v</i> is an
+ancestor of <i>u</i> and <i>v</i> is visited before <i>u</i>.
+Hence, by running DFS algorithm on a graph, it can be determined
+that whether the graph is acyclic or not.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider the following algorithm that determines whether
+there is a cycle in an undirected graph or not.</p>
+<p><b>Algorithm:</b></p>
+<p>//Define the procedure DFS</p>
+<p>DFS (<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">)</p>
+<p>//for loop is used to iterate every nodes</p>
+<p>1. <b>for</b> every vertex <img src=
+"../imgs/07be61181df65a81a8eb0b9e1369a0a5ffcf5617.png"></p>
+<p>//Set the color of the vertex as WHITE</p>
+<p>2. <img src=
+"../imgs/8e76d97bd01a3e92b040e7554542345d146e0ef7.png"></p>
+<p>3. <img src=
+"../imgs/c509552a46be9c09800e8e654658dacea661521f.png"></p>
+<p>//Set a global timestamp</p>
+<p>4. <img src=
+"../imgs/11590fd9e7ff038ba238bed3f082017d650b0ff7.png">//set a
+global timestamp</p>
+<p>//for loop is used to iterate every nodes</p>
+<p>5. <b>for</b> each vertex <img src=
+"../imgs/f3eccb238d03806a43c1ca543e01c901150f5335.png"></p>
+<p>//Check the color of the vertex is WHITE or not</p>
+<p>6. <b>if</b> <img src=
+"../imgs/8e76d97bd01a3e92b040e7554542345d146e0ef7.png"></p>
+<p>// If the color of the vertex is WHITE then</p>
+<p>//call DFS-VISIT- FINDCYCLE(<i>G</i>,<i>p</i>)</p>
+<p>7. DFS-VISIT-FINDCYCLE(<i>G</i>,<i>p</i>)</p>
+<p>//Definition of sub-procedure
+DFS-VISIT-FINDCYCLE(<i>G</i>,p)</p>
+<p>DFS-VISIT-FINDCYCLE (<i>G</i>,<img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">)</p>
+<p>//Set the color of the vertex as GREY</p>
+<p>1. <img src=
+"../imgs/5c2d674087c7211b1705e1e19f0e238efce10631.png"></p>
+<p>//for loop is used to iterate every nodes <i>q</i> adjacent to
+<i>p</i></p>
+<p>2. <b>for</b> each <img src=
+"../imgs/857ecdc90669b0061ed535c779bb25fcc8804d8e.png"></p>
+<p>//check wether the edge (<i>p</i>,<i>q</i>) is a back edge or
+not</p>
+<p>3. <b>if</b> <img src=
+"../imgs/9eb9ff845b7bd1f2d495db0940eb5f84b2287355.png"></p>
+<p>// If the above condition is true, then the edge
+(<i>p</i>,<i>q</i>) is a back</p>
+<p>// edge. Thus return “cycle found”.</p>
+<p>4. <b>return</b> “cycle found”</p>
+<p>//If (<i>p</i>,<i>q</i>) is not a back edge, then set <i>p</i>
+as a predecessor of <i>q</i>.(<img src=
+"../imgs/9e9ab0a04c29190e39dc64255e09c7ec778370b8.png">)</p>
+<p>5. <b>if</b> <img src=
+"../imgs/eedd241ef05f231bfb813829de019350a622e7f1.png"></p>
+<p>6. <img src=
+"../imgs/9e9ab0a04c29190e39dc64255e09c7ec778370b8.png"></p>
+<p>//Call recursively DFS-VISIT-FINDCYCLE(<i>G</i>,<img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png">)</p>
+<p>7. DFS-VISIT-FINDCYCLE(<i>G</i>,<img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png">)</p>
+<p>8. <img src=
+"../imgs/4ab43f149714c0ea178da348a60ec91f44fadb78.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The above algorithm uses DFS() to find cycle in a graph. Since
+the graph may be disconnected so one should run DFS() on every
+vertex which has not been visited yet.</p>
+<p><b>Explanation:</b></p>
+<p>• The DFS() mentioned above is used to initialize the color
+predecessor and then FINDCYCLE routine is called to check if cycle
+exist with that particular node.</p>
+<p>• In FINDCYCLE first line is used to color the vertex on which
+this routine is working.</p>
+<p>• Now if any of the adjacent vertex is of color white that means
+it is unexplored, so adding that vertex to tree will not form a
+cycle and hence program run FINDCYCLE routine on that vertex.</p>
+<p>• If any vertex is of color grey that means there already exist
+an edge to reach that vertex and if program add that vertex to that
+DFS tree it will result in cycle. So if program gets a grey vertex
+then it simply returns “<b>cycle found</b>”.</p>
+<p>• Now consider a case in which there are actually two components
+of a graph and in first component there is no cycle but it exists
+in second component.</p>
+<p>• In that case, all vertices in that component will be colored
+as grey. After this, function return to DFS () in which for loop
+again start searching white node which exist in second component
+and do the normal routine again.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running time complexity of above algorithm:</b></p>
+<p>• Since the above algorithm is the DFS algorithm with little
+modification, the complexity should be <img src=
+"../imgs/4d3f77814fbf4d80606d51fcd98dcc0796a6b506.png">. But here
+the actual complexity of the above algorithm is<img src=
+"../imgs/e1e8f96ac30c605620ed9604521c39710c57a012.png"> .</p>
+<p>• An undirected and acyclic forest with <img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">nodes
+contains not more than <img src=
+"../imgs/797ab92a8a5be30de02955f990962a45045ff57e.png"> edges,
+according to Properties of free trees. That is, <img src=
+"../imgs/7cbb326946edfdc6f377c50e60f02ba81de2aeb4.png">.</p>
+<p>• Therefore, the above algorithm visits at most <img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png"> edges.</p>
+<p><b>Thus the time complexity of the algorithm is independent
+of</b> <b><img src=
+"../imgs/aef56f5973bbe6ffff8b996e3b37a68e49087368.png"></b> <b>and
+it</b> <b>is</b> <b><img src=
+"../imgs/e1e8f96ac30c605620ed9604521c39710c57a012.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/db33d608e2de7f82465accdf1bb1230296900db1.png">
+<hr>
+<img src="../imgs/eca45a0442a4174a2da617ee4477758ba48f6cfc.png">
+<hr>
+<img src="../imgs/14b8848747f47aecf9540b4f22d7fec93b3c010d.png">
+<hr>
+<img src="../imgs/e6107e9829465478ccf3407ec89b3d41d33d1d9c.png">
+<hr>
+<img src="../imgs/000013b5e2c7f51f2718693df622db04bfa551ba.png">
+<hr>
+<img src="../imgs/5538de274016fd2f9ee0e9d29737bc17966dd26c.png">
+<hr>
+<img src="../imgs/d5a1d34069a210b5ee09dce7b97106e4b0619873.png">
+<hr>
+<img src="../imgs/a04936bb87b810f997e9ae7d5222289f56e7a834.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

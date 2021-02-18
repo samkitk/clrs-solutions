@@ -1,0 +1,502 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 20.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer"><b>Van Emde Boas Tree</b></div>
+<hr>
+<div class="answer">The common tree structures like Binary trees,
+Search trees and so many other tree structures are support the data
+structure operations like insert, delete, search and other
+operations take <img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png"> time in all
+these operations. In either of the data structure operation the
+worst possibility makes any of the above case to take <img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png"> time.</div>
+<hr>
+<div class="answer">This time can be reduced by using a priority
+based tree that does not store the actual values in the tree. This
+tree is made up by using an array that holds the integer keys of
+bit <i>m</i>. <i>m</i> is the size of the key over here. The span
+of the data values in the array is <img src=
+"../imgs/e6d996eda6d4c0200854aec8109331454ca01a33.png"> where
+<i>u</i> is the universe range for the values in the array. The
+complexity of any operation for the Van Emde Boas tree is<img src=
+"../imgs/e1c30b72f5572299ba23063ef802cacdab0c7b57.png">where
+<i>m</i> is the key size. In terms of <i>n</i> the complexity would
+be<img src=
+"../imgs/e46bf3b8d7d81fc81e7af3747b09efc64a883b1c.png">.</div>
+<hr>
+<div class="answer">
+<p>Van Emde Boas tree uses direct addressing approach to store the
+key values in it. For example a Van Emde Boas tree having thekeys
+3, 5, 8, 9, 12,13, 14, 15,would be created as below:</p>
+<p><img src=
+"../imgs/95e538134ecdfaf0f569f4a8d72e58d190e79cd4.png"></p>
+<p>Van Emde Boas Tree is already way efficient and memory saving
+than any other self-balancing tree structure. However, this can be
+made more efficient in terms of speed of search as well by
+superimposing a binary tree at the top of it. This can be achieved
+by creating a binary tree that holds a 1 in its node if any of its
+children have value 1 in each one of them, 0, otherwise.</p>
+The creation starts from bottom to upwards. Two consecutive indexes
+of the bit array are checked for creating a node of the binary
+tree. If any of those values is 1 the value in the node of the
+binary treewould be 1; 0 otherwise.</div>
+<hr>
+<div class="answer">
+<p>The above tree, then, would look like as below:</p>
+<p><img src="../imgs/73a5565a8106bfb51d5291353eea54e0e77cc6e4.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\8.tif"></p>
+<p>The figure shows the Van Emde Boas tree with a binary tree
+superimposed on it. It is apparent that the binary tree is
+constructed from the bottom to upwards.The bottom most nodes of the
+binary tree hold a 0 if both of the consecutive indexes of bit
+array hold a 0 like in the case of index 0 and 1. If any of the
+consecutive indexes or both of them hold a 1 then the binary tree
+node value is 1 like in the case of index 2 and 3.</p>
+<p>Logically speaking the tree node stores the logical-OR of its
+children.Observing the above structure it can be seen that like
+self-balancing tree structures this structure is not meant for
+storing the duplicate values. The duplicate values can simply be
+ignored while inserting the values in the Van Emde Boas Tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Change the Van Emde Boas Tree to support duplicate keys:</b>
+The Van Emde Boas tree does not support the duplicate keys. The
+reason is the storage structure of the tree. The tree stores a bit
+array that could contain only a 1 or 0. The keys are not physically
+stored in the tree rather the array indexes are considered to be
+the value of the key. Wherever the key is present, the related
+index is set to 1. If the key is not present the index is left
+0.</p>
+<p>In order to make the tree support the duplicate keys, the change
+in the storage structure of the tree would be required. The reason
+is that binary value can only indicate the presence or absence of
+the data. It cannot give any clue about the duplicate data.The
+changes in the storage structure of the bit array can be performed
+as specified ahead. While performing the changes it should be taken
+care of if the change in the bit array is making any alterations in
+the upper levels of the structure such as the superimposed binary
+tree.</p>
+<p>To allow the duplication, minor modification in the leaves would
+be enough. In the common tree there exists a one bit data that is
+stored to show whether or not the data is held up at the given
+position. For duplication, an integer can be maintained instead.
+Initially all the indexes would be set to 0. Now whenever the key
+is encountered, the related index would be incremented by 1.This
+can be shown as below:</p>
+<p>Now, consider that the values to be stored in the tree are 3, 5,
+8, 9, 3, 12, 13, 14, 12,5, and 15. The tree that allows duplication
+can be as below:</p>
+<p><img src="../imgs/6575f4f997499d273e3dc93697919312fea0f3a6.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\9.tif"></p>
+Here, it can be noted that the keys 3 and 12 have been repeated. So
+the leaves are not representing the presence of data in the binary
+form. Rather the keys stored are in integer form and the value
+shows how many times the key has occurred in the available data of
+keys.</div>
+<hr>
+<div class="answer">
+<p>Now, the change should not make any impact on the remaining of
+the data structure. This becomes more important when the structure
+is superimposed by augmenting a binary tree. As the previous rule
+says that the node value should be 1 if either one of the children
+has a 1 as the value. If both of them are 0 then it should be
+0.</p>
+<p>Here, the rule can be modified as below: If there is a 0 in both
+of the node’s children then the node value should be 0, 1
+otherwise. A nonzero value can simply be considered to be a
+positive integer in the case of the modified tree structure.</p>
+<p>So, the duplication can be allowed by just representing the
+frequency of occurrence of the key value instead of showing whether
+the data is there or not. The nodes of superimposed binary tree
+would have a 1 in them if any of the children has a non-zero value,
+0, otherwise.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Data structures to support the keys with satellite
+data</b></p>
+<p><b>Bit vector:</b></p>
+<p>Bit vector is the data structure to represent the dynamic set
+that takes less space. The bit vector can hold the <i>u</i> integer
+keys. The span of the values that can be stored in the bit vector
+is <img src="../imgs/e6d996eda6d4c0200854aec8109331454ca01a33.png">
+where <i>u</i> is the universe range for the values in the array.
+If a key <i>x</i> is exist in the set of keys, then the bit 1 is
+stored at index <i>x</i>. otherwise, 0 is stored at the index.</p>
+<p>The bit vector has the keys 3, 5, 8, 9, 12, 13, 14, 15, as
+follows:</p>
+<p><img src=
+"../imgs/95e538134ecdfaf0f569f4a8d72e58d190e79cd4.png"></p>
+<p><b>Binary tree of bits superimposed on the bit vector as
+follows:</b></p>
+<p><img src="../imgs/73a5565a8106bfb51d5291353eea54e0e77cc6e4.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\8.tif"></p>
+<p>In the binary tree, the internal node has 1 if at least one of
+its leaves has 1. Otherwise, it has 0.</p>
+<p><b>Data structure to support the satellite data:</b></p>
+<p>Satellite data is the part of the data record. A record contains
+a key and satellite data.</p>
+<p>To support the key that associated with the satellite data, bit
+vector can be modified such that the slot <i>k</i> in the bit
+vector points a record that contains a key <i>k</i> and satellite
+data. This approach is a linked list approach.</p>
+<p>The following is the example for a record:</p>
+<p>struct record</p>
+<p><b>{</b></p>
+<p>int <i>key</i><b>;</b></p>
+<p>int satellite_data:</p>
+<p><b>}</b></p>
+<p><b>The following is the modified data structure that supports
+the keys associated with satellite data:</b></p>
+<p><img src="../imgs/43c2f652da149ee878e638078a6e76b9985a1c3f.png"
+alt="Picture 4"></p>
+<p>• If the <i>k</i> exists in the set of keys, the slot represents
+a record that has the key <i>k</i> and the satellite data.
+Otherwise the slot points a NIL.</p>
+<p>• The above tree works same as the binary tree imposed on the
+bit vector.</p>
+<p>• Each Internal node in the tree contains 1 if at least one leaf
+is not NIL or at least one leaf is 1. Otherwise the node contains
+0.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Finding the successor of a node in a binary tree which is not
+stored in the tree</b></p>
+<p>The common tree structures like Binary trees, Search trees and
+so many other tree structures are support the data structure
+operations like insert, delete, search and other operations take
+<img src="../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">
+time in all these operations. In either of the data structure
+operation the worst possibility makes any of the above case to take
+<img src="../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">
+time.</p>
+This time can be reduced by using a priority based tree that does
+not store the actual values in the tree. This tree is made up by
+using an array that holds the integer keys of bit <i>m</i>.
+<i>m</i> is the key size over here. The range of the values in the
+array is <img src=
+"../imgs/e6d996eda6d4c0200854aec8109331454ca01a33.png"> where
+<i>u</i> is the universe range for the values in the array. The
+complexity of any operation for the Van Emde Boas tree is<img src=
+"../imgs/e1c30b72f5572299ba23063ef802cacdab0c7b57.png"> where
+<i>m</i> is the key size. In terms of <i>n</i> the complexity would
+be<img src=
+"../imgs/75fc6168633949160bbfc518f4155742c2e70881.png">.</div>
+<hr>
+<div class="answer">
+<p>Van Emde Boas tree can be specifically helpful while trying to
+reduce the search time for various data structure and other
+operations on the tree. The implementation would come in handy as
+in the vEB tree the data is not stored in the tree.</p>
+<p>If the binary tree having <i>x</i> values is stored using an
+array of <i>x</i> bits, the actual values of the tree are not held
+in the array. Rather the keys that are representative for every
+value are stored in the array. Because of this the predecessor or
+successor of an element does not depend on the value of the
+element. The successor of any value, say <i>x</i>, can be found
+using the procedure below.</p>
+<p>1. Start from the leaf with index <i>x.</i> Now move upward in
+the tree. Keep moving until a node from the left tree is
+encountered. One more condition that needs to be satisfied is that
+the encountered node must have a 1 in its right child. Say the
+right child is <i>y</i>.</p>
+<p>2. Now move to the left-most path of <i>y</i> and make sure that
+each of the accessed nodes has a value 1 in it.</p>
+<p>3. Go till the leaf. The leaf that is accessed in such a way is
+the desired successor.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Below given is an example of the above said procedure. The
+successor of 7 can be found out as mentioned below:</p>
+<p><img src="../imgs/c1d0f040c6eb0bdeea65687aed18a6516c933165.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\6.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Move from the leaf 7 upward towards the root. The first
+concerned node is itself the right child but no node from the left
+tree is yet encountered. So, move upward till a node from the left
+tree is encountered. The accessed nodes are shown in the diagram
+below:</p>
+<p><img src="../imgs/db470051358856cc122765cd21244a9ca3a4c49e.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></p>
+<p>Now, the root is the node that has a right child having the
+value 1. This would become <i>z</i> Now move to the left most child
+of <i>z</i> that has value 1 each time. Make sure to go to the
+left-most of the nodes having a 1 as value. This is done as shown
+in the below diagram:</p>
+<p><img src="../imgs/8ce3f14acf51a99bba57ef46a82df7d5d68315ff.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\9.tif"></p>
+<p>The diagram shows that the search stops at the leaf 14. So this
+is the successor of 7. The successor of all the nodes can be found
+in the same way. So, while travelling upward takes the node that
+comes through in the leftmost path and has a 1 as the value, till
+the time a node from the left sub tree is encountered.After this,
+follow the leftmost path of the encountered node and go till the
+leaf. The accessed leaf would be desired successor.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Superimposing a Tree of Degree</b> <b><img src=
+"../imgs/05cc6aab607f742ddd9110874162840cbd0cc252.png"></b></p>
+<p>The common tree structures like Binary trees, Search trees and
+so many other tree structures are support the data structure
+operations like insert, delete, search and other operations take
+<img src="../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">
+time in all these operations. In either of the data structure
+operation the worst possibility makes any of the above case to take
+<img src="../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png">
+time.</p>
+<p>This time can be reduced by using a priority based tree that
+does not store the actual values in the tree. This tree is made up
+by using an array that holds the integer keys of bit <i>m</i>.
+<i>m</i> is the size of the key over here. The span of the data
+values in the array is <img src=
+"../imgs/e6d996eda6d4c0200854aec8109331454ca01a33.png"> where
+<i>u</i> is the universe range for the values in the array.</p>
+<p>The complexity of any operation for the Van Emde Boas tree is
+<img src=
+"../imgs/e1c30b72f5572299ba23063ef802cacdab0c7b57.png">.The size of
+the key is <i>m</i>. In terms of <i>n</i> the complexity would
+be<img src="../imgs/75fc6168633949160bbfc518f4155742c2e70881.png">.
+Van Emde Boas tree uses direct addressing approach to store the key
+items in it. A Van Emde Boas tree that has the keys 3, 5, 8, 9, 12,
+13, 14, 15, is as below.</p>
+<p><img src=
+"../imgs/95e538134ecdfaf0f569f4a8d72e58d190e79cd4.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Superimposing a tree of constant height:</b> When the vEB
+tree is composed, superimposing a tree on the top of it would make
+the various operations that are executed on the tree like searching
+the data, finding the predecessor and successor would be performed
+in a way efficient manner. Superimposing a binary tree on the top
+of the vEB tree (refer to the section 20.1) makes the operations
+easy and performed in less time.</p>
+<p>This methodology might be extended further by superimposing a
+tree of constant height and with the size of the universe<img src=
+"../imgs/99e7864714ecf53a1897345579591ab6b997fa15.png">. In this
+the value of <i>k</i> is integer. The degree of the superimposed
+tree would be<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">. The reason
+for taking the universe size <img src=
+"../imgs/99e7864714ecf53a1897345579591ab6b997fa15.png">is to make
+sure that the degree<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">always
+remains an integer.</p>
+<p>At each level of the superimposed tree the node holds the
+logical-OR of the<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">children. In
+other words, if any of the<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">values or
+all of them has a 1, then the parent node would hold a 1 in it. The
+height of such a tree would always remain 2. The figure below shows
+an example of such a tree superimposed on the top of the Van Emde
+Boas tree.</p>
+<p><img src="../imgs/59ebc819079d44eb7ec3d27be5c81860c8a82be5.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\18.tif"></p>
+<p>The superimposed tree shown in the diagram has a universe size
+of 16. Thus making <i>k</i>equal to2 and the degree of the tree
+is<img src="../imgs/a5a34167638545b37f6ffa6c4b1e1a81ec3a7375.png">.
+Every node of the superimposed tree has a 1 in it if any of its
+children has a 1 in it.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Superimposing a tree of deg</b> <b>ree</b> <b><img src=
+"../imgs/05cc6aab607f742ddd9110874162840cbd0cc252.png">:</b> While
+using the Van Emde Boas tree the primary concern is to reduce the
+used space and fasten up the operations like searching the
+predecessor, successor, minimum and maximum.</p>
+<p>The universe size is assumed to be any power of 2. The
+superimposing tree on the vector array helps in performing the
+Insert, Delete, Maximum, Minimum, Member, Successor, and
+Predecessor functions with less complexity as illustrated here.</p>
+<p>Consider that the size of the universe<img src=
+"../imgs/99e7864714ecf53a1897345579591ab6b997fa15.png">. Therefore,
+if <i>k</i> is in the left hand side, the yield is<img src=
+"../imgs/a39f605ff08785f99c2489e468fe72952e2e3a01.png"> , <img src=
+"../imgs/d507cd47193f36b9ed96f62a8ea80a71d2e96f62.png">where
+<img src="../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> is
+constant. So, it can be guaranteed that if<img src=
+"../imgs/d507cd47193f36b9ed96f62a8ea80a71d2e96f62.png">, the degree
+for the concerned tree would be 4.</p>
+<p>This would give the pattern like this given below:</p>
+<p><img src="../imgs/8f02cdace03f69a2df7d17d3c64a307a62e49b54.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The degree for the concerned tree is<img src=
+"../imgs/05cc6aab607f742ddd9110874162840cbd0cc252.png">. This
+infers that each of the nodes of that tree would have <i><img src=
+"../imgs/05cc6aab607f742ddd9110874162840cbd0cc252.png"></i> nodes.
+As it is already gotten that the value of <img src=
+"../imgs/05cc6aab607f742ddd9110874162840cbd0cc252.png"> would be
+equal to 4. So, the degree of the tree would be 4. For any positive
+value of <i>k</i>, that is, larger than 1, the height of the vEB
+tree would be equivalent to <i>k</i>. The reason is that the height
+of the vEB tree would be bound to the value of <i>k</i>. this can
+be illustrated as below: For a tree with <i>k</i>=2 and degree
+4.</p>
+<p><img src=
+"../imgs/ba7f8138708e1079dd89520dbfd776137b043b60.png"></p>
+<p>And the height would be equal to the steps taken in creating the
+complete tree. So at every step, 4 nodes would make one node of
+next level. Thus the height of the tree equal to 2. For a tree with
+<i>k</i>=3.</p>
+<p><img src=
+"../imgs/7ff2c196b579bf05913cf758ac23d775f5218c7a.png"></p>
+<p>And the height would be equal to 2. Thus, height is always equal
+to the value of <i>k</i> and so would it be for the vEB tree of
+degree<i><img src=
+"../imgs/05cc6aab607f742ddd9110874162840cbd0cc252.png"></i><i>.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Successor</b> <b>and</b> <b>Predecessor:</b> At first,
+<img src=
+"../imgs/9b829cd568229f85bd5946f295e857763b2d6a77.png">would have
+to be found out, so that the quotient for the division can be
+gotten and the sub array number, in which the element might be
+present, can be found. It can be seen that the division does not
+depend on the number being present but depends on the divisibility
+of the number <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"> by<img src=
+"../imgs/05cc6aab607f742ddd9110874162840cbd0cc252.png">.</p>
+<p>Thus, the concerned position of the index, in which the current
+number is present, can be found. The one can try to find whether
+the next 1 is present in the same cluster or not. This can be
+continued with the upcoming clusters in the same way. This
+procedure either way would have to traverse all the indexes of the
+tree. Since the height of the vEB tree is <i>k</i>, the complexity
+can be found as follows:</p>
+<p><img src=
+"../imgs/f62fb30e4eaa3da28fca707f6575fbef38614bba.png"></p>
+<p>The same process in used for both finding the successor and
+predecessor which takes place in <img src=
+"../imgs/1a6dd6091b4c0f5956214dbb5aa5baae41119ac5.png">time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Maximum</b> <b>and</b> <b>Minimum:</b> The procedure to find
+the least element in the tree is a straight forward process. The
+tree would be searched for the first non-zero element from left to
+right wards. As soon as any such item is encountered, the value is
+considered to be the least in the tree. This is because the vEB
+tree stores the values in the ascending order.</p>
+<p>The sub arrays are searched linearly to find the leftmost
+elements as minimum and the rightmost elements as maximum of each
+cluster for a certain sub array containing 1.</p>
+<p>This would take time <i>k</i> times more than time taken by the
+Van Emde Boas Tree with degree<img src=
+"../imgs/0d7c27f03061e98d926361e53f8cc71fff89c087.png">.This
+operation takes place in <img src=
+"../imgs/1a6dd6091b4c0f5956214dbb5aa5baae41119ac5.png"> time. Thus,
+complexity lowers with the increasing value of <i>k</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

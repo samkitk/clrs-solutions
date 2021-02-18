@@ -1,0 +1,1198 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 19.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Alternative Implementation of Deletion</b></p>
+<p>Below algorithm is a version of FIB-HEAP-DELETE procedure. It
+runs faster when the node being deleted is not the pointed to by
+<i>H.min</i>.</p>
+<p><b>PISANO-DELETE</b> (<i>H</i>, <i>x</i>):</p>
+<p>// Checking condition the node is min heap or not.1 <b>if</b>
+<i>x</i> = <i>min</i>[<i>H</i>]</p>
+<p>// refer from the text book, section 19.22
+FIB-HEAP-EXTRACT-MIN(<i>H</i>)</p>
+<p>// initialize the parent of the node3 <b>else</b> <img src=
+"../imgs/a736319935f9e22e1f4c8c1c598652c87a1f7917.png"></p>
+<p>// checking initialization node is nil or not4 <b>if</b>
+<img src="../imgs/58a7ba050b549a36794de061029ccc22bcdb7c00.png">
+NIL</p>
+<p>// performing cut operation on tree (refer from the text book,
+section 19.3)5 CUT(<i>H</i>, <i>x</i>, <i>y</i>)</p>
+<p>// performing cascading cut operation (refer from the text book,
+section 19.3) 6 CASCADING-CUT(<i>H</i>, <i>y</i>)</p>
+<p>// now adding the child list to the root list7 add <img src=
+"../imgs/87ba9e2d264e6ed1d2219393347807974a0f470f.png"> child list
+to the root list of <i>H</i></p>
+<p>// removing the node from root list8 remove <i>x</i> from the
+root list of <i>H</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> Consider the line 7 of the above algorithm that
+is:</p>
+<p>Add <img src=
+"../imgs/87ba9e2d264e6ed1d2219393347807974a0f470f.png"> child list
+to the root list of <i>H</i></p>
+<p>This assumption is based on the condition that <i>X</i> has only
+one child (performed in <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"> actual
+time). This is wrong because, if the child list of <i>X</i> has
+more than two entries, and for collecting every child node, and
+then add that to the root list of <i>H</i>, then it may require
+more than <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"> time. This
+is so because there are chances of having more than one child in a
+particular node <i>X</i>.</p>
+<p>This procedure will take <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">time if
+there will be <i>n</i> children of node <i>X</i> and this <i>n</i>
+is actually the number of children attached to the node
+<i>X.</i></p>
+<p>So, it can be any number from 1 to <i>n</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Each Cascading-Cut procedure runs in <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"> time.</p>
+<p>Hence, if <i>C</i> calls are made, total time is <img src=
+"../imgs/84e4b6a919d1e17e85c6f85ddce5dff54f38bb27.png">provides the
+running time of line 7 because this cost is going to applied on
+every node of the list and which is find in terms of degree.</p>
+<p>If <i>X</i> is not <i>H</i>.<i>min,</i> total running time of
+this will be <img src=
+"../imgs/cbe0ba58275f648ed3caf1c8ea6612e2908d0997.png">where
+<i>N</i> is the number of members in Heap <i>H</i> because the
+calls are now going to perform further until the condition of min
+<i>H</i> is not matched.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> Fibonacci heap have <img src=
+"../imgs/a5d213d88857b0c2dba960e32747e4cef864354f.png">trees at the
+maximum marked nodes are <img src=
+"../imgs/5e0eac0cabbd5043fc08da06763abb49d5c167c6.png"></p>
+<p>(<img src=
+"../imgs/e69a67a25c81ad35da50b0a77acdb666ae7bba54.png">are the
+numbers of unmarked nodes by cascading cuts). Therefore, the
+potential bounded by this term is:</p>
+<p>Now, referring to page 509 for equation (19.1)</p>
+<p>Potential function:</p>
+<p><img src="../imgs/11966a5eb876d5a6bb615c92e2fc165a498669f8.png">
+<b>... ... (1)</b></p>
+<p>The potential function=number of trees +2 times number of marked
+nodes.</p>
+<p>Consider if <i>c</i> be the number of tree added to the root
+list then <i>c</i>–1 were marked (last call makes node unmarked in
+cascading-cuts).</p>
+<p>Number increases by <i>c</i> and marked node decreases by at
+least <i>c</i>–2.</p>
+<p>Hence the above expression <b>(1)</b> becomes as shown
+below:</p>
+<p><img src=
+"../imgs/f31b61cdd94b14096639e25f267af73ff7d4edc7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i> As the amortized time of FIB-HEAP-DELETE
+is<img src="../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">,
+the amortized time of PISANO-DELETE can reach a minimum of this
+value only. It is due to the fact that the procedure for removing
+of children of <i>X</i> and adding them to root of <i>H</i> is a
+time taking process and compensates for the decrease in time
+generated by PISANO-DELETE.</p>
+<p>Hence, the lower limit of amortized time taken by PISANO-DELETE
+is also<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+<p>This is no better than the FIB-HEAP-DELETE and neither the
+checking of min heap for a node is effect that because in the last
+amortized cost nature is same in both the cases because in part
+(<i><b>c</b></i><b>)</b> nature of final expression is not going to
+change due to this condition.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>BINOMIAL TREES AND BINOMIAL HEAPS</b></p>
+<p><b>Binomial tree:</b> The binomial tree is represented by the
+symbol<img src=
+"../imgs/993d2c19bf316a7a77fb9c36657da2d93ecf64d7.png">. It is
+defined in a recursive way and is an ordered tree. It can represent
+more intuitively with the help of diagram as,</p>
+<p><img src="../imgs/c0e3d4cff917393770392dffac5fa442ce58708e.png"
+alt="D:\Tiffs\2254.tif"></p>
+<p>It can be visualize that the binomial tree <img src=
+"../imgs/3391100ef8262b5f5c81b8b54d01d225c667edfd.png"> have a
+single node and <img src=
+"../imgs/993d2c19bf316a7a77fb9c36657da2d93ecf64d7.png">consist of
+two <img src=
+"../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png">in which one
+of them is the leftmost child of the other node.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> Binomial tree <img src=
+"../imgs/993d2c19bf316a7a77fb9c36657da2d93ecf64d7.png"> holds the
+following properties:</p>
+<p><b>1</b>. There are <img src=
+"../imgs/48fd099c03a94f5673289ef91095e58767aafdf7.png"> nodes.</p>
+<p>In the tree, finding that<img src=
+"../imgs/993d2c19bf316a7a77fb9c36657da2d93ecf64d7.png">has two
+copies of <img src=
+"../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png">this is
+shown below:</p>
+<p><img src=
+"../imgs/780de6f4570a5ec2d73427e079fe992f314bfc6c.png"></p>
+<p><img src=
+"../imgs/d90a66167f7d7fdd54d3a2c4013cbc3a42105218.png"></p>
+<p>By applying process of induction on the given statement<img src=
+"../imgs/aa75950aa6ffcd862f5f1699602a81bcbc3e3cdd.png">,</p>
+<p>When <i>k</i>=1,</p>
+<p><img src="../imgs/0fa80e066779b4cbbe5988b2f3cac5208e5f6a0b.png">
+<img src=
+"../imgs/5ae03c9505d049324abd0dea7271f4488e11a112.png"></p>
+<p><img src=
+"../imgs/579fcee3e7d95b4160ddb1dc27e03eddac19d652.png"></p>
+<p>Therefore,<img src=
+"../imgs/6b75b97540da7a87b80de9402626731e18c70ef4.png"> is
+true.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Assume that the given condition is also holds for all positive
+integer k. Now it will prove this for next higher integer k+1.</p>
+<p><img src=
+"../imgs/9cff58716958645a44e8728a7664d33a32f5c757.png"></p>
+<p><img src=
+"../imgs/0f8720d855aeec79b9081ad8b960137431c2ddb3.png"></p>
+<p>Thus, by mathematical induction <img src=
+"../imgs/c4637967cd4b00635bda7d113a1c2d5b5e949593.png"> is true.
+So, <img src=
+"../imgs/aa75950aa6ffcd862f5f1699602a81bcbc3e3cdd.png"> holds for
+all natural numbers.</p>
+<p>Hence total number of nodes is equal to<img src=
+"../imgs/48fd099c03a94f5673289ef91095e58767aafdf7.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2.</b> The height of the tree is equal to k.</p>
+<p>The binomial tree <img src=
+"../imgs/993d2c19bf316a7a77fb9c36657da2d93ecf64d7.png">has the tree
+<img src="../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png">as
+the child of the other<img src=
+"../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png">, <img src=
+"../imgs/f8da2b8af86ba5674d2c8981e579ad66e9cb1de2.png">.</p>
+<p>By applying induction process on <i>k,</i></p>
+<p><img src=
+"../imgs/db4acd55a2b964e53617a5dc702242a5f98a6380.png"></p>
+<p>So, it can be concluded that the height of the tree is one more
+than the height of <img src=
+"../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png"><b>which is
+equal to</b><b><img src=
+"../imgs/7d350b75dadb1ace4a9903e9a319cd48ee7e7826.png"></b><b>.</b></p>
+<p><b>3</b>. There are <img src=
+"../imgs/18cebb2217e44c9bf164cb0d4479c43c09ef825a.png"> nodes at
+the depth <i>i</i> in which the value of<img src=
+"../imgs/53c1c89a5203232d2c3a1341a99619fbe63c4611.png">.</p>
+<p>Consider that <img src=
+"../imgs/18cebb2217e44c9bf164cb0d4479c43c09ef825a.png"> is the
+number of nodes which is at the depth i in the binomial tree
+<img src="../imgs/993d2c19bf316a7a77fb9c36657da2d93ecf64d7.png">and
+it is equal to the sum of the number <img src=
+"../imgs/4fc50ba46996a99546a160a52cc14420944e7dfa.png"> which is at
+the depth <i>i</i> and <img src=
+"../imgs/fc7d0845198d25b909b98587117215a0ee311bd3.png"> which is at
+the depth <i>i–</i>1 which is shown as:</p>
+<p><img src="../imgs/bdc2eaf3c7f9e53eefc2d486477e6b95485c13bd.png"
+alt="Picture 1"></p>
+<p><img src=
+"../imgs/f2fb570c4550895420b2942e46bed9b335f6afd9.png"></p>
+<p><img src=
+"../imgs/991cefc35285ffc4a63e68da75d6ff5a1639d1fc.png"></p>
+<p><b>Hence,</b></p>
+<p><img src=
+"../imgs/ae96c9ace529ffc008becbe3733a487c6e5bfd7c.png"></p>
+<p><img src=
+"../imgs/b6113fe41ffa7faead120ebf8f1c813d19d2a520.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>4.</b> The root has the degree k, which is greater than any
+other node; and if the children of the root are numbered left to
+right by <img src=
+"../imgs/9f0db861e2f03a978178ca21a616c2fb25bff7f2.png"> and in
+which the child <i>i</i> is the root of the sub-tree<img src=
+"../imgs/cf146a18148d225fa631889bec42ceb52f06c805.png">,</p>
+<p><img src="../imgs/40d986b7a105e9409730744be85bee83243c20af.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Any node which have its degree greater than <img src=
+"../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png"> in the
+binomial tree <img src=
+"../imgs/993d2c19bf316a7a77fb9c36657da2d93ecf64d7.png"> is the root
+node in which there is one child more than the<img src=
+"../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png">. And as
+deduced above the degree of the root <img src=
+"../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png"> has
+<i>k</i>-1, and the degree of the root is <i>k</i>.</p>
+<p><img src=
+"../imgs/0f5d720a49706fa949f92efaf547091d38fb3fdb.png"></p>
+<p>It can be deduced inductively that <img src=
+"../imgs/f5d35b440531bccf9c22c80fa74d330054005555.png"> have the
+children which is the root of<img src=
+"../imgs/9214304b7a144c707667478bfa02fac803501801.png">which is
+shown below:</p>
+<p><img src=
+"../imgs/edbe73a30951d1ae1714272515b8106e330b52fe.png"></p>
+<p>Hence, it can be easily concluded that the root <img src=
+"../imgs/993d2c19bf316a7a77fb9c36657da2d93ecf64d7.png"> has its
+children<b><img src=
+"../imgs/f984f5785e39441994bef8500fbed006b689ef77.png"></b><b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>BINOMIAL HEAPS:</b> Binomial heap is a group of binomial tree
+which is represented by the symbol <i>H.</i> It obeys the binomial
+heap properties which are as follows:</p>
+<p>1. It is like a Fibonacci heap in which each node has a key.</p>
+<p>2. It should satisfy min-heap property which implies key of the
+parents node is less than or equal to key of its child nodes.</p>
+<p>3. There is minimum one binomial tree of degree <i>k</i> in
+binomial heap H where k is a nonnegative integer.</p>
+<p>Binomial heap can be represents more intuitively with the help
+of diagram as shown:</p>
+<p><img src="../imgs/3bb6fe0e151c3b618e5c14b6061d1db65404dacb.png"
+alt="Picture 1"></p>
+It can be visualize that binomial heap is a combination of three
+binomial tree which are<img src=
+"../imgs/d23f929473ba24b0094d94d0f22157e83b592047.png">.</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> With the reference to the 2<sup>nd</sup>
+property it is derived that the smallest key of the binomial tree
+is the key of the root node. By using the third properties it is
+clear that in an <i>n</i>-node binomial heap the number of trees is
+at most<img src=
+"../imgs/7b95f2ccb99ab4c4857df2a3a742805242c89b70.png">. The binary
+representation of the node <i>n</i> and the <i>H</i> is defined
+as,</p>
+<p><img src=
+"../imgs/988aaa8553588eaf1eda3de8ab1bef1f965ae91e.png"></p>
+<p><img src=
+"../imgs/7a5820b17e009ffc74ccf77c593a226aa49547dc.png"></p>
+<p>By using First property of the Lemma which implies<img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"> contains
+2<sup>i</sup> nodes so that <img src=
+"../imgs/cf146a18148d225fa631889bec42ceb52f06c805.png"> appears in
+the heap <i>H</i> if <img src=
+"../imgs/3af33f05b75977afc3f55ef7440ef7b3fb944029.png">1 holds
+well. <b>And hence it is concluded that the H consists of at
+most</b> <b><img src=
+"../imgs/7b95f2ccb99ab4c4857df2a3a742805242c89b70.png"></b>
+<b>binomial trees.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider an example that can be used for proving that H consists
+of at most <img src=
+"../imgs/7b95f2ccb99ab4c4857df2a3a742805242c89b70.png"> binomial
+trees. Suppose a heap is consisting of 12 nodes. Then</p>
+<p>12= &lt;1, 1, 0, 0&gt;<sub>2</sub></p>
+<p>Consist of <img src=
+"../imgs/c19e6afb72173a89a0a86549064e1aa720bc4b7b.png"> two
+binomial trees.</p>
+<p><img src="../imgs/f80beb6c1b88c5fdc1c6e946f5acd58a96838f9f.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+<p>In the above diagram it is clear that, if the binomial heap
+contains 12 nodes then there are two binomial trees in the binomial
+heap which are<img src=
+"../imgs/c19e6afb72173a89a0a86549064e1aa720bc4b7b.png">.Then by
+using the third properties it is clear that in an <i>n</i>-node
+binomial heap the number of trees is at most<img src=
+"../imgs/7b95f2ccb99ab4c4857df2a3a742805242c89b70.png">. So if the
+value of <i>n</i>=12.</p>
+<p>Number of binomial trees in binomial heap H</p>
+<p><img src=
+"../imgs/b347e7295e7a5f90ca76861bd592af12e60ae7c1.png"></p>
+<p>So, it is clear from the above example the total number of
+binomial trees in binomial heap are 2.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> <b>Binomial heap:</b> Binomial heap which is
+represented by H is a group of binomial trees. It obeys the
+binomial heap properties which are as follows:</p>
+<p>1. It should satisfy heap-ordered property which implies key of
+the parents node is less than or equal to key of its child
+nodes.</p>
+<p>2. There is minimum one binomial tree of degree <i>k</i> in
+binomial heap H where k is a nonnegative integer.</p>
+<p><b>Representation of the binomial heap:</b> T he binomial tree
+with the help of left-child; right-sibling is represented in such a
+way that the node <i>b</i> has a pointer for its leftmost child as
+<i>b.child</i>, <i>b.sibling</i> for its immediate right sibling
+and <i>b.p</i> for its parent. And it also contains a field for the
+data in which the number of children in <i>b.degree</i>.</p>
+<p><img src="../imgs/5c19b57fee7285d79b084b5027abebc483c4d347.png"
+alt="D:\Tiffs\2254.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>As represented in the figure- organize the roots of the tree
+with the help of linked list, the root list. The degree of the root
+increases monotonically as the root list is traversed. Now for the
+root <i>b</i>, the <i>b.sibling</i> use to point to the next root
+in the list and as usual the NIL is the undefined pointer.
+Representation of binomial heap is shown by following example:
+Suppose a heap is consisting of 13 nodes. Then,</p>
+<p>13= &lt;1, 1, 0, 1&gt;<sub>2</sub></p>
+<p><img src="../imgs/86fb7a305ac26e2b9b75e75200807e51fc76b580.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\6.tif"></p>
+<p>Consist of <img src=
+"../imgs/d60707bf90f0f80d4b221c57c8ef2aebaef24ae7.png"> three
+binomial trees.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Binomial heap is represented by using linked list arranged in
+the order of increasing degree is as shown:</p>
+<p><img src="../imgs/fe00231b58a9521ce207b1c116152e99455764f1.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\8.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Operation performed on the binomial heap:</b> Various
+operations on the binomial heaps are as shown below:</p>
+<p><b>1.</b> MAKE-HEAP:</p>
+<p><img src=
+"../imgs/50291aefd878acc8c53cb66a59c632e270cebb4f.png"></p>
+<p>To create an empty-heap MAKE-HEAP used to allocates and the
+object <i>H</i> is returned. The worst case running time for the
+MAKE-HEAP algorithm is<img src=
+"../imgs/a939457349720b8048c8e530f6e4ce3b2597d8a3.png">as for the
+creation of heap it runs only once.</p>
+<p><b>2.</b> MINIMUM:</p>
+<p>Its procedure is as,</p>
+<p><i>BINOMIAL-HEAP-MINIMUM</i> (<i>H</i>)</p>
+<p>// make a pointer to the current value of min</p>
+<p><i>b</i>=<i>NIL</i></p>
+<p><i>a</i>=<i>H.head</i></p>
+<p><i>min=infinity</i></p>
+<p>// check condition</p>
+<p><b>while</b> <i>a</i> != <i>NIL</i></p>
+<p><b>do</b></p>
+<p><b>if</b> <i>a.key</i> &lt; <i>min</i></p>
+<p>then <i>min</i>=<i>a.key</i></p>
+<p><i>b</i>=<i>a</i></p>
+<p><i>a=a.sibling</i></p>
+<p><b>return</b> <i>b</i></p>
+<p>// end</p>
+<p>A pointer is returned to the nodes which have the minimum key by
+the procedure. And as discussed the binomial-heap is a min-heap so
+the minimum must lie in the root so in this we only need to check
+in the root list for <b><img src=
+"../imgs/7b95f2ccb99ab4c4857df2a3a742805242c89b70.png"></b>
+nodes.</p>
+<p><b>Hence, the running time is</b> <b><img src=
+"../imgs/1f6bf4f18f001b45bc03e3028ae95de3d7aa2efa.png"></b>
+<b>.</b></p>
+<p><b>3.</b> UNION: It is done by the uniting of two
+Binomial-Heaps. It generally links the Binomial trees which have
+the same size.</p>
+<p><i>BINOMIAL-HEAP-UNION</i> (<i>H</i>1, <i>H</i>2)</p>
+<p><i>H</i>=<i>MAKE-HEAD</i> ()</p>
+<p><i>H</i>.<i>head</i> = <i>BINOMIAL-HEAP-MERGE</i> (<i>H</i>1,
+<i>H</i>2)</p>
+<p><b>make</b> <i>H</i>1 and <i>H</i>2 as free</p>
+<p><b>if</b> <i>H.head</i> = <i>NIL</i></p>
+<p>then <b>return</b> <i>H</i></p>
+<p><i>a</i>.<i>prev</i> = <i>NIL</i></p>
+<p><i>a</i> = <i>H.head</i></p>
+<p><i>a.next</i> = <i>a.sibling</i></p>
+<p>// check condition</p>
+<p><b>while</b> <i>a.next</i> != <i>NIL</i></p>
+<p><b>do</b></p>
+<p><b>if</b> (<i>a.degree</i> != <i>degree</i> [<i>a.next</i>])
+<b>or</b> (<i>sibling</i> [<i>a.next</i>] != <i>NIL</i> <b>and</b>
+<i>degree</i> [<i>sibling</i> [<i>a.next</i>]] =
+<i>a.degree</i>)</p>
+<p>then <i>a.prev</i> = <i>a</i></p>
+<p><i>a</i> = <i>a.next</i></p>
+<p><b>else if</b> <i>a.key</i> =&lt; <i>key</i> [<i>a.next</i>]</p>
+<p>then <i>a.sibling</i> = <i>sibling</i> [<i>a.next</i>]</p>
+<p>// <i>BINOMIAL-LINK</i> is called</p>
+<p><i>BINOMIAL-LINK</i> (<i>a.next</i>, <i>a</i>)</p>
+<p><b>else if</b> <i>a.prev</i> = <i>NIL</i></p>
+<p>then <i>H.head</i> = <i>a.next</i></p>
+<p><b>else</b></p>
+<p><i>sibling</i> [<i>a.prev</i>] = <i>a.next</i></p>
+<p>// <i>BINOMIAL-LINK</i> is called</p>
+<p><i>BINOMIAL-LINK</i> (<i>a</i>, <i>a.next</i>)</p>
+<p><i>a</i> = <i>a.next</i></p>
+<p><i>a.next</i> = <i>a.sibling</i></p>
+<p><b>return</b> <i>H</i></p>
+<p>//end</p>
+</div>
+<hr>
+<div class="answer">
+<p>This procedure unites the heaps <i>H</i>1 and <i>H</i>2 and
+destroys them. It works in two phases-in the first phase we have
+BINOMIAL-HEAP-MERGE in which the roots of <i>H</i>1 and <i>H</i>2
+are merged into a single linked-list and in the second phase we
+have BINOMIAL-HEAP-UNION.</p>
+<p>Consider that the heap <i>H</i>1 have <i>n</i>1 nodes and the
+heap <i>H</i>2 contains <i>n</i>2 nodes, so the total number of
+nodes that the <i>H</i> contains is equal to
+<i>n</i>=<i>n</i>1+<i>n</i>2 nodes. And as we have <i>H</i>1 which
+have at most <img src=
+"../imgs/aaa45b989fa6b5450bcd04a53d8c65ec62ce2c11.png">+1 roots and
+the <i>H</i>2 have <img src=
+"../imgs/12fc9b59e8806cd995e6733db0ef1ee96d48c2ea.png"> root so the
+heap <i>H</i> have at most <img src=
+"../imgs/5d96c837b8b35029065c27a8377ef3431ee7c250.png"> roots.</p>
+<p>Here the running time for the BINOMIAL-HEAP-MERGE is equal to
+<img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">.and each of
+the iteration in the while loop takes <img src=
+"../imgs/d447d54a6091e2120514ddad3f699b9afdd427dc.png"> time.
+Hence, the total iterations are equal to<img src=
+"../imgs/74233b34f3b23f6374e5ab1b177715dda8fcce46.png">. Since in
+the each iteration, one of the roots is removed. Therefore the
+phase 2 also takes <img src=
+"../imgs/1f6bf4f18f001b45bc03e3028ae95de3d7aa2efa.png">time<b>.</b></p>
+<p><b>So, the overall complexity is equal to the</b> <b><img src=
+"../imgs/1f6bf4f18f001b45bc03e3028ae95de3d7aa2efa.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>4.</b> INSERTION:</p>
+<p><i>BINOMIAL-HEAP-INSERT</i> (<i>H</i>, <i>a</i>)</p>
+<p>// <i>MAKE-HEAP</i> is called</p>
+<p><i>H’</i> = <i>MAKE-HEAP</i> ()</p>
+<p><i>a.p</i> = <i>NIL</i></p>
+<p><i>a.child</i> = <i>NIL</i></p>
+<p><i>a.sibling</i> = <i>NIL</i></p>
+<p><i>a.degree</i> = 0</p>
+<p><i>H’</i>.<i>degree</i> = <i>a</i></p>
+<p>// <i>BINOMIAL-HEAP-UNION</i> is called</p>
+<p><i>H</i> = <i>BINOMIAL-HEAP-UNION</i> (<i>H</i>, <i>H’</i>)</p>
+<p>Consider that the node <i>a</i> has been allocated and its key
+value <i>a</i>.<i>key</i> is set, then the, BINOMIAL-HEAP-INSERT
+make an insertion into the heap <i>H</i> by keeping it in the heap
+<i>H’</i> which have a single element which have the time
+complexity as <img src=
+"../imgs/4775428dd66baf2340c13fc134a7a6e102569079.png">and by
+making the union with <i>H</i> we have the overall complexity
+as<img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>5.</b> Minimum Heap Extraction:</p>
+<p><i>BINOMIAL-HEAP-EXTRACT-MIN</i> (<i>H</i>)</p>
+<p>1. The root <i>a</i> is searched which have the minimum
+<i>key</i> in the <i>root list</i> and the</p>
+<p>node <i>a</i> is removed from the list</p>
+<p>// <i>MAKE-BINOMIAL-HEAP</i> is used</p>
+<p>2. <i>H = MAKE-BINOMIAL-HEAP</i> is used</p>
+<p>3. Then the order of the linked list is reverse in such a way
+that <i>H’.head</i> point to the list head</p>
+<p>// <i>BINOMIAL-HEAP-UNION</i> is used</p>
+<p>4. <i>H</i> = <i>BINOMIAL-HEAP-UNION</i> (<i>H</i>,
+<i>H’</i>)</p>
+<p>5. <b>return</b> <i>a</i></p>
+<p>// end</p>
+<p>The line 1 and 4 take <img src=
+"../imgs/1f6bf4f18f001b45bc03e3028ae95de3d7aa2efa.png"> time and
+line number 3 takes <img src=
+"../imgs/4e35536f2fa2eec654870ab132aba1acdb32ca39.png"> times and
+the line 2 and 5 takes <img src=
+"../imgs/d447d54a6091e2120514ddad3f699b9afdd427dc.png"> time. Hence
+the overall complexity is equal to<b><img src=
+"../imgs/1f6bf4f18f001b45bc03e3028ae95de3d7aa2efa.png"></b><b>.</b></p>
+<p><b>6.</b> Decreasing a key:</p>
+<p><i>BINOMIAL-HEAP-DECREASE-KEY</i> (<i>H</i>, <i>a</i>,
+<i>k</i>)</p>
+<p><b>if</b> <i>k</i> &gt; <i>a.key</i></p>
+<p>then error “<i>key.new</i> &gt; <i>key.current</i>”</p>
+<p><i>a.key</i> = <i>k</i></p>
+<p><i>b</i> = <i>a</i></p>
+<p><i>c</i> = <i>b.p</i></p>
+<p><b>while</b> <i>c</i> != <i>NIL</i> and <i>b.key</i> &lt;
+<i>c.key</i></p>
+<p><b>do</b></p>
+<p><b>exchange</b> <i>b.key</i> and <i>c.key</i></p>
+<p>// also exchange the data if any</p>
+<p><i>b</i> = <i>c</i></p>
+<p><i>c</i> = <i>b.p</i></p>
+<p>Since the while loop iterates for the maximum of <img src=
+"../imgs/2bfe5405fcaecfd322d9fe93cec8de5f6aebb498.png"> times. So,
+the procedure has the time complexity of<b><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></b><b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>7.</b> Deleting a key:</p>
+<p><i>BINOMIAL-HEAP-DELETE</i> (<i>H</i>, <i>a</i>)</p>
+<p><i>BINOMIAL-HEAP-DELETE</i> (<i>H</i>, <i>a, –</i><img src=
+"../imgs/7e34a007bd835dc92ad9c46a7cd5fa86919a169b.png">)</p>
+<p>BINOMIAL-HEAP-EXTRACT-MIN (H)</p>
+<p>BINOMIAL-HEAP-DECREASE-KEY bubbles are infinity to the root,
+where it is removed by BINOMIAL-HEAP-EXTRACT-MIN<b>.</b> Since,
+both procedures run in <img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">time, so
+does BINOMIAL-HEAP-DELETE<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i> <b>MERGEABLE-HEAP:</b> MERGEABLE HEAP is the
+data structure for maintaining the dynamic set of items with the
+help of keys. It supports five operations which are as follows:</p>
+<p><img src=
+"../imgs/0b50ef13915b11b35a0964f29a9f616696be6529.png">It creates
+and returns a new empty heap.</p>
+<p><img src=
+"../imgs/fd44a8ed9bf683d638a317beb10ec2d427fc33ea.png">: It is used
+to insert node a into the heap <i>H</i> whose the key field is
+set.</p>
+<p><img src=
+"../imgs/b5849b695fb6cbc1225ebe6a63244aa08e24c619.png">: A pointer
+is returned to the node in the heap H whose value of key is
+minimum.</p>
+<p><img src=
+"../imgs/ef49af9cc41ff4635ca0b121c73668e7996c9978.png">: The node
+whose key is minimum in <i>H</i> is deleted and a pointer is
+returned to it.</p>
+<p><img src=
+"../imgs/a36d5f7b9db75ee469e569fbf1d9f5c65a8548e4.png">: A new heap
+is created and returned which have all the nodes of heap <i>H</i>1
+and <i>H</i>2. And in this operation both the heap <i>H</i>1 and
+<i>H</i>2 are destroyed. Both the operations are supported by the
+Binomial and Fibonacci heaps which are merging able heaps.</p>
+<p><img src=
+"../imgs/4dd94bac2215eb72aaeb0c311935eaf8400aabb4.png">: The node
+<i>a</i> is assigned the new key value of <i>k</i> which is
+supposed to be the current key. <img src=
+"../imgs/37557af08c507e34d9a8823137b7694b98d6ccaa.png">: It deletes
+node <i>a</i> from the heap <i>H</i>.</p>
+<p>Binary heaps has a better performance of <img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"> except for
+<i>UNION</i>, which takes <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The relationship between the worst case complexity for the
+Binomial Heap and the Fibonacci Heap is illustrated below:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>operation</b></p>
+</td>
+<td>
+<p><b>Binomial-heap</b></p>
+<p><b>(worst-case)</b></p>
+</td>
+<td>
+<p><b>Fibonacci-heap</b></p>
+<p><b>(AMORTISED)</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MAKE-HEAP</p>
+</td>
+<td>
+<p><img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>UNION</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>INSERT</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MINIMUM</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>EXTRACT-MIN</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DECREASE-KEY</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DELETE</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+</tr>
+</table>
+<p>Both the heaps are not efficient for the search operation so the
+operation DECREASE-KEY and DELETE have a pointer for the given
+node. Also show that the maximum degree in the <i>n</i>-node
+Fibonacci heap is<img src=
+"../imgs/9ef570358a8f57219062d4c7fd6841166b11c53c.png">. It can be
+deduced inductively.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider that the entire heap which has the m nodes <img src=
+"../imgs/33b4f77abcb89038396d52dadec5a1ebd47de7d4.png">has a
+maximum degree<img src=
+"../imgs/dafa463b0707b089bfab59e58ac6910966fcc8d7.png">. And show
+that a heap has an <i>n</i>-node and has a maximum degree
+of<img src=
+"../imgs/9ef570358a8f57219062d4c7fd6841166b11c53c.png">.</p>
+<p>Now, consider a heap having <i>n</i>-nodes. The height of this
+node is one greater than its parent (since we are not in the base
+case).</p>
+<p>Hence, its maximum degree is <img src=
+"../imgs/518809008f96b345809735a9a8560653dd48d73c.png"> by the
+induction hypothesis. It can also be derived that for the
+<i>n</i>th node the maximum degree as<img src=
+"../imgs/f35c2f7a506ff0698a86084a82e8e38b2bc4b3ba.png">.</p>
+<p>Hence it can be concluded that the maximum degree of the
+<i>n</i>-node in a Fibonacci-heap is<img src=
+"../imgs/9ef570358a8f57219062d4c7fd6841166b11c53c.png">.</p>
+<p><b>MCGEE HEAP:</b> It is a heap in which the implementation of
+all the operation is same as the Fibonacci heap which supports all
+the Mergeable-Heaps operations instead of insertion and union.</p>
+<p><i><b>e.</b></i> It can be observed, that the Fibonacci Heap in
+which all the Mergeable operations are supported is one of the
+collections of the binomial-trees. This heap contains maximum n
+nodes. Hence the largest degree is of<img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">.</p>
+<p>As discussed the consolidation of roots is performed after the
+Union and the Insertion operation, it lead the entire binomial tree
+in the MCGEE-Heap in such a condition that the order is different.
+This case is also observed after the operation DELETE-min.</p>
+<p>Hence it can be concluded that the MCGEE-Heap is a well known
+Binomial-Heaps.</p>
+<p>So the complexity will be as follows:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>operation</b></p>
+</td>
+<td>
+<p><b>Binomial-heap</b></p>
+<p><b>(worst-case)</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MAKE-HEAP</p>
+</td>
+<td>
+<p><img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>UNION</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>INSERT</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>MINIMUM</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>EXTRACT-MIN</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DECREASE-KEY</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>DELETE</p>
+</td>
+<td>
+<p><img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"></p>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Augmentation of Fibonacci heap</b></p>
+<p>Fibonacci heap is a structural model which is a grouping of
+several heaps. Fibonacci heap performs all the operations of
+mergeable heap. One more property of Fibonacci heap is that the
+time taken operations is constant amortized. They have a better
+running time than the normal binomial heap. Fibonacci heap is
+composed of a set of heaps. Every heap fulfills the minimum
+requirement of a min-heap.</p>
+<p>So in the heap, each key is either equal to or greater than the
+value of its parent’s key.</p>
+<p><img src="../imgs/ea8f3b92a650ffd899da4d5e5ae3a876490248de.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\5.tif"></p>
+<p>The diagram above shows a Fibonacci heap. In the diagram it can
+be inspected that the value of the key of each and every node is
+either larger than or equal to the key of its parent. The dotted
+line denotes the nodes located at the root or base of the heap.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Operations on Fibonacci heap</b>: The operations that come
+under mergeable heap are given below:</p>
+<p>MAKE-HEAP ():</p>
+<p>This procedure is used for the creation of a heap that has no
+element in it, initially. The amortized execution time of this
+procedure is<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">.</p>
+<p>INSERT (<i>H</i>, <i>e</i>):</p>
+<p>This operation is used to insert a new element <i>e</i> in heap
+<i>H</i>. In this case, the key for element <i>e</i> is already
+there in heap <i>H</i>. Locating the key in the heap takes constant
+amount of time and the equal time is taken in inserting a node in
+the heap. This operation is completed in the constant amount of
+time and the amortized time taken by this operation is<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">.</p>
+<p>MINIMUM (<i>H</i>):</p>
+This operation finds the minimum key from the meargeable heap and
+then returns a pointer that point to that element. Like the
+insertion, in this case also, the key value of the node can be
+located in the constant amount of time. The amortized time taken by
+this operation is also<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">.</div>
+<hr>
+<div class="answer">
+<p>EXTRACT-MIN (<i>H</i>):</p>
+<p>This operation is similar to MINIMUM (<i>H</i>) operation except
+that it deletes the item from the heap.In this operation first of
+all the minimum key is removed from the heap. Now as the element
+having the minimum value has been deleted, the kids of that key
+must be brought to the root. The execution time of this operation
+is dependent on the number of nodes. The amortized time taken by
+this task is<img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">.</p>
+<p>UNION (<i>H</i><sub>1</sub>,<i>H</i><sub>2</sub>):</p>
+<p>This operation is used to connect two heaps. In this, a new heap
+is created holding the items of both of the heaps. Once the new
+heap is created, both of the previous heaps are removed from the
+memory. The amortized time taken by this operation is<img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">.</p>
+<p>In the amortized completion time, the average cost is
+calculated. This keeps the running cost of operations small.
+Including mergeable heap operations, Fibonacci heap is also
+comprised of two more operations: DECRASE-KEY and DELETE.</p>
+<p>For Fibonacci heap operations, the amortized running time of
+DELETE and EXTRACT-MIN operations is<img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">and rest of
+operations have amortized running time of<img src=
+"../imgs/bd9a30aadee6b053c77ced961bc48e638e1d3b39.png">. For making
+any new operation, no change in amortized running time means that
+the working part of operations should not been changed.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a</b></i> <i>.</i> Consider<img src=
+"../imgs/cef6cc418fb5ef2e3e0b634a08aef71e9f64fa49.png">be the given
+heap, <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">be the node
+whose value is to be replaced by<img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">. In this
+the value and position is taken from the user and the value at the
+node has been replaced by the key. Algorithm for this given
+below:</p>
+<p>FIB-HEAP-CHANGE-KEY(<i>H</i>, <i>x</i>, <i>k</i>)</p>
+<p>// Use of if condition to check if the value of <i>k</i> is less
+than the value of <i>x.key</i></p>
+<p>1. <b>if</b> (<img src=
+"../imgs/0dec016e9e3ede5023d9ea748602a3aacc990a4e.png">)</p>
+<p>//When the condition is met, assigning of element in heap that
+has value<i>k</i>in it</p>
+<p>//is done</p>
+<p>2. <b>then</b> FIB-HEAP-DECREASE-KEY(<i>H</i>, <i>x</i>,
+<i>k</i>)</p>
+<p>//If the value of <i>k</i> is larger than <i>x.key</i>, then
+delete item <i>x</i> from heap</p>
+<p>3. <b>else</b> Fib-Heap-Delete(<i>H</i>, <i>x</i>)</p>
+<p>//create a new node that the value should be inserted in</p>
+<p>4. <img src=
+"../imgs/e44ab098f43b9fbffe3bbda224529cc73a33fac2.png"></p>
+<p>//Now, insert the node in the heap</p>
+<p>5. FIB-HEAP-INSERT (<i>H</i>, <i>y</i>)</p>
+<p><b>Explanation of the procedure:</b></p>
+<p>First of all line 1 checks if the <i>key</i>of item <i>x</i>is
+less than or equal to the value of <i>k</i>. If this is true then
+the procedure FIB-HEAP-DECREASE-KEY () is called in the line 2 of
+the procedure. This procedure would not generate a new node rather
+it would replace the old valuewith the later one.</p>
+<p>If the condition is not true, line 3 is executed. This line
+would remove the element from the heap. Now as the latest value has
+to be located exactly from where the old value was deleted. To get
+it done, a new node has to be created and then placed in the heap.
+So, allocate the memory for the newly created node and assign the
+key value to it as the key. This would be done in the line 4 of the
+procedure.</p>
+<p>Ultimately line 5 inserts the new node in the heap by invoking
+the procedure FIB-HEAP-INSERT (). This way the key value of the
+item can be altered and the new value can be put in. In the
+algorithm given above, the time required by the operations
+Fib-Heap-Insert (<i>H</i>, <i>y</i>) and Fib-Heap-Decrease-Key
+(<i>H</i>, <i>x</i>, <i>k</i>) is equal to <i>O</i>(1) and time
+taken by operation Fib-Heap-Delete(<i>H</i>, <i>x</i>) is
+<i>O</i>(log <i>n</i>). It is because the procedure of inserting
+any element and decreasing key would need only one step and in
+order to delete an element, the position should be taken into
+consideration.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Amortized time analysis of procedure</b></p>
+<p>Keeping the values of <i>x.key</i> and <i>k</i> in the mind as
+the base values, there would be three cases. The key provided for
+replacement of the previous value can be less than the current key
+of the node, equal to the previous key value or larger than the key
+value of the node.</p>
+<p>Amortize completion time for all of the above said cases are
+given below:</p>
+<p><b>Case 1:</b> <img src=
+"../imgs/3275fc7982c236188e68189c24def7b56a64f12f.png"> <b>:</b>
+When the value of <img src=
+"../imgs/3275fc7982c236188e68189c24def7b56a64f12f.png">, then the
+amortized time will be</p>
+<p><i>O</i> (lg <i>n</i>)+<i>O</i>(1). This is the time taken in
+locating the node and changing it with the new value. The time
+taken in locating the node would be <img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png"> and the
+node can be changed in the constant time. This makes the amortized
+running time equal to<img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">.</p>
+<p><b>Case 2:</b> <img src=
+"../imgs/0661a5737d671c41d20c0e7b4555ab04786dfe40.png"> <b>:</b>
+When the value of<img src=
+"../imgs/0661a5737d671c41d20c0e7b4555ab04786dfe40.png">, the
+operation Fib-Heap-Decrease-Key (<i>H</i>, <i>x</i>, <i>k</i>) is
+performed. This operation takes time of<i><img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"></i>. So, in
+this case, the amortized completion time must be constant and that
+is<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+<p><b>Case 3:</b> <img src=
+"../imgs/2134034f43551f50e2309cea11a52d3f74dd7dbc.png"> <b>:</b>
+When the value of<img src=
+"../imgs/2134034f43551f50e2309cea11a52d3f74dd7dbc.png">, then the
+amortized tome will be <i>O</i>(1). It is because the operation
+Fib-Heap-Decrease-Key(<i>H</i>, <i>x</i>, <i>k</i>) is performed,
+which takes time of <i>O</i>(1).</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b</b></i> <i>.</i> FIB HEAP PRUNE operation is used to
+delete node from the heap. In this operation, two arguments (heap
+and number of nodes) are passed. After this, the number of nodes
+that should be deleted is calculated.</p>
+<p>This can be achieved by locating the minimum from the set of
+nodes of the heap and getting the number of nodes user wants to
+delete. It is because if user enters more number of nodes than the
+total items available in the heap, the procedure would provide a
+remedy by finding the minimum of these values. After this, the
+elements are deleted by using for loop.</p>
+<p>In a Fibonacci Heap, the nodes can be deleted from leaves, so no
+rearrangements are to be implemented. Therefore, each single node
+deletion will take time <i>O</i>(1).</p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm for this is given below: The function takes two
+arguments in it. <i>H</i> is the heap and <i>r</i> is the number of
+nodes that user wants to delete.</p>
+<p>FIB-HEAP-PRUNE (<i>H</i>, <i>r</i>)</p>
+<p>//Find the minimum value between the entered value and size of
+the heap and store it in</p>
+<p>// the variable <i>q</i></p>
+<p>1. <img src=
+"../imgs/56592f07cad61a70196f543296e11f38d28a9804.png"></p>
+<p>//Use of for loop to delete <i>q</i> number of items from the
+heap</p>
+<p>2. <b>for</b><img src=
+"../imgs/173692cc73d0825f1ddc9d2f25194a1a41db015e.png"></p>
+<p>//Assign the new value to <i>x</i></p>
+<p>3. FIB-HEAP-DECREASE-KEY(<i>H, x, -infinity</i>)</p>
+<p>//Extract the newly build heap</p>
+<p>4. FIB-HEAP-EXTRACT-MIN(<i>H</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the procedure:</b></p>
+<p>The procedure is meant for deleting a random number of values
+from the heap. The approach used over here makes it by traversing
+the entire nodes and accessing the node that must be removed from
+the heap. This is done as follows:</p>
+<p>In the line 1 of the procedure the search has to be initialized.
+This can be done by setting the initial point of search at the
+start of the heap. There remains apossibility that a user enters a
+number bigger than the total number of items in the heap.</p>
+<p>In that case, the procedure willbe unable to remove the desired
+number of nodes. So the procedure to find the minimum value can be
+invoked. If the number of nodes is less than the value supplied as
+argument, that would be the new minimum value in the heap. The
+value that is found can be accumulated in a variable. This is what
+the line 1 of the procedure does.</p>
+<p>In the line 2 initialize a loop. This run till the minimum value
+is reached. Inside the loop the procedure FIB-HEAP-DECREASE-KEY
+would be called. This is what happens in the line 3 of the
+procedure. This procedure would in turn make a new heap that has
+node <i>x</i> as the root. One more thing that is to be ensured is
+that the new value must not be greater than the current value of
+the node. This is required to preserve the property of the
+min-heap. This is done by assigning the value <img src=
+"../imgs/6f5bed7ca3fff5e3f0fc1c011ace13be1584cfad.png"> to the node
+and this way the property of the min-heap is not violated.</p>
+<p>Now the task is to delete the minimum value from the heap. This
+helps in getting the required value deleted from the tree. This is
+done with the help of line 4. Line 4 calls the procedure
+FIB-HEAP-EXTRACT-MIN. This procedure would find the minimum value
+from the heap and delete it.After being through, the procedure also
+takes the update of the pointers appropriately into the
+account.</p>
+<p>Once this is done the next repetition of the loop happens and so
+on. This would happen till the minimum value is reached. This way
+all the nodes after the minimum value are ignored and a new heap
+with less number of nodes is created. After all, the desired number
+of nodes is deleted from the heap and a new heap with less number
+of nodes is created.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Amortized time analysis of procedure:</b></p>
+<p>Amortized completion time analysis can be performedas shown:</p>
+<p>As the loop provides the completion time of <i><img src=
+"../imgs/ac0d41afbca446d327b5d10eb91ed12a275894af.png"></i>and the
+running time provided by FIB-HEAP-DELETE is <img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">.So running
+time will be<i><img src=
+"../imgs/52e73a1647fc2205e5998bc95bcc7d97c8e90651.png"></i>. Here
+<i>q</i> is the number of deleted elements and <i>n</i> is the
+number of nodes.</p>
+<p>A potential function is used for mapping of data structure with
+real number. The amortized completion time for
+<i>i</i><sup>th</sup> number of operation can be given as:</p>
+<p><img src=
+"../imgs/ddbae303eca496567d50f60cd7590ddfe392035f.png">, where
+<i>c</i><sub>i</sub> is the original cost and <img src=
+"../imgs/c72d8845dc6f4fa04064e0bdb6e8b77508118f6d.png"> is
+potential change due to operation. So, for the operation
+FIB-HEAP-PRUNE, the potential distinction will be equal to the
+negated value of the number of deleted nodes, which is
+<i>–q</i>.</p>
+<p>Amortized cost <img src=
+"../imgs/6757eafdb10f2d70552a48c5151ee4b6ac03b150.png"></p>
+<p><img src=
+"../imgs/526955a80b0f43a7eb9b464569ea3ffc3091a898.png"></p>
+<p><img src=
+"../imgs/87ae1b56482a409137f4d24de8f908c25d40cec0.png"></p>
+<p>So, the amortized completion time for FIB-HEAP-PRUNE (<i>H</i>,
+<i>r</i>) is<img src=
+"../imgs/ac0d41afbca446d327b5d10eb91ed12a275894af.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8b5c8d3e208641eaf46ecb1f9548e2ab94934fa9.png">
+<hr>
+<img src="../imgs/c04b4bce5b8ba3dbec17482ade90297c9f399644.png">
+<hr>
+<img src="../imgs/8bc169a1e047ed84b91ca9e09f91ec84f1f953a9.png">
+<hr>
+<img src="../imgs/55dc589c456a3135d21055b669fa86898ad7fd47.png">
+<hr>
+<img src="../imgs/68fdbd5a99ecae6b7ca8a17c15f54a5000e60068.png">
+<hr>
+<img src="../imgs/2fb574b9f94a5bfdf6f9735c72e1473dd979ca8c.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

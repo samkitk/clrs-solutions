@@ -1,0 +1,837 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 22.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p><b>Undirected Breadth –First Search graph properties</b>:</p>
+<p>1.</p>
+<p>Consider an edge (<i>u</i>, <i>v</i>) to be a back edge or a
+forward edge of an undirected graph.</p>
+<p>• Then, one vertex, say <i>u</i>, is a proper ancestor of
+another vertex, say <i>v</i>, in the breadth-first tree.</p>
+<p>• As all edges of <i>u</i> are explored before exploring any
+edges of the descendants of <i>u</i>, the edge (<i>u</i>, <i>v</i>)
+is explored at the time when <i>u</i> is explored.</p>
+<p>• Then it is concluded that the edge (u, v) is a tree edge.</p>
+<p>Hence, there are no back edges and no forward edges in a Breadth
+–First Search of an undirected graph.</p>
+</div>
+<hr>
+<div class="answer">
+<p>2.</p>
+<p>• In BFS, an edge (<i>u</i>, <i>v</i>) is a tree edge when
+<img src="../imgs/a78feec100bda5fe89b2633d1288410fd7595eab.png">is
+set. It can be done only when<img src=
+"../imgs/7002131b5e315eb03cc2e0adb3f78bd88c273aae.png">.</p>
+<p>• Once the values are set, neither <img src=
+"../imgs/ba63da865109aff6106a3bcaa5410b8ee82b8794.png"> nor
+<img src="../imgs/d2c34397da212ea17a794f636e3e23105f651a39.png">
+change thereafter.</p>
+<p>• Thus, <img src=
+"../imgs/7002131b5e315eb03cc2e0adb3f78bd88c273aae.png"> when BFS
+completes.</p>
+<p>Hence, for each tree edge (<i>u</i>, <i>v</i>), <img src=
+"../imgs/0cdd76bddddafba695f4339d5ec3bf959539e295.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>3.</p>
+<p>Assume (<i>u</i>, <i>v</i>) to be a cross edge where <i>u</i> is
+visited before <i>v</i>.</p>
+<p>• As <i>u</i> is visited before <i>v</i>, vertex <i>v</i> must
+already be on the queue when <i>u</i> is visited.</p>
+<p>• If not, the edge (<i>u</i>, <i>v</i>) will become a tree edge.
+Therefore, <i>v</i> is in the queue.</p>
+<p>• As <i>v</i> is in the queue, <img src=
+"../imgs/c62002689b079bb44c440963d612914e83d19031.png"> by lemma
+22.3 give in the textbook.</p>
+<p>• According to corollary 22.4 given in the textbook, <img src=
+"../imgs/ebcb1cfbd1549f5c2f1d2a211a5b1a53bc05f6c5.png">.</p>
+<p>• From above two points, either <img src=
+"../imgs/c7aae696579b31fb4b72c343e64c223c92b4b2fd.png">or<img src=
+"../imgs/7002131b5e315eb03cc2e0adb3f78bd88c273aae.png">.</p>
+<p>Hence, for each cross edge (u, v), either <img src=
+"../imgs/c7aae696579b31fb4b72c343e64c223c92b4b2fd.png">or<img src=
+"../imgs/7002131b5e315eb03cc2e0adb3f78bd88c273aae.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p><b>Directed Breadth –First Search graph properties:</b></p>
+<p>1.</p>
+<p>Consider (<i>u</i>, <i>v</i>) to be a forward edge.</p>
+<p>• Then the edge (<i>u</i>, <i>v</i>) is explored at the time
+when <i>u</i> is explored.</p>
+<p>• If not, the edge (<i>u</i>, <i>v</i>) will become a tree
+edge.</p>
+<p>• As the graph is directed, the edge (<i>u</i>, <i>v</i>) will
+not be a tree edge.</p>
+<p>• Therefore, our assumption is wrong and ( <i>u</i>, <i>v</i>)
+is not a forward edge.</p>
+<p>Hence, there are no forward edges.</p>
+</div>
+<hr>
+<div class="answer">
+<p>2.</p>
+<p>• In BFS, an edge (<i>u</i>, <i>v</i>) is a tree edge when
+<img src="../imgs/a78feec100bda5fe89b2633d1288410fd7595eab.png">is
+set. It can be done only when<img src=
+"../imgs/7002131b5e315eb03cc2e0adb3f78bd88c273aae.png">.</p>
+<p>• Once the values are set, neither <img src=
+"../imgs/ba63da865109aff6106a3bcaa5410b8ee82b8794.png"> nor
+<img src="../imgs/d2c34397da212ea17a794f636e3e23105f651a39.png">
+change thereafter.</p>
+<p>• Thus, <img src=
+"../imgs/7002131b5e315eb03cc2e0adb3f78bd88c273aae.png"> when BFS
+completes.</p>
+<p>Hence, for each tree edge (<i>u</i>, <i>v</i>), <img src=
+"../imgs/0cdd76bddddafba695f4339d5ec3bf959539e295.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>3.</p>
+<p>Assume (<i>u</i>, <i>v</i>) to be a cross edge where <i>u</i> is
+visited before <i>v</i>.</p>
+<p>• As <i>u</i> is visited before <i>v</i>, vertex <i>v</i> must
+already be on the queue when <i>u</i> is visited.</p>
+<p>• If not, the edge (<i>u</i>, <i>v</i>) will become a tree edge.
+Therefore, <i>v</i> is in the queue.</p>
+<p>• As <i>v</i> is in the queue, <img src=
+"../imgs/c62002689b079bb44c440963d612914e83d19031.png"> by lemma
+22.3 give in the textbook.</p>
+<p>Hence, for each cross edge (<i>u</i>, <i>v</i>), <img src=
+"../imgs/c62002689b079bb44c440963d612914e83d19031.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>4.</p>
+<p>• Clearly for all vertices v, .<img src=
+"../imgs/d831f248bf223a97026dcff06cff02c55631273b.png"></p>
+<p>• Back edge (<i>u</i>, <i>v</i>) means that <i>v</i> is an
+ancestor of <i>u</i> in the breadth first tree.</p>
+<p>• The vertex found by following one edge has a depth larger than
+the previous vertex. Hence, <img src=
+"../imgs/9cc2a4688ae511e1d6a9e9d300aa8d8841af08a2.png"></p>
+<p>Hence, for each back edge (<i>u</i>, <i>v</i>), <img src=
+"../imgs/8480a0865bf2d597f66f5c9885cad9d110232c30.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Articulation points, bridges, and bi-connected
+components</b></p>
+<p><i><b>a</b></i> <i>. Consider</i> that <img src=
+"../imgs/9f327abf1df219b9b1683773259b701f83b02c49.png">is a
+depth-first tree of<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">, where
+<i>G</i> is a connected and an undirected graph. Suppose that root
+of <img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">contains no
+children and it is an empty tree having the root element only,
+without any child element. Thus, the root of <img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">will not
+have any edge adjacent to it and therefore, its removal from the
+graph will not disconnect<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+<p>Also, if the root of <img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png"> has one
+children then deleting the root will not lead to a disconnected
+graph since there is only one edge between root and its only child
+and all the other nodes in the graph are reachable and can be
+traversed through the single child node of the root. Thus, root of
+<img src="../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">is
+not an articulation point of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> if it has
+no or one child.</p>
+<p>Articulation point is also known as a <b>cutvertex</b> of a
+connected graph which when deletes or removes breaks the graph into
+number of connected components or pieces.</p>
+<p><b>Figure given below representing an undirected graph with
+three articulation points:</b></p>
+<p><img src="../imgs/1264c8a2811bcb988cbcd84217ff516356707005.png"
+alt="Picture 2"></p>
+<p>Now, if the root has at least two children then, since there are
+no cross edges between them and the children nodes are present in
+the separate sub-tree of the root so no path exist between them and
+therefore, deleting root will delete the link between the two or
+more child and thus, graph disconnects which makes the root of
+<img src="../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">an
+articulation point.</p>
+<p>Thus, from the aboveconsiderations, it is proved that the root
+having at least two children will be an articulation point.</p>
+<p>Hence, the root of <img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">is an
+articulation point of<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">; if and
+only if it has at least two children in<img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> If <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">is a
+non-root vertex of <img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">and
+<img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">
+has a child <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">such that
+there is no back edge from<img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">or any
+descendent of <i>s</i> to proper ancestor of <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> then
+removal of <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> will lead
+the disconnection of the sub-tree rooted at <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> form the
+graph<img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">. Thus,
+absence of any edge between the descendent of <i>s</i> and proper
+ancestors of <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> resulted in
+the disconnection of the graph after removing a non-root
+vertex<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">.</p>
+<p>Therefore,<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> will be an
+articulation point as after extracting it there will not be any
+path existing between the root of the graph and child of<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">which is
+<i>s</i>.</p>
+<p>Hence, a non-root vertex <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">of <img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">is an
+articulation point of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">as its
+removal disconnects the<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> Consider that,</p>
+<p><img src=
+"../imgs/9aae03cbf52a872d40a44973ae85cd507b29aee6.png"></p>
+<p>To compute <i>v.low</i> for all vertices <i>v</i> in <img src=
+"../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png">time, depth
+first search approach of traversing can be used or applied by
+making the little modifications in it.</p>
+<p>For detail description for DFS consider the section 22.3 of this
+test book</p>
+<p>Below algorithm is based on DFS; in this algorithm, visiting
+process is perform on complete graph and for indication of process
+grey, white and black color are used.</p>
+<p>For brief detail of progress of the depth-first search algorithm
+DFS on a directed graph, see the Figure 22.4 of the text book.</p>
+<p><b>Algorithm:</b></p>
+<p>DFS-VISIT<img src=
+"../imgs/d73fe653c18d43ef269e7a744d31220c1f4a1e65.png"></p>
+<p>// <i>u</i> is vertex of set <i>V</i> of graph <i>G</i> and
+color variables are used for storing its state</p>
+<p>// for each vertex <i>u</i>, use GRAY for the discovered but
+non-finished state</p>
+<p><img src=
+"../imgs/b11d3b59f0db4baf5438aa03c40926475041a7fe.png">= GRAY</p>
+<p><img src=
+"../imgs/c62fde25b537a0f6591c5cb37b3eccf226c86287.png"></p>
+<p><img src=
+"../imgs/6278a7e7815aa703cd76be2da284e7ca4fdd0fac.png"></p>
+<p><img src=
+"../imgs/0b27aca067367caf9970d9a1d24a53ff4a145e1c.png"></p>
+<p>// initializing the for loop for each <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">adjacent to
+<i>u</i></p>
+<p><b>for</b> each <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png"><i>Adj</i><img src="../imgs/ac9f531b79341d6d08d6721cd2b86b111a4c6bf3.png"></p>
+<p>// for undiscovered state</p>
+<p><b>if</b><img src=
+"../imgs/b11d3b59f0db4baf5438aa03c40926475041a7fe.png">= WHITE</p>
+<p><img src=
+"../imgs/a399c8dbb28587efb6ac28527cfb6dfffe8ece79.png"></p>
+<p>DFS-VISIT(<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">)</p>
+<p><b>if</b>(<img src=
+"../imgs/715f74634969ef5860ff090850ecdcc5da8f5aa0.png">)</p>
+<p><img src=
+"../imgs/7a3e51fa168c971c46f3f37ecacfb86c85965e1c.png"></p>
+<p><b>if</b><img src=
+"../imgs/5b1ab81ed62a4a87edf4d50836229e61896dedb3.png"> = GRAY //
+back edge</p>
+<p><b>if</b>(<img src=
+"../imgs/b8204c7348482e712a83259b8b4da78085c4e2b2.png">)</p>
+<p><img src=
+"../imgs/d841be8437553ed9e353e0e970ecb4770523b50a.png"></p>
+<p>// for the finished state</p>
+<p><img src="../imgs/c55b9d270640d555cd21bffde8c804f4bd6cd134.png">
+= BLACK</p>
+<p><img src=
+"../imgs/c62fde25b537a0f6591c5cb37b3eccf226c86287.png"></p>
+<p><img src=
+"../imgs/51509db2b87bccef942d309289090c059a30d2d5.png"></p>
+<p>This above algorithm is mostly same as the algorithm mention in
+the text book of section 22.3. So for complexity measurement,
+consider the details of the text book:</p>
+<p>This is a bit modified version of the depth-first search and its
+running time can be given by<img src=
+"../imgs/b0f7c7f170e55631cfe3a9453b0aee595df914d8.png">.</p>
+<p>Since <img src=
+"../imgs/9b62c602ea3d87c12a12a5e4cdace36de2d08b5e.png"> for a
+connected graph,</p>
+<p>Therefore, time complexity will be<img src=
+"../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png"> .</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i> <b>Computation of all articulation
+points:</b></p>
+<p>Articulation point is also known as a <b>cut vertex</b> of a
+connected graph. It breaks the graph into two or more connected
+components or pieces when deleted or removed.</p>
+<p>In order to compute all the articulation points of a graph
+<img src="../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> in
+<img src="../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png">
+time, the algorithm described in part <i><b>c</b></i>and the Depth
+First Search (DFS) can be explored and used.</p>
+<p>A depth first search algorithm searches or traverses the nodes
+of the graph in a preorder manner and having the running time
+complexity of<img src=
+"../imgs/73649df1e6e38a554fab06ef0da3498e9b9e5929.png">,
+where<img src=
+"../imgs/785d06b44a2a7034681ca36a42913ba51658fb76.png"> is the
+number of edges and <img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">be the
+number of vertices.</p>
+<p>Thus, for computing the articulation point, start from the root
+of graph<img src=
+"../imgs/c0b410c87a40f997e255bc8bb4fe5c43f071c4a2.png">and check
+for the number of child of root node or root vertex.</p>
+<p>If root has more than one child Then as proven in part
+<i><b>a</b></i>, root is an articulation point else root is notan
+articulation point.</p>
+<p>For any vertices of <img src=
+"../imgs/c0b410c87a40f997e255bc8bb4fe5c43f071c4a2.png"> other than
+the root, check for its child. If the vertexes say<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">has a child
+say <img src=
+"../imgs/2dba8cab49bd10b05f89a8f78caadf08daf45e5b.png">such that
+<img src="../imgs/c268ae3e78aef397d6b011106caa63eff8d4a741.png">
+which had already been computed in part <i><b>c</b></i> and from
+part <i><b>b</b></i> also it can be inferred that there is no back
+edge between the sub-tree rooted at <img src=
+"../imgs/2dba8cab49bd10b05f89a8f78caadf08daf45e5b.png">and
+ancestors of a non-root vertex<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">.</p>
+<p>Thus, <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> will be an
+articulation point because its removal will lead to a disconnected
+graph. Now, as each node is being traversed and checked for its
+child, so it can be done in <img src=
+"../imgs/b0f7c7f170e55631cfe3a9453b0aee595df914d8.png"> time. But,
+since <img src=
+"../imgs/9b62c602ea3d87c12a12a5e4cdace36de2d08b5e.png"> for a
+connected graph, therefore time complexity will be<img src=
+"../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png">.</p>
+<p>Thus, all the articulation points can be computed in <img src=
+"../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png">time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>e.</b></i> A <b>bridge</b> of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> is an edge
+when remove, disconnects<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">. It is also
+known as <b>Cut edge</b> or <b>Cut Arc</b> and its deletion from
+the graph increases or increments the number of connected
+components.</p>
+<p><b>For example:</b> Figure of an undirected connected graph with
+<b>3 bridges</b> and <b>no bridge</b> or cut edge is as given
+below:</p>
+<p><img src="../imgs/98294bddee789045a473106056e867425f10a051.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+<p><img src="../imgs/f5de892e0e6080bb74030d35e76069d524968230.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\6.tif"></p>
+<p>Suppose <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> has a
+bridge. Here, it is required to prove that it should not lie on any
+simple cycle of graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">or in
+another words it is asked to prove that an edge of<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> is a bridge
+if and only if it is not contained in any cycle or circuit. <b>… …
+(1)</b></p>
+<p><b>Proof by contradiction:</b></p>
+<p>Suppose that the bridge lie on a simple cycle of the graph and
+it has been removed. But even then, the graph will not be
+disconnected since the removal of an edge from a<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">vertices
+cycle will not result in the disconnection of the graph. That is
+the graph will still remain connected which is a contradiction to
+the definition of a bridge which states the graph dissociates or
+detaches after removing a Cut edge or a bridge.</p>
+<p>Therefore, it can be stated that if <i>G</i> has a bridge then
+it should not lay on any simple cycle or circuit of graph.</p>
+<p><b>Hence proved</b></p>
+<p>Now, also suppose that there is an edge which does not lie on
+any simple cycle of graph and therefore, here it is required to
+prove that the edge which is not a part of any cycle is a bridge
+<b>… … (2)</b></p>
+<p><b>Proof:</b></p>
+<p>Consider that there is an edge which does not lie on any simple
+cycle of graph. Therefore, that edge which is not a part of any
+elementary cycle or circuit will be the only link between the two
+vertices set connected by it, therefore its removal will lead to a
+disconnected graph and will break the link and the path between
+those two vertices that are connected to each other by that deleted
+edge.</p>
+<p>Hence, an edge which does not lie on any simple cycle of graph
+is a bridge and its removal will disconnect the graph.</p>
+<p><b>Hence proved</b></p>
+<p>Therefore, from <b>(1)</b> and <b>(2)</b> it can be stated that
+“<b>An edge of</b> <b><img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"></b> <b>is a
+bridge if and only if it does not lie on any simple cycle
+of</b><b><img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"></b>”.</p>
+<p><i><b>f.</b></i> A <b>bridge</b> of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> is an edge
+whose removal disconnects<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">. It is also
+known as <b>Cut edge</b> or <b>Cut Arc</b>. Using the algorithm
+described in part <i><b>c</b></i>; <img src=
+"../imgs/d2e74f72fdc64c825ab7ae616437495a9755e021.png"> for a
+vertex <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"> in the
+DFS-VISIT has been computed.</p>
+<p>If there is a child vertex <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> of
+<img src="../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">
+whose<img src=
+"../imgs/fb700571d55f1fb073c66811274b88ae91968056.png">, then
+removal of that edge will disconnect <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">
+and<img src="../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">.</p>
+<p>Now, as it had already been established that there are no back
+edges from<img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">or any
+descendent of <i>s</i> to proper ancestor of<img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">, therefore
+the edge between vertex <img src=
+"../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png"> and
+<img src="../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"> is
+not lying on any simple cycle of<b><img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"></b>and
+thus, makes it a bridge or a cut edge.</p>
+<p>As in part <i><b>c</b></i>, it is already shown that computation
+of <i>v.low</i> or <img src=
+"../imgs/d2e74f72fdc64c825ab7ae616437495a9755e021.png">for all
+vertices <i>v</i> takes <img src=
+"../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png"> time.</p>
+<p>Thus, traversing all the edges of <img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">takes the
+time complexity of <img src=
+"../imgs/4406158dcb541f6fb92a43c9e98abd109c29532f.png"> as the
+total number of edges present in<img src=
+"../imgs/2d5dd91e173971b437ee2f9fa67d5173a413b473.png">is <img src=
+"../imgs/c85a4941a72c20f46723d77abcf6e8f26b12e9aa.png"> therefore,
+all the bridges of the graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">can be
+calculated in <img src=
+"../imgs/952279698a0642e0a97c2b755a7bd98fdc6ec96e.png">time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>g.</b></i> A bi-connected component of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> is a
+maximal set of edges such that any two edges in the set lie on a
+common simple cycle. It is also known as the 2-connected or a
+maximal connected graph.</p>
+<p>Since, it is already defined above that any two edges in the set
+of a bi-connected component of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> lie on a
+common simple cycle thus, all the edges which are lying inside a
+component of the graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">will not be
+bridges as <b>it has been proved earlier that an edge of</b>
+<b><img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"></b><b>is a
+bridge if and only if it does not lie on any simple cycle
+of</b><b><img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"></b>. Thus,
+in other words, it can be said that all the edges other than those
+lying on the bi-connected component of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> will be
+bridge edges because they do not lie on any simple cycle of
+graph.</p>
+<p>Hence, it can be stated that the bi-connected components of
+<b><img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"></b>
+partitions the non-bridges of the graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>h.</b></i> An <img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">-time
+algorithm to label each edge <img src=
+"../imgs/7380f045a63368301590e8d7fd31ef2dc2f981c8.png">of <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">with a
+positive integer<img src=
+"../imgs/5c362292af11afd8da7b8642a06d2b762d731686.png">such
+that</p>
+<p><img src=
+"../imgs/7f6063b8c515bc96c31ad4fe54aea08d0c93eacf.png"></p>
+<p>if and only if <img src=
+"../imgs/7380f045a63368301590e8d7fd31ef2dc2f981c8.png">and
+<img src="../imgs/028008c1d677ad4724c1ef99f482b83820cc1f3e.png">
+are in the same bi-connected component.</p>
+<p>For solving the problem stated above, first calculate the bridge
+edges and cut vertices. Once the bride edges have been calculated
+it is required to remove all the bridge edges and after then apply
+Modified-DFS on each cut vertex. Increase <b><img src=
+"../imgs/5c362292af11afd8da7b8642a06d2b762d731686.png"></b> when
+the next white child of a cut vertex is visited.</p>
+<p><b>//</b> <b><img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"></b> <b>here
+is a vertex,</b> <b><img src=
+"../imgs/76542e7541a74edc76add3ff87f7add540f9d8d5.png"></b> <b>is
+the current bi-connected component number</b></p>
+<p><b>// increase</b> <b><img src=
+"../imgs/76542e7541a74edc76add3ff87f7add540f9d8d5.png"></b> <b>when
+visit next white child of cut vertex</b></p>
+<p><b>MODIFIED-DFS-VISIT</b> <b><img src=
+"../imgs/0204f83dacfbbdb0066fb14341b0b3649f496905.png"></b></p>
+<p><img src=
+"../imgs/cc0e2f2614c78516ec406b623248dc3c88702549.png">GRAY</p>
+<p><b>for</b> each <img src=
+"../imgs/903aa8f52765d969de6b83e547ee1a3ac31fdbc6.png"></p>
+<p><b>if</b><img src=
+"../imgs/8f2213c6ab39ef9f965c7bcb1730732404bf5ba3.png"> = WHITE</p>
+<p><b>if</b><img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"> is cut
+vertex</p>
+<p><img src=
+"../imgs/6e3ec09a73fb6939fef45bce5742eb9cf358ad50.png"></p>
+<p><img src=
+"../imgs/8862546ac873753c6fa18a679923ab176cc2c657.png"></p>
+<p>MODIFIED-DFS-VISIT<img src=
+"../imgs/0204f83dacfbbdb0066fb14341b0b3649f496905.png"></p>
+<p><img src="../imgs/cc0e2f2614c78516ec406b623248dc3c88702549.png">
+BLACK</p>
+<p>In the above algorithm, “for” loop runs up-to number of vertices
+and remain checking condition takes constant time. So to visit full
+graph with the help of DFS method, it takes total time of number of
+edges present in the graph. Thus, the complexity will be<img src=
+"../imgs/a23b88105129389abe36c680c05781f301e43045.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Euler Tour:</b></p>
+<p>It is path in directed graph in which each edges is visited
+exactly once, whereas a vertex can be visited more than once.</p>
+<p>a.</p>
+<p>The number edges move toward any particular vertex <i>v</i> is
+called as in-degree of that vertex. The number of edges moves
+outward from any particular vertex <i>v</i> is called as out-degree
+of that vertex <i>v</i>.</p>
+<p>When in-degree and out-degree of each vertex is graph is same
+then only an Euler tour is possible in directed graph. It is
+because Euler tour is nothing but a combination of Euler Cycle.
+When number edges moves toward any vertexes are not equal to number
+of vertex move outward then it will not make proper cycle in which
+each edges is used exactly once.</p>
+<p>Consider the following graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">to show the
+Euler tour when in-degree and out-degree of each vertex is
+same:</p>
+<p><img src="../imgs/a054514edbc134d5db5fb074c12a56b38a683f0f.png"
+alt="C:\Users\Gaurav\Desktop\dia\2254-22.P-3P.png"></p>
+<p><b>Explanation:</b></p>
+<p>• The above graph <i>G</i> has 5 vertices. The in-degree and
+out-degree of 4 vertices <img src=
+"../imgs/af7c08827f1c2a3da2e7c32e83267bd55e223d4e.png">and <i>e</i>
+is 4. The in-degree and out-degree of vertex <i>a</i> is 2.</p>
+<p>• The above Graph <i>G</i> has 2 cycles. The first cycle is
+<img src="../imgs/c1b3643fa122f89e1ba5437615ba015f68899920.png">and
+second cycle is<img src=
+"../imgs/362bcce9b2b00139a4de2c92113ae635ebf9a6c6.png">. Therefore,
+the Euler tour of above graph is<img src=
+"../imgs/890756ab709e6425fa822bf2b38ef1c523cf3d84.png">.</p>
+<p>• In Euler tour of above graph each edge is visited once whereas
+the vertex <i>a</i> is visited thrice.</p>
+<p>Consider another graph <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png"> which has
+one more edge from vertex <i>e</i> to <i>d</i>. Consider the
+following graph <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png"> show the
+Euler tour is not possible when in-degree and out-degree of each
+vertex is not same:</p>
+<p><img src="../imgs/1933946304cd50ea43f21e263b4f062c36ff128a.png"
+alt="C:\Users\Gaurav\Desktop\dia\2254-22.P-3P-png.png"></p>
+<p><b>Explanation:</b></p>
+<p>• The new edge <i>e</i> to <i>d</i> is represented with the
+dotted lines in graph<img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png">.</p>
+<p>• The in-degree and out-degree of vertex <i>d</i> is not same.
+The in-degree of vertex <i>d</i> is 2 where as its out-degree is 1.
+Similarly the in-degree of vertex <i>e</i> is 1 where as its
+out-degree is 2.</p>
+<p>• Therefore the above graph <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png">does not
+have Euler tour. It is not possible to determine a path in each
+edge is visited exactly once.</p>
+<p><b>Hence, Euler tour is possible only when in-degree and
+out-degree of each vertex is same.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>The main idea behind to determine the Euler tour is to determine
+all Euler cycle in graph <i>G</i> and then combine all cycles.
+Consider the following algorithm to determine the Euler tour:</p>
+<p>FIND-TOUR (<i>G</i>)</p>
+<p>1. Declare a doubly linked list <i>Z</i>.</p>
+<p>2. Declare singly linked list <i>W</i> and store arbitrary
+vertex <i>v</i> in it.</p>
+<p>//loop continue iterate till <i>W</i> is not empty</p>
+<p>3. <b>while</b> <i>W</i> is NOT EMPTY</p>
+<p>4. REMOVE <i>v</i> from <i>W</i></p>
+<p>5. <img src=
+"../imgs/a398afd5cc0835fef589651e55eb7802102bd88f.png"></p>
+<p>//check current cycle is the first cycle</p>
+<p>6. <b>if</b> Z is NIL</p>
+<p>7. <img src=
+"../imgs/2989711a01fefb1509ddf93a6f75cf8b38d90dfd.png"></p>
+<p>8. <b>else</b></p>
+<p>9. ADD <i>R</i> in <i>Z</i></p>
+<p>10. <b>return</b> Z</p>
+<p>CYCLE (<i>v</i>)</p>
+<p>1. Declare a singly linked list <i>R</i></p>
+<p>2. <img src=
+"../imgs/b078ab2f91d2eaa9fcf3c9e459c02da489d4fc0f.png"></p>
+<p>//loop continue iterate till out-degree is greater than 0</p>
+<p>3. <b>while</b> <img src=
+"../imgs/12d541e8b5615ecb01456a769112c7db388f41b2.png"></p>
+<p>// find adjacent vertex</p>
+<p>4. Determine <i>u</i>’s adjacent vertex <i>q</i> and remove it
+from <i>adjacent_list</i></p>
+<p>5. <img src=
+"../imgs/349af14e4dc8d226acb0ed6d693bf3c827b38de3.png"></p>
+<p>6. Add <i>u</i> in list R</p>
+<p>// check out-degree is greater than 0</p>
+</div>
+<hr>
+<div class="answer">7. <b>if</b> <img src=
+"../imgs/12d541e8b5615ecb01456a769112c7db388f41b2.png">
+<p>8. ADD <i>u</i> in list <i>W</i></p>
+<p>9. <img src=
+"../imgs/104c59ee5dbfe8841db894d3589de0659495136e.png"></p>
+<p>10. <b>return</b> <i>R</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time complexity:</b></p>
+<p>• The <b>while</b> loop in FIND-TOUR procedure iterates till
+list <i>W</i> is not empty. The FIND-TOUR procedure visit each
+edges of graph G exactly only once, after visiting the vertex it
+get removed from adjacent adjacency list. Therefore none of the
+edges visited more than once. Therefore the maximum length of list
+<i>W</i> can be<img src=
+"../imgs/2bd7adfbfd925f45cc05f764fe398bcd4d010b4a.png">.</p>
+<p>• The <b>while</b> loop is CYCLE procedure iterate once for one
+edges therefore total number of iteration done in CYCLE procedure
+is<img src="../imgs/2bd7adfbfd925f45cc05f764fe398bcd4d010b4a.png">.
+The CYCLE procedure also adds vertex u in list <i>W</i> which takes
+constant time.</p>
+<p><b>Therefore the time complexity of finding the Euler tour using
+above algorithm is</b> <b><img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Reachability</b> is the ability to move from one vertex to
+another vertex in a directed graph. A node in a directed graph is
+reachable from other node in the graph say for example nodes
+<i>P</i> and <i>Q</i>, Then <i>Q</i> is reachable from <i>P</i> if
+there exists an edge from node <i>P</i> to node <i>Q</i> or there
+exists a <b>Transitive Closure</b> such that there exists a node
+<i>R</i> which is reachable from <i>P</i> (it means there exists an
+edge between the nodes <i>P</i> and <i>R</i>) and thus <i>Q</i> is
+also reachable from <i>R</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following definition of certain labels used for the
+vertices</p>
+<p>• Min : to denote the min(u) for node u.</p>
+<p>• L : to denote the label of particular node</p>
+<p><b>Algorithm:</b></p>
+<p>// Function which takes a transpose of graph as a parameter</p>
+<p>SetMin(Graph G)</p>
+<p>// loop to assign color and min as -1</p>
+<p>1. <b>for</b> each <img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"><img src=
+"../imgs/68c4a8879be1afe2adb7cb74a1dab4c8e1cbf904.png"></p>
+<p>2. <i>u</i>.color = White</p>
+<p>3. <i>u</i>.min = -1</p>
+<p>// loop to which user run DFS on different nodes</p>
+<p>// this loop choose <i>u</i> in increasing order</p>
+<p>4. <b>for</b> each <img src=
+"../imgs/68c4a8879be1afe2adb7cb74a1dab4c8e1cbf904.png"></p>
+<p>// if color is white i.e. unvisited</p>
+<p>5. <b>if</b> <i>u</i>.color == White</p>
+<p>// calling DFS()</p>
+<p>6. DFS(<i>u,u</i>)</p>
+<p>DFS(<i>u,V</i>)</p>
+<p>// traversing each node adjacent to V</p>
+<p>1. <b>for</b> each <i>k</i><img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+G.adj[<i>u</i>]</p>
+<p>// if unvisited condition</p>
+<p>2. <b>if</b> (<i>k</i>.color == WHITE)</p>
+<p>// assigning min value</p>
+<p>3. <i>k</i>.min =L(V)</p>
+<p>4. <i>k</i>.color = GREY</p>
+<p>// then applying DFS</p>
+<p>5. DFS(<i>u,V</i>)</p>
+<p>The above algorithm use DFS on set of vertices to set the min
+which satisfies the property <img src=
+"../imgs/992f3e950f2a85b2ae2f92798ef06aee5f454cab.png"> .The
+algorithm works as follow:</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>• Function SetMin() take transpose of a graph . As discussed in
+section 22.5 in textbook the transpose of any graph can be obtained
+in<img src="../imgs/4d3f77814fbf4d80606d51fcd98dcc0796a6b506.png">.
+So user has to calculate it first and then pass it to SetMin().</p>
+<p>• In SetMin() the first loop is used to set the color to white
+and min value as -1, which implies that initially it is unreachable
+from any vertex.</p>
+<p>• Now after setting color and min value the next for loop in
+SetMin is used to iterate over the nodes in ascending order of
+labels of vertices. This will ensure that no node will get wrong
+min value.</p>
+<p>• Also DFS () is only called on those vertices whose color are
+white because if the color is grey than it indicates that it has
+been already visited.</p>
+<p>• In DFS () there are two parameter, one is the node on which
+DFS() will run and second one is root node used to set the min
+value to uncolored vertex as label of V.</p>
+<p>• Also, one thing that is different from DFS() is that the root
+is not colored GREY because it may be possible that there are some
+vertex through which root can be visited and in that case assigning
+value is a must.</p>
+<p>• If user colors the node to GREY it will be assigned value as
+-1 forever and as discussed in previous step this will give the
+wrong output.</p>
+<p>• Also, the program colors all vertices which are in a tree
+except root and assigns the label of root to all those values.</p>
+<p>• Since program iterates over increasing label nodes all nodes
+are assigned value in increasing order and once they are assigned
+they will be colored grey so that their value cannot be changed.
+This makes sure that all nodes will get min value.</p>
+<p>• Since the program runs the normal Depth First Search and
+iterates each node and edge only once, the complexity should
+be<img src=
+"../imgs/4d3f77814fbf4d80606d51fcd98dcc0796a6b506.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

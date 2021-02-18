@@ -1,0 +1,1117 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 20.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following pseudo code for PROTO-vEB-MAXIMUM.</p>
+<p>PROTO-vEB-MAXIMUM (<i>V</i>)</p>
+<p>// check for base condition if it is true then it contain the
+array <i>A</i> [0...1] of two bit.</p>
+<p>1. <b>if</b> <i>V</i>.<i>u</i><b>==</b>2</p>
+<p><b>//</b> if statement is used to check the element of array
+first location</p>
+<p>2. <b>if</b> <i>V</i>.<i>A</i>[<i>1</i>]==1</p>
+<p><b>//</b>return statement return as a true</p>
+<p>3. <b>return</b> 1</p>
+<p><b>//</b>elseif is used to check the value of second location of
+array</p>
+<p>4. <b>else if</b> <i>V</i>.<i>A</i>[<i>0</i>]==<i>1</i></p>
+<p><b>//</b>return false as a result</p>
+<p>5. <b>return</b> <i>0</i></p>
+<p><b>//</b> else portion of code will be executed when if
+statement is false</p>
+<p>6. <b>else</b></p>
+<p><b>//</b> return nil as a result</p>
+<p>7. <b>return</b> NIL</p>
+<p>8. <b>end if</b></p>
+<p><b>//</b> if <i>u=2</i> is false then assign the cluster number
+to the variable <i>max-cluster</i></p>
+<p>9. <b>else</b></p>
+<p>10. <i>max-clust</i>er= PROTO-vEB-MAXIMUM
+(<i>V</i>.<i>summary</i>)</p>
+<p><b>//</b>check the value of max-cluster</p>
+<p>11. <b>if</b> <i>max-cluster</i>==NIL</p>
+<p><b>//</b>if the value of <i>max-cluster</i> is nil then it
+return NIL</p>
+<p>12. <b>return</b> NIL</p>
+<p>13. <b>else</b></p>
+<p><b>//</b>find the <i>offset</i> within cluster of max
+element.</p>
+<p>14. <i>offset</i> <b>=</b> PROTO-vEB-MAXIMUM
+(<i>V</i>.<i>cluster</i> [<i>max-cluster</i>])</p>
+<p><b>//</b>finally returns the maximum number from cluster and
+offset.</p>
+<p>15. <b>return</b> index (<i>max-cluster</i>, <i>offset</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of Algorithm:</b></p>
+<p>• In the above algorithm line first is used to check the base
+case.</p>
+<p>• Find the initial cluster that contain the element of the set
+and store it into variable <i>max-clust</i>er.</p>
+<p>• If there is no element in max-cluster variable then it return
+null otherwise find the maximum element from the cluster number and
+offset.</p>
+<p>• Finally display the maximum element.</p>
+<p>• In the worst case, there are two recursive calls.</p>
+<p>The recurrence relation for the above algorithm is as
+follows:</p>
+<p><img src=
+"../imgs/01cf3ce113330a448e988309fe568fee4c839511.png"></p>
+<p>Substituting u = 2<sup>k</sup> we get the following:</p>
+<p><img src=
+"../imgs/aa854bd4a2ab49a14a0d3b6910069f8ef8f2dbd1.png"></p>
+<p>Renaming the recurrence relation, we get:</p>
+<p><img src=
+"../imgs/ed648ae0c2235e589a0cbebebf9263b13bda6d5c.png"></p>
+<p>Using, master’s theorem, we can find the complexity of the above
+algorithm to be <b><img src=
+"../imgs/69fa0ef94a33e0cddbacf96f1f4fb9a8b157f90c.png"></b></p>
+<p><b>Hence, the running time of above algorithm will be</b>
+<b><img src=
+"../imgs/1dc59e480939f1de3946c4c4f1fa83e912879ce2.png"></b>
+<b>.</b></p>
+<p>Consider the following pseudo code for
+PROTO-vEB-PREDECESSOR.</p>
+<p>PROTO-vEB-PREDECESSOR (<i>V</i>, <i>a</i>)</p>
+<p>// check for base condition if it is true then it contain the
+array <i>A</i> [0...1] of two bit.</p>
+<p>1. <b>if</b> <i>V</i>.<i>u</i><b>==</b>2</p>
+<p><b>//</b> if statement is used to check the value of <i>a</i>
+and element of array first location</p>
+<p>2. <b>if</b> <i>a==1</i> and
+<i>V</i>.<i>A</i>[<i>0</i>]==<i>1</i></p>
+<p><b>//</b>return statement return as a false</p>
+<p>3. <b>return</b> 0</p>
+<p><b>//</b> else portion of code will be executed when if
+statement is false</p>
+<p>4. <b>else</b></p>
+<p><b>//</b> return nil as a result</p>
+<p>5. <b>return</b> <i>NIL</i></p>
+<p><b>//</b>if base condition is false then calculates
+PROTO-vEB-PREDECESSOR</p>
+<p>6. <b>else</b> <i>offset</i> = PROTO-vEB-PREDECESSOR (<img src=
+"../imgs/fdfc54ce202cd064e919169299d06421e9df1617.png"></p>
+<p><b>//</b>if offset has the predecessor</p>
+<p>7. <b>if</b> <i>offset</i> != NIL</p>
+<p><b>//</b> return the value of predecessor</p>
+<p>8. <b>return</b> index(high (<i>a</i>), <i>offset</i>)</p>
+<p>9. <b>else</b></p>
+<p><b>//</b>assign the other non-empty cluster to
+<i>Pred-cluster</i> variable</p>
+<p>10. <i>Pred-cluster</i>= PROTO-vEB-PREDECESSOR
+(<i>V</i>.<i>summary</i>, high (<i>a</i>))</p>
+<p>11. <b>if</b> <i>Pred-cluster==</i>NIL</p>
+<p><b>//</b> return null value</p>
+<p>12. <b>return</b> NIL</p>
+<p>13. <b>else</b></p>
+<p><b>//</b>finally returns the predecessor from cluster and
+offset.</p>
+<p>14. <i>offset</i> = PROTO-vEB-MAXIMUM (<img src=
+"../imgs/822bb2c394ec7bd78949a0f025b1cc4d13ca09ff.png"></p>
+<p>15. <b>return</b> index <b>(</b><i>Pred-cluster</i>,
+<i>offset</i><b>)</b></p>
+<p></p>
+<p><b>Explanation of Algorithm:</b></p>
+<p>• Predecessor of any element <i>a</i> is the largest element in
+the <i>V</i> that is <img src=
+"../imgs/3f44db9c2b293fa4ff3864271114c53c8df8f617.png"><i>a</i>.</p>
+<p>• In the above algorithm the only way that <i>a</i> can have the
+predecessor when <i>a==0</i> and <i>V.A</i>[<i>1</i>]==1.</p>
+<p>• In the line 6 of above algorithm, predecessor of <i>a</i> is
+searched. if it is not NIL, then the predecessor of the element is
+returned. Otherwise, in the line 10, predecessor cluster for the
+current cluster is determined.</p>
+<p>• If the predecessor cluster is found, then the maximum element
+in that predecessor cluster is the required predecessor element of
+<i>a</i>. Thus, it is calculated and returned in the lines
+14-15.</p>
+<p><b>The time complexity of PROTO-vEB-PREDECESSOR algorithm is ame
+as time complexity of PROTO-VEB-SUCCESSOR , that is <img src=
+"../imgs/d4b320e92119560f74fe5fdb4f7d5fcca3268f49.png">.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Deleting an element form</b> <b>Proto van Emde Boas</b>
+<b>structure:</b></p>
+<p>• When an element 0 ≤ <i>x</i> &lt; <i>u</i> is inserted in the
+Proto van Emde Boas structure, the corresponding index in the
+corresponding cluster is set to 1 and the summary bit of
+corresponding cluster is also updated.</p>
+<p>• When an element is deleted from the Proto van Emde Boas
+structure, the corresponding bit in the array of corresponding
+cluster is set to 0. But, not always the summary bit required to be
+changed to 0.</p>
+<p>• Change the summary bit when an element is deleted in the
+following case only:</p>
+<p>o When an element is deleted, change the corresponding bit in
+the array as 0. Then check whether there is any 1 bit in the
+cluster. Generally a cluster contains 0 to <i>u</i>-1 elements.</p>
+<p>o If the cluster has at least one bit, then the corresponding
+summary bit has to be changed. Otherwise, the summary bit can be
+remained same.</p>
+<p><b>The following is the procedure to delete an element from
+the</b> <b>Proto van Emde Boas</b> <b>structures:</b></p>
+<p>PROTO-vEB-DELETE (<i>V</i>, <i>x</i>)</p>
+<p>1 <i>flag</i>=FALSE</p>
+<p>2 <b>if</b> <i>V.u</i> = = 2</p>
+<p>3 <i>V.A</i>[<i>x</i>] = 0</p>
+<p>4 <b>for</b> <i>k</i>=0 <b>to</b> <i>V.u</i>-1</p>
+<p>5 <b>if</b> <i>V.A</i>[<i>k</i>] = = 1</p>
+<p>6 <i>flag</i>=TRUE</p>
+<p>7 <b>return</b> <i>flag</i></p>
+<p>8 <b>else</b></p>
+<p>9 <i>flag</i>=PROTO-vEB-DELETE( <i>V. cluster</i>
+[high(<i>x</i>)], low(<i>x</i>))</p>
+<p>10 <b>if</b> <i>flag</i> = = FALSE</p>
+<p>11 flag=PROTO-vEB-DELETE( <i>V. summary</i>, high(<i>x</i>))</p>
+<p>12 <b>return</b> flag</p>
+<p>• In line 3, the procedure deletes an element <i>x</i> by
+updates the corresponding bit in the array <i>A</i>.</p>
+<p>• In line 4 to line 6, the procedure checks whether there is any
+1 in the cluster.</p>
+<p>• The procedure recursively calls to go sub clusters in line 9
+until the base case occurs.</p>
+<p>• To check whether the summary bit is to be changed or not, the
+Boolean value flag is used. The procedure updates the summary bit
+in line 11, if the flag is false (there is no 1’s in the cluster).
+Otherwise, the procedure skips the line 11.</p>
+<p><b>Worst case time complexity:</b></p>
+<p>In the worst case, occurs when all the clusters has no 1s. Then
+the procedure has to change all the summary bits for all the
+corresponding clusters.</p>
+<p>In this case, in each iteration PROTO-vEB-DELETE two recursive
+calls in the lines 9 and 11.</p>
+<p><b>Therefore, the worst case running time for the
+PROTO-vEB-DELETE is</b> <b><img src=
+"../imgs/4864d83abf475d0879180ff79437a439c758f081.png"></b>
+<b>time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Pseudo code for PROTO-vEB-DELETE structure</b></p>
+<p>The PROTO-vEB is a data structure format used to organize the
+data in tree structure that will help to dynamically perform the
+operations on the elements of the tree.</p>
+<p>The basic structure of the PROTO-vEB is shown in the diagram
+below. The information about the universe size is stored in the
+node <i>u</i>. The pointer summary is a pointer to the
+proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">) structure.
+There is an array cluster that has a range <img src=
+"../imgs/858ee980a8f4e5cb41bed609053f3f92f29e79f5.png"> of
+denoting<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">different
+pointers to proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">)
+structures.</p>
+<p><img src="../imgs/a495b9ef962a7b2265498267bc0460084f6415c8.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+<p>When the total number of elements has to be counted in the
+structure, an additional attribute <i>n</i> can be added. The
+attribute <i>n</i> would be used to count the total number of the
+elements in the structure for a certain value of <i>u</i>. After
+this modification is done in the structure, the structure would
+look like the one below:</p>
+<p><img src="../imgs/bf1747c983a0bc40e59a70381ac29111985602d7.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\5.tif"></p>
+<p>In the PROTO-vEB-DELETE operation, not only the required number
+is deleted but also the addition of the clusters to 1 by the
+logical OR operation is also modified to include the updated result
+after deletion of the number <i>x</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Delete operation is not as easy as the insert operation. The
+reason is that while deleting an element, first it has to be made
+sure whether or not the element exists in the structure. Only after
+this the appropriate bit in the summary can be reset to 0.</p>
+<p>To do this the scanning of the entire structure might be
+required. The scan would continue till the concerned element is
+found in the structure. The count would also help find out if the
+deletion has taken place successfully.</p>
+<p>To make the above happen, the size of the tree has to be
+determined. This is the place where <i>n</i> comes into the
+picture. The scan would run until the total scanned elements count
+crosses <i>n</i>. If this happens that means the element does not
+exist in the structure and thus cannot be deleted. After the
+operation if the value of <i>n</i> has decreased by 1 then the
+operation is successful.</p>
+<p>This fact should be taken care of while writing the pseudo code
+for the DELETE operation.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The pseudo code of the DELETE operation is given below:</p>
+<p>PROTO-vEB-DELETE (<i>V</i>,<i>x</i>)</p>
+<p>//base case</p>
+<p>1. <b>if</b><img src=
+"../imgs/be4f552e177b9f3d0c54715b70a726d52ea045d9.png"></p>
+<p>2. <b>return</b> 0</p>
+<p>3. <b>if</b><img src=
+"../imgs/36d113089df005f8a4a47e59c087d6ff6384fccb.png"></p>
+<p>4. <b>return</b> 1</p>
+<p>5. <b>call</b> PROTO-vEB-MEMBER</p>
+<p>// to find the location of the specified number in the
+structure.</p>
+<p>6. <img src=
+"../imgs/5ed1f8031f25a0a4b43071a6dccd45b1903d4f69.png"></p>
+<p>//copying the attribute n of the specific cluster</p>
+<p>7. <b>set</b><img src=
+"../imgs/aaf92ba4d01952b6d810ed161df3019966c527b8.png"></p>
+<p>8. <b>count</b><img src=
+"../imgs/278a4d62c3608fbb4bee7ee57784ac9064fd210d.png"></p>
+<p>//check if the count exceeds the limit of elements</p>
+<p>9. <b>if</b><img src=
+"../imgs/6e7956b93b93b3a3a76d9f5f59d27a772676696e.png"> then</p>
+<p>10. <b>for</b><img src=
+"../imgs/5ab92df9dae163574841535754aeec2398c07cad.png"></p>
+<p>//adding up the values of each of the elements of the
+cluster</p>
+<p>11. <img src=
+"../imgs/94db57e945d3b88aef275e3969f0c04916b88556.png"></p>
+<p>12. <b>reset</b> the corresponding value of
+<i>V</i>.<i>summary</i> too according to the values</p>
+<p>of the <i>s</i> of each cluster.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Here at first;</p>
+<p>1) Check the base cases where and when the size is 1 after
+deleting the result is 0, and when the size is 2 after deleting the
+result returned is 1.</p>
+<p>2) Then find the specific position of the number <i>x</i> in the
+structure from where it has to be deleted in Line 4 by calling
+PROTO-vEB-MEMBER (<i>V</i>, <i>x</i>).</p>
+<p>3) Then copy the attribute <i>n</i> of the structure so as to
+keep comparing every time a deletion operation occurs with the
+previous value of the value of <i>n</i> of the cluster.</p>
+<p>4) This will help in the logical or of the elements of the
+cluster, this occurs in Line 5.</p>
+<p>5) Then delete the number from the position which is found from
+the MEMBER operation.</p>
+<p>6) Now count the present number of the attribute <i>n</i> in
+Line 7.</p>
+<p>7) Then check if the number decreases meaning the deletion
+operation has taken place, the logically OR of the elements in that
+cluster is calculated and the result is updated at every node (Line
+8-10).</p>
+<p>8) Then there is need to reset the value of the summary array to
+the logical or of the values of the clusters (Line 11).</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the analysis, the complexity of the MEMBER function
+is<img src=
+"../imgs/3da5bfeaca9883979dff84747bdaa95c8a1620e5.png">and that of
+the DELETE algorithm is:</p>
+<p><img src=
+"../imgs/ba971c0a6f63194919de742a784fbc6bf6c672d2.png"></p>
+<p>So from the Master’s theorem,</p>
+<p><img src="../imgs/c83e2a39af47e88ea0f1aee68ae6f5e7bfe3a8ac.png">
+.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/b94174510fe58194d715004483a173b2f9efdf5f.png"></p>
+<p>And <img src=
+"../imgs/1f0467517fbb664d3ab48d3fce654e391d679c02.png"> which is
+greater than 1.</p>
+<p>So</p>
+<p><img src=
+"../imgs/d4d0d48a8fbff9bc85edf106cb7891dd98702920.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/ba971c0a6f63194919de742a784fbc6bf6c672d2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>However, the inclusion of attribute <i>n</i> helps in deleting
+the element from the tree. This does not affect any other
+operation. The reason is that while performing any other operation
+like Insert, Member and others. The value of <i>n</i> need not be
+checked.</p>
+<p>The result of these operations concludes either true or false.
+The implication would be straight forward and the reason would be
+intuitive. So, while performing other operations the attribute
+<i>n</i> can be simply ignored.</p>
+<p>But for enhanced performance of insert operation, <i>n</i> can
+be considered. After insertion if the value of <i>n</i> is not
+increased, the insert operation is supposed to have failed. But
+this is only an optional practice. Since this check would be
+performed in a constant time so the running time of the procedure
+would not be altered.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Modifying the</b> <i><b>proto</b></i> <b>-vEB structure to
+support duplicate keys:</b></p>
+<p>The <i>proto</i>-vEB is a recursive data structure that is used
+to store dynamic data set in a tree structure. operations like
+INSERT, DELETE, MININUM etc. can be performed on this tree. The
+basic structure of the PROTO-vEB is shown in the diagram below:</p>
+<p>• The information about the size of the universe is stored in
+the node <i>u</i>.</p>
+<p>• The cluster of the tree contains <img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">pointers to
+proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">)
+structures.</p>
+<p>• Summary also points to a proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">)
+structure.</p>
+<p>• Generally the vEB-PROTO structure does not allow to store the
+duplicate keys.</p>
+<p><img src="../imgs/a495b9ef962a7b2265498267bc0460084f6415c8.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The</b> <i><b>proto</b></i> <b>-vEB structure:</b></p>
+<p>• The <i>proto</i>-vEB structure does not support the duplicate
+keys.</p>
+<p>• Since the structure of the <i>proto</i>-vEB allows the values
+between 0 and <img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">-1 to
+insert. No two same values can be inserted.</p>
+<p>• The structure stores only one bit(0 or 1) in the array that
+specifies the structure contains the number or not.</p>
+<p>• That is, the keys are not actually stored in the structure;
+rather the array indexes are considered to be the value of the key
+and the corresponding bit is set to 1 at the index. If the key is
+not present the index is left as 0.</p>
+<p>• However, the binary value in the array specifies that whether
+a single value is present in the structure or not.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Required changes to present data structure to support
+duplicate keys are as follows:</b></p>
+<p>In order to make the structure support the duplicate keys,
+change the storage structure such that the slots of array <i>A</i>
+allows to store integers instead of simple binary value 0 and 1.
+That is, each slot in the array works as a counter of a value.</p>
+<p>INSERTION:</p>
+<p>Initially all the indexes would be set to 0. When a key is
+inserted the value in the corresponding position in the array is
+incremented by 1. If the same key is inserted, the value in the
+corresponding array position is incremented to 2.</p>
+<p>DELETION:</p>
+<p>When a key is deleted, the corresponding value in the array
+position is decremented by 1. If the counter reaches 0, there is no
+value that is equal to the array index in the tree.</p>
+<p>Adaption to Summary:</p>
+<p>Summary bit can be set to 0, if the sum of counters of array in
+a cluster is zero. Otherwise, the summary bit can be set to 1.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>The following is the <i>proto</i>-vEB structure for the
+following set of elements (containing duplicate elements)
+s={2,3,4,5,6,7,7,14,14,15}:</p>
+<p><img src="../imgs/248bdc4367b7d484ef07d35cd255c0ac42b1ca09.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\7.tif"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>PROTO-vEB structure with satellite data</b></p>
+<p>The PROTO-vEB is a data structure format used to organize the
+data in tree structure that will help to dynamically perform the
+operations on the elements of the tree.</p>
+<p>The basic structure of the PROTO-vEB is shown in the diagram
+below. The information about the universe size is stored in the
+node <i>u</i>. The pointer summary is a pointer to the
+proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">) structure.
+There is an array cluster that has a range <img src=
+"../imgs/858ee980a8f4e5cb41bed609053f3f92f29e79f5.png"> of
+denoting<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png"> different
+pointers to proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">)
+structures.</p>
+<p><img src="../imgs/a495b9ef962a7b2265498267bc0460084f6415c8.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+<p><b>Satellite Data:</b></p>
+<p>Satellite data, while referenced with respect to the PROTO-vEB
+structure, is all of the data that is in the node other than the
+key. This might be a pointer, any integer or other type data.</p>
+<p>In general scenarios, any satellite data attached with a key is
+always kept in the same node as the key. Storing it in the node in
+the case of an efficient tree structure like PROTO-vEB tree should
+be done in such a way that the modification does not affect the
+rest of the structure.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modification in data structure:</b></p>
+<p>There might be several approaches that can be used to store the
+satellite data in the vEB tree. The selection of approach depends
+upon the need in terms of execution time and the space
+availability.</p>
+<p>Below are illustrated a few approaches that can be used to store
+the satellite data along with the possible advantages and the
+disadvantages of each if there are any.</p>
+<p><b>Inclusion of pointer:</b></p>
+<p>To modify the vEB tree structure to support satellite data,
+configure it so that it holds a pointer to the satellite that has
+to be stored. The pointer can be defined according to the data that
+is being stored.</p>
+<p>An analogy to this approach would be a link list. Every node, in
+that, has a data and the address field that points to the next
+node.</p>
+<p>To simulate the analogy the node can be changed to be like a
+collection of nodes. Each node would contain an additional address
+field that would have the address to the memory location where the
+satellite data is stored.</p>
+This would not make a great impact on the size of the tree and
+would support the satellite data as well. The operations on the
+PROTO-vEB structure can be performed by taking the reference of the
+Keys. This way it could be a good deal to store the satellite data
+in the VEB tree.</div>
+<hr>
+<div class="answer">
+<p>The structure would look like the one below:</p>
+<p><img src="../imgs/e4819fe7ccb5e6091124d961994dcc32bcc6fd63.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\6.tif"></p>
+<p>In the above diagram, the pointer <i>ptr</i> holds the pointer
+to the satellite data. This can be set to NULL if there is no
+satellite data available. The advantage of using a pointer would be
+that it would not take a great amount of space. In case of the node
+is not storing any satellite data than setting the pointer to NULL
+would ensure that the space not being consumed needlessly.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Satellite Data in Node itself:</b></p>
+<p>Other way of modification is to save all the data in the
+structure nodes. This would make the access of the data faster
+because the data has not to be searched for in various disk
+locations.</p>
+<p>This approach however might be less efficient and more space
+consuming. The reason is that the entire chunk of data is stored
+along with the node. This would intuitively be larger than the
+pointer to any remote disk location.</p>
+<p>Moreover, this would make the structure look clumsy and complex.
+If the satellite is itself complex, the approach would start
+creating new complexity with the increasing complexities of the
+satellite data</p>
+<p><b>Ordered pair approach:</b></p>
+<p>One more and probably the most appropriate approach to do this
+is a minor modification in the first approach. In this entire data
+is treated as the key value pair.</p>
+<p>The keys are the keys stored in the structure itself and the
+value is the entire satellite data that is associated with the
+key.</p>
+<p>The satellite data would be lying somewhere in the disk in the
+descending orderand key to this would be stored in the structure.
+This would make it an ordered pair of keys and associated satellite
+data.</p>
+<p>The keys are stored in the ascending order. Whenever the
+associated data has to be fetched, it can be gotten by searching
+the related key in the pair that is stored on the disk. The
+ascending order of the keys would preserve the basic structure of
+the vEB tree that has the keys in the ascending order.</p>
+<p>The structure of the node in this approach might look like
+below:</p>
+<p>struct satellite</p>
+<p><b>{</b></p>
+<p>int p<b>;</b></p>
+<p>float q<b>;</b></p>
+<p>satellite<b>*</b>pair_ptr<b>;</b></p>
+<p><b>}</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>So, the modification in the data structure would allow the data
+to be stored in the form of the key value pair. Keys would be the
+data stored in the tree itself and the data would be associated
+with the keys nonetheless would be stored somewhere else in the
+memory. The keys would essentially be stored in the ascending
+order.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>A PROTO-vEB structure</b></p>
+<p>The PROTO-vEB is a data structure format used to organize the
+data in tree structure that will help to dynamically perform the
+operations on the elements of the tree.</p>
+<p>The basic structure of the PROTO-vEB is shown in the diagram
+below. The information about the universe size is stored in the
+node <i>u</i>. The pointer summary is a pointer to the
+proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">) structure.
+There is an array cluster that has a range <img src=
+"../imgs/858ee980a8f4e5cb41bed609053f3f92f29e79f5.png"> of
+denoting<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png"> different
+pointers to proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">)
+structures.</p>
+<p><img src="../imgs/a495b9ef962a7b2265498267bc0460084f6415c8.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+<p>While creating the PROTO-vEB structure the following variables
+have to be taken care of:</p>
+<p>1. Universe size: Variable <i>u</i> that is used to store the
+universe size for the vEB proto structure. This can be maintained
+using an attribute in the PROTO-vEB structure.</p>
+<p>2. Summary: It is already known that summary is a pointer that
+holds the information about the vEB tree, a variable to hold this
+information would be required.</p>
+<p>3. Cluster: The array that is used to store the values in it in
+the form of bits. The indexes of the array represent the value and
+the presence of 0 or 1 represents the presence or absence of the
+key, respectively.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Pseudo code for PROTO-vEB structure:</b></p>
+<p>While writing the pseudo code the following should be done:</p>
+<p>1) Declare and initialize the variable for storing the universe
+size.</p>
+<p>2) Declare and initialize the pointer that would store the
+summary. For this use an array that would hold the information
+about the structures.</p>
+<p>3) Declare an array that would be used as cluster array. The
+values that have to be stored in the tree would be first kept in a
+temporary array and then based on the presence or absence of 1s in
+the array indexes the values in the cluster array would be filled
+up.</p>
+<p>The pseudo code for the creation of the PROTO-vEB structure can
+be written as given below:</p>
+<p>PROTO-vEB (<i>u</i>)</p>
+<p>1. {</p>
+<p>// initialize the variable and array index</p>
+<p>2. int<img src=
+"../imgs/bb01eab62d38222c38dcca30b3abf1dfa8bda3b0.png">;</p>
+<p>3. <img src=
+"../imgs/8971d216aa1a2df4e08545f94620117ca05c5057.png"></p>
+<p>//declare a new array</p>
+<p>4. <img src=
+"../imgs/06140e2db191dc0748d9152bd6dbb165bfadaec1.png"></p>
+<p>5. Summary<img src=
+"../imgs/832c86976b4ae81de2c043daad5e8c677a4d8eb0.png">;</p>
+<p>//size of the summary array is the number of clusters that is
+<img src=
+"../imgs/c151ad7afad62324ae7b686f2a3036d6000b332b.png"></p>
+<p>//run a loop for array indexes</p>
+<p>6. <b>for</b><img src=
+"../imgs/5ab92df9dae163574841535754aeec2398c07cad.png"></p>
+<p>//<img src=
+"../imgs/0a7e3da2678469204acaf164b0ed01267d98aa4a.png"></p>
+<p>7. {</p>
+<p>8. <img src=
+"../imgs/03e0c615052eaf945eee6de2091e4df8e84d08b6.png"></p>
+<p>//the number of clusters is<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">, and in
+each cluster the number of elements is <img src=
+"../imgs/bb39d3d3bda29607ad97040b9a3cbc931ba750dd.png"></p>
+<p>9. <b>for</b><img src=
+"../imgs/f1c3c63674c2bfba870209bc246749d4cc635ee1.png"></p>
+<p>10. {</p>
+<p>//check the list element</p>
+<p>11. <b>if</b><img src=
+"../imgs/512f74b6c358d3bf0efd31fbd3525f1e716182b4.png"></p>
+<p>12. <img src=
+"../imgs/34eca497810d0cea41ef2be4e088677efa795b23.png">;</p>
+<p>13. <b>else</b></p>
+<p>14. <img src=
+"../imgs/112fe012d87ff6e19c98a5e3ed9e734de084c249.png">;</p>
+<p>} } }</p>
+<p>LIST<img src=
+"../imgs/5ae0c6909e9677af940871d1194d71bdec56601a.png"></p>
+<p>1. {</p>
+<p>2. Enter the elements in the list [ ].</p>
+<p>//Check the elements</p>
+<p>3. <b>if</b><img src=
+"../imgs/1ee8029decd84499c1fb2345df90751e99496c4e.png"></p>
+<p>//return 1 if exists</p>
+<p>4. <b>return</b><img src=
+"../imgs/55e93abe17c6c60a072e244ed7315446aa0a92fd.png"></p>
+<p>5. <b>else</b></p>
+<p>//return 0 if does not exist</p>
+<p>6. <b>return</b> (0).</p>
+<p>}</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the pseudo code:</b></p>
+<p>First of all, initialize a variable and an array in line 2 and
+line 3. The array initialized in the line 3 would be used to hold
+the size of the universe. Declare an array in line 4 that would be
+used to store the key values in it. Declare another array in line 5
+that would be used to store the summary for the given tree.</p>
+<p>Lines 6 to 12 are used to store the values in the cluster array.
+Line 6 initializes a loop that runs from1 till<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">. Line 8
+sets the maximum number of clusters to<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">. Line 9 is
+used to check the values that are to be filled in the tree.</p>
+<p>To check the values another procedure LIST is to be called. This
+procedure picks the values from an additional array <i>list</i>
+that holds the values to be inserted in the tree. If the value in
+<i>list</i> array is 1 the respective index in the cluster is also
+set to 1; 0 otherwise.</p>
+<p>Now, have a look at the LIST procedure.</p>
+<p>This procedure does nothing but enters the values in the cluster
+array. The concerned key value is passed as the argument. If the
+value of the variable passed as argument is 1 then the current
+index of the array list is set to 1. If the value is 0 then the
+value in the current index of the array is set to 0.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The empty structure of the PROTO-vEB</b></p>
+<p><b>The PROTO-vEB structure:</b></p>
+<p>The PROTO-vEB is a data structure format used to organize the
+data in tree structure that will help to dynamically perform the
+operations on the elements of the tree.</p>
+<p>The basic structure of the PROTO-vEB is shown in the diagram
+below. The information about the universe size is stored in the
+node <i>u</i>. The pointer summary is a pointer to the
+proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">) structure.
+There is an array cluster that has a range <img src=
+"../imgs/858ee980a8f4e5cb41bed609053f3f92f29e79f5.png"> of
+denoting<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png"> different
+pointers to proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">)
+structures.</p>
+<p><img src="../imgs/a495b9ef962a7b2265498267bc0460084f6415c8.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The PROTO-vEB MINIMUM gets executed as follows. It gives the
+minimum number in the list.</p>
+<p><b>PROTO-vEB MINIMUM (</b> <i><b>V</b></i> <b>)</b></p>
+<p>//check the base case</p>
+<p>1. <b>if</b><img src=
+"../imgs/36d113089df005f8a4a47e59c087d6ff6384fccb.png"></p>
+<p>//check if the first index holds an element</p>
+<p>2. <b>if</b><img src=
+"../imgs/2f1635e35adb0f489006f589904e0b895219cd0a.png"></p>
+<p>3. <b>return</b> 0</p>
+<p>//check if the second index holds an element</p>
+<p>4. <b>else if</b><img src=
+"../imgs/21164ca7a06a40d20ff3ed3d0a9b9fc08bafacfb.png"></p>
+<p>5. <b>return</b> 1</p>
+<p>//check if the list is empty</p>
+<p>6. <b>else</b></p>
+<p><b>return</b> NIL</p>
+<p>7. <b>else</b></p>
+<p>//recursive call to the procedure</p>
+<p><i>min-cluster</i> = PROTO-vEB MINIMUM
+(<i>V</i><i>.summary</i>)</p>
+<p>//check for NIL list</p>
+<p>8. <b>if</b>(<i>min-cluster</i> == NIL)</p>
+<p>9. <b>return</b> NIL</p>
+<p>10. <b>else</b></p>
+<p>//find out the offset for the list</p>
+<p><i>offset</i> =PROTO-vEB-MINIMUM (<i>V.cluster</i>
+[<i>min-cluster</i>])</p>
+<p>11. <b>return</b> <i>index</i> (<i>min-cluster</i>,
+<i>offset</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the procedure:</b></p>
+<p>In simple words the procedure checks for the first non-zero
+value in the lists. As the levels get ahead the procedure searches
+the minimum cluster and finds the first non-zero value in that.</p>
+<p>As soon as the value is found, the procedure returns the index
+of that value. The index is the minimum value in the entire
+structure.</p>
+<p>The procedure gets executed as follows:</p>
+<p>Line 1 checks the fundamental case where the universe has only
+two values.</p>
+<p>Line 2 checks if the cluster array has a 1 in its first index
+and returns the control with a value 0 from line 3.</p>
+<p>Line 4 checks the case if the first index has a 1 in it as the
+value.</p>
+<p>Line 5 returns a 1 if case mentioned in the line 4 is true.</p>
+<p>If none of these cases is true, the line 6 throws the control
+out of the procedure with a NIL returned.</p>
+<p>The alternative of the line 1 is to call the procedure
+recursively and store the returned value in the min-cluster that is
+line 7.</p>
+<p>Line 8 checks if the value stored in the min-cluster variable is
+NIL. If this happens, the procedure returns NIL.</p>
+<p>Line 10 and 11 calculate the offset and index for the structure
+and return the index based on the offset and the min-cluster
+value.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>For NIL structure:</b></p>
+<p>Now have a look at the same procedure for the NIL structure.</p>
+<p>Since the structure does not have any element, obviously the
+structure would not have any range and <i>u</i> cannot be given any
+value but NIL.</p>
+<p>The control gets transfer to the line 7.This is a recursive call
+to the procedure with the summary pointer passed as argument to the
+procedure. Since this is a NIL structure that’s why the structure
+would not have any elements stored in it.</p>
+<p>Simply there are no children.</p>
+<p>So the procedure would return a NIL. This is stored in the
+variable min-cluster. Now line 8 is checked to find out if the
+min-cluster has a NIL. If this is so the next line to be executed
+would be the line 9. This returns a NIL.</p>
+<p>So, it is apparent that the line 9 is executed only if the list
+is empty. In any other case there would any other value returned
+than NIL.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>PROTO-vEB structure</b></p>
+<p>The PROTO-vEB is a recursive data structure format used to
+organize the data in tree structure that will help to dynamically
+perform the operations on the elements of the tree.</p>
+<p>The basic structure of the PROTO-vEB is shown in the below
+diagram. The information about the universe size is stored in the
+node <i>u</i>. The pointer summary is a pointer to the
+proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">) structure.
+There is an array cluster that has a range <img src=
+"../imgs/858ee980a8f4e5cb41bed609053f3f92f29e79f5.png"> of
+denoting<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png"> different
+pointers to proto-vEB(<img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">)
+structures.</p>
+<p><img src="../imgs/a495b9ef962a7b2265498267bc0460084f6415c8.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following operations can be performed on PROTO-vEB
+structure</b>:</p>
+<p>1. PROTO-vEB-MEMBER: The operation finds if a particular element
+exists in the structure</p>
+<p>2. PROTO-vEB-MINIMUM: The operation finds the minimum element in
+the structure.</p>
+<p>3. PROTO-vEB-MAXIMUM: The operation finds the maximum element in
+the structure.</p>
+<p>4. PROTO-vEB-PREDECESSOR: To find the predecessor of a given
+value.</p>
+<p>5. PROTO-vEB-SUCCESSOR: TO find the successor of the given
+value.</p>
+<p>6. PROTO-vEB-INSERT: To insert a value in the structure.</p>
+<p>7. PROTO-vEB-DELETE: To delete the specified element from the
+structure, if that exists in the structure.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Calculating the complexity for each of the operation
+performed on PROTO-vEB structure with</b> <b><img src=
+"../imgs/e2167e939b0d2c90b947c800a2a7b1acd043fabf.png"></b>
+<b>elements in each cluster is as follows:</b></p>
+<p><b>PROTO-vEB-MEMBER:</b></p>
+<p>PROTO-vEB-MEMBER procedure calls recursively itself every time
+in the worst case. Finally it takes to checks membership in
+constatnt time. Thus, if <i>T</i>(<i>u</i>) is the running time of
+PROTO-vEB-MEMBER, then the running time can be characterized as
+follows:</p>
+<p><img src=
+"../imgs/e3a4b312ee0d431b6d990e51ac2165df84c1cef1.png"></p>
+<p>Consider <img src=
+"../imgs/0ba92d11b49d4198904eb7eb1511015ab2ffb55d.png">.That is,
+<img src=
+"../imgs/7b8a77f60c60b9a302a26b8b63d2137d40f2e213.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/bc0722b4aa37e01463e228039ef053f1a778d483.png"></p>
+<p>Again consider, <img src=
+"../imgs/33a15bb14e213931e21bc45d0cb5b1f4d4a4b8ca.png"></p>
+<p>Thus, the new recurrence is,</p>
+<p><img src=
+"../imgs/3e6447cbee9fde16d449e820588394c1b2d8c788.png"></p>
+<p>According to the Master’s theorem, case 2, the above recurrence
+relation has the following solution.</p>
+<p><img src=
+"../imgs/25c642f134627eb9c39c8d12be904e61bb38389c.png"></p>
+<p><img src=
+"../imgs/c98ebac7ba9088241350fb39665fc41565ab144e.png"></p>
+<p>Hence, <img src=
+"../imgs/3ea340568187c0503cbc222aab48d172fd032a16.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>PROTO-vEB-MINIMUM (</b> <i><b>V</b></i> <b>):</b></p>
+<p>In the worst case, the procedure <b>PROTO-vEB-MINIMUM</b> calls
+itself recursively twice. But the finding the cluster which
+contains minimum element takes constant time.</p>
+<p>Therefore</p>
+<p><img src=
+"../imgs/66fd2a85c9fd8b293ea6218834ce0884a8508f6f.png"></p>
+<p>Consider<img src=
+"../imgs/4a378a0f2d9e78f576d0433cc61cff9fbb21ac7e.png">. That is,
+<img src="../imgs/324ef41f465873c87a65ec6cf0e5622b5cccc918.png">
+and <img src=
+"../imgs/33a15bb14e213931e21bc45d0cb5b1f4d4a4b8ca.png"></p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/3e6447cbee9fde16d449e820588394c1b2d8c788.png"></p>
+<p>By master’s theorem, case 1,</p>
+<p><img src=
+"../imgs/265dd725a8b226e5fc3525bbc948d6620ee7d495.png"></p>
+<p><img src=
+"../imgs/dc70107ee8705f2a5bce0744526c8cd8e5b51f63.png"></p>
+<p>So, the complexity of <b>PROTO-vEB-MINIMUM</b> operation is
+<img src=
+"../imgs/4b72f0b07c9a0d9a61ec1f850ea966f1be5d75d5.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>PROTO-vEB-MAXIMUM:</b></p>
+<p>The objective of this operation is to find the maximum element
+in the PROTO-vEB structure. Thus, like PROTO-vEB-MINIMUM, the
+PROTO-vEB-MAXIMUM operation also requires <img src=
+"../imgs/1e1436647df3b458f3d197af27b2b6e3d21fcd37.png">time.</p>
+<p>Hence <img src=
+"../imgs/4b72f0b07c9a0d9a61ec1f850ea966f1be5d75d5.png"></p>
+</div>
+<hr>
+<div class="answer"><b>PROTO-vEB-SUCCESSOR:</b>
+<p>Successor operation finds the next node in the hierarchy with
+the smallest key that is greater than the current key. The
+operation makes two recursive calls to itself and calls the
+procedure to find the minimum as well.</p>
+<p>So, the total complexity would be equal to the sum of the
+complexity of two recursive calls and complexity of minimum.</p>
+<p><img src=
+"../imgs/18852a4e4d55c48717887797ae75449c410de09e.png"></p>
+<p>Consider <i>u</i>=2<sup>m</sup> and <img src=
+"../imgs/2369e10b58c1db4b7d1e5d505a0798defe3ee2c6.png">=<img src=
+"../imgs/7f4475d26888a8278c2e84428de1499cc0fb4d07.png"></p>
+<p><img src=
+"../imgs/ccaa10069318551c189e5dc34307c12d2cf11d20.png"></p>
+<p>By master’s theorem, case 3,</p>
+<p><img src=
+"../imgs/fbc3be65c494ac571f9480216dd3a06882f9e632.png"></p>
+<p>Thus<img src=
+"../imgs/9093fa8409a91c0424ad05083a8138c88ffa6936.png"></p>
+<p>Hence <img src=
+"../imgs/9a5a595663dc235440fcd6b9917b0e66206817c8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>PROTO-vEB-PREDECESSOR:</b></p>
+<p>Predecessor of a node is the node having the greatest value that
+is less than the current node.</p>
+<p>In the worst case, the procedure PROTO-vEB-PREDECESSOR calls
+itself twice and calls PROTO-vEB-MAXIMUM once. Therefore, the time
+complexity for PROTO-vEB-PREDECESSOR is same as time complexity of
+PROTO-vEB-SUCCESSOR .</p>
+<p>Hence the complexity of the procedure is <img src=
+"../imgs/9a5a595663dc235440fcd6b9917b0e66206817c8.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>PROTO-vEB-INSERT :</b></p>
+<p>In the worst case, always the procedure PROTO-vEB-INSERT calls
+itself twice and takes constant time for updating the summary
+bit.</p>
+<p>So the complexity would be as below:</p>
+<p><b><img src=
+"../imgs/6e9697c2ca3415c1cb7802ba2071f84dda22b392.png"></b></p>
+<p><b><img src=
+"../imgs/bd0ce3b14bd3d4a3f8f1314bc79d69139e2a2866.png"></b></p>
+<p>Consider <i>u</i>=2<sup>m</sup> and <img src=
+"../imgs/2369e10b58c1db4b7d1e5d505a0798defe3ee2c6.png">=<img src=
+"../imgs/7f4475d26888a8278c2e84428de1499cc0fb4d07.png"></p>
+<p><img src=
+"../imgs/77c49a152f4eac34c9abef5cd23caa3c0a60d0f0.png"></p>
+<p>By master’s theorem, case 1, the solution to the above recursion
+is as follows:</p>
+<p><img src=
+"../imgs/6296fa79512bde868032ce38e5544e3a9e304a9e.png"></p>
+<p>Hence <img src=
+"../imgs/4b72f0b07c9a0d9a61ec1f850ea966f1be5d75d5.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>PROTO-vEB-DELETE:</b></p>
+<p>In the worst case, like PROTO-vEB-INSERT, the procedure
+PROTO-vEB-DELETE recursively calls itself twice and each time it
+updates the summary bit also in constant time.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/466f912aef370f31b334a2933e3ec16e5235f221.png"></p>
+<p>Consider <i>u</i>=2<sup>m</sup> and <img src=
+"../imgs/2369e10b58c1db4b7d1e5d505a0798defe3ee2c6.png">=<img src=
+"../imgs/7f4475d26888a8278c2e84428de1499cc0fb4d07.png"></p>
+<p><img src=
+"../imgs/77c49a152f4eac34c9abef5cd23caa3c0a60d0f0.png"></p>
+<p>By master’s theorem, case 1, the solution to the above recursion
+is as follows:</p>
+<p><img src=
+"../imgs/6296fa79512bde868032ce38e5544e3a9e304a9e.png"></p>
+<p>Hence <img src=
+"../imgs/4b72f0b07c9a0d9a61ec1f850ea966f1be5d75d5.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

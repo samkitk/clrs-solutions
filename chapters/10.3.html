@@ -1,0 +1,401 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 10.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A linked list is a data structure which contains groups of node
+to represent a sequence. Each node in linked list stores value as
+well as link of the next node.</p>
+<p>A doubly linked is also data a structure which contains groups
+of node but in double linked list each node store value as well as
+link of next and previous element.</p>
+<p><b>Doubly linked list with multiple array:</b></p>
+<p>A double linked list can also be implemented with the help of
+multiple arrays. Three arrays are used to implement double linked
+list. One array is used to store next node index value, one is used
+to store key and one is used to store previous node index
+value.</p>
+<p>The following figure depicts the doubly linked list
+implementation with multiple arrays.</p>
+<p><img src="../imgs/73b97aa4e922681c1e0e7d09473ba35007f0c93b.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\24.9.2015\Gaurav 2254\Image\1.png"></p>
+<p><b>Explanation:</b></p>
+<p>• The elements in the doubly linked list are<img src=
+"../imgs/44ff0fdc76aabd2d74cb46f94304fb2a3181169c.png">.</p>
+<p>• The first element of list is stored at index 8 in <i>key</i>
+array, the value of <i>key</i>[8]=13.</p>
+<p>• First element does not have any previous element. Therefore,
+<i>pre</i>[8] =<i>Nil</i>.</p>
+<p>• The second element is stored at index 2. Therefore
+<i>next</i>[8]=2.</p>
+<p>• Similarly, all element of linked list are stored in 3 arrays.
+The <i>key</i> array stores the key value, the <i>next</i> and
+<i>prev</i> array store the next and previous element index of
+linked list.</p>
+<p>• Arrows in above figure are used to represent the next and
+previous elements of any particular element.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Doubly linked list with single array:</b></p>
+<p>A double linked list can also be implemented with the help of
+one array. In single array, 3 consecutive memory allocation are
+required to store the element, and its next and previous element
+link.</p>
+<p>The following figure depicts the doubly linked list
+implementation with single arrays.</p>
+<p><b><img src=
+"../imgs/a942e303cc3082ff3fa2839e8b166a216d7ad911.png" alt=
+"D:\2015 FILES\MONTHS 2015\9 September\24.9.2015\Gaurav 2254\Image\2.png"></b></p>
+<p><b>Explanation:</b></p>
+<p>• The elements in the doubly linked list are<img src=
+"../imgs/44ff0fdc76aabd2d74cb46f94304fb2a3181169c.png">.</p>
+<p>• The first element of list is stored at index 10 in <i>A</i>
+array. The value of <i>A</i>[10]=13.</p>
+<p>• In single array implementation 3 consecutive memory block of
+array are used to store node key, next and previous link of double
+linked list. The second element stored at index 1 therefore
+<i>A</i>[11]=1.</p>
+<p>• First element does not have any previous element. Therefore,
+<i>A</i>[12] =<i>Nil</i>.</p>
+<p>• Similarly, all element of linked list are stored in <i>A</i>[]
+arrays.</p>
+<p>• Arrows in above figure are used to represent the next and
+previous elements of any particular element.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>ALLOCATE-OBJECT () and FREE-OBJECT(</b> <i><b>x</b></i> <b>)
+procedures</b></p>
+<p>Consider that the homogeneous collection of objects is
+implemented by the single-array representation.</p>
+<p>• When the procedure LIST-INSERT (<i>L,x</i>) is called, in turn
+it calls ALLOCATE-OBJECT().</p>
+<p>• The procedure ALLOCATE-OBJECT returns the index <i>x</i> in
+array <i>A</i>, where the free space is available to allocate the
+object.</p>
+<p>• Here, <i>A</i>[<i>x</i>] ( or <i>x.A</i>) represents an object
+index. <i>A</i>[<i>x+0</i>] or <i>x.A</i>+0 , <i>A</i>[<i>x+</i>1]
+or <i>x.A</i>+1 and <i>A</i>[<i>x</i>+2] or <i>x.A+2</i> represents
+<i>key</i>, <i>next</i>, and <i>prev</i> respectively.</p>
+<p>ALLOCATE-OBJECT ()</p>
+<p>1. <b>if</b> <i>free</i> = = NIL</p>
+<p>2. <b>error</b> " Out of Space"</p>
+<p>3. <b>else</b> <i>x</i> = <i>free</i></p>
+<p>4. <i>free</i> = <i>x.A</i>+1 //<i>x.A</i>+1 = A[<i>x</i>+1],
+which represents <i>next</i></p>
+<p>5. <b>return</b> <i>x</i></p>
+<p>• When the procedure LIST-DELETE(<i>x</i>) is called, in turn,
+it calls the procedure FREE-OBJECT ().</p>
+<p>• The procedure FREE-OBJECT () frees the memory at index
+<i>x</i> in array <i>A</i> and updates <i>x</i> as the immediate
+available free space to allocate a new object.</p>
+<p>FREE-OBJECT(<i>x</i>)</p>
+<p>1. <i>x.A</i>+1 = <i>free</i></p>
+<p>2. <i>free</i> = <i>x</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>Example:</p>
+<p><img src="../imgs/3bc30e0661298225ac11ad22a92b3348e9168c53.png"
+alt="Picture 1"></p>
+<p>Now, the procedure ALLOCATE-OBJECT() returns <b>10</b> on
+calling.</p>
+<p><b>On calling LIST-INSERT(</b> <i><b>L</b></i> <b>,10) , the
+array is as follows:</b></p>
+<p><img src="../imgs/812d7d302ed0af56cf350cd1d9fd3b3bc5a8b0f8.png"
+alt="Picture 2"></p>
+<p>When LIST-DELETE(<i>L</i>,10) is called , it calls
+FREE-OBJECT(10).</p>
+<p><b>The result of executing the above functions the array is as
+follows:</b></p>
+<p><img src="../imgs/949d35b222fe062739d2b2edbaff798710088654.png"
+alt="Picture 3"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A double linked list can also be implemented with the help of
+multiple arrays. Three arrays are used to implement double linked
+list. One array is used to store next node index value, one is used
+to store key and one is used to store previous node index
+value.</p>
+<p>The nodes of doubly linked list are stored at arbitrary position
+so lots of elements are left as empty in this array.</p>
+<p>A single linked list <i>free</i> is used to store details about
+the all free spaces in array. Only one link that is <i>next</i> is
+required to determine the next empty element.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the ALLOCATE-OBJECT () and FREE-OBJECT () algorithm
+provided in section 10.3. Both these procedure are used only to
+maintain the <i>free</i> linked list that store details about the
+free space in array.</p>
+<p>• The ALLOCATE-OBJECT () procedure is called after the
+LIST-INSERT () function. The LIST-INSERT () add new node by setting
+the next and previous link of new node and the existing list.</p>
+<p>• The LIST-INSERT () take first element from pool of free space
+and insert new node in it.</p>
+<p>• After that, call ALLOCATE-OBJECT () procedure to update the
+pointer of <i>free</i> linked list to point to next free space in
+array.</p>
+<p>• Similarly, FREE-OBJECT () procedure is called after the
+LIST-DELETE () function.</p>
+<p>• The LIST- DELETE () delete a node by setting the next and
+previous link of a deleted node.</p>
+<p>• FREE-OBJECT () procedure is used to add new free space in free
+linked list.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The procedures <b>ALLOCATE-OBJECT</b> and <b>FREE-OBJECT</b> can
+be implemented if a track of the next available spot is kept in the
+array.</p>
+<p>This spot is greater than the number of elements being
+stored.</p>
+<p>For <b>FREE-OBJECT</b>, when a space is freed, decrement the
+position of each element at a position and update the pointers</p>
+</div>
+<hr>
+<div class="answer">
+<p>The above process takes linear time. The algorithm to free the
+object at one location 1 through <i>m</i> is as follows:</p>
+<p><b>FREE-OBJECT(i)</b></p>
+<p>A[i+1] =free</p>
+<p>free=i</p>
+</div>
+<hr>
+<div class="answer">
+<p>The <i>m</i> index locations indicate the number of elements in
+the list. The array entry A[m+1] is used to allocate a new object.
+When a location is freed, take the object at the location m and
+move it there, freeing <i>m.</i></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Procedure COMPACTIFY-LIST to maintain the lists of occupied
+and free objects</b></p>
+<p>Consider a doubly link list <i>L</i> that is being stored by the
+means of the arrays. The procedures ALLOCATE-OBJECT and FREE-OBJECT
+are used to manage the concerned arrays of allocated and the freed
+objects. These procedures are already defined in the section 10.3
+of the book.</p>
+<p>Now the routine for managing the list of objects and the list of
+free objects <i>F</i> has to be defined:</p>
+<p>Now the procedure for putting the <i>n</i> items in the list
+<i>L</i> and <i>m–n</i> elements in the list <i>F</i> would be
+defined. The algorithm should be defined in such a manner so that
+the total run time of the algorithm is<img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">. Doing this
+in a straight forward manner would end up in creation of an
+algorithm that has runtime<img src=
+"../imgs/9aa43d8efc90554c37e0b74e94cbb03c70d20d35.png">.</p>
+A remedy to this problem would be to design an algorithm that
+accesses the elements in such a way that every loop that accesses
+the list elements does not exceed the limit <i>n</i> in any case.
+The sequential statements can be ignored while finding the
+complexity of the algorithm. This way, the complexity of the
+algorithm would not exceed the<img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">.</div>
+<hr>
+<div class="answer">
+<p>The procedure is as below:</p>
+<p>The procedure COMPACTIFY-LIST manages the list <i>L</i> with
+<i>n</i> elements so that the elements are stored from the index 1
+to<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.
+It also manages the elements <i>m</i>–<i>n</i> in the list <i>F</i>
+so that the items can be stored from the index <i>n</i>+1 to
+<i>m</i>.</p>
+<p>COMPACTIFY-LIST(<i>L</i>, <i>F</i>)</p>
+<p>1. //save the quotient that is gotten by dividing <i>m</i> and
+<i>n</i> in a variable</p>
+<p><img src=
+"../imgs/afde064c9d69ed7bcd6179d60eeb52c0c64c8679.png"></p>
+<p>2. //allocate <i>n</i>objects in the given list</p>
+<p><b>for</b> <img src=
+"../imgs/96fdd2de7761c1e6278297ccfafc5b7e9dc79ce0.png"></p>
+<p>// invoke the routine to allocate the objects in the given
+list</p>
+<p>3. ALLOCATE-OBJECT()</p>
+<p>4. //define new variable</p>
+<p><img src=
+"../imgs/01a3fa03c4abf0ce63555fa7e868aa315deee488.png"></p>
+<p><img src=
+"../imgs/6c336b5b162d762c030a5abfee8b32618bd5fc46.png"></p>
+<p>5. //loop to find out if there areitems to becopied</p>
+<p><b>while</b> <img src=
+"../imgs/fd0988aee11f592fda23ad8b42f757a0d482d314.png"></p>
+<p>6. //loop to copy <i>n</i> items to the list of free objects</p>
+<p><b>for</b> <img src=
+"../imgs/b0bea515736558938b70225356628565f1065f25.png"></p>
+<p>7. //check if entire set of items has been copied</p>
+<p><b>if</b> <img src=
+"../imgs/a2f74e3e8335168528e25123d59c1100b45ec855.png"></p>
+<p><b>return</b></p>
+<p>8. //call the procedure to copy the elements to the <i>F</i>
+list</p>
+<p>FREE-OBJECT(<i>x</i>)</p>
+<p>9. // update the variables</p>
+<p><img src=
+"../imgs/725cbac4034d9685b559c3ebfc27940235ad8116.png"></p>
+<p><img src=
+"../imgs/09896576fc5f2d45b99c375366dd75b5c0ab2930.png"></p>
+<p>10. <b>return</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time Complexity of the algorithm:</b></p>
+<p>Now calculate the total execution time of the algorithm as
+below.</p>
+<p>There runs an initial “for” loop running <i>n</i> times for
+allocating the objects to the list <i>L</i>. After this, there is
+over a “while” loop running <i>p</i> times and an inner “for” loop
+running at most <i>n</i> times.</p>
+<p>So, using the master’s theorem, the time necessary for execution
+of algorithm should be:</p>
+<p><img src=
+"../imgs/5cdb1f30a658d154936b8ce48c2b2a221e1a118c.png"></p>
+<p>Now, <i>p</i> is the quotient gotten by dividing <i>n</i> with
+<i>m</i>. In the practical examples <i>p</i> is almost negligible
+in comparison to the other factors that count in calculating the
+time required for executing the algorithm</p>
+<p>So <i>p</i> can be left alone in the above yield of
+calculation.</p>
+<p>So, the total time required toexecute the algorithmwould be:</p>
+<p><img src=
+"../imgs/c86835909874ae204054f257c75c71189b5316a2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Space complexity:</b></p>
+<p>The algorithm used above uses only 4 additional variables to
+keep track of the details. In all the iterations of the loop the
+existing value held by the related variable is being overwritten,
+so the space is not increasing gradually or with the size of the
+input.</p>
+<p>This makes the additional space used by the procedure constant
+as well as the entire space.</p>
+<p>So, the algorithm would require constant space.</p>
+<p>The procedure ensures that values are kept properly in the
+arrays <i>L</i> and <i>F</i>. This is done by maintaining a
+pointer<i>y</i> for the second list. This variable is used to copy
+<i>n</i> items to the list everytime till there are still items to
+be copied. The reason to do this is the management of complexity of
+the algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,1081 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 29.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the single source shortest path linear program:</p>
+<p>Maximize <i>d</i><sub>t</sub></p>
+<p>Subject to</p>
+<p><img src="../imgs/d022cd5b55f8fbfb98063579c72335f8e15d31db.png">
+for each edge <img src=
+"../imgs/9bd069a25e7f8a9f0eed1d85bf9693927097c786.png"></p>
+<p><i>d</i><sub>s</sub> = 0.</p>
+<p>Where <i>d</i><sub>t</sub> is the maximum weight of each target
+vertex in the edge (<i>u, v</i>), <i>d</i><sub>u</sub> and
+<i>d</i><sub>v</sub> are the weights of the shortest path from
+source vertex to the vertices <i>u</i> and <i>v</i> respectively
+vertices in the edge (<i>u, v</i>) <i>d</i><sub>s</sub> is the
+source vertex. Converting this program into standard form of linear
+equations.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In single source shortest path problem we find the path from a
+single source vertex to every other vertex in the graph. For
+finding the shortest path for each vertex from the source vertex we
+use the linear programming approach in which linear equations are
+formed from the graph.</p>
+<p>The standard form of linear equations for finding the value of
+<i>n</i> real variables<img src=
+"../imgs/9a11fe18654f2e8b0021da29aad1d32bcdfc0635.png">, for given
+<img src=
+"../imgs/5af7007fe65ca51715c6b7d9a6960a675c1d45c4.png"><i>n</i>
+real numbers and<img src=
+"../imgs/90a422f91f733ea87fdf419ea74f65a00cf6faa7.png">, <i>m</i>
+real numbers and <img src=
+"../imgs/9bd3a1e71b4b1543af91a15228b7b6a544d848bf.png"> real
+numbers <img src=
+"../imgs/c3fd76d3a917e57ea9926ad9133e206b096bcc5c.png">for
+<img src="../imgs/e4ccc8002ede8d353862a83b173c03be91eea766.png">and
+<img src="../imgs/f108de47ae835a0de39f406a6ef389ba41c89bc5.png">is
+as:</p>
+<p>Maximize <img src=
+"../imgs/81e46cb5c1db6d4802ff20c35df1e6d8d7d015b9.png"></p>
+<p>Subject to</p>
+<p><img src="../imgs/4157afbcb4e77ffe752d93770bb413cbb017909c.png">
+for <img src=
+"../imgs/40951ff30ef3eaefe60b34c66463f1a89fb71752.png"></p>
+<img src="../imgs/50c707477b41b67047b798783df5153ed8bd9592.png">
+for <img src=
+"../imgs/80101d66d676f36c582d2d1ef807019d57499f34.png"></div>
+<hr>
+<div class="answer">
+<p>According to the standard form of linear equations the
+transformation of single source shortest path problem. Linear
+program to compute the shortest-path weight from source <i>s</i> to
+target <i>t</i> by maximizing <i>d</i><sub>t</sub><i>.</i></p>
+<p>Maximize <i>d</i><sub>t</sub></p>
+<p>Subjected to</p>
+<p><img src=
+"../imgs/5714c99f3b85c637f64b8e7e8ad602cd06f8fee9.png">for
+<img src="../imgs/d09d345f512a39a7c04daa1ab5359028a842976a.png"></p>
+<p><img src=
+"../imgs/e10858103d239ed409b13bab8714f80bdaf164c5.png">(on
+replacing <img src=
+"../imgs/4004877bfd3d6f2fbf43bdd51476fc02fc33b188.png">by<img src=
+"../imgs/0e60bbefc3b7f3dd52fb4c9244372a56857d9135.png">)</p>
+<p>Where<img src=
+"../imgs/4004877bfd3d6f2fbf43bdd51476fc02fc33b188.png">is the
+weight of the shortest path from source vertex <i>s</i> to
+<i>s’</i> and<img src=
+"../imgs/1526d3302ba6805afcb43131fdbdbf37c8c3c522.png">. The source
+vertex initially receives a value <i>d</i><sub>s</sub> = 0, which
+never changes.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the graph 24.2(a) given in the textbook to write the
+linear routine that corresponds to the graph for finding the single
+source shortest path from node <i>s</i> to node <i>y</i>.</p>
+<p><b>Linear Program for finding the shortest path:</b></p>
+<p>In order to find the shortest path, create a linear programming
+model and find the solution of the problem by using the following
+procedure.</p>
+<p>1. Identify the variables of the problem.</p>
+<p>2. Define the constraints of the problem. Constraint means
+defining inequalities and equation of the problem.</p>
+<p>3. Define the objective function of the problem.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In single source shortest path problem, the aim is to get the
+shortest path from the source node of the graph to all the nodes in
+the concerned graph.</p>
+<p>• To obtain the result, the maximization of the objective
+function, which is the weight function of smallest path from source
+vertex to target vertex, is done.</p>
+<p>• To transform the shortest path problem, the maximization of
+the objective function, <i>d</i><sub>y</sub> is required.</p>
+<p>• The calculation of objective function can be calculated by
+adding the weights of each edge in between the source and target
+vertex of graph.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the weighted graph for finding the shortest path:</p>
+<p><img src="../imgs/456b304a4343b38b4f9236a17f2bede6095a0d05.png"
+alt="C:\Users\evelyn 26\Downloads\Untitled-1 (1).tif"></p>
+<p>In the above graph, source vertex is <i>s</i> and the
+destination vertex is <i>y</i>, The objective of the problem is to
+find the minimum distance from source vertex <i>s</i> to
+destination vertex <i>y</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Identification of Variables:</b></p>
+<p><img src="../imgs/77912fac4cd5f2741f3d131eea7ad495a3e33367.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Defining Constraint:</b></p>
+<p><img src="../imgs/f34102e34d4e3c0f4dc9e962f5cd4e12a0ffd694.png"
+alt="Picture 2"></p>
+<p>Initialize source vertex <i>M</i><sub>s</sub> with 0 and all
+other vertex (<i>M</i><sub>y,</sub> <i>M</i><sub>x</sub><i>,
+M</i><sub>z</sub><i>, M</i><sub>t</sub> <i>) ≥</i> 0.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Objective function of the problem is defined:</b></p>
+<p>Calculate the value of weight for each and every vertex of the
+graph. If any vertex is calculated more than one time, then the
+value, which is the minimum, is considered.</p>
+<p>Here for example: Vertex <i>M</i><sub>x</sub> has two values 9
+and 18. However, the value 9 is considered, as it is the
+minimum.</p>
+<p><img src=
+"../imgs/e7075bd4d59f268199e5ec88ff1be7e17593081f.png"></p>
+<p><img src=
+"../imgs/462d223071c72e5e7e65ac0535416479624a861d.png"></p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/51aa837e39f5ca66961a8ee41362c4d5df39a8f2.png">
+<p><img src=
+"../imgs/e5f41ff394eba014f4e02176d9f29f80c0a972d6.png"></p>
+<p><img src=
+"../imgs/6b28ec22be5469ef86f76d6317282427ab8464f2.png"></p>
+<p><img src=
+"../imgs/78011bfdd74492fb5b3fd5bfd6b1ed2ef39fa806.png"></p>
+<p><img src=
+"../imgs/4ac528f399d7024ed4cb6f604800b48e11277001.png"></p>
+<p><img src=
+"../imgs/e3750089a53e6f29eab13032acf26ef40976ee35.png"></p>
+<p><img src=
+"../imgs/256ca7830a96199ec12dd5eac0de95bb40e43ce0.png"></p>
+<p><img src=
+"../imgs/d7c141e5e294526cda97defc260e6a858694a51d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>There are two paths going from source vertex <i>s</i> to
+destination vertex <i>y</i> which are as follows:</p>
+<p>1. Going directly from source vertex to destination vertex.</p>
+<p><img src=
+"../imgs/462d223071c72e5e7e65ac0535416479624a861d.png"></p>
+<p>2. Going from source vertex to destination vertex through
+intermediate vertex <i>M</i><sub>t</sub>.</p>
+<p><img src=
+"../imgs/51aa837e39f5ca66961a8ee41362c4d5df39a8f2.png"></p>
+<p>Diagram showing the shortest path from <i>s</i> to <i>y</i> is
+as shown:</p>
+<p><img src="../imgs/f92f1cb38e62188c689159d5cf4595eb168fa634.png"
+alt="C:\Users\evelyn 26\Downloads\Untitled-1.tif"></p>
+<p>Here, both the path of going from source vertex to destination
+vertex is generating the same value, that is 5.</p>
+<p>Thus, the shortest path from <i>s</i> to <i>y</i> is 5.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Linear Program for finding the shortest path:</b></p>
+<p>In order to find the shortest path, create a linear programming
+model and find the solution of the problem by using the following
+procedure.</p>
+<p>1. Identify the variables of the problem.</p>
+<p>2. Define the constraints of the problem. Constraint means
+defining inequalities and equation of the problem.</p>
+<p>3. Define the objective function of the problem.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In single source shortest path problem, the aim is to get the
+shortest path from the source node of the graph to all the nodes in
+the concerned graph.</p>
+<p>• To obtain the result, the maximization of the objective
+function, which is the weight function of the smallest path from
+source vertex to target vertex, is done.</p>
+<p>• In graph <i>G,</i> to find the shortest paths weight from
+source vertex <i>s</i> to vertex <img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png">, the linear
+program consists of a variable <i>d</i><sub>v</sub> which
+represents the maximum value of weight of target for an edge (<i>u,
+v</i>).</p>
+<p>• For the representation of maximum weight from single source
+<i>s</i> to any other vertex in the graph, the summation of all the
+path weights will be used as the objective function.</p>
+<p>• According to the standard form of linear equations, the linear
+program computing the single source shortest paths weight from
+source <i>s</i> to any vertex<img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png">by
+maximizing <i>d</i><sub>v</sub> is as shown below:</p>
+<p>Maximize <img src=
+"../imgs/1a6a3edc664629e139d3e820dcf54146c1ea0038.png"></p>
+<p>Subject to</p>
+<p><img src=
+"../imgs/6c4e7cad67c52b311cfca384d6ffa3e7fab29c57.png">for<img src=
+"../imgs/e2389707e14563b530a11b39358acabf414e7a18.png"></p>
+<p><i>d</i><sub>s</sub>=0</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the weighted graph for finding the shortest path:</p>
+<p><img src="../imgs/456b304a4343b38b4f9236a17f2bede6095a0d05.png"
+alt="C:\Users\evelyn 26\Downloads\Untitled-1 (1).tif"></p>
+<p>In the above graph source vertex is <i>s</i> and the destination
+vertex is <i>z</i>.</p>
+<p>The objective of the problem is to find the minimum distance
+from source vertex <i>s</i> to the destination vertex <i>z</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Identification of Variables:</b></p>
+<p><img src="../imgs/77912fac4cd5f2741f3d131eea7ad495a3e33367.png"
+alt="Picture 15"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Defining Constraint:</b></p>
+<p><img src="../imgs/f34102e34d4e3c0f4dc9e962f5cd4e12a0ffd694.png"
+alt="Picture 2"></p>
+<p>Initialize source vertex <i>M</i><sub>s</sub> with 0 and all
+other vertex (<i>M</i><sub>y,</sub> <i>M</i><sub>x</sub><i>,
+M</i><sub>z</sub><i>,M</i><sub>t</sub> <i>) ≥</i> 0.</p>
+</div>
+<hr>
+<div class="answer"><b>Objective function of the problem is
+defined:</b>
+<p>Calculate the value of weight for each and every vertex of the
+graph. If any vertex is calculated more than one times, then the
+value which is minimum is considered.</p>
+<p>Here for example: Vertex <i>M</i><sub>x</sub> has two values 9
+and 18. But the value 9 is considered as it is minimum.</p>
+<p><img src=
+"../imgs/e7075bd4d59f268199e5ec88ff1be7e17593081f.png"></p>
+<p><img src=
+"../imgs/462d223071c72e5e7e65ac0535416479624a861d.png"></p>
+<p><img src=
+"../imgs/51aa837e39f5ca66961a8ee41362c4d5df39a8f2.png"></p>
+<p><img src=
+"../imgs/e5f41ff394eba014f4e02176d9f29f80c0a972d6.png"></p>
+<p><img src=
+"../imgs/6b28ec22be5469ef86f76d6317282427ab8464f2.png"></p>
+<p><img src=
+"../imgs/78011bfdd74492fb5b3fd5bfd6b1ed2ef39fa806.png"></p>
+<p><img src=
+"../imgs/4ac528f399d7024ed4cb6f604800b48e11277001.png"></p>
+<p><img src=
+"../imgs/e3750089a53e6f29eab13032acf26ef40976ee35.png"></p>
+<p><img src=
+"../imgs/256ca7830a96199ec12dd5eac0de95bb40e43ce0.png"></p>
+<p><img src=
+"../imgs/d7c141e5e294526cda97defc260e6a858694a51d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>In this, the shortest path for going from source vertex <i>s</i>
+to destination vertex <i>z</i> which is as follows:</p>
+<p><img src=
+"../imgs/e7c1e8368263d1ceead2b6752e0af5254326299b.png"></p>
+<p><img src=
+"../imgs/44771e2a5302200e81ccdafb3609ede74effd6f1.png"></p>
+<p><img src=
+"../imgs/0886dae715c2677446883d5b8c7ef10e20b9121b.png"></p>
+<p><img src=
+"../imgs/10dee5c5d975a08d705e4d72925c0859dcb8b0c0.png"></p>
+<p><img src=
+"../imgs/829483a2bd27c61e4942df016f2d0cfa71ce6984.png"></p>
+<p>Consider the diagram of shortest path:</p>
+<p><img src="../imgs/2c803b085e0f0c4ddc9ee49ac6a61efdab85a7fc.png"
+alt="Picture 1"></p>
+<p>In the above diagram, the shortest path from source vertex s to
+all the vertices is shown.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Here, <i>d</i><sub>s</sub> is the weight of the shortest path
+from source vertex <i>s</i> to itself which never changes while
+summation function <i>d</i><sub>v</sub> is the shortest path weight
+of each path to vertex <i>v</i> from source vertex <i>s</i>
+where<img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Linear program for maximum flow problem</b></p>
+<p><b>Linear programming</b> is a way of achieving the maximum
+possible outcome from a set of resources that are represented as an
+integrated mathematical design.</p>
+<p>In technical terms, linear programming is a way to achieve
+optimum results from the linear programming problems. This
+optimization is subject to a few constraints.</p>
+<p><b>Standard form of linear program:</b></p>
+<p>In a standard form there is a set of <i>p</i> real numbers that
+are<img src=
+"../imgs/39785c7b620b878141a51ec61f2526d3b388cec6.png">, another
+set of <i>q</i> real numbers that are<img src=
+"../imgs/84fb34e0509e338efd99b068086fee585ad1fdf3.png"> and a set
+of<img src=
+"../imgs/b2a92179c53ebd50387383530bca1a43746a2875.png">real numbers
+that are<img src=
+"../imgs/884d95328550c0cab6a30d4f4c43d6988d764a16.png">where
+<img src="../imgs/a2fffe244451f068b76e9cdfcd1a0d90849f917e.png">
+and<img src=
+"../imgs/fbb2137243d040cb19bfd9b228696ffbe5d869ae.png">.</p>
+<p>Now the objective is to find <i>p</i> real numbers<img src=
+"../imgs/587d4fd2e8bbef60151edbc5c213d872413f711d.png">such
+that</p>
+<p>Maximize</p>
+<p><img src="../imgs/04372decb8d9b89cba8644873ef628c923520774.png">
+<b>… … (1)</b></p>
+<p>And that is subject to</p>
+<p><img src="../imgs/2a6f550ed142b0cd4a9c6b0ab043a32a6f3517fd.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/9ed522f4e550c53445df5a8686cda8cab558dcab.png">
+<b>… … (3)</b></p>
+<p>The first expression is called the objective function. The
+second and the third expression show the constraints.</p>
+<p>This way a linear program can be put into the standard form.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In practice, there are several examples of problem that can be
+manifested as the linear programs. Maximum flow problem is one such
+example.</p>
+<p><b>Maximum Flow:</b></p>
+<p>A flow network is nothing but a directed graph of vertices and
+edges, each of which has some capacity. The capacity defines the
+data value that can go through that edge. The capacity is always a
+positive integer. One more thing is that if there is an edge from a
+vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png"> to
+vertex<img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">, then there
+can be no edge from <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> to
+<img src="../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p>In the above diagram, vertex <i>s</i> is the source and the
+vertex <i>t</i> is the sink or destination. The capacity of each
+edge is shown alongside the edge.</p>
+<p>Now, the possible flows pathsfrom the origin to destination can
+be:</p>
+<p><img src=
+"../imgs/6658c581aa6d55349a52d007a819b0155f0bea7a.png"></p>
+<p>There might be a few more flow paths as well. The maximum flow
+possible through a path is equal to the minimum capacity of an
+edge.</p>
+<p>For example in the first flow path<img src=
+"../imgs/cc609fe111c760f876937144022e3d2c019a817f.png">, the
+maximum flow would be 12.</p>
+<p>More formally, the flow can be defined as below:</p>
+<p>A flow which is non-negative real valued function <img src=
+"../imgs/676c4134aa1321f48449f080176f6570fbf7b715.png"> and fulfill
+the requirement of the capacity and the flow conservation
+restriction. Here is the quantity <img src=
+"../imgs/76d5bacb07cbdb95703adc4b2ea37af6af93184c.png"> which is
+the flow from the vertex <i>u</i> to <i>v</i> and the value of flow
+<i>f</i> is defined as:</p>
+<p><img src=
+"../imgs/d608299b27a8bf8ac8c3550a4340063131a84432.png"></p>
+<p>This is equal to the flow out from the source minus the flow
+into the source.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the diagram as shown below:</p>
+<p><img src="../imgs/f5a6ece11ee7f4954766ef2f150e797f323632af.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\2.tif"></p>
+<p>A flow network <i>G</i> = (<i>V</i>, <i>E</i>) for a company, in
+which source <i>s</i> is a factory and sink <i>t</i> is a
+warehouse, ships pucks through intermediate cities. The capacity of
+the edges is written by them.</p>
+<p>The non-negative quantity <i>f</i> (<i>u</i>, <i>v</i>) is the
+flow from <i>u</i> to <i>v</i>.</p>
+<p>The value<img src=
+"../imgs/50bfc3180d198602326fa0e93551e5222f6a2978.png">of a flow
+<i>f</i> is defined as:</p>
+<p><img src=
+"../imgs/9be9e475b8c66e1724aca8a2986471adfdd74b27.png"></p>
+<p>It is the total flow; incoming flow is deducted from the
+outgoing flow.</p>
+<p>Now, to maximize this,</p>
+<p>Maximize</p>
+<p><img src=
+"../imgs/9be9e475b8c66e1724aca8a2986471adfdd74b27.png"></p>
+<p>Subject to condition</p>
+<p><img src=
+"../imgs/812ef5da22c448d8e47bd50d9b242cdddf5fa075.png"><img src=
+"../imgs/7b6a0b1fd02e7431c1e3add00b7432e15d346e8b.png"> (Flow
+constraints)</p>
+<p><img src=
+"../imgs/8e6dbc7f3715945a06301459d12a3718254897cd.png"><img src=
+"../imgs/83b60d9a51205a4ec10a5cb458f1b16e8544aead.png"> (No
+flow)</p>
+<p><img src="../imgs/c40de5ba86114f44bcf00ff82d2ec39a2901d8af.png">
+(Capacity constraints)</p>
+<p>The inequality constraints conform to the capacity constraint
+for the flow network. The constraints that are in the second set
+conform to the maximum flow constraint of the flow network.</p>
+<p>This is the mathematical form of the desired linear program. If
+the same is applied on the figure shown above, the sets would be as
+follows:</p>
+<p>The set of vertices</p>
+<p><img src=
+"../imgs/3526a840ecceb4742d0d1cbe9883984ad6ffa459.png"></p>
+<p>The set of edges</p>
+<p><img src=
+"../imgs/f571f37309e6488edfa0add321d41659cbaed75e.png"></p>
+<p><b>Capacity matrix:</b></p>
+<p>In the matrix, the capacity of the edges can be found by
+locating the intersection of the starting and the ending vertex. It
+is as shown below:</p>
+<p><img src=
+"../imgs/2d15027955d0585c3537601c4b66ab5f27cd0325.png"></p>
+<p>And the flow would be:</p>
+<p><img src=
+"../imgs/e2202dc3ee1387debd557d3696d75f27d957a7b4.png"></p>
+<p>This makes the following implication:</p>
+<p><b>Objective function:</b></p>
+<p>Maximize <img src=
+"../imgs/f782883fcb47b526b7e6727ea0e76468ee555b33.png"></p>
+<p>Capacity constraint:</p>
+<p><img src=
+"../imgs/2a517cbd6f9e7e7f818d90000ac4e1ae2a732849.png">, <img src=
+"../imgs/85907ae06c5f4422f207e77e3ff520ebbddbce39.png"></p>
+<p><img src=
+"../imgs/60f276703f128bed34f166e8a846d3089f9d1858.png"></p>
+<p><img src=
+"../imgs/2dd5c86616a6c891358cdd39741e98f05825a00e.png">, <img src=
+"../imgs/9e7acd74cfd9462a35c1e402873c129473d92ca2.png"></p>
+<p><img src=
+"../imgs/a8df83661567f0ba15625e573a0d5e4ddb9b83f8.png">, <img src=
+"../imgs/a46ff8c1697946605b6c56eaca07407c73b2e951.png"></p>
+<p><img src=
+"../imgs/ba9c6c2a5abf995c263b4d9024bb2137c02f5cc2.png"></p>
+<p><img src=
+"../imgs/d29d87a97da53a15b366d4b5605d6c33eb0cb94e.png"></p>
+<p>The conservation of flow constraint:</p>
+<p><img src=
+"../imgs/cafd7acf3e90d06fb9110fb65ed2f897ffb557f8.png"></p>
+<p><img src=
+"../imgs/5e0e36f3d82ab47f224fd816087e15e1029dd42e.png"></p>
+<p><img src=
+"../imgs/265c79e0916c18a7c0eddd9e3ade43228679ed03.png"></p>
+<p><img src=
+"../imgs/66a6cce86eda9c35f23c02dc965f19ea51aed540.png"></p>
+<p>The source and target constraint</p>
+<p><img src=
+"../imgs/0e8d4a2532007bcf18946230559064d72e1f0207.png"></p>
+<p>Non-negativity constraint</p>
+<p><img src=
+"../imgs/d124f2c0cd7da55cc8044da57bd768cf2e886f55.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Linear Program</b></p>
+<p><b>Linear programming</b> is a way of achieving the maximum
+possible outcome from a set of resources that are represented as an
+integrated mathematical design.</p>
+<p>In the technical terms the linear programming is a way to
+achieve optimum results from the linear programming problems. This
+optimization is subject to a few constraints.</p>
+<p><b>Standard form of linear program:</b></p>
+<p>In a standard form there is a set of <i>p</i> real numbers that
+are<img src=
+"../imgs/39785c7b620b878141a51ec61f2526d3b388cec6.png">, another
+set of <i>q</i> real numbers that are<img src=
+"../imgs/84fb34e0509e338efd99b068086fee585ad1fdf3.png"> and a set
+of <img src="../imgs/b2a92179c53ebd50387383530bca1a43746a2875.png">
+real numbers that are<img src=
+"../imgs/884d95328550c0cab6a30d4f4c43d6988d764a16.png">where
+<img src="../imgs/a2fffe244451f068b76e9cdfcd1a0d90849f917e.png">
+and<img src=
+"../imgs/fbb2137243d040cb19bfd9b228696ffbe5d869ae.png">.</p>
+<p>Now the objective is to find <i>p</i> real numbers<img src=
+"../imgs/55db0d03d80e4b3031f1947950493a0acbeeb709.png">such
+that</p>
+<p>Maximize</p>
+<p><img src="../imgs/04372decb8d9b89cba8644873ef628c923520774.png">
+<b>… … (1)</b></p>
+<p>And that is subject to</p>
+<p><img src="../imgs/5d50b9dd599867b2da0c43dce65bff39fa2d307c.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/9ed522f4e550c53445df5a8686cda8cab558dcab.png">
+<b>… … (3)</b></p>
+<p>The first expression is called the objective function. The
+second and the third expression show the constraints.</p>
+<p>This way, a linear program can be put into the standard
+form.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In practice, there are several examples of problem that can be
+manifested as the linear programs. Maximum flow problem is such a
+problem.</p>
+<p><b>Maximum Flow:</b></p>
+<p>A flow network is nothing but a directed graph of vertices and
+edges. Each of the graph edge has a capacity. The capacity defines
+the data value that can go through that edge. The capacity is
+always a positive integer. One more thing is that if there is an
+edge from a vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png"> to vertex
+<img src="../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">
+than there can be no edge from <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> to
+<img src="../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt=
+"Description: Description: C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p>In the above diagram, vertex <i>s</i> is the source and the
+vertex <i>t</i> is the sink or destination. The capacity of each
+edge is shown alongside the edge.</p>
+<p>Now, the possible flows paths from the source to destination can
+be:</p>
+<p><img src=
+"../imgs/6658c581aa6d55349a52d007a819b0155f0bea7a.png"></p>
+<p>There might be a few more flow paths as well. The maximum flow
+possible through a path is equal to the minimum capacity of an
+edge.</p>
+<p>For example in the first flow path<img src=
+"../imgs/78c7f7b317ec711b328020b06f7863c95f1d330c.png">, the
+maximum flow would be 12.</p>
+<p>More formally, the flow can be defined as below:</p>
+<p>A flow which is non-negative real valued function <img src=
+"../imgs/89b3625996cb35a558e9a928e4ccce770ffb13bc.png"> and satisfy
+the capacity and the flow conservation constraints.</p>
+<p>Now, the quantity <img src=
+"../imgs/76d5bacb07cbdb95703adc4b2ea37af6af93184c.png"> which is
+the flow from the vertex <i>u</i> to <i>v</i> and the value of flow
+<i>f</i> is defined as,</p>
+<p><img src=
+"../imgs/9be9e475b8c66e1724aca8a2986471adfdd74b27.png"></p>
+<p>This is equal to the flow out from the source minus the flow
+into the source.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, the linear program for the maximum flow has to be written
+so that it uses only <img src=
+"../imgs/4368c96a564303171973c5ea823a6b5097e1678a.png">constraints.</p>
+<p><b>Linear program:</b></p>
+<p>Consider the linear program (29.47-29.50) in the book.</p>
+<p>Considering the flow equation, the number of variables in the
+equation would be <img src=
+"../imgs/7eb911e41d5d62056b439b6003aafa2765ab8001.png"> and that is
+<img src=
+"../imgs/982516228f85fd65abad59e2a17f6b9869044581.png">variables.</p>
+<p>After considering the flow constraints between vertices, that
+are referred to in the equation 29.48-29.50, the total number of
+constraints would be:</p>
+<p>• The first set of constraints that is referred to in the
+equation 29.48, is bound to the vertices. Each variable would be
+subject to the restriction and that would yield total number of
+<img src=
+"../imgs/982516228f85fd65abad59e2a17f6b9869044581.png">constraints.
+In this scenario the total number of constraints to be followed
+would be<img src=
+"../imgs/9661198d890a192fabc8ef9c4e01ad39fc87b891.png">.</p>
+<p>• The second set of constraints that is referred to in the
+equation 29.49 restricts the flow excluding the source and the
+target variables.</p>
+<p>So the number of constraints yield over here would be two less
+than the total number of variable that is<img src=
+"../imgs/69fa8957367447ac2b75ddb8ec359a18b4a0f666.png">.</p>
+<p>The last set of constraints that is referred to in the equation
+29.50 specifies the non-negativity of the flow that is again the
+subject to the number of total variables and that is<img src=
+"../imgs/982516228f85fd65abad59e2a17f6b9869044581.png">.</p>
+<p>Adding all of them the linear program has <img src=
+"../imgs/bb363057d42c528e8d5d1fc06b76b8a450c83972.png">
+constraints. This linear program mainly focuses on vertices and
+capacity of edges which are formed by vertices.</p>
+<p>In order to achieve the desired <img src=
+"../imgs/4368c96a564303171973c5ea823a6b5097e1678a.png">constraint
+limit, network coding can be used as a remedy. Network coding is a
+technique used for making the network more secure and maximize the
+throughput of the network.</p>
+<p>Using coding reduces the problem to the polynomial time.</p>
+<p>When the flow network is considered to be the coded network,
+each flow that is the part of the network satisfies the flow
+conservation constraint. Suppose that all of the flows are
+represented by a vector<img src=
+"../imgs/e58cb769998d4b084a85099ebd8b6883a477a348.png">
+where<img src=
+"../imgs/e6a6f8807b2368dfd65dccbbfa4460f8cf37acdc.png">.</p>
+<p>The flows are, however, allowed to overlap. This generates the
+conceptual flow that satisfies the capacity constraint.</p>
+<p>Moreover, the conceptual flow is not subject to the flow
+conservation constraint. In that case the flow can be represented
+using the below equations:</p>
+<p>Maximize:</p>
+<p><img src="../imgs/fecee5f72beab3818859139436567cc693149c22.png">
+<b>… … (4)</b></p>
+<p>Subject to condition:</p>
+<p><img src=
+"../imgs/808cfe8fb4471f8f82fdb4439cb08bb931fe22cf.png"><img src=
+"../imgs/998e985f65bad72230daac836c24a63f6edb954a.png"> <b>… …
+(5)</b></p>
+<p><img src=
+"../imgs/8408c474dcbd47a4a7b8986384b47210a6960c7e.png"><img src=
+"../imgs/2d3f0c3d897ed69fb2a161178d2063564453e73a.png"> <b>… …
+(6)</b></p>
+<p>Where,</p>
+<p><img src=
+"../imgs/17d706d9509e319efdebe70cc46da2719f78ce8f.png"></p>
+<p>Now, the number of constraints that are to be followed can be
+calculated easily. Equation 5 shows the flow constraint that, being
+every <i>u</i> a member of set of vertices would yield the
+complexity of<img src=
+"../imgs/41137937758cfdcf7c0102292281cc8faa503d68.png">. The
+constraint in equation 6 is the capacity constraint that would be
+the<img src=
+"../imgs/3ec1d68881ed81f47f89c14d1315b591e0cef3a9.png">, being
+every edge is a member of the set of edges.</p>
+<p>By adding these complexities, the total number of constraints
+that need to be followed would be<img src=
+"../imgs/b2e057e8b0cd6e77016ecc52f6dfff9710707afc.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The maximum-bipartite-matching problem</b></p>
+<p>Linear programming is a way of achieving the maximum possible
+out-come from a set of resources that are represented as an
+integrated mathematical design.</p>
+<p>In technical terms, the linear programming is a way of achieving
+optimum results from the linear programming problems. This
+optimization is subject to a few constraints.</p>
+<p><b>Standard form of linear program:</b></p>
+<p>In a standard form there is a set of <i>p</i> real numbers that
+are<img src=
+"../imgs/39785c7b620b878141a51ec61f2526d3b388cec6.png">, another
+set of <i>q</i> real numbers that are<img src=
+"../imgs/84fb34e0509e338efd99b068086fee585ad1fdf3.png"> and a set
+of<img src=
+"../imgs/b2a92179c53ebd50387383530bca1a43746a2875.png">real numbers
+that are<img src=
+"../imgs/884d95328550c0cab6a30d4f4c43d6988d764a16.png">where,</p>
+<p><img src=
+"../imgs/a2fffe244451f068b76e9cdfcd1a0d90849f917e.png"></p>
+<p><img src=
+"../imgs/fbb2137243d040cb19bfd9b228696ffbe5d869ae.png"></p>
+<p>Now, the objective is to find <i>p</i> real numbers<img src=
+"../imgs/55db0d03d80e4b3031f1947950493a0acbeeb709.png">such
+that</p>
+<p>Maximize</p>
+<p><img src="../imgs/04372decb8d9b89cba8644873ef628c923520774.png">
+<b>… … (1)</b></p>
+<p>And that is subject to</p>
+<p><img src="../imgs/5d50b9dd599867b2da0c43dce65bff39fa2d307c.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/9ed522f4e550c53445df5a8686cda8cab558dcab.png">
+<b>… … (3)</b></p>
+<p>The first expression is called the objective function. The
+second and the third expression show the constraints.</p>
+<p>This way, a linear program can be put into the standard
+form.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Linear programming can be used to represent many practical
+applications. Bipartite graph is one such example.</p>
+<p><b>Bipartite Graph:</b></p>
+<p>A bipartite graph can also be referred to as the bi-graph. It is
+a graph such that their vertices are divided into the two disjoint
+sets <i>A</i> and <i>B</i> in such a way that every edge used to
+connects a vertex in <i>A</i> to that of the vertex in <i>B</i>. So
+it can be said that the set <i>A</i> and <i>B</i> are independent
+sets. Its characteristics:</p>
+<p>1. A graph is a bipartite only if it has 2-colorable properties
+that are the colouring of a graph with two colors.</p>
+<p>2. A concerned graph is bipartite if it does not have an odd
+cycle.</p>
+<p>3. A bipartite graph has a symmetric spectrum.</p>
+</div>
+<hr>
+<div class="answer">A formal definition of the bipartite graph
+would be as below: A graph<img src=
+"../imgs/cb339fca820bb509dcdc45c180ed0ab0131f73ad.png">would be
+called a bipartite graph if it can be divided into two sets
+<i>G</i><sub>1</sub> and <i>G</i><sub>2</sub> of vertices in a
+manner that for any of the graph edge<img src=
+"../imgs/8f708e9e6b7e792f341e619fc9da83477e008dfd.png">: <b>If</b>
+<img src="../imgs/a1b57cce6e14d92f06be7524b37c0a59f01c4b97.png">,
+Then <img src=
+"../imgs/de2305cb4da9d71ca718b8fd6b7be2493adac6b3.png"> Along with
+this, the condition, that the concerned graph has no cycle in it,
+should be satisfied.</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/a6a09a76b417bca7bf2cff9fb0164738658995f5.png" alt=
+"D:\Tiffs\New folder (2)\29.2-6e.tif"></div>
+<hr>
+<div class="answer">The diagram shown above represents a bipartite
+graph. This can be divided into two entirely differentsets of
+vertices <img src=
+"../imgs/ebbefa02beb7a6096bff4a629ec3e09735ef24ae.png"> <img src=
+"../imgs/13e997b5fc4784e0463ac09b22a35f98592f85a6.png"></div>
+<hr>
+<div class="answer">It can be observed that if any of the graph
+edges is picked that would certainly have one of its ends in the
+set <i>G</i><sub>1</sub> and the other one in the set
+<i>G</i><sub>2</sub>. Along with this no cycle can be formed in the
+graph. So, the graph is a bipartite graph.</div>
+<hr>
+<div class="answer">
+<p><b>Maximum-bipartite-matching problem:</b></p>
+<p>In the informal language, the maximum-bipartite-problem can be
+illustrated as below:</p>
+<p>This is the procedure of finding the largest possible matching
+in a bipartite graph.</p>
+<p>A matching in a concerned bipartite graph <img src=
+"../imgs/cb339fca820bb509dcdc45c180ed0ab0131f73ad.png">is the
+process of finding a set of maximum edges<img src=
+"../imgs/0053529033aacbcbc1f0421aa3e5fea50b02e296.png"> such that
+none of them have a common vertex as end point.</p>
+<p>So if the two disjoint sets of graph vertices are
+<i>G</i><sub>1</sub> and <i>G</i><sub>2</sub> and <i>E’’</i> is the
+matching vertex then:</p>
+<p>For any<img src=
+"../imgs/557563194fc94f3e6345a80782f3c04f023aa4fc.png">, where
+<i>x</i> and <i>y</i> are the end points of the edge.</p>
+<p><b>If</b> <img src=
+"../imgs/ad64d04a854f566e3d0efc7d4cb0ab4d312d00c7.png"></p>
+<p>Than <img src=
+"../imgs/fa1f12a96b6b43f05f87783120a65d9705997f92.png"></p>
+<p>Consider an example as:</p>
+<p><img src="../imgs/a6a09a76b417bca7bf2cff9fb0164738658995f5.png"
+alt="D:\Tiffs\New folder (2)\29.2-6e.tif"></p>
+<p>In the above graph, if the edges are selected as:</p>
+<p><img src=
+"../imgs/9fc7739bca891c0551972206bf0060e297c5cc12.png"></p>
+<p>Then, all of the vertices of the concerned graph are covered.
+And, this is termed to be the maximal matching of the graph.</p>
+<p>Now, a linear program can be written for this.</p>
+<p>As it is already known that a linear program is written keeping
+two things in mind. The first thing is the objective function and
+the second is constraints that restrict the objective function.</p>
+<p>In the case of bipartite matching, the formula being used for
+finding the matching is the objective function and the restrictions
+that no two edges must contain a common vertex should be the set of
+constraints for that objective function.</p>
+<p>Forevery single of the edge &lt;<i>a, b</i>&gt; of the graph a
+new variable <img src=
+"../imgs/63a7b4403a36bfeef3db36d5061ec9637b20a32d.png"> is
+introduced. And if the variable is set to 1 then the given is said
+to be matching and if it is set to 0, then it is not in the
+matching set.</p>
+<p>Initially, the vertices have to be covered as many vertices as
+possible it means the inclusion of as many edges as possible. And
+it can be accomplished by maximizing the objective function as:</p>
+<p><img src=
+"../imgs/86e416ee74ea265ca6c7cfff6f004f72a5b3237d.png"></p>
+<p>In this, it must be made sure that no two edges occur in
+matching. It can be seen that two edges leave the vertex <i>P</i>
+so the constraints is applied and that is</p>
+<p><img src=
+"../imgs/98896285130250815fff04e2b7f8a52abc760f81.png"></p>
+<p>It ensures that only one of the two edges has a matching.</p>
+<p>Along with that, for <i>R</i> and <i>S</i></p>
+<img src=
+"../imgs/516a6c55b3ab86bae4c896bd558bc32b7f7e20ac.png"></div>
+<hr>
+<div class="answer">
+<p><b>Linear program:</b></p>
+<p>Now, the required linear program is:</p>
+<p>Maximize:</p>
+<p><img src="../imgs/86e416ee74ea265ca6c7cfff6f004f72a5b3237d.png">
+<b>… … (4)</b></p>
+<p>Subject to constraints:</p>
+<p><img src="../imgs/98896285130250815fff04e2b7f8a52abc760f81.png">
+<b>… … (5)</b></p>
+<p><img src="../imgs/516a6c55b3ab86bae4c896bd558bc32b7f7e20ac.png">
+<b>… … (6)</b></p>
+<p><img src="../imgs/d38a346ca9bb6190e221016d3b825f97238ac48c.png">
+<b>… … (7)</b></p>
+<p>Here, all<img src=
+"../imgs/f5643059b211195d92ac71286aae982e09415203.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Linear program for Minimum-cost multi commodity-flow
+problem</b></p>
+<p>Linear programming is a way of achieving the maximum possible
+outcome from a set of resources that are represented as an
+integrated mathematical design.</p>
+<p>In the technical terms the linear programming is a way to
+achieve optimum results from the linear programming problems. This
+optimization is subject to a few constraints.</p>
+<p><b>Standard form of linear program:</b></p>
+<p>In a standard form there is a set of <i>p</i> real numbers that
+are<img src=
+"../imgs/39785c7b620b878141a51ec61f2526d3b388cec6.png">, another
+set of <i>q</i> real numbers that are<img src=
+"../imgs/84fb34e0509e338efd99b068086fee585ad1fdf3.png"> and a set
+of<img src=
+"../imgs/b2a92179c53ebd50387383530bca1a43746a2875.png">real numbers
+that are<img src=
+"../imgs/884d95328550c0cab6a30d4f4c43d6988d764a16.png">where,</p>
+<p><img src=
+"../imgs/08603a58a21d6d9d14e5db1340cd86fc2e4b59da.png"></p>
+<p><img src=
+"../imgs/9920c9d7850d5da03eaff9d34aff7e2b294f5889.png"></p>
+<p>Now the objective is to find <i>p</i> real numbers<img src=
+"../imgs/55db0d03d80e4b3031f1947950493a0acbeeb709.png">such
+that</p>
+<p>Maximize</p>
+<p><img src="../imgs/04372decb8d9b89cba8644873ef628c923520774.png">
+<b>… … (1)</b></p>
+<p>And that is subject to</p>
+<p><img src="../imgs/5d50b9dd599867b2da0c43dce65bff39fa2d307c.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/9ed522f4e550c53445df5a8686cda8cab558dcab.png">
+<b>… … (3)</b></p>
+<p>The first expression is called the objective function. The
+second and the third expression show the constraints.</p>
+<p>This way a linear program can be put into the standard form.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Minimum-cost multi commodity-flow problem:</b></p>
+<p>The minimum cost multi commodity problem is a type of
+optimization problems in which the least cost method is used for
+moving two or more types of quantities from the locations where the
+items are produced to the location where they must be consumed, and
+the transport mechanism used are treated as two separate process
+form a type of networks.</p>
+<p>It is a very interesting topic for commodity transportation
+problem. It has its application in various sectors of
+transportation as: railways, airlines use it (the economy-class and
+the first class are treated as two separate “commodities”).</p>
+<p>Commodity flow network is just like a flow network in which
+various distinct paths are given, so that to travel the destination
+from the source, different paths can be followed. In this there are
+a number of sources and respectively multiple destinations. Each
+edge that lies in the path has a capacity and the cost associated
+with it.</p>
+<p>The flow through the edge is always less than or equal to the
+capacity of the edge. Different bunches of flow or commodities can
+follow different paths to reach the destination.</p>
+<p>Below given is an example of the commodity flow network.</p>
+<p><img src="../imgs/ef08ba579b44486b8a13dcaa1ad819ee08ac7bb4.png"
+alt="Picture 1"></p>
+<p>In the above diagram, for all of the edges the first number
+shows the cost of visit and the second number shows the capacity of
+the edge. It is easy to observe that different commodities, say
+<i>v</i><sub>1</sub> and <i>v</i><sub>5</sub> in this case, would
+take different paths to reach the respective destinations that
+might be <i>v</i><sub>2</sub> and <i>v</i><sub>6</sub>
+respectively.</p>
+<p>Both of <i>v</i><sub>1</sub> and <i>v</i><sub>5</sub> may have
+their own flow demands. The objective is to find the maximum
+possible flow through the network with the least cost.</p>
+Now, given a directed graph <i>G</i> (<i>V, E</i>) with a set of
+vertices <i>V</i> and the set of edges <i>E.</i> In the graph each
+edge (<i>u, v</i>) has a capacity defined as <i>c</i> (<i>u,
+v</i>)&gt;=0, that is the capacity is always greater than or equal
+to zero. Each edge has a cost<i><img src=
+"../imgs/3b010db4b1247997dcf495167f0356526439eb93.png"></i>associated
+with it. Here are given <i>k</i> different commodities as <img src=
+"../imgs/169a671060aeed798edd39994907293920ee82e2.png">and the flow
+<img src="../imgs/ffd46f3104043cc0d4a48ce8db6430a2c69cb4e2.png"> is
+defined for commodity <i>i</i> and the aggregate flow <img src=
+"../imgs/5f73eadcb725fd952608302ca068835cb2d73626.png"> on the edge
+(<i>u</i>, <i>v</i>). The cost of the flow is<img src=
+"../imgs/4de2dba4ebaf8df64ce47ef8269112d3a980358d.png">. Now a
+feasible flow with the minimum cost can be found out in the form of
+linear program as below.</div>
+<hr>
+<div class="answer">
+<p><b>Linear Program:</b></p>
+<p>In the minimum-cost multi commodity flow problem, the cost of a
+flow is<img src=
+"../imgs/4de2dba4ebaf8df64ce47ef8269112d3a980358d.png"> as already
+specified.</p>
+<p>For minimum cost, commodities come in the picture in which every
+commodity has a triplet. There are <i>k</i> commodities and for a
+particular commodity <i>i</i>, the flow is <i>f</i><sub>i</sub> and
+the aggregate flow is<img src=
+"../imgs/25e1fecf8a0c7acc7f9615a2a293b5dbf927f3bf.png">. Every
+triplet has source and sink, so there will be a capacity <i>c</i>
+for particular commodities.</p>
+<p>Now, combining all assumptions and minimizing the feasible flow
+cost,</p>
+<p>Minimize<img src=
+"../imgs/7fed5701c8187079ab3eaaad0a8c92156224c8ab.png"> <b>… …
+(4)</b></p>
+<p>Subject to the condition,</p>
+<p><img src="../imgs/3285e67638108dc6611ea083d3574705f9bf8716.png">
+<b>… … (5)</b></p>
+<p><img src=
+"../imgs/ed474975421c856e116f2645b13454a5e673a8eb.png">For<img src=
+"../imgs/e258057df50659e4d4d6968fc087c9251180eadc.png"> <b>… …
+(6)</b></p>
+<p><img src=
+"../imgs/ff7cadd07c466008e01ddbce0573d1bba5bc0945.png">For
+<img src="../imgs/b0a0f5a1c23f46fb3f70ec13f1d7b724bfc28438.png">
+<b>… … (7)</b></p>
+<p>The first constraint is along multiple commodities and the
+second and the third constraint are along the single commodity.</p>
+<p>Equation <b>(4)</b> shows the objective function for the
+problem. It illustrates that the cost for the aggregate flow must
+be reduced as much as possible.</p>
+<p>Equation <b>(5)</b> shows the capacity constraint that the total
+flow through any edge cannot be more than the capacity of the edge.
+Equation <b>(6)</b> and <b>(7)</b> show the balance constraint for
+multiple and the single commodity respectively.</p>
+<p>Here <i>u</i> is the upper limit on the flow of the
+commodities.</p>
+<p><i>b</i> – The vector for the supply and the demand of the
+commodities</p>
+<p><i>c</i> – The cost of the flow</p>
+<p><i>A</i> – Incident matrix of the network</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

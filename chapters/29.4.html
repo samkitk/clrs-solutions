@@ -1,0 +1,640 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 29.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a9ed8e1afd22f83b9d34b65fcae4cbefdd2a5765.png">
+<hr>
+<img src="../imgs/21e5c3c483736774fc6a36d86cf4009013ca9aa4.png">
+<hr>
+<img src="../imgs/aa5224d275e03db5ab1a02e3b8c1e67c74e6d5e2.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a18859315b63dd3eeef05313e92500b4004ff77c.png">
+<hr>
+<img src="../imgs/bc22322bd19347671265128653f008327a975979.png">
+<hr>
+<img src="../imgs/3e000a947546e3b3674d03bd6dfe1cafeba9019c.png">
+<hr>
+<img src="../imgs/f22e2e68a884f25c98dcc7c5ff8ada6f92070521.png">
+<hr>
+<img src="../imgs/e7ae1df855f2a4b147b2af3c0eaa26e04c4b257f.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Maximum- Flow Min-Cut Problem</b></p>
+<p>The dual of the linear program for the maximum flow as explained
+in line 29.47 to 29.50, has to be written. Also, it is to be
+presented as the minimum cut problem. For this, below is given a
+brief idea of maximum flow and minimum cut in any flow network.</p>
+<p>A flow network is nothing but a directed graph of vertices and
+edges. Each of the graph edge has a capacity. The capacity defines
+the data value that can go through that edge. The capacity is
+always greater than 0. One more thing is that if there is an edge
+going from a vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png"> to
+vertex<img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">, then no
+edge can go from <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> to
+<img src="../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p><b>Maximum Flow:</b></p>
+<p>In the above diagram, vertex <i>s</i> is the origin and the
+vertex <i>t</i> is the sink or destination. The capacity of each
+edge is shown alongside the edge.</p>
+<p>Now the possible flows paths from the source to destination can
+be:</p>
+<p><img src=
+"../imgs/6658c581aa6d55349a52d007a819b0155f0bea7a.png"></p>
+<p>There might be a few more flow paths as well. The maximum amount
+of possible flow through a path is equal to the least capacity of
+an edge.</p>
+<p>For example in the first flow path<img src=
+"../imgs/cc609fe111c760f876937144022e3d2c019a817f.png">, the
+maximum flow would be 12.</p>
+<p><b>Minimum Cut:</b></p>
+<p>A cut in a network is the collection of network edges that, when
+deleted or ignored from the network stop the flow of data from the
+source to sink. Amongst the set of cuts the one that has the
+minimum capacity is known as the minimum cut.</p>
+<p><b>For example:</b></p>
+<p>In the above graph, the possible cuts are:</p>
+<p><img src=
+"../imgs/99676ee9742853a07b381f4bf66da800525fc542.png"></p>
+<p>These cuts are as shown below in the graph:</p>
+<p><img src="../imgs/61474230ae0df8509e43b796c1da2a4289f403a5.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\12.tif"></p>
+<p>Removal of any of the given set of edges would leave the network
+disconnected and reaching destination from source would not be
+possible either way.</p>
+<p>In the possible cuts of the above network the cut<img src=
+"../imgs/c712e4c5b825adac934a10342d7750330ecb10ea.png">has the
+least capacity and that is <img src=
+"../imgs/a649ce459b79a8dd9b495657ec771801edb173db.png">.
+<i>v</i><sub>2</sub><i>v</i><sub>1</sub> is assigned a capacity 0
+because that is in the reverse direction of <i>sv</i><sub>2</sub>
+and <i>v</i><sub>1</sub><i>v</i><sub>3</sub>.</p>
+<p>So, this is the minimum cut for the above mentioned network.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Dual of a linear program is the mirror image of itself. If dual
+is found for the program that is already a dual of some linear
+program that yields the linear program. The original form of the
+linear program is known as the primal form.</p>
+<p>The dual for the linear program of the maximum flow problem
+actually simulates the Maximum-Cut-Minimum-Flow theorem. In writing
+the dual of a linear program, most convenient practice is to write
+the original equation in a form that is more aesthetic than the
+primal form.</p>
+<p>This could be accomplished by reducing the number of constraints
+so that the in creation of the dual program, few variables have to
+be defined. Sometimes it might tend to the occurrence of many new
+variables in the primal equation.</p>
+<p>To make this happen this, the flow network can be thought of as
+a collection of paths, through which the flow is travelling, rather
+than a collection of edges. This would diminish the number of
+constraints in the program. Now the conservation constraints can be
+ignored in the program.</p>
+<p>Now keeping the above discussion in mind, in the creation of
+dual, a variable <img src=
+"../imgs/89c8633de86bbd42e7c37359b762705c59594d40.png">is
+considered for path from source of the network <i>s</i> to the
+target of the network <i>t</i>. <i>P</i> is denoted as the set of
+path, for specifying how much flow is along the path <i>p</i>.</p>
+<p>Now the equations take the below form:</p>
+<p>Maximize<img src=
+"../imgs/901226ec413960c757f950e03cf506b03de5a191.png"> <b>… …
+(1)</b></p>
+<p>Subject to the condition</p>
+<p><img src="../imgs/32daab722a835be76b291d1e25124593c64b87ee.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/6a58c7603b33523f41c7aa89066114dce8e65a58.png">
+<b>… … (3)</b></p>
+<p><b>Minimum-Cut Formulation:</b></p>
+<p>Now as the linear program of the maximum flow has been expressed
+into the simpler terms, it is evident that there was only one new
+variable introduced in the modified form of the primal. So in the
+dual form, only one new variable per edge of the network would be
+used.</p>
+<p>Consider the new variable in the dual form be<img src=
+"../imgs/3ba71cd3e5c4a8bb3f7a83d2726f622d408a16fe.png">. For every
+edge<img src=
+"../imgs/bd1c53ec28d4a80cfbcdcdafac33e183abb8d47c.png"> of the
+network, there is one<img src=
+"../imgs/3ba71cd3e5c4a8bb3f7a83d2726f622d408a16fe.png">.</p>
+<p>The linear program would now be as below:</p>
+<p>Minimize</p>
+<p><img src=
+"../imgs/5859112c8f0131422e014f25fd740c69c6e9fd14.png"></p>
+<p>Subject to condition</p>
+<p><img src=
+"../imgs/170a99c7d003ddb4d3fa0059a4c3091e8acb7455.png">; <img src=
+"../imgs/f655cf1f0b096f3d5d8c2af0bcd1fef278942aec.png"></p>
+<p><img src=
+"../imgs/7e948fe2e2c748c0d9ae9415d1e9a1602d826683.png">; <img src=
+"../imgs/aa75e609836ce655bdb4b39b1ad73922cca0b26b.png"></p>
+<p>Now, have a deeper understanding of the dual of the maximum flow
+linear program. The variable <img src=
+"../imgs/8c17b80620445b83f64ed3dbaba41d9560fb90bc.png">augments a
+weight to each of the edge. This weight can be thought of as the
+“length” from source to destination.</p>
+<p>Now to find the minimum cut the flow has to be minimized. So,
+the intention over here is to find the path that has the minimum
+flow. For this the objective function is intended to find the
+minimum path. The same is the yield of the Maximum-Flow-Minimum-Cut
+theorem.</p>
+<p>Now, the objective function is the subject to the constraints
+that for every path that is constituted of the edges the minimum
+value is one unit. That means the source and the target are always
+separable or it can be said that they are always different nodes of
+the network.</p>
+<p>Another constraint is that the value of the variable for any
+edge has to be either 0 or any positive integer. This ensures that
+the capacity can never be negative and that is what the basic rule
+for capacity of the flow network says.</p>
+<p>This way, it can be concluded that the dual of the linear
+program of the maximum flow of a network yield the linear program
+that represents the minimum cut for the same flow network.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Minimum-Cost Flow Problem</b></p>
+<p>Minimum cost flow problem is the way of finding the path with
+least possible cost that leads a flow data from the origin to the
+destination.</p>
+<p>This problem has certain real life applications. Some analogies
+to this are the telecommunication networks, goods transportation
+system and many others.</p>
+<p>This problem is just an extension in the maximum flow problem.
+All the things that are in the maximum flow problem do exist in the
+minimum-cost flow problem. In this there is a new real valued
+function added. This new function is cost.</p>
+<p>Cost is associated with every edge just like the capacity.
+Another thing associated with the network is the flow demand; the
+amount of flow that is to be moved. The cost is negotiated
+according to the flow demand.</p>
+<p>So, the objective in this is to minimize the cost defined by the
+function</p>
+<p><img src=
+"../imgs/3061bdc76197393b8298ef269b73bbf7ee5e3d9b.png"></p>
+<p>This should be achieved with conformation to the flow and the
+capacity constraints for the flow network.</p>
+<p><img src="../imgs/aa017b7d2b91c45e2c2425c8301b894f0a5dc4a5.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\6.tif"></p>
+<p>The diagram above shows an example of the problem. The capacity
+and the cost of each of the edge are written alongside the edge.
+For instance the capacity of the edge from vertex <i>s</i> to
+vertex <i>x</i> is 5 and the cost of moving the flow is 2.</p>
+<p>Now suppose that the demand is 4 units.</p>
+<p>So, the objective is to find the path through the network that
+these 4 units can be moved from <i>s</i> to <i>t</i>.</p>
+<p><img src="../imgs/33d2bb009fd0fe97d78f3ceff1082b8958faf10f.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\8.tif"></p>
+<p>The diagram above shows a remedy to the problem. In this 2 units
+of flow are being sent from <i>s</i> to <i>x</i> and 2 units are
+from <i>s</i> to <i>y</i>. From <i>x</i> the flow is bifurcated; 1
+unit goes to <i>t</i> directly and 1 unit is sent to <i>y</i>. This
+is done because the cost of moving the flow through <img src=
+"../imgs/e9957c7fc452cf5c3924795c79512ca62fed68e5.png">is more
+efficient than moving it through<img src=
+"../imgs/0d0232b5cd3849373f546641171f71b3ead93e1f.png">. But
+because the capacity of <img src=
+"../imgs/e9957c7fc452cf5c3924795c79512ca62fed68e5.png">restricts
+the flow going through that, so after exhausting the flow limit of
+<img src="../imgs/e9957c7fc452cf5c3924795c79512ca62fed68e5.png">
+the remaining flow is sent through<img src=
+"../imgs/0d0232b5cd3849373f546641171f71b3ead93e1f.png">.</p>
+<p>Now the flow to be moved from <i>y</i> is 3 units. This is the
+sum of the flow reaching from <img src=
+"../imgs/e9957c7fc452cf5c3924795c79512ca62fed68e5.png">
+and<img src="../imgs/1df2b773d47f8118f546f64fa5e486a56dff368b.png">.
+The flow conservation obligates the 3 units to leave node
+<i>y</i>.</p>
+<p>So, 3 units are sent to <i>t</i> from <i>y</i>.</p>
+The linear program representing this problem is formulated in
+29.51-29.52 (refer to the section 29.2 of the textbook).</div>
+<hr>
+<div class="answer">
+<p><b>Dual of Minimum-Cost Flow Problem:</b></p>
+<p>Dual of a linear program is the mirror image of itself. If dual
+is found for the program that is already a dual of some linear
+program that yields the linear program. The original form of the
+linear program is known as the primal form.</p>
+<p>Since in the given primal there are<img src=
+"../imgs/8e913c939a949d39620652c56ef0c43aa7f68595.png"> constraints
+and <img src=
+"../imgs/2bd7adfbfd925f45cc05f764fe398bcd4d010b4a.png"> variables.
+They are as below:</p>
+<p>1. For each of the nodes there is a constraint of flow
+conservation.</p>
+<p>2. An upper limit constraint for each of the edges.</p>
+<p>3. For each of the edge there would be one variable.</p>
+<p>So the required dual must have <img src=
+"../imgs/2bd7adfbfd925f45cc05f764fe398bcd4d010b4a.png"> constraints
+and <img src=
+"../imgs/8e913c939a949d39620652c56ef0c43aa7f68595.png">
+variables.</p>
+<p>That would be:</p>
+<p>1. For each of the node one variable representing the node that
+is <img src="../imgs/0fce92cbb0b3706d81f1d313353cbd78b66288f3.png">
+for each<img src=
+"../imgs/c51d728b45bd8f00ad55113c9c6517d846d3220b.png">.</p>
+<p>2. One variable for each of the edge that is<img src=
+"../imgs/d077569d2a47bc0165d70c2f099b9b54df375c18.png"><img src=
+"../imgs/2d3f0c3d897ed69fb2a161178d2063564453e73a.png">.</p>
+<p>3. One constraint for each of the edges.</p>
+<p>So, the dual program would be of the below form.</p>
+<p>Maximize</p>
+<p><img src=
+"../imgs/c5a63fefd2c9c09e07c149760be4e2865153f7a0.png"></p>
+<p>Subject to condition</p>
+<p><img src=
+"../imgs/338e4537ff5a062b5ade0a1788399bbc6bb6574e.png"></p>
+<p><img src=
+"../imgs/608f4bed30033328a8d630cf1e49cb741d7ef64b.png"></p>
+<p><b>Interpretation in terms of flows and graph:</b></p>
+<p>It is obvious that the min cost flow problem is deeply related
+to the maximum flow problem. The only difference is the addition of
+cost and demand in the network.</p>
+<p>The objective in this problem is to find the flow with minimum
+cost. The amount of flow that is to be migrated from source is
+already negotiated in the problem.</p>
+<p>This problem has a deep resemblance with the single source
+shortest path problem. In that the objective is to find the least
+possible cost of visiting all the nodes of the graph from a given
+node.</p>
+<p>All possible paths from a node to all other nodes, that are not
+previously visited, would be checked. The paths with the least
+possible cost would be considered and all other would be discarded
+just like they do in single source shortest path problem.</p>
+<p>However, the flow going out of any vertex, can be bifurcated to
+achieve the optimum cost of moving the flow from that vertex to the
+target. That can later be united at some eventual vertex on the
+way. The reason behind this is that a flow through any edge cannot
+exceed the capacity of that edge. Keeping this in mind the flow can
+be forked so that the accomplishment of minimum cost and the flow
+movement can be done together.</p>
+<p>This problem can be thought of as the single source shortest
+paths problem, in which the source of the network must be
+considered the node that the paths are to be searched from.</p>
+<p>Now as no anti-parallel edges are there so there would be nodes
+included other than the source and the target and there would be
+only one path possible between two nodes. The cost of visiting that
+edge would be equal to the cost function of the same edge.</p>
+</div>
+<hr>
+<div class="answer">
+<p>So, the above discussion can be recapitulated to show the
+minimum cost flow problem in terms of graphs and flows as
+below:</p>
+<p>Minimum cost problem is a set of shortest paths (least cost
+path) from one node to another in the graph (flow network) that
+constitute the cheapest path from origin node (single source) to
+target node.</p>
+<p>If this statement is put into the form of a mathematical
+equation it yields the same formula that is used to get the minimum
+cost flow in a network.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/ca927e67b8a3f959b5c6726f81d0e8df6b1dfac9.png">
+<hr>
+<img src="../imgs/78c7e8c979777f556c016fb26eefbdec411a53ce.png">
+<hr>
+<img src="../imgs/84aca7fb71e1fe1ab2cdb28c3d9fe442de19f297.png">
+<hr>
+<img src="../imgs/ea997b6d9b81e36817bab49cad207f7a30c5b592.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Weak Duality for Maximum-Flow Problem</b></p>
+<p>Minimum cut is the thing that can be considered as the weak
+duality for the maximum flow problem. Before getting into this, a
+brief understanding of maximum flow and the minimum cut is
+required.</p>
+<p>A flow network is nothing but a directed graph of vertices and
+edges. Each of the graph edge has a capacity. The capacity defines
+the data value that can go through that edge. The capacity is
+always greater than 0. One more thing is that if there is an edge
+going from a vertex <i>v</i><sub>1</sub> to vertex
+<i>v</i><sub>2</sub> than no edge can go from <i>v</i><sub>2</sub>
+to <i>v</i><sub>1</sub>.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p><b>Maximum Flow:</b></p>
+<p>In the above diagram, vertex <i>s</i> is the origin and the
+vertex <i>t</i> is the sink or destination. The capacity of each
+edge is shown alongside the edge.</p>
+<p>Now, the possible flows paths from the origin to destination can
+be:</p>
+<p><img src=
+"../imgs/6658c581aa6d55349a52d007a819b0155f0bea7a.png"></p>
+<p>There might be a few more flow paths as well. The maximum amount
+of possible flow through a path is equal to the least capacity of
+an edge.</p>
+<p>For example in the first flow path<img src=
+"../imgs/cc609fe111c760f876937144022e3d2c019a817f.png">, the
+maximum flow would be 12.</p>
+<p><b>Minimum Cut:</b></p>
+<p>A cut in a network is the collection of network edges that, when
+deleted or ignored from the network stop the flow of data from the
+source to sink. Amongst the set of cuts the one that has the
+minimum capacity is known as the minimum cut.</p>
+<p><b>For example</b>:</p>
+<p>In the above graph the possible cuts are:</p>
+<p><img src=
+"../imgs/99676ee9742853a07b381f4bf66da800525fc542.png"></p>
+<p><img src="../imgs/61474230ae0df8509e43b796c1da2a4289f403a5.png"
+alt="Description: C:\Users\evelyn 16\Desktop\CDR TIP\12.tif"></p>
+<p>Removal of any of the given set of edges would leave the network
+disconnected and reaching destination from source would not be
+possible either way.</p>
+<p>In the possible cuts of the above network, the cut<img src=
+"../imgs/c712e4c5b825adac934a10342d7750330ecb10ea.png">has the
+least capacity and that is<img src=
+"../imgs/a649ce459b79a8dd9b495657ec771801edb173db.png">. <img src=
+"../imgs/025b6fe3d8494d3e6e232deab09251614ac30bc7.png"> is assigned
+a capacity 0 because that is in the reverse direction of <img src=
+"../imgs/8e7c805af44cf3f1cb4be9e433d97f0d412a4b8c.png"> and
+<img src=
+"../imgs/2019c5aaa9008dde5edc06388dc7f5d267ec5482.png">.</p>
+<p>So, this is the minimum cut for the above mentioned network.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Dual program:</b></p>
+<p>Dual for any linear program is the mirror image of itself. If
+dual is found for the program that itself is a dual of some linear
+program that results in the original linear program. The initial
+form of the linear program is known as the primal form.</p>
+<p>The dual for the linear program of the maximum flow problem
+actually simulates the Maximum-Cut-Minimum-Flow theorem.</p>
+<p>In writing the dual of a linear program, most convenient
+practice is to write the original equation in a form that is more
+aesthetic as compared to the primal form.</p>
+<p>This is accomplished by reducing the number of constraints. This
+ends up in the creation of few new variables. Sometimes it might
+tend to the occurrence of many new variables in the primal
+equation.</p>
+<p>To make this happen this, the flow network can be thought of as
+a collection of paths, through which the flow is travelling, rather
+than a collection of edges. This would diminish constraints in
+theprogram. Now the conservation constraints can be ignored in the
+program.</p>
+<p>Now keeping the above discussion in mind, in the creation of
+dual, a variable <img src=
+"../imgs/89c8633de86bbd42e7c37359b762705c59594d40.png">is
+considered for path from source of the network <i>s</i> to the
+target of the network <i>t</i>. <i>P</i> is denoted as the set of
+path, for specifying how much flow is along the path <i>p</i>.</p>
+<p>Now, the equations take the below form:</p>
+<p>Maximize</p>
+<p><img src="../imgs/901226ec413960c757f950e03cf506b03de5a191.png">
+<b>… … (1)</b></p>
+<p>Subject to the condition</p>
+<p><img src="../imgs/049a687774c946b3e51fae072589b68e175d7870.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/ca099dd44c083bc4b2b430240e218338dc743694.png">
+<b>… … (3)</b></p>
+<p><b>Minimum-Cut Formulation:</b></p>
+<p>Now as the linear program of the maximum flow has been expressed
+into the simpler terms, it is evident that there was only one new
+variable introduced in the modified form of the primal.</p>
+<p>So in the dual form, only one new variable per edge of the
+network would be used.</p>
+<p>Consider the new variable in the dual form be<img src=
+"../imgs/3ba71cd3e5c4a8bb3f7a83d2726f622d408a16fe.png">. For every
+edge<img src=
+"../imgs/bd1c53ec28d4a80cfbcdcdafac33e183abb8d47c.png"> of the
+network, there is one<img src=
+"../imgs/3ba71cd3e5c4a8bb3f7a83d2726f622d408a16fe.png">.</p>
+<p>The linear program would now be as below:</p>
+<p>Minimize</p>
+<p><img src=
+"../imgs/ddfdd29766e12304bcf98d7f035f1ad6971e585b.png"></p>
+<p>Subject to the condition:</p>
+<p><img src=
+"../imgs/170a99c7d003ddb4d3fa0059a4c3091e8acb7455.png">; <img src=
+"../imgs/c8166b2d08e5757db68cff390951d092a18ccb26.png"></p>
+<p><img src=
+"../imgs/7e948fe2e2c748c0d9ae9415d1e9a1602d826683.png">; <img src=
+"../imgs/aa75e609836ce655bdb4b39b1ad73922cca0b26b.png"></p>
+<p>Now, have a deeper understanding of the dual of the maximum flow
+linear program. The variable <img src=
+"../imgs/8c17b80620445b83f64ed3dbaba41d9560fb90bc.png">augments a
+weight to each of the edge. This weight can be thought of as the
+“length” from source to destination.</p>
+<p>Now to find the minimum cut, the flow has to be minimized. So,
+the intention over here is to find the path that has the minimum
+flow. For this the objective function is intended to find the
+minimum path. The same is the yield of the Maximum-Flow-Minimum-Cut
+theorem.</p>
+<p>Now, the objective function is the subject to the constraints
+that for every path that is constituted of the edges the minimum
+value is one unit. That means the source and the target are always
+separable or it can be said that they are always different nodes of
+the network.</p>
+<p>Another constraint is that the value of the variable for any
+edge has to be either 0 or any positive integer. This ensures that
+the capacity can never be negative and that is what the basic rule
+for capacity of the flow network says.</p>
+<p>This way it can be concluded that the dual of the linear program
+of the maximum flow of a network yield the linear program that
+represents the minimum cut for the same flow network.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Weak Duality Formulation:</b></p>
+<p>Duality in linear programming is of two types:</p>
+<p>1. Weak Duality</p>
+<p>2. Strong Duality</p>
+<p>For the instance, only Weak duality would be discussed over
+here.</p>
+<p>Consider that there exists a linear program of the form:</p>
+<p>Maximize</p>
+<p><img src=
+"../imgs/8507033b3f2f1c1f3143ab555145b63f1b9d6c5b.png"></p>
+<p>Subject to</p>
+<p><img src=
+"../imgs/5e96c67673c10057c64a48ff714069a829d97151.png"></p>
+<p><img src=
+"../imgs/fbe86ae9b9b40b5611b2e8feafddc34292781071.png"></p>
+<p>And it is dual:</p>
+<p>Minimize</p>
+<p><img src=
+"../imgs/33f7bca895399dedb3ad936eff05c041b2169ef2.png"></p>
+<p>Subject to:</p>
+<p><img src=
+"../imgs/3e10a340462c5a375a960db94753d8f92167377c.png"></p>
+<p><img src=
+"../imgs/22191b0cd29ae1ea4acd7e0552a582454ef66732.png"></p>
+<p>Suppose both of them are viable.</p>
+<p>Now, consider <img src=
+"../imgs/9773e1508502d9f761409e4858c7c3933760475a.png">be viable
+for primal and <img src=
+"../imgs/d5634e45d13b826d788abdffc3e7f995a72575cd.png">be viable
+for dual form. This implies that:</p>
+<p><img src=
+"../imgs/6679b6105e3afc6d6a989fa935516fbae1c41690.png"></p>
+<p>In simple words, the objective function of the primal form of
+the linear program has got an upper limitand that is the objective
+function of the dual form of the same linear program.</p>
+<p>Now, the weak duality is proved for the maximum flow and the
+minimum cut.</p>
+<p>Consider that <img src=
+"../imgs/fde9aea5dd35424d680896532b5645da0fb955bf.png"> is a flow a
+network and <img src=
+"../imgs/979bb727d0620ed6f273772741aa5ba149bc51c7.png">is minimum
+cut of the network.</p>
+<p>So it is to be proved that,</p>
+<p><img src=
+"../imgs/bf582a3bfddcc7e37c260cc7f0a0557d347a5b5f.png"></p>
+<p>As it is known that the flow data from thesource to destination
+is always equal to the difference of the flow in the one direction
+and the reversedirection.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/bf97026f2350f911ef6643122f305eec5485e4e4.png"></p>
+<p>Now, it is already evident that the flow through any edge is
+always less than or equal to the capacity of that edge.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/482e42ca9a7cca1b919a5206c03cb612be172bce.png"></p>
+<p>For a particular instance,</p>
+<p><img src=
+"../imgs/5af202556115ce2a5c2c9d77f8ca28aeed0eecdb.png"></p>
+<p>Now, as the flow is always nonnegative value,</p>
+<p><img src=
+"../imgs/b2587ea09da32b23cf48439f95f9825cef1b703c.png"></p>
+<p>And that proves that maximum flow linear program is bounded by
+its dual that is the min-cut manifestation.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

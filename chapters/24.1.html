@@ -1,0 +1,302 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 24.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><u><b>The given directed graph is as follows</b></u> :</p>
+<p><img src="../imgs/9a3b5380d25477b95ef04bfe5ca9342863fe820b.png"
+alt="1"></p>
+<p>Execute the Bellman-Ford algorithm on the given directed graph
+as follows:</p>
+<p>Since source is vertex <i>z</i>, start with <i>z</i>.</p>
+<p><u><b>Pass 1</b></u> :</p>
+<p>For the edge (<i>z,s</i>), <i>s.d</i> is greater than 2+
+<i>z.d.</i> Thus, (<i>z,s</i>) is relaxed. Therefore, <i>s.d</i>=2
+and <i>s.π</i>=2.</p>
+<p>For the edge (<i>z,x</i>), <i>x.d</i> is greater than 7+
+<i>z.d.</i> Thus, (<i>z,x</i>) is relaxed. Therefore, <i>s.d</i>=2
+and <i>s.π</i>=2.</p>
+<p><img src="../imgs/4e304d87b8a716801f3779c45bb4f70975a6f555.png"
+alt="2"></p>
+</div>
+<hr>
+<div class="answer">
+<p><u><b>Pass 2</b></u> :</p>
+<p>For the edge (<i>s,y</i>), <i>y.d</i> is greater than 7+
+<i>s.d.</i> Thus, (<i>s,y</i>) is relaxed. Therefore, <i>y.d</i>=9
+and <i>y.π</i>=7.</p>
+<p>For the edge (<i>x,t</i>), <i>t.d</i> is greater than -2+
+<i>x.d.</i> Thus, (<i>x,t</i>) is relaxed. Therefore,
+<i>t.d</i>=7-2=5 and <i>t.π</i>=-2.</p>
+<p><img src="../imgs/ecd51b0f2c8b659ebac4b07741aa4f1243f6eb66.png"
+alt="3"></p>
+</div>
+<hr>
+<div class="answer">
+<p><u><b>Pass 3</b></u> :</p>
+<p>For the edge (<i>y,x</i>), <i>x.d</i> is greater than -3+
+<i>y.d.</i> Thus, (<i>y,x</i>) is relaxed. Therefore, <i>x.d</i>=6
+and <i>x.π</i>=-3.</p>
+<p><img src="../imgs/ab95bc332c4c766fa2b43a1d24573235c9f3ba20.png"
+alt="4"></p>
+</div>
+<hr>
+<div class="answer">
+<p><u><b>Pass 4</b></u> :</p>
+<p>For the edge (<i>x,t</i>), <i>t.d</i> is greater than -2+
+<i>x.d.</i> Thus, (<i>x,t</i>) is relaxed again. Therefore,
+<i>t.d</i>=6-2=4 and <i>t.π</i>=-2.</p>
+<p><img src="../imgs/f71072b31dc0a11580f42e005615f550a7cc9d33.png"
+alt="5"></p>
+</div>
+<hr>
+<div class="answer">Change the weight of edge (<i>z, x</i>) to 4
+and execute the Bellman-Ford algorithm on the modified directed
+graph using vertex <i>s</i> as the source.
+<p><img src="../imgs/b5d9f184510306b1c452afdff77d09e70496d6e0.png"
+alt="7"></p>
+</div>
+<hr>
+<div class="answer">
+<p><u><b>Pass 1</b></u> :</p>
+<p>For the edge (<i>s,y</i>), <i>y.d</i> is greater than 7+
+<i>s.d.</i> Thus, (<i>s,y</i>) is relaxed. Therefore, <i>y.d</i>=7
+and <i>y.π</i>=7.</p>
+<p>For the edge (<i>s,t</i>), <i>t.d</i> is greater than 6+
+<i>s.d.</i> Thus, (<i>s,t</i>) is relaxed. Therefore, <i>t.d</i>=6
+and <i>t.π</i>=6.</p>
+<p><img src="../imgs/5c0d1aee1902b28704b8cb9d8dfec0f6331b3b29.png"
+alt="8"></p>
+</div>
+<hr>
+<div class="answer">
+<p><u><b>Pass 2</b></u> :</p>
+<p>For the edge (<i>t,z</i>), <i>z.d</i> is greater than -4+
+<i>t.d.</i> Thus, (<i>t,z</i>) is relaxed. Therefore, <i>z.d</i>=2
+and <i>z.π</i>=-4.</p>
+<p>For the edge (<i>y,x</i>), <i>x.d</i> is greater than -3+
+<i>y.d.</i> Thus, (<i>y,x</i>) is relaxed. Therefore, <i>x.d</i>=4
+and <i>x.π</i>=-3.</p>
+<p><img src="../imgs/afc1867e4bbcc55189425d1a8ca4565db3f01e24.png"
+alt="9"></p>
+</div>
+<hr>
+<div class="answer">
+<p><u><b>Pass 3</b></u> :</p>
+<p>For the edge (<i>x,t</i>), <i>t.d</i> is greater than -2+
+<i>x.d.</i> Thus, (<i>x,t</i>) is relaxed. Therefore,
+<i>t.d</i>=4-2=2 and <i>t.π</i>=-2.</p>
+<p><img src="../imgs/769121b7598490fffcf5c6d7d4ed520872b79796.png"
+alt="10"></p>
+</div>
+<hr>
+<div class="answer">
+<p><u><b>Pass 4</b></u> :</p>
+<p>For the edge (<i>t,z</i>), <i>z.d</i> is greater than -4+
+<i>t.d.</i> Thus, (<i>t,z</i>) is relaxed. Therefore,
+<i>z.d</i>=-4+2=-2 and <i>z.π</i>=-4.</p>
+<p><img src="../imgs/42042b7a5a55e06e8ac93b29156df4faa5106c23.png"
+alt="Picture 10"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/c410db1d746a97e39ef664a75a328ca9a3f66354.png">
+<hr>
+<img src="../imgs/c4da31d2a5cc24c9a0a31449ff87cc7489a0762e.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The basic idea is to find a node in negative-weight cycle, to
+set its weight to -∞ and to run Bellman Ford like procedure on that
+node, setting the d values of reachable nodes to -∞.</p>
+</div>
+<hr>
+<div class="answer">
+<p>BELLMAN-FORD-MODIFIED(G,w,s)</p>
+<p>INITIALIZE-SINGLE-SOURCE(G,s)</p>
+<p>for i1 to |G.V|-1</p>
+<p>do for each edge (u,v) <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">G.E</p>
+<p>RELAX (u,v,w)</p>
+<p>for each edge (u,v) <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">G.E</p>
+<p>do if v.d &gt; u.d + w(u,v)</p>
+<p>d.v = - ∞</p>
+<p>for each v such that d.v = -∞</p>
+<p>do Follow-and-mark-predecessor(v)</p>
+<p>Follow-and-mark-predecessor(v)</p>
+<p>if π.v!=null and d[π.v]!= -∞</p>
+<p>do d[π.v]!= -∞</p>
+<p>Follow-and-mark-predecessor (π.v)</p>
+<p>else</p>
+<p>return</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>An efficient algorithm to list the vertices of negative-weight
+cycle is:</p>
+<p>BELLMAN-FORD-NEGATIVE-CYCLE (G, w, s)</p>
+<p>1. INITIALIZE-SINGLE-SOURCE(G,s)</p>
+<p>2. for i=1 to |G.V|-1</p>
+<p>3. for each edge(u,v) <img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png">G.E</p>
+<p>4. RELAX(u,v,w)</p>
+<p>5. for each edge(u,v) <img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png">G.E</p>
+<p>6. if v.d &gt; u.d + w(u,v)</p>
+<p>7. mark v</p>
+<p>8. x = v</p>
+<p>9. while x.<img src=
+"../imgs/d051dc7900e42db62b9582314e14535f844478c8.png"> is not
+marked</p>
+<p>10. mark x.<img src=
+"../imgs/d051dc7900e42db62b9582314e14535f844478c8.png"></p>
+<p>11. x = x.<img src=
+"../imgs/d051dc7900e42db62b9582314e14535f844478c8.png"></p>
+<p>12. return marked nodes</p>
+<p>13. return NIL</p>
+</div>
+<hr>
+<div class="answer">
+<p>Call the modified version of DFS and maintain the attribute v.d
+at every vertex which gives the weight of the unique simple path
+from s to v in DFS tree. The value of v.d can never be modified
+once it is set.</p>
+<p>Update DFS and if v.d&gt;u.d+w(u,v), then a negative weight
+cycle exists because u.d+w(u,v)-v.d represents the weight of the
+cycle which is completed by the back edge in the tree.</p>
+<p>The run-time is O(V+E)</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

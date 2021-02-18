@@ -1,0 +1,983 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 26.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Flow Network</b></p>
+<p>A flow network, in the most basic form, is a directed graph.
+Each of the edges has a capacity assigned to it. In the network a
+certain amount of flow goes from each edge of the network. There
+are certain nodes in the graph from which the flow starts and to
+which the flow ends. These two nodes are called the origin and
+destination of the network respectively.</p>
+<p>In the diagram below the node <i>s</i> is the origin of the
+network and the node <i>t</i> is the destination or sink of the
+network. Each of the graph edge has a capacity. The capacity
+defines the data value that can go through that edge. The capacity
+is a positive integer forever for any edge. One more thing is that
+if an edge exists from a vertex <i>v</i><sub>1</sub> to vertex
+<i>v</i><sub>2</sub> than there can be no edge from
+<i>v</i><sub>2</sub> to <i>v</i><sub>1</sub>.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p>In the above diagram vertex <i>s</i> is the source and the
+vertex <i>t</i> is the sink or destination. The capacity of each
+edge is shown alongside the edge. As the edge from <i>s</i> to
+<i>v</i><sub>1</sub> has the capacity of 16.</p>
+<p>A flow network has various applications in practicality. It is
+used in data warehouses, scientific research and electricity
+distribution etc.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>RELABEL TO FRONT ALGORITHM</b>:</p>
+<p>It is a special class of push re-label algorithms in which the
+near vertices and edges of a node is represented into a linked
+list. After representing them in linked list we use the discharge
+operation on them.</p>
+<p>The relabel to front algorithm is used for computing maximum
+flow from source to sink in a network. The distance of the source
+vertex that is the vertex from where the flow is started is fixed
+at <img src="../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">
+and the height of sink vertex is fixed at value 0.</p>
+<p>The height of all the other vertices through which the flow is
+passed to sink is initially set to 0 which increases with time.</p>
+<p>The algorithm uses the operation INITIALIZE-PREFLOW in which the
+height and the excess flow for each vertex is set. It also
+initializes the flow for each edge in the network and the value of
+the flow for the edges adjacent to the source vertex is set.</p>
+<p>The flow for the edges going from the source vertex is set to
+its maximum value that is equal to the capacity of the edge.</p>
+<p>It has two major operations involved in it, <b>PUSH</b> and
+<b>RELABEL</b>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>PUSH</b> <b><img src=
+"../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png"></b> :</p>
+<p>In the push operation the excess flow is pushed from one vertex
+to the other vertex. It is pushed from a vertex at higher level to
+a vertex at the lower level.</p>
+<p>It may be possible that the flow in an edge from the lower level
+vertex to the higher level vertex is positive but the push
+operation will not support this type of flow. The conditions and
+the action that are performed in the push operation are as:</p>
+<p><b>Precondition:</b></p>
+<p>To perform a push operation two conditions must be
+fulfilled:</p>
+<p>1. The vertex <i>u</i> is active or overflowing that is excess
+flow <img src=
+"../imgs/8ed931ae0f335b353bdd4d5cd13ed8c2f776352d.png">and the
+residual capacity<img src=
+"../imgs/7bed25aeb1a75b283eeeaa9797f787eee92fc54a.png">.</p>
+<p>2. The height of vertex <i>u</i> must be larger than the height
+of vertex <i>v</i> that is <img src=
+"../imgs/f7dfd2ae9034f65372289265c7cee975368bf6bf.png"></p>
+<b>Action:</b> Push <img src=
+"../imgs/17077cb6d8cd91115ceddb80187c38f3bc09e8d5.png">from vertex
+<i>u</i> to vertex <i>v</i>. Refer the PUSH algorithm in the
+section 26.4 before lemma 26.13 in book.</div>
+<hr>
+<div class="answer">
+<p><b>RELABEL</b> <img src=
+"../imgs/d73fe653c18d43ef269e7a744d31220c1f4a1e65.png">:</p>
+<p>The algorithm considers that the flow can be pushed only to the
+vertex, which is downhill from the sender vertex.</p>
+<p>So, for any vertex <i>u</i> if there is an edge to the any
+vertex which is not saturated yet and they both are at the same
+level or at the same height then the height of the vertex is
+increased by one. That is the vertex <i>u</i> is relabeled and in
+the relabel operation the height of vertex <i>u</i> is updated
+as:</p>
+<p><b>Precondition:</b></p>
+<p>To perform a relabel operation two conditions must be
+fulfilled:</p>
+<p>1. The vertex <i>u</i> is the active overflowing vertex that is
+<img src=
+"../imgs/5e4bbbb8ad82241b4f115b7fbbabe88dfd044578.png"></p>
+<p>2. For all the vertices <i>v</i> in the residual network for
+which there is an edge from vertex <i>u</i> to vertex <i>v</i>
+there necessarily is<img src=
+"../imgs/4dc046c4dcf785cd77adf2163e90195a8441ba2e.png">.</p>
+<b>Action:</b> Relabel the vertex <i>u</i> by increasing its height
+as: <img src=
+"../imgs/2a263977796d18cd26d18346584c0bc83eed73c8.png">. Refer the
+RELABEL algorithm in the section 26.4 after lemma 26.13 in
+book.</div>
+<hr>
+<div class="answer">
+<p>RELABEL_TO_FRONT <img src=
+"../imgs/2e9b17d60c56389dd19ded7852b02be7c8fc21d2.png"></p>
+<p>// to set the initial values call the procedure Initialize
+PRE-FLOW</p>
+<p>1. Initialize PRE-FLOW</p>
+<p>// creating the list <i>L</i></p>
+<p>2. Initialize node list <i>L</i> containing <img src=
+"../imgs/ed29523bfd48145495d571fb1c8b07949ca561bd.png"> in any
+order</p>
+<p>// arrange all the nodes in linked list</p>
+<p>3. <b>for</b> each <img src=
+"../imgs/ead3082daaa302f5cfc85d950bd4d6a98286ea29.png"></p>
+<p>// set the value of current pointer</p>
+<p>4. <img src=
+"../imgs/a109a73a7aae2f7ceac86f322eb260277da1982a.png"></p>
+<p>// search for all adjacent nodes in neighbor</p>
+<p>5. <img src=
+"../imgs/c5eb818698559b54aaa1fb4c80da8ac292950b4e.png"></p>
+<p>// execute the while loop until the list <i>L</i> is empty</p>
+<p>6. <b>while</b><img src=
+"../imgs/98afe8191c7d5bc367f35013227002dd5efc79fc.png"></p>
+<p>// set the old height for the active vertex</p>
+<p>7. old-height<img src=
+"../imgs/6115106b5204b51027920de189555712d1472c57.png"></p>
+<p>// call the discharge method</p>
+<p>8. DISCHARGE<img src=
+"../imgs/d73fe653c18d43ef269e7a744d31220c1f4a1e65.png"></p>
+<p>// check if there is any change in old height of active
+vertex</p>
+<p>9. <b>if</b><img src=
+"../imgs/267b877639d8551a39e2550bfd945cbe773d2ea6.png">old-height
+then</p>
+<p>// moving the vertex to the front of list</p>
+<p>10. <b>move</b> <i>u</i> to the front of <i>L</i></p>
+<p>// move to forward in the list <i>L</i></p>
+11. <img src=
+"../imgs/1102879a373b97e8702f46c944b69e845bf49c6c.png"></div>
+<hr>
+<div class="answer">
+<p>Consider the graph of the flow network <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">shown in the
+figure below:</p>
+<p><img src="../imgs/e22f06e255023b2af6259499ed32010f21faf152.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\2.tif"></p>
+<p>The vertexes here in the above figure are <img src=
+"../imgs/98135dd0e5f13377b9e1275f2671ef86d1748118.png">with the
+neighbor list as:</p>
+<p><img src=
+"../imgs/b87465b822494cbf3ad26331041fda2abe4a1545.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Execution of algorithm RELABEL-TO-FRONT for the above flow
+network:</b></p>
+<p>1. First the Initialize PRE-FLOW (<i>G</i>, <i>s</i>) algorithm
+will execute. For the algorithm see the section 26.4 in the book.
+In this step the flow and over flow values for the network will be
+initialized. It will update the network, the execution of
+Initialize PRE-FLOW algorithm is as:</p>
+<p>1. Initially the height and overflow value of all the nodes will
+be set to zero for all the vertices as:</p>
+<p>2. <img src=
+"../imgs/6f78adabd3088d31b5189b6c06f90eb02c222322.png"></p>
+<p>3. <img src=
+"../imgs/26aa8f32e4a117091e7eb7dfc7674e012228af27.png"></p>
+<p>4. The initial flow for each edge of network is set to zero
+as:</p>
+<p><img src=
+"../imgs/9f7f1124ecfafcc41233ca84bbe1b2af1331881c.png"></p>
+<p>5. The height of the source vertex is set to number of vertices
+in the network</p>
+<p>6. <img src=
+"../imgs/bb4ee066b99658bd08e0434fe68e0c1053a13554.png"></p>
+<p>7. For every vertex adjacent to the source vertex update the
+flow and overflow values:</p>
+<p><img src=
+"../imgs/e90bdd0be5cc8a7842cef6d1747e781b0edd6184.png"></p>
+<p>The flow network after the execution of Initialize PRE-FLOW
+algorithm is as:</p>
+<p><img src="../imgs/0315536d6bfeeaacccf755f7a0b376eedcbc4a75.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p>2. Now arrange the vertices of the network in a list in any
+order and the neighbor list of each vertex is associated with each
+vertex.</p>
+<p><img src=
+"../imgs/94cfd81554cbc55e3eb25d821478487855e589f0.png"></p>
+<p>3. For each vertex which is not originating and destination
+vertex, update the present pointer to the first vertex in the
+neighbor list.</p>
+<p><img src=
+"../imgs/f748b5ef18c6fa8ba5461dfb439ecb97885f17d4.png"></p>
+<p>4. Select the head of the list <i>L</i> as the active vertex
+<i>u</i></p>
+<p><img src=
+"../imgs/5303e923345b401fa52a0292aaa1e99d7fcc2647.png"></p>
+<p>5. Execute the while loop until the list is empty:</p>
+<p>6. Store the old height of active vertex in a temporary variable
+old-height</p>
+<p><img src=
+"../imgs/1e486381708635ea2d13a8774b26e23c2e281e19.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>7. Call the Discharge procedure for the current active vertex.
+For the algorithm DISCHARGE (<i>u</i>) see the section 26.5 from
+the book. The execution of discharge algorithm for vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">is as:</p>
+<p>1. Execute the while loop until the overflow value for vertex
+<img src="../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">is
+greater than zero that is</p>
+<p><img src=
+"../imgs/1e1a818052e2ec416d81ebb95581a3e0d5fa4995.png">.</p>
+<p>2. Put the value current neighbor value of <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">in a
+variable <i>v</i></p>
+<p><img src=
+"../imgs/c133810b2ead1537bd16a91cf44bc7804600c272.png"></p>
+<p>3. Check if the vertex <img src=
+"../imgs/f9edcf1849efab23ccf2da74ff0c5544471d57cd.png">is NIL, here
+it is not NIL so moves forward</p>
+<p>4. Check if the residual capacity of edge is greater than zero
+and height of <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">is one more
+than the height of <i>s</i> that is <img src=
+"../imgs/e24266a6ffc5305139c51533dde8e601c58bf677.png">which is
+false as<img src=
+"../imgs/b732646365fea3c1fa985a824ec19deb9838e000.png"></p>
+<p>5. Both the above conditions are false so move forward the
+current pointer of <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">as</p>
+<p><img src="../imgs/cd42f6c72c33247db3bdb408bd440014eb622211.png">
+and repeat the discharge process.</p>
+<p>8. Do this for the other members of neighbor list <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">until the
+condition for relabeling the active vertex is true. It will be true
+when there is a nil in the next neighbor of <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">when it is
+true increase the height of the vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">as:</p>
+<p><img src=
+"../imgs/f0480df462ec358b1ff6821365e59e8e059b3792.png"></p>
+<p>The updated flow network is as shown:</p>
+<p><img src="../imgs/6c0c7ae6ee80b0660a73ab4c219f019db89c480a.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer">
+<p>9. Now there is an edge from vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">to vertex
+<img src="../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">for
+which the condition <img src=
+"../imgs/e24266a6ffc5305139c51533dde8e601c58bf677.png">satisfies
+that is <img src=
+"../imgs/2e7a2a1c0459b45a06720d47275a006e418c5890.png">which is
+greater than 0 and</p>
+<p><img src=
+"../imgs/90fcab07789a19d132ad902db71cc70128f99689.png"></p>
+<p>Hence, the flow from vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">to vertex
+<img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">will be
+pushed by using algorithm PUSH (<img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">,<img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">). For the
+PUSH algorithm refer the section 26.4 from the book.</p>
+<p>10. The execution of PUSH (<img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">,<img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">) algorithm
+is as:</p>
+<p>The condition for the flow in step 1 and 2 are satisfied</p>
+<p>1. Calculate the flow <img src=
+"../imgs/22ca77e4a96b05c43a06515f26f41145e94b0659.png"> in the step
+3 to be pushed as:</p>
+<p><img src=
+"../imgs/658eeda59bbeebfa28e64a1b8304e171291c0491.png"></p>
+<p>2. Now check if <img src=
+"../imgs/8dd9a263069aea60a3df58feadecb0e8365c59a0.png"> which is
+true in the step 4.</p>
+<p>3. Then update the flow in the edge <img src=
+"../imgs/75ff2d79fd6233f730244d6d4857b78f0cb82567.png">as in step 5
+of algorithm.</p>
+<p><img src=
+"../imgs/dba0fafa98c12d62fd37567c4b2f49eca6eb06e0.png"></p>
+<p>4. Now update the overflow values for vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">and<img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">.</p>
+<p><img src=
+"../imgs/8f4cf241ad3a96f31c7dead00c111dfc3a062aa5.png"></p>
+<p><img src=
+"../imgs/ac7c318393b633732290278e905f19ab7d81f205.png"></p>
+<p>The updated flow network is as shown:</p>
+<img src="../imgs/05d772095f7092623549dc2fcf883299a3db1b58.png"
+alt="Picture 6"></div>
+<hr>
+<div class="answer">
+<p>11. As the vertex <img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">is not
+discharged yet and there is no vertex to which it can push the flow
+so relabel the vertex to<img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">by
+increasing its height.</p>
+<p>The updated flow network is as:</p>
+<p><img src="../imgs/e27ae13b464ca777ebf6a2a05740a45297c030a6.png"
+alt="Picture 21"></p>
+<p>12. Now push back the excess flow from the vertex<img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">to the
+source vertex <i>s</i>. The flow network after the push back
+process is as:</p>
+<p><img src="../imgs/ddd3253200854b25514523aa4f00d34b3ff8dee0.png"
+alt="Picture 26"></p>
+</div>
+<hr>
+<div class="answer">
+<p>13. Now the overflow for the vertex<img src=
+"../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">is zero so
+it is discharged, move the vertex to the front of the list <i>L</i>
+as displayed in the box.</p>
+<p><img src=
+"../imgs/36e6faa5b69dfb33ea06db7215fc7e731a9eee38.png"></p>
+<p>14. Select the next active vertex<img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> and relabel
+it be increasing its height. The updated flow network after
+relabeling vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">is
+shown:</p>
+<p><img src="../imgs/40abf4d797700886fc5056403ab59524c8742db4.png"
+alt="Picture 36"></p>
+</div>
+<hr>
+<div class="answer">
+<p>15. Push the excess flow from the vertex<img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">to the
+vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png"> the updated
+network is as:</p>
+<p><img src="../imgs/2957ce02d0f8eb4a1c6c7e0c9424fbde36a280b3.png"
+alt="Picture 37"></p>
+<p>16. Move the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">to the front
+of the list <i>L,</i> the moved vertex is shown in the box:</p>
+<img src=
+"../imgs/ba85112fe02299226d8dc15376197c70d45b7941.png"></div>
+<hr>
+<div class="answer">
+<p>17. Now select the next to the vertex<img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">that is
+<img src="../imgs/d652a1e29926c5cd1d68942672a5276417cdb8f4.png">
+which is already discharged so move to the vertex next to it that
+is<img src="../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">.
+Relabel the selected active vertex as:</p>
+<p><img src="../imgs/6d1e08b62fa8a161ef6adf66d7d08ca4a64416c8.png"
+alt="Picture 39"></p>
+<p>18. Push the flow from the<img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png"> to the
+vertex for which there is an edge from vertex <img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png"> that is
+<i>t</i>. The flow network after the push operation is as:</p>
+<p><img src="../imgs/bde8c97d628f74140ba4fcc40c55047c6cc5ec00.png"
+alt="Picture 40"></p>
+<p>19. Move the discharged vertex <img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">as shown in
+the box below:</p>
+<p><img src=
+"../imgs/2cb04b2ea429123f91132477518c68f7338f4379.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>20. Now select and relabel the next vertex for which the excess
+flow is greater than zero which is<img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">. The flow
+network after the relabel operation is as:</p>
+<p><img src="../imgs/6185a12d7c8358f6a1102a3731f9251d5a525ee4.png"
+alt="Picture 41"></p>
+</div>
+<hr>
+<div class="answer">
+<p>21. Push the excess flow from the vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">to the
+vertex for which its height is greater by 1. The updated flow
+network after the push operation is as:</p>
+<p><img src="../imgs/d5e3e1e656df30eb24021d62f1df79ce09b3404d.png"
+alt="Picture 42"></p>
+<p>22. As the vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png"> is not
+discharged yet so relabel by increasing its height. The flow
+network after the relabel operation is as:</p>
+<p><img src="../imgs/501e004d56982fcb49e45c5d45b7ecc634294814.png"
+alt="Picture 43"></p>
+<p>23. Push the flow back to the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> as per the
+PUSH algorithm the updated flow network after flow operation is
+as:</p>
+<p><img src="../imgs/62f68a5eff1bf434edbf672a31e77b0b7fe6513d.png"
+alt="Picture 44"></p>
+<p>24. Now the vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">is
+discharged so move it to the front of list <i>L</i> as shown is the
+box.</p>
+<p><img src=
+"../imgs/4358b116746cc8740127e25c95351fd6118f0354.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>25. Again select and relabel the next vertex for which there is
+an excess flow that vertex<img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">. The
+updated network is as shown after the relabel operation:</p>
+<p><img src="../imgs/f50d06c06ce72680dd7b433ce8cf15d24769a576.png"
+alt="Picture 45"></p>
+<p>26. Push the excess flow from the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">to the
+vertex in its downward direction. The updated flow network after
+the PUSH operation is as shown:</p>
+<p><img src="../imgs/bac2c757dcabb289a8577cef5101b93d6828283d.png"
+alt="Picture 46"></p>
+<p>27. Move the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> to the
+front of list <i>L</i> as shown:</p>
+<p><img src=
+"../imgs/85a19ca183dc007ac177465db122ede1262fb6e1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>28. Now select the next active vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">for which
+the excess flow is greater than zero. As there is an edge
+from<img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">to <img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">which
+satisfies the conditions of Push operation. Push the extra flow
+from vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png"> to<img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">. The
+updated network is as shown:</p>
+<p><img src="../imgs/e9a867df5db58083af800d324693b6c13afd63d7.png"
+alt="Picture 47"></p>
+<p>29. The vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">is not
+discharged yet so relabel it. The flow network after the relabel
+operation is as:</p>
+<p><img src="../imgs/c6d73576821b921ea4e10459a341cb3d047400cf.png"
+alt="Picture 48"></p>
+<p>30. Push the excess flow from the vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">back to the
+vertex<img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">. The
+updated network is as shown:</p>
+<p><img src="../imgs/8140e0fee8935de843fc378e62a1f8360f789375.png"
+alt="Picture 49"></p>
+<p>31. Move the vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">to the front
+of the list <i>L</i> as shown:</p>
+<p><img src=
+"../imgs/6a492ecc03baf06b38d9726203bc73d1c0445835.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>32. Again select and relabel the next vertex for which there is
+an excess flow that is the vertex<img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">. The
+updated network is as shown after the relabel operation:</p>
+<p><img src="../imgs/e32f0be61104d922aa023c4ea4be6e4add1c9bbc.png"
+alt="Picture 50"></p>
+</div>
+<hr>
+<div class="answer">
+<p>33. Push the excess flow from the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> to vertex
+<img src="../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">
+the push operation is as shown:</p>
+<p><img src="../imgs/2900471825cbed19fd629e958a9b09815d76fd2e.png"
+alt="Picture 51"></p>
+<p>34. Again the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> is
+discharged so, move the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> to the
+front of list <i>L</i> as shown:</p>
+<p><img src=
+"../imgs/85a19ca183dc007ac177465db122ede1262fb6e1.png"></p>
+<p>35. Now select the next active vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">for which
+the excess flow is greater than zero. Relabel the vertex. The
+updated network is as shown:</p>
+<p><img src="../imgs/4c88ab553430c6582e10c9b81a2acdbcefcdf37f.png"
+alt="Picture 52"></p>
+</div>
+<hr>
+<div class="answer">
+<p>36. Push the excess flow from the vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">back to the
+vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">. The
+updated network is as shown:</p>
+<p><img src="../imgs/53c56bbff2898bc661246a516f7596f51b505a70.png"
+alt="Picture 53"></p>
+<p>37. Move the vertex <img src=
+"../imgs/c8ce9c998edda5e8361dd26db0ac3cd591ad471e.png">to the front
+of the list <i>L</i> as shown:</p>
+<p><img src=
+"../imgs/6a492ecc03baf06b38d9726203bc73d1c0445835.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>38. Select and relabel the next active vertex from the flow
+network.</p>
+<p><img src="../imgs/554601ea84c671b23f808fe967598e4091e9466a.png"
+alt="Picture 57"></p>
+<p>39. Push the excess flow from the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png">to the
+vertex <i>s</i> in its downward direction. The updated network is
+as shown:</p>
+<p><img src="../imgs/7e176eba7d445628060bbbf1c42bb213e9e0bf89.png"
+alt="Picture 56"></p>
+<p>40. Again the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> is
+discharged so, move the vertex <img src=
+"../imgs/b466d402aed63504ee39c4d8623924feccbdfff8.png"> to the
+front of list <i>L</i> as shown:</p>
+<p><img src=
+"../imgs/85a19ca183dc007ac177465db122ede1262fb6e1.png"></p>
+<p>41. Select the next vertex with excess flow greater that zero
+such a vertex is vertex<img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">. Push the
+flow from that vertex to the vertex in its downward direction that
+is the sink.</p>
+<p>The updated network shown the push operation is as:</p>
+<p><img src="../imgs/f6678325a7521fc0bb4eb8b2da6e2f905bb25327.png"
+alt="Picture 58"></p>
+<p>42. As the vertex <img src=
+"../imgs/e4d9d7cd6bf77ad222420d1c40b4f827cd262c9a.png">is
+discharged so, move it to the front of the list <i>L</i>.</p>
+<p><img src=
+"../imgs/b44a3244328a96a5d79fa7adfa580df1ae0f8924.png"></p>
+<p>Now, all the vertices except source and sink have excess flow
+zero so the process breaks here. The maximum flow of the network is
+23 which is passed from the source vertex and reached to the sink
+in the network.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Implementation of push-relabel algorithm with first-in,
+first-out queue</b></p>
+<p>The algorithm for push-relabel algorithm that uses the first in
+first out (FIFO) queue, to store overflow vertices is as
+follows:</p>
+<p><b>Algorithm</b></p>
+<p>// initializing the flow, of all the edges and the overflow and
+height of vertices</p>
+<p>1. Initialize-Preflow <img src=
+"../imgs/0e0d93717db539f8ebec52f971d5dbf40c614018.png"></p>
+<p>2. queue <i>Q</i></p>
+<p>// loop for considering each vertex of flow network</p>
+<p>3. <b>for</b> all <img src=
+"../imgs/55081abce5d128dc98dcf457d5c8c5f86c8878b4.png"></p>
+<p>// inserting the vertex to the front of queue</p>
+<p>4. <b>insert</b> <img src=
+"../imgs/67afdd0bcaebdcc45770d78dd9abbc5c3ff5ccc1.png"></p>
+<p>// loop for discharging the vertices until the queue is
+empty</p>
+<p>5. <b>while</b> ( empty (<i>Q</i>) != true )</p>
+<p>// extract the front element from the queue and store it in
+variable head</p>
+<p>6. head = extract (<i>Q</i>)</p>
+<p>// discharge the vertex by passing the excess flow to neighbour
+vertices</p>
+<p>7. DISCHARGE (head)</p>
+<p>// checking if the vertex will flow afterward</p>
+<p>8. <b>if</b> <img src=
+"../imgs/9679f103724cc148654acd9ac3daae6dec40a96d.png"></p>
+<p>// move the head to the end of the queue</p>
+<p>9. make head as the last element of Q</p>
+<p>// deleting the head from the queue</p>
+<p>10. <b>delete</b> (head)</p>
+<p>11. <b>end</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis:</b></p>
+<p>• The above algorithm runs in two phases. First, it initializes
+a FIFO queue; it is initialized by keeping all the vertices in the
+queue list. It also initializes the flow for each edge in the
+network. It considers each vertex only once. So the time for the
+execution of Initialize- Pre-flow is constant for any network. This
+is done in the lines 1-4. This operation takes <img src=
+"../imgs/41137937758cfdcf7c0102292281cc8faa503d68.png">time.</p>
+<p>• The while loop in the line 5 of the above algorithm, each time
+takes a vertex at head of the queue to discharge, until the Queue
+is empty. Since, there are |V| vertices in the queue, the while
+loop takes <img src=
+"../imgs/41137937758cfdcf7c0102292281cc8faa503d68.png">time.</p>
+<p>• In the line 6, the first element of the queue is extracted and
+it is discharged. Refer section 26.5 in the book for the
+<b>DISCHARGE</b> algorithm.</p>
+<p>• When the discharge operation is called, one of the three
+actions is performed. The three operations are relabel, push, and
+advancing the current pointer to its next neighbour. This method
+takes total of <img src=
+"../imgs/9661198d890a192fabc8ef9c4e01ad39fc87b891.png">time.</p>
+<p>• If the push operation is applied, it discharges the excess
+flow to its neighbour. Each time the network is updated.</p>
+<p>• Once the vertex is discharged, in the lines 8-9, the algorithm
+checks the other vertices that whether they are overflowed after
+discharge operation. If any vertex is overflowed, the particular
+vertex is placed at the end of the queue. Each time this operation
+takes <img src=
+"../imgs/41137937758cfdcf7c0102292281cc8faa503d68.png"> time. Since
+this operation is done V time, the total running time for this
+operation is <img src=
+"../imgs/9661198d890a192fabc8ef9c4e01ad39fc87b891.png">.</p>
+<p>• In the line, the algorithm removes the vertex from the queue.
+The algorithm terminates when the queue becomes empty.</p>
+<p>Thus the total time taken by the algorithm is<img src=
+"../imgs/534d9926227e89aa92aa5a16762322dd7868dab2.png">, which is
+equal to<img src=
+"../imgs/c50ed5f4af8ba19dd7c4fd925e847034b9ee0aae.png">.</p>
+<p><b>Hence, the running time of the PUSH-RELABEL algorithm by
+using FIFO queue is</b> <b><img src=
+"../imgs/c50ed5f4af8ba19dd7c4fd925e847034b9ee0aae.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Generic PUSH-RELABEL algorithm:</b></p>
+<p>The generic push relabel algorithm is used for computing maximum
+flow from source to sink in a network. Initially, the height of the
+source vertex is set to <img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png"> and the
+height of all other vertices, including sink is set to 0. This is
+done in the INITIALIZE-PREFLOW method. It also initializes the flow
+for each edge in the network. Now, the push-relabel algorithm takes
+an over-flowed vertex, and applies push or relabel operation on
+this vertex.</p>
+<p>A node <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png"> is
+re-labelled, if there is no possibility to push flow from<img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">to any
+neighbouring vertex <i>v</i>. Then the relabel method increases the
+height of the vertex <img src=
+"../imgs/e6db7907f47c792385f87cce217f933fd52f10b3.png">using the
+following formula.</p>
+<p><img src=
+"../imgs/2a263977796d18cd26d18346584c0bc83eed73c8.png">.</p>
+<p>The algorithm still works , even the method RELABEL updates the
+height of the vertex using the following formula:</p>
+<p><img src=
+"../imgs/7555c363bbec03873fa9cb861fc07ca4f5bdfdcf.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The modified algorithm with the new height update formula is
+as follows:</b></p>
+<p><i>h</i>= labeling</p>
+<p><i>p</i>=path</p>
+<p>// initialize the labelling</p>
+<p>1. <img src=
+"../imgs/fc5d57ad0e4ba5e12ad94f1c479983e7e5a505a7.png">and<img src=
+"../imgs/0a4be25469d60d7b9044a3877854c43000e2fca6.png"><b>for</b>
+all <img src=
+"../imgs/68055f3f51921472e9edee5caab4934d3f6801da.png"></p>
+<p>// initialize pre-flow with its respective capacity</p>
+<p>2. <img src=
+"../imgs/ff61965e7b811162bd3def86ead84396b789fd90.png"><b>for</b><img src="../imgs/5e4f7e9d42bb6fe38d44c7aec18dc24a3daea8d1.png">and
+<img src=
+"../imgs/3df0822910d034d5087e9b2ffe0d8027d0b7b6b7.png"><b>for</b>
+all other edges</p>
+<p>3. <b>while</b> <img src=
+"../imgs/9f09b54421b7ff0d34a36913040c3aba6568ce38.png"> with
+<img src=
+"../imgs/7ee846d249fa3c8e3363e9ea4acc2224ad7346d8.png"><b>do</b></p>
+<p>4. <b>if</b><img src=
+"../imgs/ac2ef06b72cb4fe35e78eb4cd94614879f04269e.png"> residual
+edge in <img src=
+"../imgs/e572ceca88715458f5aa87f6e24154492a84c733.png"> and
+<img src=
+"../imgs/8b708126a777722126bd1d5f2360082e3b5cc1bf.png"><b>then</b></p>
+<p>// comparing the label in given graph</p>
+<p>5. <b>if</b> <img src=
+"../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png"> is forward
+<b>then</b></p>
+<p>// push it forward</p>
+<p>6. increase<img src=
+"../imgs/25e1fecf8a0c7acc7f9615a2a293b5dbf927f3bf.png"> by min
+<img src=
+"../imgs/64bfb1373a90b53ca2d9bb72d7f4fb7f3751b2ab.png"></p>
+<p>7. <b>if</b> <img src=
+"../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png"> is backward
+<b>then</b></p>
+<p>// push it backward</p>
+<p>8. decrease<img src=
+"../imgs/25e1fecf8a0c7acc7f9615a2a293b5dbf927f3bf.png"> by min
+<img src=
+"../imgs/7c6858a30f4c44c924124ec4aeb814a4288ecb91.png"></p>
+<p>// re-labelled node</p>
+<p>9. <b>else</b> <img src=
+"../imgs/884181d002ac09e242fd2533a1975b953c187ff2.png"></p>
+<p>10. <b>return</b> <i>f</i></p>
+<p><b>Effect on analysis:</b></p>
+<p>Even though the height is increasing by 1 each time, according
+to Lemma26.19,26.20 and corollary 26.21, <img src=
+"../imgs/797ab92a8a5be30de02955f990962a45045ff57e.png"> vertices
+are relabelled at most <img src=
+"../imgs/3c3112c4e547d3690aff331ff3f48ed7b7f9af1c.png"> times. That
+is, the number of relabel operations is same as <img src=
+"../imgs/8af7f6360950ac2c18973a16d2b9ddd1226821b9.png">. So, the
+above change in the height increasing method, merely affects the
+efficiency of the RELABEL-TO-FRONT algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The discharge method</b></p>
+<p>The method <b>DISCHARGE</b> is used to discharge the excess flow
+from the vertices of the network by using PUSH and RELABEL
+algorithms. <b>DISCHARGE</b> pushes the excess flow of a vertex,
+till its excess flow becomes zero. When a vertex is discharged to
+zero, the next vertex is processed.</p>
+<p>The discharge method is as follows:</p>
+<p><b>DISCHARGE (</b> <i><b>u</b></i> <b>)</b></p>
+<p>// Check if the excess flow of the vertex is greater than
+zero.</p>
+<p>1. <b>while</b><img src=
+"../imgs/5542b3da1fb36904f0a85813ba4b3f696105332b.png"></p>
+<p>// store the value of current vertex of <i>u</i> in a variable
+<i>v</i></p>
+<p>2. <img src=
+"../imgs/de118a55c86a54d8b562479e07266273b85d91db.png"></p>
+<p>// Check if the vertex <i>v</i> is NIL</p>
+<p>3. <b>if</b> <img src=
+"../imgs/3a40a060b97565177483d5c73e67b1fd851e3679.png"></p>
+<p>// Relabel the vertex <i>u</i> by increasing its height.</p>
+<p>4. RELABEL (<i>u</i>)</p>
+<p>// update the present vertex of <i>u</i></p>
+<p>5. <img src=
+"../imgs/5147c1f641a21f511dd84e903ea3f2d49fb08677.png"></p>
+<p>// Check if there is a neighbouring vertex of <i>u</i> in
+downward direction for which</p>
+<p>// residual capacity of joining edge is greater than zero.</p>
+<p>6. <b>else if</b><img src=
+"../imgs/4196ea30e68bed77cfbcba361f119d26d0592085.png">and<img src=
+"../imgs/f7dfd2ae9034f65372289265c7cee975368bf6bf.png"></p>
+<p>// Push the excess flow from vertex <i>u</i> to vertex
+<i>v</i></p>
+<p>7. PUSH (<i>u</i>, <i>v</i>)</p>
+<p>// Update the current vertex of <i>u</i></p>
+<p>8. <b>else</b></p>
+<p><img src=
+"../imgs/b16f1ae3bddfc672a29bad905ca7b05d3cde1b2d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modified push-relabel method:</b></p>
+<p>Generally, each time the push-relabel method selects a overflow
+vertex arbitrarily from the list of vertices and discharges it.
+Thus it runs in <img src=
+"../imgs/e576c308c572d59037129745f4a1d083d9e915e6.png">time. Now,
+the modified push-relabel algorithm that selects the highest
+overflowing vertex each time is as follows:</p>
+<p><b>The Push-relabel method:</b></p>
+<p>// Creating a list which contains all the vertices other than
+source and sink.</p>
+<p>1. <b>insert</b> each vertex in a list</p>
+<p>// execute the while loop till all the vertices are
+processed.</p>
+<p>2. <b>while</b> (list is not empty)</p>
+<p>// find the vertex which has highest overflow value</p>
+<p>3. vertex=find (highest overflowing vertex)</p>
+<p>// call the discharge procedure and then update the list</p>
+<p>4. DISCHARGE (vertex)</p>
+<p>5. <b>end</b></p>
+<p>The above algorithm finds the highest overflowing vertex in the
+list and discharges it. If the vertex is discharged successfully,
+it is removed from the list. The algorithm terminates when the list
+becomes empty.</p>
+<p><b>Analysis of the algorithm:</b></p>
+<p>• In the above algorithm, the ‘while’ loop in the line 2
+iterates for <i>V</i> times, since the number of vertices in the
+network is <i>V.</i></p>
+<p>• The inner loop or the loop in the line 3 executes for the
+number of times of vertices in the network. The find method in line
+3 takes O(|<i>V</i>|) time to find the highest overflowing vertex.
+The discharge method in the line 4, runs in the time of
+O(|<i>V</i>|<sup>2</sup>).</p>
+<p>• In the worst case scenario, all the |<i>V|</i> vertices are
+discharged. In this case, there are maximum <img src=
+"../imgs/f6ba6ad61f001147e7de39da057f23269f1ac16f.png"> non
+saturating push operations.</p>
+<p>• So, the operations performed in the line numbers 2, 3 and 4,
+results in the complexity of the above algorithm as <img src=
+"../imgs/c50ed5f4af8ba19dd7c4fd925e847034b9ee0aae.png">.</p>
+<p><b>Hence, the overall complexity of the above algorithm can be
+written as</b> <b><img src=
+"../imgs/c50ed5f4af8ba19dd7c4fd925e847034b9ee0aae.png"></b> <b>in
+case when there is the discharge of maximum overflowing
+vertex.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>GAP LABELING HEURISTIC</b>:</p>
+<p>The gap relabeling heuristic renovates the labeling positions of
+the vertices that cannot reach to the sink. Thus the updated labels
+do not have any link with the sink.</p>
+<p>If there exists a height (<i>k</i>) in the network at which no
+nodes are found, then gap heuristics detects the nodes that have a
+height above the <i>k</i> and are relabeled to position equal to
+the number of nodes in the network plus one. That is, the gap
+heuristics improves the actual performance by relabeling the nodes
+that are disconnected from the sink (<i>t</i>).</p>
+<p><b>For example:</b></p>
+<p>Consider the graph in which no vertices exist at the label
+<i>c</i> and the minimum cut exists at this point.</p>
+<p><img src="../imgs/06dc64769091aabb214420498c4da6bb8a7cc680.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\12.tif"></p>
+<p>• According to gap relabeling heuristics, the nodes at the above
+<i>c</i> are moved to the height of the source or above the height
+of the source.</p>
+<p>• Now, consider an integer<img src=
+"../imgs/4ee4225e03c26cb4ef17c5759fae83e872752180.png">, so that no
+vertex has the height <i>k</i> . Then the gap labeling heuristic
+puts such node on the side of source.</p>
+<p>• As the label of the sink is always zero, its label does not
+reach any of the labels of the vertices. Thus the labels of
+remaining vertices can be increased to<img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">. By
+updating the labels of vertices. In this way, it is possible to
+eradicate the inefficient vertices from pushing flow to the
+sink.</p>
+<p>• The above work brings each vertex that satisfies the condition
+<img src="../imgs/f76267db372244019344eb723e3da52efc565158.png"> to
+the side of the source in the minimum cut.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proving that</b> <i><b>h</b></i> <b>is a height
+function:</b></p>
+<p>Using the principle of induction, that is by applying induction
+on the number of basic operations, <i>h</i> can be proved as a
+height function.</p>
+<p><b>ASSUMPTION:</b></p>
+<p>If <i>h</i> is taken as a height function, then the operation
+Relabel<img src=
+"../imgs/5016ca684b6376218ca424438a7f062876eb6684.png"> proves that
+<i>h is</i> a height function.</p>
+<p>1. <img src=
+"../imgs/06accd3d6637143ab7a68ac77ea30ae44a243472.png" alt=
+"D:\Tiffs\New folder (2)\2254-33-1.7E.tif"></p>
+<p><img src=
+"../imgs/4fea80659de5915cf5f159a76dbe3ac29322e734.png"></p>
+<p>The Relabel operation on <img src=
+"../imgs/5016ca684b6376218ca424438a7f062876eb6684.png">confirms
+that <img src=
+"../imgs/f72901cd8793c7d01c6e65f5c0743367fb7b6bad.png">afterward.</p>
+<p>2. <img src=
+"../imgs/6840b5165a5bfe9cd38bdb1e9f11553c83fa239a.png" alt=
+"D:\Tiffs\New folder (2)\2254-33-1.7E.tif"></p>
+<p><img src=
+"../imgs/54e699052accbeff6831c3117209d296f90d93c4.png"></p>
+<p>Similarly, <img src=
+"../imgs/6abce4de1f8fcb378697f5224dab12b3421d521a.png"></p>
+<p><b>Hence, the attribute</b> <i><b>h</b></i> <b>is a height
+function.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

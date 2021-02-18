@@ -1,0 +1,721 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 29.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>A linear program is generally a maximization or minimization
+problem and there can be either equations or the inequalities for
+the constraints.</p>
+<p>Various algorithms are there for solving the linear programs,
+among them the most standard algorithm is the SIMPLEX algorithm. It
+generally has a fast running time. There is also algorithm whose
+running time is in polynomial, as ELLIPSOID algorithm. It is slower
+in practice.</p>
+<p>Here to show that the algorithm for linear program can be used
+to solve the linear inequalities feasibility problem; consider the
+ELLIPSOID algorithm, it can be used to solve the feasibility
+problem. The notion is to have a big ellipse, that is the ellipse
+in the higher dimension. It must lie in the feasible region. Then
+we will test that the ellipse violates any constraint or not.</p>
+<p>If there is no violation then the work is done. But if there is
+violation then look for it.</p>
+<p>So in this way it is possible to know that the solution lies in
+the ellipse. And this step is repeated to create a smaller ellipse
+and so on. It has an advantage that you only have to show that the
+current solution violates the constraints or not.</p>
+<p>So, if there is an algorithm for linear program, it can be used
+to solve the <b>Linear Inequality Feasibility Problem.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>In this problem to show that there is an algorithm for linear
+inequality feasibility problem it is possible to use it to solve
+the linear program. For this, consider an example in which we have
+the inequalities procedure and on the basis of that the linear
+program is formulated,</p>
+<p>Consider the example of maximum flow problem for this,</p>
+<p>Network flow model: In which it is to be determined the maximum
+flow from the network.</p>
+<p>Inequality constraints:</p>
+<p>1. For the edge <img src=
+"../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png"> set a
+variable <img src=
+"../imgs/339bb92576a41081331b0d229e289cae76f4711e.png">and consider
+only the positive flow in order to have the fewer constraints.</p>
+<p>Linear program:</p>
+<p>Objective:</p>
+<p>The objective is to find out the maximum possible flow through
+the edges of the flow network.</p>
+<p>That is the objective function, given by:</p>
+<p>Maximize:</p>
+<p><img src=
+"../imgs/f3d59a3add7bdbaf6ae7a75c2cfd7a0f3b1dc5a4.png">(The flow
+into the <i>t</i> is maximized minus any flow out from the
+<i>t</i>)</p>
+<p>Constraints: (Below mention point 2. and 3. are constraints)</p>
+<p>2. For all of the edges there is</p>
+<p><img src=
+"../imgs/034c525cd906f78e43022cd12450cf3d2f1bdbc2.png"></p>
+<p>(Capacity constraints)</p>
+<p>3. For all of the vertices there is:</p>
+<p><img src=
+"../imgs/f8609f5553ee5e5c742075d936645202a2b71495.png"></p>
+<p>(Conservation constraints)</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/cfb0755ff9771e5f809955aeaae1d3fc1459555d.png">
+<hr>
+<img src="../imgs/9bba0edf74fc0d5c5625621c73f1628e2c695a5a.png">
+<hr>
+<img src="../imgs/795ee63fb057c7c9cfd5854e4276d054252899ba.png">
+<hr>
+<img src="../imgs/2afc80469f19609ea8ff68648a0206718dfcdb39.png">
+<hr>
+<img src="../imgs/95961ac6f1ddcd035b02f1133d813bc4615116da.png">
+<hr>
+<img src="../imgs/2288080a9f05c3166b26baef6520bceebe34e89d.png">
+<hr>
+<img src="../imgs/6d26ac50bebae727a7b56d6652700152f823385d.png">
+<hr>
+<img src="../imgs/203220ff5becf3d0f97249eda5adae41c6098f7d.png">
+<hr>
+<img src="../imgs/48d41071c397a6c5b1044e861aed6a0234686af9.png">
+<hr>
+<img src="../imgs/7a9affc6c6533690e3824ecffbbd7233eaa93445.png">
+<hr>
+<img src="../imgs/152880d409a854948f258c7e0d66ecc3c7f2193b.png">
+<hr>
+<img src="../imgs/62cd15a0f2ba66c169416c871510d94bbc9bc709.png">
+<hr>
+<img src="../imgs/5c06cf9b3818eb452fb66bb828035a1efe1f6da0.png">
+<hr>
+<img src="../imgs/2229405e090cc360a802c1b3b5e9e7d9e28bacc1.png">
+<hr>
+<img src="../imgs/e36760a1af9b91b696534abd3686b8bf625eed22.png">
+<hr>
+<img src="../imgs/b00674eea6744be01f3f16818d3db895244c436c.png">
+<hr>
+<img src="../imgs/83fb9de9dc6e048608032c4b720e1fb2c9954330.png">
+<hr>
+<img src="../imgs/fe02f1d46ddf22e2b22b7fda7e9622d201f50e5f.png">
+<hr>
+<img src="../imgs/904dfa55241b830aca8694ca23b327189a80c387.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Integer Linear Programming</b></p>
+<p><b>Linear Programming:</b></p>
+<p>Linear programming is a way of achieving the maximum possible
+outcome from a set of resources that are represented as an
+integrated mathematical design.</p>
+<p>In the technical terms, the linear programming is a way to
+achieve optimum results from the linear programming problems. This
+optimization is subject to a few constraints.</p>
+<p>A linear program is commonly in the below given form:</p>
+<p>In a standard form for a linear program, there is a set of
+<i>p</i> real numbers that are<img src=
+"../imgs/39785c7b620b878141a51ec61f2526d3b388cec6.png">, another
+set of <i>q</i> real numbers that are<img src=
+"../imgs/84fb34e0509e338efd99b068086fee585ad1fdf3.png"> and a set
+of<img src=
+"../imgs/b2a92179c53ebd50387383530bca1a43746a2875.png">real numbers
+that are<img src=
+"../imgs/884d95328550c0cab6a30d4f4c43d6988d764a16.png">where,</p>
+<p><img src=
+"../imgs/a2fffe244451f068b76e9cdfcd1a0d90849f917e.png"></p>
+<p><img src=
+"../imgs/fbb2137243d040cb19bfd9b228696ffbe5d869ae.png"></p>
+<p>Now the objective is to find <i>p</i> real numbers<img src=
+"../imgs/55db0d03d80e4b3031f1947950493a0acbeeb709.png">such
+that</p>
+<p>Maximize:</p>
+<p><img src="../imgs/04372decb8d9b89cba8644873ef628c923520774.png">
+<b>… … (1)</b></p>
+<p>And that is subject to,</p>
+<p><img src="../imgs/5d50b9dd599867b2da0c43dce65bff39fa2d307c.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/9ed522f4e550c53445df5a8686cda8cab558dcab.png">
+<b>… … (3)</b></p>
+<p>The first expression is called the objective function. The
+second and the third expression show the constraints.</p>
+<p><b>Integer Programming:</b></p>
+<p>This is just like a linear program with an extra rule. In this
+the variable are allowed to take only integer values. With this
+constraint, this programming is also known as the Mixed Integer
+Liner Programming (MILP). Many, but not all of the conditions that
+are true for the common linear programming, do hold for the Mixed
+Integer Linear Programming.</p>
+<p>In the general form the integer program can be expressed as:</p>
+<p>Minimize</p>
+<p><img src=
+"../imgs/152740c84985c6aff091c98b5159b592a5b6ce22.png"></p>
+<p>Subject to condition,</p>
+<p><img src=
+"../imgs/b905a7fae58710114abf3377c2565db6439f55b8.png"></p>
+<p><img src=
+"../imgs/04ebb66ff1811182892b95b145efd651d7545444.png"></p>
+<p><img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">is
+integer.</p>
+Various integer programs include: Assignment problem, Minimum
+Spanning- tree problem, Product-mix problem and so many; it is more
+difficult to solve the integer linear program than to solve the
+normal linear program. It is a NP-hard problem it means that the
+problem cannot be solve in a polynomial time.</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>Here, to show the weak duality for the integer linear program;
+as in the question, lemma (29.8) should be referred to.</p>
+<p>The theorem defines that the objective function of any linear
+program that is in its primal form is always bounded for its upper
+limit by the objective function of its dual form. The value of the
+objective function for the primal form is always smaller than or
+equal to the value of the objective function for the dual form.</p>
+<p>Considering the standard form of the linear programming there
+are <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">real numbers
+that are<img src=
+"../imgs/b6007fb3367f590c95419f0774761e41db2a95b9.png"> and the
+<i>m</i>-real numbers <img src=
+"../imgs/098082024137cd6024e29defbd2fdf6fa47fdb1d.png"> and
+<i><img src=
+"../imgs/d43004ef237f201f6496490d18a1b0eb1c9e3b9e.png"></i><i>-</i>real
+number <img src=
+"../imgs/166c60b7e920a2f224cdd34bcbfbb8c4ac1eb0fb.png"> for the
+value of <i><img src=
+"../imgs/fe1e51b937bf58d1bb13508b46e7c53f2573fc78.png"></i>and the
+value of <img src=
+"../imgs/e303f05f90b403b5aaf1d63d9ccf13a742d9573b.png"> and here
+are to be found <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> real
+numbers <img src=
+"../imgs/d06677348573a353e0d835213f982f8d03bd951e.png">with the
+linear program as,</p>
+<p><b>(a) Primal linear program:</b></p>
+<p>Maximize-</p>
+<p><img src="../imgs/c7f95d4502c2e9c5f29b3d3444a628ead189c0af.png">
+<b>… … (1)</b></p>
+<p>Subject to condition-</p>
+<p><img src=
+"../imgs/4857b161ccdc2cf2b0bff8a1e6bdaab0d5f92ecd.png">for<i><img src="../imgs/fe1e51b937bf58d1bb13508b46e7c53f2573fc78.png"></i>
+<b>… … (2)</b></p>
+<p><img src="../imgs/36636afeb13ebaa66ac38b1f178173a591fe6a21.png">
+for<img src="../imgs/e303f05f90b403b5aaf1d63d9ccf13a742d9573b.png">
+<b>… … (3)</b></p>
+<p>Equation <b>(1)</b> represents the objective function for the
+integer programand the equation <b>(2)</b> and equation <b>(3)</b>
+represent the constraints for the objective function.</p>
+<p><b>(b)Dual linear program:</b></p>
+<p>When a dual linear program is referred then the original linear
+program is called as the primal. Dual for any linear program is
+just an image of the primal form of it. If the dual is found for a
+linear program that is already in the dual form, it yields the
+primal form of itself.</p>
+<p>The dual form can be expressed mathematically as:</p>
+<p>Minimize-</p>
+<p><img src="../imgs/39d9a0908319ad45d766cccb2dc30eca23680482.png">
+<b>… … (4)</b></p>
+<p>Subject to condition-</p>
+<p><img src=
+"../imgs/7487a6eccce4a2c08ba653e0b31917286c2302bf.png">for<img src=
+"../imgs/e303f05f90b403b5aaf1d63d9ccf13a742d9573b.png"> <b>… …
+(5)</b></p>
+<p><img src="../imgs/25bbcbb6dab06051e9adcf8bfbf4e57cb18182f2.png">
+for<i><img src=
+"../imgs/fe1e51b937bf58d1bb13508b46e7c53f2573fc78.png"></i> <b>… …
+(6)</b></p>
+<p>In order to form the dual the maximizationis altered to
+minimization and the roles of coefficients on the right hand side
+and theobjective function are exchanged.</p>
+<p>Now as considered in the required lemma here is<img src=
+"../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png"> which is a
+feasible solution for the concerned primal linear program
+<b>(a)</b> and <img src=
+"../imgs/07c136328e5d7141536dbc5f9ace6acd1a508814.png"> be the
+feasible solution for the dual of the same.</p>
+<p>Considering the above:</p>
+<p>The relation can be obtained by using the inequalities of dual
+linear program <b>(5)</b></p>
+<p><img src=
+"../imgs/d376ee3ec108cfb4afb2710e197d5370eb023594.png"></p>
+<p><img src=
+"../imgs/de1e4e87f1266422349889f9e2f3c721f2aec8ca.png"></p>
+<p>Now, using the in the primal (2)</p>
+<p><img src=
+"../imgs/5b95def7350deaad419a34a9b8a1e480b5c7129a.png"></p>
+Hence the required lemma is proved and it illustrates that theweak
+duality holds for the integer linear program.</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>It is to be shown that the duality does not always hold for the
+integer linear program. For the duality theorem refer to the
+section 29.4 of the textbook.</p>
+<p>The simple statement representing the duality theorem is as
+below:</p>
+<p>If there is an optimal solution for the primal form of the
+linear program and so does for the dual form of the linear program,
+then the values of the objective function of both of the primal
+program and dual form would be equal.</p>
+<p>Considerthe issue:</p>
+<p><img src=
+"../imgs/2ac29bc12ff8784378a1ab0fcadb684e0ac31d33.png"></p>
+<p>They will form a weak dual pair if</p>
+<p><img src=
+"../imgs/3090cf6dd78459ae3ac6d3aa2e96bb2c03879141.png">For all
+<img src="../imgs/c89297c561dac8081e0cbef4e4ece0a9ae18612f.png">
+and <img src=
+"../imgs/70f4bdcded3c12b8b45db3ec3c41177584d109f7.png"></p>
+<p>When the condition <i>a</i>=<i>b</i> is fulfilled there would be
+a strong dual pair. And the proposition that</p>
+<p><img src="../imgs/f7c521a70dc83dd44d649d3ddc694e7ef6a2b7fc.png">
+And the linear program</p>
+<img src="../imgs/5a537fb77c1c6f225f1fe712e54f2d18775683ee.png">
+Forms a pair of weak-dual problem So it shows that the weak duality
+hold for the integer linear program but it is not true for the
+strong duality. Hence the condition for duality in the integer
+linear programming does not hold.</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>In the given problem, there is an assumption that the both the
+primal integer and the dual integer program are both feasible and
+bounded. And various variables are used as:</p>
+<p>1. P: - optimal objective value of primal of the linear
+program.</p>
+<p>2. D: - optimal objective value of dual of the linear
+program.</p>
+<p>3. IP: - optimal objective value of primal of the integer linear
+program.</p>
+<p>4. ID: - optimal objective value of dual of the integer linear
+program.</p>
+<p>In the previous sections both of the weak duality theorem and
+the strong duality theorems have already been proven. So, with
+reference to the theorem there holds the condition that:</p>
+<p>1. As per the weak duality theorem of the linear programming the
+value of the objective function for the dual always dominates the
+value of the objective function of the primal form.</p>
+<p>That is:</p>
+<p><img src=
+"../imgs/9591e2c41d5155c0d7a84d9f241cbd6baf58d415.png">.</p>
+<p>2. According to the strong duality theorem solutions of primal
+form of the linear program and dual form of the same linear program
+are optimal only when their values are equal.</p>
+<p>That is:</p>
+<p><img src="../imgs/928aa2c1c6b1cbec31d8cfd73cb97d5b461a381c.png">
+<b>... … (1)</b></p>
+<p>Here the solution is feasible so, the given relation is obtained
+by the using the above specified theorem</p>
+<p>Using the weak duality theorem,</p>
+<p><img src="../imgs/5d78c06ad1ae2c3d1e6fa0fef87099cad8007c97.png">
+<b>… …</b> <b>(2)</b></p>
+<p>Now as the integer programming takes only the integer values the
+optimal solutions for the integer solution would be less in amount.
+From here, the conclusion that the primal form of the linear
+programming would be greater than the primal form of the integer
+program and the dual for the linear program would be smaller than
+dual of the integer program.</p>
+<p><img src="../imgs/d0e53a4714e6434855a55c96bce53db27ffb3247.png">
+<b>… … (</b><b>3)</b></p>
+<p><img src="../imgs/e21c8222bcc5efc5d620d2a2341f0d49f33d32ab.png">
+<b>… … (</b><b>4)</b></p>
+<p>Hence the following relation can be established by using all
+four of the above mentioned equations</p>
+<p><b><img src=
+"../imgs/3e3af4e3c60a89e6851a93d297743ce1186d6fcc.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Proof of Farkas’ Lemma</b></p>
+<p><b>Linear Programming:</b></p>
+<p>Linear programming is a way of achieving the maximum possible
+outcome from a set of resources that are represented as an
+integrated mathematical design.</p>
+<p>In technical terms, linear programming is a way to achieve
+optimum results from the linear programming problems. This
+optimization is subject to a few constraints.</p>
+<p><b>Farkas’ lemma:</b></p>
+It is a fundamental tool useful for the proof of linear programming
+duality theorems. This is also known as the fundamental theory of
+<b>linear inequalities</b>. It is a mathematics result which says
+that a vector is either in a convex cone or a hyper plane, which
+exist to separate the vector from the cone. The illustration of
+Farkas’ lemma is as follows: Suppose there is a matrix <i>A</i>
+with dimensions <img src=
+"../imgs/a659c01ea9f3d4b772daa28eb5121b5f7d8f06ee.png"> and the
+vector <i>c</i> that is an <i>n</i>-vector. In that case of a one
+system, the form is <img src=
+"../imgs/e5e7f90e130752fb7a39f79411536b6c7e084975.png"> <img src=
+"../imgs/9e130dbaa06686c6432bda737c7e128673ad8667.png"> And the
+other is <img src=
+"../imgs/5fdd9eaadaa5eabe63f9e3a10a31c4cd7d002c7b.png"> <img src=
+"../imgs/22191b0cd29ae1ea4acd7e0552a582454ef66732.png"> Then only
+one of them can have a feasible solution. It is not possible for
+both of them to have a feasible solution at the same time. It is
+considered as an example of a theorem of the alternatives. This
+theorem states that among the two systems, one of them is the
+solution. There will be no possibility of both of them or none, as
+a solution. Farkas’ lemma has a wide range of applications in
+linear programming. It is used in proving the problems related to
+strong or weak duality theorem. It is also used as a basic game
+theory.</div>
+<hr>
+<div class="answer">
+<p><b>Proof:</b></p>
+<p>According to the question it is to be proved that given <i>A</i>
+which is a<img src=
+"../imgs/a659c01ea9f3d4b772daa28eb5121b5f7d8f06ee.png"> matrix and
+the <i>c</i> is an <i>n</i>-vector. Then the Farkas’ lemma states
+that, among two systems, exactly one of the systems can be
+solved:</p>
+<p><img src=
+"../imgs/cc3cf5850064f7e64750ebea9a2e56ec6e6115a9.png"></p>
+<p>And</p>
+<p><img src=
+"../imgs/b898286b104a8efc0f7b2f17d9a6624d4a80162e.png"></p>
+<p>Where <i>x</i> is an <i>n</i>-vector and the <i>y</i> is an
+<i>m</i>-vector.</p>
+<p>The two statements cannot hold simultaneously.</p>
+<p>Consider that</p>
+<p><img src="../imgs/22191b0cd29ae1ea4acd7e0552a582454ef66732.png">
+Such that</p>
+<p><img src=
+"../imgs/5fdd9eaadaa5eabe63f9e3a10a31c4cd7d002c7b.png">And</p>
+<p><img src=
+"../imgs/922b8ef51da24361729ca3cec70f280bc8dd097f.png"></p>
+<p>Such that,</p>
+<p><img src="../imgs/e5e7f90e130752fb7a39f79411536b6c7e084975.png">
+And <img src=
+"../imgs/570c040cd8d4431835540b44d682747b92d75d89.png"> then</p>
+<p><img src="../imgs/7cf3a88b6b4dca2194d0d4b5e6065a750218a63b.png">
+is a contradiction.</p>
+<p>Consider that,</p>
+<p><img src=
+"../imgs/1bc95afeb944bfd0f9348612e2909c8e564d762c.png"></p>
+<p>Then there is <img src=
+"../imgs/22191b0cd29ae1ea4acd7e0552a582454ef66732.png">such
+that<img src=
+"../imgs/5fdd9eaadaa5eabe63f9e3a10a31c4cd7d002c7b.png"> if and only
+if</p>
+<p><img src=
+"../imgs/750753b36a8ff25b8eb2a634a4f97e4845ba551a.png">.</p>
+<p>From the theory of polyhedron and duality,</p>
+<p>The representation of all convex polyhedral cones is given
+below:</p>
+<p><img src=
+"../imgs/f7093efa438be2f37dc4c054d679fdbe8188999a.png"></p>
+<p>For some matrix, it has been found out that for cones, the
+concept of polyhedral and finitely generated are equivalent as per
+the <b>WEYL’s theorem</b>.</p>
+<p>The theorem says that:</p>
+<p>A cone <i>C</i> is polyhedral if and only if it is finitely
+generated, that is, the cones are produced by a finite number of
+vectors.</p>
+<p>Hence<img src=
+"../imgs/38b74475b045dd9529252e1e812b5f11853714f8.png"> if and only
+if <img src="../imgs/c1c98d5a30a7dc5d47eeb169897e0024c8d4e0ce.png">
+among the row of <i>A</i> such that <img src=
+"../imgs/45581dea2c13476cae05807c6b6a375f63d096a7.png">&gt;0.</p>
+<p>Clearly, as<img src=
+"../imgs/03793068a4e2402f73614e8fc81cbe8220dc7b28.png">for each
+column of <i>A</i>, so<img src=
+"../imgs/e5e7f90e130752fb7a39f79411536b6c7e084975.png"></p>
+<p>Hence, the required condition is fulfilled that is desired.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Minimum Cost Circulation</b></p>
+<p>For a better understanding of a minimum cost circulation,
+knowledge of various terms used in it must be known such as
+network, circulation etc., to illustrate which, assume a network
+having a source and a link. The network consists of various
+nodes.</p>
+<p>A flow network is nothing but a directed graph of vertices and
+edges. Each of the graph edge has a capacity. The capacity defines
+the data value that can be moved through that edge.</p>
+<p>The capacity is always greater than 0. One more thing is that if
+there is an edge going from a vertex <i>v</i><sub>1</sub> to vertex
+<i>v</i><sub>2</sub> then no edge can go from <i>v</i><sub>2</sub>
+to <i>v</i><sub>1</sub>.</p>
+A flow which is balanced at each node of the network is termed as a
+circulation. The cost of the circulation is identified with the
+cost of flow in the network. Minimum cost circulation is to be
+dealt with, here. It is a circulation which has the smallest
+possible cost in the network. In the network, there is no
+restriction on the network flow. Similar to the flow networks,
+minimum cost circulation problem must abide by the flow and
+capacity constraint for the network.</div>
+<hr>
+<div class="answer"><b>For example</b>, If the cost along all the
+networks is positive, then there will be no flow in all the edges.
+However if there is a negative cost cycles in the network then
+there will be a flow in the edges.</div>
+<hr>
+<div class="answer">
+<p><i><b>a</b></i> <i>.</i> Consider a graph <i>G</i> (<i>V</i>,
+<i>E</i>); in this, <i>V</i> represents the set of vertices and
+<i>E</i> represents the set of edges. Assume <img src=
+"../imgs/8e305bf0195d27bd7a89914bb6431861d4125aa8.png"> the cost of
+each edge <img src=
+"../imgs/223c3ec052a7b9339f34f9fbbe34ad80620fc3c9.png"> which
+denotes the cost of transportation of one unit along the edge in
+the graph.</p>
+<p>Let <img src=
+"../imgs/27419bfa7b05361b664163de168b49a747b78303.png"> and
+<img src="../imgs/0ebb4b046b254680dc6cfbb6389f18651511e849.png"> be
+the lower and the upper bound capacity of the flow of the network
+along the edge <img src=
+"../imgs/223c3ec052a7b9339f34f9fbbe34ad80620fc3c9.png">and let
+<i>s</i> (<i>u</i>) be the supply of the node <i>u</i> and
+<img src="../imgs/8931df77a84642f1f673aaedc5b5c38a0237f107.png">
+indicates the units of flow which are sent over the edge<img src=
+"../imgs/223c3ec052a7b9339f34f9fbbe34ad80620fc3c9.png">.</p>
+<p><b>The linear program is as:</b></p>
+<p>Minimize-</p>
+<p><img src="../imgs/42d4f12c83451492ece33ca225b62465729a7547.png">
+<b>… … (1)</b></p>
+<p>Subject to condition-</p>
+<p><img src="../imgs/4f4f405e7db7cd33ee704edeaa2807458be29fea.png">
+for all <img src=
+"../imgs/c51d728b45bd8f00ad55113c9c6517d846d3220b.png"> <b>… …
+(2)</b></p>
+<p><img src="../imgs/9aeca4d2476bae3c935b1ca76aaba88ac7d4411f.png">
+for all <img src=
+"../imgs/bd1c53ec28d4a80cfbcdcdafac33e183abb8d47c.png"> <b>… …
+(3)</b></p>
+<p>Where,</p>
+<p><img src="../imgs/71c0efa7c56ac7f338ad960574658618608ab5ad.png">
+<b>… … (4)</b></p>
+Here, the constraints <b>(2)</b> are the <b>flow conservation
+constraints</b>. The total amount of flow and entering of the nodes
+are represented by the two sums in <b>(2)</b>. Thus the flow
+conservation constraint expects that the outgoing flow less the
+incoming flow, levels the supply and demand of the node
+respectively for every node. The constraint <b>(3)</b> is the
+<b>capacity constraint which says</b> that for each of the edges,
+the flow ranges between the lower and the upper bound.</div>
+<hr>
+<div class="answer"><i><b>b.</b></i> <b>To find the</b> <b>optimal
+solution for the minimum cost circulation:</b> Now, here is given
+the condition that <img src=
+"../imgs/223c3ec052a7b9339f34f9fbbe34ad80620fc3c9.png"> and cost
+(<i>u</i>, <i>v</i>)&gt;0. An optimal solution for this
+minimum-cost circulation is to be found. Consider a circulation
+<i>C</i> in the network which is not optimal and let <i>C</i># be a
+circulation which is optimal in the network <i>G</i>. For a given
+circulation to be optimal it is to be shown that <img src=
+"../imgs/a70b1ef6615e59e8447e23cb39b40cfd85dd78b7.png">has a
+negative cost cycle and the difference between <i>C</i> and
+<i><img src=
+"../imgs/aad138874766ae7d407c43884cc0f82619801f53.png"></i> that is
+<img src="../imgs/c83d9a5766e760bdc28b9c384a5a855886a25dae.png">;
+termed as circulation. Thus, it has cycle decomposition; and since
+the cost of <i>C#</i> is tinier than the cost of <i>C</i>, so the
+difference, that is<img src=
+"../imgs/c83d9a5766e760bdc28b9c384a5a855886a25dae.png">, is a
+circulation with negative cost, and it is also viable in<img src=
+"../imgs/a70b1ef6615e59e8447e23cb39b40cfd85dd78b7.png">. And it
+shows that in the decomposition, at least one of the cycles has to
+be negative. So the <img src=
+"../imgs/a70b1ef6615e59e8447e23cb39b40cfd85dd78b7.png"> contains a
+negative cycle. Hence, the condition for having an optimal solution
+is fulfilled.</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> <b>To find the Maximum Flow Problem as Minimum
+cost circulation:</b></p>
+<p>A graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">is given in
+which the <i>V</i> represents the set of vertices and <i>E</i>
+represents the set of edges. It is also given that the source
+<i>s</i> and the sink <i>t</i> and the cost <i>c</i> in the network
+<i>G</i>.</p>
+<p>So an edge <img src=
+"../imgs/76be760546269492cdf0e8b279117273fbbd258f.png"> can be
+summed up to the graph.</p>
+<p>Now define the cost of the edges in the maximum-flow problem
+to</p>
+<p><img src=
+"../imgs/c9571794312caaa354c5e85cdd0a3fa7122e5041.png"></p>
+<p>That is in turn equal to:</p>
+<p><img src=
+"../imgs/441567224dc369b28ac01c18ac4b05fac52db6ca.png"></p>
+<p>The capacities on the edge <img src=
+"../imgs/9b67c005853c95449e3f626868715bd192c544c8.png"> are such
+that<img src=
+"../imgs/9c153aab481e25df58a8c30d34d00bb9333b85e9.png">.It implies
+that the direction of flow is from <i>t</i> to <i>s</i>.</p>
+<p>So there is one-to-one correspondence between the circulations
+in the new graph and the flow in the original graph <i>G</i>. This
+correspondence satisfies all the flow conservation constraints
+in<img src=
+"../imgs/10e2a8d50162c61c897045408d0895f4aaccc459.png">.</p>
+<p>The cost of the circulation in the new graph is equal to the
+minus the net flow from <i>s</i> or into the <i>t</i> in the
+original graph.</p>
+<p>The formulated form would be as below:</p>
+<p>Minimize,</p>
+<p><img src="../imgs/72e79c58f789d11403e2fa194849e3152f6e39e2.png">
+<b>… … (5)</b></p>
+<p>Subject to:</p>
+<p><img src=
+"../imgs/3548a30d823ef093c108af5f8c66ffa5d66d4d92.png">For all
+<img src="../imgs/a561df60cf8b6497cfb3215e5f3edfe10408969d.png">
+<b>… … (6)</b></p>
+<p><img src="../imgs/86769e3ca0b27291ee23f21f90579b27c1d184fd.png">
+For all <img src=
+"../imgs/c72f3bc1df3989b78ff13c5170c3d2c18ceacdd9.png"> <b>… …
+(7)</b></p>
+<p>Hence, the maximum flow problem in the original graph <i>G</i>
+is equivalent to the minimum cost circulation problem in the new
+graph.</p>
+Hence, a solution from a maximum-flow problem to the minimum-flow
+problem can be obtained.</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i> <b>To find the Single Source Shortest Path
+Problem as Minimum Cost Circulation Problem:</b></p>
+<p>Consider the graph <i>G</i> (<i>V, E</i>) where <i>V</i>
+represent the set of vertices and the <i>E</i> represents the set
+of edges. It is also evident that a source <i>s</i> and the
+destination <i>t</i>, and <i>d</i> is computed which is the weight
+of the shortest path from <i>s</i> to <i>t</i>. Here <i>w</i> is
+the weighted function such that <i>w</i>:</p>
+<p><img src=
+"../imgs/2459fbb04531bf038ba059fc1a3dddc387c06456.png">.</p>
+<p><b>Linear program:</b></p>
+<p>1. A new variable <img src=
+"../imgs/fe530aa621cf66e93d7cf1d300cf27f155f0a278.png"> is
+introduced for each vertex <i>v</i> that is, the weight of the
+shortest path from the source <i>s</i> to vertex <i>v</i>.</p>
+<p>2. Minimize</p>
+<p><img src="../imgs/7d1c3707e8cbb472c4e7cc9c1386ed1d01ad26c1.png">
+<b>… … (8)</b></p>
+<p>Subject to the conditions:</p>
+<p><img src=
+"../imgs/1a90eb0ed28843fb2139303cd68b410bcb5c4716.png">For
+all<img src="../imgs/223c3ec052a7b9339f34f9fbbe34ad80620fc3c9.png">
+<b>… … (9)</b></p>
+<p><img src="../imgs/54c4147de32dadf1aa67fc45f831e7bac986766f.png">
+<b>… … (10)</b></p>
+<p>So, the above formulates the single source shortest path problem
+as the minimum cost circulation problem.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

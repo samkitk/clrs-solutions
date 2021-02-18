@@ -1,0 +1,559 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 10.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Linked list is a data structure in which all elements are
+arranged in linear order. In singly linked list, each node contains
+two fields. One is data field and another one is address field.
+Data field stores the data and address field points the address of
+the next node.</p>
+<p><b>The following are the two kinds of dynamic-set
+operations:</b></p>
+<p>1. Query operations, which return some information. For example
+finding MAXIMUM, SUCCESSOR etc.</p>
+<p>2. Modifying operations which change the set. For example,
+INSERTION and DELETION.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>INSERTION on singly linked list:</b></p>
+<p>• INSERTION (<i>A</i>,<i>y</i>) inserts an element <i>y</i> into
+a singly linked list <i>A</i>.</p>
+<p>• Singly linked list contains only pointer <i>next</i>, but not
+<i>prev</i>.</p>
+<p>• Since inserting a new node at the beginning of the singly
+linked list does not require traversing linked list, INSERTION can
+be possible in <img src=
+"../imgs/7b99e19d963de528f0f8e8939e4000e6548dd147.png"> time on a
+singly linked list.</p>
+<p>SINGLY-LIST-INSERT (<i>A</i>, <i>y</i>)</p>
+<p>1 <i>y.next</i> = <i>A.head</i></p>
+<p>2 <i>A.head</i> = <i>y</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the above Algorithm:</b></p>
+<p>• The above operation takes two arguments <i>A</i> and <i>x</i>.
+where <i>A</i> is a singly linked list and <i>x</i> is an element
+whose key or data attribute is already filled.</p>
+<p>• In the above algorithm, new element is inserting at the
+beginning of the linked list.</p>
+<p>• In the first line, <i>head</i> element is set as the next to
+new element.</p>
+<p>• In the second line, <i>head</i> is updated as the new element
+is the <i>head</i> of the list <i>A</i>.</p>
+<p><b>Time complexity:</b></p>
+<p>• Since there is no loops used in the algorithm and the two
+statements in the algorithm executes in constant time, time
+complexity of inserting a new node at the beginning of a singly
+linked list will be<img src=
+"../imgs/7b99e19d963de528f0f8e8939e4000e6548dd147.png">.</p>
+<p><b>Thus, in the above case, insertion takes only</b> <img src=
+"../imgs/7b99e19d963de528f0f8e8939e4000e6548dd147.png">
+<b>time.</b></p>
+<p>• However, inserting a new node at the end of the singly linked
+list requires traversing entire list.</p>
+<p>• Also, inserting a new node into a sorted singly linked list
+requires traversing the linked list.</p>
+<p>• For some dynamic set representations, all the keys must be
+different. That is, no duplicates are allowed in the set. In such
+case, the INSERTION operation must check or transverse the entire
+list whether the duplicates exist or not, before inserting a new
+node.</p>
+<p><b>Thus, in the above three cases, insertion takes</b>
+<b><img src=
+"../imgs/2740878679a15b4d725dbd1137f2d3501509a188.png"></b>
+<b>running time.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>DELETION on a singly linked list:</b></p>
+<p>• It is not possible to delete a node in <img src=
+"../imgs/7b99e19d963de528f0f8e8939e4000e6548dd147.png"> time,
+because before deleting the node from a singly linked list, it is
+necessary to search for the node that is to be deleted.</p>
+<p>• It is already known that search require <img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">time.</p>
+<p>• Unlike in doubly linked list, singly liked list contains only
+one pointer <i>next</i>. Thus, in singly linked list, searching for
+the node that is to be deleted is compulsory to update pointers
+after deletion.</p>
+<p><b>Therefore, DELETION cannot be implemented in constant time
+that is</b> <b><img src=
+"../imgs/7b99e19d963de528f0f8e8939e4000e6548dd147.png"></b>
+<b>time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The procedure PUSH-LIST inserts an element at the top of the
+stack. That is, it always inserts an element onto the top of the
+list.</p>
+<p><b>PUSH-LIST(</b> <i><b>L , x</b></i> <b>)</b></p>
+<p>1. <b>if</b> <i>L. Top</i> = = NIL</p>
+<p>2. <i>x.next</i> = NIL</p>
+<p>3. <i>x.prev</i> = NIL</p>
+<p>4. <i>L.Top</i> = <i>x</i></p>
+<p>5. <b>else</b></p>
+<p>6. <i>L.Top.prev</i> = <i>x</i></p>
+<p>7. <i>X.next = L.Top</i></p>
+<p>8. <i>L.Top</i> = <i>x</i></p>
+<p>9. <i>x.prev</i> = NIL</p>
+<p><b>Implementation of PUSH using linked list:</b></p>
+<p>void push_list(node **top,node *list)</p>
+<p>{</p>
+<p>if (*top == NULL)</p>
+<p>{</p>
+<p>list-&gt;next=NULL;</p>
+<p>list-&gt;prev=NULL;</p>
+<p>*top=new (struct node);</p>
+<p>*top=list;</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>list-&gt;next=*top;</p>
+<p>(*top)-&gt;prev=list;</p>
+<p>*top=list;</p>
+<p>(*top)-&gt;prev=NULL;</p>
+<p>}</p>
+<p>}</p>
+<p>The above push-list function inserts an element in <i>O(1)</i>
+time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The procedure POP-LIST always removes an element that is top of
+the list. If the list does not contain any elements, it raises an
+exception “Stack underflows”.</p>
+<p><b>POP-LIST(</b> <i><b>L</b></i> <b>)</b></p>
+<p>1. <b>if</b> <i>L.Top</i> = = NIL</p>
+<p>2. <b>error</b> “ Stack underflows”</p>
+<p>3. <b>else</b></p>
+<p>4. <i>L.Top</i> = <i>L.Top.next</i></p>
+<p>5. <i>L.Top.prev</i> = NIL</p>
+<p><b>Implementation of POP operation using linked list:</b></p>
+<p>void pop_list(node **top)</p>
+<p>{</p>
+<p>if(*top==NULL)</p>
+<p>cout&lt;&lt;"stack underflow"&lt;</p>
+<p>else</p>
+<p>{</p>
+<p>(*top)-&gt;prev=NULL;</p>
+<p>*top=(*top)-&gt;next;</p>
+<p>}</p>
+<p>}</p>
+<p>The above pop-list operation removes the top element of the list
+in <i>O(1)</i> time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The procedure ENQUEUE-LIST always inserts a new node <i>x</i> at
+the back end of the list <i>L</i>.</p>
+<p>ENQUEUE-LIST (<i>L, x</i>)</p>
+<p>1. <b>if</b> <i>L.tail</i> = NIL</p>
+<p>2. <i>L.next</i> = <i>x</i></p>
+<p>3. <i>x.prev</i> = <i>x</i></p>
+<p>4. <i>L.tail</i> = <i>x;</i></p>
+<p>5. <i>L.head</i> = <i>x;</i></p>
+<p>6. <b>else</b></p>
+<p>7. <i>L.next</i> = <i>x</i></p>
+<p>8. <i>x.prev</i> = <i>x</i></p>
+<p>9. <i>L.tail</i> = <i>x;</i></p>
+<p><b>Implementation of ENQUEUE operation using linked
+list:</b></p>
+<p>void enqueue(Node **tail,Node *node)</p>
+<p>{</p>
+<p>if(*tail==NULL)</p>
+<p>{</p>
+<p>(*tail)=new (struct Node);</p>
+<p>head=new (struct Node);</p>
+<p>(*tail)-&gt;next=node;</p>
+<p>node-&gt;prev=(*tail);</p>
+<p>(*tail)=node;</p>
+<p>head=node;</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>(*tail)-&gt;next=node;</p>
+<p>node-&gt;prev=(*tail);</p>
+<p>(*tail)=node;</p>
+<p>}</p>
+<p>}</p>
+<p>The above enqueue() operation inserts a node at the back end of
+the list in <i>O(1)</i> time.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The procedure DEQUEUE-LIST removes an element <i>x</i> from the
+front end of the list <i>L</i>.</p>
+<p>DEQUEUE-LIST (L, x)</p>
+<p>1. <b>if</b> <i>L.head</i> = = <i>L.tail</i></p>
+<p>2. error “Queue underflow”</p>
+<p>3. <b>else</b></p>
+<p>4. x = L.headkey</p>
+<p>5. List.front = List.front.next</p>
+<p>6. <b>return</b> x</p>
+<p><b>Implementation of DEQUEUE operation using linked
+list:</b></p>
+<p>Node* dequeue(Node **head)</p>
+<p>{</p>
+<p>Node *x=new (struct Node);</p>
+<p>if(*head ==tail)</p>
+<p>cout&lt;&lt;"Queue underflow"&lt;</p>
+<p>else</p>
+<p>{</p>
+<p>x=(*head);</p>
+<p>(*head)-&gt;prev=NULL;</p>
+<p>(*head)=(*head)-&gt;next;</p>
+<p>}</p>
+<p>return x;</p>
+<p>}</p>
+<p>The above dequeue() operation removes a node from the front end
+of the list in <i>O(1)</i> time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/55c5bd14031d79e1cda0d79c278c7c472686f724.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Doubly linked list using only one pointer</b></p>
+<p>In general, a node in the doubly linked list consists data and
+two pointers,<img src=
+"../imgs/f914db54a11ea92820542932aff17347c9c7e59e.png">and<img src=
+"../imgs/b049a7cfc4e0643630cf419346bb3e343b879fde.png">.
+<i>prev</i> of a node <i>x</i> represents the address of a previous
+node of <i>x</i> and <i>next</i> of a node <i>x</i> represents the
+address of the next node of <i>x</i>. However, this method of the
+representation takes more memory as compared to that of the singly
+linked list.</p>
+<p><b>Implementing Doubly linked list using single pointer:</b></p>
+<p>• Doubly linked list can be implemented using only one pointer
+per node instead of maintaining <i>prev</i> and <i>next</i>.</p>
+<p>• This pointer alone would suffice to full-fill the needs of the
+doubly linked list.</p>
+<p>• This implementation would save a reasonably great amount of
+the memory space without affecting the capabilities of the doubly
+linked list.</p>
+<p>• This implementation is possible by taking the help of
+XOR(exclusive-OR) operation.</p>
+<p>o The following are the useful properties of XOR operation:</p>
+<p><i>X</i> <img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png"> <i>X =</i>
+0</p>
+<p><i>X</i> <img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png"> 0<i>=
+X</i></p>
+<p><i>X</i> <img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png"> Y<i>= Y</i>
+<img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png"><i>X</i></p>
+<p>• Now, consider the pointer value (address of a node) as
+<i>k</i>-bit integer and the value of <img src=
+"../imgs/1fc1b2971ae93ed66a53c89074fe1a4d31da4577.png"> as 0 and
+define the information required to implement the doubly linked list
+as follows:</p>
+<p>Pointer of the node:</p>
+<p><i>x.np</i> = <i>x.next</i> <img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png">
+<i>x.prev</i></p>
+<p>Next node of a node <i>x</i>:</p>
+<p><i>x.next</i> = <i>x.np</i><img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png">
+<i>x.prev</i></p>
+<p>Previous node of a node <i>x</i>:</p>
+<p><i>x.prev</i> = <i>x.np</i><img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png">
+<i>x.next</i></p>
+<p>E.g.</p>
+<p><img src="../imgs/5ea5420bbe89080230bf6578cca7cb4704dfb314.png"
+alt="Picture 1"></p>
+<p>When the control at <i>B</i>,</p>
+<p>The address of <i>C</i> = <i>B.np</i> <img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png"> Address of
+<i>A</i></p>
+<p>The address of <i>B</i> = Address of <i>A</i> <img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png"> Address of
+<i>C</i></p>
+<p>The address of <i>A</i> = <i>B</i>.<i>np</i><img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png">address of
+<i>C</i></p>
+<p><b>Accessing the Head and tail of the list:</b></p>
+<p>In the above example, A is the head and E is the tail.</p>
+<p>• If previous of a node <i>x</i>, <i>x</i>.<i>np</i><img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png">
+<i>x</i>.<i>next ,</i> is NULL<i>,</i> it means the node <i>x</i>
+is a head.</p>
+<p>• If next of a node <i>x</i>, <i>x</i>.<i>np</i><img src=
+"../imgs/517318b28a5a86de33527dee33f82b7ea3d75637.png"> <i>x.prev
+,</i> is NULL<i>,</i> it means the node <i>x</i> is a tail .</p>
+<p><b>Implementations of the doubly linked list’s operations in C++
+are as follows:</b></p>
+<p><b>Representing node of a Double linked list:</b></p>
+<p>struct node</p>
+<p>{</p>
+<p>int item; // data of the node</p>
+<p>struct node* np; //single pointer, which helps to access
+<i>prev</i> and <i>next</i></p>
+<p>}*head,*tail;</p>
+<p>Initially head and tail are NULL.</p>
+<p><b>Insertion:</b></p>
+<p>This method adds an element to the list at the end of the list
+(i.e. to tail).</p>
+<p>void insert(struct node **head_ref, struct node **tail_ref,int
+item)</p>
+<p>{</p>
+<p>node *new_node = new (struct node);</p>
+<p>new_node-&gt;item = item;</p>
+<p>if (*head_ref == NULL &amp;& *tail_ref==NULL)</p>
+<p>{</p>
+<p>new_node-&gt;np = XOR (NULL,NULL);</p>
+<p>*head_ref = new_node;</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>if(*head_ref==*tail_ref)</p>
+<p>{</p>
+<p>(*head_ref)-&gt;np=XOR(NULL,new_node);</p>
+<p>new_node-&gt;np = XOR (*head_ref, NULL);</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>
+(*tail_ref)-&gt;np=XOR(XOR((*tail_ref)-&gt;np,NULL),new_node);</p>
+<p>new_node-&gt;np = XOR (*tail_ref, NULL);</p>
+<p>}</p>
+<p>}</p>
+<p>*tail_ref = new_node;</p>
+<p>}</p>
+<p><b>Deletion:</b></p>
+<p>This method removes a node form the doubly linked list.</p>
+<p>void delete_item(int item)</p>
+<p>{</p>
+<p>node *curr = head;</p>
+<p>node *prev = NULL;</p>
+<p>node *next=XOR(curr-&gt;np,prev);</p>
+</div>
+<hr>
+<div class="answer">cout&lt;&lt;"Elements of XOR Linked List: "&lt;
+<p>while (curr != NULL)</p>
+<p>{</p>
+<p>if(curr-&gt;item==item)</p>
+<p>break;</p>
+<p>prev = curr;</p>
+<p>curr = next;</p>
+<p>next = XOR (prev, curr-&gt;np);</p>
+<p>}</p>
+<p>if(curr!=NULL)</p>
+<p>{</p>
+<p>if(curr==head)</p>
+<p>{</p>
+<p>next-&gt;np=XOR(NULL,XOR(curr,next-&gt;np));</p>
+<p>head=next;</p>
+<p>cout&lt;item&lt;&lt;" is deleted successfully";</p>
+<p>free(curr);</p>
+<p>}</p>
+<p>else if(curr==tail)</p>
+<p>{</p>
+<p>prev-&gt;np=XOR(NULL,XOR(curr,prev-&gt;np));</p>
+<p>tail=prev;</p>
+<p>cout&lt;item&lt;&lt;" is deleted successfully";</p>
+<p>free(curr);</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>prev-&gt;np = XOR (XOR(prev-&gt;np,curr),next);</p>
+<p>next-&gt;np = XOR (XOR(next-&gt;np,curr),prev);</p>
+<p>cout&lt;item&lt;&lt;" is deleted successfully";</p>
+<p>free(curr);</p>
+<p>}</p>
+<p>}</p>
+<p>else</p>
+<p>cout&lt;&lt;"No such element exit to delete"&lt;</p>
+<p>}</p>
+<p><b>XOR:</b></p>
+<p>This method returns the result of exclusive-OR between two
+pointers.</p>
+<p>node * XOR (struct node *next, struct node *prev)</p>
+<p>{</p>
+<p>return (node*) ((unsigned int) (next) ^ (unsigned int)
+(prev));</p>
+<p>}</p>
+<p><b>Reversing the list:</b></p>
+<p>The following code reverses the list in <i>O</i>(1) tiem. That
+is, the code simple swaps the pointers of head and tail. After
+reversing the list, head becomes tail and tail becomes head.</p>
+<p>void reverse()</p>
+<p>{</p>
+<p>struct node* temp=head;</p>
+<p>head=tail;</p>
+<p>tail=temp;</p>
+<p>}</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

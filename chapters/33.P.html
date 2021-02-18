@@ -1,0 +1,833 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 33.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a)</p>
+<p>Package wrapping technique can be used to compute convex hull of
+a set Q given by Jarvis march.</p>
+<p>The running time of the algorithm runs in <i>O(nh)</i>, where h
+is the number of vertices of CH (Q).</p>
+<p>The total running time for K convex layer and the i<sup>th</sup>
+layer contains li points is,<img src=
+"../imgs/fda8c805c4b2b60c5db37bf2194b9c3c3f1bd5c5.png"> since,
+<img src=
+"../imgs/fd24769b6ae3216d24c934dbe5f74cba925b0d95.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p><b>Linear time reduction for sorting problem:</b></p>
+<p>• The convex layers can be computed in linear time for give
+numbers in sorted order.</p>
+<p>• Consider convex layer A with 3 points into set Q for each
+<i>A[k]: (0, 0), (k, 0), and (0, A[k]).</i></p>
+<p>• Let <i>Q</i> be with n convex layers and <i>Q</i><sub>i</sub>
+represents a triangle with vertices <i>(0, 0), (n+i-1, 0), and (0,
+B[i]).</i></p>
+<p>• Therefore, given convex layer can be converted into its
+corresponding sorted value.</p>
+<p>• Since, the lower bound is known to find convex layers; it
+could be easy to determine convex layers in <i>O(n log n)</i> time,
+which could be sorted in <i>O(n log n)</i> time.</p>
+<p>Hence, a convex layer takes <img src=
+"../imgs/bc29ca584ea51457fd5b242e64e1d55d23d8582b.png"> time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>MAXIMAL LAYER</b></p>
+<p>In order to define the maximal layer, consider a set <i>Q</i>
+which has <i>n</i> points in the given plane. It is required to
+demonstrate the dominance level between any two points, that is a
+point <img src=
+"../imgs/e9957c7fc452cf5c3924795c79512ca62fed68e5.png"> is said to
+be dominant over the point <img src=
+"../imgs/a368d7e71b402cd8b14d0d106bfb1778eaa4a5f4.png">if the
+condition <img src=
+"../imgs/5a239a96d44f5257ce8dda57c16de582e4b2547d.png"> and
+<img src="../imgs/ab645022137dc386893373abb62591fd2d87d46b.png">is
+fulfilled.</p>
+<p>A point in the given set <i>Q</i> is said to be <b>maximal or
+maximum</b> if there does not exist any point which dominates over
+that point. A set can have a number of maximal points which can be
+grouped together to form a maximal layer which is illustrated as
+follows-the first maximal layer is denoted as <img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png"> which have
+the set of maximal points.</p>
+<p>For the value of<img src=
+"../imgs/c9b2b75d450f76fa0b0ba71fa3ac76be09b8778c.png">, the
+<i>i</i><sup>th</sup> maximal layer can be defined as <img src=
+"../imgs/1a150c23b81f2bd29969bf956dd54f490b364b29.png"> which is
+set of the maximal points which are defined as:</p>
+<img src=
+"../imgs/9881bc1789abc48a9ef995cc3aa0f50ead39041f.png"></div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> Given that the number of the non-empty layers
+present in set <i>Q</i> is <i>K</i>, <img src=
+"../imgs/e3cb2a18340637512297f0a0f9f276e6d825b8a2.png"> is supposed
+to be the <i>y</i>- coordinates of the left-most point in <img src=
+"../imgs/1a150c23b81f2bd29969bf956dd54f490b364b29.png">
+for<img src="../imgs/11eec93fbd9196282f07a0979be95daf485ef657.png">.
+It is also assumed that no two points in the <i>Q</i> have the same
+<i>x</i>-or <i>y</i>- coordinate.</p>
+<p>Here, it is required to show that <b><img src=
+"../imgs/1c7e1d4beb5206b925ddc0ae31ce52433cbd7df6.png"></b></p>
+<p>During the extraction of maxima layer when the layers are
+restored after the last iterations during the maxima layer
+algorithm, the <i>y</i>-layer order is need to be restored.</p>
+<p>In the process, a problem with the concern of memory size is
+there for each layer and due to this reason it is not possible to
+sort the point easily.</p>
+<p>As the maxima layer for an <i>n</i>-element point for the two
+dimensions are to be computed and have the running time of
+<img src="../imgs/e5ad3072393110561e502a3886a73713ae7209c7.png">in
+such a way that for each layers the points are sorted in the
+decreasing order of their <i>y</i>-coordinates.</p>
+<p><b>Hence the orders of the y-coordinates are as follows:</b></p>
+<b><img src=
+"../imgs/1c7e1d4beb5206b925ddc0ae31ce52433cbd7df6.png"></b></div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Given that <i>j</i> is the minimum index
+provided that the <img src=
+"../imgs/9df78198db138210d98402e06b7a0720e19c1ebd.png">
+and<img src="../imgs/db050f05dd061bbb75fedb0012123bebc6d9377c.png">,
+in the case it is supposed that <img src=
+"../imgs/4c01c61fa7300a8d1bc04b9dba783b3378125747.png">and for
+<i>Q’</i> the condition will hold which is as,</p>
+<p>? if the equality<img src=
+"../imgs/ccbb9dbac72cfcf157012c2f534b329942fd1796.png"> holds then
+the maximal layer of <i>Q’</i> will have the condition that, a set
+can have a number of maximal points which can be grouped together
+to form a maximal layer which is illustrated as follows,</p>
+<p>The first maximal layer is denoted as <img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png"> which have
+the set of maximal points.</p>
+<p>For the value of<img src=
+"../imgs/c9b2b75d450f76fa0b0ba71fa3ac76be09b8778c.png">, the
+<i>i</i><sup>th</sup> maximal layer can be defined as <img src=
+"../imgs/1a150c23b81f2bd29969bf956dd54f490b364b29.png"> which is
+set of the maximal points which are defined as<img src=
+"../imgs/9881bc1789abc48a9ef995cc3aa0f50ead39041f.png">. So, which
+is same as the maximal layer except it has the condition
+that<img src=
+"../imgs/feed6570e4324e32515c00a053e476ee95479cde.png"> is included
+as its new leftmost point.</p>
+<p>? if there is a condition that if<img src=
+"../imgs/4c01c61fa7300a8d1bc04b9dba783b3378125747.png">, then the
+first <i>k</i> maximal layer of the <i>Q’</i> will have the set of
+layer as,</p>
+<p><img src=
+"../imgs/d45c64e55a2cfb55eba6b9aadebd8149dd4b0e3a.png"></p>
+<p>This is same as the value for the maximal layer for Q;</p>
+<p>Hence, the <i>Q’</i> will have a non-empty <img src=
+"../imgs/6c894916dd67a707c680c49a41f21ddb0b6b7d06.png"> maximal
+layer which have the condition of<img src=
+"../imgs/78d5c8e3bba31bf63d8b34c7b71bed0a7f3f5b17.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c</b></i> <i>.</i> Here, it is asked to describe a
+<img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png">time
+algorithm for maximal layer for the given set <i>Q</i> which has
+<i>n</i>-points by moving a sweep line from right to left.</p>
+<p>A <b>sweeping line algorithm</b> also known as the plane sweep
+algorithm is used as an important algorithm in computational
+geometry. In this algorithm, it is imagined that a line would stop
+at some points while moving or sweeping across the plane.</p>
+<p>Thus, in order to solve the given problem the sweeping of the
+line is performed in the decreasing order of the coordinate
+<i>x</i>. Therefore, the sorted set can be denoted by <img src=
+"../imgs/8e385ea8b532a7d314aac592ebe108623dcfeffc.png"> and the
+initialization will be performed as we sweep left by<img src=
+"../imgs/0f2a1a2572db4e6992376ac71a0457a9c6bfe115.png">.</p>
+<p>This is done by the inductive method by computing the layers in
+the correct way till the set <img src=
+"../imgs/0de70145ec69a4f9e97896b24e44fe4f33c2bc0d.png">and when the
+set <img src=
+"../imgs/4ed7c1658fe7394069cffd439b166b5f10502844.png"> is
+considered then the layers are <img src=
+"../imgs/3344538c459a2322ca1cff9f5812438ec961e354.png"> and then
+the <i>y</i> coordinate in the respective layers are <img src=
+"../imgs/56f4333db243ee0add33171b71b9771846ca085d.png"> the highest
+<i>y</i> coordinates.</p>
+<p>The set <img src=
+"../imgs/4ed7c1658fe7394069cffd439b166b5f10502844.png"> is in the
+layer <img src=
+"../imgs/f60bd81809c832d26223823143515ba9a0564ba7.png"> if there is
+a condition that <img src=
+"../imgs/e917d7bbf3a9da747ae918f81a5201f3ca524ede.png"> and if
+there is an existence of such <i>k</i> or a new layer <img src=
+"../imgs/c87e6b887926f87af9ca9a60e15ecc7c8a6f4474.png"> is started
+with the help of a dictionary which is dynamic in nature this is
+obtained or found in the <img src=
+"../imgs/b15d48097c5d2231f1ae1d01d5de8d9ae380e941.png"> steps
+and,</p>
+<b>Hence, it can be easily deduced that the entire step will
+take</b> <b><img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png"></b>
+<b>time</b>.</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i> Here, it is asked that whether there arise any
+difficulties or not in case of allowing input points to have the
+same <i>x</i>- or <i>y</i>-coordinate and also it is asked to
+suggest a way of resolving or sorting out these problems.</p>
+<p>Now, as it is observed that when the input point have the same
+<i>x</i> and <i>y</i> coordinate then, the case arises when the
+layer can be obtained by performing the sweeping of the line in the
+decreasing order of the coordinate <i>x</i>.</p>
+<p>So, it can be said that sorting is done on the basis of the
+values of <i>x</i> coordinate of the points. And, the sorted set is
+denoted by<img src=
+"../imgs/8e385ea8b532a7d314aac592ebe108623dcfeffc.png">. For this
+perform the initialization with the help of sweep operation left by
+<img src="../imgs/0f2a1a2572db4e6992376ac71a0457a9c6bfe115.png">
+.</p>
+<p>This is done by the inductive method by computing the layers in
+the correct way till the set <img src=
+"../imgs/0de70145ec69a4f9e97896b24e44fe4f33c2bc0d.png">.and when
+the set <img src=
+"../imgs/4ed7c1658fe7394069cffd439b166b5f10502844.png"> is
+considered then the layers are <img src=
+"../imgs/3344538c459a2322ca1cff9f5812438ec961e354.png"> and then
+the <i>y</i> coordinate in the respective layers are <img src=
+"../imgs/56f4333db243ee0add33171b71b9771846ca085d.png"> the highest
+<i>y</i> coordinates.</p>
+<p><b>So</b>, <b>when the coordinate are same then the problem of
+dominance will arise and it can be solved by having the change in
+coordinate system</b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p>According to the given problem, user have to do the following
+things:</p>
+<p>• There are two sets of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">points and
+user have to pair each points from one set with other set points
+and a line is drawn between them.</p>
+<p>• A point may be a part of only one pair.</p>
+<p>• These lines should not intersect each other.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now find the partitioning line:</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Suppose <img src=
+"../imgs/e9c59d49abba170f2cbba2cdd49449b6999d91f8.png">and
+<img src="../imgs/87d9038dbe4fe02f1dee5c9aa094efd5e07163b6.png">be
+the two set of <i>n</i> points. Now, two convex hulls <img src=
+"../imgs/6936a61c4447d3680099535bed707d1f08406cc2.png">and
+<img src="../imgs/1847e123f98e529961cf3af87ac5186c8f4589fc.png">are
+drawn corresponding to the respective <i>n</i> points of <img src=
+"../imgs/e9c59d49abba170f2cbba2cdd49449b6999d91f8.png">and<img src=
+"../imgs/87d9038dbe4fe02f1dee5c9aa094efd5e07163b6.png">.</p>
+<p>Consider the following diagram:</p>
+</div>
+<hr>
+<div class="answer">
+<p><img src="../imgs/59c755334e6cf35a9e24d61530b356bc2ba427a7.png"
+alt="D:\Tiffs\all files\2254-33.P-3P.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now consider the following cases:</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Case 1:</b></p>
+<p>There is no convex hull lies completely inside the other convex
+hull. These lines may be intersecting each other. This implies that
+a common tangent exists for the given two convex hull.</p>
+<p>• All the other points of both the set of points lies to one
+side of the tangent. So, in this case the tangent is known as the
+partitioning line.</p>
+<p>• The steps taken to find this common tangent is<img src=
+"../imgs/0ed8e90c957b56d7d3d1593b19a524b78f56abdb.png">.</p>
+<p>• As the steps taken to find the common tangent is <img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">and to
+construct the convex hull is<img src=
+"../imgs/1d35968e59eb235415ee32e625da6d9ea6cb2528.png">.</p>
+<p>Therefore, user can find the partitioning line in <img src=
+"../imgs/1d35968e59eb235415ee32e625da6d9ea6cb2528.png">steps.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Case 2:</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>If a convex hull lies completely inside the other convex hull,
+then through all points in the outer convex hull these exists a
+partitioning line segment. The proof for the same is as
+follows:</p>
+<p>• A point <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">is taken
+from the outer convex hull. Now, tangents are drawn from the outer
+convex hull from the inner convex hull. Total steps taken in this
+process is<img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">.</p>
+<p>• Suppose, <img src=
+"../imgs/3dbf298538b5e7cc6ac9492d68761011cf34d11e.png">and
+<img src="../imgs/ad9b55028e27c5c98f067f5f610d70da1cdc9b39.png">be
+the tangents where, <img src=
+"../imgs/075eeebe887c484c97d4256685db314db2a23051.png">and
+<img src="../imgs/6e090a44de0506720fcab5ef8287b671953ac92a.png">denotes
+the points on the insider convex hull. Suppose, the
+tangent<img src="../imgs/3dbf298538b5e7cc6ac9492d68761011cf34d11e.png">
+exists in the left of the<img src=
+"../imgs/ad9b55028e27c5c98f067f5f610d70da1cdc9b39.png">.</p>
+<p>• The number of points in the inner convex hull is less than or
+equal to the number of points in the outer convex hull to the left
+of the<img src=
+"../imgs/3dbf298538b5e7cc6ac9492d68761011cf34d11e.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, a horizontal axis is chosen and all the points of <img src=
+"../imgs/c067f600ce6854887a673f628ea990aea53ed3b1.png">are sorted
+to the corresponding to the inner convex hull in the increasing
+order of the<img src=
+"../imgs/2fc5b1d10f050993ce045c42ddbcea5d8d87edb4.png">, where, the
+angle made by the horizontal axis and the line <img src=
+"../imgs/b6eed72de167c441f6ad5d61b627e9fdb6a2f79c.png">is denoted
+by the<img src=
+"../imgs/8b8e8a15049e4298ca85e3ba32a0be9d1a7a9d1d.png">.</p>
+<p>It is given that all the, <img src=
+"../imgs/c067f600ce6854887a673f628ea990aea53ed3b1.png"> is sorted
+in an array. Now suppose that <img src=
+"../imgs/c067f600ce6854887a673f628ea990aea53ed3b1.png">are in the
+sequence<img src=
+"../imgs/7dfe3c9782ca39ecd10d5f7431adf8dd23adc913.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, check if <img src=
+"../imgs/c19c0c0a263367fc75ab0a7a966468d0de9333e4.png">or <img src=
+"../imgs/fa089662ea033863c5c21f472e7390acdd0e14a6.png">is a
+partitioning line segment. If it is not then select a point
+<img src="../imgs/bbcd725dbeeca068730030ed14f1ab016595c38d.png">and
+check the following for<img src=
+"../imgs/b4e960f2141730e220c3df6b39b409c9a469334b.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>At any stage suppose <img src=
+"../imgs/b0763fa63e64e0647d301d6180732d21d3185709.png">be the
+interval of the given points in which the partitioning line segment
+exists.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The recurrence equation for the above is given as:</p>
+<p><img src=
+"../imgs/89866e2b6be5a6b086fbecf6a9f6d400dc972213.png"></p>
+<p><b>Therefore, the sorting the point’s takes</b> <b><img src=
+"../imgs/1d35968e59eb235415ee32e625da6d9ea6cb2528.png"></b>
+<b>steps and finding through which the partitioning line passes
+is</b> <b><img src=
+"../imgs/1d35968e59eb235415ee32e625da6d9ea6cb2528.png"></b>
+<b>steps.</b></p>
+</div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"><b>b.</b>
+<p>In the above part (a), user find the partitioning line segment
+in the time complexity of<img src=
+"../imgs/1d35968e59eb235415ee32e625da6d9ea6cb2528.png">.</p>
+<p>• Now, output this pair and these two points are removed from
+their sets. Now solve the sub problems for the given pair of two
+sets.</p>
+<p>• In the worst case condition, one set pair may each consists
+<img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">points and
+the other consists 0 points.</p>
+<p>Now, consider the following algorithm:</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p>Suppose <img src=
+"../imgs/4d1e09ff37aa2f7a2b76da503da0f627af91f9bc.png">be the
+points consists in<img src=
+"../imgs/e9c59d49abba170f2cbba2cdd49449b6999d91f8.png"> and
+<img src="../imgs/7dfe3c9782ca39ecd10d5f7431adf8dd23adc913.png">be
+the points consists in the set<img src=
+"../imgs/87d9038dbe4fe02f1dee5c9aa094efd5e07163b6.png">.</p>
+<p>1. <b>if</b> each set contains one point each <b>then</b></p>
+<p>2. set them as a pair and <b>exit</b>.</p>
+<p>3. <b>if</b> each set contains two points in each
+<b>then</b></p>
+<p><b>//</b>the pair will be obtained by taking two
+possibilities</p>
+<p>4. <b>if</b> <img src=
+"../imgs/4ed74eb6429f4c3543d0fa06beeb2d28c9986313.png">is
+intersected by <img src=
+"../imgs/55e415d48dbe8c7b92ee745ed57cf548630aa657.png"><b>then</b></p>
+<p>5. <img src=
+"../imgs/0ba978e3e2e66977a38fb467ec92bf04c1bbc745.png"> and
+<img src="../imgs/5f4ff42848ecd2beb193998791a37ca8fea4c866.png">are
+the pairs</p>
+<p>6. <b>else</b></p>
+<p>7. <img src=
+"../imgs/a319a59f6afb8b7e7ac303cfd5fb6f5cbc97498f.png"> and
+<img src="../imgs/a330e36e5cbe0e04e265fe6c2d8bbf466f1b7deb.png">are
+the pairs</p>
+<p>8. For the sets <img src=
+"../imgs/e9c59d49abba170f2cbba2cdd49449b6999d91f8.png">and
+<img src="../imgs/87d9038dbe4fe02f1dee5c9aa094efd5e07163b6.png">,
+the convex hulls <img src=
+"../imgs/6936a61c4447d3680099535bed707d1f08406cc2.png">and
+<img src="../imgs/1847e123f98e529961cf3af87ac5186c8f4589fc.png">will
+be found respectively.</p>
+<p>9. Now, perform checking to decide is one convex hull lies
+totally inside the other convex</p>
+<p>hull.</p>
+<p>10. <b>if</b> one convex hull does not exists totally inside the
+other <b>then</b></p>
+<p>11. obtain their common tangent.</p>
+<p>12. Suppose <img src=
+"../imgs/b2a92179c53ebd50387383530bca1a43746a2875.png">be the
+tangent <b>then</b></p>
+<p>13. remove <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">and
+<img src="../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png">are
+removed from their respective sets and name them as pairs.</p>
+<p>14. Now, go to <b>step 1</b>.</p>
+<p>15. Suppose, <img src=
+"../imgs/1b90f2767908095b894293bb1ca3e6b0d12fe666.png">be<img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">. Suppose,
+<img src=
+"../imgs/1847e123f98e529961cf3af87ac5186c8f4589fc.png">completely
+lies within<img src=
+"../imgs/6936a61c4447d3680099535bed707d1f08406cc2.png">.</p>
+<p>16. <b>then</b> sorting performed on the points of <img src=
+"../imgs/87d9038dbe4fe02f1dee5c9aa094efd5e07163b6.png">according to
+their angles.</p>
+<p>17. Now obtain the weight for the two points.</p>
+<p>18. <b>if</b> any of the obtained weight is zero <b>then</b></p>
+<p>19. that point forms the partitioning line segment with
+<img src="../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png"></p>
+<p>20. <b>else</b></p>
+<p>21. obtain the weights of the mid-point in the interval of
+points.</p>
+<p>//As given in the previous condition on weight selected the
+appropriate half of the</p>
+<p>//interval to be the new interval.</p>
+<p>22. <b>Repeat</b> the step 1 until the weight zero point is
+found.</p>
+<p>23. Name them as the set of pair and then remove from their
+respective sets <b>then</b></p>
+<p>24. Go to <b>step 1</b></p>
+<p><b>The above algorithm takes</b> <b><img src=
+"../imgs/48cf0c70e886f4fddb3153263775d553cabb352c.png"></b> <b>time
+to pair Ghostbusters and ghosts in such a way that no streams
+cross.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Picking up Sticks</b></p>
+<p>Consider a set of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">sticks which
+are piled up in some configuration. Each stick is defined by its
+endpoints. Each end point is an ordered triple of <img src=
+"../imgs/63ce1a9bc6bd2c8f5d75f4cc9534b71375eb8efe.png">and
+<img src="../imgs/da38e76d43f97e65594a470650ea9e6bbcbba71e.png">coordinates,
+which implies that the end point is defined by <img src=
+"../imgs/b82f1df9dcfb27fdc1393f23087747ac1adc64d6.png"> coordinate.
+In the given configuration no stick is vertical. Here, a person
+wants to pick up all the sticks one at a time subjecting to the
+condition which is as given below:</p>
+<p><b>Condition:</b> A person can pick up a stick only if there is
+no other stick on top of it.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> Given two sticks <i>a</i> and <i>b</i>, in
+order to decide whether <i>a</i> is above, below or unrelated to
+<i>b</i> these sticks are needed to project to the <img src=
+"../imgs/379c790e821229b76e2c605991812bfdb7c21031.png">plane. Based
+on the projection.</p>
+<p>?If the projections of two sticks on <img src=
+"../imgs/379c790e821229b76e2c605991812bfdb7c21031.png"> plane do
+not intersect, then it can be said that they are unrelated.</p>
+<p>? If the projections of two sticks on <img src=
+"../imgs/379c790e821229b76e2c605991812bfdb7c21031.png"> plane
+intersect, then in order to decide which of the stick is above or
+below, it is required to calculate the <img src=
+"../imgs/da38e76d43f97e65594a470650ea9e6bbcbba71e.png">coordinate
+of the sticks corresponding to the intersection point. Stick having
+larger <img src=
+"../imgs/da38e76d43f97e65594a470650ea9e6bbcbba71e.png">coordinate
+value will be above to other.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Procedure:</b></p>
+<p><b>Input:</b> Two sticks say <i>a</i> and <i>b</i>.</p>
+<p><b>Output</b>: Relation between the given two sticks that is
+whether <i>a</i> is above, below or unrelated to <i>b</i>.</p>
+<p>Sticks<img src=
+"../imgs/f3d7578675517ad72107db19c809604b20d8dfd2.png"></p>
+<p>{</p>
+<p><b>if</b> the projection of the <i>a</i> and<i>b</i> on
+<img src="../imgs/379c790e821229b76e2c605991812bfdb7c21031.png">
+plane do not intersect</p>
+<p>Then <b>return</b> unrelated</p>
+<p><b>else</b></p>
+<p>Calculate the point of intersection of the two projections. Let
+say it is<img src=
+"../imgs/186f73d614d288ce22957773263844de67d923ac.png">.</p>
+<p>Calculate the<img src=
+"../imgs/da38e76d43f97e65594a470650ea9e6bbcbba71e.png">coordinate
+of each stick corresponding to point of intersection. Let’s say it
+is<img src="../imgs/2fd0bd8a9daa07a27ffc104cf81546a15f3d9138.png">
+and <img src=
+"../imgs/8535fb6f9594636b34cf9167f30cdd0334ffdb3a.png"></p>
+<p><b>if</b><img src=
+"../imgs/b00782e85dad49c9fb25d2d1686ec19b833b50b9.png"></p>
+<p>then <b>return</b> above;</p>
+<p><b>else</b></p>
+<p><b>return</b> below;</p>
+<p>}</p>
+<p><i><b>b.</b></i> Here, it is required to give an efficient
+algorithm that determines whether it is possible to pick up all the
+sticks and a legal order in which they will get picked. In order to
+determine whether it is possible to pick up all the sticks, the
+sticks will be arranged as Graph. Thus, a directed graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">will be
+constructed having <i>V</i> as the set of vertices and <i>E</i> be
+the set of the edges. Each vertices of graph <img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">represents a
+stick.</p>
+<p>Now, a directed edge between the vertices say <i>a</i> and b in
+graph is constructed if stick <i>a</i> is above <i>b</i>. Once,
+graph is constructed in the above manner it is required to run
+Topological sort algorithm on<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, two cases can arise:</p>
+<p>? If a cycle is found by Topological sort in <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> then, it is
+not possible to pick all the sticks.</p>
+<p>? Else it is possible to pick all sticks and order of sticks
+will be the topological sorted order.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Topological sort:</b> A topological sort is an order in which
+a starting activity depends on the completion of the other
+activities. That is, order of completed activities play a crucial
+role in deciding the order of the starting activity. It is a
+technique or a method of linear ordering of the vertices of a
+directed graph, such that if there is a directed edge <i>xy</i>
+from vertex <i>x</i> to vertex <i>y</i>, then <i>x</i> comes before
+<i>y</i> in the ordering.</p>
+<p>This sorting technique is based on the strategy of Depth First
+Search (DFS). Consider a task that is to be performed. Then, in a
+directed acyclic graph (dag) the vertices of the directed graph
+represent the tasks and the edges represent the constraint to be
+performed on the task, and a topological ordering is the valid
+sequence of the task.</p>
+<p>Topological sorting is only possible if the graph has no
+directed cycles that is, it is a directed acyclic graph. It is a
+ordering of vertices in a horizontal line such that all the
+directed edges go from left to right. In this linear ordering of
+vertices or nodes if any edge or set of edges direct to left then,
+it is not a valid solution or ordering. It is also possible for a
+graph to have more than one valid linear ordering of vertices for a
+topological sort.</p>
+<p><b>For Example: Consider a directed graph given below:</b></p>
+<p><b><img src=
+"../imgs/07b7d928035b2be17fb284a9f6a19c36d178f926.png" alt=
+"Description: D:\Tiffs\New folder\jyoti.tif"></b></p>
+<p>In the above figure, since there is an edge from B to D and also
+from C to D. So B and C should be completed before the start of D.
+Thus, it can be said that A, B, C, D are topologically sorted. Now,
+also consider the node F, since, there is an edge to F from E and C
+therefore, C and E should be completed before the start of F. So,
+Topological order of the above figure or graph is as given
+below:</p>
+<p>ABCDEF</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p><b>Input:</b> <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">sticks that
+is <img src=
+"../imgs/dbc94cba0547dbe716cad3e01b1390caa86daffd.png"></p>
+<p><b>Output:</b> Determination of the possibility of picking up
+all the vertices. If possible the legal order in which they should
+be picked up.</p>
+<p>Picking_order(<img src=
+"../imgs/dbc94cba0547dbe716cad3e01b1390caa86daffd.png">)</p>
+<p>{</p>
+<p><b>for</b> each stick <img src=
+"../imgs/efcd98014c01a125fd0e0d00a3743f477cd599e0.png"></p>
+<p>construct a vertex for graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">;</p>
+<p><b>end</b> for</p>
+<p>//Check the relation between two sticks that is whether a stick
+is above, below</p>
+<p>//or unrelated.</p>
+<p><b>for</b> each pair of <img src=
+"../imgs/ea68ce4f8bbcc7f9814069c77b096874d111f8b5.png"></p>
+<p>Sticks(<img src=
+"../imgs/efcd98014c01a125fd0e0d00a3743f477cd599e0.png">,<img src=
+"../imgs/39f30d1d35c126e4b571b14c510cebfeba9ab4d2.png">)</p>
+<p><b>end</b> for</p>
+<p>//graph is constructed</p>
+<p>Topological_Sort(<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">);</p>
+<p><b>if</b> cycle is found</p>
+<p><b>return</b> not possible;</p>
+<p><b>else</b></p>
+<p><b>return</b></p>
+<p>Order of sticks produced by topological sort</p>
+<p><b>end if</b></p>
+<p>}</p>
+<p>Hence, the algorithm that provides a legal order in which the
+sticks can be picked up has been described.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The convex hull of the set of point is the smallest convex
+polygon that contains all the points of set.</p>
+<p>A point p is an extreme point of a convex hull if p is not an
+interior to any line segment connecting two points in the set.</p>
+<p>Following diagram represent the example of convex hull.</p>
+<p>Input point<img src=
+"../imgs/3389e87bece687e0f9844ea98105add0f005c15d.png">.</p>
+<p>Output = <img src=
+"../imgs/115e1fb4f66dd2fd744cd0cbec1a61a12b01b210.png"></p>
+<p><img src="../imgs/c680d1ef086ca18b31abe62a7e79a29864d0b17e.png"
+alt="C:\Users\Gaurav\Desktop\1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>a.</p>
+<p>Consider the following algorithm to compute the convex hull of
+all n1+n2 point.</p>
+<p>1. Compute the vertices with minimum y-axis for both <i>J</i>
+and <i>K</i></p>
+<p>2. <b>if</b> <img src=
+"../imgs/a2aec7f4ae7fa0d8705dfdd314aadc2157dee6cd.png"></p>
+<p>3. take the vertices with greater x-coordinate. P(<i>i</i>) for
+<i>J</i>, Q(<i>m</i>) for K</p>
+<p>4. Construct two horizontal lines <i>S1</i> for <i>J</i>,
+<i>S2</i> for <i>K</i> which is parallel with the x- axis</p>
+<p>5. <b>else</b> <b>if</b> P(<i>i-1</i>) ,P(<i>i+1</i>),
+Q(<i>m-1</i>), Q(<i>m+1</i>) lie to the same side of the line</p>
+<p>6. user will add a side (P(<i>i</i>),Q(<i>m</i>))</p>
+<p>7. <b>if</b> smaller angle is <i>S1</i> to P(<i>i+1</i>),</p>
+<p>8. <i>S1</i> become the line (P(<i>i</i>), P(<i>i+1</i>)).</p>
+<p>9. <i>i=i+1</i>,</p>
+<p>10. <i>S2</i> become the parallel line with <i>S1</i> through
+Q(<i>m</i>)</p>
+<p>11. <b>else</b></p>
+<p>12. the smaller angle is <i>S2</i> to Q(<i>m+1</i>), <i>S2</i>
+become the line (P(<i>m</i>),P(<i>m+1</i>)</p>
+<p>13<i>. m=m+1</i>,</p>
+<p>14. <i>S1</i> become the parallel line with <i>S2</i> through
+P(<i>i</i>)</p>
+<p>15. MERGE (<i>S1</i>, <i>S2</i>)</p>
+<p>16. <b>return</b> <i>S</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis of Algorithm:</b></p>
+<p>• In the above algorithm line is break into two parts <i>S1</i>
+and <i>S2</i>. If the number of vertices in each part is greater
+than 1, construct the convex hull of for both <i>S1</i> and
+<i>S2</i>.</p>
+<p>• MERGE function is used to merge the both individual convex
+hull into single convex hull so both part will take individually
+<img src="../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">
+time.</p>
+<p><b>Hence, the total time complexity will be</b> <b><img src=
+"../imgs/07deedbc852a5b8a7f31d428d97cd8f3d6477e4a.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>Consider the following algorithm to compute the convex hull of n
+point using sparse-hulled distribution.</p>
+<p>CONVEX-HULL(<i>S</i>)</p>
+<p>//for loop is used to traverse each point of convex hull</p>
+<p>1. <b>for</b> i<i>=4</i> to <i>n</i>&nbsp;</p>
+<p>2. <i>j</i>&nbsp;←&nbsp;&nbsp;Index of the point which is at the
+right end of&nbsp;<i>CH</i></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; // find the upper tangency point</p>
+<p>3. <i>u</i><i>&nbsp;=&nbsp;</i><i>j</i></p>
+<p>4. <b>while</b>&nbsp;
+<i>p</i><sub>i</sub><i>h</i><sub>4&nbsp;</sub>is not tangent
+to&nbsp;<i>CH</i></p>
+<p>5. FIND HULL (<i>A</i>, <i>p</i>, <i>r</i>)</p>
+<p>6. &nbsp;<b>if</b>&nbsp;(<i>p</i>-<i>r</i> &gt; 3)</p>
+<p>7. <img src=
+"../imgs/7bf4b5ba7f6a1398876b1d4b55cab83b9c8dff8a.png"></p>
+<p>8. FIND-HULL (<i>A</i>, <i>p</i>, <i>m</i>)</p>
+<p>9. FIND-HULL (<i>A</i>, <i>m</i>+1, <i>r</i>)</p>
+<p>10. MERGE-HULL (<i>A</i>,<i>p</i>,<i>q</i>.<i>r</i>)</p>
+<p>11. <i>i</i>&nbsp;=&nbsp;<i>j</i></p>
+<p>12.
+<b>while</b>&nbsp;<i>p</i><sub>i</sub><i>h</i><sub>l</sub>&nbsp;is
+not tangent to&nbsp;<i>CH</i><b>&nbsp;</b></p>
+<p>13. &nbsp;&nbsp;&nbsp;&nbsp;<b>&nbsp;if</b>&nbsp;<img src=
+"../imgs/b6177c88635562a8713c028530ca8c5a5697cbb3.png"></p>
+<p>14.
+remove&nbsp;<i>h</i><sub>i</sub>&nbsp;from&nbsp;<i>CH</i></p>
+<p>15.&nbsp; <i><img src=
+"../imgs/0ae1d8541d183ba3acba09434dae842f0d8c69b0.png"></i></p>
+<p>16.
+INSERT&nbsp;<i>p</i><sub>i</sub>&nbsp;in&nbsp;<i>CH&nbsp;</i>between&nbsp;<i>h</i><sub>u</sub>&nbsp;and&nbsp;<i>h</i><sub>i</sub></p>
+<p>17. <b>return</b> <i>S</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis of Complexity:</b></p>
+<p>• In the above algorithm all <i>n</i> points are stored in array
+<i>A</i>. Then find the convex hull of first <img src=
+"../imgs/118ba9a54bf02cd374425c917a664a14a2f2c540.png"> point and
+second <img src=
+"../imgs/118ba9a54bf02cd374425c917a664a14a2f2c540.png"> point.
+Finally merge the result.</p>
+<p>•</p>
+</div>
+<hr>
+<div class="answer">In the above algorithm all <i>n</i> points are
+drawn independently according to the sparse-hulled distribution.
+Since according to sparse-hulled distribution the expected size of
+the convex hull is as follows: <img src=
+"../imgs/60612fcce4ed8cef41565ffd14b5d5d142fadda6.png">.
+<p>So,</p>
+<p><img src=
+"../imgs/1873d2d10e1777be1dbd5bef503b1479a03a87c9.png">.</p>
+<p><b>Hence, by master theorem</b> <b><img src=
+"../imgs/6a38390b9eb0652c4d6e64564991d79dbbd28db6.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

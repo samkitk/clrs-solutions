@@ -1,0 +1,804 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 11.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Longest-probe bound for hashing</b></p>
+<p>Open addressing is the hashing technique in which for inserting
+an element in the table firstly we search for the elements if it is
+already contained in it, the search returns either the element or
+the free space in the array to fill that element.</p>
+<p>In uniform hashing technique sequence of elements to be search
+can be any of the <i>m</i>! permutation in<img src=
+"../imgs/bb14464678195d377f60828f5f11fdb56606933a.png">that is this
+technique gives the method of searching which search in the full
+list for the single element in the generalized way.</p>
+<p>For the storage of <i>n</i> elements where<img src=
+"../imgs/99ffeaf9183644e76f05d6f997f87f20136d0c8e.png">in a hash
+table of capacity <i>m</i> items it uses the open addressing
+technique.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a</b></i> . In the process of insertion of an element by
+using uniform hashing technique if the element is not found in the
+table then it is inserted into the first slot which do not contain
+any element.</p>
+<p>If<img src=
+"../imgs/0eecc083fd7c845f667ef2bbffa1daf28bb77f42.png">is the load
+factor that is <img src=
+"../imgs/c8da678b85a7dccb327c30164838c1eca90f1f3c.png">to search an
+element which is not found in the table then the total expected
+probes is maximum of<img src=
+"../imgs/b20a3f06894698714cd9e5c8bcdcd4f385fa42a9.png">.</p>
+<p>Assuming that a variable chosen<img src=
+"../imgs/f79ffd60be80142571dc4bc424aa5f82951cf9b0.png">represents
+the probes which do not return the required variable then <img src=
+"../imgs/af3808b113036c291661310bfc7702102f4bd602.png">. We know
+that <img src=
+"../imgs/7b2c2e19012cf274843689479d7076a39de2b926.png">
+then<img src=
+"../imgs/0c2047799e5e4dd6a9ded325b3e0ef7315d91c81.png">. The
+probability of insertion of <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">element in a
+hash table that uses uniform hashing requires not less than
+<i>k</i> probes so <img src=
+"../imgs/32470d5a1fcba27b2838d91b513746b2b2c78a2f.png">thus,</p>
+<p><img src=
+"../imgs/673656da71f50f0b4f4b87f7f2e3a6aaa466e093.png">&nbsp;</p>
+<p>Hence <img src=
+"../imgs/d44becbf1e60f2fc6fb6b8c8a7b5d33d0163e8f5.png"></p>
+<p>Thus for insertion of <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">element in
+the hash table by using uniform hashing where <img src=
+"../imgs/e495ef96c7d8c6700ef563210b2eeaaf73ea4842.png"> the
+probability of storage is not more than<img src=
+"../imgs/5741c6e608dbbbad451eda3d7e787b705b208984.png">when it
+searches more than <i>k</i> times.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b</b></i> . For insertion of <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">element in
+the hash table by using uniform hashing where <img src=
+"../imgs/e495ef96c7d8c6700ef563210b2eeaaf73ea4842.png"> the
+probability of storage is not more than<img src=
+"../imgs/5741c6e608dbbbad451eda3d7e787b705b208984.png">when it
+searches more than <i>k</i> times that is</p>
+<p><img src=
+"../imgs/d44becbf1e60f2fc6fb6b8c8a7b5d33d0163e8f5.png"></p>
+<p>Here the probes required for the insertion of <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">element in
+hash table is more than<img src=
+"../imgs/0e0944c5d429ab41b275cdd6575c5840fe94c3b0.png"> .</p>
+<p>Thus, <i><img src=
+"../imgs/7e51578a75e0426ec13636ab5a1ecb222d9bb6ef.png"></i>.</p>
+<p><img src=
+"../imgs/ec52b7358c10af99adb4ec38680ebd97d00df822.png"></p>
+<p>By using formulae of logarithm:</p>
+<p><img src=
+"../imgs/06d670987bc4e2d5d0e01b21dd557d6fc508e3a2.png"></p>
+<p>Thus</p>
+<p><img src=
+"../imgs/b4d12827399808bb510b98aac1d06d238e0dc6d2.png"></p>
+<p>Hence the probability of storage for the insertion of <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">element is
+<img src="../imgs/add9c0869bece50e3f080c71bc9196d15902906d.png">for
+<img src=
+"../imgs/c45cfa15388db3553aa73f423e9df5b7e54a69b0.png">when it
+probes <img src=
+"../imgs/a501f2c86236568c59eb2f25586e245b20628ba2.png">elements in
+the table.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> The insertion of <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">element in
+the table requires <img src=
+"../imgs/e2ceb5688f2c45fdfbfd5de5d07272571d4e77e9.png"> searches
+and <img src=
+"../imgs/88a903e723d3d3adc693cd5812a9cac2c463ce67.png">represents
+the total number of searches necessary for the insertion of
+<i>n</i> elements.</p>
+<p>Consider an event <i>A</i> for which the number of probes
+<i>X</i> are such that<i><img src=
+"../imgs/3c29b36f836148dc5e8db6255dc6d6d8d7632168.png"></i>, and in
+<img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">event
+<img src="../imgs/ebd4b44a9a7d565ad082d47e6eddbde77d760246.png">
+the number of probes<img src=
+"../imgs/65474edfa3ee0c761068177f52e385ca51e87321.png">, for
+<img src="../imgs/008cba75399b40d0080030a6a7093aa73a4c39de.png">.
+Then probability of events is as:</p>
+<p><img src=
+"../imgs/ce48f6278fbf9ab24ab87be0546df93b43db147d.png"></p>
+<p>For <i>n</i> number of events<img src=
+"../imgs/c4511b0ad167b661d4b767b825ffc65e9243dc58.png"> according
+to the Bool’s inequality:</p>
+<p><img src=
+"../imgs/ecd9e7c2ee41956b1c3dbfae06a13e879c01f6b4.png"></p>
+<p>Then for the set <i>A</i> of <i>n</i> events,</p>
+<p><img src=
+"../imgs/24693af4168548d2fa7ad7d2684cbddfe4cf7a93.png"></p>
+<p>Hence if the insertion of <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">element in
+the table requires <img src=
+"../imgs/e2ceb5688f2c45fdfbfd5de5d07272571d4e77e9.png"> searches
+and if <img src=
+"../imgs/0118e4b48429d96489b08ab8e6dbc3c620fba0aa.png">represents
+the total number of searches necessary for the insertion of
+<i>n</i> elements then:</p>
+<img src=
+"../imgs/7f2d1118fc0db2ea2e74fd4da47233682faff07b.png"></div>
+<hr>
+<div class="answer">
+<p><i><b>d</b></i> <b>.</b> The expected length of the probe
+sequence for <i>k</i> probes is given by the formulae:</p>
+<p><img src=
+"../imgs/a108e438a44b08827d53b7d4656aeb3ac4f515a8.png"></p>
+<p>Breaking the sequence into two parts one from <img src=
+"../imgs/8e9f9ccc2970e375764770a5fb29100b8638dd03.png">and the
+other from<img src=
+"../imgs/a482df1b9aae2f72b4dc7980a306e8bfba5e1607.png"> then,</p>
+<p><img src=
+"../imgs/40cd8dc5e3f40d27917289b02be758870b5dc10c.png"></p>
+<p>For the searching of <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">element for
+which the number of probes less than <img src=
+"../imgs/0e0944c5d429ab41b275cdd6575c5840fe94c3b0.png"> then</p>
+<p><img src=
+"../imgs/7ab05c865b466462be332c310ca3304f8ce06340.png">and for the
+search when number of probes are greater than<img src=
+"../imgs/0e0944c5d429ab41b275cdd6575c5840fe94c3b0.png">then</p>
+<p><img src=
+"../imgs/a5282485b5c8563a9726048b1c6ee3583f6053e6.png">.</p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/29387f33d210f04e3e6266afe9d31df8928c0a7f.png"></p>
+<p>Hence, the expected total length<img src=
+"../imgs/ca07c0435812dde6068e01bd8f02640283d063e9.png">of the
+maximum length probe succession is<img src=
+"../imgs/c3c5c5eaaf427e06756f4482f7280d7143d2fb5b.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>a.</b></p>
+<p>The probability to hash a key to a specific slot is<img src=
+"../imgs/faa3122aedd63aadee69bccce0911cd934b3387d.png">. Then the
+probability to hash a particular set of <i>k</i> keys to a specific
+slot and remaining keys to other slots is <img src=
+"../imgs/c645ecc20b629801e3d60fc27fc5c1f7883bbd8e.png">.</p>
+<p>Here, <i>k</i> keys can be selected from <i>n</i> keys, in
+<img src="../imgs/7410dac40a5497b2fda074437765516898ac5c9d.png">
+number of ways.</p>
+<p>Thus, the probability to hash a set of <i>k</i> keys to a
+particular slot is as follows:</p>
+<p><img src=
+"../imgs/72a5cdf8dbeede51fa97001a9f584d0c4e2aaf37.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b</b>.</p>
+<p>Assume a random variable<img src=
+"../imgs/c816c1f7c57ed85822930f3c24e7a1b8ad9f649c.png">, which
+denotes the number of keys hash to the slot<img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png">. And assume
+that <img src=
+"../imgs/53e3d69329b563b12207a43b54a12aba44b75c77.png">denotes an
+event that the number of keys hashed to slot <i>i</i> is equal to
+<i>k</i>(That is, <img src=
+"../imgs/41febbc783b4666f89bca9f14731555eb9d880cf.png">). In part
+(a), it is already proved that <img src=
+"../imgs/b05629447caf38f9eeb882ca17a6e2d2aa2319d9.png">,</p>
+<p>Thus,</p>
+<p><img src=
+"../imgs/c6c804dc1703c81a850f4ed6cf93435b62299d7a.png">, where,
+<i>M</i> is the maximum numbers of keys in any slot after all the
+keys have been hashed.</p>
+<p>Now, put the values in the above expression:</p>
+<p><img src=
+"../imgs/3d594293d3330dd0250b6096ed142113be52fcf5.png"></p>
+<p>In other words,</p>
+<p><img src=
+"../imgs/303b8da8c87e035dd2b5dcd97243536edaaf30c8.png"></p>
+<p><img src="../imgs/5eaf491e1593077df1c697e6fa951534a88a6c37.png">
+(By <i>Boole’s inequality</i>)</p>
+<p>Thus, <img src=
+"../imgs/9e07cab5c78f0fd43740f4acdd93875aa111fd6f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>c.</b></p>
+<p>To show the given in equality, first consider the following
+inferences:</p>
+<p>• The probability<img src=
+"../imgs/582585781203ac1651784c149eae146e221bd9d8.png">. Thus,
+also<img src=
+"../imgs/f9460a9b97859b177084b744e3bd5cb598fb7ca1.png">.</p>
+<p>• It is already known that<img src=
+"../imgs/5826b38891a2edabae3d7231e237984266751a5f.png">.</p>
+<p>Thus, <img src=
+"../imgs/5f9b2f2be17395d5baabb6de0fc99bf53fd5672c.png"></p>
+<p>• From the Stirling’s approximation, <img src=
+"../imgs/2e4fec7b59b7451fee20509095f35aa8f768d1b4.png"> .</p>
+<p>Consider the value of <img src=
+"../imgs/3d11a698cef88057ad9a0ad58102a0b32fdeb2e2.png">:</p>
+<p><img src=
+"../imgs/0b9c4b19af66a6c998780e5cb656234f1176630d.png"></p>
+<p><img src=
+"../imgs/0207ee960e595c26648943fe4201412bc1d5eef0.png"></p>
+<p>Therefore, <img src=
+"../imgs/3d11a698cef88057ad9a0ad58102a0b32fdeb2e2.png"><img src=
+"../imgs/d7090ab7c892e6f810c9e2710ca775d277f5a8e2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>d</b>.</p>
+<p>If <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">= 2, then
+<img src="../imgs/655460f1666da6d6b2f688065c6b317e3a88146f.png">is
+also 0. Therefore, assume<img src=
+"../imgs/14980bedefd39917a2ad4a504323f08baa6a4942.png">.</p>
+<p>From part (c), it is proved that <img src=
+"../imgs/0167c829894214c7ac3d0f9dc19faf1660f229b8.png"> for every
+<i>k.</i> Thus, it is also true for <i>k</i> =
+<i>k</i><sub>0</sub>. That is, <img src=
+"../imgs/f587778e414f7491df1e933f11a22af1f9fd487c.png">.</p>
+<p>Now, it is enough to prove that <img src=
+"../imgs/a4adde62d3f380fbf2a5a316f82d93076595bb9e.png">or <img src=
+"../imgs/575682621e1aa935ae1be14fcb3dfb3013fb35c7.png">.</p>
+<p>After taking logarithms on both sides, the condition is as
+follows:</p>
+<p><img src=
+"../imgs/454487192b0dcccd75b785c01971e4a6ac9022d6.png"></p>
+<p><img src=
+"../imgs/78bef9117bc72e36d721d56ce1fbb4ba02f38147.png"></p>
+<p>Suppose <img src=
+"../imgs/560e2d1232c76325024880638fc0bcc29e6a667d.png">.</p>
+<p>• Now, it is required to prove the existence of a constant
+<img src="../imgs/2dba8cab49bd10b05f89a8f78caadf08daf45e5b.png">
+that is greater than 1 such that <img src=
+"../imgs/b57a0c7e096c8a41cf7b9946c9fd79e3948b8c92.png">. It is
+noting that <img src=
+"../imgs/da0a6678e024a0e3c37e7f31e01b1d82ec8ec94b.png">.</p>
+<p>•</p>
+</div>
+<hr>
+<div class="answer">Here, it can be observed that there exists a
+value <i>n</i><sub>0</sub><sub>,</sub> such that <img src=
+"../imgs/56bdeedf4d9870e56f0836d4155402e26cee1338.png"> . Thus,
+<i>c</i> &gt; 6 works for <img src=
+"../imgs/9d4e3dcbf2f1ec6bc5eea2ea975c754ec64d334a.png"> .
+<p>Thus, the value of <i>n</i> can be in the range <img src=
+"../imgs/704cf935cdd58ccaa85c999653a592584678e33d.png">and for each
+value of <i>n</i> in this range, a value for <i>c</i> can be
+determined so that 3 &lt; <i>cx</i>.</p>
+<p><b>Therefore, it is proved that</b> <b><img src=
+"../imgs/1136b95da622f495daf7b2c423ca87b670687735.png"></b></p>
+<p>Now, it is remained to prove that <img src=
+"../imgs/1fe437bcbb3f02429f7667ee3d8076bd08085a4a.png"> .</p>
+<p>For <i>k</i>=<i>k</i><sub>0</sub>, <img src=
+"../imgs/68daf3f439b46f7abb6190f325c192574b59914e.png"></p>
+<p><img src=
+"../imgs/454104b9a70c672d0e612f4dcaa52132098a5cea.png"></p>
+<p>Here, To prove the given condition, choose a large value for
+<i>c</i> such that<img src=
+"../imgs/cd623febe3ab4a33d1e48840eb04900a747b4bbd.png"> . Then
+<img src="../imgs/91bad285c40ea10da8552e84f9625c83b9660371.png">
+for all <img src=
+"../imgs/0f9baf32d89ee405d3308cc86470b6c7a4088f9e.png">.</p>
+<p>Thus, <i>e</i><sup>k</sup><i>/k</i><sup>k</sup> decreases as
+<i>k</i> increases.</p>
+<p><b>Therefore,</b> <b><img src=
+"../imgs/b21952912640b79aa3ae55df55f120b94d14a10c.png"></b> <b>,
+where</b> <b><img src=
+"../imgs/0f9baf32d89ee405d3308cc86470b6c7a4088f9e.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>e.</b></p>
+<p>The <i>M</i> ‘s expectation will be calculated as</p>
+<p><img src=
+"../imgs/58fbdf07f0f676b13a00fefc794be567762e58b3.png"></p>
+<p>Now, put the values in the above expression, then user will
+obtain;</p>
+<p><img src=
+"../imgs/c0e47872d1fd35ca25df5f17108071c702153a08.png"></p>
+<p>Then use the above results, the user obtained:</p>
+<p><img src=
+"../imgs/77e8c23438b11cb3ae209fd83e6b9b271b2d61c9.png"></p>
+<p>After putting the values, user will obtain the following:</p>
+<p><img src=
+"../imgs/53f3865a429a4889a9e64b6c94c3d6b3608e3a5a.png"></p>
+<p>Since it is given that</p>
+<p><img src=
+"../imgs/50e61f9273a51b17fe7aa4dc9c987bdf74f6df21.png">.</p>
+<p>It is known that</p>
+<p><img src=
+"../imgs/634de7fa2508d899ed0974094d81666565db7b67.png"></p>
+<p>and then,</p>
+<p><img src=
+"../imgs/764026843997a5d25405cd122ba80fefa59517b2.png"></p>
+<p>Now, put the values in the above expression</p>
+<p><img src=
+"../imgs/58b4c2e096c36dd8b2f6471b8a7b98e032b8719d.png"></p>
+<p>Hence it is concluded that</p>
+<p><img src=
+"../imgs/5b536ce779080fa2611c3d784da7b9f530663b58.png"></p>
+<p>After putting the values:</p>
+<p><img src=
+"../imgs/a8e0cabce0f485baa3c4201d3545938add3b517d.png"></p>
+<p>This implies:</p>
+<p><img src=
+"../imgs/34145ece884dd6d845ae8994824f211ea9f60455.png"></p>
+<p><b>Therefore,</b> <b><img src=
+"../imgs/3b3c093da4d2aac3fc0f76d7366c676102b9b9e9.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Quadratic probing</b></p>
+<p>Quadratic probing or quadratic hashing is the hashing technique
+which reduces the collision in the table and it can be given by the
+following formulae,</p>
+<p><img src=
+"../imgs/203eda2e9127c62119198f2969160afa9e039f1a.png"></p>
+<p>Where <img src=
+"../imgs/0ae2817421a09c725c394349e7f9b2005f1c5642.png">is any hash
+function,<img src=
+"../imgs/a2f145f075b64081104262f71f9504d9c36eb59c.png"> are the
+constants and <img src=
+"../imgs/c73bba4d64363e3ddce213db52b24177c07a5a33.png">is bucket
+size, <i>k</i> is the key to be inserted.</p>
+<p>To prove that the scheme of hashing problem is an instance of
+quadratic probing a numerical example is taken as consider
+<img src="../imgs/276479b939c63545e6258a656f418c565a42048f.png">and<img src="../imgs/d3f13b09e271511b9c33169185598f387f6be2d1.png">.</p>
+<p>The numbers 29, 21, 13, 37 are the keys which we already
+inserted in the table for the schema now we will search for number
+37 in the table below:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p>13</p>
+</td>
+<td>
+<p>3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>21</p>
+</td>
+<td>
+<p>2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>29</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>37</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+</table>
+<p>Firstly searching a number <img src=
+"../imgs/0914678dc562d4c87d0d3de9b196ebb24fa9ea49.png">in the above
+table by using the scheme of searching by taking<img src=
+"../imgs/b7403e56ba5817da485d069e3e23efd2d2a09246.png">.</p>
+<p><img src=
+"../imgs/76744377ec3980bb97449b91df04c19e1b3933ee.png">and
+<img src="../imgs/749fcdeb49011f5e04804697f0a380c2c352e5c4.png"></p>
+<p>But at position 1 the value 29 is there so increase the value of
+<i>i</i> for next step</p>
+<p><img src=
+"../imgs/7792060283178ed0406bc927a9bca13e7cfbd0bd.png"></p>
+<p><img src=
+"../imgs/50a612c1452851050e98a47dc2d2d53ed906fe2e.png"></p>
+<p>but at position2 the value 21 is there in the table so<img src=
+"../imgs/def937a144699badde489ce856a9730655943f12.png"></p>
+<p><img src=
+"../imgs/4ef65f05376aaddb6d5eba6d86efd509730c126d.png"></p>
+at position0 the value <img src=
+"../imgs/0914678dc562d4c87d0d3de9b196ebb24fa9ea49.png">is found
+hence the search complete.</div>
+<hr>
+<div class="answer">
+<p>Now searching the same value <img src=
+"../imgs/0914678dc562d4c87d0d3de9b196ebb24fa9ea49.png">by using
+general Quadratic probing formulae:</p>
+<p><img src=
+"../imgs/d816c613aad31b2b4646aec68f067c0c5cd47b37.png"></p>
+<p>Assuming the value<img src=
+"../imgs/e4217231418e6338752280a656e45e29ddf47a90.png">and
+<img src="../imgs/7be3d02eab20126baa621d4ada6020e98ab5a165.png">
+and put these in quadratic formula as:</p>
+<p><i><img src=
+"../imgs/86206bd0578c41f31c5de176a84f1bb80d943e21.png"></i></p>
+<p><img src=
+"../imgs/1c316d7fd3c7738d4cf91b284781164f02622fc0.png"></p>
+<p>searching for 37</p>
+<p><img src=
+"../imgs/0150bb2a05ce084ee71ae8891ba27cef736d21fa.png"></p>
+<p>at position1 the value 37 is not found so increase <i>i</i> by 1
+that is <img src=
+"../imgs/a7287f2fd03193cc2ace3553666a45129e9780b3.png">.</p>
+<p><img src=
+"../imgs/d9b00b70ca4a4e5c436181175caeca9a243e5a1e.png"></p>
+<p>at position 2 the key 37 is not found so<img src=
+"../imgs/6c25664b718962cb395bf4a3576ad4b1017e4812.png">.</p>
+<p><img src=
+"../imgs/dd2dfd6a585b52006b70cfce68d17e891fd9a51b.png"></p>
+<p>at position 3 the key 37 is not found so<img src=
+"../imgs/f3a27a01e82fbf527ec952533cdc45d4cdac3324.png">.</p>
+<p><img src=
+"../imgs/0f3c565548d73666bfa0fc21dac84af1c8b6885e.png"></p>
+<p>at position 0 the key 37 is found.</p>
+<p><b>Hence for constants</b> <b><img src=
+"../imgs/e4217231418e6338752280a656e45e29ddf47a90.png"></b>
+<b>and</b> <b><img src=
+"../imgs/7be3d02eab20126baa621d4ada6020e98ab5a165.png"></b> <b>of
+“Quadratic probing” it shows the behavior same as the hashing
+scheme.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Proving that for searching any key <i>k</i> in
+the table by using the search scheme it searches each position of
+the table if the key is not present in the table.</p>
+<p>In the worst case that is when the key is not present in the
+table we search for each and every element of the table to match
+each key of table with the element to search.</p>
+<p>The given algorithm searches each and every bucket of the table
+if the given key is not present in the table</p>
+<p>Example: Search for 4 in the above hash table.</p>
+<p><img src=
+"../imgs/74ca1a615204e2c664ff44da0a7b6d543a6ba493.png"></p>
+<p>but at position 0, the value 29 is there so<img src=
+"../imgs/5a8ccd91e6d7a46ae9cb636161f68dc4a621c593.png"></p>
+<p><img src=
+"../imgs/f7b125a5dea08c684b744586143afb7b5745634b.png"></p>
+<p>but at position1 the key 21 is there so for next iteration
+<img src=
+"../imgs/e91b6b300c79668c8e6b67ff10aae9c4c54486f5.png"></p>
+<p><img src=
+"../imgs/b60da2c56cb1616085bb7b02109d00c0388111ef.png"></p>
+<p>at position 3, the key 13 is present.</p>
+<p><img src=
+"../imgs/6be6e48f6f18088cc52472cb74a0f87b65db763b.png"></p>
+<p>at position 0 the value 37 is found.</p>
+<p><img src=
+"../imgs/069046e3a4e1adbae62e7c57cc202cd1be48f005.png"></p>
+<p>So element 4 is not present and we terminate search. We have
+searched each position of table.</p>
+<p><b>Hence in the worst case that is if key is not present in the
+table or present in the reverse order then the search scheme probes
+in each position of the table.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Hashing and authentication</b></p>
+<p>In a class of hash functions <i>H</i> each hash function
+<img src=
+"../imgs/ce8a1fc652f067d963a29624c764ab761de76f77.png">maps a
+universe <i>U</i> which has keys to the value set<img src=
+"../imgs/2fee9867a8c87e448a30d7404cc4169dbdbf3256.png">.</p>
+The set <i>H</i> is <i>k</i>-universal that is for each
+unchangeable succession<img src=
+"../imgs/4b40c3f4e1c436d3ecae12ea8cef9ab028c4c240.png">of <i>k</i>
+keys that are distinct and for any hash function <i>h</i> chosen
+randomly from the set the succession<img src=
+"../imgs/d29bc6a0d525a47fba96d71dbc9eb500acef4c71.png">can be one
+from <img src=
+"../imgs/a1c3f68f33d6d6ddac2653c6bda9f07ad3313977.png">sequences
+which have length <i>k</i> with<img src=
+"../imgs/2fee9867a8c87e448a30d7404cc4169dbdbf3256.png">.</div>
+<hr>
+<div class="answer">
+<p><i><b>a</b></i> . If the hash family <i>H</i> is 2-universal
+then each of its hash functions contain two keys so for the
+keys<img src=
+"../imgs/180ac790767ee44cc89a47b70b95adcf763aec07.png">in a hash
+function <i>h</i>, the sequence<img src=
+"../imgs/3daeacec454805b2760dbe115d98ba9031d9479b.png">can be any
+of sequence in the set<img src=
+"../imgs/ec88e0a78751e89ad9c06e768db6e1bf24de187c.png">.</p>
+<p>Therefore, as the hash function <i>h</i> changes within the set
+of hash functions <i>H</i>, the count of collisions<img src=
+"../imgs/8a81b759c12d01a8092b084e4db4ce1e7e5624cb.png">is<img src=
+"../imgs/896b33f2e84dbcbb6b5f8b630f98aaf02943e91d.png">, and
+<i>H</i> is universal.</p>
+<p>Hence if has set <img src=
+"../imgs/75632019b63ecb2e9f78bdfe5c5b1a29687d0760.png">is
+2-universal then this class <i>H</i> is universal class too.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b</b></i> . The universe <i>U</i> is a class of
+<i>n-</i>tuples of the values that are taken from a set<img src=
+"../imgs/a8f26b00acba8f8a19ba95315c6245695d61d845.png">here
+<i>p</i> is prime number. If an element<img src=
+"../imgs/a50c8a01d6e942b7652d4b473889d4bf4a653c4b.png">, for any of
+<i>n</i>-tuple <img src=
+"../imgs/4f7af6a873679944d00aeacbc66282c251dbed5e.png">the hash
+function <img src=
+"../imgs/f5066bedd82a98fa2b176acdf6c3dec6ac320e22.png">is
+represented as:</p>
+<p><img src=
+"../imgs/2a3041b53c3c581de518e8f23ba03fdcddfa5201.png"></p>
+<p>Proving that <img src=
+"../imgs/cf2c68be39e044795c4803edd584ee8ef20a8063.png">is universal
+set but this universal set is not 2-universal.</p>
+<p>Assuming that a hash function <i>h</i> is selected from the hash
+family <i>H</i> with the key <img src=
+"../imgs/79dce9a80ea37849a637ba109b623997e88b68d3.png">and b at
+random that is without any prior information. Then for the
+succession<img src=
+"../imgs/3daeacec454805b2760dbe115d98ba9031d9479b.png">hash
+function<img src=
+"../imgs/b564f5ce3617dfb2448594013f3bede6701d8dd7.png"> will never
+be the sequence from the set<img src=
+"../imgs/65742a708c3e76c35101d751bc7a472187d66fb0.png"></p>
+<p>Hence <i>H</i> will not be a 2-universal class.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c</b></i> . If the class of hash functions <i>H</i> is
+changed as<img src=
+"../imgs/0b5f601439f8d47d2ce46623d23cca08648d36e1.png">for the
+keys<img src=
+"../imgs/f80392d6618901d4e8fb1913b31a94de20d9725f.png">and
+<img src="../imgs/9ab05728de2eea73b8a204a9d9591f061edcb2f5.png">
+the hash function:</p>
+<p><img src=
+"../imgs/3c7718027edb2bee8c847b5bc4c2a89c2f7c433d.png"></p>
+<p>Proving that <i>H’</i> is 2-universal class.</p>
+<p>For a 2-universal hash class it is must that for each key
+pair<img src=
+"../imgs/3daeacec454805b2760dbe115d98ba9031d9479b.png">when<img src="../imgs/180ac790767ee44cc89a47b70b95adcf763aec07.png">
+in a hash function the values <img src=
+"../imgs/94676786a3fba6734f87bb95db1fbf0786fe594c.png"> have equal
+probability to occur when hash function is selected at random from
+hash class <i>H</i>. For the changes in the hash function this is
+proved as:</p>
+<p>If<img src=
+"../imgs/180ac790767ee44cc89a47b70b95adcf763aec07.png">, we must
+have <img src=
+"../imgs/9e91020fc2d36127a2172b0a8855a4963bae33a0.png">for some
+<i>i</i>. Assume <img src=
+"../imgs/54f0665a202033a9715a1632d368ed8fd8402c2e.png">without any
+loss in precision or generality. We define</p>
+<p><img src="../imgs/5bfe671b310dd69874bae74d23399462e1c9a219.png">
+and</p>
+<p><img src=
+"../imgs/90c4f3f62f88ed345e4b8459ad123e804a3db6f4.png">.The
+equations for <img src=
+"../imgs/0eecc083fd7c845f667ef2bbffa1daf28bb77f42.png"> and
+<img src="../imgs/73cc4d7519ce6f64f15616d1c42624ee5913429e.png">
+are <img src=
+"../imgs/faf9cbe70efd0ccffb2a9fd350a63161d64242f1.png">
+and<img src="../imgs/df7436044b6f6c100dcb434e23aa6b335d9c77b6.png">It
+is clear that <img src=
+"../imgs/5d02112657970cd9d1c47691d21b668264b83fd6.png">and <i>p</i>
+is prime, so the solution for the equations of <img src=
+"../imgs/0eecc083fd7c845f667ef2bbffa1daf28bb77f42.png"> and
+<img src="../imgs/73cc4d7519ce6f64f15616d1c42624ee5913429e.png">
+will be unique for <img src=
+"../imgs/f46d97c095d194ae2b5234472778c32752cff700.png"> and
+<i>b</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider that for the generation of all pairs of<img src=
+"../imgs/f4c7e1f0660542ebb74a642b5c1b78e707aae414.png"> we must
+control over the <img src=
+"../imgs/0eecc083fd7c845f667ef2bbffa1daf28bb77f42.png">and
+<img src="../imgs/0d964b95c52ceec1b1ef8ab2cfcf3f329858c57e.png">without
+any dependency. We have</p>
+<p><img src=
+"../imgs/2bacdf62883fd327d555a0882ff58aa13fab5099.png"></p>
+<p>So</p>
+<p><img src=
+"../imgs/99d2b897b294c29db9275d56deb39e131878234b.png"></p>
+<p>The expression<img src=
+"../imgs/53ff83858564ed4831903f15fa5249ac25afe25b.png">is existing
+and it not repeating because<img src=
+"../imgs/92d143c119fc6547c0c9b93bf9b4dc899fea1eb1.png"> and the
+value of <i>p</i> is prime. So <img src=
+"../imgs/0d964b95c52ceec1b1ef8ab2cfcf3f329858c57e.png">can be made
+according to the need by selecting a <img src=
+"../imgs/f46d97c095d194ae2b5234472778c32752cff700.png">according to
+condition. If we do so then we can also make <img src=
+"../imgs/0eecc083fd7c845f667ef2bbffa1daf28bb77f42.png"> according
+to our need by taking <i>b</i> as required.</p>
+<p>This puts a unique value of offset to <img src=
+"../imgs/0eecc083fd7c845f667ef2bbffa1daf28bb77f42.png">
+and<img src="../imgs/73cc4d7519ce6f64f15616d1c42624ee5913429e.png">,
+by ignoring the difference <img src=
+"../imgs/0d964b95c52ceec1b1ef8ab2cfcf3f329858c57e.png">mod <i>p</i>
+as it is. So, for<img src=
+"../imgs/16b245e2636f24e38ee670a8a6846e0c63386ce4.png">, there is a
+hash function<img src=
+"../imgs/ac250e317b61ba5947c2f4b97cf3a858fb893536.png">that
+produces the values for<img src=
+"../imgs/f4c7e1f0660542ebb74a642b5c1b78e707aae414.png">by selecting
+the correct values of <img src=
+"../imgs/f46d97c095d194ae2b5234472778c32752cff700.png"> and
+<i>b</i>.</p>
+<p>We know that there are <img src=
+"../imgs/11ee08960c165b73baf7b15da5b8080e8f582f43.png">choices
+possible for<img src=
+"../imgs/edea3b245b4c1e7128b247c64e0d796cdc78ae61.png">and
+<i>b</i>, and this is also true for<img src=
+"../imgs/f4c7e1f0660542ebb74a642b5c1b78e707aae414.png">, and
+each<img src=
+"../imgs/f4c7e1f0660542ebb74a642b5c1b78e707aae414.png"> is produced
+by taking only a single value of <img src=
+"../imgs/f46d97c095d194ae2b5234472778c32752cff700.png"> and
+<i>b</i>. This is right for each <img src=
+"../imgs/034d782e06c7103fa93b487e4f6ea61d343f2840.png">selections
+of<img src=
+"../imgs/05288e5e36a0044e68330e8495bd0989edc98ca3.png">.</p>
+<p>Hence, there are only<img src=
+"../imgs/dcf4c6ae7bd1b11ed879028dbc6e764f5a4016ed.png"> functions
+<img src=
+"../imgs/ac250e317b61ba5947c2f4b97cf3a858fb893536.png">which is
+used to produce the value pairs<img src=
+"../imgs/f4c7e1f0660542ebb74a642b5c1b78e707aae414.png">and
+all<img src=
+"../imgs/f4c7e1f0660542ebb74a642b5c1b78e707aae414.png">have equal
+probability of being selected when <img src=
+"../imgs/ac250e317b61ba5947c2f4b97cf3a858fb893536.png">is selected
+at random, so hash family <i>H</i> is 2-universal.</p>
+<p><i><b>d</b></i> . Assuming that Alice and Bob agreed on a hash
+function <img src=
+"../imgs/ce8a1fc652f067d963a29624c764ab761de76f77.png">such that
+every hash function maps the set of keys <i>U</i> to the values in
+the set<img src=
+"../imgs/00cad05490d8d201d68581440ded89b23d2a27a5.png">here
+<i>p</i> is prime value.</p>
+<p>After some time Alice has sent a message <img src=
+"../imgs/e895eea63ce1c33d47cb1c29e69f313905f33897.png">to Bob over
+internet with the certification that <img src=
+"../imgs/01fd1c58d6a64ca450897987f1efdc1652ea0aa1.png">and Bob has
+got the message in the form of<img src=
+"../imgs/d809cceaf4b1260e45fe957ec858eac224716eca.png">feels
+satisfied by seeing tag <i>t</i>.</p>
+An unauthenticated person fools Bob by replacing <img src=
+"../imgs/d809cceaf4b1260e45fe957ec858eac224716eca.png">with<img src="../imgs/9466b391f703b7f753cd28dae3df484cc5b4eacb.png">.
+Then argue that the probability of receiving the messages
+with<img src=
+"../imgs/9466b391f703b7f753cd28dae3df484cc5b4eacb.png">is<img src=
+"../imgs/cb6281e10f6d10ebe3759fb3bd6890fab111ea71.png">, without
+any effect of number of opponent and computing power of
+internet.</div>
+<hr>
+<div class="answer">
+<p>In the hash class for a set of keys<img src=
+"../imgs/f9bd5c3d25d109062d4aaebdbf18684077e6f083.png">, all the
+hash value sets <img src=
+"../imgs/82c6b02f06ccbd1bb743318199ce8137aa59b03c.png">are selected
+with same likeliness when the hash function <i>h</i> is selected at
+random. In this case <i>H</i> will be 2-universal so all <i>p</i>
+pairs<img src=
+"../imgs/fff50b679842084779c552a29c6f7be1b4a91739.png">in the hash
+class are equally probable.</p>
+<p>Hence if the opponent knows hash class <i>H</i>, then
+seeing<img src=
+"../imgs/0f9ff11fbf8261cd7325d44d1b4be1a596ed3fb4.png">tells him
+almost everything about<img src=
+"../imgs/2030217fd0633e882b22928ed999a17539bb7fd6.png">. Since for
+all the <i>p</i> cases the probability is equal and so the sum of
+this probability must be 1, for all <img src=
+"../imgs/2030217fd0633e882b22928ed999a17539bb7fd6.png">have
+probability<img src=
+"../imgs/cb6281e10f6d10ebe3759fb3bd6890fab111ea71.png"> and the
+opponent can do nothing but to guess.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

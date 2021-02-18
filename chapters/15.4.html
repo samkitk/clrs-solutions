@@ -1,0 +1,1194 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 15.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider <i>X</i> and <i>Y</i> are two sequences.</p>
+<p><i>X</i>=<img src=
+"../imgs/4fdb163a6a481ea2aefc47c83908374fa60f31dc.png">, length of
+<i>X</i>, <i>m</i>=8</p>
+<p><i>Y</i>=<img src=
+"../imgs/53277333751efc0815b857536855f7e8c2eac897.png">, length of
+<i>Y</i>, <i>n</i>=9</p>
+<p>To find the longest common subsequence (LCS), apply the LCS –
+LENGTH(<i>X</i>, <i>Y</i>) algorithm on the sequences
+<i>X</i>=<img src=
+"../imgs/4fdb163a6a481ea2aefc47c83908374fa60f31dc.png"> and</p>
+<p><i>Y</i>=<img src=
+"../imgs/53277333751efc0815b857536855f7e8c2eac897.png">. Then the
+LCS-LENGTH returns the table <i>c</i>[0…8,0…9] and
+<i>b</i>[1…8,1…9].</p>
+<p><b>The table</b> <i><b>c</b></i> <b>and</b> <i><b>b</b></i>
+<b>are as follows:</b></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td>
+<p><b>j</b></p>
+</td>
+<td>
+<p><b>0</b></p>
+</td>
+<td>
+<p><b>1</b></p>
+</td>
+<td>
+<p><b>2</b></p>
+</td>
+<td>
+<p><b>3</b></p>
+</td>
+<td>
+<p><b>4</b></p>
+</td>
+<td>
+<p><b>5</b></p>
+</td>
+<td>
+<p><b>6</b></p>
+</td>
+<td>
+<p><b>7</b></p>
+</td>
+<td>
+<p><b>8</b></p>
+</td>
+<td>
+<p><b>9</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>i</b></p>
+</td>
+<td></td>
+<td>
+<p><img src=
+"../imgs/6e1f90ab06faddd6904ba7c6500a2b353d2cfe1d.png"></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>0</b></p>
+</td>
+<td>
+<p><img src=
+"../imgs/5601276658079e221fb31c45e40af9e09c021203.png"></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>1</b></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><img src=
+"../imgs/7dfa7284a16d66e2d015df5a78bf6196d272f8a6.png"></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/f2550e1811717eccdec4f8df75cd3cb0bb694a76.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/f2550e1811717eccdec4f8df75cd3cb0bb694a76.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/f2550e1811717eccdec4f8df75cd3cb0bb694a76.png"></b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>2</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><img src=
+"../imgs/38ae1b6106d69a6f5c9a5fc717dfd8c852f871ff.png"></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/4bc5e50baf6cac3ea5ec5883403aed600d6e47c8.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/d4945c0767cfa347293b5de1ec4b49ee9f96d84d.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/d4945c0767cfa347293b5de1ec4b49ee9f96d84d.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/4bc5e50baf6cac3ea5ec5883403aed600d6e47c8.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/d4945c0767cfa347293b5de1ec4b49ee9f96d84d.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/d4945c0767cfa347293b5de1ec4b49ee9f96d84d.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/4bc5e50baf6cac3ea5ec5883403aed600d6e47c8.png"></b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>3</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><img src=
+"../imgs/38ae1b6106d69a6f5c9a5fc717dfd8c852f871ff.png"></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/4bc5e50baf6cac3ea5ec5883403aed600d6e47c8.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5c1809e12f7dfb993b1f99189b8488e2ef61bf7e.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5c1809e12f7dfb993b1f99189b8488e2ef61bf7e.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a0a5c72c3385ea98809f65566b6474cd4ff13597.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/af31f7e6615af168dab2cb596dbca45690d83445.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/af31f7e6615af168dab2cb596dbca45690d83445.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a0a5c72c3385ea98809f65566b6474cd4ff13597.png"></b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>4</b></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><img src=
+"../imgs/38ae1b6106d69a6f5c9a5fc717dfd8c852f871ff.png"></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/4bc5e50baf6cac3ea5ec5883403aed600d6e47c8.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5c1809e12f7dfb993b1f99189b8488e2ef61bf7e.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a0a5c72c3385ea98809f65566b6474cd4ff13597.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a0a5c72c3385ea98809f65566b6474cd4ff13597.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7f196f5991609ffd322b1b295d0de19bf5c11645.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7a40c0504ab8d316b4a9aa4540f8f5ef04d647d1.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7a40c0504ab8d316b4a9aa4540f8f5ef04d647d1.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/cb6739e4967633c090a71c18f1f115fd3772ba15.png"></b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>5</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5c1809e12f7dfb993b1f99189b8488e2ef61bf7e.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a0a5c72c3385ea98809f65566b6474cd4ff13597.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7f196f5991609ffd322b1b295d0de19bf5c11645.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7f196f5991609ffd322b1b295d0de19bf5c11645.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7a40c0504ab8d316b4a9aa4540f8f5ef04d647d1.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/6779e9ce744dec22763d6222d8015cd3fc03486c.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/6779e9ce744dec22763d6222d8015cd3fc03486c.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a8976eddb59faabd752568db1a86489683edea1f.png"></b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>6</b></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><img src=
+"../imgs/38ae1b6106d69a6f5c9a5fc717dfd8c852f871ff.png"></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/4bc5e50baf6cac3ea5ec5883403aed600d6e47c8.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7f196f5991609ffd322b1b295d0de19bf5c11645.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7a40c0504ab8d316b4a9aa4540f8f5ef04d647d1.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7a40c0504ab8d316b4a9aa4540f8f5ef04d647d1.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/6779e9ce744dec22763d6222d8015cd3fc03486c.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a8976eddb59faabd752568db1a86489683edea1f.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a8976eddb59faabd752568db1a86489683edea1f.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/fbcd7c84252183df28e3c9b7b24670c8e18b3453.png"></b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>7</b></p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5ce3efbd30da7ab94e503ab284ba0bbd37d218c5.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/5c1809e12f7dfb993b1f99189b8488e2ef61bf7e.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a0a5c72c3385ea98809f65566b6474cd4ff13597.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/6779e9ce744dec22763d6222d8015cd3fc03486c.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/6779e9ce744dec22763d6222d8015cd3fc03486c.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a8976eddb59faabd752568db1a86489683edea1f.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/fbcd7c84252183df28e3c9b7b24670c8e18b3453.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/fbcd7c84252183df28e3c9b7b24670c8e18b3453.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/e2d8f41fe90077e03ff395122bfa52c5ee9bcd21.png"></b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><b>8</b></p>
+</td>
+<td>
+<p>1</p>
+</td>
+<td>
+<p>0</p>
+</td>
+<td>
+<p><img src=
+"../imgs/38ae1b6106d69a6f5c9a5fc717dfd8c852f871ff.png"></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/4bc5e50baf6cac3ea5ec5883403aed600d6e47c8.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7f196f5991609ffd322b1b295d0de19bf5c11645.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/7a40c0504ab8d316b4a9aa4540f8f5ef04d647d1.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/a8976eddb59faabd752568db1a86489683edea1f.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/fbcd7c84252183df28e3c9b7b24670c8e18b3453.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/e2d8f41fe90077e03ff395122bfa52c5ee9bcd21.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/e2d8f41fe90077e03ff395122bfa52c5ee9bcd21.png"></b></p>
+</td>
+<td>
+<p><b><img src=
+"../imgs/8895d6b77bcf79cd09e98d2d2322a0c98f3edc87.png"></b></p>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="answer">
+<p><b>Print the Longest common subsequence using table</b>
+<i><b>b</b></i> <b>:</b></p>
+<p>• The last cell, <i>c</i>[8,9] corresponds to length of LCS.</p>
+<p>• Follow the arrows from the last cell.</p>
+<p>• When the arrow “ <img src=
+"../imgs/4e806d3a22ec015ccaf33d6703b2b4ae002b1ddd.png"> ” is
+arrived, consider the corresponding value(where ,
+<i>x</i><sub>i</sub>=<i>y</i><sub>j</sub><sub>)</sub> for the
+Longest common subsequence.</p>
+<p><img src="../imgs/3189e84e2b9c3cdfd62f5d0b006201f902117a36.png"
+alt="Picture 1"></p>
+<p><b>Hence, the Longest common sequence (LCS) of the given two
+sequences is</b> <b><img src=
+"../imgs/d62ac7b2d24ba9f9ceb96baf7440e56ac15b570e.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Pseudocode to reconstruct an LCS from the completed <i>c</i>
+table without using the <i>b</i> table is as follow:</p>
+<p>PRINT_LCS (<i>c, A, p, q</i>)</p>
+<p>//<i>p</i> and <i>q</i> are the index number</p>
+<p>1 <b>if</b> <i>p=0</i> or <i>q=0</i></p>
+<p>2 <b>return</b></p>
+<p><b>//</b> <i>c</i> array is used to compute the LCS-Length.</p>
+<p>3 <b>if</b> <i>c[p, q]</i> <i>= c</i>[<i>p-1, q-1</i>]</p>
+<p><b>//</b>PRINT_LCS function is used to print the sequence in
+forward order.</p>
+<p>4 PRINT_LCS (<i>c, A, p-1, q-1</i>)</p>
+<p>//display the sequence</p>
+<p>5 print <img src=
+"../imgs/de001454801926c5d4f450c20f1f6639d0ce5f52.png"></p>
+<p>//elseif statement is used to executes statement when if</p>
+<p>6 <b>elseif</b> <i>c</i>[<i>p-1, q</i>] <img src=
+"../imgs/5b761b331715de02a41beb9488782a024bd7fc75.png"><i>c</i>[<i>p,
+q-1</i>]</p>
+<p><b>//</b>PRINT_LCS function is used to print the sequence in
+forward order.</p>
+<p>7 PRINT_LCS (<i>c, A, p-1, q</i>)</p>
+<p>8 <b>else</b></p>
+<p><b>//</b>PRINT_LCS function is used to print the sequence in
+forward order.</p>
+<p>9 PRINT_LCS (<i>c, A, p, q-1</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of Algorithm:</b></p>
+<p>• In the above pseudocode the entry in each array location
+<i>c</i> [<i>p, q</i>] depends on other <i>c</i> table entries such
+as <i>c</i> [<i>p-1, q-1</i>], <i>c</i> [<i>p-1, q</i>] and
+<i>c</i> [<i>p, q-1</i>].</p>
+<p>• PRINT_LCS function is recursively called for each value of
+<i>p</i> and <i>q</i>.</p>
+<p>• Conditional statement is executed minimum <i>m</i> time for
+array index <i>p</i> and <i>n</i> time for array index <i>q</i> so
+total time complexity will be<img src=
+"../imgs/53f2cb774e42b500001fa565aeae82bdd85917f5.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>A memoized version of LCS-LENGTH algorithm</b></p>
+<p>Memoized version of a recursive algorithm improves the
+efficiency. A memoized algorithm maintains a table, which stores
+the result of sub problems. If the value for the sub problem is
+already calculated, the algorithm returns the previously calculated
+value. Otherwise, the value is calculated and stored in the
+table.</p>
+<p>• The memoized version of LCS-LENGTH initially fills the table
+<i>c</i> with 0s, then calls LOOKUP-LCS (<i>X</i>, <i>Y</i> <i>,
+c</i>, <i>b</i>,<i>m</i>,<i>n</i>).</p>
+<p>• LOOKUP-LCS (<i>X</i>, <i>Y</i> <i>, c</i>,
+<i>b</i>,<i>m</i>,<i>n</i>) checks the indices and returns 0 if at
+least <i>i</i> or <i>j</i> is 0.</p>
+<p>• Next, it checks and returns the value for the entry if it is
+already calculated. Otherwise it calculates the value for the
+entry.</p>
+<p>• Finally, it returns the table <i>c</i> and <i>b</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following is the memoized version of LCS-LENGTH
+algorithm:</b></p>
+<p>MEMOIZED-LCS-LENGTH (<i>X</i>,<i>Y</i> )</p>
+<p>1. <i>m</i> = <i>X.length</i></p>
+<p>2. <i>n</i> = <i>Y.length</i></p>
+<p>3. let <i>c</i>[0…m,0…n] and <i>b</i>[1…m,1…n] be two new
+tables</p>
+<p>4. <b>for</b> <i>i</i>=1 to <i>m</i></p>
+<p>5. <b>for</b> <i>j</i>=1 to <i>n</i></p>
+<p>6. <i>c</i>[<i>i</i>,<i>j</i>] = 0</p>
+<p>7. <b>return</b> LOOKUP-LCS (<i>X</i>, <i>Y</i> <i>, c</i>,
+<i>b</i>,<i>m</i>,<i>n</i>)</p>
+<p>LOOKUP-LCS (<i>X</i>, <i>Y</i> <i>, c</i>, <i>b,
+m</i>,<i>n</i>)</p>
+<p>1. <b>if</b> <i>i</i>=0 or <i>j</i>=0</p>
+<p>2. <b>return</b> 0</p>
+<p>3. <b>if</b> <i>c</i>[<i>i,j</i>] ≥ 0</p>
+<p>4. <b>return</b> <i>c</i>[<i>i</i>,<i>j</i>]</p>
+<p>5. <b>if</b> <i>x</i><sub>i</sub> = = <i>y</i><sub>j</sub></p>
+<p>6. <i>c</i>[<i>i</i>,<i>j</i>] = LOOKUP-LCS(<i>X</i>, <i>Y</i>
+<i>, c</i>, <i>b,i</i>-1, <i>j</i>-1) + 1</p>
+<p>7. <i>b</i>[<i>i</i>,<i>j</i>] = “ <img src=
+"../imgs/4e806d3a22ec015ccaf33d6703b2b4ae002b1ddd.png"> ”</p>
+<p>8. <b>elseif</b> LOOKUP-LCS (<i>i</i>-1,<i>j</i>) ≥ LOOKUP-LCS
+(<i>X</i>, <i>Y</i> <i>, c</i>, <i>b, i</i>, <i>j</i>-1)</p>
+<p>9. <i>c</i>[<i>i</i>,<i>j</i>] = LOOKUP-LCS (<i>X</i>, <i>Y</i>
+<i>, c</i>, <i>b, i</i>-1, <i>j</i>)</p>
+<p>10. <i>b</i>[<i>i</i>,<i>j</i>] = “ <img src=
+"../imgs/8dc689dee356520d2ca0e300665f977895230577.png"> ”</p>
+<p>11. <b>else</b></p>
+<p>12. <i>c</i>[<i>i</i>,<i>j</i>] = LOOKUP-LCS (<i>X</i>, <i>Y</i>
+<i>, c</i>, <i>b, i</i>, <i>j</i>-1)</p>
+<p>13. <i>b</i>[<i>i</i>,<i>j</i>] = “ <img src=
+"../imgs/7b69c5e03dcc57b6c2379d1084bf0e3b4aa131d4.png"> ”</p>
+<p>14. <b>return</b> <i>c</i> and <i>b</i></p>
+<p>Still the running time of the above memorized algorithm
+is<img src=
+"../imgs/3c76c8f836d15add71f9e97eb97f27bf901686a0.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/c6b138e52ea43accfcb3b996ca9ccd311445ed2d.png">
+<hr>
+<img src="../imgs/cc1505ff0fff736040a0ffb615fed2d902bea47c.png">
+<hr>
+<img src="../imgs/6c7340f2c76797becff24e2e98653c4eb3a4aaa2.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Algorithm for finding the longest monotonically increasing
+subsequence of a sequence of n numbers is:</p>
+<p>Algorithm:</p>
+<p>LONGEST-SEQUENCE (<i>L</i>) // <i>L</i> is a list of n
+numbers</p>
+<p>1 for all <img src=
+"../imgs/89329c90f8c4804311d5777dcd250306359907ff.png"> do</p>
+<p>2 create point (<i>a</i>, <i>i</i>) // where <img src=
+"../imgs/96bb3c129114c7e0f3ce67c0e40223a859381884.png"></p>
+<p>3 end for</p>
+<p>4 sort points according to <i>y</i>-coordinate</p>
+<p>5 create <i>table</i> of size <i>n</i> × <i>n</i> initialized to
+all 0’s</p>
+<p>6 <i>currentNum</i> = 1</p>
+<p>7 for each point (<i>a</i>, <i>b</i>) do</p>
+<p>8 <i>table</i>[<i>a</i>][<i>currentNum</i> + +] = <i>b</i>.</p>
+<p>9 end for</p>
+<p>10 for <i>i</i> = 1 to <i>n</i> do</p>
+<p>11 if <i>table</i>[<i>i</i>][0] <img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png"> 0 then</p>
+<p>12 <i>value</i> = 1</p>
+<p>13 end if</p>
+<p>14 <i>table</i>[<i>i</i>][0] = <i>table</i>[<i>i</i> − 1][0] +
+<i>value</i></p>
+<p>15 create <i>pointer</i> from <i>table</i>[<i>i</i>][0] to
+<i>table</i>[<i>i</i> − 1][0]</p>
+<p>16 end for // Repeat above for Table[0][j]</p>
+<p>17 for <i>i</i> = 1 to <i>n</i> do</p>
+<p>18 for <i>j</i> = 1 to <i>n</i> do</p>
+<p>19 if <i>table</i>[<i>i</i>][<i>j</i>] <img src=
+"../imgs/f13cca3eb881e0ca6c2835af852e4e0fce0c1bc7.png"> 0 then</p>
+<p>20 <i>value</i> = 1</p>
+<p>21 end if</p>
+<p>22 <i>table</i>[<i>i</i>][<i>j</i>] =
+<i>max</i>{<i>table</i>[<i>i</i> − 1][<i>j</i>],
+<i>table</i>[<i>i</i>][<i>j</i> − 1]} + <i>value</i></p>
+<p>23 add <i>pointer</i> to <i>max</i> to
+<i>table</i>[<i>i</i>][<i>j</i>]</p>
+<p>24 end for</p>
+<p>25 end for</p>
+<p>26 <i>sequence</i> = <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png"></p>
+<p>27 <i>pointer</i> = Table[n][n]</p>
+<p>28 while <i>pointer</i> <img src=
+"../imgs/e39fa6852e6439d28ea958f64985ee1267dbb4ef.png">do</p>
+<p>29 if pointer.value = <img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png">then</p>
+<p>30 <i>sequence.add_to_front</i>(<i>pointer.value</i>)</p>
+<p>31 <i>pointer</i> = <i>pointer.prev</i></p>
+<p>32 end if</p>
+<p>33 end while</p>
+<p>34 return <i>sequence</i></p>
+<p>35 end procedure</p>
+</div>
+<hr>
+<div class="answer">
+<p>The running time of the algorithm depends on the statements
+between 17 and 25. The remaining statements take the time less than
+the time required for these nested for loops. Since the statements
+contain nested for loops and each loop iterates from 1 to <i>n</i>,
+the running time can be obtained by <i>n</i>×<i>n</i> =
+<i>n</i><sup>2</sup>. Hence the time consumed by the algorithm is
+<img src="../imgs/74b85e86dd82b0906e2cf8e9f0ba980ae9bcf071.png">
+.</p>
+<p>Therefore the above algorithm finds the longest monotonically
+increasing sub sequence of a sequence of n numbers in <img src=
+"../imgs/74b85e86dd82b0906e2cf8e9f0ba980ae9bcf071.png"> time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Steps</b></p>
+</td>
+<td>
+<p><b>Running time</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>1-3</p>
+</td>
+<td>
+<p><i>n</i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>6</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>7-9</p>
+</td>
+<td>
+<p><i>n</i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>10-16</p>
+</td>
+<td>
+<p><i>n</i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>17-25</p>
+</td>
+<td>
+<p><i>n</i> <sup>2</sup></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>26</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>27</p>
+</td>
+<td>
+<p>1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>28-33</p>
+</td>
+<td>
+<p><i>n</i></p>
+</td>
+</tr>
+</table>
+<p>The total time required <img src=
+"../imgs/3d6a379e70984118516a863e90d83bd1740375ee.png">is given as
+follows:</p>
+<p><img src=
+"../imgs/de0c4825260c09fdeef2843dc1b425b0988ab1ce.png"></p>
+<p>Therefore, the LONGEST-SEQUENCE algorithm takes <img src=
+"../imgs/74b85e86dd82b0906e2cf8e9f0ba980ae9bcf071.png"> time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Finding the longest monotonically increasing subsequence of a
+sequence of</b> <i><b>n</b></i> <b>numbers:</b></p>
+<p>Suppose an array<img src=
+"../imgs/1a2c81770f739e7dbfc5537cb3a012c8a9c23230.png">contains
+<i>n</i> random numbers. A monotonically increasing sub-sequence is
+the sequence of <i>m</i> elements of <i>A</i> array in increasing
+order where<img src=
+"../imgs/4f91b7d1452ea61936455d1621ebec6fd4b351cf.png">.</p>
+<p>In order to determine the longest monotonically increasing
+sub-sequence in <img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png">, one has to
+implement the following procedure:</p>
+<p>• <b>CASE 1:</b> When <img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png">is the
+smallest among all active lists, then start new list of length 1
+and close all existing lists of length 1.</p>
+<p>• <b>CASE 2:</b> When <img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png">is the
+largest element among end elements of all active lists, then clone
+largest active list and add <img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png">to it.</p>
+<p>• <b>CASE 3:</b> When <img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png">is lie in
+between the largest and smallest elements of active lists, then
+find the largest end element of active list which is smaller
+than<img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png">. Clone that
+list and add <img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png">to it. After
+that, delete all active lists whose length is same as the new
+modified list.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Implementation of above procedure in program:</b></p>
+<p>• While implementing the above procedure there is no need to
+store the entire lists. Storing the last element of active list is
+sufficient.</p>
+<p>• Take 2 temporary arrays <img src=
+"../imgs/a9c72bf8d1c9ed698b0c2a493195f6f911f88219.png">and<img src=
+"../imgs/04634e70c6dfbf06eccfc0a9560360c557484706.png">, initialize
+all elements of <img src=
+"../imgs/04634e70c6dfbf06eccfc0a9560360c557484706.png"> array with
+-1. The <img src=
+"../imgs/04634e70c6dfbf06eccfc0a9560360c557484706.png"> array store
+index of <i>A</i> array which is actually the sequence of longest
+sub-sequence.</p>
+<p>• Each element of <img src=
+"../imgs/a9c72bf8d1c9ed698b0c2a493195f6f911f88219.png"> array
+stores largest element index of particular length of list except
+the 0<sup>th</sup> index which store smallest element index.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The followi</b> <b>ng is the algorithm that finds the</b>
+<b>longest monotonically increasing subsequence of a sequence
+of</b> <i><b>n</b></i> <b>numbers in</b> <b><img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png"></b>
+<b>time:</b></p>
+<p><b>LONGEST-SUB-SEQUENCE</b> ( <i>A</i>)</p>
+<p>//Declare 2 temporary array</p>
+<p>1. <img src=
+"../imgs/91c1ec4ce35919c3cda82292453fea0e3691bd87.png">and<img src=
+"../imgs/711d09530855b78dcc1b2e6b9de79441b510540c.png">.</p>
+<p>//for loop to initialize the array<img src=
+"../imgs/04634e70c6dfbf06eccfc0a9560360c557484706.png"></p>
+<p>2. <b>for</b> <b><img src=
+"../imgs/203d083bde014afb90e902e446cb511b73d72b9c.png"></b><b>to</b><b><img src="../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png"></b></p>
+<p>3. <img src=
+"../imgs/eddf1c3147466c50f7f32df55e6b12f495e5b1c1.png"></p>
+<p>4. <img src=
+"../imgs/87c24b64066a3e1f4cbba5fd2405ba78d9066e7b.png"></p>
+<p>5. <img src=
+"../imgs/87adcd3540d9a4a7103f2082a49e75223fcb1972.png"></p>
+<p>//for loop to traverse the elements of array <i>A</i>.</p>
+<p>6. <b>for</b> <b><img src=
+"../imgs/7088fbc6c942eb7bccd8ecf16457cee0e2c67227.png"></b><b>to</b><b><img src="../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png"></b></p>
+<p>//case 1.</p>
+<p>7. <b>if</b> <img src=
+"../imgs/8d230bfa41489eb99f384eeb9caff30d91e5d9d6.png"></p>
+<p>8. <img src=
+"../imgs/5f1af79749dee77c8110761757eb2c587763042e.png"></p>
+<p>//case 2.</p>
+<p>9. <b>else if</b> <img src=
+"../imgs/b0bdb01eb483f65f9b2fab26541bb109617ce47c.png"></p>
+<p>10. <img src=
+"../imgs/9247155fcf26de0997082ad3856fe1fb10c20648.png"></p>
+<p>11. <img src=
+"../imgs/3785c36757870763514668659b5c623c623dad2e.png"></p>
+<p>12. <img src=
+"../imgs/961479fd7e55a4d9d2b5b65ab098e0cbce3d9deb.png"></p>
+<p>//case 3.</p>
+<p>13. <b>else</b></p>
+<p>14. <img src=
+"../imgs/8e48002b7f97a148eba3bc4cb4a9f9cc91146048.png"></p>
+<p>15. <img src=
+"../imgs/9c8050434242abfe9aa48f03418481aceead2499.png"></p>
+<p>16. <img src=
+"../imgs/03a8d25fb8033cb7360d42e0292874d928793a67.png"></p>
+<p>17. <img src=
+"../imgs/544dae225862a27845615f76fe33151b0765d664.png"></p>
+<p>18. <b>print</b> “length of longest sub-sequence is ”</p>
+<p>19. <b>while</b> <b><img src=
+"../imgs/363d17a82e7098184e287a34ba6bea6805eda47c.png"></b></p>
+<p>20<b>. print</b> <img src=
+"../imgs/2a65a7646212802838f246d817dec31c9c07bd4e.png"></p>
+<p>21. <img src=
+"../imgs/00441e6dae9de641656066df7afa91a2e73c31b5.png"></p>
+<p>//Helper function-binary search</p>
+<p><b>BINARY</b>( <i>A, Temp, last, val</i> )</p>
+<p>1. <img src=
+"../imgs/99b4808ff0dea0f67c653cad6dc9a8445a203a6d.png"></p>
+<p>2. <img src=
+"../imgs/a60b02c3455c51b5c3b0a86fc7d506a84c5f16f6.png"></p>
+<p>//continue iterate till start is less than end</p>
+<p>3. <b>while</b> <img src=
+"../imgs/405e081c36dd79a18cdeb7c43d176a06107eb42e.png"></p>
+<p>//find middle element index</p>
+<p>4. <b><img src=
+"../imgs/edd0b5ff55672ca61d3de476ea84e734073974f5.png"></b></p>
+<p>5. <b>if</b> <b><img src=
+"../imgs/0f1549552837c0b25ac9395139dd86c7d8a50c5c.png"></b></p>
+<p>6. <b>return</b> <b><img src=
+"../imgs/778e6dc2bb9dfe657bb9f3966b461ca4ff35d322.png"></b></p>
+<p>7. <b>else if</b> <b><img src=
+"../imgs/33a99527f185762934faf5d652b98931854ca3e1.png"></b></p>
+<p>//update lower bound</p>
+<p>8. <b><img src=
+"../imgs/ce8b0dd672413894d385e6c9209d4f7a8a9220b9.png"></b></p>
+<p>9. <b>else</b></p>
+</div>
+<hr>
+<div class="answer">//update upper bound
+<p>10. <b><img src=
+"../imgs/3025fb0f1879f1f71db39e4f726c855a36876ec7.png"></b></p>
+<p>11. <b>return</b> -1</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>• The program uses two temporary arrays: one is to store the
+index of an element and the other is to store the largest element
+of particular subsequence.</p>
+<p>• First, initialize the array <i>S</i> to -1.</p>
+<p>• After that the <i>for</i> loop is used to traverse the whole
+array in which program will calculate the maximum subsequence.</p>
+<p>• If program gets the minimum value at index <i>i</i> it will
+update the value at index 0 of array temp, since index 0 is used to
+store the smallest value.</p>
+<p>• In <i>else if</i> condition, program simply checks that
+whether the current element is largest in the calculated largest
+subsequence or not. This is the case 2 condition.</p>
+<p>• Finally, if above two statements are violated that implies
+that the current element lies between the smallest and largest
+element.</p>
+<p>• To find the correct position, algorithm uses binary search and
+updates the arrays accordingly.</p>
+<p>• After that, program uses array <img src=
+"../imgs/04634e70c6dfbf06eccfc0a9560360c557484706.png"> to print
+the element which occurs in the subsequence.</p>
+<p>• If user wants to print the length of that subsequence, one can
+easily return the variable <i>l.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Time Complexity:</b></p>
+<p>• In above <b>LONGEST-SUB-SEQUENCE</b> function program uses
+only one <b>for</b> loop to traverse the whole array.</p>
+<p>• Also updating arrays in case 1 and case 2 can be done
+in<img src=
+"../imgs/5348248797038408019902edf6f75aa3b51f3a98.png">.</p>
+<p>• But for case 3, the binary search function is called to
+determine the correct position in sorted temporary array. It is
+already known that the complexity of binary search function
+is<img src=
+"../imgs/0a952ac4e2834931f9417efbcbcd9a9a17c52808.png">.</p>
+<p>• Since the for loop runs <i>n</i> times, overall time
+complexity of the above algorithm is <img src=
+"../imgs/c9c9f50f2a716f8c8c5c05e4939029ec071da60f.png"> = <img src=
+"../imgs/1d35968e59eb235415ee32e625da6d9ea6cb2528.png">.</p>
+<p><b>Thus, the total complexity LONGEST-SUB-SEQUENCE function
+is</b> <b><img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Examples run of <b>LONGEST-SUB-SEQUENCE algorithm</b>:</p>
+<p>Consider an array, <img src=
+"../imgs/82e7dc3462370bffef148819a684bdb197b51dd2.png">.</p>
+<p>• The element at 0<sup>th</sup> index, that is<img src=
+"../imgs/bf50f31345565f25b9a6b7ac7b0c0dc9969305f1.png">. There is
+no active list yet. Therefore case 1 is executed.</p>
+<p>5</p>
+<p>• The element at 1<sup>st</sup> index, that is<img src=
+"../imgs/7e13effefefea6fbc8d23811b5057f7eaa852672.png">. The new
+element is greater than the end element of existing active list,
+therefore case 2 is executed:</p>
+<p><img src=
+"../imgs/e7f53e7bbac880f99e323a81bfdc9cd819b8f856.png"></p>
+<p>• The element at 2<sup>nd</sup> index that is<img src=
+"../imgs/53ed8162a3e7c37f79e9c4442dad5315d133b3ef.png">. The active
+element is smallest among all active lists. Therefore case 1 gets
+executed.</p>
+<p><img src=
+"../imgs/8babfe74bcd7a6e86f43ccf317cc4183ae23dbc3.png"></p>
+<p>• The element at 3<sup>rd</sup> index that is<img src=
+"../imgs/3636b0bd4ed0afd48b5f8f5746d3cb5b2c290471.png">. The new
+element is greater than the end element of existing active list,
+therefore case 2 gets followed:</p>
+<p><img src=
+"../imgs/8f9b0a9d1576ff7d82f0b462c2c7006a5329fe19.png"></p>
+<p>• The element at 4<sup>th</sup> index that is<img src=
+"../imgs/c7efa7784efe70149db141353d7722d6583335b4.png">. The new
+element is greater than the end element of existing active list,
+therefore case 2 gets followed:</p>
+<p><img src=
+"../imgs/014c6e047f81a0b164ea16c7d9f67c6415d9cbd8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>• The element at 5<sup>th</sup> index that is<img src=
+"../imgs/2b4fcb88df1a17ec7bcfce4db91216a82b80f026.png">. The new
+element is not the largest and the smallest among all active lists,
+therefore case 3 is executed. The active list whose end element is
+smaller than 3 is 1. After adding 3 to the active list 1, the
+length of the new modified list becomes 2, thus the existing active
+list <img src=
+"../imgs/ff424a0d0e9574780f44d8f843b30b3cbbab60f3.png"> is
+deleted.</p>
+<p><img src=
+"../imgs/4b3335a7f6d95c3be86de6ba8ea20a745ea29ae8.png"></p>
+<p>• The element at 6<sup>th</sup> index, that is<img src=
+"../imgs/e3630c556b862dbc5e302e5703df1633b9ac993b.png">. The new
+element is not the largest and the smallest among all active lists,
+therefore case 3 get followed.</p>
+<p><img src=
+"../imgs/27c358526683bf589ee289fbb3b07233158cf013.png"></p>
+<p>• The element at 7<sup>th</sup> index that is<img src=
+"../imgs/8aba98d18e9dd17f58bc3c7b5c98a8394eb7e435.png">. The new
+element is greater than the end element of existing active list,
+therefore case 2 get followed:</p>
+<p><img src=
+"../imgs/e259dbe781563d644ed55577cabc65f7f48bfa93.png"></p>
+<p>• The element at 8<sup>th</sup> index that is<img src=
+"../imgs/c2620880fb5433bdf7a8d68753f7196a86fecb72.png">. The new
+element is not the largest and the smallest among all active lists,
+therefore case 3 get followed.</p>
+<p><img src=
+"../imgs/cabfe02323853edccedbf86d5155fa5faac65462.png"></p>
+<p>• The element at 9<sup>th</sup> index that is<img src=
+"../imgs/01570d134d7b3db05a6db7ec51297e658dff67e4.png">. The new
+element is not the largest and the smallest among all active lists,
+therefore case 3 get followed.</p>
+<p><img src=
+"../imgs/7960091225da6cc1ff8ba8fc992561bff15aca3c.png"></p>
+<p>• Last, the element at 10<sup>th</sup> index that is<img src=
+"../imgs/e7299f2006f6b73c72306d5e5d43ac30a41e8cdb.png">. The new
+element is not the largest and the smallest among all active lists,
+therefore case 3 get followed.</p>
+<p><img src=
+"../imgs/2c2e389341575ca8928531c980e1bcc0eff50905.png"></p>
+<p>Hence, the longest monotonically increasing sub-sequence in
+array <i>A</i> is<img src=
+"../imgs/3f40f9edc3476f4c6b2bb31f8e0b2d9c455a7aad.png">. The length
+of longest sub-sequence is 6.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

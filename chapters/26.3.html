@@ -1,0 +1,321 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 26.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Running Ford-Fulkerson algorithm on the flow network:</b></p>
+<p>Consider the flow network in figure 26.8(c) and assign capacity
+1 unit for each edge.</p>
+<p>Run the Ford-Fulkerson algorithm.</p>
+<p>The initial flow network is,</p>
+<p><img src="../imgs/cf7fbfb31bfbb6290f571b69b0f06974998fbc80.png"
+alt="f1"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For the Augmenting path:<img src=
+"../imgs/4d8dd96a05ed0cae05aa908c7bf91ca733e8a0d0.png">, the flow
+network and residual networks are as follows:</p>
+<p><img src="../imgs/362d919a5f5c2ed8b4a08a73b80ff3486a49b338.png"
+alt="f2"> <img src=
+"../imgs/ae041bed9025001ab716ba88c49790e9bbfe7cb8.png" alt=
+"f3"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For the Augmenting path: <img src=
+"../imgs/aacf3bfe3f6c52e8e320a6279655ea5a7c4c67f5.png">, the flow
+network and residual networks are as follows:</p>
+<p><img src="../imgs/ae041bed9025001ab716ba88c49790e9bbfe7cb8.png"
+alt="f3"> <img src=
+"../imgs/b0e0a1b02040460a6dd3faf6cce755c3f43f8448.png" alt=
+"f4"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For the Augmenting path: <img src=
+"../imgs/1d06fde4fd8f8bbce94e5894ba2f7a03d026a411.png">, the flow
+network and residual networks are as follows:</p>
+<p><img src="../imgs/bb9b9192701aa425a8905ce0e2623ac1dd273b32.png"
+alt="f5"> <img src=
+"../imgs/bb9b9192701aa425a8905ce0e2623ac1dd273b32.png" alt=
+"f5"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>To prove the integrality theorem, first consider the direction
+of proof which says, “If the capacity function <i>c</i> takes only
+integral value, then there exists <img src=
+"../imgs/9b89868c953e3f8b9275066e692c0941a5eb3798.png"></p>
+<p>• Initially, each edge <img src=
+"../imgs/99a6383fcdd07345dd88c188031e19382ed77a8b.png">traverses
+the path<img src=
+"../imgs/f0a7b9deb72e6e0d5a0f7ed0df542c764987e6b4.png">.</p>
+<p>• So, the path induced by all edges is vertex-disjoint.</p>
+<p>• By Ford-Fulkerson method, for any graph with integral
+capacities there must exist some maximum flow.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider a graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">and the
+max-flow problem over the taken graph with the specified
+capacities<img src=
+"../imgs/14eefe04405f51702510ff74d254401dbc3f3cd7.png">.</p>
+<p><b>Base case:</b></p>
+<p>• Initially if no iteration is performed then the value of
+maximum flow <i>f</i> is 0 so it is integral.</p>
+<p><b>Induction Hypothesis:</b></p>
+<p>• For iteration number<img src=
+"../imgs/d639c65d1b877adac5e33da7eb32f3611d04d7a5.png">, if
+capacity function <i>c</i> takes on only integer value, then the
+maximum flow produced by Ford-Fulkerson method is an integer.</p>
+<p><b>Induction:</b></p>
+<p>• At <i>i</i>th iteration, the previous iterations give the
+integral flow (from hypothesis). What this implies is that all
+residual capacities are also integers because residual capacity is
+calculated by subtracting flow from the capacity and addition and
+subtraction with integers result in integers.</p>
+<p>• As a result, while finding the augmented path in this
+iteration the algorithm will find an integral bottleneck and pushes
+an integral flow on each edge of that corresponding augmented path.
+And as a result, all flows will be integral.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Since the maximum flow along an edge cannot exceed its
+capacity function <i>c</i>,</p>
+<p>So,</p>
+<p><img src="../imgs/c28c82b134dc21d45359c12972134494be8d261f.png">
+…… (1)</p>
+<p>• Ford-Fulkerson method performed only addition, subtraction and
+min operation so the augmenting path <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png"> for all
+iteration <img src=
+"../imgs/c6f53a78d6d5fcd2deae75f91f0437f1d245e8da.png"> has a
+positive integral value.</p>
+<p>So,</p>
+<p><img src="../imgs/c41fba46022bb6bb3002749d91a381a0713ef3c8.png">
+…… (2)</p>
+<p>• Since all the capacities are integers and the maximum
+flow<i><img src=
+"../imgs/cdae096d4967210c7af5b904cfcb443de02e6175.png"></i> is
+positive integer number from equation (1), <img src=
+"../imgs/25e1fecf8a0c7acc7f9615a2a293b5dbf927f3bf.png"> is positive
+integer and it is less than or equal to the capacity
+function<img src=
+"../imgs/ad26d83e5fa0b12aa545d16be4a9dfeef937fdeb.png">.</p>
+<p><b>Hence, from the above explanation, it is proved that “if all
+capacities are integers, then for all vertices</b> <i><b>u</b></i>
+<b>and</b> <i><b>v,</b></i> <b>the value of</b> <b><img src=
+"../imgs/25e1fecf8a0c7acc7f9615a2a293b5dbf927f3bf.png"></b> <b>is
+an integer and thus the maximum flow</b> <i><b><img src=
+"../imgs/cdae096d4967210c7af5b904cfcb443de02e6175.png"></b></i>
+<b>is also an integer</b> <b>”.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Upper bound on length of an augment path:</b></p>
+<p>Let <i>G</i> = (<i>V,E</i>) be a bipartite graph and <img src=
+"../imgs/87cf29ad94412e2df0b7f840bd41a37e10773f61.png">be its
+corresponding flow network. Here, <img src=
+"../imgs/d5b474e0d75bc511b5ff9ccb2da87600ffa0c3dc.png"> .</p>
+<p>• Since <i>G</i> is a bipartite graph, it has no edges between
+any two vertices of <i>L</i> and no edges between any two vertices
+of <i>R</i>. Hence, <img src=
+"../imgs/87cf29ad94412e2df0b7f840bd41a37e10773f61.png"> does not
+have edges between any two vertices of <i>L</i> or <i>R</i>
+either.</p>
+<p>• An augment path is a simple path from the source (<i>s</i>) to
+the sink (<i>t</i>) in the residual network. When the
+FORD-FULKERSON algorithm is executed on <img src=
+"../imgs/87cf29ad94412e2df0b7f840bd41a37e10773f61.png">, it finds
+an augmenting path in each iteration.</p>
+<p>• The augmenting path in <img src=
+"../imgs/87cf29ad94412e2df0b7f840bd41a37e10773f61.png"> has a
+starting edge that connects source (<i>s</i>) and any one vertex in
+<i>L</i>. Similarly, the augmenting path has a last edge that
+connects any one vertex in <i>R</i> and the sink <i>t</i>. The
+remaining edges of the augmenting path are the edges of <i>G</i>
+from <i>L</i> to <i>R</i>.</p>
+<p>• Since a bipartite graph may have a path of maximum length of
+<img src="../imgs/f0fed0149205b6988bd5fd6d944e360c215dd084.png">,
+the remaining edges in the augmenting path are <img src=
+"../imgs/f0fed0149205b6988bd5fd6d944e360c215dd084.png">. Thus, the
+augmenting path can be <img src=
+"../imgs/1b0e7f8268bcdbd39502bf118d9e095c14bc3c7f.png"> .</p>
+<p>Therefore, the total length of an augment path is,</p>
+<p>= starting edge + last edge+ <img src=
+"../imgs/f0fed0149205b6988bd5fd6d944e360c215dd084.png"> <img src=
+"../imgs/eec69649c8b91fb14431f07e6a3e2f0ca1a9e559.png"></p>
+<p><b>Thus, the upper bound on the length of an augmenting path is
+bounded by</b> <b><img src=
+"../imgs/42e1f1a6ee2bc88db58d55a97468e89df26192cc.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>Consider the following bipartite graph and an augmenting path in
+its corresponding flow graph.</p>
+<p><img src="../imgs/e80f3ca916eee575f0e593ac3b11268b48359ec3.png"
+alt="Picture 5"></p>
+<p>In the above example, the length of the augment path = <img src=
+"../imgs/ed34e50be3896f4bab8d6ed2ea906548fd0b8453.png"></p>
+<p><img src=
+"../imgs/c3bbebe491d4e2e6eaf7636be889fc461e8444c7.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/b7fc2c842842da5b805f55769a6f3fc24dd6ba09.png">
+<hr>
+<img src="../imgs/adb6ecc5a802a7ae622400f0d9c5888a068e7534.png">
+<hr>
+<img src="../imgs/9ff83d1bd2c9e3a04127dd4e6b902027bbeb1ce9.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The bipartite graph is divided into two subsets.</p>
+<p>The two subsets are L and R such that each edge connect the
+nodes of the L to the nodes belongs to R.</p>
+<p>If the bipartite graph has a perfect matching then<img src=
+"../imgs/f69c28e41a2aae1b8b053a5601c92aa22b0ba15c.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Since, every graph which consist of d-regular bipartite graph G
+will have the perfect matching.</p>
+<p><b>The proof is given below:</b></p>
+<p>The size of the max matching is equal to the value of the max
+flow of the graph<img src=
+"../imgs/57e25d7402e36330413ff2797ac21d5f2acd5daa.png">.</p>
+<p>Consider the following flow conditions:</p>
+<p><img src=
+"../imgs/349f00817b31dea65bf4ffbf8a4072db7c4341b4.png"></p>
+<p>The <i>f</i> represents the flow of the graph <img src=
+"../imgs/57e25d7402e36330413ff2797ac21d5f2acd5daa.png">.</p>
+<p>And the value of the flow is equal to <i>n</i> which is a
+perfect matching.</p>
+<p>Hence, it is proved that for every d-regular graph, there is a
+perfect matching.</p>
+</div>
+<hr>
+<div class="answer">
+<p>A feasible graph <i>f</i> with the value of <i>n</i> is shown
+below:</p>
+<p><img src="../imgs/5a87b40e5d3c78ef8e08c0550f7c8d40c3870f18.png"
+alt="Picture 26"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

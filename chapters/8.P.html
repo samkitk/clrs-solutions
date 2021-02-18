@@ -1,0 +1,867 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 8.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p>When a comparison algorithm A is used to sort, there will be at
+least n! leaves reached in decision tree T<sub>A</sub>. This is
+because, there will a leaf for each possible input permutation and
+no two input permutations can reach the same leaf.</p>
+<p>In a deterministic algorithm, the same leaf must be reached when
+a specific permutation is given as input so that not more than n!
+leaves are reached. Therefore there will be one leaf for each input
+permutation and exactly n! leaves are reached.</p>
+<p>The probability of each of these n! leaves will be 1/n!. The
+probability of other leaves will be 0.</p>
+<p>Hence it can be considered for rest of this problem that the
+paths that lead to the leaves with 0 probability are not present in
+the tree as they do not participate in the running time of the
+sort.</p>
+<p>Thus, decision tree T<sub>A</sub> has only the n! leaves with
+probability 1/n!.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>When k &gt; 1, then the root of decision tree T is not a leaf.
+All the leaves of T are leaves in LT and RT.</p>
+<p>A leaf at depth h in left subtree LT or right subtree RT will be
+at depth h+ T.</p>
+<p>Thus, D(T) must be equal to the sum of D(LT) , D(RT) and K where
+K is the total number of leaves.</p>
+<p>Consider that <img src=
+"../imgs/9a58a231e542d94a216b2cd0fb057245fe06993c.png"> = Depth of
+node x in tree T.</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/0a253fc06ca261feef9dcf076f653baf1f06e7e6.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>c.</p>
+<p>In order to prove that<img src=
+"../imgs/f8d9007d6307d288ec4399c9a0808fb0edd6f394.png">, first
+prove that</p>
+<p><img src="../imgs/51f078908a8ee6a28b29ec6a408e1e32ab2e09ab.png">
+and <img src=
+"../imgs/51f078908a8ee6a28b29ec6a408e1e32ab2e09ab.png">.</p>
+<p><b>Proof of</b> <b><img src=
+"../imgs/51f078908a8ee6a28b29ec6a408e1e32ab2e09ab.png"></b>
+<b>:</b></p>
+<p>In order to prove that<b><img src=
+"../imgs/51f078908a8ee6a28b29ec6a408e1e32ab2e09ab.png"></b>, it is
+sufficient if it is proved that <b><img src=
+"../imgs/5978e54a3cb41abd6bb1262997047bbd09f48b7c.png"></b> for
+<i>i</i>=1,2,..,<i>k</i>-1.</p>
+<p>For any <i>i</i>=1,2,..,<i>k</i>-1, there will be a <i>RT</i>
+with <i>i</i> leaves and <i>LT</i> with <i>k</i>-1 leaves. Then
+<img src="../imgs/d360d7472cf28998f3d981e0429bc133ca3a839d.png">
+and <img src=
+"../imgs/b51a271927b92cb28a01d0ccf0a7817499cc479a.png">.</p>
+<p>Construct T such that RT and LT are the right and left sub trees
+of T’s root</p>
+<p>respectively.</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/446a6d4be0576d28f7af522ce90051ad52c57b87.png"></p>
+<p><b>Proof of</b> <img src=
+"../imgs/51f078908a8ee6a28b29ec6a408e1e32ab2e09ab.png">
+<b>:</b></p>
+<p>In order to prove that<img src=
+"../imgs/51f078908a8ee6a28b29ec6a408e1e32ab2e09ab.png">, it is
+sufficient if it is proved that <b><img src=
+"../imgs/112da82899a111e4efb502c1ffd9454c5d8b4cfb.png"></b> for
+<i>i</i>=1,2,..,<i>k</i>-1.</p>
+<p>Consider a tree T with k leaves such that D(T) = d(k). Let RT
+and LT be T’s right and left sub tree, respectively, and let i be
+the number of leaves in RT. Then k-i is the number of leaves in
+LT.</p>
+<p><img src=
+"../imgs/f09da8aa896ffad69eb78b78e9e321a18ed84cd0.png"></p>
+<p>The values of i and k-1 cannot be 0 because if it happens then
+either the RT or LT will have all the k leaves of T. Also the
+subtree will have a <img src=
+"../imgs/22ed9a538563403522aa72050705049e15b7ce59.png"> which is a
+contradiction to the choice of T as the k- leaf tree with the
+minimum D.</p>
+</div>
+<hr>
+<div class="answer">d.
+<p>Consider <img src=
+"../imgs/c3f0997d4b8b2334db337bb2db25d4c1eaff1264.png">.</p>
+<p>In order to find the value of i that minimizes f<sub>k</sub> ,
+find i for which the derivative of f<sub>k</sub> with respect to i
+is 0:</p>
+<p><img src=
+"../imgs/7dead4c7bdd04139c0c603e1f796427a52a77ff2.png"></p>
+<p><img src="../imgs/26bbb43bc6f20dc5a2fd03110916d0d61f279add.png">
+is 0 at <img src=
+"../imgs/d474d3133d72a9cc658873687f76ca7876e01ba6.png">.</p>
+<p>To confirm that <img src=
+"../imgs/26bbb43bc6f20dc5a2fd03110916d0d61f279add.png"> is 0 at
+<img src="../imgs/d474d3133d72a9cc658873687f76ca7876e01ba6.png"> is
+a minimum, check that the second derivative of f<sub>k</sub> is
+positive at <img src=
+"../imgs/d474d3133d72a9cc658873687f76ca7876e01ba6.png">:</p>
+<p><img src=
+"../imgs/cef8d2a7bbc0e154f006aa208002f90a1c4c0238.png"></p>
+<p><img src=
+"../imgs/259fce59d2f064d85826d2456ff4c15c89f44b03.png"></p>
+<p><b>Proof of</b> <b><img src=
+"../imgs/94cd92548fdcd25f4c540a9682eae7b296b7fbf5.png"></b>
+<b>using substitution method:</b></p>
+<p><b>Base case:</b></p>
+<p><img src="../imgs/74c9b1cbdc609c0f6bdf626517dbab1141e3d2f5.png">
+for any constant c.</p>
+<p><b>Inductive step:</b></p>
+<p>Assume <img src=
+"../imgs/74b10c8203582da72780b657aae3638a2e52aefd.png">
+for<img src="../imgs/b65b5d55c88c5124260a07b5b7ed6b50e5ae9752.png">,
+where c is some constant to be determined.</p>
+<p><img src=
+"../imgs/bcdcf24be0713eb415982956644ec7ed08a2e500.png"></p>
+<p><img src=
+"../imgs/ef92f63f36bc6e867f4a83ae0ea5f01aef488583.png"></p>
+<p>and hence <img src=
+"../imgs/7a1468caef287d2436d3f4ca33b780687f19deed.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>e.</p>
+<p>From part (d) and using the fact T<sub>A</sub> has n! leaves
+(part a), it can be concluded that</p>
+<p><img src=
+"../imgs/9388e4f05f8271100c44f3430781d51a15748f9f.png"></p>
+<p>D(T<sub>A</sub>) is the sum of lengths of the decision- tree
+path for sorting all input permutations.</p>
+<p>As n! permutations have equal probability 1/n!, the expected
+time is sort n random elements ( 1 input permutations) is the total
+time for all permutations divided by n!.</p>
+<p><img src=
+"../imgs/0d80316b954f555373d206ea4896d8d6516ff047.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>f.</p>
+<p>Deterministic decision tree (algorithm) is as good as the
+randomized decision tree (algorithm) when comparison is made on
+average number of comparisons.</p>
+<p>Following are the steps to modify a randomized decision tree (
+algorithm ) to deterministic decision tree (algorithm ):</p>
+<p>• At each randomized node, select the child with the smallest
+sub tree.</p>
+<p>• Delete all the other children of the randomized node.</p>
+<p>• Join the randomized node itself.</p>
+<p>The average number of comparisons for the deterministic decision
+tree (algorithm) and a randomized decision tree ( algorithm ) are
+almost the same. This is because in each case, the higher- average
+sub trees are removed.</p>
+<p>Each time a randomized node is joined to the tree, the average
+is being reduced.</p>
+<p>Thus, the randomized algorithm and the corresponding
+deterministic algorithm will take almost the same number of
+comparisons.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Running time</b> is the time taken by the algorithm for its
+execution. If all the elements are traced once and there are
+<i>n</i> elements, then it is said that the algorithm takes running
+time of<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p>In the similar way, if there are two loops which traces a
+matrix, then it takes the order of<img src=
+"../imgs/3fb36da52885d12a388c752193ed5bb1578d0e36.png">.</p>
+<p><b>Stability of algorithm</b> means that the order of entering
+the elements should be maintained in the output as well. This means
+that if any element is entered before another element, then it
+should be maintained in output as well.</p>
+<p><b>Constant amount of storage space:</b> The algorithm should
+take a constant amount of storage space and it should not vary.</p>
+</div>
+<hr>
+<div class="answer">
+<p>a)</p>
+<p>To sort an array of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> data
+records, each record’s key having value either 0 or 1, counting
+sort algorithm is used. Counting sort algorithm runs in <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"> time and is
+stable.</p>
+<p>• Consider the array <img src=
+"../imgs/3f2ddbd8a4bae1907942ca891597e95902a35fbd.png"> of <i>n</i>
+elements having data value from 0 to <i>k</i> and any element can
+repeat any time.</p>
+<p>• For sorting array <img src=
+"../imgs/3f2ddbd8a4bae1907942ca891597e95902a35fbd.png"> using
+counting sort algorithm, it requires two more arrays first<img src=
+"../imgs/537b694705ff3d22b4cd3b554e193b8877d042cb.png">which stores
+the sorted elements of array <i>L</i> and other array <img src=
+"../imgs/b51651fb0a6e44c96f639ca6c48bd95d1b04a391.png"> for the
+temporary work.</p>
+<p>• Counting sort algorithm is also known as integer sort
+algorithm.</p>
+<p>The algorithm of counting sort is as follows:</p>
+<p><b>COUNTING-SORT (</b> <i><b>L</b></i> <b>,</b> <i><b>M</b></i>
+<b>,</b> <i><b>k</b></i> <b>)</b></p>
+<p>// initializing the temporary array with 0.</p>
+<p>1. <i>P [0…k]</i> is the array for temporary storage of array
+elements.</p>
+<p>// for loop is used to traverse all element of loop.</p>
+<p>2. for <i>i=0</i> <i>to k</i></p>
+<p>3. <i>P[i] = 0</i></p>
+<p>// traversing the array to be sorted from initial index to its
+length.</p>
+<p>4. for <i>j=0</i> to <i>L.length</i></p>
+<p>//updating the temporary array</p>
+<p>5. <i>P[L[j]]= P[L[j]]+1</i></p>
+<p>// travers the array <i>P</i></p>
+<p>6. for <i>i=0</i> <i>to k</i></p>
+<p>// for integer <i>i</i> in each position of <i>P</i> finding the
+number of elements less than i</p>
+<p>7 <i>P[i] = P[i] +P [i-1]</i></p>
+<p>// loop for putting the elements of array <i>L</i> in the array
+<i>M</i> in sorted order.</p>
+<p>8. for <i>j=0</i> to <i>L.length</i> down to 1</p>
+<p>9. <i>M [L[j]]] =L[j]</i></p>
+<p>// updating the value in temporary array <i>P</i></p>
+<p>10. <i>P [L[j]] =P [L[j]]-1</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of algorithm:</b></p>
+<p>• In the above algorithm, the loop in line 2-3 takes <img src=
+"../imgs/660ae2bc8832fe5102bc06d7ef66fa331a3fe287.png"> time for
+its execution.</p>
+<p>• The loop in line 4-5 takes <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"> time as
+the<img src=
+"../imgs/204f303df7b390b7a1d0ab18d87791f4717fd637.png">.</p>
+<p>• The loop in line 6-7 runs in <img src=
+"../imgs/660ae2bc8832fe5102bc06d7ef66fa331a3fe287.png"> and the
+loop in line 8-10 runs in<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">time.</p>
+<p>• So, the total time taken by the algorithm is<img src=
+"../imgs/63cf17ab2edbc77a284f8dc69563617140213d48.png">. As the
+value of <i>n</i> is greater than the value of k for any array, it
+can be ignored.</p>
+<p>Hence, the total time taken by the above algorithm is<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p>Quick sort Partition algorithm runs in <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"> time and
+storage space should be constant.</p>
+<p>QUICKSORT-PARTITION</p>
+<p>//initialize the value of <i>i</i></p>
+<p>1. <i>i=0</i></p>
+<p>// for loop is used to traverse the all element of array</p>
+<p>2. for <i>j=1</i> to <i>n</i></p>
+<p>//if statement is used to check the value is less than or equal
+to 0.</p>
+<p>3. if <i>key[Array[j]] &lt;=0</i></p>
+<p>// increment the value of <i>i</i></p>
+<p>4. then <i>i=i+1</i></p>
+<p>//exchange the value at location <i>i</i> with <i>j</i></p>
+<p>5. exchange <img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png">to<img src=
+"../imgs/8b4f0d7dad6ab00028b9038b9bea12b21cfd02f9.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of Algorithm:</b></p>
+<p>• In the above code of quick sort algorithm, single for loop is
+used to sort the data hence total time taken by algorithm is
+<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"></p>
+<p>• In the above algorithm in- place sorting method is used and
+stores the all sorted elements in the same array in which it is
+sorting So, it takes constant amount of space for the storage of
+its elements.</p>
+</div>
+<hr>
+<div class="answer">c)
+<p>Insertion sort is a stable algorithm and it uses no more than a
+constant amount of storage space in addition to the original
+array.</p>
+<p><b>INSERTION-SORT (</b> <i><b>L</b></i> <b>)</b></p>
+<p><b>//</b> loop traversing each element of array starting with
+2.</p>
+<p>1. for <i>j= 2</i> to <i>L.length</i></p>
+<p>// storing the <i>j</i><sup>th</sup> element of array into the
+temporary variable <i>key.</i></p>
+<p>2. <i>key=L[j]</i></p>
+<p>// initializing the variable <i>i</i> with one less than
+<i>j</i></p>
+<p>3. <i>i=j-1</i></p>
+<p>// loop running from <i>i</i> down to 0 if <i>i</i><sup>th</sup>
+element of array is greater than the key</p>
+<p>4. while <i>i&gt;0</i> and <i>l[i]&gt;key</i></p>
+<p>// shifting the array values one position to its right.</p>
+<p>5. <i>L[i+1]=L[i]</i></p>
+<p>// decreasing the value of <i>i</i> by 1.</p>
+<p>6. <img src=
+"../imgs/37a200c565fdeb8ca01970cc9778582e6d38300a.png"></p>
+<p>// updating the array with <i>key</i></p>
+<p>7. <img src=
+"../imgs/1ad1c775b4528ba9177dd294effa75444efc2129.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of Algorithm:</b></p>
+<p>• In the above sorting algorithm, the finally sorted elements
+are stored in the same array in which they were sorted So, it is
+in-place sorting algorithm and takes the constant amount of
+space.</p>
+<p>• In the above algorithm for loop is used to traverse the array
+from 2 to length of array so it takes <img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png"> time to
+execute the line 1.</p>
+<p>• Line 2 and 3 of the above code is used to hold the value one
+at a time so it takes <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"> time.</p>
+<p>• In line 4 of algorithm while loop is used for compression with
+all remaining value of array so its time complexity will
+be<img src="../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+<p>• In line 5, 6 and 7 of algorithm it exchanges the value of
+array to sort the data.</p>
+<p>Hence the time complexity of algorithm will be<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d)</p>
+<p>Radix-sort is a sorting algorithm that has been used to sort the
+numbers according to the orders of the digit.</p>
+<p>• This Radix-sorting algorithm moves from least significant
+digit to most significant digit.</p>
+<p>• Yes, counting sort algorithm (part <i>a</i>) is also used as a
+sorting method used in line 2 of RADIX-SORT.</p>
+<p>• First sort the keys based on the least significant value using
+counting sort.</p>
+<p>• Now sort the sorted array for each more significant digit
+using counting sort. Final output of this array will be a sorted
+array.</p>
+<p>• Each iteration of the counting sort will take<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">. Since,
+these records are <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">-bit keys
+therefore total running time will be <img src=
+"../imgs/37901b3f4801c79d021ee3c4d56f52efb1cb4cb9.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>e)</p>
+<p>The modified algorithm of counting sort is as follow:</p>
+<p><b>COUNTING-SORT (</b> <i><b>L</b></i> <b>,</b> <i><b>M</b></i>
+<b>,</b> <i><b>k</b></i> <b>)</b></p>
+<p>// initializing the temporary array with 0.</p>
+<p>1. <i>P1 [0…k]</i> is the array for temporary storage of array
+elements.</p>
+<p>// for loop is used to traverse all element of loop.</p>
+<p>2. for <i>i=0</i> <i>to k</i></p>
+<p>3. <i>P1[i] = 0</i></p>
+<p>// traversing the array to be sorted from initial index to its
+length.</p>
+<p>4. for <i>j=0</i> to <i>L.length</i></p>
+<p>//updating the temporary array</p>
+<p>5. <i>P1[L[j]]= P1[L[j]]+1</i></p>
+<p>// travers the array <i>P</i></p>
+<p>6. for <i>i=0</i> to <i>k</i></p>
+<p>// for integer <i>i</i> in each position of <i>P</i> finding the
+number of elements less than i</p>
+<p>7. <i>P1[i] = P1[i] +P1 [i-1]</i></p>
+<p>//traverse the array</p>
+<p>8. for <i>i=0</i> to <i>k</i></p>
+<p>//copy the index into array.</p>
+<p>9. <i>P2[i]= i</i></p>
+<p>// loop for putting the elements of array <i>L</i> in the array
+<i>M</i> in sorted order.</p>
+<p>10. for <i>j=0</i> to <i>L.length</i> down to 1</p>
+<p>//if statement is used to check the index number with length of
+maximum index.</p>
+<p>11. if <i>i&gt;P2 [L[i]]</i></p>
+<p>//copy the content into variable a</p>
+<p>12. <i>a=L[i]</i></p>
+<p>13. do</p>
+<p>Copy the content of temporary array into variable k</p>
+<p>14. <i>k=P1[a]</i></p>
+<p>//store the length of k.</p>
+<p>15. <i>c=L[k]</i></p>
+<p>//copy the content of a into length of k .</p>
+<p>16. <i>L[k]=a</i></p>
+<p>17. <i>P1[a]=P1[a]-1</i></p>
+<p>18. <i>a=k</i></p>
+<p>//compare the index number with temporary array</p>
+<p>19. while <i>P1[a]!= i</i></p>
+<p>20. <i>L[i]=a</i></p>
+</div>
+<hr>
+<div class="answer"><b>Explanation of Algorithm:</b>
+<p>• In the above algorithm, two arrays of length k is
+required.</p>
+<p>• In the above modified algorithm P1 array act like a P array in
+the original counting sort algorithm.</p>
+<p>• P2 array is used to store the necessary information. Array
+P2[i] is the maximum index that i can take-up.</p>
+<p>• If <i>L[i]&gt; P2[L[i]]</i> , it means L[i] must be put at
+wrong position then put L[i] at correct position by
+<i>P1[L[i]]</i></p>
+<p>• Finally each element put on correct position so no need to
+access anymore.</p>
+<p>• Total running time is <img src=
+"../imgs/2d007204fc46bed2a4ee534af5a946f978651501.png"> where k is
+the time that taken to set the all element in array P1 and P2.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/205dfa5ce05676dded907695fba08d1775dc8636.png">
+<hr>
+<img src="../imgs/4e72dcdbbbd18f8a5cb11c915ea6ae1da0532531.png">
+<hr>
+<img src="../imgs/4063415e7e3a8f94070bc446eed9ca0af16d2d2c.png">
+<hr>
+<img src="../imgs/38ff64684b88c3716f818e69f80e8c839b033598.png">
+<hr>
+<img src="../imgs/24e8fb7d6563f1325f72045bd8b52baf80729634.png">
+<hr>
+<img src="../imgs/af808eef725b0b8817459c244460655214feb7e6.png">
+<hr>
+<img src="../imgs/df3d4b4bb1ad270fe670086a7e9ee4a5280ae21f.png">
+<hr>
+<img src="../imgs/595b664c965193d92012f7e92f5d7f206514d32d.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/019d40c4637ab79fea546b2923033a8aa0f5b5db.png">
+<hr>
+<img src="../imgs/b304d98f2e0334a9192db23ba4ddd7e8cbec49fd.png">
+<hr>
+<img src="../imgs/f8731dd456d7de1bcd4b5aba1c244e8d659813ff.png">
+<hr>
+<img src="../imgs/f2190a65483a1fd05337ea7b8a9798074a5ff9a1.png">
+<hr>
+<img src="../imgs/43fb22f0f3722427d0642b2793abd163931c2300.png">
+<hr>
+<img src="../imgs/0c5492566faee58700932fceda55ac1fb111b175.png">
+<hr>
+<img src="../imgs/b78653c0f69d0728dd81eac784ff935bcf86fd33.png">
+<hr>
+<img src="../imgs/3a383fd0ada00a0240a8ee9a5aafaf827e53acf6.png">
+<hr>
+<img src="../imgs/156e16c8d6e9c36ded0005a3527d59e934c5bc31.png">
+<hr>
+<img src="../imgs/a7024b24dbe0013ce6436442e1515cb5b66b4312.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/43f96b57af2af25bf68a250f1ba1b28153bef811.png">
+<hr>
+<img src="../imgs/2bf7235ac3894a6bfe84415ea7ae7b0b4a1c0b04.png">
+<hr>
+<img src="../imgs/d8991b75dd9912c2c2f568ee98a44b2a5c7d0d97.png">
+<hr>
+<img src="../imgs/81f035022c064832647d977f5f2dbcd7a966d686.png">
+<hr>
+<img src="../imgs/fa60c173d6b855692ed624b0e9411255d90e0936.png">
+<hr>
+<img src="../imgs/25ec0467070310d325544ba84aaf52d745dd4a27.png">
+<hr>
+<img src="../imgs/b0a7be8b49a25fbb4c9185e7092509bd84fc7751.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6P">
+                <a href="#problem-6P">6P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/bc24e209f1a1acc0d8607328ba2d6bfbb42b0e0a.png">
+<hr>
+<img src="../imgs/094a6f3332ca66566ee513599f78c2bb0daa9d3d.png">
+<hr>
+<img src="../imgs/7d91b6c8dcac598bd61c47fe90d1e77fa6a1c87f.png">
+<hr>
+<img src="../imgs/cdf9b8fc2a68334736875265b821d272e879572d.png">
+<hr>
+<img src="../imgs/1cb4301f6b4323974586859e93898f66feacc8d5.png">
+<hr>
+<img src="../imgs/7e28b70053b215bd1d8b857abde5dbe9382e3246.png">
+<hr>
+<img src="../imgs/a073e69d910ab437389b83d5308ed3f8a584f79e.png">
+<hr>
+<img src="../imgs/5ac9d6bdff0809861e97e2d0bdc600d81bb1a107.png">
+<hr>
+<img src="../imgs/a4fa2484bd5f28272f776d852cd0c52ae3576c4b.png">
+<hr>
+<img src="../imgs/2ecfed46eb0cad083f8a03ee0b35cc544ed769cf.png">
+<hr>
+<img src="../imgs/eb681008b65929ad8e437dbf8950b3861b6fabd0.png">
+<hr>
+<img src="../imgs/ecc650803c5925bfa19692d1e5dafe52c0204b52.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7P">
+                <a href="#problem-7P">7P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p>It is given that <img src=
+"../imgs/a8aaba0605b1ba31415ad813976cbb28683d69f8.png"> is placed
+in the location where <img src=
+"../imgs/564118bda79444a753e5f615e64e340e837e2d52.png"> should be
+placed. Hence, it is obvious that<img src=
+"../imgs/a8aaba0605b1ba31415ad813976cbb28683d69f8.png"> is also
+placed in the inappropriate location.</p>
+<p>It is given that <img src=
+"../imgs/564118bda79444a753e5f615e64e340e837e2d52.png"> is the
+smallest value in array <i>A</i> that goes to the wrong array
+location. Therefore, it can be said that <img src=
+"../imgs/564118bda79444a753e5f615e64e340e837e2d52.png"> is strictly
+less than<img src=
+"../imgs/a8aaba0605b1ba31415ad813976cbb28683d69f8.png"> and
+hence,<img src=
+"../imgs/9492e9f062101e5936060bc9809514818f36932e.png">.</p>
+<p>The array, <i>B</i>[1..<i>n</i>] is an array of Boolean values
+where<img src=
+"../imgs/d5c5531f5b8effb17e3431f9489f5b889a39c094.png"> is defined
+as shown below:</p>
+<p><img src=
+"../imgs/c3a2d83f634a7aa161b13e1e5809b882ccae68b6.png"></p>
+<p>For<img src=
+"../imgs/564118bda79444a753e5f615e64e340e837e2d52.png">, <img src=
+"../imgs/0006d248f273d164769c3784f8ff5a31e9e0e640.png"> as
+<img src="../imgs/a9137fd524ce87a506a6ede9ef2c6e49d148d52d.png"></p>
+<p>For<img src=
+"../imgs/a8aaba0605b1ba31415ad813976cbb28683d69f8.png">, <img src=
+"../imgs/33fbf73a1dcd3a7c0b0eaa2dba099d3e591c2bf5.png"> as
+<img src="../imgs/39b3d235d20a5b2d7120869fe54cb202c74623a7.png"></p>
+<p>Thus proved that <img src=
+"../imgs/9492e9f062101e5936060bc9809514818f36932e.png"> so that
+<img src="../imgs/0006d248f273d164769c3784f8ff5a31e9e0e640.png">
+and <img src=
+"../imgs/33fbf73a1dcd3a7c0b0eaa2dba099d3e591c2bf5.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>From the definition of the array <i>B</i>, it is clear that if
+<img src="../imgs/6799a7a4388f53caf799c6ca7b8ef05bc7e48a51.png">
+then <img src=
+"../imgs/62fe0c34015fe51d83006abecc014cc468218a1a.png">.</p>
+<p>The illustration explains that the routine X commits the same
+series of exchanges on array <i>B</i> as it does on array
+<i>A</i>.</p>
+<p>The output produced on array <i>A</i> is as <img src=
+"../imgs/2a25b12974d300fa9ffb04e6012455f75ba4387b.png"> and
+therefore the output produced on array <i>B</i> is of the
+form<img src=
+"../imgs/f4705f5f0f27518114823dd061949e63533e58db.png">.</p>
+<p>In array <i>A</i>, <img src=
+"../imgs/564118bda79444a753e5f615e64e340e837e2d52.png"> is not as
+large as<img src=
+"../imgs/a8aaba0605b1ba31415ad813976cbb28683d69f8.png">. Therefore,
+the value would not be sorted in array <i>B</i> too.</p>
+<p>Since <img src=
+"../imgs/33fbf73a1dcd3a7c0b0eaa2dba099d3e591c2bf5.png"> and
+<img src="../imgs/0006d248f273d164769c3784f8ff5a31e9e0e640.png">,
+therefore, replacing them will be resulting in <img src=
+"../imgs/8fa1bf39a40b04764a94bff75c4f5bbe1dfd4a52.png"> it is
+obvious to see that array <i>B</i> is not sorted.</p>
+<p>The implication of this is that the algorithm X does not succeed
+in sorting array <i>B</i> correctly.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c.</p>
+<p>In the given algorithm, even steps perform fixed operations such
+as transposing the array, finding inverse, etc.</p>
+<p>At the odd steps, the sorting of the columns are major factor.
+The sorting technique is not important as all the sorting
+algorithms provide the same output.</p>
+<p>The odd steps sort each column by some sorting algorithm, which
+is not necessarily a compare-exchange algorithm. Even if
+compare-exchange algorithm is used, the result of the sorting each
+column would be same as that of any other column sort
+algorithm.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d.</p>
+<p><b>Clean Area:</b> The area of an array is considered as clean,
+if it contains either all 0s or all 1s. It is because all the
+elements are of same type and easy to identify.</p>
+<p><b>Dirty Area:</b> The Area of an array is considered as dirty,
+if it contains mixed 0s and 1s. It is due to the reason that it
+requires a lot of comparisons to sort the array.</p>
+<p><b>Step 1</b> is sorting of each column. Therefore, after step
+1, each column would have 0s on summit and 1s on the ground, with
+maximum of one transition between 0s and 1s, and that is 01
+transition.</p>
+<p><b>Step 2</b> is transposing the array with its shape.
+Therefore, after step 2, each upcoming group of <img src=
+"../imgs/f734925215ce874b8df7131f447482e18c4b7ec8.png"> rows,
+interpreted in row-major order, would have maximum of one
+transition, and this is 01 transition.</p>
+<p>Now, All 10 transitions will appear at the end of a collection
+of <img src="../imgs/f734925215ce874b8df7131f447482e18c4b7ec8.png">
+rows.</p>
+<p>Since there would be <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png"> groups of
+<img src="../imgs/f734925215ce874b8df7131f447482e18c4b7ec8.png">
+rows, therefore, there will be at most <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">dirty rows,
+and the remaining of them would be clean.</p>
+<p><b>Step 3</b> is sorting of each column. Therefore, after step 3
+all 0s will be at top of rows and all 1s will be at bottom rows.
+Hence <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">dirty rows
+will be somewhere in the middle.</p>
+<p>Therefore, it can be concluded that after steps 1-3, the array
+holds some genuine rows of 0s at the summit, some clean rows of 1s
+at the ground, and maximum of <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">dirty rows
+in the rest of the area surrounded by them.</p>
+</div>
+<hr>
+<div class="answer">
+<p>e.</p>
+<p>From the above part d, it has been proved that after step 3,
+there will be at most of <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">dirty rows.
+Hence, its area will be at most<img src=
+"../imgs/0f50395b141b515a952e90f9f884a9f8784e38d3.png">.</p>
+<p><b>Step 4</b> is the inversion of the permutation performed in
+step 3. It will modify genuine 0s in the upper rows to form a clean
+span on the left. It will also modify the clean 1s in the lower
+rows to form a clean span on the right side, and the dirty span of
+size <img src=
+"../imgs/0f50395b141b515a952e90f9f884a9f8784e38d3.png">that lies in
+the span surrounded by clean areas.</p>
+<p>Therefore, after step 4 is executed, the array, that was created
+by reading the elements in column-major order, starts with a clean
+area of 0s, ends with a clean area of 1s, and holds a dirty span of
+at most <img src=
+"../imgs/0f50395b141b515a952e90f9f884a9f8784e38d3.png">items in the
+middle.</p>
+</div>
+<hr>
+<div class="answer">f.
+<p>Consider <img src=
+"../imgs/9120f6ea2a8de5c694d7ccb8ccdf8fcb3a8d02eb.png"> =number of
+rows and <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">= total
+amount of columns.</p>
+<p>Consider that <img src=
+"../imgs/e18c02fd7ef7abb200f7c8f7c33077c2bf8695dd.png"> <b>… …
+(1)</b></p>
+<p>Consider that if the dirty span after step 4 has the maximum
+size of <img src=
+"../imgs/21bfa544e89526ba1ed22a56ba28c1310b4068c2.png">, then Steps
+5–8 can produce the order arrangement in the above part
+<b>(</b><i><b>e</b></i><b>).</b> It has been proved that after step
+4, array has a dirty area of at most<img src=
+"../imgs/0f50395b141b515a952e90f9f884a9f8784e38d3.png">.</p>
+<p>Now, from equation <b>(1)</b> <img src=
+"../imgs/1d64f6efbee5a36e6b8316ad1ee1dd0c1d82ff68.png"></p>
+<p>If the dirty area after step 4 has size maximum<img src=
+"../imgs/3f80617214180fa02b5869973e54956e0e15f63a.png">, then Steps
+5–8 can produce the sorting.</p>
+<p><b>Proof:</b></p>
+<p>Given that the size of the dirty area is maximum <img src=
+"../imgs/3f80617214180fa02b5869973e54956e0e15f63a.png">. Then there
+are two possibilities.</p>
+<p>Case1. It completely resides in one column.</p>
+<p>Case2. It resides in bottom half of one column and the top half
+of next column.</p>
+<p>Case 1:</p>
+<p>If it completely resides in one column then step 5 will sort the
+column that is retaining the dirty area and step 6-8 will sort the
+array.</p>
+<p>Case 2:</p>
+<p>If it resides in bottom half of one column and the top half of
+next column then step 5 will not increase the dirty area
+span<i>.</i> Step 6 will move the complete dirty area in one
+column, step 7 will sort it, and step 8 will move it back.</p>
+<p>In either case array is arranged in ascending order.</p>
+</div>
+<hr>
+<div class="answer">
+<p>g.</p>
+<p>If <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">does not
+divide<img src=
+"../imgs/9120f6ea2a8de5c694d7ccb8ccdf8fcb3a8d02eb.png">, then after
+step 2, the number of 01 transitions will be <img src=
+"../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png"> and number
+of 10 transitions will be<img src=
+"../imgs/3606bf937a590f9257329948b2ca7d6ac5569bb7.png">. Also,
+there will be <img src=
+"../imgs/e9da6ec27bd070102c26f15f2b47f2f03de35ce6.png">dirty
+rows.</p>
+<p>After step 3, it should have dirty rows equal to <img src=
+"../imgs/e9da6ec27bd070102c26f15f2b47f2f03de35ce6.png"> dirty, for
+a dirty area spanning in the maximum of<img src=
+"../imgs/98a047f841ce425049250fc5f005c7706d5158b1.png">.</p>
+<p>In part (<i>e</i>), it already proved that dirty area size
+<img src=
+"../imgs/4880cfa4ca0d4566f1761bdaa4bb7deac6620c70.png">.</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/bae59305b6e5be146c4f4da9ac9199f7c2356f89.png"></p>
+<p><img src=
+"../imgs/7225210099b3befaf2819dd09f7f0323f3230c4e.png"></p>
+<p>Therefore, the value of <i>r</i> should be larger than or same
+as <img src="../imgs/3386a5bb6219ea454e20d684aa287eb5e768b1e0.png">
+when <i>s</i> does not a divisor of <i>r</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>h.</p>
+<p>In order to fulfill the task that states that <img src=
+"../imgs/53e39e8dd54276612abe5bf855025050dfdf3205.png"> even when
+<img src="../imgs/27409e54fbc4cbd3b40e57f24289952926766d5a.png">
+does not divide <i>r</i>, reducing the necessary count of
+transitions committed to the rows following second step is executed
+to at most <i>s</i> by sorting every other column in reverse order
+in step 1.</p>
+<p>Now if a transition (either 10 or 01) in the columns occurs
+after step 1, then either one of the columns had all 1s or the
+other had all 0. In both cases, no transition occurs within any of
+the columns.</p>
+<p>Hence, the column-sort correctly sorts.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

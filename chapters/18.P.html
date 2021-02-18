@@ -1,0 +1,382 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 18.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Stack on Secondary Storage</b></p>
+<p>Stack is one of the members of data structure. In stack
+insertion and deletion are performed at only a single end. Whatever
+operations are performed they are in LIFO (Last in first out). It
+means that last element inserted in stack will remove first.
+Example of a stack is picking up a CD from CD stand. The last put
+in will be taken out first.</p>
+<p><b>OPERATION ON STACKS:</b> Following three operations can be
+performed on stack:</p>
+<p>1. PUSH</p>
+<p>2. POP</p>
+<p>3. PEEP</p>
+<p><img src="../imgs/d62468f73f0484a7fad591bb46f7779e6f75b67d.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\7.tif"></p>
+<p>1. <b>PUSH</b>: This is the operation performed for insertion.
+The push operation inserts a data item into the stack to its
+top.</p>
+<p>2. <b>POP</b>: This is the operation performed for deletion.
+This pop operation works for removing a data item from the stack to
+its top.</p>
+3. <b>PEEP:</b> This operation is used only for reading the top
+element of the stack. It will not remove the top element of
+stack.</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> Consider a stack implementation which holds one
+page of the stack in memory. The conditions states that stack
+operation only performed when enough disk pages present in memory.
+If the required disk pages are present in memory, then no disk
+accesses will be required. To find the worst case running time to
+perform <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">stack
+operation using the above strategy is:</p>
+<p>Take the following alternating sequence:</p>
+<p>PUSH, PUSH, POP, POP,<img src=
+"../imgs/826e625c181c0eccb05423a90beda0fc8f83334b.png"></p>
+<p>Assume that first PUSH operation done at the end of page. This
+is happening at the page boundary. The second PUSH operation in the
+above sequence requires writing the first most word of the next
+page. Similarly the second POP operation requires reading in the
+previous page once more. Accessing an <i>m</i> words page of disk
+requires<img src=
+"../imgs/73f6b91a21cc77e25a481602e43bbd1530678d41.png">CPU time and
+one disk access. Hence, <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">operation
+will require total <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">disk
+accesses, as <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">stack
+operations will be performed.</p>
+<p>Hence, the total CPU time taken will be<img src=
+"../imgs/82c82daa8ff01683f5a8c6c977394557201c4150.png">.</p>
+<p><i><b>b.</b></i> If PUSH operations done on the pages which are
+not in the memory. Then each PUSH operation required to access page
+from disk and then store into memory. Therefore <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> operation
+will require total <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">disk
+accesses, as <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> push stack
+operations will be performed. Accessing an <i>m</i> words page of
+disk requires<img src=
+"../imgs/73f6b91a21cc77e25a481602e43bbd1530678d41.png">CPU time and
+one disk access. Fully, a disk will be accessed one by one.</p>
+<p>Hence, the CPU running time is<img src=
+"../imgs/82c82daa8ff01683f5a8c6c977394557201c4150.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> A stack consists of mainly two operations, PUSH
+and POP. The cost of implementation of any operation is calculated
+by the combination of total CPU time and number of disk access.</p>
+<p>In worst case number of disk accesses required for <i>n</i>
+stack operation will be<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">. Whatever
+operation will perform on the stack, either it will be PUSH or POP.
+It will be implemented as a whole. And CPU running time implemented
+on this will be<img src=
+"../imgs/bb3b27f2d5339ee0d38bec7717e7e0213f2002e6.png">.</p>
+<p>The reason behind is that any disk access to a page m words
+incurs charges of one disk access and <img src=
+"../imgs/73f6b91a21cc77e25a481602e43bbd1530678d41.png">CPU time and
+here number of disk accesses required for <i>n</i> stack operation
+will be <img src=
+"../imgs/aea954dc7042e6bbb3f743edddaafa5189bce8e4.png">.</p>
+<p><i><b>d.</b></i> In the above parts it is mentioned that only
+one page of disk can reside in the memory. In order to implement
+any stack operation, it is necessary to keep the required current
+page in the memory.</p>
+<p>Now, implement a stack by keeping two pages of disk in memory in
+order to keep the previously used pages in the memory. Now, uses
+two pages as discussed. Keep marking or tracking the pages to know
+which of the following two pages are in memory had been least
+recently used (LRU).</p>
+<p>Whenever a new page is store into memory or can say that read a
+new page, save the LRU page to the disk if any change is made, and
+read it in the new page. While executing any PUSH operation, memory
+will be <img src=
+"../imgs/fe19d6cbb2fd99ac7cf7f19fca3df9a4fe83dbbd.png"> for a
+single page, further it would be <img src=
+"../imgs/1ade15f8eae27e267d5a1f9242046ecf3e87d033.png"> while
+performing on <img src=
+"../imgs/98990228b5c99f313a16c0824ca9db0f29bd5034.png"> page
+through <img src=
+"../imgs/e7da6b8fdb51877b19b87d7a4202abd96f5d401a.png">pushes,
+further <img src=
+"../imgs/6fabb4db1e38cb6fe4471315fedfb7fec231449c.png"> and
+then<img src=
+"../imgs/b36da025591c02cbe70bb29cd41024d96439bbc1.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The stack pointer of disk will always point to the top of any
+fresh or new page to be read, taken from the disk. There is data
+and free space always available in page for performing stack
+operations in memory. Only two operations PUSH and POP can perform
+on stack before moving to the next page for reading. So, the stack
+operations should be performed before every disk access.</p>
+<p>When one page resides in the memory then the cost of accessing
+an <i>m</i> words page of disk requires<img src=
+"../imgs/73f6b91a21cc77e25a481602e43bbd1530678d41.png">CPU time and
+one disk access. But now two pages of disk reside in the memory.
+So, that the cost of accessing the disk is reduces to <img src=
+"../imgs/ec1e5ee43c26cdaa584b35c04267c67554f1d519.png">as cost of
+disk access, which is <img src=
+"../imgs/4c9f91e1fd7043e7b7feeba4d632afcb4f3887fd.png"> for every
+stack operation performed. Because there will be more chance to
+perform Push or pop operation on currently two pages stored in
+memory. Here <i>m</i> is the number of words on disk access
+page.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, two pages are store in the memory and each page has
+<i>m</i> words. So, there will be more probability to insert or get
+the word in the current pages. It will also reduce the CPU time by
+<i>m</i> because word is already in memory.</p>
+<p>CPU time when one page in memory and each page has <i>m</i>
+words= <img src=
+"../imgs/73f6b91a21cc77e25a481602e43bbd1530678d41.png"></p>
+<p>CPU time when two pages in memory and each page has <i>m</i>
+words is</p>
+<p><img src=
+"../imgs/29b734b4de6ab68ccff5fcf6bdb66b65a3cc207b.png"></p>
+<p>After ‘<img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">’ stack
+operation have been performed, values of <img src=
+"../imgs/2ef8590f992d5fef4951e71aecac940a234ad3ba.png">are
+collected which could be paid for any required disk access.</p>
+<p>Hence, the amortized CPU time will be <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">for any
+stack operation.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a)</p>
+<p>If the leaf node has a height of 1 then look for the depth to
+recalculate the height of the 2-3-4 tree.</p>
+<p>For insertion and deletion operation need to maintain the height
+of the leaf node. The leaf node running complexity is log(n) for
+insertion and deletion operations. All the 2-3-4 tree have the same
+depth.</p>
+<p>Therefore, the field is maintained within the procedure of
+merging.</p>
+<p>Hence, the asymptotic running time in any operation (searching,
+insertion, and deletion) is the same.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b) <b>Implement join operation:</b></p>
+<p>1) When h’ &gt; h’’ then find out the heights of T’ and T’’ with
+the node N. For the</p>
+<p>depth of the tree T is h’- h’’ of the right child path.</p>
+<p>2) The insert key k onto the node N.</p>
+<p>3) When node N is full, then need to split the tree T with the
+key k on insertion</p>
+<p>operation.</p>
+<p>4) Now, set the right most child to contain the key k to node N
+for the root of T’’.</p>
+<p>5) Now 2-3-4 tree depth h’ comes with the resulting of branching
+constraints. Hence,</p>
+<p>h’ &lt; h’’ is similar.</p>
+<p>6) When h’= h’’ then join the both root nodes along with the key
+k otherwise split</p>
+<p>the node.</p>
+<p>Hence, the procedure is similar to the case 1 since the
+procedure has at most <img src=
+"../imgs/efc543ac4784f7509c15fc9e2f03bb58c3ef5b3a.png"> recursions,
+each takes <img src=
+"../imgs/d82cebb64aa546dd4ad5369be9f86f23a26f29d9.png"> time. The
+total time for joining is<img src=
+"../imgs/13907fd11d8f88468057aed7f0f7b1cf4b4e8249.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c)</p>
+<p>Suppose the path p has length l, then<img src=
+"../imgs/aefe6c8eb49b61090aac349bbd6b4db991b9046c.png">, where
+<img src=
+"../imgs/82ca8ce04027f914408d02617a081dfcd4c3ffba.png">do:</p>
+<p>a. if <img src=
+"../imgs/cf795d7b46909e40f5200acbac73a4a0e11956f2.png">, then
+<img src="../imgs/b6be0cd45fe1fb3e2288f66de8ec52625881a223.png">and
+<img src=
+"../imgs/68437b6d455eb0acdc5159d175e27290d5d745ad.png"></p>
+<p>b. if <img src=
+"../imgs/53b22d0d9b780414f4b54ae07771e21b3b4e7f2e.png"> then
+<img src="../imgs/456197c9367014dad151f5eff282789ef2c0bf98.png">
+and <img src=
+"../imgs/82e70e5180ac9ca66498cf956edfa41580c647b2.png"></p>
+<p>c. if <img src=
+"../imgs/fdbf64a4dce9b2231395062a9d826d7a6815d989.png"> then
+<img src="../imgs/7765abd76dd0ed550a4cd2bba1685c682f9bb147.png">
+and <img src=
+"../imgs/979e7c14474fbce16b79d6f3c8b860dfed0cdfb3.png"></p>
+<p>Tree formed by a root containing <img src=
+"../imgs/9bc1375d0996d33f0bb9e9f92d4778d760506a6b.png">and two sub
+trees <img src=
+"../imgs/c9b0c3417fc804dba19328c365ce1bc0843a285d.png">and
+<img src="../imgs/bd1fbc891063a3d3108fed8ee341c385aeb99db9.png"></p>
+<p>d. if <img src=
+"../imgs/90882b517361ce5aec5eca83c0af813a2cf4f4d8.png">, then
+<img src="../imgs/7e989afe3ac7a82d1cd9bd815810875511c9f0b5.png">
+and <img src=
+"../imgs/a9de888f8f29bd8a563daf9762071e594101d954.png"></p>
+<p>Tree formed by a root containing <img src=
+"../imgs/e13d9e97d1576400e1138dca97bc844247f77aca.png"> and
+<img src="../imgs/4a4fa170384743b19572d26d90618879afe07619.png">
+and</p>
+<p>three sub trees,<img src=
+"../imgs/a769eb84dc1621dbbf495f9343c78da49a1f8a19.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Finally consider the node <img src=
+"../imgs/6b951ff6d4ba54e4e6b40bc0c943afbfb6cbfcab.png">containing
+k. If <img src=
+"../imgs/ed6279cc16b96fb1b82da80cb34250136a188e42.png">
+then<img src=
+"../imgs/bc927076d8768efe58283b3adcc1055fef455022.png">. If
+<img src="../imgs/d8f35367dc75697e9c785fa260408a55f3c990ab.png">
+then <img src=
+"../imgs/5249b3bb5a98276cf65e774b9dcb90fb8872f148.png">a tree
+formed by a root containing <img src=
+"../imgs/0ae15e8fb152265eac56fd3cc3c3f28704106a65.png"> and three
+sub trees<img src=
+"../imgs/a769eb84dc1621dbbf495f9343c78da49a1f8a19.png">. After
+tress <img src=
+"../imgs/db17058950ffa347829135e6543a98c8cf0e4042.png"> and keys
+<img src="../imgs/d27c3e32592a039b635f41289ee645949338cb72.png">
+are generated, remove all <img src=
+"../imgs/d7750747e1d1ab485f236eb52c256ba2e608b093.png">and<img src=
+"../imgs/b6be0cd45fe1fb3e2288f66de8ec52625881a223.png">. The result
+is a set of trees <img src=
+"../imgs/7410da10268a59770a10fa3f2793abe1809e0785.png"> and a set
+of keys <img src=
+"../imgs/e6167586fac33183aeb7b1e1895e6c6e7cd5933d.png"> . By the
+properties of 2 – 3 – 4 trees, these are the desired sets for
+<img src="../imgs/6e1fc24cad3784541746e7813839752bcd18a22b.png">.
+The height of <img src=
+"../imgs/30612525fac91ab51c47b53253b783c44093c21d.png"> is greater
+or equal or the height of<img src=
+"../imgs/eae50e0beb0bfd99bc7d85d33281c7d7c9a4f005.png">. The
+procedure of break <img src=
+"../imgs/bf3b34b941ee28661b9b83fa70a280f441c3a156.png">into sets of
+trees and keys is symmetric.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d)</p>
+<p>To split a tree, first find a path from the root to the
+keys<img src=
+"../imgs/2d320b13e7e8ec24f678cb12eb699bc54dc21d26.png">. Then break
+the set <img src=
+"../imgs/0e196ac5f2dd31df01708848f48bba5485bdba62.png"> into sets
+of trees <img src=
+"../imgs/7410da10268a59770a10fa3f2793abe1809e0785.png"> and keys
+<img src="../imgs/d27c3e32592a039b635f41289ee645949338cb72.png"> as
+described above. Next for i from m to 1, do JOIN<img src=
+"../imgs/c6660a91e5401419ddee4ed1fbe48c5d99868fe6.png">. The result
+is a 2 – 3 – 4 tree containing the set<img src=
+"../imgs/0e196ac5f2dd31df01708848f48bba5485bdba62.png">. Do the
+same for <img src=
+"../imgs/bf3b34b941ee28661b9b83fa70a280f441c3a156.png">and create
+another tree for<img src=
+"../imgs/bf3b34b941ee28661b9b83fa70a280f441c3a156.png">. Finally
+return <img src=
+"../imgs/0e196ac5f2dd31df01708848f48bba5485bdba62.png"> and
+<img src="../imgs/bf3b34b941ee28661b9b83fa70a280f441c3a156.png"> to
+analyze the running time, observe that the time to join two trees
+of height <img src=
+"../imgs/61958fe85ff90a697e2961f3c6c704a81754dca9.png">and
+<img src="../imgs/6542a4c76a72ea8e8a1cdf31225af2e92d8aadfe.png"> is
+<img src="../imgs/03a89f40c0408a8ee94a3f58d2b7aea2979324c1.png">by
+the (B). Then the total time to join all the trees in <img src=
+"../imgs/0e196ac5f2dd31df01708848f48bba5485bdba62.png"> is:</p>
+<p><img src=
+"../imgs/a416ef39ccdf7d8c9c8c0640d373cb3d1e0f3480.png"></p>
+<p><img src=
+"../imgs/9f5b7d784d7d9336c4c3ecf19816fe4ed7688aca.png"></p>
+<p>since <img src=
+"../imgs/4b34ceab343665975ac4c79d49ad8f1ece01228b.png"></p>
+<p>Since the time for finding the path breaking <img src=
+"../imgs/0e196ac5f2dd31df01708848f48bba5485bdba62.png"> and
+<img src="../imgs/bf3b34b941ee28661b9b83fa70a280f441c3a156.png"> is
+also bounded by <img src=
+"../imgs/73235bc0d45cc1cd3e754e079124dd0a90e45416.png">. The
+running time for splitting is<img src=
+"../imgs/73235bc0d45cc1cd3e754e079124dd0a90e45416.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

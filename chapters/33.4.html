@@ -1,0 +1,808 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 33.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Scheme of Checking only 5 Points Instead of 7 in Closest Pair
+Algorithm</b></p>
+Closest pair algorithm is used to find the length between two
+points such that the measured length <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png"> is minimum
+length. In this algorithm, the divide and conquer approach is used
+that is the point set <i>P</i> is divided into two parts
+<i>P</i><sub>L</sub> and <i>P</i><sub>R</sub> by a straight
+vertical line whose <i>x</i> and <i>y</i> coordinates of points are
+stored in the arrays <i>X</i> and <i>Y</i> in the sorted order.
+Consider the figure given below:</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/ea1557d1a5ba1fc80f920aa847732d96681e9ef8.png" alt=
+"Picture 1"> The <i>x</i> and <i>y</i> coordinates of points of
+left and right side of line are stored in <i>X</i><sub>L</sub>,
+<i>X</i><sub>R</sub> and <i>Y</i><sub>L</sub>,
+<i>Y</i><sub>R</sub><i>.</i> From left and right side the minimum
+distances between two points are <img src=
+"../imgs/cf9c689afe468d8dc417f73197202218f1909dfb.png">and<img src=
+"../imgs/7350e1c9e7e74932b8230d20516bb24872f50b41.png">. The
+shortest distance between them is considered to be <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png"> and is
+represented as<img src=
+"../imgs/9cf851fe542ad5fc70fd06fced353d498e746e3b.png">.</div>
+<hr>
+<div class="answer">Now, it is to be checked if there is any pair
+of points with less than <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png"> distance
+between them and one point is on the left of line and the other one
+is on the right side of line. For this, an array <i>Y’</i> is
+created which stores the points which are at the distance less than
+<img src="../imgs/af92b1b9282cc835d1bd366f6d6023bc577b6d56.png"> in
+which at most 8 points can reside in the rectangle <img src=
+"../imgs/a336f5006bf43717f98b9c9dd484789d7bfc381b.png">. So for
+each point <i>p</i>, minimum 7 points are checked for minimum
+distance.</div>
+<hr>
+<div class="answer">Professor Williams came up with the idea of
+checking only 5 points in the array <i>Y’</i>. This idea came from
+the fact that the points will reside on the line <i>l</i> into set
+<i>P</i><sub>l</sub>. In this condition residing one point in
+<i>P</i><sub>L</sub> and other in <i>P</i><sub>R</sub> does not
+matter at all. Thus maximum 6 points can be there in
+rectangle<img src=
+"../imgs/a336f5006bf43717f98b9c9dd484789d7bfc381b.png">.</div>
+<hr>
+<div class="answer">To justify this, first consider the above
+diagram which has a line <i>l</i> and two dotted lines, one in the
+left of <i>l</i> and another one inright to <i>l</i>. Both of them
+are locatedto <i>l</i> at a distance of delta. This area makes a
+region same as rectangle but in closest pair algorithm analysis 8
+points are considered which lie in this reason. Equal number of
+points lie in these regions that are 4 and 4.</div>
+<hr>
+<div class="answer">One consideration is “no point lie on the line
+<i>l</i>” but according to professor, if one point is on the line
+for both the region, then total number of points would become 6
+because left and right regions have equal number of points so here,
+the point on the line would be counted in both of the
+regions.</div>
+<hr>
+<div class="answer">In earlier approach, there are 8 points in that
+rectangle and no point lie on the line <i>l</i> but according to
+professor approach 1 point for both the region lies on that line
+<i>l</i> which makes count 6 in case of comparison because minimum
+distance formula gives the length in horizontal way, not in the
+vertical way. So, according to professor, one point has to be
+compared with 5 other points.</div>
+<hr>
+<div class="answer">
+<p>In the closest pair problem, the assumption is made that in
+rectangle<img src=
+"../imgs/a336f5006bf43717f98b9c9dd484789d7bfc381b.png">, there will
+be 8 points that is 4 in the left <img src=
+"../imgs/09bb9fb746e7dcc004849320a08638996e23d451.png">square
+<i>P</i><sub>L</sub> and 4 points in the right square
+<i>P</i><sub>R</sub> and there is no point on the line.</p>
+<p>According to the idea given by Professor Williams on the closest
+pair problem, the points on the right side of left square and the
+points on the left side of right square are same that is two points
+are reduced. Now, there are total 6 points and for every point
+<i>p</i>, only 5 points have to be checked to find the closest
+pair.</p>
+<p>So, only 5 points reside in the array <i>Y’</i> and it saves
+number of points that are checked every time reducefrom 7 to 5.
+This approach does exactly what closest pair finding approach with
+7 points is supposed to do with less number of comparisons in each
+recursion.</p>
+<p>Thus, this technique is subtle and there is no flaw in it.A
+simple thing that can be observed in this illustration is that the
+professor’s idea is all about the reduction of the size of the
+problem, but to change the basic strategy that is used to solve the
+problem.</p>
+<p>Hence, Professor Williams’ scheme of checking only 5 points
+instead of 7 in the array <i>Y’</i> works enough appropriately for
+the closest pair problem.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Efficiency of Checking only 5 Points Instead of 7 in Closest
+Pair Algorithm</b></p>
+<p>Consider the closest pair algorithm which is used to find the
+length between the points <i>P</i> such that the measured length
+<img src="../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">is
+minimum length. In this algorithm, use the divide and conquer
+approach that is the point set <i>P</i> is divided into two parts
+<i>P</i><sub>L</sub> and <i>P</i><sub>R</sub> by a straight
+vertical line whose <i>x</i> and <i>y</i> coordinates of points are
+stored in the arrays <i>X</i> and <i>Y</i> in the sorted order.
+Consider the figure given below:</p>
+<p><img src="../imgs/ea1557d1a5ba1fc80f920aa847732d96681e9ef8.png"
+alt="Picture 1"></p>
+<p>The <i>x</i> and <i>y</i> coordinates of points of left and
+right side of line are stored in <i>X</i><sub>L</sub>,
+<i>X</i><sub>R</sub> and <i>Y</i><sub>L</sub>,
+<i>Y</i><sub>R</sub><i>.</i> From left and right side the minimum
+distances are <img src=
+"../imgs/cf9c689afe468d8dc417f73197202218f1909dfb.png">and
+<img src="../imgs/7350e1c9e7e74932b8230d20516bb24872f50b41.png">so<img src="../imgs/9cf851fe542ad5fc70fd06fced353d498e746e3b.png">.</p>
+<p>Now, it is to be checked that if there is any pair of points
+with less than<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png"> distance
+between them and one point is in left of line and the other point
+is in the right of line.</p>
+<p>For this an array <i>Y’</i> is created which stores the points
+which are at the distance less than <img src=
+"../imgs/af92b1b9282cc835d1bd366f6d6023bc577b6d56.png"> in which at
+most 8 points can reside in the rectangle <img src=
+"../imgs/a336f5006bf43717f98b9c9dd484789d7bfc381b.png"> so for each
+point <i>p</i>, minimum 7 points are checked for minimum distance.
+Now, proving that for each point <i>p</i>, it is sufficient to
+check only 5 points following <i>p</i> in the array <i>Y’</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the closest pair problem the assumption is made that in
+rectangle <img src=
+"../imgs/a336f5006bf43717f98b9c9dd484789d7bfc381b.png"> there will
+be 8 points that is 4 points in the left <img src=
+"../imgs/09bb9fb746e7dcc004849320a08638996e23d451.png">square
+<i>P</i><sub>L</sub> and 4 points in the right<img src=
+"../imgs/09bb9fb746e7dcc004849320a08638996e23d451.png">square
+<i>P</i><sub>R</sub>. Consider the figure given below:</p>
+<p><img src="../imgs/f9206d9927b429ebe17f43e3ceab43f95ae6971c.png"
+alt="Picture 4"></p>
+<p>According to the figure given above, <i>Y’</i> will contain the
+elements which lies in the rectangle<img src=
+"../imgs/a336f5006bf43717f98b9c9dd484789d7bfc381b.png">. The points
+in the right side of left square and the points in the left side of
+right hand square are same that is two points are reduced.</p>
+<p>Now, there are total 6 points and for every point <i>p</i> it is
+required to check only 5 points to find the closest pair. So, only
+6 points reside in the array <i>Y’</i> and it saves the number of
+points that are checked every time from 7 to 5. Thus, it is
+sufficient to check only 5 points in the array <i>Y’.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the 33.4-1 of this text book, To justify this, first
+consider the above diagram which has a line <i>l</i> and two dotted
+lines one is left of <i>l</i> and another one right to <i>l</i>
+both are away to <i>l</i> at a distance of delta.</p>
+<p>This area makes a region same as rectangle, but in closest pair
+algorithm analysis, consider 8 points which lie on this reason and
+equal number of points lies in this region, that is, 4 and 4.</p>
+<p>One consideration is that “no point lies on the line <i>l</i>”
+but according to professor, if one point is on the line for both
+the regions then total number of points would become 6 because left
+and right regions have equal number of points so here, both points
+count on both the region.</p>
+<p>In earlier approach if there are 8 points in that rectangle and
+no point lies on the line <i>l</i> but according to the professor’s
+approach 1 points for both the region lies on that line <i>l</i>
+which makes count 6 in case of comparison because minimum distance
+formula gives the length in horizontal way not in vertical way.</p>
+<p>So, according to professor, one point has to be compared with
+other 5 points. Hence, it actually suffices to check only 5 points
+in the array <i>Y’</i> in closest pair problem for every point in
+the<img src=
+"../imgs/a336f5006bf43717f98b9c9dd484789d7bfc381b.png">rectangle.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider <img src=
+"../imgs/e5fdf0adb28310e8f935d5f4affc16ce4ba5c726.png">between two
+points <img src=
+"../imgs/1b90f2767908095b894293bb1ca3e6b0d12fe666.png">and
+<img src="../imgs/e9d55d9f534c16514a6b6731db480ab8a363f132.png">as:</p>
+<p><img src=
+"../imgs/3d930eeed1d412705d5f215d1882bb558424a5cc.png"></p>
+<p>Such that for<img src=
+"../imgs/68adc4ace2a5b27c6ef95c234a481d7dabf51c24.png"> it
+calculates Euclidian distance; now modifying the closest pair
+algorithm by using<img src=
+"../imgs/53cf05f41e69db74839e6ee23adf8ca6595a3809.png"> is the
+<i><b>Manhattan distance</b></i> between points <img src=
+"../imgs/1b90f2767908095b894293bb1ca3e6b0d12fe666.png">and<img src=
+"../imgs/e9d55d9f534c16514a6b6731db480ab8a363f132.png"> for each
+point in point set <i>P</i>.</p>
+<p>It is the distance measured by calculating the number of
+horizontal and vertical components in the path of grid form. The
+path followed for getting the Manhattan distance is a series of
+paths that are essentially vertical or horizontal but not
+diagonal.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/bbd6c2ac8204b5bfabf5c055c1c49a6d08f861f0.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Closest pair algorithm is an algorithm which is used to search a
+pair of points<img src=
+"../imgs/8913405dc2e007885a9a59a9bcf89310329abe55.png">and
+<img src="../imgs/bd4d872b9e444b3cc67526d386bc8976d1eccfa2.png">in
+a set of points <i>P</i> with shortest length<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">between
+them. To find these points, divide and conquer approach is used in
+which the points are divided into two set of points by making a
+vertical straight line <i>l</i> between them<i>. l</i> is the
+mid-point of all the points sorted according to the X
+co-ordinate.</p>
+<p>After calculating the distances <img src=
+"../imgs/cf9c689afe468d8dc417f73197202218f1909dfb.png">and
+<img src="../imgs/7350e1c9e7e74932b8230d20516bb24872f50b41.png">for
+both the parts, find<img src=
+"../imgs/9cf851fe542ad5fc70fd06fced353d498e746e3b.png">. But this
+is not the minimum distance because there could be a pair of point
+such that one of it is on the <img src=
+"../imgs/eefb8af20407ad1797bbb282fc563805e5e909a0.png"> side and
+the other is on the <img src=
+"../imgs/8c92f4c21acb46a03cd632fe812e9f6f57200b8c.png"> side with
+distance between them is less than<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">..
+Therefore, find such a distance if exists. The minimum of all the
+three is the required closest pair distance. Return the minimum
+distance and the pair of points which possesses that distance.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following figure depicting closest pair using
+Manhattan distance:</p>
+<p><img src="../imgs/8a38dae1af779c26f6510409c732bbd447a13e98.png"
+alt="F:\Tiffs\all files\Naveen\udit.tif"></p>
+<p>In the figure given above, the Manhattan distance is the
+distance obtained by adding the distance of <i>AB</i> and <i>BC</i>
+or <i>AF</i>, <i>FE</i>, <i>ED</i> and <i>DC</i>. Both are
+Manhattan distances. It is because both are the addition of
+distances between<i>A</i> and <i>C</i> that are obtained by adding
+distances of<i>x</i>-axis and <i>y</i>-axis.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The distance that has been provided by closest pair algorithm is
+<i>AC</i>.For making the changes in the closest pair algorithm and
+to use <img src=
+"../imgs/cd8bf49c978e4dd5cf204dd2dfcf7fb30823890c.png">in the set
+of points <i>P</i>, firstly divide the point set into two parts
+<i>P</i><sub>L</sub> and <i>P</i><sub>R</sub> by a straight
+vertical line whose <i>x</i> and <i>y</i> coordinates of points are
+stored the sorted order. Consider the figure given below:</p>
+<p><img src="../imgs/ea1557d1a5ba1fc80f920aa847732d96681e9ef8.png"
+alt="Picture 1"></p>
+<p>After finding the minimum distance for left side and right side,
+compute the same for the middle. In the middle the maximum total
+number of points can be computed because there is a constraint that
+the distance should be less than the previously found<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">.</p>
+<p>For every point close to the middle line, there can be minimum
+distance with a point on the other side which is at most <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">distance
+from it. Similarly, the maximum distance to the</p>
+</div>
+<hr>
+<div class="answer">top and bottom is also<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">. This
+results in a maximum of 6 points in each rectangle – one <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png"> above, one
+<img src="../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">
+below and one is the reference point itself. Then there are 3 more
+points in the horizontal direction with <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">distance
+apart.
+<p>So, once <img src=
+"../imgs/cf9c689afe468d8dc417f73197202218f1909dfb.png">and
+<img src="../imgs/7350e1c9e7e74932b8230d20516bb24872f50b41.png">
+are found, total of 6 more points have to be compared. This is the
+merging part of the sub-problems and so it takes constant time
+asymptotically.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Pseudo code for the procedure is the following:</p>
+<p><b>procedure closest_pair_manhattan (P, left_p, right_p)</b></p>
+<p>// <b>P</b> <i>is the collection of points. The closest pair to
+be found between</i> left_p <i>and</i> right_p<i>.</i></p>
+<p>// <i>If there are less than 2 points then closest pair distance
+is</i> <img src=
+"../imgs/7e34a007bd835dc92ad9c46a7cd5fa86919a169b.png"></p>
+<p>1. <b>if</b> p_size &lt; 2, return <img src=
+"../imgs/7e34a007bd835dc92ad9c46a7cd5fa86919a169b.png"></p>
+<p>// the <i>middle point is found out.</i></p>
+<p>2. middle_p = (left_p + right_p) / 2</p>
+<p>// the <i>x co-ordinate of the middle point is the line which
+will divide the problem in this divide and conquer strategy</i></p>
+<p>3. middle_xc = P[middle_p].x</p>
+<p>// <i>the closest pair on the left side of the middle line is
+found out.</i></p>
+<p>4. delta_left = <b>closest_pair_manhattan</b> (left_p,
+middle_p)</p>
+<p>// <i>the closest pair on the right side of the middle line is
+found out.</i></p>
+<p>5. delta_right = <b>closest_pair_manhattan</b> (middle_p+1,
+right_p)</p>
+<p>// <i>the minimum of the two deltas is found out.</i></p>
+<p>6. delta=minimum (delta_left, delta_right)</p>
+<p>// <i>There could be minimum distance at middle, so find the
+candidates to consider for it.</i></p>
+<p>7. left_candidates = select_left_points (left_p, middle_p,
+delta, middle_xc)</p>
+<p>8. right_candidates = select_right_points (middle_p+1, right_p,
+delta, middle_xc)</p>
+<p>// <i>Find the minimum delta among the candidates found.</i></p>
+<p>9. delta_middle = find_delta_middle (left_candidates,
+right_candidates, delta)</p>
+<p>// <i>the result of the sub-problems is merged in this
+step.</i></p>
+<p>10. merge (left_p, middle_p, right_p)</p>
+<p>// <i>the minimum delta is the minimum of the three possible
+deltas.</i></p>
+<p>11. <b>return</b> minimum (delta_left, delta_middle,
+delta_right)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis of the algorithm:</b></p>
+<p>In order to divide the problem into sub-problems, constant work
+is needed as it is done by a single step only but then merging has
+to be done for each split.</p>
+<p>• <b>Divide:</b> The problem is divided into two equal
+sub-problems at each step.</p>
+<p>• <b>Merging:</b> In this step, the result of the sub-problems
+is merged. As seen in previous step, there can be at most 6
+candidates to compare during the merge step, so it takes constant
+asymptotic time. And there can be at most <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> points in
+the middle strip. So, it can take at most<img src=
+"../imgs/6c49d833eb46219418508ccec079f4c56e2aed01.png">.</p>
+<p>Write down the recurrence relation for the algorithm as
+follows:</p>
+<p>Let the asymptotic time complexity of the algorithm be denoted
+by <img src=
+"../imgs/78c04fb03cc7f8eb5fcecefe57937b2459c8e9d4.png"></p>
+<p><img src=
+"../imgs/abbc029df345a4afe3f6a487f4cd34ec4f686639.png"></p>
+<p>An asymptotic solution to the above recurrence relation is given
+by the Master Theorem.</p>
+</div>
+<hr>
+<div class="answer">
+<p><u><b>Master Theorem</b></u></p>
+<p>For the recurrence relation <img src=
+"../imgs/09d4ae8a4e0d3517a2a0f9b3b83aaeddc6569e58.png">such that
+<img src="../imgs/09d4ae8a4e0d3517a2a0f9b3b83aaeddc6569e58.png">is
+of the following form:</p>
+<p><img src=
+"../imgs/901e9a7a5bffca2bc02cadb2721264e660a3914a.png"></p>
+<p>The above has the constraints that<img src=
+"../imgs/487f0187dee5baedde596209c32e2d2f3a129a64.png">, <i>b</i>
+is an integer greater than 1, and <i>c</i> and <i>d</i> are real
+numbers with <i>c</i> positive and <i>d</i> nonnegative. Then the
+<img src=
+"../imgs/3647381ac681c7fd2274462335dcb6737f13b60c.png">notation is
+the following:</p>
+<p><img src=
+"../imgs/32601cfcd60900a59843f40328c6a0b489b93707.png"></p>
+<p>Observe that equation (1) is of the form that satisfies the
+Master Theorem. Comparing it with the above formula, <img src=
+"../imgs/fda69acaf5036322ba65b7c9fd07c42bde125a8c.png">.</p>
+<p>Case2 is satisfied, therefore, <img src=
+"../imgs/819c3811cd2f1ef02df66e0ae17cbf84ffbace6d.png">.</p>
+<p><b>Hence closest pair algorithm can be implemented using
+Manhattan distance with the</b> <b><img src=
+"../imgs/6c5c534ba8af2250711756328d36e85a84eec5fa.png"></b>
+<b>estimate for time complexity being</b> <b><img src=
+"../imgs/1f251e772193a2cea89d265e53599624b02d8ef0.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider <i>P</i>[] represents the array of points.</p>
+<p><img src="../imgs/1b90f2767908095b894293bb1ca3e6b0d12fe666.png">
+and <img src=
+"../imgs/e9d55d9f534c16514a6b6731db480ab8a363f132.png">are two
+points in the plane.</p>
+<p>The distance between the two points <img src=
+"../imgs/1b90f2767908095b894293bb1ca3e6b0d12fe666.png"> and
+<img src="../imgs/e9d55d9f534c16514a6b6731db480ab8a363f132.png">is
+<img src=
+"../imgs/6b329ef0216a89604f1266cab0e0bf1338281f6c.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following modified closest pair algorithm that uses
+<img src="../imgs/129b292da79812b43af2a872de28b1f8dfa8799a.png"> in
+closest pair:</p>
+<p>//Defining the length between two points on a plane</p>
+<p>1.<img src=
+"../imgs/f314e8d02bb9b1e9429b5ba4f84f1f24f4f0a947.png"></p>
+<p>//Use of for loop to trace each and every point</p>
+<p>2. <b>for</b> <i>i</i>=1 <b>to</b> <i>length</i> (<i>P</i>) –
+1</p>
+<p>3. <b>for</b> <i>j</i> = <i>i</i>+1 <b>to</b> <i>length</i>
+(<i>P</i>)</p>
+<p>4. suppose <img src=
+"../imgs/c8e2667f0ff10b55248daf2c864d209e8907749e.png">,<img src=
+"../imgs/b05ae7f06c421e418b4b4b3ad9fa165e271a43e7.png"></p>
+<p>//Comparing whether the distance of current point is less than
+the previous</p>
+<p>//traced points</p>
+<p>5. <b>if</b> <img src=
+"../imgs/9f546e61e2c5b99a04943a109859d36f11920c7b.png">;</p>
+<p>//Setting the distance of current point as the
+<i>L</i><sub>∞</sub></p>
+<p>6. <img src=
+"../imgs/e0e513cc837bc0a49e30c056d1fba8ef672bf625.png"></p>
+<p>7. closestpair = (<i>p</i>, <i>q</i>)</p>
+<p>8. <b>return</b> the closest distance</p>
+<p>9. <b>return</b> closestPair</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the algorithm given above, the modification has been made in
+such a way that it can be found out how far one point is from
+another.</p>
+<p>• Here the distance which is maximum of <i>x</i> co-ordinate and
+<i>y</i> co-ordinate so the distance can be any of
+<i>x</i>-coordinate or <i>y</i>-coordinate gaps.</p>
+<p>• The algorithm uses divide and conquer approach to find the
+closest pair and then finds the minimum distance among the
+calculated distances.</p>
+<p>• Whenever it is needed to measure the distance,<img src=
+"../imgs/4d76625642936e1fc3ceabdef9d1cf31fce6a348.png">can be used
+instead of Euclidean distance.</p>
+<p><b>So, the algorithm given above would get the minimum distance
+between two points on a plane using the maximum distance
+measure</b> <img src=
+"../imgs/4a440a73b993fc2785c6ec5ac43e890484a2fc3c.png">
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Closest Pair Algorithm:</b></p>
+<p>Closest pair algorithm is an algorithm which is implemented for
+searching a pair of points<img src=
+"../imgs/8913405dc2e007885a9a59a9bcf89310329abe55.png">and
+<img src="../imgs/bd4d872b9e444b3cc67526d386bc8976d1eccfa2.png">in
+a set of points <i>P</i> with shortest length<img src=
+"../imgs/8bb2086b0823e2ab96d70f7f27e3645c48678bb0.png">between
+them.</p>
+<p>Two methods such as “brute force” and “divide and conquer”
+approach can be used to find the closest pair among the points.</p>
+<p>These points can be found using a faster and improved divide and
+conquer strategy as compared to the brute force approach.</p>
+<p>In the divide and conquer strategy, the concerned points are
+distributed in two set of points, that is, <img src=
+"../imgs/eefb8af20407ad1797bbb282fc563805e5e909a0.png">and
+<img src="../imgs/8c92f4c21acb46a03cd632fe812e9f6f57200b8c.png"> by
+making a vertical straight line <i>l</i> between them<i>.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>Calculate the distances <img src=
+"../imgs/cf9c689afe468d8dc417f73197202218f1909dfb.png">and
+<img src="../imgs/7350e1c9e7e74932b8230d20516bb24872f50b41.png">
+for both the parts <img src=
+"../imgs/9cf851fe542ad5fc70fd06fced353d498e746e3b.png"> and then
+check that if there is a pair of points one in <img src=
+"../imgs/eefb8af20407ad1797bbb282fc563805e5e909a0.png">and the
+other in<img src=
+"../imgs/8c92f4c21acb46a03cd632fe812e9f6f57200b8c.png"> and the
+distance between them is less than<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">.</p>
+<p>Return the minimum distance and the pair of points which possess
+that distance.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider the closest pair algorithm for the<img src=
+"../imgs/6597ba7f493ba216f0472136a7dccf5b4095468b.png">co-vertical
+points (points having same <i>x</i> co-ordinates) in set
+<i>P</i>.</p>
+<p>Determine the sets <img src=
+"../imgs/eefb8af20407ad1797bbb282fc563805e5e909a0.png">and
+<img src="../imgs/8c92f4c21acb46a03cd632fe812e9f6f57200b8c.png">
+which are formed after the division of the set <i>P</i> into the
+subsets.</p>
+<p>Determine each and every point of set <i>Y</i> in sets <img src=
+"../imgs/eefb8af20407ad1797bbb282fc563805e5e909a0.png">and
+<img src="../imgs/8c92f4c21acb46a03cd632fe812e9f6f57200b8c.png">.</p>
+<p>The changes to the algorithm don’t affect the running time and
+the time complexity of modified closest- pair algorithm
+remains<img src=
+"../imgs/efedd0cac509600aafd15146bac41786f2ad08fa.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>If <img src=
+"../imgs/6597ba7f493ba216f0472136a7dccf5b4095468b.png">of the
+points are given as co-vertical, that is, they have same
+<i>x</i>-coordinate. The major problem comes while splitting
+<i>P</i> into <img src=
+"../imgs/5b95af2cafb9b7ef962f80e232fcaaad73e64048.png">
+and<img src="../imgs/5cd878cf21aad4d359e34d4aef499bdd6bd52954.png">.
+This leads to three cases given below:</p>
+<p><b>Case 1:</b></p>
+<p>All the points lie on the line <i>l</i>. In this case, all the
+points are considered as left points and lie in<img src=
+"../imgs/5b95af2cafb9b7ef962f80e232fcaaad73e64048.png">.</p>
+<p><img src="../imgs/e4841c7aa71f37dbc5d879e56663459c76e6c76c.png"
+alt="F:\Tiffs\2254-33.4-5E.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Case 2:</b></p>
+<p>All the points lie left of the line <i>l</i>. In this case, all
+the points are considered as left points and lie in<img src=
+"../imgs/5b95af2cafb9b7ef962f80e232fcaaad73e64048.png">.</p>
+<p><img src="../imgs/5ff68fe0fc87f80731666f8571cc4ea7293c65fc.png"
+alt="F:\Tiffs\2254-33.4-5E.tif"></p>
+</div>
+<hr>
+<div class="answer"><b>Case 3:</b>
+<p>All the points lie right of the line <i>l</i>. In this case, all
+the points are considered as right points and lie in
+<i>P</i><sub>R</sub>.</p>
+<p><img src="../imgs/406e8c2897d524337f753ec0f8bc31aa37c72c89.png"
+alt="F:\Tiffs\2254-33.4-5E.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>In all the three cases, minimum distance has been taken into
+consideration and is returned by the algorithm.</p>
+<p>The Euclidean formula for finding the distance between two
+points is given below:</p>
+<p><img src=
+"../imgs/f3f68fd3b30202d625235fcca025e075eb93a6af.png"></p>
+<p>Since all the points are co-vertical, the difference between the
+<i>x</i>-coordinates will be zero. That is <img src=
+"../imgs/455c991e13f9d7ec0379ab04da3e3d1900a1aee9.png">.</p>
+<p>The Euclidean formula given above will be reduced as
+follows:</p>
+<p><img src=
+"../imgs/b71e5313995ca9c7374655258af97f89da6289e3.png"></p>
+<p>The distance between two points is equal to the difference
+between their <i>y</i>-coordinates.</p>
+<p>Here, the complexity of the closest pair algorithm remains same
+as changes has no effect on the running time. The reason is that
+the recurrence relation is directly same as final value of relation
+or complexity of the closest pair algorithm.</p>
+<p>The calculation of extra <i>n</i> is not considered because
+points are co-vertical (points have constant <i><b>x</b></i>
+co-ordinate). So, the same running time of the closest pair
+algorithm remains unaltered.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the closest-pair algorithm for a set of points <i>P</i>
+in which two pre-sorted arrays <i>X</i> and <i>Y</i> are used to
+store the values of <i>x</i> and <i>y</i> co-ordinates
+respectively.</p>
+<p>Changing the algorithm that takes the array <i>Y</i> which is
+not pre-sorted and still the algorithm takes <img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png">time to
+run.</p>
+<p>• Closest pair algorithm is an algorithm which is used to search
+a pair of points<img src=
+"../imgs/8913405dc2e007885a9a59a9bcf89310329abe55.png">and
+<img src="../imgs/bd4d872b9e444b3cc67526d386bc8976d1eccfa2.png">in
+a set of points <i>P</i> with shortest length<img src=
+"../imgs/8bb2086b0823e2ab96d70f7f27e3645c48678bb0.png">between
+them.</p>
+<p>• To find these points, divide and conquer method is used in
+which the points are divided into two set of points that
+are<img src=
+"../imgs/eefb8af20407ad1797bbb282fc563805e5e909a0.png">and
+<img src="../imgs/8c92f4c21acb46a03cd632fe812e9f6f57200b8c.png"> by
+making a vertical straight line <i>l</i> between them<i>.</i> The
+<i>x</i> and <i>y</i> coordinates of points of left and right side
+of line are stored in <i>X</i><sub>L</sub>, <i>X</i><sub>R</sub>
+and <i>Y</i><sub>L</sub>, <i>Y</i><sub>R</sub>.</p>
+<p>• After that, the distances <img src=
+"../imgs/cf9c689afe468d8dc417f73197202218f1909dfb.png">and
+<img src="../imgs/7350e1c9e7e74932b8230d20516bb24872f50b41.png">
+for both the parts and find<img src=
+"../imgs/9cf851fe542ad5fc70fd06fced353d498e746e3b.png">, and after
+that find if there is a pair of points one in <img src=
+"../imgs/eefb8af20407ad1797bbb282fc563805e5e909a0.png">and the
+other in<img src=
+"../imgs/8c92f4c21acb46a03cd632fe812e9f6f57200b8c.png"> and the
+distance between them is less than<img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">; return the
+minimum distance and the pair of points which possesses that
+distance.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the figure given below:</p>
+<p><img src="../imgs/ea1557d1a5ba1fc80f920aa847732d96681e9ef8.png"
+alt="Picture 1"></p>
+<p>In the figure given above, the points <img src=
+"../imgs/eefb8af20407ad1797bbb282fc563805e5e909a0.png"> and
+<img src="../imgs/8c92f4c21acb46a03cd632fe812e9f6f57200b8c.png">
+represent the points at the left and right side of line <i>l</i>.
+These points are combination of the arrays <i>X</i> and <i>Y</i>
+which are used to store <i>x</i> and <i>y</i> coordinates of
+points. The points in the left and right side of line are stored in
+<i>X</i><sub>L</sub>, <i>X</i><sub>R</sub> and
+<i>Y</i><sub>L</sub>, <i>Y</i><sub>R</sub>.</p>
+<p>• At the initial level, there is no need of sorted <i>Y</i>
+array; it is because the points are considered on the basis of the
+<i>x</i>-coordinates.</p>
+<p>• This terminates the need for sorting the array <i>Y</i>
+initially. This array would later be sorted in divide and conquer
+algorithm of closest pair problem.</p>
+<p>• Merge sort would be used to sort <img src=
+"../imgs/f07c4f21af06f14020b1925885c0db3d1804c9a6.png"> and
+<img src="../imgs/d77d3f6a7abe03de2254a8350ee5753a15b3b471.png">
+then to combine them in sorted array<img src=
+"../imgs/546b0670cd50c6a36a407729daade79e1b984a47.png">. The
+running time for merging <i>n</i> values would be<img src=
+"../imgs/fcb5cea37c0e08fcd22176ebceff0e3c1dfa5c64.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The rest of the procedure remains the same as simple closest
+pair algorithm, that is, to divide the points into two parts and
+calculate the minimum distance <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">between
+points from both the parts. After that, find the points from both
+the sub-sets.</p>
+</div>
+<hr>
+<div class="answer">
+<p>If one point is in the left subset and the other is in the right
+subset and the distance between them is less than <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">then, return
+the distance between these two points, return <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">otherwise.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now from the above explanation, in earlier method, <i>Y</i>
+array is being pre-sorted and this array has the element of
+<i>Y</i><sub>L</sub> and <i>Y</i><sub>R</sub><i>.</i></p>
+<p>• The options available are (1) sort the array <i>Y</i> in
+efficient time or (2) apply the merge sort. With the merge sort
+concept, merge the two sorted arrays to form a final sorted
+array.</p>
+<p>• So, here those two sorted arrays are <i>Y</i><sub>L</sub> and
+<i>Y</i><sub>R</sub> which are going to be merged to form a sorted
+array <i>Y</i> and the complexity of this process is same as the
+merge sort which is optimal sorting method of algorithm that
+is<img src=
+"../imgs/fcb5cea37c0e08fcd22176ebceff0e3c1dfa5c64.png">.</p>
+<p>Hence, instead of pre-sorting, use the merge sort in the later
+phase and then, just combine them into a sorted array. This would
+improve the performance of the algorithm without affecting the time
+complexity.</p>
+<p><b>Thus, the time complexity remains</b> <img src=
+"../imgs/ce77d1134c664ad8a6da370393031524551337e9.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

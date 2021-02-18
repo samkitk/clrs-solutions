@@ -1,0 +1,212 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 17.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>At every stack operation, the charge is twice. First the actual
+cost of the operation which is performed on the stack is charged
+and second the cost of copying an element later is charged.</p>
+<p>The maximum size of the stack can never exceed k, so there will
+be k operations. And after every k operations, at least k units
+will be left.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The amortized cost of the stack operation is constant that is O
+(1) and the cost to perform the operation on the stack having n
+elements will be O(n).</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>• The accounting analysis is done by assuming amortized costs
+for a given operation.</p>
+<p>• In the accounting method, the operations are charged with
+different costs than its actual cost.</p>
+<p>• This cost can be less or more than the actual cost an
+operation.</p>
+<p>• The amount charges for an operation is called as <b>amortized
+cost.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>For the operation i, the actual cost is as follows:</b></p>
+<p><img src=
+"../imgs/8cdabc5c4c90a29bf7f7f5fd3282ae08110a3eef.png"></p>
+<p><b>Assume the amortized cost to be as follows:</b></p>
+<p><img src=
+"../imgs/2f82ad8aadb272595f8bd7e3bfef898de819caf4.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>• For an operation, which is expressed as an exact power of 2,
+its actual cost will be the sum of the credit which is accumulated
+and the amortized cost of its own which is one unit.</p>
+<p>The credits which are left will be assigned as credit.</p>
+<p>• And, if the operation is not the exact power of two, then that
+operation will use its one unit to pay its actual cost and the cost
+left which is 2 will be assigned as credit.</p>
+<p><b>If the operation can be expressed in the terms of power of 2
+then, the value of c</b> <sub>i</sub> <b>is as follows:</b></p>
+<p><img src=
+"../imgs/80537a7e8c51a2d59603d1cb566514fd63b34776.png"></p>
+<p><img src=
+"../imgs/29e5c2dd70a2979bb95290a14d80da8504debd7f.png"></p>
+<p><b>And the value of the</b> <b><img src=
+"../imgs/a82324cd05476c0da2b665beb8aae564c3c0ff4f.png"></b> <b>is
+as follows:</b></p>
+<p><img src=
+"../imgs/a995572b2d06b8705d98ca5f093dcf2d13a3682e.png"></p>
+<p>Since, the value of (2<sup>n</sup> – 3n) is always greater than
+1 for n = 0 and all n &gt; 1 therefore, the value of <img src=
+"../imgs/a82324cd05476c0da2b665beb8aae564c3c0ff4f.png">will always
+be greater than ci for n=0 and n&gt;1.</p>
+<p>Now for n=1, the value of <img src=
+"../imgs/a82324cd05476c0da2b665beb8aae564c3c0ff4f.png"> is 2 and
+the value of ci is 1.</p>
+<p>Thus, the value of c<sub>i</sub> is always less than <img src=
+"../imgs/a82324cd05476c0da2b665beb8aae564c3c0ff4f.png">.</p>
+<p>Therefore, as per the accounting analysis, the amortized cost is
+always greater than the actual cost which can be represented as
+follows:</p>
+<p><img src=
+"../imgs/2463cc168d1b699c0dba956bcc8f6652bc77c3fc.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a variable <i>A.max</i> to hold the higher-order of 1
+in <i>A</i>. <i>A.max</i> helps to use the amount limit to the
+credit resulted by INCREMENTs. That is, using <i>A.max</i> ensures
+RESET to use not more than the amount available in credit.
+Initially, <i>A.max</i> is assigned with -1, because initially,
+there are no 1’s in the counter. <i>A.max</i> is updated when the
+counter is incremented and reset.</p>
+<p>Consider that the counting time to examine and modify a bit as 1
+is <img src="../imgs/5f661a7994919b984e93d8a4d93264cfebb62bd8.png">
+and the counting time to examine and modify a bit as 0 is <img src=
+"../imgs/5f661a7994919b984e93d8a4d93264cfebb62bd8.png">.</p>
+<p>INCREMENT (<i>A</i>)</p>
+<p>1. <i>i</i>=0</p>
+<p>2. <b>while</b> i&lt; <i>A.length</i> and <i>A</i>[<i>i</i>] = =
+1</p>
+<p>3. <i>A</i>[<i>i</i>]=0</p>
+<p>4. <i>i</i>=<i>i</i>+1</p>
+<p>5. <b>if</b> <i>i</i> &lt; <i>A.length</i></p>
+<p>6. A[<i>i</i>] = 1</p>
+<p>7. <b>if</b> <i>i</i> &gt; <i>A.max</i></p>
+<p>8. <i>A.max</i> = <i>i</i></p>
+<p>9. <b>else</b> <i>A.max</i> = -1</p>
+<p>Consider operation RESET sets all bits in the counter to 0.</p>
+<p>RESET (<i>A</i>)</p>
+<p>1. <i>i</i> = 0</p>
+<p>2. <b>while</b> <i>i</i> &lt; <i>A.length</i> and
+<i>A.max</i></p>
+<p>3. <b>if</b> <i>A</i>[<i>i</i>] = = 1</p>
+<p>4. <i>A</i>[<i>i</i>] = 0</p>
+<p>5. <i>A.max</i> = -1</p>
+</div>
+<hr>
+<div class="answer">
+<p>When a bit is set to 1, $2 will be paid. One dollar is for
+setting a bit to 1 and another for resetting a bit to 0. That is,
+$1 is credited for each insertion. Thus, credit has dollars equal
+to number of 1s in the counter.</p>
+<p>• It is known that $1 is required to reset a bit to 0. RESET
+makes all 1s in the counter to 0.This uses the dollars in credit
+that is the result of earlier INCREMENTs. Thus, for resetting all
+1s to 0s, there is no need of paying dollars.</p>
+<p>• In addition to $2 (for increment and reset), $1 is paid to
+update max. Thus, INCREMENT pays $3 each time ($2 for setting a bit
+to 1 and $1 for updating <i>A.max</i> with higher-order of 1).</p>
+<p>• RESET pays $1 for updating <i>A.max</i> as -1. Since RESET
+runs loop to reset bits upto <i>A.max</i> and since every 1 bit
+seen by RESET has $1 of credit on it, the zeroing of bits of
+<i>A</i> can be completely paid for, by the credit stored on the
+bits.</p>
+<p>• Only $1 more is to paid for resetting max.</p>
+<p>Since the INCREMENT and RESET are charging a constant amount $4,
+the sequence of <i>n</i> INCREMENT and RESET operations takes
+O(<i>n</i>) time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

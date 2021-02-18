@@ -1,0 +1,441 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 10.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Initially the stack is empty.</p>
+<p><img src="../imgs/ef8492c28e075cdc5d7448b991a7c885b4d19eaf.png"
+alt=
+"C:\Users\vijaykumar\AppData\Local\Microsoft\Windows\INetCache\Content.Word\1.jpg"></p>
+<p>Here, top[s]=0.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Push (S,4):</p>
+<p>Add value 4 into the stack</p>
+<p><img src="../imgs/562cbbe6c6a520fea4a9acaebe6d97a372eddf3a.png"
+alt="Picture 12"></p>
+<p>Here, top[s]=1.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Push (S,1):</p>
+<p>Add value 1 into the stack</p>
+<p><img src="../imgs/b1e15f2e3278f1f3ef17b0e3c61371486f65e77c.png"
+alt="Picture 17"></p>
+<p>Here, top[s]=2.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Push (S,3):</p>
+<p>Add value 3 into the stack</p>
+<p><img src="../imgs/c0380dd5dfa6b9ff80e5231ac767d5e5799c1db5.png"
+alt="Picture 13"></p>
+<p>Here, top[s]=3.</p>
+</div>
+<hr>
+<div class="answer">
+<p>POP (S):</p>
+<p>Retrieve an S item from the stack</p>
+<p><img src="../imgs/d6e99195b96df332125a70714e7c68742b6893b0.png"
+alt="Picture 14"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Therefore, the S value is removed now the top[s]=2.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Push (S,8):</p>
+<p>Add value 8 into the stack</p>
+<p><img src="../imgs/7aa03496ad24b42303ec8b9b03dc1fe84334b03c.png"
+alt="Picture 15"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Here, top[s]=3.</p>
+</div>
+<hr>
+<div class="answer">
+<p>POP (S):</p>
+<p>Retrieve an S item from the stack</p>
+<p><img src="../imgs/0322e2fd158ee2a2426177efffaa46f080613e8d.png"
+alt="Picture 16"></p>
+<p>Therefore, the S value is removed now the top[s]=2.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/a536ec4592f0a1220ac1227cba764d46594c93c4.png">
+<hr>
+<img src="../imgs/9b2c69bc71fe9ac30629c63f21dad820c3febed2.png">
+<hr>
+<img src="../imgs/ff393bd8f63cedad7b370335c44309cfac452193.png">
+<hr>
+<img src="../imgs/9afa3543e48e143133446f123b5a514b5ed745a8.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/ce0919cf1565b7371d41075b59bf177a358b452a.png">
+<hr>
+<img src="../imgs/c5f0a1d061857d56169c02ef4693b361b1865d54.png">
+<hr>
+<img src="../imgs/0af1cb9086dac0e236ad7ad91285dc6971fa3d4b.png">
+<hr>
+<img src="../imgs/82d9a3f87950c258cfdb2948463ac7d037db69ec.png">
+<hr>
+<img src="../imgs/70a9ff9532a6a9cb7ac374a56d86c0108cff362a.png">
+<hr>
+<img src="../imgs/6791d321297fbf8744b80c4277cd272522f3c8d8.png">
+<hr>
+<img src="../imgs/0a68afffb1c5b65fdc3cde29815389bfae5c3e36.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Overflow of Queue:</b></p>
+<p>• Initially, <i>tail</i> and <i>head</i> of queue are
+initialized to 1.</p>
+<p>• Limited number of elements (length of queue) can be inserted
+into queue.</p>
+<p>• Elements are inserted (or enqueue) at <i>tail</i>.</p>
+<p>• Each time an element is inserted, <i>tail</i> is incremented
+by 1(i.e. <i>tail</i> is moved to next location). When the tail is
+equal to length of the queue, tail is reinitialized to 1.</p>
+<p>• If the <i>head</i> and <i>tail</i>+1 are equal or the
+<i>head</i> is 1 and <i>tail</i> is equal to <i>length</i> of the
+queue, the queue is empty. This is called queue underflow. That is,
+no more elements can be inserted into queue.</p>
+<p><b>The modified ENQUEUE with the pseudocode identifies the
+overflow of queue is as follows:</b></p>
+<p>ENQUEUE(Q, x)</p>
+<p>1 <b>if</b> <i>Q.head</i> = = <i>Q.tail</i>+1 <b>or</b> (
+<i>Q.head</i> = = 1 <b>and</b> <i>Q.tail</i> = =
+<i>Q.length</i>)</p>
+<p>2 <b>error</b> “Queue Overflows”</p>
+<p>3 <b>else</b></p>
+<p>4 <i>Q</i>[<i>Q.tail</i>] = <i>x</i></p>
+<p>5 <b>if</b> <i>Q.tail</i> = = <i>Q.length</i></p>
+<p>6 <i>Q.tail</i>=1</p>
+<p>7 <b>else</b> <i>Q.tail</i> = <i>Q.tail</i>+1</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Underflow of Queue:</b></p>
+<p>• Initially, tail and head of queue are initialized to 1.</p>
+<p>• Elements are removed from head.</p>
+<p>• Each time an element is removed (or dequeue), head is
+incremented by 1.</p>
+<p>• When head is equal to length of the queue, head is
+reinitialized to 1.</p>
+<p>• If the head and tail are equal, the queue is said to be
+underflow (i.e. the queue is empty). That is, there is no element
+to remove in the queue.</p>
+<p><b>The modified DEQUEUE with the pseudocode that identifies the
+underflow of queue is as follows:</b></p>
+<p>DEQUEUE(Q)</p>
+<p>1 <b>if</b> <i>Q.head</i> = = <i>Q.tail</i></p>
+<p>2 <b>error</b> “Queue underflows”</p>
+<p>3 <b>else</b></p>
+<p>4 <i>x</i> = <i>Q</i>[<i>Q.head</i>]</p>
+<p>5 <b>if</b> <i>Q.head</i> = = <i>Q.length</i></p>
+<p>6 <i>Q.head</i> = 1</p>
+<p>7 <b>else</b> <i>Q.head</i> = <i>Q.head</i> + 1</p>
+<p>8 <b>return</b> <i>x</i></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Double-ended QUEUE:</b></p>
+<p>A double ended queue allows insertion and deletion of elements
+from front end and back end.</p>
+<p>The procedure DEQUEUE-INSERT-FRONT checks whether the deque is
+full or not. If the deque is not full and head is greater than 0,
+then the procedure inserts at head and moves the head to previous
+position.</p>
+<p>DEQUEUE- INSERT - FRONT(<i>Q , x</i>)</p>
+<p>1. <b>if</b> <i>Q.head</i> = = 1 and <i>Q.tail</i> = =
+<i>Q.length</i></p>
+<p>2. <b>error</b> “ Deque is overflow “</p>
+<p>3. <b>if</b> Q.head ≤ 1</p>
+<p>4. <b>error</b> “ cann’t insert element at front end”</p>
+<p>5. <b>else</b> <i>Q.head</i> = <i>Q.head</i> -1</p>
+<p>6. <i>Q</i>[<i>Q.head</i> ] = <i>x</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>The procedure DEQUEUE-INSERT-BACK checks whether the deque is
+full or not. If the deque is not full and head is not equal to
+tail, then the procedure inserts at tail and advances the tail to
+next position.</p>
+<p>DEQUEUE- INSERT- BACK (<i>Q , x</i>)</p>
+<p>1. <b>if</b> <i>Q.head</i> = = 1 and <i>Q.tail</i> = =
+<i>Q.length</i></p>
+<p>2. <b>error</b> “ Deque is overflow “</p>
+<p>3. <b>If</b> <i>Q.tail</i> = = <i>Q.length</i></p>
+<p>4. <b>error “</b> cann’t insert element at back end ”</p>
+<p>5. <b>else</b> <i>Q.tail</i> = <i>Q.tail</i> + 1</p>
+<p>6. <i>Q</i>[<i>Q.tail</i>] = <i>x</i></p>
+<p>7. <b>if</b> <i>Q.head</i> = = 0 <b>and</b> <i>Q.tail</i> = =
+0</p>
+<p>8. <i>Q.head</i> = 1</p>
+<p>9. <i>Q.tail</i> = 1</p>
+</div>
+<hr>
+<div class="answer">
+<p>The procedure DEQUEUE-DELETE-FRONT checks whether the deque is
+empty or not. If the deque is not empty, then the procedure removes
+an element at head and advances the head to next positon.</p>
+<p>DEQUEUE –DELETE – FRONT (A)</p>
+<p>1. <b>if</b> <i>Q.head</i> = = 0 and <i>Q.tail</i> = = 0</p>
+<p>2. <b>error</b> “ Deque is underflow “</p>
+<p>3. <i>x</i> = <i>Q</i> [<i>Q.head</i> ]</p>
+<p>4. <i>Q.head</i> = <i>Q.head</i> + 1</p>
+<p>5. <b>if</b> <i>Q.head</i> = = <i>Q.tail</i></p>
+<p>6. <i>Q.head</i> = 0</p>
+<p>7. <i>Q.tail</i> = 0</p>
+</div>
+<hr>
+<div class="answer">
+<p>The procedure DEQUEUE-DELETE-FRONT checks whether the deque is
+empty or not. If the deque is not empty, then the procedure removes
+an element at tail and advances the tail to previous positon.</p>
+<p>DEQUEUE- DELETE –BACK(A)</p>
+<p>1. <b>if</b> <i>Q.head</i> = = 0 and <i>Q.tail</i> = = 0</p>
+<p>2. <b>error</b> “ Deque underflow “</p>
+<p>3. <i>x</i> = <i>Q</i> [<i>Q.tail</i> ]</p>
+<p>4. <i>Q.tail</i> = <i>Q.tail</i> – 1</p>
+<p>5. <b>if</b> Q.head = = Q.tail</p>
+<p>6. <i>Q.head</i> = 0</p>
+<p>7. <i>Q.tail</i> = 0</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Implementing Queue using Two Stacks</b></p>
+<p>Consider <i>S1</i> and <i>S2</i> to be two stacks of size ‘n’.
+Also, assume <i>Q</i> is a queue and S1=Q.</p>
+<p>PUSH and POP are the stack operations.</p>
+<p>ENQUEUE and DEQUEUE are the queue operations.</p>
+<p><b>ENQUEUE operation:</b></p>
+<p>ENQUEUE(<i>S1</i>, <i>x</i>)</p>
+<p>PUSH(<i>S1</i>, <i>x</i>)</p>
+<p><b>Implementation for ENQUEUE:</b></p>
+<p>void ENQUEUE(stack <i>S1</i>,int <i>x</i>)</p>
+<p>{</p>
+<p>push(<i>S1</i>,<i>x</i>);</p>
+<p>}</p>
+<p>The above ENQUEUE operation takes element <i>x</i> as an
+argument and pushes it into first stack.</p>
+<p><b>Analysis of running time:</b></p>
+<p>• The PUSH operation on stack takes <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"> time.</p>
+<p><b>Therefore ENQUEUE also takes</b> <b><img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"></b>
+<b>time.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>DEQUEUE operation:</b></p>
+<p>DEQUEUE( )</p>
+<p>1 <b>if</b> STACK-EMPTY(S1)</p>
+<p>2 <b>error</b> “ Queue underflows”</p>
+<p>3 <b>else</b></p>
+<p>4 <b>while</b> STACK-EMPTY(S1) ≠ TRUE</p>
+<p>5 <b>do</b> <i>y</i> <img src=
+"../imgs/7b69c5e03dcc57b6c2379d1084bf0e3b4aa131d4.png">
+POP(<i>S1</i>)</p>
+<p>6 PUSH(<i>S2</i>, <i>y</i>)</p>
+<p>7 z = POP(S2)</p>
+<p>8 <b>while</b> STACK-EMPTY(S2) ≠ TRUE</p>
+<p>9 <i>y</i> <img src=
+"../imgs/7b69c5e03dcc57b6c2379d1084bf0e3b4aa131d4.png">
+POP(<i>S2</i>)</p>
+<p>10 PUSH(<i>S1</i>, <i>y</i>)</p>
+<p>11 <b>return</b> <i>z</i></p>
+<p><b>Implementation for DEQUEUE:</b></p>
+<p>int DEQUEUE()</p>
+<p>{</p>
+<p>int z;</p>
+<p>if(empty(S1))</p>
+<p>{</p>
+<p>cout&lt;&lt;" Queue is underflow ";</p>
+<p>return ;</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>while(!empty(S1))</p>
+<p>{</p>
+<p>int y=pop(S1);</p>
+<p>push(S2,y);</p>
+<p>}</p>
+<p>z=pop(S2); // removing first element</p>
+<p>while(!empty(S2))</p>
+<p>{</p>
+<p>int y=pop(S2);</p>
+<p>push(S1,y);</p>
+<p>}</p>
+<p>}</p>
+<p>return z;</p>
+<p>}</p>
+<p>• The above DEQUEUE operation moves all elements of the first
+stack <i>S1</i> to the second stack <i>S2</i>.</p>
+<p>• It pops the <i>top</i> element in the second stack <i>S2,</i>
+if <i>S2</i> is not empty. Otherwise it returns an exception “Queue
+underflows”.</p>
+<p>• The remaining elements in the stack S2 are again moved to
+first stack <i>S1</i>.</p>
+<p><b>Analysis of running time:</b></p>
+<p>• The POP operation on stack takes <i>O(1)</i> time.</p>
+<p>• The PUSH operation on stack takes <i>O(1)</i> time.</p>
+<p>• If the Queue is empty, DEQUEUE operations takes in <i>O(1)</i>
+time.</p>
+<p>• If the Queue has n elements, each while loop runs almost ‘n’
+times. Thus, the two while loops runs in <i>n+n</i> = 2<i>n</i>
+steps.</p>
+<p><b>Therefore this operation takes</b> <i>O(n)</i>
+<b>time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/c07afe9a4aef3dbc696c76d8fa6f0783df74b7b5.png">
+<hr>
+<img src="../imgs/82d78c593698d03dc0614ec649c5f48a7183eeab.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

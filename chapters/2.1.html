@@ -1,0 +1,208 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 2.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/0d287ede7ed31934fd2cc71f447ed289da9eed98.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/11224e094443214c7d1c1f9e7242c7b24e1f46b2.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Pseudocode for Linear Search</b></p>
+<p>The pseudocode for linear search, it scans the sequence for
+<i>v</i> using a loop invariant:</p>
+<p><b>Input:</b> A sequence of n numbers <img src=
+"../imgs/d55938d92eb51ee5707f4872b4c8af2ae699cc88.png"> and a value
+<i>v</i>.</p>
+<p><b>Output:</b> An index <i>i</i> such that <i>v = A[i]</i> or
+the special <i>NIL</i> if <i>v</i> does not appear in <i>A</i>.</p>
+<p><b>Linear Search</b> <i><b>(A, v)</b></i></p>
+<p>1 <b>for</b> <i>i =1 to n</i></p>
+<p>2 {</p>
+<p>3 <b>if</b> <i>A[i] = v</i></p>
+<p>4 <b>return</b> <i>i</i></p>
+<p><i>5</i> }</p>
+<p>6 <b>return</b> <i>NIL</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Three properties hold for linear search:</b></p>
+<p>• <b>Initialization:</b> It will start by presenting the loop
+invariant holds before the first loop iteration, when <i>i = 1</i>,
+the sub array <i>A [1…n].</i> Therefore, consists of just the
+single element <i>A [1],</i> which is in fact original element in
+<i>A [1].</i> Moreover, this sub array is searched, which shows
+that the loop invariant holds prior to the first iteration of the
+loop.</p>
+<p>• <b>Maintenance:</b> Each iteration maintains the loop
+invariant. Informally the body of the outer for loop works by
+moving <i>A [1], A [2],</i> .and soon by one position to the right
+until the proper element found for <i>v</i> in if loop. The second
+property satisfies.</p>
+<p>• <b>Termination:</b> Finally, for linear search, the outer
+<i>for loop</i> ends, when <i>i</i> exceed <i>n+1</i>. Substituting
+<i>n+1</i> for <i>i</i> in the wording of loop invariant, Hence,
+the searched element found, which means that the algorithm is
+correct.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Suppose <img src=
+"../imgs/e6f9db17e3955b374d65c8272476c34c98c5f206.png">
+and<img src="../imgs/f34c068a1a6031f1e021878ef033129ce31cb11c.png">are
+2 integer arrays to store binary equivalent of two decimal numbers.
+Each of these arrays can store <i>n</i> bits.</p>
+<p>Suppose <img src=
+"../imgs/ad12151e319d3ac41b76e099422d173340a87cd0.png">is another
+array to store the binary addition of <i>A</i> and <i>B</i> array.
+The length of this array is 1 more than <i>A</i> and <i>B</i> array
+because it may possible the addition can give one more value in the
+array.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Logic:</b></p>
+<p>• Start fetching the elements of both <i>A</i> and <i>B</i>
+array from last index to 0<sup>th</sup> index.</p>
+<p>• Add <i>i</i><sup>th</sup> bits (that is <i>i</i><sup>th</sup>
+element) of both <i>A</i> and <i>B</i> array. When
+<i>i</i><sup>th</sup> bit of both array are 1 then place 0 at the
+<i>i</i>+1<sup>th</sup> position in C array and put 1 in the carry
+forward.</p>
+<p>• When <i>i</i><sup>th</sup> bits of both <i>A</i> and <i>B</i>
+array are added then it is also necessary to check whether there is
+any carry to <i>i</i><sup>t</sup><sup>h</sup> bit from <i>i</i> + 1
+bit.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Pseudo code:</b></p>
+<p>BINARY-ADDITION <img src=
+"../imgs/c6a4e5c980d9a59096e4a2340523b76876748abf.png"></p>
+<p>1. Declare an array <img src=
+"../imgs/ad12151e319d3ac41b76e099422d173340a87cd0.png">to store
+binary addition</p>
+<p>2. <img src=
+"../imgs/a5ab44dfbe751de3e2aba1c3455a4dbe2b72f764.png"></p>
+<p>//traverse the array in reverse direction</p>
+<p>3. <b>for</b> <img src=
+"../imgs/517ba5dbf4aa5efd50103971986ab6b5d2389de0.png"></p>
+<p>4. <img src=
+"../imgs/b9dfeb80f9b99e75fe51ef00261c880af130caa6.png"></p>
+<p>5. <img src=
+"../imgs/8562716f12d0e7ff3baf42822c9658fc1e8d2057.png"></p>
+<p>6. <img src=
+"../imgs/ec3c9f8a801075718fa7eea74646f08e119b07ff.png"></p>
+<p>//store the carry bit</p>
+<p>7. <img src=
+"../imgs/fe3c9e6806a5b67c595a71d73c4dc9d0c0d196de.png"></p>
+<p>8. <b>return</b> <i>C</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the running-time:</b></p>
+<p>The for loop in above BINARY-ADDITION() function iterate
+<i>n</i> time to fetch <i>n</i> bit of <i>A</i> and <i>B</i>
+array.</p>
+<p>Therefore, the worst case running time of this algorithm is
+<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

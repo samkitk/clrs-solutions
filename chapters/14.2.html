@@ -1,0 +1,377 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 14.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The SUCCESSOR and PREDECESSOR for a node x in time <i>O(1)</i>
+can be found by adding pointers to successor and predecessor of
+<i>x</i> inside the node structure.</p>
+<p><b>After inserting node x do the following:</b></p>
+<p>• Function CALL: TREE-SUCCESSOR(x), TREE-PREDECESSOR(x).</p>
+<p>• Determine successor and predecessor.</p>
+<p>• Setup required fields in x.</p>
+<p>• UPDATE SUCC(x) filed of predecessor and PRED(x) field of
+successor and set the pointer point to x.</p>
+<p>• Upon deletion of a node UPDATE SUCC(x) filed of predecessor
+and PRED(x) field of successor and set the pointer point to each
+other.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The MINIMUM and MAXIMUM are global properties of trees, can be
+maintained directly.</p>
+<p><b>After inserting node x:</b></p>
+<p>• Check if key (k), <img src=
+"../imgs/4332f1dfd72fd4126bf6bd01dd13e5fe16992a08.png">
+and<img src="../imgs/b0717a4358a20f767d0a92dbfa520b94b42acdc4.png">.</p>
+<p>• UPDATE: Pointer to MINIMUM and/or MAXIMUM.</p>
+<p>• On deletion of minimum or maximum element in a tree, UPDATE:
+MINIMUM and/or MAXIMUM to it successor and/or predecessor.</p>
+<p>Hence, these operations run in <i>O(1)</i> and without effecting
+the running time of other operations.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Red Black Tree is a special type of tree and each node contains
+five fields, <i>p</i> for parent, <i>left</i> for left child,
+<i>right</i> for right child, <i>key</i> for data value and
+<i>color</i> for color of the node.</p>
+<p>Since the black height of a node can be calculated using the
+information in the left child, right child and itself, according to
+theorem 14.1, it is possible to maintain the black height of the
+nodes of red-black tree as attributes such that the asymptotic
+performance remains the same.</p>
+<p>Black height of a node <i>x</i>:</p>
+<p>• If the color of the node <i>x</i> is red, then the children of
+node <i>x</i> must be black. Now, the black height of the node
+<i>x</i> is the black height of its children plus one.</p>
+<p>• If the color of the node <i>x</i> is black and one of the
+children is black, then the black height of node <i>x</i> is the
+black height of its children plus one.</p>
+<p>• If the color of the node <i>x</i> is black and it two children
+are red, then the black height of node <i>x</i> is equals to the
+black height of its children.</p>
+<p>Consider that,</p>
+<p>• <i>x</i> is any node in the red-black tree.</p>
+<p>• The black height of <i>x</i> is <i>x.bh</i> .</p>
+<p>• Black height of left child of <i>x</i> is <i>x.left.bh</i></p>
+<p>• Black height of right child of <i>x</i> is
+<i>x.right.bh</i></p>
+<p>Since black height of a node is the number of black nodes in the
+descendants, updating black height of a node requires to updating
+the black height of its parent also. That is, this process ends on
+updating black height of the root node.</p>
+</div>
+<hr>
+<div class="answer">
+<p>When the following actions occurred, the black height of few a
+nodes may change:</p>
+<p>• A new node inserted into red-black tree:</p>
+<p>• A node is deleted from the red-black tree:</p>
+<p>When a node tree is inserted into a red-black tree or deleted
+from a red-black tree, red-black tree properties may be violated.
+To fix these violations, rotations are occurred. Rotations may
+cause change in the color of nodes. When the color is changed, the
+black height of nodes may change.</p>
+<p>The change in black height of a node propagates up to the root
+node. Thus, the updating black height takes <img src=
+"../imgs/ea7201adaaec746ab6a1db1670be1ac9c72d6c13.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>No change in asymptotic performance:</b></p>
+<p>Insertion operation:</p>
+<p>According to theorem 14.1, inserting a node into red-black tree
+takes <i>O</i>(log <i>n</i>) time and insertion leads to at most
+two rotation.</p>
+<p>• Each rotation takes <i>O</i>(log <i>n</i>) time.</p>
+<p>• For each rotation, updating black height of nodes up to root
+node takes <i>O</i>(log <i>n</i>).</p>
+<p>•</p>
+</div>
+<hr>
+<div class="answer">Calculating black height can be accomplished in
+constant time <i>O</i>(1).
+<p>Thus, the total time to insert a node is <i>O</i>(log
+<i>n</i>).</p>
+<p>Deletion operation:</p>
+<p>According to theorem 14.1, deleting a node form a red-black tree
+leads to at most three rotations.</p>
+<p>• Each rotation takes <i>O</i>(log <i>n</i>) time.</p>
+<p>• For each rotation, updating black height of nodes up to root
+node takes <i>O</i>(log <i>n</i>).</p>
+<p>• Calculating black height can be accomplished in constant time
+<i>O</i>(1).</p>
+<p>Thus, the total time to insert a node is <i>O</i>(log
+<i>n</i>).</p>
+<p><b>Therefore, black height of node in a red-black tree can be
+maintained such that the running times of red-black tree operations
+remain same.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Maintaining depths:</b></p>
+<p>The depth of a node completely depends on the depth of its
+parent node. If the depth of a node is changed then all the depths
+of its descendants must be changed. For example, if the depth of
+the root node is changed, then the depths of all the nodes in the
+tree must be changed. It is possible to maintain the depth of a
+node as the attribute in the node. But, it affects the running time
+of the basic operations of the red-black tree. Because updating
+depth may take <img src=
+"../imgs/cb7bf4286387c50934bb9e380943084121d5c072.png">time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Associative binary operator:</b></p>
+<p>A binary operator is said to be associative if the operator
+follows the associative property for the given operands.</p>
+<p>In more concrete words a binary operator <img src=
+"../imgs/134662c6fbdf4613af816a86f27626cbc99b5a2d.png"> would be
+said associative if it has the following form:</p>
+<p><img src=
+"../imgs/f4f35d0ce78a83401b5f8fe241da9cbcfbd0f553.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Augmented Data structure:</b></p>
+<p>A data structure is said to be augmented when an additional
+attribute is added to it.</p>
+<p>Here the red black tree is augmented by adding an additional
+attribute <i>f</i> to each node so that</p>
+<p><img src=
+"../imgs/b318f998ebfc05b95800aedc933f73e96b3c0b20.png"></p>
+<p>Where <i>a</i> is an attribute of each node of the tree and
+<img src="../imgs/746e4761010a1322327b99b91357a04674735867.png"> is
+the in-order traversal of the tree who has <i>x</i> as the
+root.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Maintaining</b> <i><b>f</b></i> <b>attribute of each node
+after rotation:</b></p>
+<p>Suppose there is <i>x</i> rooted tree <i>T,</i> the additional
+attribute value of root node <i>x</i> is<img src=
+"../imgs/4099aa288ad2b9f23dfd3614017d22c4803d277d.png">. After the
+right rotation left child becomes the root of the tree refer Figure
+1. When <i>x</i> rooted tree is rotated right then suppose the new
+root of tree <i>T</i> is <i>y</i>.</p>
+<p>• The additional attribute value of new root node <i>y</i> is
+same as old root node that is<img src=
+"../imgs/4099aa288ad2b9f23dfd3614017d22c4803d277d.png">. It is
+because the value of attribute <i>f</i> is calculated by applying
+associated binary operator on in-order traversal of tree.</p>
+<p>• The rotation of tree only changes the in-order traversal of
+tree but operation in associated binary operator does not depend on
+the order.</p>
+<p>• After rotation the value of additional attribute <i>f</i> of
+node <i>x</i> is the resultant of associated binary operator on
+<img src="../imgs/3c74cae92dc490c4e3bc16b71ad91aa798c82a30.png">and
+right child of<img src=
+"../imgs/9d28eb2fe8c14cecdff444e91f0447d7f0b9e7a1.png">before
+rotation.</p>
+<p>• The <i>f</i> value of all remaining node would remain
+same.</p>
+<p>The <i>f</i> value of only 2 node get change after rotation,
+Therefore the time required to update the <i>f</i> after rotation
+is<img src=
+"../imgs/5348248797038408019902edf6f75aa3b51f3a98.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Maintaining</b> <i><b>size</b></i> <b>attribute of every node
+after rotation in order-statistic tree:</b></p>
+<p>The above stated procedure can also be used to maintain the size
+attribute of each node after left or right rotation.</p>
+<p>The modification required in above procedure is to <b>replace
+attribute</b> <i><b>f</b></i> <b>with</b> <i><b>size</b></i> and
+<b>use plus (+) as associated binary operator.</b></p>
+<p>Consider the following tree T to display the update size
+attribute of each node after rotation:</p>
+<p><b><img src=
+"../imgs/f87ec31c575963f96e132aa1d088af5f444effd0.png" alt=
+"C:\Users\Gaurav\Desktop\dia\2254-14.2-3E.png"></b></p>
+<p><b>Figure 1</b></p>
+<p><b>Explanation:</b></p>
+<p>• After right rotation the <i>size</i> new root node <i>y</i> is
+same as size of old root node <i>x</i> that is 19.</p>
+<p>• After right rotation the <i>size</i> node <i>x</i>
+becomes:</p>
+<p><img src=
+"../imgs/7c24a826d63e3703165249bd57a300653e85f569.png"></p>
+<p>Add one more in size for the node x itself, therefore the total
+size of</p>
+<p><img src=
+"../imgs/8d42bc238b1a295ab05656aa2301944c9052931e.png"></p>
+<p>• The size of remaining node or sub-tree is same before
+rotation.</p>
+<p>All these modification will require<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">time.</p>
+<p><b>Therefore, to maintain the</b> <i><b>size</b></i>
+<b>attribute of every node after rotation in order-statistic tree
+require</b> <b><img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png"></b>
+<b>time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>An operation ENUMERATE(<i>x, a, b</i>) is augmented with the
+REB-BLACK-TREE with root <i>x</i> which returns all the key values
+<i>k</i> in the tree where<img src=
+"../imgs/4689f18da30ec8699ddb904f069aa4836a969cda.png">.
+Implementation of RB-ENUMERTAE in <img src=
+"../imgs/f963a9979fb07f0e1fc118601c3e6ecb137df513.png">where
+<i>m</i> is total number of key values in the tree and <i>n</i> is
+the number of internal nodes in the tree.</p>
+<p>Red Black Tree is a special type of tree in which each node
+contains an extra bit for the storage of the color of that node. So
+Red Black Tree contains five fields <i>p</i> for parent,
+<i>left</i> for left child, <i>right</i> for right child,
+<i>key</i> for data value and <i>color</i> for color of the
+node.</p>
+<p>The implementation of the ENUMERATE(<i>x, a, b</i>) is as where
+<i>x</i> is the root of the RB-Tree and <i>a</i> and <i>b</i> are
+any nodes in the tree.</p>
+<p>ENUMERATE(<i>x, a, b</i>)</p>
+<p>// first search the node <i>a</i> in the tree</p>
+<p>1. <img src=
+"../imgs/1b37a865eef6d09dd498a21c258df85f7538036e.png"></p>
+<p>2. if<img src=
+"../imgs/b0b1067ee8a06fae22b0262b9fd6d9b980331d9f.png"></p>
+<p>3. <img src=
+"../imgs/ac98b9c2ac84da7d8038665bf4beacac1210f2cd.png"></p>
+<p>// scan all the nodes from <i>a</i> to <i>b</i></p>
+<p>4. while <img src=
+"../imgs/eafd37c76c68b2e47ab2505ee6852f5d8a6b5cd6.png"></p>
+<p>5. print “<i>start</i>”</p>
+6. <img src=
+"../imgs/ac98b9c2ac84da7d8038665bf4beacac1210f2cd.png"></div>
+<hr>
+<div class="answer">
+<p>In the above algorithm, the tree search and successor are called
+so we can modify the procedure TREE-SEARCH so that it results in
+the minimum element in the tree which has value greater than
+<i>a</i> if <i>a</i> is not present in the tree. This process takes
+<img src=
+"../imgs/c3c5c5eaaf427e06756f4482f7280d7143d2fb5b.png">time to
+run.</p>
+<p>Now the function TREE-SUCCESSOR is called until a node which has
+key value greater than the value of node <i>b</i> is found. And
+this function will be called in <i>m</i> times.</p>
+<p>So if any function starting at any node and makes <i>m</i>
+successive calls to Tree-Successor will take <img src=
+"../imgs/f7e8e4c1b5aa4f89731740ef852a61d1172a1c47.png">time
+interval here <i>h</i> is the height of the tree. Thus the function
+ENUMERATE should be implemented in <img src=
+"../imgs/53ef173b325e3f8047e90b79272c882df7ac2b49.png">time.</p>
+<p>We can use Successor and Predecessor function pointers to
+produce the result of <i>m</i> keys with <img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">running
+time. So that total running time will be <img src=
+"../imgs/53ef173b325e3f8047e90b79272c882df7ac2b49.png">time.</p>
+<p>Hence, ENUMERATE(<i>x, a, b</i>) augmented to the RB-Tree with
+root <i>x</i> which returns all the key values <i>k</i> in the tree
+where <img src=
+"../imgs/4689f18da30ec8699ddb904f069aa4836a969cda.png"> and it runs
+in<img src=
+"../imgs/53ef173b325e3f8047e90b79272c882df7ac2b49.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,504 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 35.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Algorithm of vertex cover problem:</b> The vertex cover
+problem is the problem of finding the subset of vertices that cover
+all the edges of the graph.</p>
+<p>Refer chapter 35, section 35.1 for the
+APPROX-VERTEX-COVER<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png">
+algorithm.</p>
+<p>The APPROX-VERTEX-COVER algorithm performs the following
+steps:</p>
+<p>• Initializes the vertex set with an empty set.</p>
+<p>• After that, copies edge set to a temporary variable.</p>
+<p>• Then it selects each edge of the graph one by one and adds the
+vertices that cover to the vertex cover set. It updates the set by
+adding vertices to it.</p>
+<p>• After that it removes the edge from the edge set.</p>
+<p>• This process is repeated till the time the edge set is empty
+and all the edges in the graph are covered.</p>
+<p>• At the end of the algorithm, it returns the vertex cover.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example of a graph for which the algorithm always yields a
+suboptimal solution:</b></p>
+<p>Consider a graph with two vertices and an edge between them.</p>
+<p>The vertex cover consists of a single vertex, which is the
+optimal vertex cover.</p>
+<p>The APPROX-VERTEX-COVER<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png"> algorithm
+returns both vertices in this case.</p>
+<p>The following is the graph <i>G</i>:</p>
+<p><img src="../imgs/eb1f3a576287222b28ac90080cfa6f473c5b33e2.png"
+alt="Picture 1"></p>
+<p><b>The above graph with two vertices and one edge is the example
+for which the algorithm APPROX-VERTEX-COVER</b> <b><img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png"></b>
+<b>always yields a suboptimal solution.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The following is the graph <i>G</i> is another example:</p>
+<p><img src="../imgs/eecf55cc702097c91ba109974d300d332817d962.png"
+alt="Picture 2"></p>
+<p>The above graph has three vertices and two edges.</p>
+<p>The algorithm APPROX-VERTEX-COVER<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png">returns all
+the three edges. So, the algorithm always yields a suboptimal
+solution.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>For an undirected graph, the vertex cover is defined as the
+collection of vertices that can cover all of the edges of the
+concerned graph.</p>
+<p>Consider the graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">and the set
+<img src=
+"../imgs/f4c734fbec9a4d3f33790976cf954df4130e1eaf.png">.</p>
+<p><img src="../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">
+is called the vertex cover, if it covers all the edges<img src=
+"../imgs/bc73dac7be5527c180f4ac724621c7f18bb046d4.png"> and
+<img src=
+"../imgs/96c097a4e533c80dae49ea7d233223a96b5a373f.png"><i>.</i></p>
+<p>The number of vertices in the set <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">is called
+the size of the vertex cover.</p>
+<p><b>Maximal matching:</b></p>
+<p><b>A</b> matching <i>M</i> is said to be maximum matching of a
+graph <i>G,</i> if <i>M</i> is not properly contained in any other
+matching, that is <img src=
+"../imgs/6e7b6516f8b2b88c6cd32ee7c7310aee3dab9ab3.png"> where
+<img src="../imgs/1492917f49eaa0aea9edcf78ff37423b6af3ab5f.png"> is
+any other matching of graph <i>G</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm of vertex cover problem:</b> The vertex cover
+problem is the problem of finding the subset of vertices that cover
+all the edges of the graph.</p>
+<p>Refer chapter 35, section 35.1 for the
+APPROX-VERTEX-COVER<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png">
+algorithm.</p>
+<p>The APPROX-VERTEX-COVER algorithm performs the following
+steps:</p>
+<p>• Initializes the vertex set with an empty set.</p>
+<p>• After that copies edge set to a temporary variable.</p>
+<p>• Then, it selects each edge of the graph one by one and adds
+the vertices that cover to the vertex cover set. It updates the set
+by adding vertices to it.</p>
+<p>• After that it removes the edge from the edge set.</p>
+<p>• This process is repeated till the time the edge set is empty
+and all the edges in the graph are covered.</p>
+<p>• At the end of the algorithm, it returns the vertex cover.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The line 4 of the algorithm APPROX-VERTEX-COVER<img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png">, pick an
+edge.</p>
+<p>Once edge is selected, all the edges that are incident on any of
+the nodes to the edges are removed in the line 6. The rest of the
+edges that remain will form the maximum matching <i>M</i> in the
+graph <i>G</i>.</p>
+<p>The process is repeated till the vertex cover is formed. The
+edges that remained after all the iterations form the maximum
+matching <i>M</i> in the graph <i>G</i>.</p>
+<p><b>Therefore, the line 4 of the algorithm</b>
+<b>APPROX-VERTEX-COVER</b> <b><img src=
+"../imgs/f2e7de02f8978f644e5fa9a85360d561f31e2ac1.png"></b>
+<b>forms the maximum matching</b> <i><b>M</b></i> <b>in the
+graph</b> <i><b>G</b></i> <b>.</b></p>
+<p>Consider the graph given below:</p>
+<p>In the graph there are 7 vertices in the vertex set <img src=
+"../imgs/47716b4dd4a49f124a787e61a63c422aac1aa0df.png">and 8 edges
+named<img src=
+"../imgs/c469e2811e1624a2d2e5c11663abd423d23ff97f.png">.</p>
+<p><img src="../imgs/0c15cebdd283975f265e3b71c979ec3916c1c38c.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+<p>Consider the algorithm above for covering the edges. The
+following diagrams represent the state of the graph iteration by
+iteration of the algorithm.</p>
+<p>Whenever an edge is chosen and the attached vertices are
+traversed; remaining of the edges connected to those vertices are
+removed from the sub-graph. This is done because the vertices
+attached to those edges have been covered already.</p>
+<p>1. First the edge<img src=
+"../imgs/ed05f3da90a9049361402286b0f3d27c82a48632.png">is chosen
+and the vertices <i>b</i> and <i>c</i> are added to the set of
+vertex cover <i>C</i>. That is the updated set is<img src=
+"../imgs/7c3d05ad3eada372574d6cebcf8599ced1928a5e.png">. The edges
+incident on added vertices <i>b</i> and <i>c</i> that is<img src=
+"../imgs/f5c564100366789ac1a3b54af39c7a8fed945eea.png"><img src=
+"../imgs/cadb9ab8b830d26bb059b6b386269ad59a1e9044.png">and
+<img src="../imgs/68f7b6b050ca84787bf606b409bfbdb8107dff65.png">are
+removed from the graph as shown by the dotted lines:</p>
+<p><img src="../imgs/900bc12421ff2cfef1ebf20095078a945b164176.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\4.tif"></p>
+</div>
+<hr>
+<div class="answer">2. Next the edge<img src=
+"../imgs/e92a3eebcb46fc7575ff71b7a3f36f3aaec378fa.png">is chosen
+and the vertices <i>e</i> and <i>f</i> are added to the set of
+vertex cover <i>C</i>. That is the updated set is<img src=
+"../imgs/8381333b41403c714bb9129fd2d49cb4ea140307.png">. The edges
+incident on added vertices <i>b</i> and <i>c</i> are<img src=
+"../imgs/5f4b5edddb07e7411df86088b1b0c86f2bf2a601.png"><img src=
+"../imgs/580e0dd03867ba6ed5b5b1c4ee07cd4cf2a33f27.png">and
+<img src="../imgs/2279bfbddc8337944fb9470e8e8d22b6b827d9bf.png">which
+are removed from the graph in this step. The graph after this step
+is as shown below:
+<p><img src="../imgs/f446c86756ba239d9c337acee10ed0387592c0ee.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\5.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>3. In the next iteration, the edge <img src=
+"../imgs/12d0a193cc7bfec764545a11da87339a6cb12fc4.png">is selected
+from the remaining edge set. The updated vertex cover set
+is<img src="../imgs/cafebd1457328f7885bf6d9842e661f417f36db2.png">.
+As the entire edges incident on the vertices <i>g</i> and <i>i</i>
+are already removed from the graph so no edges are removed in this
+step.</p>
+<p><img src="../imgs/5994b9d7bd53dc4d4cebcb3e025a7702d15d109b.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\6.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, the cover set <i>C</i> contains six vertices and the
+sub-optimal vertex cover contains only four vertices.</p>
+<p>Hence, the vertex cover for the graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">is <img src=
+"../imgs/1df170ef9d40cb7894214bdc875dc487e7f34321.png">the graph
+showing vertex cover is as follows:</p>
+<p><img src="../imgs/d3bf29ce5613a5338398c6daf4f10df43cf72153.png"
+alt="Picture 5"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation:</b></p>
+<p>The APPROX-VERTEX-COVER algorithm chooses a random edge and then
+deletes the edges incident init.</p>
+<p>This process is continued till all the vertices are covered.
+Firstly edge <img src=
+"../imgs/ed05f3da90a9049361402286b0f3d27c82a48632.png"> is chosen
+(Figure-2), then <img src=
+"../imgs/f5c564100366789ac1a3b54af39c7a8fed945eea.png"><img src=
+"../imgs/cadb9ab8b830d26bb059b6b386269ad59a1e9044.png">and
+<img src="../imgs/68f7b6b050ca84787bf606b409bfbdb8107dff65.png">
+edges are removed from the graph.</p>
+<p>Next Edge<img src=
+"../imgs/e92a3eebcb46fc7575ff71b7a3f36f3aaec378fa.png"> is chosen
+and edge<img src=
+"../imgs/5f4b5edddb07e7411df86088b1b0c86f2bf2a601.png"><img src=
+"../imgs/580e0dd03867ba6ed5b5b1c4ee07cd4cf2a33f27.png">and
+<img src="../imgs/2279bfbddc8337944fb9470e8e8d22b6b827d9bf.png">are
+discarded.</p>
+<p>Lastly the edge <img src=
+"../imgs/12d0a193cc7bfec764545a11da87339a6cb12fc4.png"> is
+selected. After that no edge remains to be discarded.</p>
+<p>So, the vertex cover set is<img src=
+"../imgs/cafebd1457328f7885bf6d9842e661f417f36db2.png">.</p>
+<p>From the above steps, it can be observed that the line 4 of the
+algorithm forms maximal matching. The edges picked up in line 4
+are<img src=
+"../imgs/ed05f3da90a9049361402286b0f3d27c82a48632.png">,<img src=
+"../imgs/e92a3eebcb46fc7575ff71b7a3f36f3aaec378fa.png">and<img src=
+"../imgs/12d0a193cc7bfec764545a11da87339a6cb12fc4.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Vertex Cover Problem</b></p>
+<p>The <b>vertex cover problem</b> is the problem in which we try
+to find out a set of vertices <i>S</i> from an undirected graph
+<i>G</i>, so that every edge of graph <i>G</i> has minimum one of
+its endpoint in <i>S</i>. Vertex cover problem is a NP-hard
+problem.</p>
+<b>Heuristic technique</b> refers to the techniques developed on
+some personal learning and self experience to find out or discover
+a new method. This technique if implemented tends to shorten the
+time period of solving a problem.</div>
+<hr>
+<div class="answer">
+<p>Now, we have to show in our solution that whatever heuristic
+Professor has applied, it will not have approximation ratio of 2.
+The following graph will not give approximation ratio of 2 using
+the proposed heuristic given by Professor. The vertices of graph
+are:</p>
+<p><img src=
+"../imgs/375402d7c62e0dd00e02199f2560d98c55528bf6.png"></p>
+<p>And the adjacency list representation is:</p>
+<p><img src=
+"../imgs/56734395d3c7a566ca8e3d1c79f2ad6d8dbe8395.png"></p>
+<p><img src=
+"../imgs/7734e639bb248cf1a02676aa0a87a7ee2c780f10.png"></p>
+<p><img src=
+"../imgs/64a6aafb4352aab707735f70f3f60eb56110e8b8.png"></p>
+<p>There should be an edge from <img src=
+"../imgs/8093b9f91aaa5b6ff68dc336132a1ff983227031.png"> to
+<img src="../imgs/3a004299c6c0252bfe3c259c5ee5771d802de9c7.png">
+and from <img src=
+"../imgs/d103c2651d306b0f4ad9a67e21de52088196c704.png"> to
+<img src="../imgs/7b5da689d6a0f2f58a7971b5534a6950c58b2953.png">
+and so on.</p>
+<p>The heuristic proposed is an <b><img src=
+"../imgs/9123cb252392c762906f6efc042373da6cd9b356.png"></b>
+approximation algorithm. For the upper bound the algorithm is
+greedy set cover algorithm, where edges are the path to be traced
+and every node depicts a set comprising of edges incident to this
+node, and greedy set cover have approximation time<img src=
+"../imgs/f9da1f85bce65055ac794b77f330df77779146b2.png">. For the
+lower bound take the bipartite graph <img src=
+"../imgs/6e37411deae0d5e7e4152c848e709bf3b0614a35.png"> constructed
+as following. Consider<img src=
+"../imgs/3f6fa81b44714f959ff287c83c349f79d6a32b97.png">
+and<img src="../imgs/c580252637dbe4f0464fdfb0c462f66a6a6d6c58.png">.</p>
+<p>Connect all <img src=
+"../imgs/cfedc98c099ad525d1d511eedf18ff8964c78ebe.png"> to
+<img src="../imgs/75e4c04b032440e44811d2d46cc1a7c655c83dba.png">
+for each<img src=
+"../imgs/4b6e1bef1f71e19a799e5cecbf45aea67ed2c942.png">. Then add
+<img src="../imgs/b5c6feb8d435b8295085407572f5aaa19a2bdec3.png">
+nodes to <img src=
+"../imgs/b1ac99b8d45f5d41622157a229fa38adbea90cda.png"> and each of
+them to exactly two nodes of<img src=
+"../imgs/79550211636a8682afb87f3a04118158675296a6.png">, not
+connected to any other of the added nodes. Now add<img src=
+"../imgs/4d07d73e058e8d54cf917dc8e320f8c144c009da.png"> nodes and
+continue adding nodes like this. At last <img src=
+"../imgs/79550211636a8682afb87f3a04118158675296a6.png"> contains
+<img src="../imgs/6d1ff0ebf542ac625c403188752276340271c353.png">
+nodes and <img src=
+"../imgs/b1ac99b8d45f5d41622157a229fa38adbea90cda.png"> contains
+<img src="../imgs/3626f61b10ab0e3c6e464f530c9c882ec0c326aa.png">
+nodes.</p>
+<p>Now, it is clear that <img src=
+"../imgs/79550211636a8682afb87f3a04118158675296a6.png"> is the
+optimal vertex cover, but algorithm will select<img src=
+"../imgs/b1ac99b8d45f5d41622157a229fa38adbea90cda.png">. Therefore,
+we have lower bound of <img src=
+"../imgs/4b07792f370ea969a56a22da061e6f817d601b67.png"> as
+approximation factor. Thus it is seen that we are not getting
+approximation factor of 2 anywhere. Hence, the heuristic proposed
+by Professor proves to be wrong.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Optimal vertex-cover:</b></p>
+<p>Vertex-cover of a graph G= (V, E) is a subset V' of the set of
+vertices V such that each edge of the graph is incident to at least
+one vertex of V'. The vertex-cover problem finds the optimal
+(minimum size) vertex-cover of a given graph.</p>
+<p>The algorithm APPROX-VERTEX-COVER (<i>G</i>) finds the vertex
+cover of a given graph G. but it is not an optimal
+vertex-cover.</p>
+<p>The following is the greedy algorithm to find an optimal vertex
+cover of a given tree.</p>
+<p>OPTIMAL-VERTEX-COVER (<i>T</i>)</p>
+<p>//initially store all node of tree into set</p>
+<p>1. <i><img src=
+"../imgs/5639345e97a8f51b88cee92ab11cc040fcee94cb.png"></i> = all
+the nodes of tree <i>T</i></p>
+<p>2. <img src=
+"../imgs/5a72e7d2268ad7d03a71523797276774e9e36785.png"> = all the
+edges of the tree <i>T</i></p>
+<p>// initialize variable <i>C</i> to store the vertex cover</p>
+<p>3. <i>C=NIL</i></p>
+<p>//Exit from the loop, if <i><img src=
+"../imgs/5639345e97a8f51b88cee92ab11cc040fcee94cb.png"></i>is
+empty</p>
+<p>4. <b>While</b> <i><img src=
+"../imgs/5639345e97a8f51b88cee92ab11cc040fcee94cb.png"></i>!=
+<i>NIL</i></p>
+<p>5. Select a node <i>v</i> such that <i>v</i> has at least one
+leaf</p>
+<p><b>//</b>Update the vertex covers <i>C</i> by adding <i>v</i> to
+<i>C</i></p>
+<p>6. <img src=
+"../imgs/9333581040c0e5d31e951de43d5fa75ecc6e3928.png"></p>
+<p>7. Update <i><img src=
+"../imgs/5639345e97a8f51b88cee92ab11cc040fcee94cb.png"></i> by
+removing the <i>v</i> and all the vertices incident to <i>v</i>
+from <i><img src=
+"../imgs/5639345e97a8f51b88cee92ab11cc040fcee94cb.png"></i><i>.</i></p>
+<p>//finally returns the vertex cover</p>
+<p>8. <b>return</b> <i>C</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>• The above OPTIMAL-VERTEX-COVER algorithm returns an optimal
+vertex-cover <i>C</i> for a given tree <i>T</i>. in the line 1,2,
+two sets are initialized. One set is the set of vertices in the
+tree T. another is the set of edges in the tree <i>T</i></p>
+<p>• Initially the set C contains no vertex.</p>
+<p>• In the line 4, while loop checks whether the set of vertices
+is empty or not.</p>
+<p>• If the set is not empty, then a vertex <i>v</i> that has at
+least one leaf is selected in the line 5 and the vertex <i>v</i> is
+added in the line 6.</p>
+<p>• Now the vertex and it’s all neighboring nodes are removed from
+the set <i><img src=
+"../imgs/5639345e97a8f51b88cee92ab11cc040fcee94cb.png"></i><i>.</i></p>
+<p>• Step 4 to 7 are repeated, until all the vertices are removed
+form the set <i><img src=
+"../imgs/5639345e97a8f51b88cee92ab11cc040fcee94cb.png"></i><i>.</i></p>
+<p><b>Time complexity:</b></p>
+<p>The above OPTIMAL-VERTEX-COVER selects the node <i>v</i> in each
+iteration optimally in O(<i>n</i>). That is, the algorithm runs
+linearly.</p>
+<p><b>Hence the time complexity of algorithm will be</b>
+<b><img src=
+"../imgs/da607e91ab266e635f9f187cdc56c997c94b21a9.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Refer theorem 34.12 (vertex-cover problem is NP–complete) given
+in the chapter 34, section 34.5.2 of the textbook.</p>
+<p>Refer theorem 34.11 (clique problem is NP–complete) given in the
+chapter 34, section 34.5.1 of the textbook.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• The vertex-cover problem finds the vertex cover of minimum
+size in a given graph.</p>
+<p>• The clique problem finds a clique of maximum size in a given
+graph.</p>
+<p>• The vertex cover <img src=
+"../imgs/2ddaa378ff8e11e2b709d92936948cef30a42c41.png"> and also
+the clique <img src=
+"../imgs/0568fb0e2229c548201a6d24e0a8de515d1cafc1.png">.</p>
+<p>• The vertex-cover problem and the NP–Complete clique problem
+are complementary means if the compliment of a graph is considered,
+then the maximum-size clique in the complement graph is an optimal
+vertex cover of the graph.</p>
+<p>• The clique problem and vertex cover problem are related to
+each other through a reduction.</p>
+<p>• The relation between these two problems does not imply that
+there exists a constant ratio bound approximation algorithm.</p>
+<p>• The reductions may alter the ratio by polynomial times.</p>
+<p><b>Therefore, the reduction relationship between the
+vertex-cover problem and clique problem doesn’t imply that, for the
+clique problem, there exists a polynomial-time approximation
+algorithm with a constant approximation ratio.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

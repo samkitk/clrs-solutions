@@ -1,0 +1,294 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 18.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Delete a key from B-tree</b></p>
+<p>The minimum degree for B-tree is <i>t</i>=3, so a node cannot
+have less than 2 keys.</p>
+<p><b>Initial tree:</b></p>
+<p><img src="../imgs/72cc8de9accb8b0c439996b789bc372ccb84e73b.png"
+alt="Picture 5"></p>
+<p><b>C deleted: case 3a</b></p>
+<p>The node C can be deleted by merging the siblings and moving a
+key <i>E</i> from the root <i>x.c</i><sub>i</sub></p>
+<p><img src="../imgs/d3ac560186fa9dcf250faa1a2b92d371a3177495.png"
+alt="Picture 14"></p>
+<p><b>P deleted: case 2b</b></p>
+<p>Since sibling that precedes <i>P</i> has less than t keys and
+sibling that follows <i>P</i> has <i>t</i> keys, replace the P’s
+position by the key <i>Q</i> that is the succor of <i>P</i>.</p>
+<p><img src="../imgs/c4cdfb18245143c1d20d64cbf8b09ed61d789b54.png"
+alt="Picture 13"></p>
+<p><b>V deleted: case 3a</b></p>
+<p>The node V can be deleted by merging the siblings and moving a
+key <i>X</i> from the root <i>x.c</i><sub>i</sub></p>
+<p><img src="../imgs/07ac70d0c250a5509e3622284a7871212b87e41b.png"
+alt="Picture 11"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>B-Tree deletion is the process of deleting the node from binary
+tree. Deletion of key may be leaf node or internal node of
+tree.</p>
+<p>• If key is deleted from internal node then it required to
+rearrange the children of that particular node.</p>
+<p>• For better understanding the whole algorithm is divided into
+three cases, according to the node that is deleted from the
+tree.</p>
+<p>Following Pseudo code is used for B-TREE DELETION.</p>
+<p>B-Tree-Delete (<i>T, k</i>)</p>
+<p>// store the root of tree into variable <i>b</i></p>
+<p>1. <i>b</i> = <i>root</i>[<i>T</i>]</p>
+<p>//find the key <i>k</i> which user want to delete</p>
+<p>2. B-Tree-Delete-key(<i>b</i>, <i>k</i>)</p>
+<p>// if key is not leaf node</p>
+<p>3. <b>if</b> <i>n</i>[<i>b</i>]=<i>0</i> <b>and not</b>
+<i>leaf</i>[<i>b</i>]</p>
+<p>//copy the index of key into root of tree.</p>
+<p>4. <i>root</i>[<i>T</i>]= <i>c</i><sub>1</sub>[<i>b</i>]</p>
+<p>//deallocate the key</p>
+<p>5. De-Allocate-node(<i>b</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the three possible cases to remove a node from B-Tree.
+Assume <i>k</i> be the key to be deleted and <i>j</i> be the node
+that containing the key value.</p>
+<p><b>Case 1:</b></p>
+<p>If <i>k</i> is the key in node <i>j</i> and <i>j</i> is the leaf
+node then apply the following procedure to delete the node.</p>
+<p>B-Tree-Delete-key (<i>j, k</i>)</p>
+<p>//start traversing from index <i>i</i>.</p>
+<p>1 <i>i</i> = <i>1</i></p>
+<p>//search the key for deletion</p>
+<p>2 <b>while</b> <i>i</i> &lt;= <i>n</i>[<i>j</i>] <b>and</b>
+<i>k</i> &gt; <i>key</i><sub>i</sub>[<i>j</i>]</p>
+<p>// increment the key value by 1</p>
+<p>3 <b>do</b> <i>i</i>=<i>i+1</i></p>
+<p>// if statement is used to perform the action if key <i>k</i> is
+found</p>
+<p>4 <b>if</b> <i>i</i>&lt;=<i>n</i>[<i>x</i>] and
+<i>k=</i>key<sub>i</sub>[<i>j</i>] and <i>leaf</i>[<i>j</i>]</p>
+<p>//simply delete the key</p>
+<p>5 Disk-Write(<i>j</i>)</p>
+<p>6 <b>return</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Case 2:</b></p>
+<p>• If <i>k</i> is the key in node <i>j</i> and <i>j</i> is an
+internal node then there are three possible cases to delete the
+node.</p>
+<p>• In the following algorithm check the minimum key for
+deletion.</p>
+<p>// check the value of index <i>i</i> and key value</p>
+<p>7 <b>if</b> <i>i</i>&lt;=<i>n</i>[<i>j</i>] and
+<i>k=key</i><sub>i</sub>[<i>j</i>]</p>
+<p>//traverse the node in tree.</p>
+<p>8 then Disk-Read(<i>c</i><sub>i</sub>[<i>j</i>])</p>
+<p>//when if statement is false then store the index number of node
+into variable <i>y</i>.</p>
+<p>9 <i>y = c</i><sub>i</sub>[<i>j</i>]</p>
+<p>//if node of <i>y</i> is greater or equal then find the minimum
+key <i>t</i></p>
+<p>10 <b>if</b> <i>n</i>[<i>y</i>] <i>&gt;= t</i></p>
+<p>//store the minimum key</p>
+<p>11 then <i>a=key</i><sub>n[y]</sub>[<i>y</i>]</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Case 2a:</b></p>
+<p>If the child <i>y</i> of node <i>a</i> having at least <i>t</i>
+keys, then find the predecessor key <i>k’</i> in the sub tree.
+Delete <i>k’</i> and replace <i>k</i> with <i>k’</i> in
+<i>a</i>.</p>
+<p>12 B-Tree-Delete-key (<i>y, a</i>)</p>
+<p>//find the minimum key <i>j</i> of node <i>a</i></p>
+<p>13 <i>key</i><sub>s</sub>[<i>j</i>] = <i>a</i></p>
+<p><i>//</i>save the value of minimum key</p>
+<p>14 Disk-Write(<i>j</i>)</p>
+<p>15 <b>return</b></p>
+<p><b>//</b>traverse all internal node of child node <i>y</i></p>
+<p>16 Disk-Read(<i>c</i><sub>i+1</sub>[<i>j</i>])</p>
+<p>//copy the content into variable <i>z</i></p>
+<p>17 <i>z</i> = <i>c</i><sub>i+1</sub>[<i>j</i>]</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Case 2b:</b></p>
+<p>If the child <i>m</i> that follows key <i>k</i> have at least
+<i>t</i> key, then find the successor key <i>k’</i> in the sub
+tree. Delete <i>k’</i> and replace <i>k</i> with <i>k’</i> in
+<i>a</i>.</p>
+<p>//if node of <i>m</i> is greater or equal then find the minimum
+key <i>t</i></p>
+<p>18 <b>if</b> <i>n</i>[<i>m</i>] &gt;= <i>t</i></p>
+<p>//find the minimum key of node <i>m</i></p>
+<p>19 <i>a=key</i><sub>1</sub>[<i>m</i>]</p>
+<p>//delete the key node.</p>
+<p>20 B-Tree-Delete-key (<i>m, a</i>)</p>
+<p>//copy the key value.</p>
+<p>21 <i>key</i><sub>i</sub>[<i>j</i>] = <i>a</i></p>
+<p>22 Disk-Write(<i>j</i>)</p>
+<p>23 <b>return</b></p>
+</div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"><b>Case 2c:</b>
+<p>If both child <i>y</i> and <i>m</i> have <i>t−1</i> keys then
+merge all key k and <i>m</i> into <i>y</i> so <i>y</i> contain
+<i>2t-1</i> keys and subsequently delete each key.</p>
+<p><b>//</b>copy the key value of <i>m</i> into <i>y</i></p>
+<p>24 <i>key</i><sub>t</sub>[<i>y</i>] =
+key<sub>i</sub>[<i>m</i>]</p>
+<p>//for loop is used to perform the operation till the key
+value</p>
+<p>25 <b>for</b> <i>j</i> = <i>i</i> <b>to</b>
+<i>n</i>[<i>j</i>]<i>-1</i></p>
+<p><b>//</b> copy the key value of index <i>j+1</i></p>
+<p>26 <i>key</i><sub>j</sub>[<i>a</i>] =
+<i>key</i><sub>j+1</sub>[<i>a</i>]</p>
+<p>27 <i>c</i><sub>j+1</sub>[<i>a</i>] =
+<i>c</i><sub>j+2</sub>[<i>a</i>]</p>
+<p>28 <i>n</i>[<i>a</i>] = <i>n</i>[<i>a</i>]<i>-1</i></p>
+<p>29 Disk-Write(<i>a</i>)</p>
+<p>30 <b>for</b> <i>j</i> = <i>t+1</i> <b>to</b> <i>2t-1</i></p>
+<p>31 <b>do</b> <i>key</i><sub>j</sub>[<i>y</i>] =
+<i>key</i><sub>j-t</sub>[<i>z</i>]</p>
+<p>32 <i>c</i><sub>j</sub><i>[y]</i> =
+<i>c</i><sub>j-t</sub>[<i>z</i>]</p>
+<p>33 <i>c</i><sub>2t</sub><i>[y]</i> =
+<i>c</i><sub>t</sub>[<i>z</i>]</p>
+<p>34 <i>n[y]=2t-1</i></p>
+<p>35 Disk-Write(<i>y</i>)</p>
+<p>36 B-Tree-Delete-key (<i>y, a</i>)</p>
+<p>37 <b>return</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Case 3:</b></p>
+<p>• If key node is not present in internal node <i>a</i> it means
+the root of subtree contain the key <i>k</i> <b>.</b></p>
+<p>• If the root of tree have <i>t-1</i> keys but there sibling
+have <i>t</i> keys then traverse the left and right sibling of tree
+for deletion the key.</p>
+<p>• If the root of tree have <i>t-1</i> keys and there sibling
+also have <i>t-1</i> keys then traverse the left and right sibling
+of tree for deletion the key.</p>
+<p>// if the key is not present in leaf node</p>
+<p>38 <b>if</b> not <i>leaf</i>[<i>a</i>]</p>
+<p>//find the root of minimum key <i>k</i>.</p>
+<p>39 <i>s = c</i><sub>i</sub>[<i>a</i>]</p>
+<p>//traverse the subtree to find minimum key</p>
+<p>40 Disk-Read(<i>s</i>)</p>
+<p>// if the root has <i>t-1</i> key</p>
+<p>41 <b>if</b> <i>n</i>[<i>s</i>] <i>= t-1</i></p>
+<p>//travrse the child of rooted tree.</p>
+<p>42 Disk-Read(<i>c</i><sub>i-1</sub>[<i>a</i>])</p>
+<p>//if the sibling have <i>t</i> key</p>
+<p>43 <b>if</b> <i>n</i>[<i>c</i><sub>i-1</sub>[<i>a</i>]] &gt;
+<i>t-1</i></p>
+<p>//increse the key value of root by 1</p>
+<p>44 <i>n</i>[<i>s</i>] <i>= n</i>[<i>s</i>]<i>+1</i></p>
+<p><i>//</i>for loop is used to travrse all node of subtree.</p>
+<p>45 <b>for</b> <i>j=n</i>[<i>s</i>] <b>downto</b> 2</p>
+<p>//move the key value of <i>j-1</i> location.</p>
+<p>46 <i>key</i><sub>j</sub>[<i>s</i>] <i>=
+key</i><sub>j-1</sub>[<i>s</i>]</p>
+<p>//move the key value of <i>j</i> location</p>
+<p>47 <i>c</i><sub>j+1</sub>[<i>s</i>] <i>=
+c</i><sub>j</sub>[<i>s</i>]</p>
+<p>//travrse the appropriate children of node <i>a</i> in the
+tree.</p>
+<p>48 Disk-Write(<i>a</i>)</p>
+<p>49 Disk-Write(<i>c</i><sub>i-1</sub>[<i>a</i>])</p>
+<p>50 Disk-Write(<i>s</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis of Algorithm</b>:</p>
+<p>• In the above algorithm three different cases is used to delete
+the node from tree.</p>
+<p>• If the node is the leaf node then directly delete the key
+value k from tree.</p>
+<p>• When a key node present in internal node then it required
+rearranging the children of that particular node to go one step up
+to rearrange the node by its predecessor or successor.</p>
+<p>• If node that is deleted is internal node then the key value k
+is deleted according to the case 2 of algorithm.</p>
+<p>• If the key <i>k</i> is not presented in internal node then the
+node is deleted according to the case 3 of algorithm.</p>
+<p><b>Hence,</b> <b>the time complexity of algorithm will be</b>
+<b><img src=
+"../imgs/b20e6a66c9e57ccb37a4659398218cc824626ac6.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

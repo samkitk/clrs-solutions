@@ -1,0 +1,273 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 31.6</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/172b2c260d7a18b0fa8d94d9c085e093d010ae5b.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following modular exponential algorithm, in which
+the bits of<img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">are examined
+from right to left.</p>
+<p><b>Algorithm:</b></p>
+<p>//Define the procedure modular exponential which takes</p>
+<p>//three argument as an input</p>
+<p><b>DEF–RL–MODULAR–EXPANSION</b> <i>(a, b, n)</i></p>
+<p>//Initialize a variable <i>p</i> with 1</p>
+<p>1 <i>p=</i>1</p>
+<p>//use while loop with condition always true or</p>
+<p>// this while loop will always execute</p>
+<p>2 <b>while</b> 1:</p>
+<p>//now takes the modulus of <i>b</i> with 2 and if the result
+is</p>
+<p>//equal to 1 then execute if condition</p>
+<p>3 <b>if</b> (<i>b</i> mod 2) <i>==</i>1:</p>
+<p>//calculate the modular expansion</p>
+<p>4 <i>p =</i> (<i>p.a</i>) mod <i>n</i></p>
+<p>//now perform division operation</p>
+<p>5 <i>b=b/</i>2</p>
+<p>//check the value of <i>b,</i> if <i>b==</i>0 then breaks or
+come outside the loop</p>
+<p>6 <b>if</b> <i>b==</i>0:</p>
+<p>//perform break operation</p>
+<p>7 <b>break</b></p>
+<p>//if <i>b</i>!=0 then perform the following operation</p>
+<p>8 <i>a=</i>(<i>a.a</i>)mod<i>n</i></p>
+<p>//at the end returns the value of <i>p</i></p>
+<p>9 <b>return</b> <i>p</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>The above given algorithm reduce every multiplication (mod
+<i>n</i>). Hence, the above algorithm is useful for small numbers
+instead of the large numbers.</p>
+<p>For small numbers, the above right to left modular exponential
+algorithm is somewhat faster than the left to right exponential
+algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Implementation of MODULAR EXPONENTIATION</b></p>
+<p>For any integer <i>n.</i></p>
+<p><img src=
+"../imgs/d865cbe127a2fe2956c94d7dfc49a1e35f0283a3.png">for
+any<img src=
+"../imgs/8ff70bc552ea81f1ee90ac8ff6776a82f387397c.png"></p>
+<p>Algorithm for computing.</p>
+<img src=
+"../imgs/96de5ed13402afa5665a06b8e32f3863174a7002.png">for<img src=
+"../imgs/8ff70bc552ea81f1ee90ac8ff6776a82f387397c.png">using the
+procedure of MODULAR-EXPONENTIATION.</div>
+<hr>
+<div class="answer">
+<p><b>Modular exponentiation:</b></p>
+The modular exponentiation is a kind of exponentiation that is
+applied on the modulus of a number. It has various applications in
+network security. This method is used to calculate the power to a
+number using repeated squaring rather than multiplying the number
+by itself several times. It can be represented as:</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/67e3e0554224caee168ffcc3f74d1f93a49a53c2.png"></div>
+<hr>
+<div class="answer">Where, <i><img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"></i>and
+<i>b</i> are positive integers and <i>n</i> contains a positive
+value. In the repeated squaring process, use the binary
+representation of <i>b</i> that is <img src=
+"../imgs/116b7d23fbe165d6c977578edae50e7522687042.png"><i>k</i> bit
+long binary value of <i>b</i>.</div>
+<hr>
+<div class="answer">In the <img src=
+"../imgs/96de5ed13402afa5665a06b8e32f3863174a7002.png">calculation
+of<img src=
+"../imgs/4da5efc02ac7b9c1607243d791b833059c30be3c.png">can be done
+if preliminarily the condition of power of <i><img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"></i>is
+checked and the value of <img src=
+"../imgs/d1f02f6a01d91ec698ee1be7a069861a5759988a.png"> for its
+negative value is returned.</div>
+<hr>
+<div class="answer">For calculating<img src=
+"../imgs/96de5ed13402afa5665a06b8e32f3863174a7002.png">, <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"> and
+<i>n</i> both should be co-prime. Use the procedure of
+MODULAR-EXPONENTIATION by editing it for the calculation of
+<img src="../imgs/96de5ed13402afa5665a06b8e32f3863174a7002.png">
+which is as:</div>
+<hr>
+<div class="answer">
+<p>The procedure below calculates the modular exponentiation of the
+equation of the form<img src=
+"../imgs/8788b831686a01c517ceaff0ec15806c4e26759f.png"> where both
+of <i><img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"></i>and
+<i>b</i> are non-negative numbers and the number<i>n</i> is a
+positive integer.</p>
+<p>MODULAR-EXPONENTIATION(<i>a, b, n</i>)</p>
+<p><img src=
+"../imgs/328f8097bce24d70fd7920a5b91f95866cfa9ed9.png"></p>
+<p><b>if</b> <img src=
+"../imgs/b766186d1501670daf038bf3232a236dda2a3e94.png"></p>
+<p><b>return</b><img src=
+"../imgs/d1f02f6a01d91ec698ee1be7a069861a5759988a.png"></p>
+<p>// for each binary value of <i>b</i></p>
+<p><b>for</b> <img src=
+"../imgs/1c965604032aae0d6307c87d2f3e2166e5501163.png"></p>
+<p><img src=
+"../imgs/7a1c65daf9a514eca8ac2da94c2cfeaac66f5eab.png"></p>
+<p>// squaring <i>d</i> and then calculating modular value</p>
+<p><img src=
+"../imgs/ae8d5b83618fa7741060bb8f82069327768d5f17.png"></p>
+<p><b>if</b><img src=
+"../imgs/ffac766a73b291a36884b8d9abc6ef2a17e8cb0c.png"></p>
+<p><img src=
+"../imgs/9d5394d59a1fdd855691b9424818716a7f7ade30.png"></p>
+<p><img src=
+"../imgs/2b2ae8d30ac200dbd0bbbf3abd6925b2acee36ea.png"></p>
+<p><b>return</b> <i>d</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b></p>
+<p>Consider <img src=
+"../imgs/c7ee90b7141f125384bf8cbd7d6447cc85d3fc2e.png"></p>
+<p>Multiplying <i>a</i> on both side</p>
+<p><img src=
+"../imgs/26b1e1a20fa300fcc02430dfb7b9240e17c662ea.png"></p>
+<p>Now,</p>
+<p><img src=
+"../imgs/9551bab0dd4c1a23ad2518c9fcbcb5a77c38c674.png"></p>
+<p>Now, according to the Fermat theorem (here <i>n</i> is
+prime),</p>
+<p><img src=
+"../imgs/86c8794051fe036c386b5186e383c99d82c89c0d.png"></p>
+<p>And</p>
+<p><img src=
+"../imgs/a09d13d12ccb4030862b8243769b7d82fe8ebade.png"></p>
+<p>It means that <img src=
+"../imgs/a63293b7a670e4d14a17e17b9d7097314a643806.png"> is the
+solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Example:</b> Assume that<img src=
+"../imgs/5c99d614a261811deecb8cf82dcb014641996405.png">.</p>
+<p>Let <img src=
+"../imgs/14b4916e5ceed0e25192e5bca1d06fd92cb161db.png"> be the
+division with remainder of<img src=
+"../imgs/6db6500a1deb8e8efc95bed6f3eba03892cd2876.png">.</p>
+<p>To prove that the algorithm given above is correct,</p>
+<p>Consider</p>
+<p><img src=
+"../imgs/f0ea7203290f9f75911204af55653d2198ba198a.png">.</p>
+<p>As gcd(7,9) is 1.</p>
+<p>So,</p>
+<p>9 will be divided in pair of 7.</p>
+<p>This is given below:</p>
+<p><img src=
+"../imgs/f31b8bf18c779b5220cdb6df506efaa690c40071.png"></p>
+<p>Now, 7 will be divided in pairs and it is given below:</p>
+<p><img src=
+"../imgs/9e7b150dcd3a574de95ae88efffd806417f4e32f.png"></p>
+<p>Now, taking 3<img src=
+"../imgs/c0ece50fddeb27c6ad91a29cb5a8839f0bd7d8f5.png">2 to left
+side, the equation will become as:</p>
+<p><img src=
+"../imgs/c61c6287e2be55c4bf40c0c2228fe253215e876f.png"></p>
+<p><img src=
+"../imgs/b237ffeb9891f6c665cf0cda438494b5151dc481.png"></p>
+<p><img src=
+"../imgs/207caebd3cd33dfb85a96ec9b24bed7cdab17bbc.png"></p>
+<p>So, the inverse of ‘7 mod 9’ is 4 because 4 pair of 7 is used
+here.</p>
+<p>In this process of this MODULAR-EXPONENTIATION first check the
+power of <i><img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"></i>and
+change it accordingly if it is not negative and then proceed to
+next step. Thus this procedure calculates<img src=
+"../imgs/96de5ed13402afa5665a06b8e32f3863174a7002.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,1711 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 27.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Implementing parallel loops using nested parallelism</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by the</p>
+<p>Spawning both parent and child work simultaneously. The main
+motive behind for evolving the concept of spawning is to achieve
+parallelism, which results increase the overall performance of
+computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>Implementing parallel loop of SUM-ARRAY using nested parallelism
+(spawn and sync):</p>
+<p>Consider the 2 arrays of size <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> say
+<img src=
+"../imgs/23fb0a786414f2084f9f46d9c6e954602a895cf5.png">and<img src=
+"../imgs/2e6a3751efae97d19cfc694e1c409f2f2e10bfc7.png">.</p>
+<p>Suppose <img src=
+"../imgs/75c8b565cc68a4db21a00dc7aff6e19a16329820.png">is the third
+array which stores the sum of the given two arrays. The
+implementation of NESTED-SUM-ARRAYS algorithm is similar to
+MAT-VEC-MAIN-LOOP. The NESTED-SUM-ARRAYS algorithm has three
+arrays(A,B,C) and the range of arrays(<i>i,j</i>) as a parameter.
+In the below algorithm <i>i</i> and <i>j</i> specify the range up
+to which addition of two array perform. The implementation of
+SUM-ARRAYS using nested Parallelism is as follow:</p>
+<p>NESTED-SUM-ARRAYS<img src=
+"../imgs/bd9ac10814a0732d6d131b6edd370a631ac7848f.png"></p>
+<p><b>if</b> <img src=
+"../imgs/432041503a2c7a3a47236f6ea54f4fc2e03228b5.png"></p>
+<p><img src=
+"../imgs/3bae4a1dadcc2ef456b60e6b725f4a0590491a14.png"></p>
+<p><b>else</b> <img src=
+"../imgs/344ef7c834268fb167950555b16b5c902a85cfda.png"></p>
+<p><b>Spawn</b> NESTED-SUM-ARRAYS <img src=
+"../imgs/d663f83099759c03c59bf10f62767a7fe75c4f8e.png"></p>
+<p>NESTED-SUM-ARRAYS <img src=
+"../imgs/656e7f936b94d66c2756ef0e62e23c0f1371fbcd.png"></p>
+<p><b>sync</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Consider the size of the array as<img src=
+"../imgs/7c2a25d0755113952993a1735d5fdbd3b61f4119.png">, calculate
+the sum by calling procedure having argument as follow,</p>
+<p>NESTED-SUM-ARRAYS<img src=
+"../imgs/8cf04c876469cd7ae24fb12d30f231c275d8eb9f.png"></p>
+<p>Work<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">, can be
+given by below recurrence</p>
+<p><img src=
+"../imgs/aa309ea417e6fd007d1cbe6576fccbc423613fd0.png"></p>
+<p>Applying Master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src=
+"../imgs/62a43f3d4220af7af48ea57c06d33a635200c1c9.png"></p>
+Hence work of NESTED-SUM-ARRAYS algorithm is<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of the above procedure can be given by below
+recurrences,</p>
+<p><img src=
+"../imgs/403271b4f506279172340d09471c99bd7a9e4dff.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src=
+"../imgs/67f270d37b6936e7852e3fa6320409fa51d099f4.png"></p>
+<p>Hence span of NESTED-SUM-ARRAYS algorithm is<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png"></p>
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/e58d99dcb2fd8a2c3d7c8de69ec8115be060fd21.png"></p>
+<p>Hence span of NESTED-SUM-ARRAYS algorithm is<img src=
+"../imgs/e58d99dcb2fd8a2c3d7c8de69ec8115be060fd21.png"></p>
+<p><i><b>b.</b></i></p>
+<p>Consider<img src=
+"../imgs/19ad41ee6be8bf49f6c77aaf642bba3c18dd9a20.png">.</p>
+<p>Since,</p>
+<p><img src=
+"../imgs/c6fe66d8b7c5a13a27331b5ff948d521236f6ac6.png">, therefore
+<img src=
+"../imgs/834221ea06e605783ef3d407faab02cc7127cc35.png"></p>
+<p>Since <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">varies from
+0 to<img src=
+"../imgs/fc47fb1682a96614f54a23d51d2d1b134a9edea9.png"> (for loop
+line number 4 of the algorithm SUM-ARRAYS’ on 27-1 of the
+textbook), therefore maximum value of <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> will
+be<img src=
+"../imgs/6e3ae7e0a6a1d90d9276998947bf11f5b08d610b.png">.</p>
+<p>Now, (line number 5 of the algorithm SUM-ARRAYS’)</p>
+<p><img src=
+"../imgs/2dd5a4a02423a140552c644959dbd0b05abe0e1c.png">will have
+value always less than or equal to <i>n</i></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/33fc18d81e1d58c233b8288a84cf8adcbbf7dca0.png"></p>
+<p>Now in each call of ADD-SUBARRAY procedure (problem 27-1 of the
+textbook), it has for loop runs for 1 time and contributes a single
+value to <img src=
+"../imgs/884db2d339e1ead87613d0bbdf7dda7e9d85da21.png">therefore it
+will take <img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"> time.</p>
+<p>Now since</p>
+<p>SUM_ARRAYS’<img src=
+"../imgs/b795bd958355a75fad6612dcc3bbe579df0f8c66.png">runs
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">
+times and each time it takes <img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">time to
+execute.</p>
+<p>Therefore total work<img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png">, will be
+given by,</p>
+<p><img src="../imgs/38cee7832b9e3e90336fc0856f79747c5bcbfb74.png">
+<b>… … (1)</b></p>
+<p>Span of the SUM_ARRAYS’<img src=
+"../imgs/b795bd958355a75fad6612dcc3bbe579df0f8c66.png">will be
+equal to span of the single call to ADD-SUBARRAY plus constant time
+work done in first 3 lines plus <img src=
+"../imgs/040ae099fa2e1449a1828f48e5d9540914ffbf7e.png">in order to
+account the overhead of spawning <img src=
+"../imgs/9120f6ea2a8de5c694d7ccb8ccdf8fcb3a8d02eb.png">calls to
+ADD-SUBARRAY.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/72e5bf78dff3f6c08767751156653ba6ef2456fd.png"></p>
+<p>In this case</p>
+<p><img src=
+"../imgs/19ad41ee6be8bf49f6c77aaf642bba3c18dd9a20.png"></p>
+<p><img src=
+"../imgs/834221ea06e605783ef3d407faab02cc7127cc35.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/b481e90d8db9f7737544eee42c0835969599be7f.png"></p>
+<p>That is,</p>
+<p><img src=
+"../imgs/55d128f154d87b7365eb83a584980a9875b53e56.png"></p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/f62dd0ec7f7443615a23670497268e4a9b8a2d1b.png"></p>
+<p>= <img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"></p>
+Hence the parallelism of SUM_ARRAYS’() algorithm is <img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"> when
+grain-size is 1.</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>For a given <img src=
+"../imgs/c11658cb3f5efcb98c40d63c7ed80bf855a366ba.png">each
+iteration of for loop of procedure SUM-ARRAYS’ <img src=
+"../imgs/b795bd958355a75fad6612dcc3bbe579df0f8c66.png">will result
+in <img src=
+"../imgs/c11658cb3f5efcb98c40d63c7ed80bf855a366ba.png">times
+iteration of the ADD-SUBARRAY procedure accept for the last
+iteration. Last iteration it will run for <img src=
+"../imgs/45b0b576f0314691cd09d7c12961cc7d15c3e8b4.png">times.</p>
+<p>Therefore span of ADD-SUBARRAY will be,</p>
+<p>=<img src=
+"../imgs/fcdf3fb59ea05a962f6166099b002c7ec7fd1e23.png"></p>
+<p>=<img src=
+"../imgs/85f802c953d13d6116563826ed0c4910307f569d.png"></p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>Since parallelism <img src=
+"../imgs/021bc6aa221ac6912ea444fc7aaac5e4bbfcbd06.png"></p>
+<p>Therefore, to achieve a maximum parallelism, span should be
+minimum.</p>
+<p><img src=
+"../imgs/e8879ceea43c4b60a93fec5c123e6c1ee86587fa.png">.</p>
+<p>That is,</p>
+<p><img src=
+"../imgs/72e5bf78dff3f6c08767751156653ba6ef2456fd.png">should be
+minimum.</p>
+<p>Since,</p>
+<p><img src=
+"../imgs/c6fe66d8b7c5a13a27331b5ff948d521236f6ac6.png"></p>
+<p>Therefore <img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">will be
+minimum when,</p>
+<p><img src=
+"../imgs/88d6e79aa4290594d88afb01c4a76ce77220b345.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/eca1a632c94e5823a4931996a637f703a2557a44.png"></p>
+<p>That is,</p>
+<p><img src=
+"../imgs/2e80e7eda312eda5aa7950d4de691fb953228019.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Saving temporary space in matrix multiplication</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by the</p>
+<p>Spawning both parent and child work simultaneously. The main
+motive behind for evolving the concept of spawning is to achieve
+parallelism, which results increase the overall performance of
+computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p><b>A recursive multithreaded algorithm that removes the essence
+for the ephemeral matrix say</b> <b><img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png"></b> <b>at
+the cost of increasing the span to</b> <b><img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"></b></p>
+<p>It can be done by computing <img src=
+"../imgs/4fd6a6ef61eb7771fa4144b77dc60ac421d8f129.png">and
+inserting <b>sync</b> at a particular location as mentioned in the
+following algorithm,</p>
+<p>P-MATRIX-MULTIPLY<img src=
+"../imgs/5ba482d7af0b594b0fc9e5b1468998c22f77f5ff.png"></p>
+<p>//Find number of rows in X array</p>
+<p><img src=
+"../imgs/079b780b1a0769d88a29a03f2688308831f11011.png"></p>
+<p>//Use nested loop to initialize each element of <i>Z</i> matrix
+with 0 and then multiply</p>
+<p>//<i>X</i> and <i>Y</i> matrix by calling another function</p>
+<p><b>parallel for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png"> to
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/a32daf262850ab8aa5225dd33a8b33863a1d8a4e.png"> to
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><img src=
+"../imgs/b9fc0742bfe8d1bbb3cf73e065e030bef93a2b11.png"></p>
+<p>//Call function to multiply both matrix and store it
+simultaneously into</p>
+<p>//another matrix</p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/5dc3bdb686c0ff2949d039899042755f71a32bf1.png"></p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/5dc3bdb686c0ff2949d039899042755f71a32bf1.png"></p>
+<p>//Find number of rows in <i>X</i> array</p>
+<p><img src=
+"../imgs/079b780b1a0769d88a29a03f2688308831f11011.png"></p>
+<p>//Check number of rows is 1 or not.</p>
+<p><b>if</b> <img src=
+"../imgs/9b4d6fe93ec992fb65253350d922d4f8594ea910.png"></p>
+<p><img src=
+"../imgs/ca52969e0753267e55a29a5129565dc77123a5dd.png"></p>
+<p>//multiply <i>X</i> and <i>Y</i> matrix and then store in
+<i>Z</i> matrix</p>
+<p><b>else</b> partition <img src=
+"../imgs/8187f1870bb8192bc36d1fddb43f8355b63e9b34.png">,<img src=
+"../imgs/546b0670cd50c6a36a407729daade79e1b984a47.png"> and
+<img src=
+"../imgs/05665b6565ee635d113bfb9770ef04108034c64e.png">into
+<img src=
+"../imgs/b33731e265d3a43394a0a09416aba7199c5ff08f.png">sub-matrices</p>
+<p><img src=
+"../imgs/914bfad1f859b8ff5edab73467e91f5619d01577.png"></p>
+<p><img src=
+"../imgs/d07d463d8877c588720d28956a30d17e413b734f.png"></p>
+<p><img src=
+"../imgs/51d215ac6a5562e49ff9169a907994a1a44ee289.png"></p>
+<p><b>Spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/24035832328ae31cb135a8cef4a6c04d7af89485.png"></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/33300786c22f6a50782c295d867c74a10d18a643.png"></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/8a10aa8d7ac8c9636906010e6524be70a722987d.png"></p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/de545e76daef2989a5a64936c102a51fb0d2c6b4.png"></p>
+<p><b>sync</b></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/8ef14b487b6a8ef303539a4c890a3209f09ff681.png"></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/4586fc9ffe94697f30a5746ebecd43fb0a53d608.png"></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/72f20f6bff99c4ea6114d87236f949c56ede40ff.png"></p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/ca593c249013f72ba758e37844ac1179181d4381.png"></p>
+<p><b>sync</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p><b>Work:</b></p>
+<p>The work of P-MATRIX-MULTIPLY procedure can be calculated by
+serializing the parallel for loop and calculating its running time
+and comparing it with procedure P-MATRIX-MULTIPLY-RECURSIVE.</p>
+<p>Since both of these two procedures are executing one by one
+therefore the procedure having maximum work will be the total work
+done.</p>
+<p>Work performed by doubly nested parallel for loop of
+P-MATRIX-MULTIPLY algorithm is <img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png"> <b>… …
+(1)</b></p>
+<p>Now there is another procedure P-MATRIX-MULTIPLY-RECURSIVE. Its
+work <img src=
+"../imgs/c447f42187e1833782af54b8cfce8afaec668dba.png"> can be
+defined by recurrence given below (consider 8 recursive
+function),</p>
+<p><img src="../imgs/55c59c14c390d804e8c4f057798f9b744575d95e.png">
+<b>… … (2)</b></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src=
+"../imgs/0656de54e1e7bbc1c4fe7dc5155ebd3d72705f04.png"></p>
+<p>Therefore from <b>(1)</b> and <b>(2)</b> total work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png"> will
+be,</p>
+<p><img src=
+"../imgs/2e7d50fcc394991c0742ae02d6d97b172ab08353.png"></p>
+<p><img src="../imgs/742b286f7ac4bf868196d35d0ad6e70712d32324.png">
+<b>… … (3)</b></p>
+<p>Hence work of P-MATRIX-MULTIPLY algorithm is<img src=
+"../imgs/79048f2a38946449333fe9ff0d875d29b16143f2.png">.</p>
+<p><b>Span:</b></p>
+<p>Span of the doubly nested parallel for loop of P-MATRIX-MULTIPLY
+algorithm is<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png"> <b>… …
+(4)</b></p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE, there are two groups of spawned
+recursive calls. Therefore, the span <img src=
+"../imgs/4b713a789a0b3c27b6fc61fd4dc4b5ec92b189f8.png">of
+P-MATRIX-MULTIPLY-RECURSIVE will be by the following
+recurrence,</p>
+<p><img src=
+"../imgs/a442a4f7e9668cd3cd4b61a67ce897ae86899a27.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src="../imgs/0991ecccba4a53038d9c2cfb53a0f8be8cf6e27d.png">
+<b>… … (5)</b></p>
+<p>Therefore total span <img src=
+"../imgs/daa90ec76e3877451509a896fad88e0ac3d43b18.png"> of the
+above algorithm will be as following,</p>
+<p><img src=
+"../imgs/b83e1558a035507b1b6e6503497d96e3efb4a989.png"></p>
+<p><img src="../imgs/c1a5f46d6e8bf29816a8cd16bc68ca7ddfdf6120.png">
+<b>… … (6)</b></p>
+Hence work of P-MATRIX-MULTIPLY algorithm is<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/35ed249619af2f1e69ede3342b29e64aa937f643.png"></p>
+<p>= <img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png"></p>
+<p>Parallelism for <img src=
+"../imgs/f3db747360cc606254ca7dc432513097972bbe2d.png"> matrices
+will be,</p>
+<p>=<img src=
+"../imgs/2c6c4fc9166c57e28ffd16240e1287c5a637f9ba.png"></p>
+<p>Parallelism of P-MATRIX-MULTIPLY-RECURSIVE is<img src=
+"../imgs/2c6c4fc9166c57e28ffd16240e1287c5a637f9ba.png">.</p>
+<p>Therefore the present algorithm that is P-MATRIX-MULTIPLY has 10
+times less parallelism compared to P-MATRIX-MULTIPLY-RECURSIVE
+algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Multithreaded matrix algorithm</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by the</p>
+<p>Spawning both parent and child work simultaneously. The main
+motive behind for evolving the concept of spawning is to achieve
+parallelism, which results increase the overall performance of
+computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>In order to make LU-DECOMPOSITION Algorithm parallel, replace
+ordinary ‘for’ loop with the Parallel ‘for’ loop so that all
+iteration of parallel ‘for’ loop run simultaneously. The Parallel
+LU-DECOMPOSITION Algorithm is as follow:</p>
+<p>LU-DECOMPOSITION<img src=
+"../imgs/da3c4db3ee401add9a4bf9db4a92d0732a73e242.png">+</p>
+<p><img src=
+"../imgs/50e6ab0e351eab28dbf013a8e9cfeac436c94a04.png"></p>
+<p>Let<img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">and
+<img src="../imgs/aae905b55259ad80ffa419f176d42354bcc96d5d.png">be
+new <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrices</p>
+<p>Initialize<img src=
+"../imgs/aae905b55259ad80ffa419f176d42354bcc96d5d.png">with
+<img src="../imgs/c3c9eeb4432020c0f55719ad48e3846c7b4afd7d.png">
+below the diagonal</p>
+<p>Initialize<img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">with
+<img src="../imgs/01962f641011a406dc9e1aef7c4af98a1d51ef2f.png"> on
+the diagonal and <img src=
+"../imgs/c3c9eeb4432020c0f55719ad48e3846c7b4afd7d.png"> above the
+diagonal</p>
+<p>//Use parallel loop to initialise elements of <i>A</i> matrix
+with elements of <i>U</i></p>
+<p>//matrix that is with 0</p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/31a4b424a8808ddbae3cb49ea3e19ff052c452cd.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//initialize <i>u</i><sub>kk</sub> element with the
+<i>a</i><sub>kk</sub> element</p>
+<p><img src=
+"../imgs/66971a19d7b4a29a1155176a81214962423d1ab4.png"></p>
+<p>//use loop to traverse to all row.</p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/3106a2fdbe2fc20a63172c06abfe761cf1fef0f1.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//Divide <i>A</i> matrix element with the diagonal element of
+<i>U</i> matrix</p>
+<p><img src=
+"../imgs/b5aa4b6d143f1fe63ffbf0e2ea43bfc1d6db6bd9.png"></p>
+<p><img src=
+"../imgs/b892d81d40d4e099fcb7ce4ebc4bba7f66b5af4c.png"></p>
+<p>//use loop to traverse to all row and all column.</p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/3106a2fdbe2fc20a63172c06abfe761cf1fef0f1.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/08b047b02f949b3a39780c35cd2f6c455f4b1c3d.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//Subtract <i>L</i>, <i>U</i> matrix product from <i>A</i>
+matrix.</p>
+<p><img src=
+"../imgs/2cbaa53721e3bb9b74c371c31922368975777621.png"></p>
+<p>//return <i>L</i> and <i>U</i> matrix</p>
+<p><b>return</b> <img src=
+"../imgs/2531fc76f1b2148ce9a3939dc2ff0dcc73393959.png">and
+<img src="../imgs/aae905b55259ad80ffa419f176d42354bcc96d5d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of above algorithm can calculate by replacing parallel for
+loop with ordinary for loop and thus calculating its running
+time.</p>
+<p>Since there are 3 nested for loop each running for <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">times
+therefore, work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png">will be:</p>
+<p><img src=
+"../imgs/38bb9159aef6c13478c64134735de0507fedcc21.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of the parallel for loop running for <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> will
+be<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">.</p>
+<p><img src=
+"../imgs/daa90ec76e3877451509a896fad88e0ac3d43b18.png">will be,</p>
+<img src=
+"../imgs/13169308a33109536dd5d22d2d355b108d11d409.png"></div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/ddf7f1feab151643f17880f47e684211154b734a.png"></p>
+=<img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png"></div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>In order to make LUP-DECOMPOSITION Algorithm parallel replace
+ordinary for loop with the Parallel for loop so that all iteration
+of parallel for loop run simultaneously.</p>
+<p>The Parallel LUP-DECOMPOSITION Algorithm is as follow:</p>
+<p>LUP-DECOMPOSITION<img src=
+"../imgs/da3c4db3ee401add9a4bf9db4a92d0732a73e242.png"></p>
+<p>//find number of rows in A matrix</p>
+<p><img src=
+"../imgs/50e6ab0e351eab28dbf013a8e9cfeac436c94a04.png"></p>
+<p>Let<img src=
+"../imgs/87da2fea50b34fea51805785db46dd076883b17a.png"> be a new
+array</p>
+<p>//initialize elements of array with 1 to n numbers</p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><img src=
+"../imgs/9abc0103304eaeb6e5e23ca3efdf19d0342d42c2.png"></p>
+<p>//use loop to initialize elements of P matrix with 0.</p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/31a4b424a8808ddbae3cb49ea3e19ff052c452cd.png"><b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><img src=
+"../imgs/16ab974b1af0b73ecfafc5d180913a9050c916dc.png"></p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/00895c64720cffbe7ba4eb32c5d3b260c371aa71.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//Check particular <i>i</i><sup>th</sup> row and
+<i>k</i><sup>th</sup> column element is</p>
+<p>//greater than <i>P</i> matrix element or not</p>
+<p><b>if</b> <img src=
+"../imgs/2f126f6f0bdf7ebd333dc101590b027b9fe0ce9b.png"></p>
+<p>//store particular <i>i</i><sup>th</sup> row and
+<i>k</i><sup>th</sup> column of <i>A</i> matrix in</p>
+<p>// <i>P</i> matrix</p>
+<p><img src=
+"../imgs/540fafd18762d49dbcb1060a08e3774770924f06.png"></p>
+<p><img src=
+"../imgs/2088da95b5a3af0d0d849b1b0e779c0ad6c1ecdf.png"></p>
+<p>//check <i>P</i> is equal to 0 or not.</p>
+<p><b>if</b> <img src=
+"../imgs/30c41066d6ea833f3d8c499e0e537c29842aca55.png"></p>
+<p><b>error</b> “singular matrix”</p>
+<p>//Exchange <i>k</i><sup>th</sup> and <i>k</i>’<sup>th</sup>
+element of <img src=
+"../imgs/415509d4931772c81be3967bb583d0be9357cd9b.png"> array</p>
+<p>exchange<img src=
+"../imgs/9e8640af90cfe3df4592a1769f39af5411abb713.png">with
+<img src=
+"../imgs/f0655f4d23c808b882b00e8a1b41f5bae52ebd9a.png"></p>
+<p>//use loop exchange to exchange <i>k</i><sup>th</sup> and
+<i>k</i>’<sup>th</sup> row of <i>A</i> matrix.</p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>exchange<img src=
+"../imgs/98c21b54747a470e84a0b3ee79e46879ae70ba41.png">with
+<img src=
+"../imgs/47a250945dcf3fe681d02c894ee5324e2fbc7f9d.png"></p>
+<p>//use nested loop to traverse to all row and all column.</p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/3106a2fdbe2fc20a63172c06abfe761cf1fef0f1.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//Divide <i>i</i><sup>th</sup> row and <i>k</i><sup>th</sup>
+column element of <i>A</i> matrix</p>
+<p>//with the <i>i</i><sup>th</sup> row and <i>k</i><sup>th</sup>
+column element of <i>A</i> matrix</p>
+<p><img src=
+"../imgs/f2405027e44e7822cdf28aa58ad4bd9d713f30cf.png"></p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/08b047b02f949b3a39780c35cd2f6c455f4b1c3d.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><img src=
+"../imgs/fbfe0ec1c06126e904434529e0927cad0fc1159e.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of above algorithm can calculate by replacing parallel for
+loop with ordinary for loop and thus calculating its running
+time.</p>
+<p>Since there are 3 nested for loop each running for <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">times
+therefore, work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png">will be:</p>
+<p><img src=
+"../imgs/38bb9159aef6c13478c64134735de0507fedcc21.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of the parallel for loop running for <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> will be
+<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">.</p>
+<p><img src=
+"../imgs/daa90ec76e3877451509a896fad88e0ac3d43b18.png">will be:</p>
+<p><img src=
+"../imgs/13169308a33109536dd5d22d2d355b108d11d409.png"></p>
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p><img src=
+"../imgs/96bc954c4dded3f0fe0fdc1625c4ab49a0cf09d6.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>In order to make LUP-SOLVE Algorithm parallel replace ordinary
+for loop with the Parallel for loop so that all iteration of
+parallel for loop runs simultaneously. The Parallel LUP-SOLVE
+Algorithm is as follow:</p>
+<p>LUP-SOLVE<img src=
+"../imgs/5335ac1d83ed5ef7d18adc3954f2099b90155c23.png"></p>
+<p>//Find number of row in <i>L</i> matrix</p>
+<p><img src=
+"../imgs/9cc3a6673e249a5638f365f379f87ffb508f3cea.png"></p>
+<p>let<img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png">be a new
+vector of length <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p>//use loop to solve <i>y</i>using forward substitution</p>
+<p><b>parallel for</b> <img src=
+"../imgs/e611ef16d42e474a5e33939c071fa01728eb379a.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><img src=
+"../imgs/d6635d6538532d8157cc64bd48e1756ca4a06046.png"></p>
+<p>//use loop to solve <i>x</i>using backward substitution</p>
+<p><b>parallel</b> <b>for</b> <img src=
+"../imgs/3af67fa54d2f9ab32d1d4b16948e91ec1a33e1d6.png"><b>down
+to</b> <img src=
+"../imgs/d1577bd9419c6de28d3a2a15e64635095fe01613.png"></p>
+<p><img src=
+"../imgs/a7d91b5a80d889d98b1afe4fcda857fa7b5fa2f2.png"></p>
+<p><b>return</b> <i>x</i></p>
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of above algorithm can calculate by replacing parallel for
+loop with ordinary for loop and thus calculating its running
+time.</p>
+<p>Since there are 3 nested for loop each running for <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">times
+therefore, work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png">will be:</p>
+<p><img src=
+"../imgs/d554fe9bb72670d13449d77e54356a82fafbca26.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Two parallel for loop used in the above LUP-SOLVEalgorithm hence
+Span of the above algorithm is</p>
+<p><img src=
+"../imgs/af706ffdd69fb3e270e53f6eadd540d56897e25e.png"></p>
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p><img src=
+"../imgs/d77f5b9e86d1ea6421d3ea4e0cc1d1e3b216343a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i></p>
+<p>Consider the equation (28.11), (28.12) and (28.13) on section
+28.2 of the textbook,</p>
+<p><img src=
+"../imgs/30ef6862c206721adffcca7b4c0fadee2194872e.png"></p>
+<p>Consider the procedure and recurrence relation on section 28.2
+of the textbook,</p>
+<p>Since <img src=
+"../imgs/3a1e15ed6060038fb0b5c994e65731eb2c27d5eb.png"></p>
+<p><img src=
+"../imgs/6da83f78fa072995e0ee0e9b7572cc82fe00eede.png"></p>
+<p><b>Work and Span:</b></p>
+<p>So works measure as taking every inverse matrix expression in
+series manner means with-out applying any parallel concept. This
+concept used in span measurement,</p>
+<p>These values come when multiplication not taking a constant time
+but addition does.</p>
+<p>Inverse of a matrix takes time of polynomial of power two in
+work but in span it takes as a logarithm of power two and in last
+multiplication process increase the power from 2 to 4.</p>
+<p>So,Work becomes</p>
+<p><img src=
+"../imgs/a8a93e9df573d46190fe0b56ec2e100b6a59a192.png"></p>
+<p>Span becomes:</p>
+<p><img src=
+"../imgs/0f4919c3f5894640e888cb6ee27bfd89645aa066.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p><img src=
+"../imgs/739c0c5e04afee9bb13e8c229f4ff962f582bab9.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Saving temporary space in matrix multiplication</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by the</p>
+<p>Spawning both parent and child work simultaneously. The main
+motive behind for evolving the concept of spawning is to achieve
+parallelism, which results increase the overall performance of
+computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/f68fd301088746fcff037b310effa2dffc2ac3d7.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/c3f1663d28d80be1cc79653f20a301e9c4d99726.png"></p>
+<p>The ratio of <img src=
+"../imgs/f68fd301088746fcff037b310effa2dffc2ac3d7.png">
+and<img src="../imgs/c3f1663d28d80be1cc79653f20a301e9c4d99726.png">,
+that is <img src=
+"../imgs/9867ac77e9058d6a6e14c5b88424581bb3637953.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p><b>A recursive multithreaded algorithm that removes the essence
+for the ephemeral matrix say</b> <b><img src=
+"../imgs/767bad11bce5e630980d358484a9ac366ae72320.png"></b> <b>at
+the cost of increasing the span to</b> <b><img src=
+"../imgs/0ca5340373c5895b5800d5740e331b1341e09c18.png"></b></p>
+<p>It can be done by computing <img src=
+"../imgs/167f2a86f36513c9ef2ee64329cea536eea8d68d.png">and
+inserting <b>sync</b> at a location as mentioned in the following
+algorithm,</p>
+<p>P-MATRIX-MULTIPLY<img src=
+"../imgs/68a1a91e8360e032ced48f43b3cf0f35d5491118.png"></p>
+<p>//Find number of rows in X array</p>
+<p><img src=
+"../imgs/b69c3ad19256aead48d4f08bf51766d9d6968bf5.png"></p>
+<p>//Use nested loop to initialize each element of <i>Z</i> matrix
+with 0 and then multiply</p>
+<p>//<i>X</i> and <i>Y</i> matrix by calling another function</p>
+<p><b>parallel for</b> <img src=
+"../imgs/2df6fdd99fff6311d7466500d23397c2617caf19.png"> to
+<img src="../imgs/e3d50243b18b92d94818a1f29d1a959685b28bab.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/da5902b8251891b4e193d6a318dabb5a259dbb45.png"> to
+<img src="../imgs/e3d50243b18b92d94818a1f29d1a959685b28bab.png"></p>
+<p><img src=
+"../imgs/f566b7c24ec0acae56433cca34bdd58a14231d63.png"></p>
+<p>//Call function to multiply both matrix and store it
+simultaneously into</p>
+<p>//another matrix</p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/7b0162dbb223459be3443db1889de219b11fef21.png"></p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/7b0162dbb223459be3443db1889de219b11fef21.png"></p>
+<p>//Find number of rows in <i>X</i> array</p>
+<p><img src=
+"../imgs/b69c3ad19256aead48d4f08bf51766d9d6968bf5.png"></p>
+<p>//Check number of rows is 1 or not.</p>
+<p><b>if</b> <img src=
+"../imgs/df48815bb174b65f9634a3314fbdd938a15475ae.png"></p>
+<p><img src=
+"../imgs/a5704cdb72a5e0d402a7cfd229c2180d59497f0e.png"></p>
+<p>//multiply <i>X</i> and <i>Y</i> matrix and then store in
+<i>Z</i> matrix</p>
+<p><b>else</b> partition <img src=
+"../imgs/c6a5b768b63b81e7f41dc2871f306e2df6ebd71b.png">,<img src=
+"../imgs/6561d665144b76d9a841d690e5c8990112a85d65.png"> and
+<img src=
+"../imgs/93b37e0eaf0640efdc07ef850a6c9af7ecd8950c.png">into
+<img src=
+"../imgs/d0f8d8ab98cbd41389155d1a1ed45bb8756566f4.png">sub-matrices</p>
+<p><img src=
+"../imgs/bf92fed15dcf85b9b77972e7836cbd2cda1a3d7b.png"></p>
+<p><img src=
+"../imgs/7f3a0831e4a4d4d7c05bf448a2504d0c5c4192dc.png"></p>
+<p><img src=
+"../imgs/0ae78b8cbf7542fa5b768f29987c9247d2d3e597.png"></p>
+<p><b>Spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/92e899e7d9846827070742334ff723471ac988cd.png"></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/d816a3eafb583e2a11cd8c7ac09b01a7373c8178.png"></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/3519f95d6405cf997374bc286deb4e669945302d.png"></p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/1c520268dea5a1075ed013fbe32f0d39e48d24f1.png"></p>
+<p><b>sync</b></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/04612d200da8e4d6d1bf6a1f938bcc487c4876c7.png"></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/5c81fda0fb3e0c78d9c3c0d854d2204bc18d813a.png"></p>
+<p><b>spawn</b> P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/7665abd6d486d6bd3ac55c5c9dea8ec096d2aadf.png"></p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE<img src=
+"../imgs/49fd377a7f66856e1bcf62eca6f4653f871a1ef9.png"></p>
+<p><b>sync</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The algorithm takes <b><img src=
+"../imgs/0ca5340373c5895b5800d5740e331b1341e09c18.png"></b> time by
+the following recurrence relation:</p>
+<p><img src="../imgs/9dbda07e1cca192232fa1e419db15d1bda99c9f7.png">
+and <img src=
+"../imgs/b2c85f1b4d1ac64989bd588c760db59a0334ccb2.png"></p>
+<p>The span is <img src=
+"../imgs/c02a21c94cadd99c4c2e93dc4d6fea8c3e63dec5.png"></p>
+<p><i><b>b.</b></i></p>
+<p><b>Work:</b></p>
+<p>The work of P-MATRIX-MULTIPLY procedure can be calculated by
+serializing the parallel for loop and calculating its running time
+and comparing it with procedure P-MATRIX-MULTIPLY-RECURSIVE.</p>
+<p>Since both of these two procedures are executing one by one
+therefore the procedure having maximum work will be the total work
+done.</p>
+<p>Work performed by doubly nested parallel for loop of
+P-MATRIX-MULTIPLY algorithm is <img src=
+"../imgs/0e03417008e85d7cbe46e910ad9792d41c1f7a8e.png"> <b>… …
+(1)</b></p>
+<p>Now there is another procedure P-MATRIX-MULTIPLY-RECURSIVE. Its
+work <img src=
+"../imgs/c31c5549fbd4e55f322070405bf82e51c5f8f57a.png"> can be
+defined by recurrence given below (consider 8 recursive
+function),</p>
+<p><img src="../imgs/b822e3079f09518107256e38c4c1bb76f0f2d5b1.png">
+<b>… … (2)</b></p>
+</div>
+<hr>
+<div class="answer">Applying master theorem (In the analysis of the
+algorithm, master theorem gives the solution in asymptotic term for
+the recurrence relation),
+<p><img src=
+"../imgs/f12e2d7f9b58a8af54fa0d8c29ad810f1ac64844.png"></p>
+<p>Therefore from <b>(1)</b> and <b>(2)</b> total work <img src=
+"../imgs/addc7536dec3f831ae8e426a1a938c0076d5021e.png"> will
+be,</p>
+<p><img src=
+"../imgs/b02578e853a5c907a7924b8945280a00e5c4bf96.png"></p>
+<p><img src="../imgs/e4b450d192b09cd8dfe553d378dd45a043b8bfdf.png">
+<b>… … (3)</b></p>
+<p>Hence work of P-MATRIX-MULTIPLY algorithm is<img src=
+"../imgs/27c013e2ab92ee4648042316a1bcfe1f5a7464f1.png">.</p>
+<p><b>Span:</b></p>
+<p>Span of the doubly nested parallel for loop of P-MATRIX-MULTIPLY
+algorithm is<img src=
+"../imgs/820e9d68c5ef6245a099b2d1fb1354112112ddca.png"> <b>… …
+(4)</b></p>
+<p>P-MATRIX-MULTIPLY-RECURSIVE, there are two groups of spawned
+recursive calls. Therefore, the span <img src=
+"../imgs/0b7ad9fe4d126aab130478e76a6dfe6ddbd3d46f.png">of
+P-MATRIX-MULTIPLY-RECURSIVE will be by the following
+recurrence,</p>
+<p><img src=
+"../imgs/deecdcb5e5243bc974577fa9664a55a92652be55.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src="../imgs/826d27bf3a8646e262e18b4ea36c82e2870d2344.png">
+<b>… … (5)</b></p>
+<p>Therefore, total span <img src=
+"../imgs/d1571daadb4ef4b403f98e258248bff8940c179e.png"> of the
+above algorithm will be as following,</p>
+<p><img src=
+"../imgs/89abc1156b5cda193d4c096be67902d07ff8d91f.png"></p>
+<p><img src="../imgs/4ad96730a76852075b47a5d376a523cf97889339.png">
+<b>… … (6)</b></p>
+<p>Hence work of P-MATRIX-MULTIPLY algorithm is<img src=
+"../imgs/0ca5340373c5895b5800d5740e331b1341e09c18.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p><b>Parallelism:</b></p>
+<p>The correctness can be proved by performing induction on the
+recursive calls that are made to P-SCAN-2-AUX. On a single call, n
+is set to 1 and the algorithm sets y [1] = x [1] which is correct.
+The first half of the array has elements which are computed
+accurately because fewer recursive calls are required. The y[i] can
+be computed as follows:</p>
+<p><img src=
+"../imgs/34a19fc5b0ed6c2e973930330a19be2cd1e7eb8d.png"></p>
+<p>The above term is computed with P-SCAN-2-AUX and the time taken
+is T(n) = <img src=
+"../imgs/723ce56d09c1271b8729623cd7756708779966fb.png">. The span
+is <img src="../imgs/d5b76f5e15b51294287ddc4eb9819ffb61219a55.png">
+and the parallelism is <img src=
+"../imgs/32fec1b6455419b9146184e40031f74bc435ed56.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>d.</p>
+<p>Fill the line 8 of P-SCAN-UP by <img src=
+"../imgs/7cab88df6bad54d8cf8077cc5b064e24a6e75f03.png"> and lines 5
+and 6 of P-SCAN-DOWN by v and <img src=
+"../imgs/95d077857ab2ce50c0b701e36d84b83873e4c6dc.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>e.</p>
+<p>The P-SCAN-UP satisfies the recurrence <img src=
+"../imgs/9dbda07e1cca192232fa1e419db15d1bda99c9f7.png"> = <img src=
+"../imgs/b1d9463ccee8080e05a69e3544d33e9d41233024.png">. The
+running time of P-SCAN-DOWN is also <img src=
+"../imgs/b1d9463ccee8080e05a69e3544d33e9d41233024.png">. The
+P-SCAN-3 also satisfies T(n) = <img src=
+"../imgs/b1d9463ccee8080e05a69e3544d33e9d41233024.png">.</p>
+<p>The span of P-SCAN-UP and P-SCAN-DOWN is <img src=
+"../imgs/2778544ec7fd75be0856091a398983d3837c60dc.png">.</p>
+<p>Thus, the span of P-SCAN-3 is <img src=
+"../imgs/c02a21c94cadd99c4c2e93dc4d6fea8c3e63dec5.png">. The
+parallelism is <img src=
+"../imgs/32fec1b6455419b9146184e40031f74bc435ed56.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5P">
+                <a href="#problem-5P">5P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Multithreading a simple stencil calculation</b></p>
+<p><b>Spawn</b> is a subroutine that executes or run at the same
+time as that of parent. So by the</p>
+<p>Spawning both parent and child work simultaneously. The main
+motive behind for evolving the concept of spawning is to achieve
+parallelism, which results increase the overall performance of
+computer.</p>
+<p><b>Work</b> is defined as total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span</b> is defined as the maximum time required for
+completing the strands along any path in the directed acyclic graph
+(DAG). It is an expensive path which contains maximum number of
+strands.</p>
+<p>Work is the running time of a computation on a single processor.
+Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>Now suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>For simplicity assume that <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">is an exact
+power of 2.</p>
+<p>Divide<img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrix into
+four <img src=
+"../imgs/b33731e265d3a43394a0a09416aba7199c5ff08f.png"> sub
+matrices.</p>
+<p>Assuming that BASE-CASE is given to us,</p>
+<p>SIMPLE-STENCIL<img src=
+"../imgs/bfaae07c2dd48639be07d9dbff9d1fdf2c0d1111.png"></p>
+<p>//check length of array is 1.</p>
+<p><b>if</b> <img src=
+"../imgs/9b4d6fe93ec992fb65253350d922d4f8594ea910.png"></p>
+<p><img src=
+"../imgs/8778c1738fc42ae1f433df08b45995f3a2e784ba.png">=BASE-CASE<img src="../imgs/f43ad1b52a32e758d1e252752e958584577ced08.png"></p>
+<p><b>else</b></p>
+<p><b>//</b> Calculate sub-matrix <img src=
+"../imgs/a59ebb1eb2ac665b7b7ace3b619df1b6fd928b4b.png"></p>
+<p>SIMPLE-STENCIL<img src=
+"../imgs/b895557da5ff57a9419d3c727504bcc20e899a88.png"></p>
+<p><b>//</b> Calculate sub-matrices <i>A</i><sub>12</sub>and
+<i>A</i><sub>21</sub>in parallel.</p>
+<p><b>Spawn</b> SIMPLE-STENCIL<img src=
+"../imgs/37c46af1fc22baa5f52e1e549ff4879ee7c38a52.png"></p>
+<p>SIMPLE-STENCIL<img src=
+"../imgs/b4290c9f9769c2962d6e17106fc57a31c79b3b0a.png"></p>
+<p><b>sync</b></p>
+<p><b>//</b> Calculate sub-matrix <img src=
+"../imgs/3330265d65ea87443299d33ab2e5d605adc64d13.png"></p>
+<p>SIMPLE-STENCIL<img src=
+"../imgs/5f56c1b733e767284ce04b7c60dde5c626081747.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png"> of
+SIMPLE-STENCIL can be calculating by computing the running time of
+its serialization.</p>
+<p>That can be given by following recurrences,</p>
+<p><img src=
+"../imgs/a40c44eddd65d7b5c55e1cb5e3a71d5c7bdae6ea.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src=
+"../imgs/78d4ac84e935a4d13124246d61443ccb95203a39.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Since one of the SIMPLE-STENCIL calls is spawned therefore, Span
+can be given by following recurrences,</p>
+<p><img src=
+"../imgs/3b6c0061c53c9eca5e97d74332bc16baa0fa7fc0.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src=
+"../imgs/80f618ca8b239977b734d3d869e4f108c8d71178.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+=<img src=
+"../imgs/54e0ec8c1c8a29afd50eb2be0582a21fa7e6fe47.png"></div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p><b>Modification in above algorithm,</b></p>
+<p>P-STENCIL-MOD<img src=
+"../imgs/bfaae07c2dd48639be07d9dbff9d1fdf2c0d1111.png"></p>
+<p>//check length of array is 1.</p>
+<p><b>if</b> <img src=
+"../imgs/9b4d6fe93ec992fb65253350d922d4f8594ea910.png"></p>
+<p><img src="../imgs/8ec67355db2ee4ebff8a9ef528a7bae8e496d019.png">
+BASE-CASE<img src=
+"../imgs/f43ad1b52a32e758d1e252752e958584577ced08.png"></p>
+<p><b>else</b></p>
+<p>//Group1: compute sub-matrix <img src=
+"../imgs/a59ebb1eb2ac665b7b7ace3b619df1b6fd928b4b.png"></p>
+<p>P-STENCIL-MOD<img src=
+"../imgs/f2783a6add33f769e1a23a0005ca43c2879fe665.png"></p>
+<p>//Group2:compute sub-matrices <img src=
+"../imgs/97d92c05be77da3ae834e2810fe5e420285aeff6.png">and
+<img src="../imgs/d6568b89a145db484cb6cb9264ce5f27b99c8447.png"> in
+parallel</p>
+<p><b>Spawn</b> P-STENCIL-MOD<img src=
+"../imgs/b2d8d344eece6ad965058005f0da73878344e01e.png"></p>
+<p>P-STENCIL-MOD<img src=
+"../imgs/398f4a2674cd7632ab3bf141b5e0c2a391f1f54c.png"></p>
+<p><b>sync</b></p>
+<p>//Group3:compute sub-matrices <img src=
+"../imgs/15c293b2606d2a7d1a897163615a8662ec6098ca.png">, <img src=
+"../imgs/3330265d65ea87443299d33ab2e5d605adc64d13.png">, and
+<img src=
+"../imgs/fe543109bcd9e27c8219c2e9026772a647d4cc5a.png"></p>
+<p><b>Spawn</b> P-STENCIL-MOD<img src=
+"../imgs/0d4d38b4be8d8113199370d205220a56d1f3546d.png"></p>
+<p><b>Spawn</b> P-STENCIL-MOD<img src=
+"../imgs/cf6b58232cb969b9b17ca7b11ef1b9bd6b671ac9.png"></p>
+<p>P-STENCIL-MOD<img src=
+"../imgs/649ae76384fdec913b57488fe4a1d47742b6d37e.png"></p>
+<p><b>sync</b></p>
+<p>//Group4:compute sub-matrices <img src=
+"../imgs/d717872d4556250f2c9c80aca19daac734b5dbe3.png">and
+<img src="../imgs/7de92a0b2376f5e9966be2f1b7b46078617099e4.png"></p>
+<p><b>Spawn</b> P-STENCIL-MOD<img src=
+"../imgs/32fb32db19e063e2f28b508e894ab6f833436c8c.png"></p>
+<p>P-STENCIL-MOD<img src=
+"../imgs/3bcd22065490dd7d3aa8924305049fec55ab8213.png"></p>
+<p><b>sync</b></p>
+<p>//Group5:compute sub-matrix <img src=
+"../imgs/e215a420fc20b51c5e0912c437aa83edb94fefe2.png"></p>
+<p>P-STENCIL-MOD<img src=
+"../imgs/698f777638eaa6e6c386464dd05b2f0238bf8aa5.png"></p>
+<p>It is quite easy to see that <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrices
+have been divided into nine <img src=
+"../imgs/a99a191cfcb4f3bc475bcfa315143fbfc6640dc6.png">matrices.</p>
+<p><img src=
+"../imgs/fe51152920aa98bdd91f323838f947369d870525.png"></p>
+<p>In above figure same group specifies that they can be computed
+parallel.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of the above algorithm can be calculated by computing the
+running time of its serialization.</p>
+<p>That can be given by following recurrences,</p>
+<p><img src=
+"../imgs/d559c8f5ee6f12618069553e37a9b9a6e6cd0612.png"></p>
+<p>Applying master theorem (In the analysis of the algorithm,
+master theorem gives the solution in asymptotic term for the
+recurrence relation),</p>
+<p><img src=
+"../imgs/78d4ac84e935a4d13124246d61443ccb95203a39.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>It is quite obvious that span can be given by follow
+recurrences,</p>
+<p><img src=
+"../imgs/807345ef6e4d7e0af1a3fcc9ea50ff70577742e9.png"></p>
+<p><img src=
+"../imgs/e1b01c6139488f665d882c0bfbc0a5518f22588d.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/3985ea4aed46550c24c22c13cede5c9b390393bc.png"></p>
+=<img src=
+"../imgs/eba963c40e03ff8c5b5b501718fa1195b56e3ff6.png"></div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>As per question divide <img src=
+"../imgs/6f34325954c33b3375f2f3b802dcf50027551726.png">matrices in
+<img src="../imgs/33fc7227a4927ccd3f7e5836653b267d80a423c6.png"> ,
+<img src=
+"../imgs/332dc3a1b8b8c5f4fd4f6ce877d8b2fa141a576f.png">matrices.</p>
+<p>Generalizing the <i>X</i> we can get the following matrices for
+above configuration,</p>
+<p><img src=
+"../imgs/633b6a86dee7560ff51111eb13cb1a0219d8d391.png"></p>
+<p>Hence the <img src=
+"../imgs/33fc7227a4927ccd3f7e5836653b267d80a423c6.png">
+sub-problems can be solved into 2<i>b</i>-1 groups.</p>
+<p><b>Analyzing the above algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work can be given by following recurrences,</p>
+<p><img src=
+"../imgs/7502134f08063122399e686d53bc61d5271899a8.png"></p>
+<p><img src=
+"../imgs/78d4ac84e935a4d13124246d61443ccb95203a39.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>From above span can be given by following recurrences,</p>
+<p><img src=
+"../imgs/36202f1578cde930f596cbe9d6f25b5a65996c36.png"></p>
+<p><img src=
+"../imgs/36855411cac504d4b721b412c2bc6c114d1f94db.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p>=<img src=
+"../imgs/5b85a037ddecd629aba17e0dbeac450eab97c36e.png"></p>
+<p>=<img src=
+"../imgs/056522668030cfe3182f3ae910993371823e81d3.png"></p>
+<p>= <img src=
+"../imgs/ebab68191d4e2ff221536eb2996e8307c0316f42.png"></p>
+<p>To prove that parallelism is <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">for any
+choice of <img src=
+"../imgs/3dee870f3057c1a6b797f7b060334fadb438cddd.png"> it is
+necessary to prove that exponent of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"> in the
+parallelism is strictly less than 1 for any choice of<img src=
+"../imgs/3dee870f3057c1a6b797f7b060334fadb438cddd.png">.</p>
+<p><img src="../imgs/e2217ca9db9b50f26e72c10c5ed01ddd42eebd18.png">
+, <img src=
+"../imgs/e94d77dec351967c7573316b35df6d37e48f7587.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/8e610cf9a497e980cfd9b509975cd56694c169a8.png"></p>
+<p>Hence,</p>
+<p><img src=
+"../imgs/0120b1a854d7a9f05919a3c64ffdee79f07c5cf0.png"></p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/92fe5c7bb2a2d4084dc6c501f959f26d7e73d1a6.png"></p>
+<p>= <img src=
+"../imgs/4c16bdc5afa711faf622cc0187a25d699e2fcf99.png"></p>
+<p>Where, <img src=
+"../imgs/69f5fed5bd803180619ea9da2adb9e45e9dfb187.png"></p>
+<p><b>Hence proved</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d</b></i> <b>.</b></p>
+<p><b>Pseudocode for a multithreaded algorithm,</b></p>
+<p>Parallel-STENCIL<img src=
+"../imgs/da3c4db3ee401add9a4bf9db4a92d0732a73e242.png"></p>
+<p>//find number of rows in A array.</p>
+<p><img src=
+"../imgs/50e6ab0e351eab28dbf013a8e9cfeac436c94a04.png"></p>
+<p><b>//</b>Calculate all entries on the anti-diagonal and above
+it</p>
+<p><b>for</b> <img src=
+"../imgs/ada804aae62b1d603194831716cb68f200dcd0a4.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/ffb0cbdc24998882855764ac946d205d8ed41f15.png"> <b>to</b>
+<img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png"></p>
+<p><img src=
+"../imgs/19bb7b07ef7d9e8f8cd45f31b432019d95867160.png">=BASE-CASE<img src="../imgs/d65aefee1b153945abb8a5897bbe0df1a9682c1f.png"></p>
+<p><b>//</b>Calculate all entries below the anti-diagonal</p>
+<p><b>for</b> <img src=
+"../imgs/5b0f17696c505aa387751af86f05bbb5a9596bd9.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><b>parallel for</b> <img src=
+"../imgs/237d51429983ed31419ec0443cd3df562c9be579.png"> <b>to</b>
+<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"></p>
+<p><img src=
+"../imgs/68019e72046381f059803ddafae8c0e180e7bea7.png">=BASE-CASE<img src="../imgs/34a3085e7b21eea7f2b9529c101c0c0a1a083711.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analyzing the above modified algorithm:</b></p>
+<p>Here three methods which are work, span and parallelism are used
+for analyzing the algorithm which is as follow:</p>
+<p><b>Work:</b></p>
+<p>Work of the above algorithm can calculate by replacing the
+parallel for loop with ordinary for loop and thencomputing its
+running time.</p>
+<p>Since both nested for loop are in series therefore total running
+time will be some of those,</p>
+<p>Since both of the nested for loop runs for<img src=
+"../imgs/40689ad857680a2fe0d0593f54725a20e70fa1d5.png">,</p>
+<p>Therefore work <img src=
+"../imgs/4ee3e22b44a3a4936030f52dd431e92592501362.png"> of above
+algorithm will be as follow,</p>
+<p><img src=
+"../imgs/d554fe9bb72670d13449d77e54356a82fafbca26.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Span:</b></p>
+<p>Span of a parallel for loop having <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">iteration is
+given by<img src=
+"../imgs/0ea96afd69de8e2c77c76bbeda656a25f115742a.png">.</p>
+<p>Hence span<img src=
+"../imgs/daa90ec76e3877451509a896fad88e0ac3d43b18.png">, of above
+algorithm having iterations as,</p>
+<p><img src=
+"../imgs/5423d92b413f5e045b7277a04545a82906d38071.png">will be
+given by</p>
+<p><img src=
+"../imgs/368ab00b8621d0f0e25f16d9cea528d857d6dc51.png"></p>
+<p><img src=
+"../imgs/128fa55c4226010d05d1e54bf6fd6520f754e4ad.png"></p>
+<p><img src=
+"../imgs/a0da173a2a798e2bfdbde85b538ac3b15d0b3176.png"></p>
+<p><b>Parallelism:</b></p>
+<p>Parallelism is the ratio of work by span that is ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore,</p>
+<p>Parallelism=<img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png"></p>
+<p><img src=
+"../imgs/bb72af82fe039ee7e38d81d1c5aad5bebfc1166f.png"></p>
+<p><img src=
+"../imgs/9294ae33c31541f293a51ad9297ad546d59c9d89.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6P">
+                <a href="#problem-6P">6P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Randomized multithreaded algorithm:</b></p>
+<p><b>Spawn:</b></p>
+<p>• It is a subroutine that executes or runs at the same time as
+that of its parent.</p>
+<p>• By spawning, both parent and child work simultaneously.</p>
+<p>• The main motive behind spawning is to achieve parallelism,
+which results in increasing the overall performance of the
+computer.</p>
+<p><b>Work:</b></p>
+<p>• It is defined as the total time required for completing the
+entire multithreaded computation on a single processor.</p>
+<p><b>Span:</b></p>
+<p>• It is defined as the maximum time required for completing the
+strands along any path in the directed acyclic graph (DAG).</p>
+<p>• It is an expensive path which contains maximum number of
+strands.</p>
+<p>• Work is the running time of a computation on a single
+processor. Consider it as<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">.</p>
+<p>• Suppose there are unlimited numbers of processors. Then the
+span is denoted by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"></p>
+<p>• The ratio of <img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">
+and<img src="../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">,
+that is, <img src=
+"../imgs/fd6105e3588a6832b7ea309d8a1dc01ceac350bc.png">gives the
+parallelism of the multithreaded computation.</p>
+</div>
+<hr>
+<div class="answer">
+<p>a.</p>
+<p><img src=
+"../imgs/621aa3ef2f05b75ca2d2f3a2ca87bff5261a0482.png">is an
+expectation value associated with a randomized algorithm.</p>
+<p>It is defined as <img src=
+"../imgs/912f271fdaf492f2efa5735350b63ca951f09935.png">,
+where<img src=
+"../imgs/eaf21336610cc086911810ca301fdab1ea50d295.png">is a random
+number generated by randomized algorithm and <img src=
+"../imgs/1b90f2767908095b894293bb1ca3e6b0d12fe666.png"> is its
+probability of getting generated.</p>
+<p>Since<img src=
+"../imgs/df09ea12f04fed58bbc19b72d00dc4aa58ba97b4.png"> is the
+probability associated with <img src=
+"../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png"><sup>th</sup>
+randomized outcome, its summation will be 1.</p>
+<p>That is,</p>
+<p><img src=
+"../imgs/6217303f3ab74163915f69597da9e4fad4199849.png"></p>
+<p>Work law <img src=
+"../imgs/dc5d43eb8930662fb42e9c3a6bf5cbfc4da30e3c.png">can be
+defined as <img src=
+"../imgs/8d49f43c5bed2c0ddab4e3ea0c6d7ede9ed61e1d.png">.</p>
+<p>Span law <img src=
+"../imgs/74ebceb62dad42e6e958cbfb8a0cecd96e6ddb91.png"> can be
+defined as<img src=
+"../imgs/d5ad042015408882592452f326558ccc5e164a96.png">.</p>
+<p>Greedy scheduler bound <img src=
+"../imgs/735eb4a82da7a439d67ff3c988fafd24d08ed1e0.png">can be
+defined as<img src=
+"../imgs/066b7f7774ee61c2da10b66274355310092f747f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>Consider the following data:</p>
+<p>Randomized multithreaded algorithm for which 1% of the time
+is,</p>
+<p><img src=
+"../imgs/e87cd1f90f60fa41e1e031d8c7e944656c47866e.png"></p>
+<p>Randomized multithreaded algorithm for which 99% of the time
+is,</p>
+<p><img src=
+"../imgs/cf322c64ce3dd3459505cf4ee7f18766d7f0a594.png"></p>
+<p>Now,</p>
+<p><img src=
+"../imgs/93ed504226da3b6970b9d4dca0dee60f846e7b9a.png"></p>
+<p><img src=
+"../imgs/6cf2aae30eacd52e3373220a1dd6495ed4966e48.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Speed up:</p>
+<p><img src=
+"../imgs/c0c7acff694778711c8001d52cdec6f9dd1b6870.png"></p>
+<p>Speed up:</p>
+<p><img src=
+"../imgs/429f0b309b319b4d0285655111758e8c09c92a80.png"></p>
+<p>It is obvious from <b>(1)</b> and <b>(2)</b> that speedup of
+multithreaded algorithm should be defined as <img src=
+"../imgs/b06e3664f307bcd312e8bdb98362d6b10631e5ef.png">¸ rather
+than<img src=
+"../imgs/3ae3eee7433ef28adbe0ffa9fd2f1b2a679b3015.png">.</p>
+</div>
+<hr>
+<div class="answer">c.
+<p>Parallelism of a randomized multithreaded algorithm should be
+defined as the ratio<img src=
+"../imgs/b06e3664f307bcd312e8bdb98362d6b10631e5ef.png">.</p>
+<p><img src=
+"../imgs/9f9944127c1bdf154fe4c5c7fb48e18abf23b469.png">is defined
+as <img src=
+"../imgs/5fe933b02812627d5351621d62fc38671563293e.png"></p>
+<p>Here, <img src=
+"../imgs/a861e601ce86a2665653acb2812f9ef37c3464fa.png">is the work
+of the <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"><sup>th</sup>
+outcome and <img src=
+"../imgs/90949730eefb3998c7ff47d26128112a75c671ae.png">is
+probability of that outcome.</p>
+<p>Thus, <img src=
+"../imgs/9f9944127c1bdf154fe4c5c7fb48e18abf23b469.png"> is an
+expected value of the work for a long range of outcomes. In other
+words, it is the average work expected.</p>
+<p><img src=
+"../imgs/5dbcef1072acd2f86dbc615fb65e5847e3179d72.png">is defined
+as <img src=
+"../imgs/9e41122c924d3890335c5b00c485af8cbaa55ed5.png"></p>
+<p>Here, <img src=
+"../imgs/fd62e07202cbf073bbc61aebebe47421c1999cd0.png">is the SPAN
+of the <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png"><sup>th</sup>
+outcome and <img src=
+"../imgs/90949730eefb3998c7ff47d26128112a75c671ae.png">is
+probability of that outcome.</p>
+<p>Thus, <img src=
+"../imgs/5dbcef1072acd2f86dbc615fb65e5847e3179d72.png"> is an
+expected value of the span for a long range of outcomes. In other
+words, it is the average span expected.</p>
+<p>Since parallelism of an algorithm should be approximately equal
+to an average case scenario, therefore, the parallelism should be
+the average case of all outcomes.</p>
+<p>Hence, parallelism should be defined as<img src=
+"../imgs/b06e3664f307bcd312e8bdb98362d6b10631e5ef.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d.</p>
+<p>Use nested parallelism to make <b>Randomized-Quick-sort</b>
+algorithm on section 7.3 of the textbook as a multithreaded
+algorithm.</p>
+<p>In following algorithm, <i>p</i> and <i>r</i> represent the
+range of the array.</p>
+<p>P-RANDOMIZED-QUICKSORT<img src=
+"../imgs/1d48a082e83b6fed22e59529593df145d8bdc48a.png"></p>
+<p>//Check range of array is valid or not.</p>
+<p><b>if</b> <img src=
+"../imgs/f7ebf8ce1f3f50ee1c7b6769d95b5ff21ad43b32.png"></p>
+<p>//call function to divide the array into two halves</p>
+<p><img src=
+"../imgs/10e076baa5a7e672c59ac93be251426072db9946.png">RANDOMIZED-PARTITION<img src="../imgs/1d48a082e83b6fed22e59529593df145d8bdc48a.png"></p>
+<p><b>spawn</b> P-RANDOMIZED-QUICKSORT<img src=
+"../imgs/b568badcf1a2a872b307c892b86f55ddeae9d57e.png"></p>
+<p>P-RANDOMIZED-QUICKSORT<img src=
+"../imgs/e488e8ed88d1202b4712363676d705b7c65ef386.png"></p>
+<p>//Function to divide the array</p>
+<p>RANDOMIZED-PARTITION<img src=
+"../imgs/1d48a082e83b6fed22e59529593df145d8bdc48a.png"></p>
+<p>// Function to choose a random value between <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">and
+<img src="../imgs/9120f6ea2a8de5c694d7ccb8ccdf8fcb3a8d02eb.png">including
+boundaries.</p>
+<p><b>if</b> <img src=
+"../imgs/e930c1aabf8389e644609824e009a40b52800b07.png">RANDOM<img src="../imgs/0a8a3fc1cf17d7d7b51f605c69852089f98d2c02.png"></p>
+<p>exchange<img src=
+"../imgs/db53454839230751d10dd53deab8f3fc25c26479.png">with
+<img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png"></p>
+<p>// partitioning the array (PARTITION<img src=
+"../imgs/1d48a082e83b6fed22e59529593df145d8bdc48a.png">) on the
+section 7.1 of the textbook</p>
+<p><b>return</b> PARTITION<img src=
+"../imgs/1d48a082e83b6fed22e59529593df145d8bdc48a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>e.</p>
+<p>In above algorithm, at each level of recursion, the partition is
+done by RANDOMIZED-PARTITION which places a constant fraction of
+the elements on one side of the partition.</p>
+<p>The recursion tree has depth of <img src=
+"../imgs/99bb4c065999b8468b03bd1c74626f75bcb3f44f.png">and work
+done at each level is<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</p>
+<p>Therefore, total work<img src=
+"../imgs/d357fdc935ca44cb061442df95c17274a9430e87.png">.</p>
+<p>The recursion tree has depth of <img src=
+"../imgs/99bb4c065999b8468b03bd1c74626f75bcb3f44f.png">and parallel
+time at taken each level is <img src=
+"../imgs/c4c88c1d94bf31653943cf06d6b69dd620bdbfaa.png">.</p>
+<p>Therefore, total span<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png"> is given as
+shown below:</p>
+<p><img src=
+"../imgs/2af0440a573d3b865b131998edde73f2aeb90e3d.png"></p>
+<p>Parallelism is the ratio of work by span, that is, ratio of
+<img src=
+"../imgs/cd65a02da6abeafabe4c9aceb8ede8419250ab7c.png">by<img src=
+"../imgs/18c82b8705867bd05595a2c4cb9df2bb1b4546de.png">.</p>
+<p>Therefore, parallelism<img src=
+"../imgs/d855c0426f62157ad3ad15f8696c85c3d3a95552.png"></p>
+<p><img src=
+"../imgs/cb4b2478956f496f9111c69b436e025e64adfb2f.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

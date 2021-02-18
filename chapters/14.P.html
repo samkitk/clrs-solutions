@@ -1,0 +1,260 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 14.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a)</p>
+<p>Two intervals are said to overlap if their intersection is
+non-empty. Since the intervals are closed intervals, the
+intersection of two or more intervals contains one of the maximum
+values of two intervals. Consider that a point of maximum overlap
+in a set is a point that overlaps the largest number of intervals
+in the set.</p>
+<p>• Assume that there is no point of maximum overlap that is the
+endpoint of one of the segment.</p>
+<p>• Consider that the overlap point <i>p</i> is in the internal
+point of <i>n</i> segments. So the point <i>p</i> must be the
+common point in all the segments.</p>
+<p>• Now calculate the intersection of <i>n</i> segments, and then
+the points in the intersection are the common points of <i>n</i>
+segments. These points overlap all the <i>n</i> segments. Since,
+the intervals are closed one of these common points <img src=
+"../imgs/c834f8e344fa0a8137a428256aae86bcf68afeaf.png"> must be an
+end point of one of the <i>n</i> segments.</p>
+<p>• Consider only two segments, <img src=
+"../imgs/d599433a1b666cc9c26173caff823f97ec950d31.png"> and
+<img src="../imgs/d02b99253ea72c64ef9c552672f4f5177c7aaa05.png">
+such that <img src=
+"../imgs/1704b0e88ded8e0ef94839ac77ab260053bdf439.png"> and
+<img src=
+"../imgs/a17f445a15bbeb5ec04002a7e55398b07d681cfc.png"></p>
+<p>• Now, calculate intersection of two segments, then the
+intersection contains only one point <img src=
+"../imgs/20eddb3842c4456ac78174a596dffb199f0aeae2.png">, which is
+the <i><b>point of maximum overlap.</b></i></p>
+<p><b>Therefore there will be at least a point of maximum overlap
+that is an endpoint of one of the segments.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p>Consider an RB-tree (Red-Black) created by all the endpoints we
+tend to insert endpoints one by one as a sweep line scanning from
+left to right.</p>
+<p>With every left end <i>e</i>, associate a price <img src=
+"../imgs/c5f9d6022964701b4fb44fb241e028eef589ba5c.png"> (overlap
+increased by 1) and</p>
+<p>With every right end <i>e</i> associate a price <img src=
+"../imgs/289e01bb8ad570cf4aa0da3078c06ebcc7e4e03e.png">(overlap
+decreased by 1).</p>
+<p>Once multiple endpoints have an equivalent price, insert all the
+left endpoints there upon price before inserting any of the proper
+endpoints there upon price. For the perception consider that
+<img src="../imgs/5ce85847b2e7de6c8ecd37b6b491b6edf69e3127.png">
+are the linearly sorted end points.</p>
+<p>Consider <img src=
+"../imgs/e3cbf501e7531dd3ad6b49f473161ffecaff400d.png">denote the
+addition<img src=
+"../imgs/3bf2dfc0ca0d98a39779f8dfc751d81031c7e309.png">so
+for<img src=
+"../imgs/6a789a5b3f22b057d997b90c6910d53372dd7a49.png">to <img src=
+"../imgs/d82627e3850254d87a2dde5fb97d4e955fc8773b.png">we have to
+search such <i>i</i> for which <img src=
+"../imgs/0947649ed8daaaef1fd2c6e120c9de8804099f1d.png">is greatest.
+The nodes in the tree contains three variables with them we tend to
+store<img src=
+"../imgs/b37c525d59e6e05cd05894423dadf44cbf1dd9ea.png">, the
+addition of the values of all successive sibling nodes in
+<i>x</i>’<i>s</i> subtree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, jointly store<img src=
+"../imgs/f65599ea540e181e09a16c4cb9c66d221d00b87d.png">, the
+uppermost price calculated from<img src=
+"../imgs/6ad19f92ef219290cd3c91ca4f406e04a16a5c1f.png">for any
+<i>i</i> and we store <img src=
+"../imgs/7bff9cb49f72983c8084ac11576aa470582f52ce.png">because the
+price of <i>i</i> that <img src=
+"../imgs/f65599ea540e181e09a16c4cb9c66d221d00b87d.png">achieves its
+most.</p>
+<p>For the picket, we tend to outline<img src=
+"../imgs/0dd8bb06aa2f9b225e1c2c0a343fbad856ca9665.png">.</p>
+<p>We can cipher these attributes from bottom to top in a linear
+procedure therefore</p>
+<p><img src=
+"../imgs/babe3439b8689dc377cc39de11a334de5f13dd80.png">,</p>
+<p><img src=
+"../imgs/d3e49ec34667966c82446f7e1993120e735927f1.png"></p>
+<p>From the above formulae of<img src=
+"../imgs/f65599ea540e181e09a16c4cb9c66d221d00b87d.png">once we tend
+to perceive the way to cipher<img src=
+"../imgs/f65599ea540e181e09a16c4cb9c66d221d00b87d.png">, it is
+simple to cipher <img src=
+"../imgs/7bff9cb49f72983c8084ac11576aa470582f52ce.png">from the
+data in <i>x</i> and its children. Come back the interval whose end
+is portrayed by<img src=
+"../imgs/baee9d652850a404ba303290e88284280ccee7a7.png">.</p>
+<p>In the definition of new attributes for the tree every operation
+that is INTERVAL-INSERT and INTERVAL-DELETE runs in<img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">time. In the
+process of finding the maximum overlap point from the tree it just
+returns the value<img src=
+"../imgs/ec9bb364e86f2069288d49b7534151e404a47b6a.png">which is
+already stored with each node so FIND-POM operation takes only
+<img src="../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">
+time.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Josephus permutation:</b></p>
+<p>The circular list is the linked list in which the last contains
+the address of the first node.</p>
+<p>This list is used in the application to find something in a loop
+format again and again. Order statics tree is the form of tree
+which is created by adding some more values in the BST (Binary
+Search Tree). This is also called augmented tree structure and it
+supports some operations as choosing minimum element and rank of
+any node in the tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>Creating a circular list of the <i>n</i> numbers, in which every
+node has 2 fields, <i>v</i> which denotes the amount and
+<i>next</i> pointer. The values <img src=
+"../imgs/b92c1595b9dfc30fa0eab975d9c889dd6abc16df.png">are inserted
+to the list in the same order which takes<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">time. This
+is the circular list so the <img src=
+"../imgs/2eee6e58b43280613ee968f0c0f8ab2a3b9acb25.png">node
+contains the address of <img src=
+"../imgs/b4a8435e69f85c9075cdcf1c5a09012f30bdfdad.png">node.</p>
+<p>Now, starting the scan of list from first node and output each
+<img src="../imgs/e358bef7b23c99468167a1ce583aff9e78874847.png">
+component and delete it from list until the list is empty. This
+method takes <img src=
+"../imgs/bf96a0fc3117b181b4c6c3b3682ef95bfa582ae8.png">time per
+component, for a complete time of<img src=
+"../imgs/0ae1c1025322353db89ee35268ceffb8874d9df5.png">. Since
+<i>m</i> could be a constant, we have a tendency to get <img src=
+"../imgs/5b81ff9ff65ec7cd3840d2178e80240cc7ea67c6.png"> time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> Use an order-statistic tree <i>T</i>, and call
+the procedures NODE-INSERT,NODE-DELETE, NODE-RANK, and NODE-SELECT.
+The algorithm for <i>JOSEPHUS is as given below in which first we
+initialize a tree T and creating the nodes that contains the values
+from<img src=
+"../imgs/913e69d329645ea2a8055d096e4e7de1e4fb4cc7.png">in each
+successive node and then add these nodes into the tree.</i></p>
+<p><i>Now, scanning the tree from last node to first node and
+select the appropriate node x from the tree and print its
+value.</i></p>
+<p><i>JOSEPHUS (</i>n, m<i>)</i></p>
+<p><i>1. initialize</i> T <i>to be empty tree</i></p>
+<p><i>2.</i> <i><b>for</b></i> <img src=
+"../imgs/c778efad057e817fe08bc7e6ec4f58befdc914cb.png"></p>
+<p>// creates a new node x</p>
+<p><i>3. create a node x with</i> <img src=
+"../imgs/12466b705c3dea8091d268a23362e496d44d01ce.png"></p>
+<p><i>// inserts a node</i> x <i>in the tree</i> T</p>
+<p><i>4.</i> <img src=
+"../imgs/d3904ac5868e9f495cfad95e522e8621f616d2c3.png"></p>
+<p><i>5.</i> <img src=
+"../imgs/3d1c33e7f412abaf3e65210d85af9bcedc4f7707.png"></p>
+<p><i>6.</i> <i><b>fo</b></i> <i>r</i> <img src=
+"../imgs/4c74a645b95fbc8998a8e251349abbda5a795bee.png"></p>
+<p><i>7.</i> <img src=
+"../imgs/46da55fe70388c64451dc7103cc3adf1d99c777b.png"></p>
+<p><i>// stores the selected node p into the variable</i> x from
+the tree <i>T</i></p>
+<p><i>8.</i> <img src=
+"../imgs/07b3556ce8e23f35b147d0499b214c6d55d4ab61.png"></p>
+<p><i>9. print</i> <img src=
+"../imgs/ec9bb364e86f2069288d49b7534151e404a47b6a.png"></p>
+<p><i>// DELETES the node x from the tree</i> T</p>
+<p>10. NODE-DELETE(<i>T</i>,<i>x</i>)</p>
+</div>
+<hr>
+<div class="answer">
+<p>The above algorithm takes <img src=
+"../imgs/efedd0cac509600aafd15146bac41786f2ad08fa.png"> time to
+make up the order-statistic tree <i>T</i>, so we tend to create
+<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">calls (line
+number 2 of the above algorithm) to the order-statistic tree
+procedures, every of that takes (line number 6 of the above
+algorithm <img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">time.</p>
+<p>Thus, the whole time taken by the algorithm is<img src=
+"../imgs/efedd0cac509600aafd15146bac41786f2ad08fa.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

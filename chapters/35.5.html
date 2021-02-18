@@ -1,0 +1,370 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 35.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/7ba1d5a4ca4160e847a7203b3a5bc60db557ee31.png">
+<hr>
+<img src="../imgs/2d6b2e741b8d274d55ae57c19d06c2290a2dbecc.png">
+<hr>
+<img src="../imgs/a7395d89a6515b877a8de2942c7f9c9ead21da15.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8fa1a74039de5818649d0cca519ad19caed49d2e.png">
+<hr>
+<img src="../imgs/d4835c8ba0674b629ea2bfb8cc61cbfa278ffef0.png">
+<hr>
+<img src="../imgs/e994e2114c1a99e589f3a1acd91c441662c5e46b.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Observation from Calculus</b></p>
+<p><img src=
+"../imgs/1e7c47733733350668790ded7c0d1b095c235961.png"></p>
+<p>Suppose <i>n</i> as a continuous variable, take function:</p>
+<p><img src=
+"../imgs/0bd5c2f28a1e22c2c1726ec7d26605c7e62e0889.png"></p>
+<p>Differentiating with respect to <i>n</i>using the formula given
+below:</p>
+<p><img src=
+"../imgs/ddb56e83cff4d3690525be95350f94791ed030d3.png"></p>
+<p><img src=
+"../imgs/642b1ec5162992da88bfee8f8f56a92a0a8e4763.png"></p>
+<p><img src=
+"../imgs/34493e9ceb5b7f3eab860d9eb484215f49c235af.png"></p>
+<p><img src=
+"../imgs/45a5115c666eef6abf261685be91b4e3a1a868e8.png"></p>
+<p><img src=
+"../imgs/4b532c87064d3b71a997df0da95c138a619c6f84.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, expanding the function <img src=
+"../imgs/2b5295c91420e6384d3f1c42d8f1b0de2a4ea306.png"> by using
+formulae.</p>
+<p><img src=
+"../imgs/353959f25da4e80bf11982cac52c8d1e4140e063.png"></p>
+<p><img src=
+"../imgs/a55856e6738717442ddafcc04aa774ec21c8126f.png"></p>
+<p>Where, <img src=
+"../imgs/d16b9829b8cee619ed9a497e3b42f72f8da21882.png">which
+represents the higher order terms</p>
+<p><img src=
+"../imgs/c197d0a4cd5d093131461102fc6a1897c4e01747.png"></p>
+<p><img src=
+"../imgs/44db71f53d5c8a06d0c59d79d860366e0f7ddd36.png"></p>
+<p><img src=
+"../imgs/bedf78cfa02d442d62385b05ec39e0f5b7d9752c.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/1453c89d92852da3f54edd6238da0f28b1a2f08d.png"></p>
+<p>=differentiation and inequality showing together</p>
+<p>Hence, <img src=
+"../imgs/379e9b472fcd19a3bff631b0cc04740e01e993f4.png">monotonically
+increases in <i>n</i> and hence it is greater than 0.</p>
+<p>[The function which increases monotonically are greater than 0
+and the function which decreases monotonically are lesser than
+0].</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following modified algorithm of approximation
+scheme to find the smallest value not less than <i>t</i>.</p>
+<p>APPROX-SUBSET-SUM (<i>S</i>,<img src=
+"../imgs/405daf6caff03c52998e99e10d7ec63e5309bbda.png">)</p>
+<p>//copy the length of list into variable <i>n</i></p>
+<p>1. <i><img src=
+"../imgs/4419258cc12cfd41ca3da10c78a407313ec31b40.png"></i></p>
+<p>//initialize the list <img src=
+"../imgs/aeb1a83045bf7277f3fdfa7652781521ef5cd8ae.png"> by 0</p>
+<p>2. <img src=
+"../imgs/4709d268938eafef1d141d101e90e66f4f3061b7.png"></p>
+<p>//for loop is used to traverse each element of list</p>
+<p>3. <b>for</b> <i>i= 1</i> <b>to</b> <i>n</i></p>
+<p><b>//</b>MERGE- LIST function is used to sort the element of
+list</p>
+<p>4. <img src=
+"../imgs/1b27e28eb4b9058a5496ae0cb751a16f344ebb84.png"></p>
+<p>// TRIM function is used to remove element from list
+<i>L</i></p>
+<p>5. <img src=
+"../imgs/3b5987351bc51a744716a592c0e390b9760380fd.png"></p>
+<p>// for loop is used to check the value less than <i>t</i></p>
+<p>6. <b>for</b> <i>j=1</i> <b>to</b> <img src=
+"../imgs/4ba75bc236d1848256df8961852a1f93d1eb9bc4.png"></p>
+<p>//if statement is used for compression</p>
+<p>7. <b>if</b> <img src=
+"../imgs/9ce0fa345e3f05951eb905254eecc3195c5de923.png"></p>
+<p>//delete function is used for delete the element</p>
+<p>8. <img src=
+"../imgs/fa92356a578c98c6a85c3b84ce075e3cead8987e.png"></p>
+<p>//store the first element of list into variable <i>z</i></p>
+<p>9. <img src=
+"../imgs/d82a3b2db758bf4d2eef666a52657662643c5b1c.png"></p>
+<p>//for loop is used to traverse each element of list</p>
+<p>10. <b>for</b> <i>k=1</i> <b>to</b> <i>n</i></p>
+<p>//if statement is used to check largest element in list</p>
+<p>11. <b>if</b> <img src=
+"../imgs/c2edef77a6772de3817e8d820dd52238f73f73b1.png"></p>
+<p>12. z <b>=</b> <b><img src=
+"../imgs/0342360cf9b73d4e809bf86450a4184f40eefa72.png"></b></p>
+<p>//finally returns the largest element of list</p>
+<p>13. <b>return</b> <i>z</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Analysis of Algorithm:</b></p>
+<p>• In the first line of above algorithm copy the length of list
+into a variable <i>n</i>.</p>
+<p>• In line 2<sup>nd</sup>, initialize the variable <img src=
+"../imgs/aeb1a83045bf7277f3fdfa7652781521ef5cd8ae.png"> by 0.</p>
+<p>• ‘<b>for</b>’ loop in line 3-6 is used to compute the shortest
+list that contains a suitable trim value and remove element less
+than <i>t</i>.</p>
+<p>• ‘<b>if</b>’ statement in line 7-8 is used to compare the
+element from <i>t</i>.</p>
+<p>• In line 9 of the above algorithms initialize the variable z to
+store the first element of the list.</p>
+<p>• ‘<b>for</b>’ loop in line 10-12 is used to display the maximum
+number from list.</p>
+<p>• Finally in line 13 return the maximum value.</p>
+<p>• In the above algorithm nested ‘<b>for</b>’ loop is use. Both
+the ‘<b>for</b>’ loop iterate maximum <i>n</i> time therefore the
+time complexity of above algorithm will be<img src=
+"../imgs/1a4ffc930792fa3689e70723691aade1f9480b83.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Modifying the APPROX-SUBSET-SUM procedure:</b> Consider the
+algorithm APPROX-SUBSET-SUM algorithm in the section 35.5 of the
+textbook. Now, modifying the approximation scheme to find a value
+greater than <i>t</i> that is the sum of subset <i>S’</i> of a list
+<i>S</i> by running the approximation algorithm. Then summing up
+the elements of the complement list <i>S</i>–<i>S’</i> to find the
+final result.</p>
+<p><b>APPROX-SUBSET-SUM (S, t, €)</b></p>
+<p>// store the number of integers in set <i>S</i></p>
+<p>1. <img src=
+"../imgs/4419258cc12cfd41ca3da10c78a407313ec31b40.png"></p>
+<p>// initializing the list with one element</p>
+<p>2. <img src=
+"../imgs/4709d268938eafef1d141d101e90e66f4f3061b7.png"></p>
+<p>// execute the loop for all value of set</p>
+<p>3. <b>for</b> <i>i</i> = 1 <b>to</b><i>n</i></p>
+<p>// call the method MERGE-LISTS</p>
+<p>4. <i>L</i><sub>i</sub> = MERGE-LISTS
+(<i>L</i><sub>i</sub><sub>-1</sub>,
+<i>L</i><sub>i</sub><sub>-1</sub>, <i>x</i><sub>i</sub>)</p>
+<p>// trim the list by calling the procedure TRIM</p>
+<p>5. <i>L</i><sub>i</sub>= TRIM (<i>L</i><sub>i</sub>, € /
+2<i>n</i>)</p>
+<p>// removing the elements larger that target <i>t</i> from the
+list</p>
+<p>6. <b>remove</b> from <i>L</i><sub>i</sub> every element that is
+greater than <i>t</i></p>
+<p>// take the largest element from the list</p>
+<p>7. let <i>z</i><sup>*</sup> be the largest value in
+<i>L</i><sub>n</sub></p>
+<p>// return the largest element from the list</p>
+<p>8. <b>return</b> <i>z</i><sup>*</sup></p>
+<p>9. to find a value greater than <i>t</i> that is the sum of
+subset <i>S’</i> of a list <i>S</i> run the below</p>
+<p>algorithm for each list or subset of <i>S</i>.</p>
+<p>APPROX-SUBSET-SUM (<i>S’</i>, <i>t</i>, <i>€</i>)</p>
+<p>10. <b>return</b> sum the elements of the complement list
+<i>S</i>–<i>S’</i></p>
+<p>In the above algorithm first of all the number of set elements
+are counted and then stored in a temporary variable <i>n.</i> After
+that a list is initialized with a value zero then for each element
+of the set the algorithms MERGE-LIST and TRIM are called.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the MERGE-LIST algorithm the list is merged with the elements
+that are resulted from adding the next element of the set with the
+elements of current list. After the merging of the lists the
+trimming of the list is performed in which the elements larger that
+the target value <i>t</i> are removed from the list. For the TRIM
+algorithm refer the section 35.5 from the textbook.</p>
+<p>From the final list <img src=
+"../imgs/257e59b2b013035a7b4418d1b88cb90a4de07930.png">of element
+the largest value in<img src=
+"../imgs/257e59b2b013035a7b4418d1b88cb90a4de07930.png"> is
+<img src="../imgs/e649fe9c0db77a973de15458659d46aea388738f.png">
+that is the value which is larger than anyother element of the set
+is selected which is returned in step 8. Now, for returning the sum
+of largest element of each subsets of <i>S,</i> call the same
+procedure for each subset list and return the sum of all the
+largest elements.</p>
+<p>Hence, the above algorithm will also return the subset of
+<i>S</i> that sums to the value<img src=
+"../imgs/e649fe9c0db77a973de15458659d46aea388738f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Illustration of algorithm:</b></p>
+<p>Consider the example, <img src=
+"../imgs/7a65e5bea5c47601c42e28f7f880317229381b5c.png">and
+<img src="../imgs/93175dca266eea0bf8e26d1ecb13224332ae67b7.png">and<img src="../imgs/64efe4528390b1cafe96c055505e28284aeef6e5.png">the
+trimming parameter for the algorithm is<img src=
+"../imgs/8be2f1a13bfb360394b292412ffa1c92df46ca57.png">.The
+execution of approx. Subset algorithm is as for each subset. First
+of all <i>listL</i> is initialized in step 2 as:</p>
+<p><img src=
+"../imgs/642db5170fdb199c98af3b004b3fba66e7426bf1.png"></p>
+<p>Then in step 4 of the new element 103 is merged to the list:</p>
+<p><img src=
+"../imgs/dbb6ca2276d8622230589ca6c9b21cc373381d84.png"></p>
+<p>In the step 5 of the algorithm the element are trimmed according
+to trim method.</p>
+<p><img src=
+"../imgs/25a69ce196b93a30fdd537ec80491a836190967b.png"></p>
+<p>In the step 6 of the algorithm the elements that are larger than
+the target <i>t</i> are removed from the list as:</p>
+<p><img src=
+"../imgs/1e091a875e629bbf8ff063e66a2a6be093c4daeb.png"></p>
+<p>Now, this process is repeated for all the other elements of the
+set <i>S</i> which is as shown:</p>
+<p><img src=
+"../imgs/0a179feaf93a5b70b7a32f76109e1eb76b35198f.png"></p>
+<p><img src=
+"../imgs/0c8f0274318b7ff1be695538b2ae53c14c9a2a2e.png"></p>
+<p><img src=
+"../imgs/d12245ba872ae3146d005635ea1d1853aedcd5e4.png"></p>
+<p>Now, the largest element from the list<img src=
+"../imgs/48d7fe3c3fdd01c3a9b69d6bfa44945fab44b895.png">is returned
+that is<img src=
+"../imgs/108993ce432889c43067ff38fd69132f8d36cc1f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, the above algorithm gives the sum of all <img src=
+"../imgs/95d800efa5f1a8c0590e64b615eaccfb3ead0e19.png"> values and
+also uses the concept of polynomial time of subset sum algorithm
+concept (line 10). After checking the line 10 condition in above
+algorithm, sum operation is performed which gives the final output
+required.</p>
+<p><img src=
+"../imgs/c5960d23b5c3bc9c66626e30f6814d6afc2ffff4.png"></p>
+<p><img src=
+"../imgs/2887cf9d71c4de8eecded7911ef1fb6c0b1074d4.png"></p>
+<p>Now, sum of<img src=
+"../imgs/95d800efa5f1a8c0590e64b615eaccfb3ead0e19.png">.</p>
+<p><img src=
+"../imgs/3a7554f2e8c94c5ddce762719995069044965d35.png"></p>
+<p>Hence, the modified algorithm of approx. subset sum problem
+returns the subset of S that forms the sum to the value<img src=
+"../imgs/e649fe9c0db77a973de15458659d46aea388738f.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

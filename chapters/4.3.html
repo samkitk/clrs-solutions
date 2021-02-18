@@ -1,0 +1,796 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 4.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Solving Recurrences</b></p>
+<p>The specified recurrence is below:</p>
+<p><img src=
+"../imgs/e4a7ff1341fc7efe152b4b50ff910669bf896e38.png"></p>
+<p><b>Guess</b> the solution as <img src=
+"../imgs/55d7ada8b1d6f2d7320c79782808185435962d60.png">.</p>
+<p>Use the substitution method to prove that the guess is
+correct.</p>
+<p>So, have to prove that <img src=
+"../imgs/0607b22e1e5b517e81b40b0abd6ea2dabd4de350.png"> for a
+constant <i>c</i>, where<img src=
+"../imgs/2b620b4434a81c0669fca3efe9f77ccb85c8ac83.png">.</p>
+<p>From the guess,</p>
+<p><img src=
+"../imgs/65439e22318c1c2785a971cc04da2e598fac598c.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Using the Substitution Method:</b></p>
+<p>Substitute the guess in the recurrence, then</p>
+<p><img src=
+"../imgs/b10dfdee0c25dc1c7251163f9ad85cccb9ba9174.png"></p>
+<p><img src=
+"../imgs/fef835144decec8244a893e36fe298f5b25414bb.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Finding Boundary Conditions using Mathematical
+Induction:</b></p>
+<p>Assume that <img src=
+"../imgs/074e24fc5d5ca994e21835f8d1beac75de2f1260.png"></p>
+<p>For <i>n</i> = 1,</p>
+<p>From the specified recurrence,</p>
+<p><img src=
+"../imgs/436129916774ffd84ba92d44dd21723e15724fec.png"></p>
+<p>And from the inequality,</p>
+<p><img src=
+"../imgs/b83914adc69671459efeb7898861340b7bea799d.png"></p>
+<p>Therefore, <img src=
+"../imgs/c16b978d72a338ad8a4d394f3eadfa265999f56d.png"> for
+<img src=
+"../imgs/7280a3db9215717d179bebd77f47a0a1790af65c.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For <i>n</i> = 2,</p>
+<p>From the specified recurrence,</p>
+<p><img src=
+"../imgs/fdc2af636f44557a5cceb06f3ef1ff32582c78ef.png"></p>
+<p>And from the inequality,</p>
+<p><img src=
+"../imgs/9779d3a218675fba1c39b5f68b007f1d2cb90551.png"></p>
+<p>Therefore, <img src=
+"../imgs/b69858e3743b2ad5f99ddc78b4d1beabc87139d4.png"> for
+<img src=
+"../imgs/7280a3db9215717d179bebd77f47a0a1790af65c.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For <i>n</i> = 3,</p>
+<p>From the specified recurrence,</p>
+<p><img src=
+"../imgs/fa60703ab148b93515bb7f617a0b1e6df481214c.png"></p>
+<p>And from the inequality,</p>
+<p><img src=
+"../imgs/a6d75d8f20e21f0898e80187520b5c7bc7d316f8.png"></p>
+<p>Therefore, <img src=
+"../imgs/c97a7701703ca5db7b61fb7468d01da7e2e5b972.png"> for
+<img src=
+"../imgs/7280a3db9215717d179bebd77f47a0a1790af65c.png"></p>
+<p>Therefore, <img src=
+"../imgs/3c86958c8d2752cc7a6360416423624c008cb48b.png">, <img src=
+"../imgs/db84b1693f771d763f24285dfa14642047df3b68.png"> and
+<img src="../imgs/62915f9c97a1fd731d9ef06ab9dff6a6132fc639.png"> by
+choosing the value of <i>c</i> as <img src=
+"../imgs/89b5b53193fa508c6c9b459ec5d91624991988ad.png">.</p>
+<p>Since, the recurrence is true for base case <img src=
+"../imgs/ad4bc5f2343e1408f96a79558c18c835df19c371.png">, <img src=
+"../imgs/e8966d9f7965f57a2d96c160f09e537bea68b3ca.png">, and
+<img src="../imgs/ca785c0f9d128eb197766d59efc81d957b95de03.png">;
+by the mathematical induction the given recurrence is true for all
+values of <img src=
+"../imgs/a26941b7a07ae11ffc9ebf6306bcf3288fbf2c2a.png">.</p>
+<p>Thus, <img src=
+"../imgs/55d7ada8b1d6f2d7320c79782808185435962d60.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The following steps are used for solving recurrences:</b></p>
+<p>The specified recurrence is as shown below:</p>
+<p>• <img src=
+"../imgs/cb2e1a987dcfab6f179ef02b5e260bd43a6ee58e.png"></p>
+<p>Guess the solution as, <img src=
+"../imgs/1804c08d391ab1fb6c42ddc21f69c305438a248b.png"></p>
+<p>Use Substitution method to prove that the guess is correct.</p>
+<p>Prove that <img src=
+"../imgs/7064e2c598627b50198472fa7651600c1b50ac82.png"> for a
+constant <i>c</i>.</p>
+<p>Here, <img src=
+"../imgs/b156f035aab8b1705b6cf0b08447cecfaba178de.png"></p>
+<p>From the guess, the following is ascertained:</p>
+<p>• <img src=
+"../imgs/8a72f109b9991f29fbc8edaf60c7244611437786.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following steps are used to substitute the guess in the
+recurrence as shown below:</b></p>
+<p><img src=
+"../imgs/ecebdae9748f9ae4cffbe638ea30360b81f08337.png"></p>
+<p>This inequality is not conclusive, still <img src=
+"../imgs/7064e2c598627b50198472fa7651600c1b50ac82.png"> for a
+positive value of <i>c</i>.</p>
+<p>Prove that<img src=
+"../imgs/dc7ba9bf8af7c39ec494cf24435ec6b466970e6d.png">.</p>
+<p>Here, <i>d</i> is a constant.</p>
+<p><img src=
+"../imgs/a46ca687654ed83394d97aa0dd7fc65a24342cdf.png"></p>
+<p><img src=
+"../imgs/d46f8646cb3b4dc6123c3f61627618f70306dcb6.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following steps are used to find the boundary conditions
+using Mathematical Induction:</b></p>
+<p>The inequality, <img src=
+"../imgs/dc7ba9bf8af7c39ec494cf24435ec6b466970e6d.png"> does not
+work for <i>n</i> = 1 and <i>n</i> = 2 because <img src=
+"../imgs/60383ff9addd9582ab9b1487cad803de0094055a.png"> cannot be
+defined for<img src=
+"../imgs/fac42d61171abb39bc5600e3218966099fdf69c2.png">, since
+<img src="../imgs/fd9b4bc53c74b6b3882d2ba672fb8b8fa9ea74c3.png">
+and <img src=
+"../imgs/dcd771d67045730a9ac3b964c3e88c3599df0798.png"></p>
+<p>Assume, <img src=
+"../imgs/0ca8b2c3b7091dd328674735ab6c58088a431629.png"> and
+<img src=
+"../imgs/eb5b06d15960bddf2fb39946a053893851c4e845.png"></p>
+<p>Calculate, for <i>n</i> = 4 as shown below:</p>
+<p>From the specified recurrence, <img src=
+"../imgs/bb427cb34556f5d608851491ae121064aff05f44.png"></p>
+<p><img src=
+"../imgs/7eab7dbd5b521b2bf94edd6260eb130810346da1.png"></p>
+<p>From the inequality, the following can be ascertained:</p>
+<p><img src=
+"../imgs/19761e5d05016d32f7b595eb4c4e8a77f4c58b5c.png"></p>
+<p>Therefore, <img src=
+"../imgs/8f4925ee5b987a89ad104e6e01a35870a50303cf.png"> for
+<img src=
+"../imgs/dcd771d67045730a9ac3b964c3e88c3599df0798.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following steps are used to calculate for</b>
+<i><b>n</b></i> <b>= 5 as shown below:</b></p>
+<p>From the specified recurrence, <img src=
+"../imgs/bb427cb34556f5d608851491ae121064aff05f44.png"></p>
+<p><img src=
+"../imgs/359372686d16d720e0a6ed77df558ba166439e44.png"></p>
+<p>From the inequality, the following can be ascertained:</p>
+<p><img src=
+"../imgs/460d9998bc6c88562cd3d56bfcc1a8b9e69e3acb.png"></p>
+<p>Therefore, <img src=
+"../imgs/9d21433e020fadcaee515b20925479561ec5e178.png"> for
+<img src=
+"../imgs/dcd771d67045730a9ac3b964c3e88c3599df0798.png"></p>
+<p>Calculate, for <i>n</i> = 6 as shown below:</p>
+<p>From the specified recurrence, <img src=
+"../imgs/bb427cb34556f5d608851491ae121064aff05f44.png"></p>
+<p><img src=
+"../imgs/e89c3e50511cca1029031eaea1261f1a723e425e.png"></p>
+<p>From the inequality, the following can be ascertained:</p>
+<p><img src=
+"../imgs/3dd5df6cf7f870c3db61695ee24bbe7b9002466c.png"></p>
+<p>Therefore, <img src=
+"../imgs/83bb61bbc67111b48c75be3f930706ba7c106c0b.png"> for
+<img src=
+"../imgs/ef22e1f95b1cd355d048bfd92a54d11d44854800.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following steps are used to calculate for</b>
+<i><b>n</b></i> <b>= 7 as shown below:</b></p>
+<p>From the specified recurrence, <img src=
+"../imgs/bb427cb34556f5d608851491ae121064aff05f44.png"></p>
+<p><img src=
+"../imgs/ea1aa708804e2689d1df722b22feca024573b0aa.png"></p>
+<p>From the inequality, the following can be ascertained:</p>
+<p><img src=
+"../imgs/3fb647519026823fe87c66b947545bb5dcad0fd3.png"></p>
+<p>Therefore, <img src=
+"../imgs/1eec6541207a21ca8cee4d8b664e1ee4868433a5.png"> for
+<img src=
+"../imgs/c4012f88ff8a6c38d044a101ad4b256589cf87c9.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The following steps are used to calculate for</b>
+<i><b>n</b></i> <b>= 8 as shown below:</b></p>
+<p>From the specified recurrence, <img src=
+"../imgs/bb427cb34556f5d608851491ae121064aff05f44.png"></p>
+<p><img src=
+"../imgs/4394d04e1b0c7303bbc1263c149ebff792bfa04e.png"></p>
+<p>From the inequality, the following can be ascertained:</p>
+<p><img src=
+"../imgs/c6ecce5fa63b6229aee6356139511ab4218f0670.png"></p>
+<p>Therefore, <img src=
+"../imgs/07e198ed2c4b6c2b333aea65e09c019bb127b40c.png"> for
+<img src=
+"../imgs/ef22e1f95b1cd355d048bfd92a54d11d44854800.png"></p>
+<p>Therefore, the recurrence is true by the mathematical induction
+for the inequality <img src=
+"../imgs/f5c409526f7866049a8a1ca75a6c987035c1f281.png"> for all
+values of <img src=
+"../imgs/2b594056dd82b145900a63b0559c4b0a476c796b.png"><img src=
+"../imgs/fd9b4bc53c74b6b3882d2ba672fb8b8fa9ea74c3.png"> and
+<img src=
+"../imgs/ef22e1f95b1cd355d048bfd92a54d11d44854800.png"></p>
+<p>So, the recurrence is true by the mathematical induction for the
+inequality <img src=
+"../imgs/7064e2c598627b50198472fa7651600c1b50ac82.png"> for all
+values of <img src=
+"../imgs/66bc85fee92f181c097aa6878bcbc970aa2f247c.png"> and
+<img src=
+"../imgs/ef22e1f95b1cd355d048bfd92a54d11d44854800.png"></p>
+<p>Thus, <img src=
+"../imgs/207f0e3f1b27d0fcb2546ac5f325c0607dd5930a.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Substitution method for solving recurrences</b></p>
+<p>• It is already proved in the text book that the solution of
+<img src="../imgs/1d7703ce816ead2a825af76ac9d219963b2e9d09.png"> is
+<img src="../imgs/4684e724490a0f4fb9a4eb849fa01152974c8d67.png">.
+Also , it is known that Big-O gives the asymptotic upper bound.</p>
+<p>• Now, it is to be proved that the solution of <img src=
+"../imgs/1d7703ce816ead2a825af76ac9d219963b2e9d09.png">is also
+<img src="../imgs/552baeb6a3aa52a6f0b889a996ae645d6f5b2063.png">.
+<img src="../imgs/ba1df99b7942f8467f1710f3fe7dcdc2a760eb73.png">
+provides the asymptotic lower bound.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proving</b> <b><img src=
+"../imgs/6c04fa77609074eb9c4dc7abaf4fffbd8b8be19d.png"></b>
+<b>using Substitution method:</b></p>
+<p>• To prove<img src=
+"../imgs/6c04fa77609074eb9c4dc7abaf4fffbd8b8be19d.png">, make a
+guess<img src=
+"../imgs/87b40e74e5a20208438aecf75f06a2fff8b0f35b.png">. Where d is
+a positive constant.</p>
+<p>• Now, substitute the <img src=
+"../imgs/cc7c89fd20219289c0595d9500ac1f741d635a8d.png"> in the
+given recursion relation.</p>
+<p><img src=
+"../imgs/70292578d8d6ace6ce4b9fbf5d9c33f64d2f330b.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Finding constants using mathematical induction:</b></p>
+<p>• For base case, prove</p>
+<p><img src=
+"../imgs/2e49758829d2591f91c07835d455c2e6cb5be63f.png"></p>
+<p>• Assume<img src=
+"../imgs/61feab6e4fbb44866226ef1b6cbf6f1b4849c9d5.png">.</p>
+<p><img src=
+"../imgs/c58bb087616ba7db4cbd3ce00e7f9a6f3ed235a0.png"></p>
+<p>• <img src=
+"../imgs/90629551d0d5eea4e0de1aa2dcf28451e52c4561.png">are true for
+<img src=
+"../imgs/1949ae8fe7b3ab79fba85eac0577f1a42922f4a3.png"></p>
+<p>• Since<img src=
+"../imgs/064290c810668b966e645e58b7338fd1eb93dfb7.png"><b>, by the
+definition of</b> <img src=
+"../imgs/ba1df99b7942f8467f1710f3fe7dcdc2a760eb73.png">, <img src=
+"../imgs/6c04fa77609074eb9c4dc7abaf4fffbd8b8be19d.png"></p>
+<p><b>Therefore, the solution of the recurrence relation</b>
+<b><img src=
+"../imgs/1d7703ce816ead2a825af76ac9d219963b2e9d09.png"></b>
+<b>is</b> <b><img src=
+"../imgs/552baeb6a3aa52a6f0b889a996ae645d6f5b2063.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proving that also</b> <b><img src=
+"../imgs/92ea6cb4185a5dd26d9fcf68604409e43aed806a.png"></b>
+<b>:</b></p>
+<p>• According to the definition of big-<img src=
+"../imgs/9ef64217384e6a886c937c748723b6f4a4e3b92e.png">,<img src=
+"../imgs/ba13cc88e7fa0f6e5bccda50886420a461f949c5.png">, if and
+only if <img src=
+"../imgs/cffd8d826c13cc7d2d35e2f515074a5cb7ae4c0c.png"> and
+<img src="../imgs/94378160eabf9d7a1b85886437255f82a92c7ca3.png">
+for some positive constants <img src=
+"../imgs/f80543bcb0169df4113f1630eeed76795c03b345.png">.</p>
+<p>• Since it is already proved that <img src=
+"../imgs/fbb88ef4b96b2f753e4fe79a423a7b376b28210f.png"> and
+<img src="../imgs/e74978d92ba148f5ea24d0eac7918d3721f1989b.png">
+for<img src=
+"../imgs/b966d9ce1961338c62ab3308c43ef705f652b4e7.png">, <img src=
+"../imgs/7f4117f6b8fa09c15bfd4897c160225470becf6b.png">
+and<img src="../imgs/613f3e2db56f9cefd9ec216b8e1c9aca3eafab9d.png">,
+<b><img src=
+"../imgs/92ea6cb4185a5dd26d9fcf68604409e43aed806a.png"></b><b>.</b></p>
+<p><b>Therefore, it can be concluded that the solution of the
+recurrence relation</b> <b><img src=
+"../imgs/1d7703ce816ead2a825af76ac9d219963b2e9d09.png"></b>
+<b>is</b> <b><img src=
+"../imgs/f95e55d3fa6bd53f484ff1c50368488033c5aba4.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following inductive hypothesis, which is used to
+overcome the problem with the boundary condition <img src=
+"../imgs/61feab6e4fbb44866226ef1b6cbf6f1b4849c9d5.png">for the
+given recurrence<img src=
+"../imgs/1d7703ce816ead2a825af76ac9d219963b2e9d09.png">, without
+adjusting the boundary condition.</p>
+<p>Now, suppose that<img src=
+"../imgs/c29a64aa5d3ae26e0060c66b600c529eb3ceb071.png">. Then, to
+overcome the above problem, user has to prove that<img src=
+"../imgs/002805d1c89b2a3145d83ef44db80bb01daff1ce.png">.</p>
+<p>Hence, <img src=
+"../imgs/65811cc3245a826be791b824fa01d6b97a530584.png"></p>
+<p>Where, <img src=
+"../imgs/bc93ca08d7034245b1e9766df144173b7e346ad3.png">denotes the
+floor value.</p>
+<p>Now, simplify the above expression as shown below:</p>
+<p><img src=
+"../imgs/6a0f465fc29d183d752a8c156e5db917c0f36593.png"></p>
+<p><img src=
+"../imgs/50fe296eaa2bfb4d862d4a832c6ee768db7b724f.png"></p>
+<p><img src=
+"../imgs/bcabb639b2dad2efbba0b2a306cf0f3f3ff48067.png"></p>
+<p>Now, the boundary condition is <img src=
+"../imgs/4cce71e92c09ecb4e4cc56a7d5bfa8dc8893529a.png"></p>
+<p>Therefore, from the above calculation, user can select any value
+<img src="../imgs/04bf0da1818ebb80d18fa73cc15b40948511d2d2.png">
+such that the inductive and base steps are true.</p>
+<p>Hence, it can be concluded that,<img src=
+"../imgs/5715302e5c31e70b4b1718f9d760af24efecf22a.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Recurrence Relation of Merge Sort</b></p>
+<p>Consider the following recurrence relation of merge sort:</p>
+<p><img src=
+"../imgs/bd338f56774934f57d180dc79b024e767bd0d685.png"></p>
+<p><img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png">Now, prove
+that <img src=
+"../imgs/5afbaa47467a9e6e04a0138f94384acec75461e2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>For a given function g(n),</p>
+<p><img src=
+"../imgs/b9dc3b1230f57f9e1aad2883cf6ec7bea7f4d560.png">, where
+there exist constants c1, c2 and <img src=
+"../imgs/f7708c3a7da3df88a48e5e933e8c6dfde70d0601.png"> such
+that:</p>
+<p><img src="../imgs/c6869a0d88ed99a7671ba492cad3e9d10da95265.png">
+for all <img src=
+"../imgs/4dc40d0e1e4298f4bbbd74999150ce43f3088e1f.png"></p>
+<p>It means that <i>g(n)</i> is an asymptotically tight bound for
+<i>f(n)</i> if it can be proved that :</p>
+<p><img src="../imgs/f2b993b087e8a2c51ce9f7a1cc66cbf23509f296.png">
+and <img src=
+"../imgs/aee5f93b786e9cad5990a6a90192a7044ece8727.png">.</p>
+<p>So, the complexity of the merge sort can be proved to be
+<img src="../imgs/e7010fba336d6c37ec0c69b0c6ee56fe7087404a.png"> if
+:</p>
+<p><img src=
+"../imgs/630fdb05b03bdf44d02f25956d645ac3345d794e.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Let <img src=
+"../imgs/a78a3dc5b82a82875e5797ca66b8dd34ca3ca17a.png"> and
+<img src="../imgs/b758249b30814045cb4164e3368c958e3ff8d4a3.png">,
+by inductive hypothesis assume true for <img src=
+"../imgs/84031f2b0fa9205e6216ccd085e36ec9efd65c04.png"></p>
+<p><img src=
+"../imgs/98e5ce0606929e8cae3af43a3cc1a7e4dfcb6a04.png"></p>
+<p>Hence,<img src=
+"../imgs/1143b3ca14731ce19293c81e6ba91c061d33cd09.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><img src=
+"../imgs/14d2f1717d7a8055f4a21ed325d825740863f777.png">, by
+inductive hypothesis assume true for <img src=
+"../imgs/a79b2830145a7866b6cf9942b41ca26418ee9efd.png"></p>
+<p><img src=
+"../imgs/c93ac2921053a392aa9a310de48f589535042a8b.png"></p>
+<p>Hence,<img src=
+"../imgs/0d1fe71c2001bffc74471d7c1ad38e0f4075a39f.png">and</p>
+<p><img src=
+"../imgs/1143b3ca14731ce19293c81e6ba91c061d33cd09.png"></p>
+<p><img src=
+"../imgs/a471cbd7102300ac9ae65539013494da2253229e.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Solving recurrence relation using substitution
+method:</b></p>
+<p>In the substitution method a solution is gussed every time and
+checked whether it is working or not.</p>
+<p>Consider the following given recurrence relation:</p>
+<p><img src=
+"../imgs/5bfd64ad2ed44b244fae7df26d0f723bc003586f.png"></p>
+<p>Now, solve the recurrence relation using substitution method, by
+making a guess that <img src=
+"../imgs/1fd42ecc2f97c5b5954a91e893f589f8b445647b.png"></p>
+<p>Since substitution method is employing, it is required to prove
+that</p>
+<p><img src=
+"../imgs/2ba05a06f657d5684683d7a6e841d1fd92d5cd16.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Thus, also<img src=
+"../imgs/dfdb51a801d554251ebe266176405ad9ecbfbe74.png"></p>
+<p>Substitute (3) in (1).</p>
+<p><img src=
+"../imgs/58610e4274dc7ee067598c9a5649dfc15d904007.png"></p>
+<p>Therefore,<img src=
+"../imgs/deb7e11bdf72df68447c9dd265ff63594fd28453.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Master method:</b></p>
+<p>Consider the following recurrence relation:</p>
+<p><img src=
+"../imgs/90e84348f8d03d6f7e102efbc6073d700bbfa649.png"></p>
+<p>Consider the master theorem for the recurrence equation:</p>
+<p><img src=
+"../imgs/c8cc4004ba063e0d3e53af4aa2d94868bc35b25e.png"></p>
+<p>By comparing equation (1) and (2), the value a=4, b=3,
+c=1,<img src=
+"../imgs/ead4bd2df10f4dd8129dd0c07cef35fa610c9894.png">.</p>
+<p>Using the master method, simply apply case 1 of the master
+theorem.</p>
+<p>If <img src=
+"../imgs/bd4d9b0079f4e0b56a39d71e976db24b86d34b06.png"> for some
+constant <img src=
+"../imgs/c02405322cfd0f7b8620a3e2d106f2a8e55d1661.png"> then
+<img src=
+"../imgs/c967279acbcba35bfd6cf2676a7f3131dff394fe.png"></p>
+<p><img src=
+"../imgs/9fea3fa92ff81ac106034d2e8fc4eb0e647e8a73.png"></p>
+<p>Therefore,<img src=
+"../imgs/e8e7c628fa95bb413f666fa031673a606241f064.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Substitution Method:</b></p>
+<p>Consider the following recurrence relation:</p>
+<p><img src=
+"../imgs/fdb552c10eab689fce66710d7c90a71dcb1cac0b.png"></p>
+<p>Assume the initial guess as<img src=
+"../imgs/c6c52cfe57ad0083db3783270a0eb979fdc1d4b3.png">.</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/1a8e8504274b61f19f411eba52a5ce53d5df662d.png"></p>
+<p>Substitute equation (3) in the equation (1)</p>
+<p><img src=
+"../imgs/f4d1a42769de942dad826ef1b57bc3194d8634ef.png"></p>
+<p>As<img src=
+"../imgs/ae654a98f55e9deb339b57ee0bc973ed0259bd97.png"><img src=
+"../imgs/cf181005864f3251f08f38425b6bdc9ee857c105.png">, the guess
+<img src=
+"../imgs/c6c52cfe57ad0083db3783270a0eb979fdc1d4b3.png">fails.</p>
+<p>Now again guess <img src=
+"../imgs/b02b57e44db632aa13491f027a82741e241b31cf.png"></p>
+<p><img src=
+"../imgs/fe99f8c0f6ee0eb258903a573e988d6dd9f862ad.png"></p>
+<p>Substitute equation (4) in the equation (1).</p>
+<p><img src=
+"../imgs/b38320ccf81f835ae89bffa9b66f940140b953ef.png"></p>
+<p>As <img src=
+"../imgs/9b3d3daec8eb241cfe4e80ecd46306078bf3a861.png">, the
+guess<img src=
+"../imgs/b02b57e44db632aa13491f027a82741e241b31cf.png">is true.</p>
+<p>Therefore,<img src=
+"../imgs/1da4bace2bc9a682f42ba520b2b7e1c4e6be9f37.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Using Master method:</b></p>
+<p><b>Proof for the solution to the recurrence</b> <b><img src=
+"../imgs/cbe0c9cb82a3cdefd1a1fbfb345cf3ba120ba42c.png"></b>
+<b>is</b> <b><img src=
+"../imgs/2ff618f96c1714e2c7b039ead0169c9c5375739a.png"></b>
+<b>shown below</b>:</p>
+<p>Consider the following recurrence relation: <img src=
+"../imgs/6c6932265031242f3b05620fafe07abe2f458ff8.png"></p>
+<p>Consider the master theorem for the following recurrence
+equation:</p>
+<p><img src=
+"../imgs/c5f87d3158c17ee72250cfc401dac2206ac423e6.png"></p>
+<p>By comparing equations (1) and (2), the value a=4, b=2, c=2,
+and<img src=
+"../imgs/351deae6d27b71c90321e9a029dd1ebf7f26adee.png">.</p>
+<p>Using the master method, apply case 1 of the master theorem.</p>
+<p><b>The case 1 of the master theorem is shown below:</b></p>
+<p>If <img src=
+"../imgs/bd4d9b0079f4e0b56a39d71e976db24b86d34b06.png"> for some
+constant, <img src=
+"../imgs/c02405322cfd0f7b8620a3e2d106f2a8e55d1661.png"> then
+<img src=
+"../imgs/c967279acbcba35bfd6cf2676a7f3131dff394fe.png"></p>
+<p><img src=
+"../imgs/bdb07f6ccb3771bb75d623f578ab9f8c2eabd501.png"></p>
+<p><b>Therefore, by using the master method the solution for the
+given recurrence relation is</b> <img src=
+"../imgs/b7470a670e5acd0b6f5be225bb830a2f9082de0e.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Using Substitution Method:</b></p>
+<p><b>Proof that the assumption</b> <b><img src=
+"../imgs/03ccfdc7f3bcf804f77e6f7ffcb4e8677f47129a.png"></b>
+<b>fails using substitution method is shown below:</b></p>
+<p>Consider the following recurrence relation:</p>
+<p><img src=
+"../imgs/cbe0c9cb82a3cdefd1a1fbfb345cf3ba120ba42c.png"></p>
+<p>Solve the recurrence relation by using substitution method.</p>
+<p>Assume the initial guess as<img src=
+"../imgs/03ccfdc7f3bcf804f77e6f7ffcb4e8677f47129a.png">.</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/4f42c76000b05fd51e3983a38c9dea0d14a30f75.png"></p>
+<p>Hence, <img src=
+"../imgs/90ca2c5736a90b0b90406772aae942500016244c.png"> fails to be
+less than <img src=
+"../imgs/caff63ff618d9c5af0cbe80fef61d98f1eff05ed.png"> for any
+<img src=
+"../imgs/4ef900a43bf1698e387248026036e42856dcb526.png">.</p>
+<p>Therefore, for the assumed initial guess <img src=
+"../imgs/03ccfdc7f3bcf804f77e6f7ffcb4e8677f47129a.png">, the
+obtained solution is<img src=
+"../imgs/47292482f047d2ee5436f302d4e592927e9e1aa0.png">.</p>
+<p><b>Hence, the guess</b> <b><img src=
+"../imgs/03ccfdc7f3bcf804f77e6f7ffcb4e8677f47129a.png"></b>
+<b>fails by using the substitution method.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Now, again make a guess to subtract off a lower-order term to
+make the substitution proof work.</b></p>
+<p>Solve the recurrence relation by using substitution method.</p>
+<p>Then, the guess is <img src=
+"../imgs/31399e57a2c6fbb595438aa86140f8b2ab5b321b.png">, it means
+that the lower term which is subtracted from <img src=
+"../imgs/caff63ff618d9c5af0cbe80fef61d98f1eff05ed.png"> is
+<img src="../imgs/1a4ffc930792fa3689e70723691aade1f9480b83.png">.</p>
+<p>Then,</p>
+<p><img src=
+"../imgs/618d1214f0c1d778fff937cd823b0aa55103a6ce.png"></p>
+<p>Therefore, for the assumed guess <img src=
+"../imgs/31399e57a2c6fbb595438aa86140f8b2ab5b321b.png">, the
+obtained solution, <img src=
+"../imgs/bfa246c7e4d0e3de31d11183cda0f33d2f9d54e9.png">is less than
+<img src=
+"../imgs/caff63ff618d9c5af0cbe80fef61d98f1eff05ed.png">.</p>
+<p>Hence, the guess <img src=
+"../imgs/31399e57a2c6fbb595438aa86140f8b2ab5b321b.png"> is true by
+using the substitution method.</p>
+<p><b>Therefore,</b> <b>by using the</b> <b>substitution method</b>
+<b>the solution for the given recurrence relation is</b> <b>,</b>
+<img src=
+"../imgs/2c204ca0e4e78ec5a92137bdefbcada2e5274629.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Consider the recurrence relation</b> <img src=
+"../imgs/1adcc264f2aae9814a65f0d78b21b191b4af1d38.png"></p>
+<p>The recurrence is solved by change of variables and for
+convenience don’t worry about integral values, such as <img src=
+"../imgs/9bbf14c53967aace9dfa886a4dd372f54eff9cc9.png">to be an
+integer. Renaming m = lg n yields</p>
+<p>Let <img src=
+"../imgs/eb9e2c379862635cea521f8d63c4850579bc5b50.png"></p>
+<p><img src=
+"../imgs/a624f418d361eb483c838da3771e0639494825d6.png"></p>
+<p>Now rename <img src=
+"../imgs/ba786fe33ab1b6b4480ef73b997936453720162d.png"> to produce
+the new recurrence</p>
+<p><img src=
+"../imgs/1c4f2bcdb654c982f79450eb47d864ecc5d45c4e.png"></p>
+<p>Where<img src=
+"../imgs/31354d05432f5df270538a7d13f485ab0305450c.png"></p>
+<p>Since the value of <img src=
+"../imgs/8cc57e25d7bd1d81301217ac7c127f3d526fa854.png">in between 1
+and 2</p>
+<p>Apply case 1 of master theorem then the new recurrence has same
+solution</p>
+<p><img src=
+"../imgs/48689221be4aafa0cfffe193b658af665b145fbe.png"></p>
+<p>Thus, <img src=
+"../imgs/2ba444af585b8c45481074c6c610ceeed320440c.png"></p>
+<p>Changing back from <img src=
+"../imgs/8f12bf053d955ca051197701fe0ea133d260af6f.png"> then we
+obtain</p>
+<p><img src=
+"../imgs/8ec013f5caae19ca9275205b355ab1c8924f85d2.png"></p>
+<p>Thus, the running time <img src=
+"../imgs/0e726b75c9dc756588f52cba94d441fdaf42732b.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

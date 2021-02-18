@@ -1,0 +1,955 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 34.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Independent set of a graph <i>G</i> represents the set or
+collection of vertices that are not adjacent to one another. It is
+a concept in graph theory according to which there should not be
+any edge connecting the two vertices of a set.</p>
+<p>• It is also known as a <b>stable set</b> in which an edge can
+have at most single endpoint in the graph.</p>
+<p>• Thus, the vertices contained in the independent set represent
+the subset of the vertices of a graph.</p>
+<p>Consider the figure or the graph given below containing an
+independent set of size 3:</p>
+<p><img src="../imgs/ff9784f5a531467bb6739c059396e87b00b836f8.png"
+alt="D:\My work\16.12.2015\Bibek 2254\Image\1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a</b></i> <i>.</i></p>
+<p>Consider a graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png"> containing
+<i>V</i> vertices and set of edges <i>E</i>. Here, it is required
+to devise a <b>decision problem for the independent–set problem</b>
+<b>and proving that it is NP-complete.</b></p>
+<p><b>Decision problem:</b></p>
+<p>• It is a way of asking the question in order to determine that
+whether a solution or answer of a particular question exists or
+not.</p>
+<p>• It is a type of problem in a formal system in which the answer
+or solution of the problem comes out to be in <b>two definite forms
+as either Yes-or-No</b>.</p>
+<p>Consider the following example:</p>
+<p>Graph coloring, Hamiltonian cycle or graph, Travelling Salesman
+Problem (TSP) is some of the common examples of the decision
+problems (All these can also be expressed as an optimization
+problem).</p>
+<p>• Decision problem is <b>related to the optimization problem</b>
+which aims at finding the best or optimized solution to the
+problem.</p>
+<p>• These types of problems generates only two states of outputs
+such as True-false, 0-1 or Yes-No on a set of any number or
+infinite set of inputs.</p>
+<p>Figure given below outlining the definition of a decision
+problem with its possible outputs:</p>
+<p><img src="../imgs/450cb32d890e663ae7054fdc11a2ac492b177a25.png"
+alt="D:\My work\16.12.2015\Bibek 2254\Image\2.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Independent set problem:</b></p>
+<p>• It is one of the examples of an optimization problem which
+aims at finding the largest or the maximum set of the vertices that
+are not adjacent to one another.</p>
+<p>• It is feasible to covert or transforms an independent set
+problem as a decision problem to easily generate the uniform type
+of outputs (Yes or NO) as compared with the optimization problems
+which are harder and little complex to solve.</p>
+<p><b>Independent set problem can be formulated as a decision
+problem as given below:</b></p>
+<p><b>Input (Instance):</b> Given an undirected Graph G with
+<i>V</i> vertices, <i>E</i> edges and a lower bound or an integer
+<i>N</i>.</p>
+<p><b>Question:</b> Does a Graph <i>G</i> contain an integer
+<i>N</i> such that there exists at least a set <i>P</i> of
+non-adjacent or independent set of vertices of cardinality or max
+size <i>N</i>?</p>
+<p><b>Output:</b> Yes, there exists such an independent set
+<i>P</i> of vertices of size at most <i>N</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, it is also asked to show that the <b>Independent Set
+Problem</b> is NP complete. For proving that the independent set
+problem is <b>NP complete</b>, it is required to show that it is NP
+as well as NP-hard.</p>
+<p><b>NP:</b> Given an independent set <i>S</i> of an undirected
+graph <i>G</i> is NP if there exists polynomial time algorithm
+taking an instance or object of the problem and <img src=
+"../imgs/1d3f0b115031717d7616d6c5b5e0a4a68a6f575d.png"> as a
+certificate which are the set of the vertices that can be passed as
+the parameters. The algorithm considered will check whether all the
+vertices of the certificate are available in the graph and also it
+will check that there should not be any edge connecting the pair of
+vertices of the certificate.</p>
+<p>The running time complexity of this algorithm is <img src=
+"../imgs/4368c96a564303171973c5ea823a6b5097e1678a.png">which is
+simply a polynomial time and thus, it can be stated that an
+independent S belongs to NP.</p>
+</div>
+<hr>
+<div class="answer"><b>NP-Hard:</b> To show that the problem is
+NP-hard, the concept of <b>reducing or transforming an instance of
+the Clique Problem to an instance of an independent set</b>
+<i><b>S</b></i>.</div>
+<hr>
+<div class="answer">
+<p>In order to prove that the independent set problem is NP-hard,
+the polynomial time reduction of an instance of a Clique problem
+should be transformed in such a manner that the true input or
+instance of a clique problem’s should be mapped with a true
+instance of an independent set.</p>
+<p>• Consider the instance of the Clique problem as<img src=
+"../imgs/46c9b8be53d0bae6c5c3ebe701a1164c8e768ed3.png">. This
+problem is independent set problem having set <img src=
+"../imgs/de2a0e945955566fc3b7592168cf57daa6b4a7dc.png"> where the
+symbol <img src=
+"../imgs/4ac56a14008460090ad51e55bc19f08990eed572.png"> is
+complement of<img src=
+"../imgs/785d06b44a2a7034681ca36a42913ba51658fb76.png">.</p>
+<p>• The set of vertices <img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png"> represents
+a clique having size <i>x</i> is in the graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> only in a
+case if <img src=
+"../imgs/e1f0a783a7834cd9d1bc1b649b78be7449817ced.png">is an
+independent set of graph <img src=
+"../imgs/c0b08a9f3915786e1e7b7beb8e5bf5e941886382.png"> having the
+size of <i>x</i>, and it also following the fact that the
+construction of <img src=
+"../imgs/db7111750ff04b40eb998a594336faadb560a517.png"> from the
+<img src="../imgs/05bb4eb9c8a91f9744dc29b23fdd57a80d2abdc3.png">
+must be done in polynomial time.</p>
+<p>In this regard, it can be concluded that independent set problem
+is also NP-hard. Thus, as it has been proved that an independent
+set problem is NP as well as NP-Hard so it can be said that it is
+always <b>NP-complete,</b> which are the hardest problems in
+NP.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>Given a <b>“black-box”</b> subroutine to solve the decision
+problem defined in part (a) and a graph<img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">.Here, it is
+asked to give an algorithm which can be used to find an independent
+set of maximum size. To implement an algorithm for solving the
+above problem consider black-box as <img src=
+"../imgs/9875af2662693254e8221db097be4568fd73851a.png">.</p>
+<p><b>Algorithm:</b></p>
+<p>// perform search operation</p>
+<p><b>Step1:</b> Start binary search on <i>B</i> to determine the
+maximum size <img src=
+"../imgs/33ae82c0c2fae4b499d93334e70d49bd8eef2b37.png"> for the
+independent set.</p>
+<p>// initialization step</p>
+<p><b>Step2:</b> Set the independent set <img src=
+"../imgs/9f770dcc6f37c1faf279a849e11d80b967ded2e7.png"> to be an
+empty set.</p>
+<p><b>Step3:</b> for each <img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png"></p>
+<p>Construct <img src=
+"../imgs/e40ea5516e8797b2bbb6b4cad23dae89ce2f796b.png"> by removal
+of <img src="../imgs/22e5145793d8f84321bf4024a3efc21a89be6023.png">
+and its related edges from the graph <img src=
+"../imgs/e58578560fa90846cc669e30935b6d30575415e5.png"></p>
+<p><b>Step 4:</b> <b>if</b> (<img src=
+"../imgs/274e81f2d3a2cca1f91da62fd915b0d1026f5ee5.png"></p>
+<p>Set <img src=
+"../imgs/506e94507b425b5c56bed9761c69b9f9d58b5e95.png"></p>
+<p><b>else</b></p>
+<p><img src=
+"../imgs/67a49cf2736ad4e5b311a2df2716482dbda9cca7.png"></p>
+<p>Here, <img src=
+"../imgs/e11a7f20859b8acdcc6134973eb35a4e78296395.png"> is obtained
+by removal of all the vertices which are connected to <i>v</i> and
+the edges which are linked to it from the graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+<p><b>// end</b></p>
+<p>Here, Step 1 has time complexity of<img src=
+"../imgs/a56a64e9241cbac714c0c58de672cb0611804654.png">.</p>
+<p>Step2: It has the complexity of<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">.</p>
+<p>Step-3, 4: They have the number of iterations equal to <img src=
+"../imgs/53f7a51d2c22fb68454bffefb1082218a71d5f54.png"></p>
+<p>Hence, the vertex in graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> which is
+obtained at last is independent set of size <img src=
+"../imgs/33ae82c0c2fae4b499d93334e70d49bd8eef2b37.png">by the
+construction<b>.</b></p>
+<p><b>Hence, it can be concluded that the time complexity is equal
+to</b> <b><img src=
+"../imgs/67a3ad4b52eae64de03a2df4a3fad69ad6be676d.png"></b> .</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i></p>
+<p>Given that the degree of the graph <i>G</i> is 2, which implies
+that each vertex in the graph has a cardinality or degree 2.</p>
+<p>Here, it is required to <b>give an algorithm that can solve the
+independent set problem of a graph having degree 2.</b> Also, it is
+required to analyze the running time and the correctness of an
+algorithm.</p>
+<p>As, it can be noticed that when a degree of the graph is 2 then,
+in order to solve the problem of an independent set we must have
+the graph as a simple cycle.</p>
+<p>Consider the graphs given below of degree 2 and thus, containing
+a simple cycle.</p>
+<p><img src="../imgs/d4244887902f96de423149ab5a88110d9604912e.png"
+alt="D:\My work\16.12.2015\Bibek 2254\Image\3.png"></p>
+<p>• Thus, from the above graphs it can be observed that generally
+the graph containing the vertices of degree 2 is a simple
+cycle.</p>
+<p>• Therefore, the independent set problem in such a case can be
+achieved by initiating at any vertex and start choosing the
+alternate vertex on the cycle till the size obtained for the
+independent set to be<img src=
+"../imgs/c71a8637accdaf2f46cc8b175dba0bc372fb5cfa.png">.</p>
+<p>Hence, it can also be concluded that the running time of the
+algorithm to solve the problem of independent set having <i>V</i>
+vertices, <i>E</i> edges and degree of each vertex as 2
+is<b><img src=
+"../imgs/690311c1eb03aa7ee1c912327042bdc157e70f88.png"></b>.</p>
+</div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"><b>To prove the correctness of the
+algorithm:</b>
+<p>Consider the graph of degree 2 given below having vertices
+<i>A</i>, <i>B</i>, <i>C</i>, <i>D</i> and the set of four edges
+connecting them:</p>
+<p><img src="../imgs/486ea5bbd1a490f3451089a304b2179a4f4413cc.png"
+alt="D:\My work\16.12.2015\Bibek 2254\Image\4.png"></p>
+<p>Start the process from vertex <i>A.</i> Now, according to the
+algorithm, proceed the traversal by picking up an alternate vertex
+and thus, vertex <i>C</i> would be chosen, leaving behind the
+vertex <i>B</i>. After choosing the vertex <i>C</i>, vertex
+<i>D</i> will not be picked and the algorithm stops with
+independent set containing the vertices<img src=
+"../imgs/e4f4cbdfca0a8f00595d31b9588e98bd25ba10c3.png">and having
+size<img src=
+"../imgs/a30d4f69a2eb82331534cafc1c2406a625b3d14d.png">.</p>
+<p>Hence, the solution obtained by applying the algorithm on the
+graph of degree 2 is a maximum independent set of size 2 which
+is<img src=
+"../imgs/a30d4f69a2eb82331534cafc1c2406a625b3d14d.png">.</p>
+<p><b>Thus, the algorithm devised above is accurate and it will
+work correctly.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i></p>
+<p>Here, it is required to give an algorithm to solve the
+independent set problem in case of a bipartite graph <i>G</i>.</p>
+<p>• A <b>bipartite graph</b> commonly known as the bigraph is an
+undirected graph whose vertex set can be partitioned or arranged
+into two disjoint sets that are independent.</p>
+<p>• It is possible to color this type of graph by using the two
+colors only so it is 2 colorable or bi-chromatic.</p>
+<p>• There are several applications of these graphs like in case of
+matching problems.</p>
+<p><b>For example:</b></p>
+<p>Consider a bipartite graph given below containing two set of
+vertices <i>V</i><sub>1</sub> and <i>V</i><sub>2</sub>, such that
+<img src="../imgs/e2ec5e6a46a267151c1827cf2201558426a7d689.png">and
+each edge is having the different color vertices as the end
+points.</p>
+<p><img src="../imgs/7676322aba01a68bed99ba3723cf0607e1d73a97.png"
+alt="D:\My work\16.12.2015\Bibek 2254\Image\5.png"></p>
+<p><img src="../imgs/8846d9f715b2b24a04e554ce416aeb40eb58120d.png"
+alt="D:\My work\16.12.2015\Bibek 2254\Image\6.png"></p>
+<p>In the graphs shown above, <img src=
+"../imgs/9877d8fc373e8569ecd749a0966d679dc880a13d.png">and
+<img src="../imgs/162b6e5dca280691a32be16b566d1d15e1f7f748.png">are
+the two independent set of vertices that are not adjacent to one
+another.</p>
+<p>In a bipartite graph the matching is a group of edges such that
+any of its edges do not share the same end points. A vertex,
+included in the matched set of edges, is the vertex is used in
+creation of a matched edge is called as the saturated vertex.</p>
+<p><b>For example:</b></p>
+<p>Consider the graph below which highlights the edges of matched
+set <i>M</i>:</p>
+<p><img src="../imgs/d86d801a8676ec66b69390f009f95093890eafde.png"
+alt="D:\My work\16.12.2015\Bibek 2254\Image\7.png"></p>
+<p>The matching set is as:</p>
+<p><img src=
+"../imgs/9ff3900679f8675d6e244753b9ac6c51e8cb796d.png"></p>
+<p>Matching is also called as maximal matching if there is no more
+edges that can be included into the matching set <i>M</i> and it’s
+called the ideal or the perfect matching if no unmatched vertex is
+found.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>In a bipartite graph, to determine independent set, following
+approach is used:</b></p>
+<p>? First find the maximum-matching of the graph by using an
+algorithm such as <b>augmenting path algorithm</b> or much faster
+and an improved algorithm known as <i><b>Hopcroft-Karp bipartite
+matching algorithm</b></i>. (Refer section 26-6)</p>
+<p>? Repeat the process</p>
+<p>¦ for all vertices which are not present in the maximum-matching
+set (set with largest number of edges), run BFS to find the
+augmenting path.</p>
+<p>¦ Alternate unmatched/matched edges to select the edge which is
+in the maximum matching and are not connected from the vertices
+that are not a part maximum matching set.</p>
+<p>¦ Reverse or flip the matched edges with unmatched edges and
+vice-versa.</p>
+<p>? Stop the process if no augmenting path is found and return the
+last matching set.</p>
+</div>
+<hr>
+<div class="answer">Consider a bipartite graph given below
+containing a two set of vertices and the colored edges of the graph
+are representing the edges of the maximum matching set.
+<p><img src="../imgs/21c924f315234841c26939abaeeb496174eb8d49.png"
+alt="D:\My work\16.12.2015\Bibek 2254\Image\8.png"></p>
+<p>The <b>running time or running complexity</b> of the algorithm
+to solve the independent set problem is<b><img src=
+"../imgs/80d6c3c96ed14e2a8cf1721786b36b7a5f6690a2.png"></b>. The
+algorithm works correctly if there does not exist any augmenting
+path with respect to the maximal matching <i>M</i> as obtained by
+applying the bipartite matching algorithm.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Bonnie and Clyde</b></p>
+<p>A problem is said to be in a set of NP-Complete if that can be
+solved in polynomial time, here NP is abbreviation of
+non-deterministic polynomial time. For example if a language named
+<i>L</i> is contained in the set NP then there exists an algorithm
+<i>A</i> for a constant <i>c</i> then</p>
+<p><img src=
+"../imgs/a8c2d221611ac75038737946e5ead7a25e46e431.png"></p>
+<p>Any problem that is convertible to the decision problem will
+surely be the polynomial time .</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>(a)</b></p>
+<p>Consider that there are <i>m</i> coins whose worth is <i>x</i>
+dollars each and rest<img src=
+"../imgs/feec688dd97f242e8265aaa11c67363dc68c7884.png">coins worth
+<i>y</i> dollars each. So the sum total of the worth of all the
+coins is:</p>
+<p><img src="../imgs/4bc5ac30c0788561c30b6caba25e274a82e38645.png">
+dollars.</p>
+<p>So for equal division of the total worth Bonnie and Clyde must
+take <img src=
+"../imgs/af60521b8d0bbd4b25c0236dbf45f20b89d71634.png">dollars
+each. The division of coins can be done in a manner so that each of
+them have equal amount so for division assume that either Bonnie or
+Clyde start taking the coins and take exactly half worth coins.</p>
+<p>Assume that Bonnie first start to take the coins and he is free
+to take any of the coin that is either <i>x</i> worth or <i>y</i>
+worth and any number of coins whose total worth is exactly<img src=
+"../imgs/af60521b8d0bbd4b25c0236dbf45f20b89d71634.png">dollars.</p>
+<p>If Bonnie takes <i>p</i> number of coins of dollar <i>x</i>
+where <img src=
+"../imgs/3db058c05d95a532e6532f9a463b96cedefd2ad6.png">then to
+check how many coins of <i>y</i> dollars Bonnie should take that is
+to check if<img src=
+"../imgs/d41bae32c4121020170a0dd2710cbdabe81b443f.png">and<img src=
+"../imgs/af7168d08dc2c3181a83d2088e2281e4acf16923.png">.</p>
+<p>Bonnie can take <img src=
+"../imgs/3441299c1da4592a154abee5b399e5a38b28f22a.png">coins of
+value <i>x</i> dollars so there are maximum <img src=
+"../imgs/fcc8b2401778142dd3b8936593a3ecaae44a754f.png">possibilities
+to check the worth of remaining coins, because Bonnie can take at
+most <i>m</i> coins. For every possibility, perform a fixed number
+of operations, there are a total of polynomial number of
+possibilities. Constant number of operations for polynomial number
+of possibilities cause this algorithm to be a polynomial time
+solvable algorithm.</p>
+<p><b>Hence, the above is the polynomial time method to divide the
+coins exactly amond them.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>(b)</b></p>
+<p>The following method is deployed to do the required division of
+coins.</p>
+<p>1. Arrange all the <i>n</i> coins in the non-increasing order of
+their denominations that is<img src=
+"../imgs/cd947fd7f000666df6615494fc10902c2890262f.png">. Firstly
+give Bonnie the coin with greatest worth or denomination after that
+give Clyde the coins the sum of whose worth is same as the coin
+given to Bonnie.</p>
+<p>2. Now the worth of remaining coins will be greater than or
+equal to the sum of worth of coins which are with Bonnie and Clyde
+because the denominations of coins are raised to power of two.</p>
+<p>3. Now from remaining coins give the coin which has maximum
+worth to Bonnie and again give same worth coins to Clyde and repeat
+this process until all the coins are divided.</p>
+<p>4. In this process if a coin is given to Bonnie which is of cost
+<i>p</i> and the sum of worth of rest of the coins is less than
+<i>p</i> then coins can’t be divided equally between them else it
+is possible.</p>
+<p>This process requires polynomial number of steps and each step
+takes constant steps each. So, the total asymptotic time complexity
+of this procedure is polynomial in nature.</p>
+<p><b>Hence, the above is the polynomial time method to divide the
+coins exactly amond them.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>(c)</b></p>
+<p>This problem is solved by following steps:</p>
+<p>• The problem is in <b>NP</b> or not. If it is, then go to next
+step.</p>
+<p>• Is every problem in NP is reducible to this problem in
+polynomial time.</p>
+<p>• If both of these are true, then the problem is
+<b>NP-COMPLETE</b>.</p>
+<p><b>1. First check if the problem is in NP.</b></p>
+<p>Once the division of checks is done, the sum of the checks
+should be equal to total sum. This is done in two steps, first use
+list of items and the value of each to find the total value as
+follows:</p>
+<p><img src=
+"../imgs/c080c8830e4cf65e0eeb8dcd86dbc29a3a3b900b.png"></p>
+<p>Next calculate the value of checks that one of them gets. If
+that value is equal to <img src=
+"../imgs/e0ae28442c93316b7c05c3b3ee69c24a4b26de68.png"> , then the
+algorithm is verified. So, the problem definitely belongs to
+<b>NP.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2. Check if every problem in NP is reducible to this problem
+in polynomial time.</b></p>
+<p>Consider the SET-PARTITION problem which states that it takes
+polynomial time to find out if there is a subset in a bigger set
+such that the sum of the elements in the subset is equal to a given
+integer <i>k.</i></p>
+<p>To reduce this problem to the current problem, consider the set
+to be the set of all checks in the bag and the integer <img src=
+"../imgs/67df29d5b5fd8b2dce8ed28ab96cbad1aba82ad8.png">. This
+reduction takes polynomial time.</p>
+<p>Infact, SET-PARTITION problem is NP-COMPLETE. It is reducible to
+the current problem.</p>
+<p><b>From these two steps, it can be said that the problem belongs
+to NP and every problem in NP is reducible to this problem in
+polynomial time, therefore, the problem in NP-complete.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>(d)</b></p>
+<p>This problem is solved by following steps:</p>
+<p>• The problem is in <b>NP</b> or not. If it is, then go to next
+step.</p>
+<p>• Is every problem in NP is reducible to this problem in
+polynomial time.</p>
+<p>• If both of these are true, then the problem is
+<b>NP-COMPLETE</b>.</p>
+<p><b>1. First check if the problem is in NP.</b></p>
+<p>Once the division of checks is done, the difference between the
+total with Bonnie and the total with Clyde must be less than equal
+to 100.</p>
+<p>This is done in two steps, first use list of items and the value
+of each to find the total value for both Bonnie and Clyde.</p>
+<p>Next calculate the difference is less than equal to 100 or not
+as follows:</p>
+<p><img src=
+"../imgs/415577f3a9a1d0f1e7339b5b50810fadf22fc8e5.png"></p>
+<p>If it is true, then the algorithm is verified. So, the problem
+definitely belongs to <b>NP.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2. Check if every problem in NP is reducible to this problem
+in polynomial time.</b></p>
+<p>Consider the SET-PARTITION problem which states that it takes
+polynomial time to find out if there is a subset in a bigger set
+such that the sum of the elements in the subset is equal to a given
+integer <i>k.</i></p>
+<p>To reduce this problem to the current problem, consider the set
+to be the set of all checks in the bag and then check for each
+value of <img src=
+"../imgs/bc7a7d0b2f471502cc8b8e4b651239ee6ed6d012.png"> such that
+<img src="../imgs/f9fec3c0a445a55e00b19e15c7f56ebc5807d993.png">,
+the value of <img src=
+"../imgs/e8592d61e3ba8b7657b84533621496b7d644139b.png"> is true.
+This reduction takes polynomial time as it requires running the
+SET-PARTITION algorithm for 200 times.</p>
+<p>Infact, SET-PARTITION problem is NP-COMPLETE. It is reducible to
+the current problem.</p>
+<p><b>From these two steps, it can be said that the problem belongs
+to NP and every problem in NP is reducible to this problem in
+polynomial time, therefore, the problem in NP-complete.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A problem is said to be NP-Complete if it is solved in
+polynomial time. NP is abbreviation of non-deterministic polynomial
+time.</p>
+<p>For example if a language <i>L</i> is contained in the set of NP
+then there exists an algorithm for a constant <i>c</i> then</p>
+<p><img src=
+"../imgs/a8c2d221611ac75038737946e5ead7a25e46e431.png"></p>
+<p>Any problem that is convertible to the decision problem will
+surely be the polynomial time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>a.</b></p>
+<p>Consider the following graph <i>G</i> for coloring by using two
+colors and apply the procedure to color the vertices of the graph
+is as follows:</p>
+<p>1. First take any vertex of the graph as the starting vertex and
+paint it by using one of the two colors given to color the
+graph.</p>
+<p>2. Find all the vertices that are connected to the first vertex
+with neighboring edges and color all of them from the second
+color.</p>
+<p>3. Apply breadth first search to find the edges that are not
+visited yet and if there is any edge in the graph whose both
+vertices are painted with same color.</p>
+<p>4. <b>if</b> there exist such edges whose both end vertices are
+painted in same color</p>
+<p>5. graph will not be 2-colorable;</p>
+<p>6. <b>else</b></p>
+<p>7. it will be 2-colorable.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b.</b></p>
+<p>Consider the following procedure to show that decision problem
+is solvable in polynomial time.</p>
+<p>Consider an undirected graph <i>G</i> (<i>V,E</i>) with <i>V</i>
+vertices and <i>E</i> edges, coloring this graph by using <i>k</i>
+different colors such that all neighboring vertices are colored
+with different colors.</p>
+<p>• If the graph coloring problem is in polynomial time then
+checking, if the value of <i>k</i> is greater than the least number
+of colors required to color the graph.</p>
+<p>• If <i>k</i> is greater than the decision problem then it will
+be false and it will not be <i>k</i>-colorable. Else it will be
+true that is the graph will be <i>k</i>-colorable.</p>
+<p><b>c.</b></p>
+<p>In the graph coloring firstly a colored graph is check if any
+edge in the graph whose both end vertices are painted with the same
+color. This verification process of color can be completed in
+polynomial time.</p>
+<p>• The 3-COLOR problem can be reformed as the decision problem
+which is a polynomial time problem.</p>
+<p>• For the conversion of the 3-COLOR problem to a decision
+problem consider graph <i>G</i>= (<i>V</i>, <i>E</i>) with <i>V</i>
+vertices and <i>E</i> undirected edges, new <img src=
+"../imgs/056a154328f42282c2745793aba49415bfd230e5.png">connected
+vertices are added to the graph.</p>
+<p>• All other vertices are connected to these vertices with edges
+and this creates a new graph <i>G’.</i></p>
+<p>• Now the graph <i>G</i> will be 3-colorable only when the graph
+<i>G</i>’ will be painted by using <i>k</i> colors. This conversion
+of the 3-COLOR problem is polynomial time.</p>
+<p><b>Hence, if 3-COLOR is an NPC, the</b> <i><b>k</b></i>
+<b>-colorable problem will surely be NPC because it is
+convertible.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>d.</b></p>
+<p>Consider the variable <i>x</i> in its generalized form the
+graph. The vertices named <i>x</i> and <img src=
+"../imgs/f3ac1deba621ca5bb58f3f35f882d4e7baff30a9.png"> the
+neighbors of each other and both of these are attached to the RED
+vertex. The same thing happens to TRUE and FALSE that is for any
+edge one of its variable is TRUE and the other is FALSE.</p>
+<p>So, in any 3-coloring<img src=
+"../imgs/4a533229f450da212776facc0f5d44eab5b2ab06.png">and
+either<img src=
+"../imgs/43db21880cfb0b03e8db5e566855ce4f4cf95cf5.png">or<img src=
+"../imgs/f7ee75c83e9f4abf22af462d6152b2155bc64b98.png">.</p>
+<p><b>Hence it proves the statement that in 3-coloring graph with
+literal edges both the variables of its are colored differently
+that is TRUE and FALSE.</b></p>
+<p>User can color the graph containing only literal edges by using
+the procedure which is as follows:</p>
+<p>• Color the node named RED using one color, give the variable
+and TRUE the same color, and variable negation and FALSE the same
+color.</p>
+<p>• When the nodes of the graph are fully painted then we will see
+that no literal edge is connected with the vertices painted with
+same color.</p>
+<p><b>Hence the graph which possesses the literal edges is forever
+3-colorable.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>e.</b></p>
+<p>Consider the following procedure to prove that the widget is
+3-colorable, if one of the three vertices is colored.</p>
+<p>Initially user prove if the widget is 3-colorable or it can be
+colored with 3 colors, then at least one of the nodes <i>x</i>,
+<i>y</i> and <i>z</i> is colored<img src=
+"../imgs/c10e5a96b9eb0f8bf361d1afbde12b0812408b95.png">.</p>
+<p>Firstly name the vertices of the machine in figure 34.20 as
+shown in figure:</p>
+<p><img src="../imgs/3f74fa51b54f92a005cbdb82887ad414f35f12e0.png"
+alt="D:\Tiffs\2254-34.P-3P.tif"></p>
+<p>•</p>
+</div>
+<hr>
+<div class="answer">Now consider that the vertices <i>x</i>,
+<i>y</i> and <i>z</i> are all colored<img src=
+"../imgs/3d6cf1684c9a372690976e124efbad2e05ab23bf.png">which draws
+the conclusion that nodes <i>a</i> and <i>b</i> must be either RED
+or TRUE and consequently the node <i>c</i> must be colored
+as<img src="../imgs/3d6cf1684c9a372690976e124efbad2e05ab23bf.png">.
+<p>• The node <i>d</i> cannot be <img src=
+"../imgs/3d6cf1684c9a372690976e124efbad2e05ab23bf.png"> and also
+cannot be <img src=
+"../imgs/c10e5a96b9eb0f8bf361d1afbde12b0812408b95.png">because it
+is connected to T and node <i>c</i> which is FALSE. The same thing
+happens to node <i>e</i>.</p>
+<p>Thus the vertices <i>d</i> and <i>e</i> will be painted with the
+same color, because only three colors are used which contradicts
+the condition of proper coloring.</p>
+<p><b>Hence</b> <i><b>x,</b></i> <i><b>y</b></i> <b>and</b>
+<i><b>z</b></i> <b>all the three input nodes can’t be painted with
+the same color.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>f.</b></p>
+<p>A problem that is of NP-Complete then it must be of polynomial
+time and also the NP-Hard.</p>
+<p>As discussed in the part <i>c</i> of this problem the 3-COLOR
+problem is polynomial verifiable. To prove that 3-COLOR is in
+NP-Hard we reduce 3-CNF-SAT to 3-COLOR because it is polynomial
+reducible.</p>
+<p>For a 3-CNF-SAT problem, user creates the graph containing only
+the literal edges and creates one widget for each clause.</p>
+<p>Now user shows that 3-CNF-SAT has a solution, only if the graph
+is 3-COLORABLE which is as:</p>
+<p>1. If the 3-CNF-SAT has got a truth assignment, then for each
+widget, at least one of <i>x, y</i> and <i>z</i> is painted
+<i>TRUE</i>.</p>
+<p>As discussed in part <i>e</i>, every widget is 3-COLORABLE and
+the graph containing only the literal edges is always 3-COLORABLE
+as discussed in part <i>d</i> of this problem. Thus we can derive
+the conclusion that the graph is 3-COLORABLE.</p>
+<p>2. If the graph is 3-COLORABLE, then in every widget, one of
+<i>x, y</i> and <i>z</i> has to be</p>
+<p><i>TRUE</i>. Just give the truth assignment as<img src=
+"../imgs/43db21880cfb0b03e8db5e566855ce4f4cf95cf5.png">, <img src=
+"../imgs/c7d4a2e722d1f3436479a56ac8ebdf9def0535a8.png">which shows
+that 3-CNF-SAT is satisfiable.</p>
+<p>Thus the 3-COLOR problem is in NP-Hard.</p>
+<p><b>Hence the 3-COLOR problem is polynomial time verifiable and
+also is NP-Hard so it is NP-Complete problem.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>(a)</b></p>
+<p>Consider the set of <i>n</i> tasks taking unit time on the
+machine and required to be completed in such an order that the
+maximum amount of profit is returned. The problem of scheduling
+with deadlines and profits can be stated as a decision problem
+which is a way of asking the question in order to determine that
+whether a solution or answer of a particular question exists or
+not. It is a type of problem in a formal system in which the answer
+or solution of the problem comes out to be in two definite forms as
+either Yes-or-No.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Figure given below outlining the definition of the decision
+problem with its possible outputs:</p>
+<p><b><img src=
+"../imgs/7c25ae571d0ffee69d9342c3e92da3b6c2de3be8.png" alt=
+"Picture 2"></b></p>
+<p>The decision problem is as:</p>
+<p><b>Input (Instance):</b></p>
+<p>1. <img src=
+"../imgs/50a728051e95a07ba3f9405f74b0b3909a3de73d.png">-profits.</p>
+<p>2. <img src=
+"../imgs/8678795eab7e44aa1c3e2b6136304adf22b1311d.png">-deadlines.</p>
+<p>3. <img src=
+"../imgs/08dd531430a2a39906abd02142f3962738151b7e.png">-time.</p>
+<p>4. <img src=
+"../imgs/e319fcce4b7592d73b29ddf8907ffc9cfb987fff.png">Integer.</p>
+<p><b>Output:</b> This is the problem statement. It asks is it
+possible that any scheduling of tasks exists or feasible to design
+in which all tasks are completed within the assigned deadlines and
+in which at least profit <i>K</i> is returned in such a way that no
+two tasks run simultaneously and the value of <i>K</i> turns out to
+be Maximum.</p>
+<p>If the value of profit <i>K</i> is maximum then, the answer of
+the decision problem is yes or true. Else, no such scheduling
+criteria exists that can execute the <i>n</i> tasks with maximum
+profit and before or by the deadline and thus, the answer to the
+decision problem is No or False.</p>
+<p><b>The above is the required statement for the decision
+problem.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>(b)</b></p>
+<p>NP stands for the class of problems that can be solved in
+Non-Deterministic polynomial time and NP - complete is a class of
+decision problems that are present in the set of the NP problems as
+well as in the set of the NP-Hard problems.</p>
+<p>Also, any decision problem can be NP-complete when it belongs to
+the class of NP problems and also it can be reduced to other
+decision problems and vice-versa. Figure given below illustrating
+the relationship among P, NP and NP-complete type of problems:</p>
+<p><img src="../imgs/e68d52084f0d6407683b84f8f469e854f4c63d7e.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer">
+<p>To show that the decision problem of scheduling of tasks with
+deadlines and profits is NP-complete consider an instance <img src=
+"../imgs/f6af53fe0f0e52b8c11b5b8a779192c178d5bd3f.png">and a given
+schedule <img src=
+"../imgs/9bae1ae0443dba3a20c1ab21bd487412ec6b03bf.png"> in which
+the task <i>i</i> is completed at time<img src=
+"../imgs/ba2f1c8c3d303f5a250ffa12e7c4f1bbebdba81e.png">. Therefore,
+in this way it can be easily found or deduced that if it is
+non-overlapping and if there is at least <i>K</i> profit, then,
+<img src="../imgs/ee29d6e66672d29a831a01925a49cf7f6426c904.png">
+have the running time as<img src=
+"../imgs/8bbf043c46b47e68a7ca9ab8f7b50b03f4a98593.png">. Suppose
+there is an instance<img src=
+"../imgs/a0c12b158b8f1c3c13ea11509cc55b381a798640.png">, the
+instance<img src=
+"../imgs/9c3dfcb9bf04e3f1ece42c1cbf971f6f012cad54.png">; <img src=
+"../imgs/1caa7efc77d2314b719776a937c5543ce3e94951.png"> is
+constructed. It will take time<img src=
+"../imgs/8bbf043c46b47e68a7ca9ab8f7b50b03f4a98593.png">.</p>
+<p>Suppose that there exists a subset of element <i>X</i> in such a
+way that the sum is exactly equal to <i>t</i> then in this
+condition there will be a schedule for <i>Y</i>. In other words, it
+can be said that if there is a schedule of Y then for the subset
+<img src="../imgs/eba2ab067b168a07951abedb78996e61fc86ecb0.png"> of
+the tasks there is a deadline <img src=
+"../imgs/1b93484896ae855bb30a9c38443b3db987e9e240.png"> which
+implies that the task in <img src=
+"../imgs/eba2ab067b168a07951abedb78996e61fc86ecb0.png"> has met the
+deadline and it is polynomial time</p>
+</div>
+<hr>
+<div class="answer">reducible and <img src=
+"../imgs/007389ef698009d558b9aca038ad626d95b19401.png"> (it is the
+profit constraints) and thus, the condition<img src=
+"../imgs/2f5a6788038c9382ecaa129584cdd0c6269b2e03.png"> holds which
+is a solution to the subset sum problem. Therefore, the subset sum
+problem which is regarded as the NP-complete problem is reducible
+or can be transformed to the job scheduling problem with deadlines
+and profits, which signifies that scheduling problem with deadlines
+is also NP-complete.</div>
+<hr>
+<div class="answer">
+<p><b>Hence, it is concluded that the given decision problem is
+NP-complete.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>(c)</b></p>
+<p><b>Dynamic programming</b> is an approach used for solving the
+problems by decomposing or dividing them into smaller sub problems
+or sub structures. It is a method which is mainly used in case of
+the problems having the overlapping or repeated substructure or
+optimal sub problems.</p>
+<p>Polynomial time algorithm provides the way or solution of
+handling or solving the decision problem in polynomial time. For
+solving a decision problem in polynomial time, an instance
+<img src="../imgs/a42c6b77bb21c1c52ad73b4908ef4ad03c20a635.png"> of
+a decision problem <i>P</i> is transformed or reduced to an
+instance<img src=
+"../imgs/dcbf52cad6a69ff9ce59691a6c582e0d384644a3.png"> of another
+decision problem Q.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Consider the figure given below:</b></p>
+<p><img src="../imgs/9f597e6d48b8ae8c2281a8a11736665795941864.png"
+alt="Picture 3"></p>
+<p>A polynomial time algorithm for solving the decision problem
+using dynamic programming and by assuming all processing times to
+be integers from 1 to <i>n</i> consists of several steps which are
+as follows:</p>
+<p><b>1.</b> An array of values is discussed which is to be
+computed. An array <img src=
+"../imgs/829649658320acaab5cc996e69b56de2520f65d5.png"> is defined
+in such a way that we have the condition <img src=
+"../imgs/c49f271664633834deba014846b7112d68db8ec5.png"> and
+<img src="../imgs/7d047e8d7d07e25b5143c54a2089544ca006e977.png">
+by:</p>
+<p><img src=
+"../imgs/8e625a40f6f4b39ac56fe73f5bc57f7a5189086d.png"></p>
+<p><b>2.</b> A recurrence is established. It allows to compute the
+value of <i>A</i> having one row at a time.</p>
+<p><img src=
+"../imgs/25265fb867affb2e080073818ba4adfb20dea4a6.png">.</p>
+<p>Consider <img src=
+"../imgs/d4a36683173390f4fd53d46f3af23f5350117596.png"></p>
+<p>Define <img src=
+"../imgs/298ae6ba8e87b4385f5f46520c0e8b3d892a8237.png"> .</p>
+<p>The <img src=
+"../imgs/c2ab8c66651546da0eb768213ea079ad51668210.png"> used here
+is the latest time at which the job <i>I</i> is scheduled in such a
+way that it ends by time and by its deadline.</p>
+<p>Then it leads to,</p>
+<p><b>if</b> <i>t’</i> &lt; 0</p>
+<p>then <i>A</i> (<i>i</i>, <i>t</i>) = <i>A</i> (<i>i</i>–1,
+<i>t</i>)</p>
+<p><b>and</b></p>
+<p><b>if</b> <i>t’</i> <img src=
+"../imgs/d944f1eb097dbb8c3ad2e3dab585eeea7e51862e.png"> 0</p>
+<p>then <i>A</i> (<i>i</i>, <i>t</i>) = max {<i>A</i> (<i>i</i>–1,
+t), <i>g</i><sub>i</sub> + <i>A</i> (<i>i</i> –1, <i>t</i>)}</p>
+<p><b>3.</b> A high level program is given.</p>
+<p>It is given to compute the values into an array <i>B</i>, in
+such a way that the following condition holds:</p>
+<p><img src=
+"../imgs/0f2e6f90c0fa0590175ee566cd2f54a9d5fb268c.png"></p>
+<p><b>4.</b> Compute the optimal solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Hence, the above is algorithm which comprises polynomial
+number of steps and so it is the polynomial time algorithm for the
+decision problem.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>(d)</b></p>
+<p>The objective is to give a polynomial time algorithm for the
+optimization problem using dynamic programming approach and by
+assuming that all processing times are integers from 1 to
+<i>n</i>.</p>
+<p>Optimization problem aims at finding the best possible solution
+to a problem from a set or a list of all possible solutions. These
+are the type of problems that can have several numbers of feasible
+solutions. Optimization problem provides a maximum or minimum value
+for a problem in an optimized way. Using dynamic programming
+optimization problem can be solved by characterizing the structure
+of an optimal solution first</p>
+<p>For the optimization problem the same dynamic programming
+algorithm as described in part <b>(c)</b> can be used with the
+change in the recurrence as,</p>
+<p><img src=
+"../imgs/d72c21424e47bb81634db6dd15508a91d91700e5.png"></p>
+<p>This has the base case</p>
+<p><img src="../imgs/dc066c7da7ca98c02a2f6c6d8dcfe441396c6005.png">
+Otherwise</p>
+<p>And in the given condition the processing time is limited to
+<i>n</i> so the <img src=
+"../imgs/d374df5ac1dd037b4f3914a8892a8ff2b0c6ba94.png"></p>
+<p>For each step of<img src=
+"../imgs/b2c8b668375e8bb15fcdc5b18739923363ca10b2.png">,
+<b><img src=
+"../imgs/fa2565caa4705e04f2b5e21331e671c53b2738fe.png"></b>is
+required. So, the total asymptotic complexity becomes <b><img src=
+"../imgs/054ea1686081c5b13850ee2ac7e563ecda68db79.png"></b></p>
+<p><b>Hence, the time complexity is equal to</b> <b><img src=
+"../imgs/c839c1bd88322a42d1cdea277bc7362bc1ecd450.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

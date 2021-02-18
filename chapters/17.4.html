@@ -1,0 +1,278 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 17.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Dynamic open address hash table</b></p>
+<p>The dynamic table is a table that continuously changes its size
+dynamically. Upon insertion of new values in the table, the size
+increases as it occupies a space or slot and upon deletion of
+values the table size decreases as it frees the slots. The change
+in size of table is limited to a certain value which is the load
+factor of the table.</p>
+<p>A load factor in a nonempty table is the ratio of number of the
+elements in a dynamic table divided by size of the dynamic table.
+The hash table is a data structure used to store, insert, delete
+and check certain elements in it. Here, the hash table is used in
+the practical implementation of the dynamic table.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The implementation of dynamic table by open addressing hash
+table is simply done where the new element, which is about to be
+inserted, is first checked whether it is really in the hash table
+or not or there is any unused space left. An actual cost is the
+cost of every operation alone and the amortized cost is the average
+cost of the total operations taken altogether. And our main concern
+should be of how to make the amortized cost<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">.</p>
+The hash tables must have a load factor strictly less than 1 or
+less than 100% as the load factor increases, so does the complexity
+and the hash table becomes slow. In this condition the search and
+various functions that are run through the hash tables, might even
+fail to run.</div>
+<hr>
+<div class="answer">
+<p>The insertion action is taken along with the search function.
+This takes an average of <img src=
+"../imgs/1a388e7cdbdeb64bd5c4ee89f88212256a91be3f.png">times as it
+does a linear search. But they must have an amortized cost
+associated with it too. Using the amortized analysis, the amortized
+cost of insertion and deletion is only<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">, even
+though the actual cost of an operation is larger, when it triggers
+an expansion or a contraction.</p>
+<p>So, the actual cost is assumed to be<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">; and this
+is the expected value per insertion.</p>
+<p>The unused space in a dynamic table never exceeds a constant
+fraction of the total space.</p>
+<p>The average cost per instruction is not<img src=
+"../imgs/3701f6db75733aef7243b99d0bc7d773aa3c8a94.png">, as the
+searching might check all the entries of the hash table to find the
+answer.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The number of elements after the <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">operation is
+denoted by<img src=
+"../imgs/98ceb5ef5a8abdf7b6391919e995e26ebf5716eb.png">, and size
+is denoted by<img src=
+"../imgs/68b38dfb00da81e4e7a5bb94556614f1a5cf8d0f.png">; and the
+potential for a particular state is denoted by<img src=
+"../imgs/14720920fbb8ed397341dd0c7f467ae317ccec86.png">. The
+recurrence relation of the potential function goes like this
+(consider the potential function (17.6) in the book):</p>
+<img src=
+"../imgs/968afbf0ce39a16b45dd1b5063fb77b4b02a6331.png"></div>
+<hr>
+<div class="answer">
+<p>During deletion there are the following possibilities:</p>
+<p>1. The table size remains the same, which means that the table
+does not have to contract.</p>
+<p>2<b>.</b> The table has to contract to half its value (assumed
+to the opposite of the insertion function where the table has to
+expand its size to double).</p>
+In the 1<sup>st</sup> case, the load factor <img src=
+"../imgs/0eecc083fd7c845f667ef2bbffa1daf28bb77f42.png"> will be
+greater than the half value of the table. Now we can see that after
+deletion, the<img src=
+"../imgs/951c69850fd58e7465f42c4d6e17ca6ebf4dbe73.png">,
+and<img src=
+"../imgs/0f160a442bec4de314634e74ddcc84ea8435951c.png">.</div>
+<hr>
+<div class="answer">
+<p>Thus putting the condition in terms of the potential function
+according to the recurrence relation:</p>
+<p>After the <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">operation:<img src="../imgs/2a231474338d4e66833fcdee94bbb83417463d69.png"></p>
+<p>Before the <img src=
+"../imgs/80d96ae8173eb0b6bd4b4f783b88da67b3c4f17f.png">operation:<img src="../imgs/1a0a72d27cbef84d9fa81eee963e317da59a38c4.png"></p>
+<p>Since in the above cases<img src=
+"../imgs/4c20a83966084dbae990102896952491523c9105.png">and the
+table remains in a constant state not changing (in this case not
+contracting).</p>
+<p>The actual cost of the deletion process <img src=
+"../imgs/931a96729c6a487acbd4e71bbe22ae77f1481eda.png">as no
+transfer is done from one table to another for changing.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Therefore the amortized cost of the deletion operation where
+<img src=
+"../imgs/2fe79a6c41a6dc5331fd2455afd3c791cc89134d.png">is</p>
+<p><img src=
+"../imgs/ff369dd12f5aeab1ed64c9bffacba0616966a5a6.png"></p>
+<p><img src=
+"../imgs/32e91fcfe3ebad9ca1b0c5241e0eae590763c304.png"></p>
+<p>Another case, is if it causes a contraction, that is <img src=
+"../imgs/a1c82ff9d8ea7a11ef937f0d1794da42a2cbe10f.png">, then the
+amortized cost will be:</p>
+<img src=
+"../imgs/471c20b3420324fb16d18c576a202e178ccb7ffa.png"></div>
+<hr>
+<div class="answer">
+<p>In contraction, the size of the table becomes half its original
+size, and so:</p>
+<p><img src=
+"../imgs/9214aa020aece0ec5e308e5b3e80684556496141.png"></p>
+<p><img src=
+"../imgs/2dd05ba41d23c14f1367b5942b1cf9631409e161.png"></p>
+<p>If we neglect the variable term <img src=
+"../imgs/17f4d010a6356a0a780a668f813ecf29d0853ca6.png">, then the
+amortized cost of table delete operation is 2, which is maximum in
+the above two cases, so the table delete operation is bounded by 2,
+that is a constant.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Dynamic tables are the tables that can expand and contrast
+according to the data to be stored in the table to save the space
+in memory. This expansion and contraction of table depends on the
+load factor.</p>
+<p><img src=
+"../imgs/1f2df8c777dbe26e7f6888b163205e08af618847.png"></p>
+<p>There is a constant bound on the load factor of the table and
+the amortized cost is also bounded with some constant. The
+potential function of the table depends on the load factor and is
+defined as (consider equation (17.6) in the textbook):</p>
+<p><img src=
+"../imgs/7a3642dc6ff002bcde47b3b6a1dd9f3e5902c9aa.png"></p>
+<img src=
+"../imgs/86d9958615af5040159a881830c34190ab403a55.png"></div>
+<hr>
+<div class="answer">
+<p>Consider the potential functions as:</p>
+<p><img src=
+"../imgs/c3cdf5fc5890e4b51d96a7958aecf9bdecaa1954.png"></p>
+There are two cases to discuss first are when the element is
+deleted from the table and the load factor is <img src=
+"../imgs/d22095ae3e731977a65de4ac3142c3ea35c8f6b5.png">and the
+table is not contracted. Second is when the load factor<img src=
+"../imgs/63b9f27e04970bdfed572cc8a80584b7911106c6.png">then the
+table size is contracted by multiplying it by<img src=
+"../imgs/1adf071ace6df5123efbd2f78678772eda5a05f2.png">.</div>
+<hr>
+<div class="answer">
+<p>The amortized cost in these two cases is as:</p>
+<p><b>Case 1:</b> When<img src=
+"../imgs/d22095ae3e731977a65de4ac3142c3ea35c8f6b5.png">then the
+amortized cost for the table using actual cost 1 as:</p>
+<p><img src=
+"../imgs/efc1b34a39e2dab82b6a41f5a139c94d60d68f44.png"></p>
+<p><img src=
+"../imgs/f5b9724689c06f1f5ef3af59dd8114d040e2cb23.png"></p>
+<p><b>Case 2</b>: If the load factor is <img src=
+"../imgs/63b9f27e04970bdfed572cc8a80584b7911106c6.png">the size of
+table is contracted as:</p>
+<img src=
+"../imgs/2686019d9314d1f6790a5f9962d9516cdcb02616.png"></div>
+<hr>
+<div class="answer">
+<p>In this case the actual cost of the deletion operation
+is<img src=
+"../imgs/39f18979b99030b91cb6b711b5bc925baeb258cc.png">.So, the
+amortized cost is as:</p>
+<p><img src=
+"../imgs/40c65157473e814f5eda77d6e86f330883e48b14.png"></p>
+<p><img src="../imgs/3d4d0ad91e69be535c4bd2632a8a66136cdc5be5.png">
+… … (1)</p>
+<p>From the formula of load factor:</p>
+<p><img src=
+"../imgs/d7d66b1e0796b284fb24b7c4be4f103add5480bb.png"></p>
+<p>Putting the value of <img src=
+"../imgs/b1309309e089db5f621070629065ce26c02a7c55.png"> in the
+equation (1) as:</p>
+<p><img src=
+"../imgs/ee51c20ac872a2c00d967e3da83801c191f1e4ed.png"></p>
+<p>In <b>Case 1</b> the amortized cost of the deletion operation is
+3 while in <b>Case 2</b> it is 2 using the potential
+function<img src=
+"../imgs/c3cdf5fc5890e4b51d96a7958aecf9bdecaa1954.png">.</p>
+<p>Hence, the amortized cost of TABLE-DELETE operation is bounded
+by a constant 3 as in case 1.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,381 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 25.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>a)</b></p>
+<p>Suppose <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png">be the
+<img src=
+"../imgs/a396f2506bbc4c87a817271f476ab556435b2e01.png">matrix
+representing the transitive closure, in such way that <img src=
+"../imgs/fdd09ef7b72b139c9e09718712c2cfaf0b2d1fef.png">is 1 if
+there exists a path from <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">to<img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png">, otherwise
+0.</p>
+<p>• When a new edge is added into the graph, then check whether
+there is a possible path through the new edge. If there is a
+possible path, then update the matrix according to that.</p>
+<p>• The algorithm must contain only two loops which iterate based
+on the vertex <i>V</i>, because it must be<img src=
+"../imgs/9661198d890a192fabc8ef9c4e01ad39fc87b891.png">.</p>
+<p>Consider the algorithm of transitive closure which updates the
+transitive closure for each update into the graph.</p>
+<p>TRANSITIVE-CLOSURE (<i>u, v</i>)</p>
+<p>// iterate loop for all the vertices of graph</p>
+<p>1. <b>for</b><img src=
+"../imgs/da16c0c3e2a9f95cfc3d3ec975883a52d0e5be6c.png"></p>
+<p>// iterate loop for another vertices of graph</p>
+<p>2. <b>do</b> <b>for</b><img src=
+"../imgs/ac5a1266edd34244013519c3c7427e593d5a2874.png"></p>
+<p>// if path from vertex <i>p</i> to <i>u</i> and <i>v</i> to
+<i>q</i> exists</p>
+<p>3. <b>do if</b><img src=
+"../imgs/59f6f84e5456cf5a1ef101aaf5c97e27c13e98e8.png"></p>
+<p>// updating new edge into the matrix</p>
+<p>4. <b>then</b><img src=
+"../imgs/097daf9cad68ae41b13d6dd325356222307c4ab1.png"></p>
+<p>In this algorithm after adding an edge it may affect the whole
+matrix so this program updates each necessary index of matrix after
+adding an edge.</p>
+<p>Since to traverse the whole matrix and checking whether to
+update the value or not, it requires two nested loops.</p>
+<p><b>Since there are two ‘for’ loops iterating with</b>
+<b><img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png"></b> <b>,
+the complexity of the above algorithm is</b> <b><img src=
+"../imgs/9661198d890a192fabc8ef9c4e01ad39fc87b891.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following procedure to update the transitive
+closure <img src=
+"../imgs/0185854b88f77fb581c9adbe4011d0dd9218ec30.png"> of a graph
+<img src="../imgs/98bd8a6e33a210feb5221dc889e750151f2d8eed.png">
+when a new edge is added to<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">.</p>
+<p>Consider a graph with no edges as shown below.</p>
+<p><img src="../imgs/f12019772aaea74953b9345677b3fd500f2b1f8e.png"
+alt="D:\My work\2016\MAY\20.05.2016\Pulkit 2254\Image\1.png"></p>
+<p>Initially there is no edge in the graph, so, the matrix will be
+in the form of<img src=
+"../imgs/f65fdf87503e0d91ea4bc0c5a4c42277e2601c2b.png">,
+if<img src="../imgs/92fc0741b00f7be30db8f4a103d40f29d7940432.png">
+and otherwise 0.</p>
+<p><img src=
+"../imgs/dc23eef5822641f86d4b14e676f25ee4e7a3ad92.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, add the edges to the graph and compute the transitive
+closure using TRANSITIVE-CLOSURE algorithm.</p>
+<p>• Suppose, first edge connect the vertex 2 and 1, then for
+<img src="../imgs/e20db10d0135129871c47c9af6943d767d243596.png">
+and<img src=
+"../imgs/9eb977ae9b28932b4a638417f4c735f601f10c98.png">, the
+condition<img src=
+"../imgs/50c4933dfdefbf4ab74c061106751e0b6c37ae31.png">and
+<img src="../imgs/3477a0143fb44fad193a579e6449c23841185d62.png">becomes
+true so, <img src=
+"../imgs/56c479e5f12abc6bec32259709ab54f225d29c39.png">and<img src=
+"../imgs/bf8108ed43980d403738f44a7bf3f09df9c681d8.png">.</p>
+<p>• So,<img src=
+"../imgs/8778c1738fc42ae1f433df08b45995f3a2e784ba.png">, in this
+case, which is <img src=
+"../imgs/2f689235096970121f72860e158a574a96305079.png"> becomes
+one.</p>
+<p>Now, the new graph and corresponding matrix is given below:</p>
+<p><img src="../imgs/ad8d74b180bd011db4656c06cd0314590f274f66.png"
+alt="D:\My work\2016\MAY\20.05.2016\Pulkit 2254\Image\2.png"></p>
+<p>So,<img src=
+"../imgs/8778c1738fc42ae1f433df08b45995f3a2e784ba.png">, in this
+case, which is <img src=
+"../imgs/2f689235096970121f72860e158a574a96305079.png"> becomes
+one.</p>
+<p><img src=
+"../imgs/2e8dc0a5819263c6a8c4c6158197e2abf65712a4.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>If the next adding edge is<img src=
+"../imgs/90d81443d6b870c7a56d9105ee7f1bce2183d64b.png">, then the
+two conditions become true. Now, <img src=
+"../imgs/6d40f6a329d4aa4b90c1a8e9777b634322f329b0.png"> becomes 1
+since there is a path from 3 to 1.</p>
+<p>New graph and its transitive closure are as shown below:</p>
+<p><img src="../imgs/dfa9488917b5b4372c9badfda6c74f41c797d9f5.png"
+alt="D:\My work\2016\MAY\20.05.2016\Pulkit 2254\Image\3.png"></p>
+<p>So,<img src=
+"../imgs/8778c1738fc42ae1f433df08b45995f3a2e784ba.png">, in this
+case, which is <img src=
+"../imgs/6d40f6a329d4aa4b90c1a8e9777b634322f329b0.png"> becomes
+one.</p>
+<p><img src=
+"../imgs/9dbbbcdb5a22e7c8dda22046c8bb4876e43bb2dc.png"></p>
+<p>Similarly, the TRANSITIVE-CLOSURE algorithm can be repeated to
+update the transitive closure matrix <i>A</i> for any edge that is
+added into the graph.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b)</b></p>
+<p>Consider a straight line graph having <i>n</i> vertices and
+algorithm TRANSITIVE-CLOSURE mentioned above (part
+<i><b>a</b></i>):</p>
+<p><img src="../imgs/f46a91d6af9e19cdc7eb3dac6735afe568ffddc2.png"
+alt="D:\My work\2016\MAY\20.05.2016\Pulkit 2254\Image\4.png"></p>
+<p>The transitive closure of the given graph will be as below:</p>
+<p><img src=
+"../imgs/db79c00ce147d714150b73189723f4b5b16cdf1a.png"></p>
+<p>• In the above matrix, it can be seen that before adding any new
+edge, there are total <img src=
+"../imgs/ca1ac49294bab272be7c5c1d9c62a4293f18a488.png"> entries and
+the transitive closure of the given graph is 1.</p>
+<p>• The entries, which are above from the main diagonal contains 1
+as a value.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Insert a new edge that connects the first and last vertex of the
+graph <img src=
+"../imgs/80c24bc7c3274e243d1c50232110ead4bf714963.png">as shown
+below:</p>
+<p><img src="../imgs/e2da8fea706514c6c0827ef0e8b95302fa07fbdd.png"
+alt="D:\My work\2016\MAY\20.05.2016\Pulkit 2254\Image\5.png"></p>
+<p>Then, the above graph will become a cyclic graph. Now, all the
+edges are reachable from every other edge.</p>
+<p>Then all the <img src=
+"../imgs/1a4ffc930792fa3689e70723691aade1f9480b83.png">entries will
+become 1.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/8264d37c2e2d7c92ebe308cfab3331539bb4a74b.png"></p>
+<p>Entries must be needed to update the transitive closure. Thus,
+the time required to update the transitive closure is<img src=
+"../imgs/bf3a778321b593b0bf0f6fe4996704fe6a867bc8.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>c)</b></p>
+<p>If a graph has <i>n</i> vertices, then there are maximum
+<img src=
+"../imgs/5a1cd7027db4cb96876b96ed9a03eeccefdcbb92.png">edges or
+<img src="../imgs/fa2565caa4705e04f2b5e21331e671c53b2738fe.png">
+edges which can be added to the graph.</p>
+<p>• For adding one edge, the algorithm TRANSITIVE-CLOSURE defined
+in part (<i><b>a</b></i>) will take <img src=
+"../imgs/9661198d890a192fabc8ef9c4e01ad39fc87b891.png"> time thus
+to add <img src=
+"../imgs/1a4ffc930792fa3689e70723691aade1f9480b83.png">edges, the
+above mentioned algorithm will take <img src=
+"../imgs/27f322b332eda11c67e36cc66c9e7df7d0b46437.png"> time.</p>
+<p>• Above algorithm is inefficient if there is already a path from
+<i>p</i> to <i>v</i> or <i>v</i> to <i>q</i>.</p>
+<p>Consider the graph as shown below along with its transitive
+closure:</p>
+<p><img src="../imgs/85ac99a27e5fc421746115b43f42a568a2e07d90.png"
+alt="D:\My work\2016\MAY\20.05.2016\Pulkit 2254\Image\6.png"></p>
+<p>The matrix for the above graph is as shown below:</p>
+<p><img src=
+"../imgs/9dbbbcdb5a22e7c8dda22046c8bb4876e43bb2dc.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Add the edge <img src=
+"../imgs/78d11d9104571efdf03e18eb7f470bd5aadbb2ab.png"> to the
+graph, there is no need to update the transitive closure because
+there is already a path from 3 to 1 through the vertex 2. So, the
+loop over <i>q</i> in above algorithm is redundant when<img src=
+"../imgs/e1e95cb151b507f4d47764c57d70a84fe4e642f8.png">.</p>
+</div>
+<hr>
+<div class="answer">This problem is eliminated in the algorithm
+given below:
+<p>• Below algorithm gives the updated transitive closure matrix
+after inserting the new edges to the graph.</p>
+<p>• For updating the matrix, logical “and” operator used. After
+this checking process, updates are performed accordingly.</p>
+<p>TRANSITIVE-CLOSURE-UPDATE (<i>u, v</i>)</p>
+<p>// iterate loop for all the vertices of graph</p>
+<p>1. <b>for</b><img src=
+"../imgs/da16c0c3e2a9f95cfc3d3ec975883a52d0e5be6c.png"></p>
+<p>2. <b>do</b> <b>if</b><img src=
+"../imgs/eeade02114029a403fd549a5b381a18a4c88ed1a.png"></p>
+<p>// iterate loop for all the vertices of graph</p>
+<p>3. <b>then</b> <b>for</b><img src=
+"../imgs/ac5a1266edd34244013519c3c7427e593d5a2874.png"></p>
+<p>4. <b>do</b> <b>if</b><img src=
+"../imgs/93b14323b96273c3f1030a88fa3e3bd5b5ff0a4f.png"></p>
+<p>5. <b>then</b> <img src=
+"../imgs/097daf9cad68ae41b13d6dd325356222307c4ab1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of the above algorithm:</b></p>
+<p>It is known that there can’t be greater than <img src=
+"../imgs/982516228f85fd65abad59e2a17f6b9869044581.png">edges in the
+graph<img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">, therefore,
+<img src=
+"../imgs/8f8b3755624f247fd2e5cafc7881ab3356ad09ef.png">.</p>
+<p>• Now, the addition of <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">insertions,
+so total time taken in the first given two lines of the above
+algorithm is <img src=
+"../imgs/27fdeb20264af3094678f89dc057c83575387323.png">or<img src=
+"../imgs/0ee92939341b565bbd3b994e4ad719cd5147ed38.png">, because
+<img src=
+"../imgs/8f8b3755624f247fd2e5cafc7881ab3356ad09ef.png"></p>
+<p>• In the line numbers 3, 4 and 5, which takes <img src=
+"../imgs/4406158dcb541f6fb92a43c9e98abd109c29532f.png">time, for
+<i>n</i> insertions are executed only <img src=
+"../imgs/db45ac8af2ff21196a0dd212ea45f32591cea9fc.png">times.</p>
+<p>• It can be easily seen that the execution of the last three
+lines are performed only when<img src=
+"../imgs/f2a2fec9110ea198dc23e4f148eec2dd611e54f0.png">, and in
+this case, the line number 5, sets<img src=
+"../imgs/e62d9faa1ab1c37de892e1ba39eb2e654954654d.png">.</p>
+<p>• So, the 0 entries’ number in <img src=
+"../imgs/e94f640d95f1506b123af4791c3a4b635e46ba86.png">is reduced
+minimum 1 every time when the last three lines of the code
+run’s.</p>
+<p>• Since, there exists only <img src=
+"../imgs/982516228f85fd65abad59e2a17f6b9869044581.png">entries
+in<img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">and these
+lines can run maximum <img src=
+"../imgs/982516228f85fd65abad59e2a17f6b9869044581.png">times.</p>
+<p><b>Hence, the above procedure takes</b> <b><img src=
+"../imgs/0ee92939341b565bbd3b994e4ad719cd5147ed38.png"></b> <b>time
+to update the transitive closure for any sequence of</b>
+<i><b>n</b></i> <b>insertions.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>a.</p>
+<p>The asymptotic running times for INSERT, EXTRACT-MIN and
+DECRESAE-KEY, as a function of d and the number n of elements in a
+d-ary min heap are <img src=
+"../imgs/2d874bc3934fe414a1a1373e9bda73990b4d619d.png">, <img src=
+"../imgs/a934a66112b8808eeb37882ed1f13f42a0df6757.png"> and
+<img src=
+"../imgs/2d874bc3934fe414a1a1373e9bda73990b4d619d.png">respectively.
+The amortized costs for these operations in a Fibonacci heap are as
+follows: <img src=
+"../imgs/0df48e49d332097e1a168573f7d1b2bef2c88904.png">, <img src=
+"../imgs/95c86e2b436e84f35d8d75a32cb5738c2d34af06.png">, <img src=
+"../imgs/0df48e49d332097e1a168573f7d1b2bef2c88904.png">
+respectively.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b.</p>
+<p>The shortest paths can be computed from a single source on an
+<img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png">-dense
+directed graph <img src=
+"../imgs/7926966472303ea4d55dbc0e36c3a4aae0e9eda1.png">with no
+negative-weight edges in <img src=
+"../imgs/1b7fb5b79f479061ecfdb79eb81805a763e91fce.png"> time by
+choosing <img src=
+"../imgs/7a310707f45472f1a6c8c09da67240ece347e56f.png">.</p>
+<p>Implement Dijkstra’s algorithm using d-ary min-heap.</p>
+<p>Thus, the run time will be <img src=
+"../imgs/6e066d5fba88c01fc6e37f001d72646f3542434b.png"> for
+constant <img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png">, <img src=
+"../imgs/e7c343b7d43dc447b5ff455da2932c997ea58b1e.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c.</p>
+<p>The all-pairs shortest problem on an <img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png">-dense
+directed graph <img src=
+"../imgs/7926966472303ea4d55dbc0e36c3a4aae0e9eda1.png"> with no
+negative-weight edges can be solved in <img src=
+"../imgs/7e9123c0e27da232d46144d5fbe9d4f7d67bd6b3.png">time by
+running the algorithm made by using Dijkstra’s algorithm. This
+algorithm will run once for each vertex of the graph.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d.</p>
+<p>The all-pairs shortest-paths problem can be solved in <img src=
+"../imgs/7e9123c0e27da232d46144d5fbe9d4f7d67bd6b3.png"> time on an
+<img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png">-dense
+directed graph <img src=
+"../imgs/7926966472303ea4d55dbc0e36c3a4aae0e9eda1.png">that may
+have negative weight edges but has no negative weight cycles by
+creating the graph G that has all non-negative edge weights.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

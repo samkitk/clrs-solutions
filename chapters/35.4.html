@@ -1,0 +1,487 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 35.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/acbd0d9e4cef5c8304541b9ba435210d31092d6d.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/ff7a268e428e0bb9ac4fc7872e4d192cbbbdb1de.png">
+<hr>
+<img src="../imgs/48251d27d30fc6900f69d22b1185ee881ec51844.png">
+<hr>
+<img src="../imgs/b87f67c9b45dd239e0fa8e2b56ffd4f4b52fa47e.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>MAX-CUT Problem</b></p>
+<p>MAX-CUT problem is the problem in which the vertices of an
+undirected graph<img src=
+"../imgs/38b9c6e2abdc2b703a6b08be70698b705c62ac9c.png">are
+partitioned into two parts such that the total weight cut edges are
+more than any other cut for the same graph. Weight <img src=
+"../imgs/72bdc8be6528260c6d210a0c25394cb0a8f5442a.png">is a
+positive value which is associated with each edge of the graph.</p>
+<p><b>For example:</b> Consider the graph <i>G</i> (<i>V</i>,
+<i>E</i>), the vertices of which are partitioned into two parts
+<img src=
+"../imgs/06c15153eba35bfc26bafccd0e117d25f7d20b3a.png">and<img src=
+"../imgs/6e0c77b1fbedf9554565477ea4cb6230061a295a.png">such
+that<img src=
+"../imgs/479fb6f30191e48916756d8338239273697730c5.png">.</p>
+<p><img src="../imgs/e4d2def15d2ea3e289a92d24450e04e89a25188c.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p>In the above graph, for each edge<img src=
+"../imgs/592182aef659479510e6dcc134c8730a1b721fa8.png"><img src=
+"../imgs/cadb9ab8b830d26bb059b6b386269ad59a1e9044.png">and<img src=
+"../imgs/68f7b6b050ca84787bf606b409bfbdb8107dff65.png">of cut the
+vertices <img src=
+"../imgs/eabdf464c90955efcf4748eba84d00cc38da9f16.png">and<img src=
+"../imgs/c0d31ceb9be87f5d09795ff596ac8f56c30a6c1f.png">. The weight
+of cut is<img src=
+"../imgs/67f6b51e0b74ed7594076f90be189a2802ace488.png">which is the
+greater than the weight of any other possible cut of the graph.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, for the graph <i>G</i> (<i>V</i>, <i>E</i>), proving that a
+MAX-CUT problem is a randomized 2 approximation algorithm.
+Randomized approximation algorithms are used for the generation of
+approximate solutions for the optimization problems. The solutions
+of randomized algorithm are not of very good quality as they give
+the average solutions. There are two possible methods that can be
+used for proving any problem to be the randomized 2 approximation
+algorithm.</p>
+<p>a. De-randomization using conditional expectations.</p>
+<p>b. De-randomization using pair-wise independent hashing</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>a. De-randomization using conditional expectations:</b></p>
+<p>For a graph <i>G</i> (<i>V</i>, <i>E</i>) in which there are
+<i>n</i> labels available for vertices, the randomized algorithm
+designates a random variable<img src=
+"../imgs/1a150c23b81f2bd29969bf956dd54f490b364b29.png"> uniformly
+from<img src=
+"../imgs/dbe6fcf23e6641dcf9ec2678d1a399c5ee4b649b.png">to each
+vertex <i>i</i> with the equal probability <img src=
+"../imgs/9c740480062e33718d165ce2da41f7539380e600.png">. The cut of
+the graph is denoted by<img src=
+"../imgs/b0ebc0805474503d2c32dffab17c459ea1fef7d4.png">.</p>
+<p>Assume that there are <img src=
+"../imgs/5a72e7d2268ad7d03a71523797276774e9e36785.png">number of
+edges in the cut which is the function of assigned random
+variables<img src=
+"../imgs/b1bcdc1ce409332a39e8373acb3b441eb5167be2.png">. Now for
+each edge of <img src=
+"../imgs/f05adb3ba615939287c736dd1fdf83acd62c177d.png">designate
+each edge <img src=
+"../imgs/02ec5dfe47c47cd829e5c5cf9ab3815a740af1bf.png">to be 1 if
+<img src=
+"../imgs/9cdd63c9cd4dffada77c1ca2a9aed4a7250e4509.png">and<img src=
+"../imgs/f288fc990b52d47f5fb90370457b5ae3411b20b9.png">are
+different otherwise set it as 0.</p>
+<p>Since, it is adequate that for a partial assignment<img src=
+"../imgs/12c5aae0800f3697f7d869cca638c71f6b0ca388.png">then it will
+be very easy to calculate the conditional expectation which
+is<img src="../imgs/8bddff291bf7a2539d2304e6c90a5b4085919dfe.png">.
+It is true for each edge<img src=
+"../imgs/cfe5ac07ffc0ba162d9be699badec2f41593ba2b.png">from the
+linearity of expectation.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, for the conditional expectation there are three cases that
+should be considered as:</p>
+<p>1. If there is no value assigned to variable <img src=
+"../imgs/846e230898c30f39052df0fefbbeaf4f8b7fc1e3.png">and
+<img src="../imgs/05c624b9f61960628c1e472119317a06bec41bd1.png">for
+vertices <i>u</i> and <i>v</i> then the conditional expectation of
+the edge <img src=
+"../imgs/02ec5dfe47c47cd829e5c5cf9ab3815a740af1bf.png">will
+be<img src=
+"../imgs/9c740480062e33718d165ce2da41f7539380e600.png">.</p>
+<p>2. If only one variable in<img src=
+"../imgs/846e230898c30f39052df0fefbbeaf4f8b7fc1e3.png">and
+<img src="../imgs/05c624b9f61960628c1e472119317a06bec41bd1.png"> is
+assigned the value for the edge <i>e</i> the conditional
+expectation <img src=
+"../imgs/02ec5dfe47c47cd829e5c5cf9ab3815a740af1bf.png">will also
+be<img src=
+"../imgs/9c740480062e33718d165ce2da41f7539380e600.png">.</p>
+<p>3. If both the variable<img src=
+"../imgs/846e230898c30f39052df0fefbbeaf4f8b7fc1e3.png">and
+<img src="../imgs/05c624b9f61960628c1e472119317a06bec41bd1.png">have
+a value assigned then the conditional expectation <img src=
+"../imgs/02ec5dfe47c47cd829e5c5cf9ab3815a740af1bf.png">will be 1 if
+the values of <img src=
+"../imgs/846e230898c30f39052df0fefbbeaf4f8b7fc1e3.png">and
+<img src="../imgs/05c624b9f61960628c1e472119317a06bec41bd1.png">are
+different, otherwise it will be 0.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>b. De-randomization using pairwise independent
+hashing:</b></p>
+<p>Pairwise independence means that the probabilistic decisions for
+a pair of vertices will be independent of each other. The property
+used here from the randomized algorithm is that for every pair of
+vertices <i>u</i>, <i>v</i> the probability that <i>u</i> and
+<i>v</i> can implement different decision is<img src=
+"../imgs/9c740480062e33718d165ce2da41f7539380e600.png">. This
+property could be achieved using only <img src=
+"../imgs/944f5fc99deb2f0b3bd3e4951cdccbfc9b597488.png">independent
+random coin tosses; it cannot be achieved using <i>n</i>
+independent random coin tosses.</p>
+<p>Proof for MAX-CUT problem to be a randomized 2 approximation
+algorithm can be done by any of the above methods.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>De-randomization using pairwise independent hashing
+method:</b></p>
+<p>Consider<img src=
+"../imgs/1b948f3f6053929b459855b3ca93f3dc8efb0ab3.png"> refers to
+the field<img src=
+"../imgs/dbe6fcf23e6641dcf9ec2678d1a399c5ee4b649b.png">under the
+operation of addition and multiplication modulo 2. Assigning value
+to each vertex a distance vector <img src=
+"../imgs/90ba54d9439b9114f3b2a424f0197381c57ba0bf.png">in the
+vector space<img src=
+"../imgs/f50f804f1f560ae4be5d17cdc833eefd4d593993.png">, our choice
+of <img src="../imgs/944f5fc99deb2f0b3bd3e4951cdccbfc9b597488.png">
+approves that the vector space should allot unique element to each
+vertex. Now, assume that<i>r</i> be a uniform random vector
+in<img src="../imgs/f50f804f1f560ae4be5d17cdc833eefd4d593993.png">,
+divide all the vertex sets into following subsets:</p>
+<p><img src=
+"../imgs/8ac08539348a4ec8b6a4a7615f1b85e3eb08d1f8.png"></p>
+<p>For any edge<img src=
+"../imgs/a5fe057dda3a93f96eb5d5b3a344a879ad20c6be.png">, the
+probability that <img src=
+"../imgs/4084d2e940451e4d11cf2084e517671ce48ad131.png">is equal to
+the probability that <img src=
+"../imgs/6d6f11cea903ef68cadc8e7828ec4f3d3b8fa7a0.png">is nonzero.
+For any non zero vector that is fixed <img src=
+"../imgs/8e473d8c5aada6c9fbf913ea10cb082c6f02e94b.png">, here is
+<img src=
+"../imgs/8743b33bdcb4f680eb244908ed436abf10715a11.png">because the
+set of <i>r</i> satisfying <img src=
+"../imgs/31c7124e1f607aee828b5a1ca91bf18cb34f54c8.png"> is a linear
+subspace of <img src=
+"../imgs/f50f804f1f560ae4be5d17cdc833eefd4d593993.png">of dimension
+<img src="../imgs/b45c91f8ffd4576da9d7024d1ec039db4f3fe6f1.png">,
+so total <img src=
+"../imgs/d89fbd479bb9d719b8f47c798a863551c0589e0c.png">of the all
+<img src=
+"../imgs/48fd099c03a94f5673289ef91095e58767aafdf7.png">possible
+vectors <i>r</i> have zero dot product with <i>w</i>and rest
+<img src="../imgs/d89fbd479bb9d719b8f47c798a863551c0589e0c.png"> of
+them have non zero product with <i>w</i>.</p>
+<p>So, if there is a sample <img src=
+"../imgs/9c65fe1a3c5f981221ae21584ceb5ba4808edc5d.png">thoroughly
+at random, the expected weight of partitions defined by <img src=
+"../imgs/2acd55813c801ce8ed45425dfd7c67d7285c415e.png">is at least
+half the weight of the maximum cut. The vector space <img src=
+"../imgs/f50f804f1f560ae4be5d17cdc833eefd4d593993.png"> has only
+<img src=
+"../imgs/7ce402e64967a3ee175aa2a20f4f091b2d8d5d80.png">vectors with
+itself, which proves to be a deterministic option to our randomized
+algorithm.</p>
+<p>Else than selecting <i>r</i> at random, finding out the weight
+of the cut <img src=
+"../imgs/2acd55813c801ce8ed45425dfd7c67d7285c415e.png"> for each
+<img src=
+"../imgs/9c65fe1a3c5f981221ae21584ceb5ba4808edc5d.png"></p>
+<p>And select the cut which have maximum weight. This is at least
+as good as selecting r at random.</p>
+<p>Therefore, maximum cut problem is a deterministic
+2-approximation algorithm with the cost incurred at the running
+time with factor of<img src=
+"../imgs/b638eb6574849d0182f3e44fd149191efab60cb1.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Linear Programming</b></p>
+<p>Linear programming is a way of achieving the maximum possible
+outcome from a set of resources that are represented as an
+integrated mathematical design. In the technical terms the linear
+programming is a way to achieve optimum results from the linear
+programming problems. This optimization is subject to a few
+constraints.</p>
+<p>In the single-source shortest-path issue, a shortest path can be
+found from source vertex <i>s</i> to all the vertices which are
+present in the graph. In order to do this, for each and every
+vertex from the considered vertex, the linear programming strategy
+can be a good choice in which linear equations are formed from the
+concerned graph.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Standard form of linear program:</b> In a standard form there
+is a set of <i>p</i> real numbers that are<img src=
+"../imgs/39785c7b620b878141a51ec61f2526d3b388cec6.png">, another
+set of <i>q</i> real numbers that are<img src=
+"../imgs/84fb34e0509e338efd99b068086fee585ad1fdf3.png"> and a set
+of<img src=
+"../imgs/b2a92179c53ebd50387383530bca1a43746a2875.png">real numbers
+that are<img src=
+"../imgs/884d95328550c0cab6a30d4f4c43d6988d764a16.png">where,</p>
+<p><img src=
+"../imgs/a2fffe244451f068b76e9cdfcd1a0d90849f917e.png"></p>
+<p><img src=
+"../imgs/fbb2137243d040cb19bfd9b228696ffbe5d869ae.png"></p>
+<p>Now, the objective is to find <i>p</i> real numbers<img src=
+"../imgs/55db0d03d80e4b3031f1947950493a0acbeeb709.png">such
+that</p>
+<p>Maximize</p>
+<p><img src="../imgs/04372decb8d9b89cba8644873ef628c923520774.png">
+<b>… … (1)</b></p>
+<p>And that is subject to</p>
+<p><img src="../imgs/5d50b9dd599867b2da0c43dce65bff39fa2d307c.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/9ed522f4e550c53445df5a8686cda8cab558dcab.png">
+<b>…… (3)</b></p>
+<p>The first expression is called the objective function. The
+second and the third expression show the constraints. This way a
+linear program can be put into the standard form.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Vertex-Cover:</b> For an undirected graph the vertex cover is
+define as the set of vertices that can cover all of the edges of
+the concerned graph. Consider the graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png"> the subset
+<i>P</i> of vertex set <i>V</i> is the group of vertices that can
+cover all the edges<img src=
+"../imgs/e0eed80e88763dc0e58b50b69e3d7b03f8295279.png">in the graph
+that is either the edge<img src=
+"../imgs/e0eed80e88763dc0e58b50b69e3d7b03f8295279.png">is connected
+to vertex <i>a</i> or it is adjacent to the vertex <i>b.</i></p>
+<p><b>For example:</b> Consider the graph <img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">where<img src="../imgs/7539a6265a9f837a30c061171fa82640c04620b7.png">
+.</p>
+<p><img src="../imgs/c4b97e17136616041ae9ff760a91658c40a85660.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\1.tif"></p>
+<p>In the above graph the red colored vertices are covering the
+edges of graph <i>G</i> that is vertex cover<img src=
+"../imgs/d9d235ed0a91e77c8086fe3e0df9fef5b8cf165e.png">. The size
+of vertex cover is the total amount of vertices in the vertex cover
+set. For the above graph the size of vertex cover is 4.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The vertex cover is called as minimum vertex cover if it
+contains the minimum number of vertices to cover entire set of
+edges of the graph that is no more vertices are required.</p>
+<p><b>For example:</b> The minimum cover for the above graph
+is<img src=
+"../imgs/eea1a98c5b2ed6905bab700563cf7bb4600e4946.png">the graph is
+shown below:</p>
+<p><img src="../imgs/bf287762853c8e52b3f0caee30cb00a8808b4668.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\2.tif"></p>
+<p>The vertex cover of minimum size is also known as optimal vertex
+cover.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider the <b>linear-programming relaxation</b> whichis a
+linear programming of approximating weighted vertex cover. Consider
+an undirected graph <i>G</i> = (<i>V</i>, <i>E</i>) in which
+<img src="../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png">has
+an associated positive weight <i>w</i>(<i>v</i>).</p>
+<p>Now, for any vertex cover<img src=
+"../imgs/77e938aac878737f06863c570681986a25c0de14.png">. Define the
+weight of the vertex cover.</p>
+<p><img src=
+"../imgs/9340f3f7c0da08260fff4ca0931ba026cb6051c8.png"></p>
+<p>To get the vertex cover of least possible weight .Below mention
+linear program is the</p>
+<p>relaxation version for vertex cover of least weight. It is
+formed from the 0-1 integer program for getting a minimum weight
+vertex cover. If the constraint <img src=
+"../imgs/c648098baf36e34213e1669cdb4862b3cfe7ce3e.png"> remove from
+0-1 integer and replace it by<img src=
+"../imgs/34af54bd219bd92292a22445a09ee981e7ca7615.png">.</p>
+<p>After replacement, the linear programming version formed is
+known as linear programming relaxation. Any viable solution of 0-1
+integer program in section 35.4, equations
+<b>(35.14</b><b>–</b><b>35.16)</b> is also viable solution to the
+linear program in equations <b>(35.17</b><b>–</b><b>35.20)</b>.</p>
+<p>Due to this, optimal solution of the linear program gives the
+lower limit on the value of an optimal solution to the 0-1 linear
+program, and thus a lower limit on the optimal weight in the
+minimum-weight vertex cover problem.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Relaxation version of linear programming for minimum weight
+vertex cover problem is as:</p>
+<p>Minimize</p>
+<p><img src="../imgs/d43c530c42fd534ab8392d75906ca59c06389252.png">
+<b>… … (35.17)</b></p>
+<p>Subject to</p>
+<p><img src=
+"../imgs/98a17b39550764e4788b00bd31da76aefa18b21a.png">for each
+<img src="../imgs/bd1c53ec28d4a80cfbcdcdafac33e183abb8d47c.png">
+<b>… … (35.18)</b></p>
+<p><img src="../imgs/08bfced77eb9fe189372c0e5a4f48dfdb3f94589.png">
+For each <img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png"> <b>… …
+(35.19)</b></p>
+<p><img src="../imgs/743636e4fb2e305292ffb1f2ff34b682ad6272a9.png">
+For each <img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png"> <b>… …
+(35.20)</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>To show that if line <b>(35.19)</b> is removed, from above
+program, still there is optimal solution that must satisfy
+<img src="../imgs/08bfced77eb9fe189372c0e5a4f48dfdb3f94589.png">for
+each<img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png">. To solve
+the above linear program in polynomial time, assume that <img src=
+"../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png">is an
+optimal solution to the above linear program. For the optimization
+of the program, removing the constraint asked in the problem.</p>
+<p>Round every value to the nearest integer,</p>
+<p>Set <img src=
+"../imgs/435c75b1816919e068da90976c6e01f6c9504244.png"></p>
+<p><img src="../imgs/ab7e3584edd8731396ef9a141570e3f21ca22224.png">
+If <img src=
+"../imgs/1b90acc0dbd548c93f613cea1a6d09b64fcc9520.png"></p>
+<p><img src="../imgs/29465342d14ff9d6553a52290676d4aca3087fcb.png">
+If <img src=
+"../imgs/ffdde2fd02cb54637a34983599b314a3353b5b76.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, finding the set corresponding to solution <i>x’</i>. The
+set <i>P</i> still is a vertex cover; because of every edge
+<img src="../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png">it
+is correct that <img src=
+"../imgs/8ad469a247486517a2288a710efe27e337c5e334.png"> and minimum
+one of <img src=
+"../imgs/1cb104aee6a0d44b635e7d54aed98ea8a1db530c.png"> or
+<img src="../imgs/d86184beea5267ba375e77f3925e67af3a5e34f9.png">should
+be minimum ½ and therefore one of <i>u</i> or <i>v</i> will belong
+to <i>P</i>, which is still satisfying the condition of equation
+<b>(35.17).</b> The above explanations say that, in a vertex cover
+and imagine any edge<img src=
+"../imgs/bd1c53ec28d4a80cfbcdcdafac33e183abb8d47c.png">.</p>
+<p>Now, according to the constraint <b>(35.18)</b> <img src=
+"../imgs/98a17b39550764e4788b00bd31da76aefa18b21a.png">. This
+illustrates that at least one of<img src=
+"../imgs/1cb104aee6a0d44b635e7d54aed98ea8a1db530c.png">and
+<img src="../imgs/d86184beea5267ba375e77f3925e67af3a5e34f9.png">is
+at least (1/2).</p>
+<p>Therefore, at least one of <i>u</i> and <i>v</i> is containedin
+the vertex cover. This means that every edge is covered.</p>
+<p>And according to 0-1 linear program, write the constraint that
+for any edge (<i>u</i>, <i>v</i>), at least one of <i>u</i> and
+<i>v</i> must be in the vertex cover as<img src=
+"../imgs/98a17b39550764e4788b00bd31da76aefa18b21a.png">.</p>
+<p>Hence, it can be said that after removing constraint in equation
+<b>(35.19)</b> do not make any sense if these are removed from
+linear program, would get the optimal solution which would be
+<img src="../imgs/08bfced77eb9fe189372c0e5a4f48dfdb3f94589.png">for
+each<img src=
+"../imgs/02b74f3fe623bbaacbbbf8a7ee64cdcdceb6380c.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,421 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 21.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Proving the</b> <i><b>Lemma</b></i> <b>21.4</b></p>
+<p>The <i>Lemma</i> 21.4 can be proved by using UNION, MAKE-SET and
+FIND-SET, and performing induction on a number of operations.</p>
+<p><b>The following are the pseudocodes for the above
+operations:</b></p>
+<p>// creating a set</p>
+<p>MAKE-SET (<i>X</i>)</p>
+<p>//find the parent node of node <i>x</i></p>
+<p>1. <i><img src=
+"../imgs/c71040e20a89d1e12203036fb8c940d779ce22ee.png"></i></p>
+<p>//set rank for <i>x</i></p>
+<p>2. <i><img src=
+"../imgs/c538e8a6bf839332edcf9991f12ccad7787be82b.png"></i></p>
+<p>Here, rank is ceiling value of the height of <i>x</i>. Whenever
+MAKE-SET creates a singleton set (set having only one element), the
+rank of the tree is set to 0.</p>
+<p>// UNION operation in which element of both the sets store in to
+first set</p>
+<p>UNION(<i>x</i><i><b>,</b></i> <i>y)</i></p>
+<p>// performing link operation using the find set operation for
+both the sets</p>
+<p>1. LINK (FIND-SET(<i>x</i>), FIND-SET(<i>y</i>))</p>
+<p>// performing link in between the set element according to their
+rank</p>
+<p>LINK(<i>x,</i> <i>y)</i></p>
+<p>//join the roots passed as argument</p>
+<p>1. <b>if</b><i><img src=
+"../imgs/4f4d0caca53f5f72ee0092c246d89c57aafae321.png"></i></p>
+<p>//make the node <i>xy</i>’s parent</p>
+<p>2. <i><img src=
+"../imgs/e8e1736329797e8a1623149d0f0725de93863a5d.png"></i></p>
+<p>//make <i>y x</i>’s parent</p>
+<p>1. <b>else</b></p>
+<p><img src=
+"../imgs/a7befd3ddb17d69d1b87c3642f51991030612b0b.png"></p>
+<p>//check if both of them have equal rank</p>
+<p>4. <b>if</b><i><img src=
+"../imgs/97a0e14b5150171b61e99ccfa0f95d6c8305c5b8.png"></i></p>
+<p>// now rank of the element of set <i>y</i> is incremented by
+1</p>
+<p>5. <i><img src=
+"../imgs/94a49a5d45e647fe292e151266ba100bee047fcc.png"></i></p>
+<p>UNION method takes two sets as parameters and by linking these
+two sets, it forms a new set (tree). UNION makes the new tree as
+follows:</p>
+<p>1. If the ranks of the roots are unequal: The element which has
+the higher rank will be the parent of another; however, there would
+be no change in the ranks themselves.</p>
+<p>2. If the ranks of the roots are equal: Then any of them is
+chosen as the parent and its rank is incremented.</p>
+<p>// searching for the set</p>
+<p>FIND-SET(<i>x</i>)</p>
+<p>1. <b>if</b><i><img src=
+"../imgs/24a6b0430d29dc873e848e9fe5851208ab4e6f66.png"></i></p>
+<p>2. <img src=
+"../imgs/b84fa805b7375ca1c4a9a6485da9da882d4b4f07.png">=
+FIND-SET(<i>x</i>, <i>p</i>)</p>
+<p>3. <b>return</b> <i><img src=
+"../imgs/b84fa805b7375ca1c4a9a6485da9da882d4b4f07.png"></i></p>
+<p>The procedure of FIND-SET works as follows:</p>
+<p>• FIND-SET recursively calls itself to find the root, in line
+2.</p>
+<p>• When the <i>x</i> equals to <i>x.p,</i> in the line 3, the
+root is returned.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Applying Induction on number of operations:</b></p>
+<p>Consider the number of operations as <i>n</i>.</p>
+<p><b>Step 1 (base case):</b> when <i>n</i> = 1(single
+operation)</p>
+<p>When MAKE-FIRST is called on <i>x</i>, it creates a tree with
+single element <i>x</i> as root and sets the rank as 0. Similarly,
+when MAKE-FIRST is called on <i>y</i>, it creates a tree with
+<i>y</i> as root and sets rank of the tree as 0. When the single
+UNION operation is applied on these two sets, it results in a new
+tree(set) with either <i>x</i> or <i>y</i> as the root. Then the
+tree contains <i>x</i> and <i>y</i> only.</p>
+<p>If <i>x</i> is the root of the new tree, then the rank of
+<i>x</i> is 1 and the rank of <i>y</i> is 0.</p>
+<p>Similarly, if <i>y</i> is the root of the new tree, then the
+rank of <i>y</i> is 1 and the rank of <i>x</i> is 0.</p>
+<p><b>Step 2 (inductive hypothesis):</b> For <i>n</i>=<i>k</i>
+(<i>k</i> operations)</p>
+<p>When <i>k</i> operations are performed on <i>k</i> nodes, the
+root node in the resultant tree has the rank <i>k</i>-1and
+remaining node has the rank less than <i>k</i>-1.</p>
+<p><b>Step 3:</b> when n = <i>k</i> + 1</p>
+<p>It is assumed that after <i>k</i> number of operations, the
+given lemma is true. Now, it is required to show that the given
+tree is true for <i>k</i>+1<sup>th</sup> operations.</p>
+<p>From the inductive hypothesis, after applying <i>k</i>
+operations on <i>k</i> elements, a tree is obtained and its root
+(<i>y</i><sub>k</sub>) has the rank at most <i>k</i>-1.</p>
+<p>Now consider a tree that contains only one node
+(<i>x</i><sub>k</sub>). Apply one more UNION operation
+(<i>k</i>+1th operation).</p>
+<p>The LINK procedure would either make the node
+<i>x</i><sub>k</sub> the parent of <i><img src=
+"../imgs/9f6618ea30f877fd693c1c6b81353353bed1f590.png"></i> or vice
+versa. That is, the rank of the <i>x</i><sub>k</sub> becomes
+<i>k</i> or the rank of the <i><img src=
+"../imgs/9f6618ea30f877fd693c1c6b81353353bed1f590.png"></i> is
+increased by 1(that is, <i>k</i>).</p>
+<p>In other words, the rank of the remaining nodes in the tree is
+less than <i>k.</i></p>
+<p>From the above steps, it is clear that the rank of the root is
+changes for each operation and the rank of the remaining nodes is
+less than the rank of the root.</p>
+<p><b>Hence, the value of</b> <b><img src=
+"../imgs/16ef1a21f30e6e1d08e6d01996fd0c2307d43140.png"></b>
+<b>increases monotonically over time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The concept of union find data structure is driven from the
+Kruskal’s minimum spanning tree algorithm where two operations are
+required on the disjoint set of vertices: determine that weather
+the both vertices (<i>u</i> and <i>v</i>) are in the same set and
+Union of the disjoint set A and B.</p>
+<p>The union find data structure performs the two operation for
+implementation of the earlier defined two operation:</p>
+<p>• Find (<i>v</i>): It return the canonical element of set
+containing <i>v</i>. Also check that <i>u</i> and <i>v</i> are in
+the same set by find (<i>u</i>) = find (<i>v</i>).</p>
+<p>• Union (<i>u, v</i>): it combines the set of containing the
+canonical elements <i>u</i> and <i>v.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Rank of Node:</b></p>
+<p>Rank of node is just like the same of the height of the subtree
+if path compression is not done. If <i>u</i> is not the root of
+tree then rank (<i>u</i>) would be strictly less than of the rank
+of <i>u’s</i> parent.</p>
+<p>It can be proof by the induction: Union operation preserves this
+rank property and Find increase the difference between the rank of
+node and parents.</p>
+<p>Rank of node can only change if the <i>u</i> is the root. Once
+the node used as non-root then it never counted as root again.</p>
+<p>Every node has the rank at most <img src=
+"../imgs/5d55a16f33370835d3bfcd96e6acbf5ca9f51943.png">with the two
+heuristics union by the rank and path compression.</p>
+<p>It can be proved by induction as following:</p>
+<p><b>The claim:</b></p>
+<p>For a node in the tree with rank <i>r</i>, the size of the sub
+tree with the node as root will be at least
+<i>2</i><sup>r</sup>.</p>
+<p><b>Base Case:</b></p>
+<p>A node of the rank zero (0) is the root of subtree which
+contains itself at least, so the size of it is equal to at least
+one.</p>
+<p><b>Inductive Case:</b></p>
+<p>• Assume a node <i>X</i>, it can have the rank (<i>r</i>+1) only
+in one condition if, it had the rank <i>r</i> and it was the root
+of tree at the previous stage that was joined with another tree
+which root having rank <i>r</i>.</p>
+<p>• Now the <i>X</i> node will be the root of union of two tree.
+By the inductive hypothesis each tree having at least 2<sup>r</sup>
+size and therefore <i>X</i> be the root of the tree of size:</p>
+<p>2<sup>r</sup> +2<sup>r</sup> = 2<sup>r</sup><sup>+1</sup>.</p>
+<p>• Now in the forest, the total number of node is n and having
+the at least 2<sup>r</sup> nodes in the every tree with r rank.
+Therefore,</p>
+<p><img src=
+"../imgs/7ec8be2777b443a14c3a6fd30275a67b15d1daa4.png"></p>
+<p>Hence, for every node in union find algorithm rank will be at
+most <img src=
+"../imgs/5d55a16f33370835d3bfcd96e6acbf5ca9f51943.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Union by rank:</b></p>
+<p>It is a heuristic approach in which two trees are merging on the
+basis of their rank. The tree which has the larger root node
+becomes root node after merging.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the MAKE-SET() , UNION() , FIND-SET() and LINK()
+procedure provided in section 21.3.</p>
+<p>• The MAKE-SET() procedure takes <img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">time to
+create a tree contain only single node. When <i>m</i> MAKE-SET()
+operation is called then total time becomes <img src=
+"../imgs/bf96a0fc3117b181b4c6c3b3682ef95bfa582ae8.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• The UNION() procedure is called to merge the trees, which
+further call the LINK() and FIND-SET() procedure. The LINK() takes
+<img src=
+"../imgs/a296b6379dd814d56e8161660bf066f202b02c57.png">time to
+create a tree contain only single node.</p>
+<p>• It is already stated that rank of every node is<img src=
+"../imgs/9ef570358a8f57219062d4c7fd6841166b11c53c.png">. The time
+taken by each FIND-SET() procedure to find set in tree having
+height <img src=
+"../imgs/9ef570358a8f57219062d4c7fd6841166b11c53c.png">is <img src=
+"../imgs/15274cd378920fa715e433e73d17c1cfd4588ca1.png">.</p>
+<p><b>Therefore,</b> <i><b>m</b></i> <b>operation of MAKE-SET(),
+LINK() and FIND-SET() are performed in time</b> <b><img src=
+"../imgs/706e9e9b074411e81251201cf4a0ac267d3d9384.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Professor Dante</b></p>
+<p>In order to justify Professor Dante reasons, consider an example
+for <i>n</i> <i><b>=</b></i> 16, and make these 16’s into separate
+singleton sets. This has been done with MAKE-SET operation. Then
+perform 8 UNION operations in order to connect the sets into 8
+pairs where each pair has a root with rank 0 and a child with rank
+1. This is shown below:</p>
+<img src="../imgs/92a70cda59ced6b28f404285069a61bbbbfaa269.png"
+alt="Picture 1">
+<p>After that use 4 UNION’s to connect pairs of these trees, so
+that there are 4 trees, each with a root of rank 2, children of the
+root of ranks 1 and 0, and a node of rank 0 that is the child of
+the <i>rank–</i>1 node. This can be shown as:</p>
+<p><img src="../imgs/9fbc0cc8f0cb3e60dfd7a4516acb4f7a044ba161.png"
+alt="Picture 4"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, linking the pair of trees together, so that two resulting
+trees are formed having root of rank equal to 3. Each tree contains
+a path from the leaf of tree to root of tree having ranks 0, 1 and
+3. This can be shown as:</p>
+<p><img src="../imgs/6954dcdac3fbec34c5357cbeabf123a5e35bc8be.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\8.tif"></p>
+<p><img src="../imgs/74d20d0dbda23c4b42668413de261b47f31b5a87.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\9.tif"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Finally, linking of both two trees will be there. So, that there
+is a path from a leaf to the root with ranks 0<i>,</i> 1<i>,</i> 3,
+and 4. Consider <i>x</i> and <i>y</i> be the nodes on this path
+with ranks 1 and 3, respectively. This can be shown as:</p>
+<p><img src="../imgs/58cea6875116efff1f5b0cae4089d2dbbfaf4a7b.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\10.tif"></p>
+<p>Since, (From the above diagram)</p>
+<p><i>A</i><sub>1</sub>(1) = 3, <i>level</i>(<i>x</i>)<i>=</i>
+1,</p>
+<p>And</p>
+<p><i>A</i><sub>0</sub>(3) <i>=</i> 4<i>, level</i><i>(y)</i>
+<i>=</i> 0.</p>
+<p>Yet <i>y</i> follows <i>x</i> on the end path.</p>
+<p><b>Hence, it is clear from the example given above that
+Professor Dante’s reason is not correct</b>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Change the variables such that <img src=
+"../imgs/167b605bdbf293313523b9f73abdcf8ed87ab21a.png">. Since
+<img src="../imgs/1ca9173e619e7acfc87fc8b8758c20b3e1326764.png">
+for all the values between 0 and 2047, so <img src=
+"../imgs/afcb35ff5510026fa4808acd51edea8b11dddeed.png"> for all the
+values between <img src=
+"../imgs/0ababc97dd53633c208b0484e3e0f2c4983c40f7.png">. This value
+is higher.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Initially, <img src=
+"../imgs/291b34b78da55871926ec777f0307c434425a8b6.png"> and
+<img src="../imgs/84cac8d4fbf29f8bd0e549e5c7a2e733c75e7a63.png">.
+To prove the improved bound of <img src=
+"../imgs/c7bf13932bf04573b870e11327eb183a72fb2561.png">, the
+general structure will be the same and it is required that
+<img src="../imgs/c5fac0bd090ddb57e3d875ec6429a0f75b216cd7.png">
+for all the non-roots x with rank[x] <img src=
+"../imgs/43d928e351c06616c2c536939ffbf2c8809c6c6d.png">1. Now,
+replace <img src=
+"../imgs/64af2596695981d5f0fca2fab2e905a61113731c.png">with
+<img src="../imgs/2651be0e7fc1d6c33e1a016cac66a035c2ec87f4.png"> by
+observing that <img src=
+"../imgs/9494658501aae8a99bdc389a893565e714cf3404.png"></p>
+<p>All the subsequent proofs will depend on the previous
+observations. <img src=
+"../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

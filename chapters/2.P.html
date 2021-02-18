@@ -1,0 +1,638 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 2.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Insertion Sort:</b></p>
+<p>It is one of a sorting technique which is used to sort the
+elements of list in particular fashion. In insertion sort a single
+list is divided into list: sorted and unsorted list. In starting
+sorted list is empty, in each step one element is taken from the
+unsorted list and put it in proper place in sorted list.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The worst case complexity of insertion sort is<img src=
+"../imgs/642d6ebcb1f14248615aeb12b1532f92f47e12a6.png">. It means
+insertion sort takes maximum <img src=
+"../imgs/642d6ebcb1f14248615aeb12b1532f92f47e12a6.png"> time to
+sort a list having <i>n</i> elements. The time taken by insertion
+sort to sort <img src=
+"../imgs/0ebf933452b3db0267d531d371fa60ebdc0c56bc.png"> lists each
+having <i>k</i> elements is</p>
+<p><img src=
+"../imgs/5bfcbf2386a8333a27163fab9b3d54858b1db739.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>The worst-case time complexity of insertion sort to sort
+the</b> <b><img src=
+"../imgs/e7e93667bca18c948934f17e7c19f83889bef280.png"></b> <b>sub
+lists each of length</b> <i><b>k</b></i> <b>is</b> <b><img src=
+"../imgs/0103506f235c880fa4c13fb6e1d839f80baac41c.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>If user uses 2-list merge to merge all lists it would take
+<img src="../imgs/1b7f9f06f48cde0ca7b6feb32841ebeb630124ff.png">
+time because then user need <i>n</i> time to copy each element and
+create a new sorted list. Also there are of total <i>n/k</i> list
+to be merged.</p>
+<p>But to achieve <img src=
+"../imgs/502b97e8d9e57d91fc13e93c0ca3e0586cc109fe.png"> time, one
+can use pairwise merging. So, user starts with initial lists and
+makes pairs of them and merges them. After this step there are some
+resultant lists which are sorted. Then again user does the same to
+those resultant lists by applying pairwise merging and this process
+will go on till user will end up with a single list.</p>
+<p>Since merging needs <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> time at
+each level and there are of total of <i>ceil</i><i><img src=
+"../imgs/bc48b95dd41e741dc2ed0c7643d6c087499795ec.png"></i> height
+of tree because at starting the number of list starts with
+<i>n/k</i>. So, the total running time for merging is<img src=
+"../imgs/502b97e8d9e57d91fc13e93c0ca3e0586cc109fe.png">.</p>
+<p><b>Therefore, using the above process it is possible to merge
+sub lists in</b> <b><img src=
+"../imgs/502b97e8d9e57d91fc13e93c0ca3e0586cc109fe.png"></b>
+<b>worst case time.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The complexity of modified algorithm is<img src=
+"../imgs/5bdf5bcdc5f20dd966a875920e0166eecc04c493.png">. The worst
+case complexity of merge sort is<img src=
+"../imgs/f95e55d3fa6bd53f484ff1c50368488033c5aba4.png">.</p>
+<p>In modified algorithm the largest value of <i>k</i> should not
+be more than<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">, in order
+to make complexity equal to merge sort.</p>
+<p>The value of <i>k</i> should not be more than<img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png">,</p>
+<p><img src=
+"../imgs/d4c34d33afd787d554e3d6cf05561377200f6130.png"></p>
+<p>Now put <img src=
+"../imgs/6110b5197db75d3b443f2614e061720968a8ce6a.png">in modified
+algorithm complexity</p>
+<p><img src=
+"../imgs/0d564d9f2734a1f87b7070394b600abce594c378.png"></p>
+<p>Here ignoring constant and taking the higher turn will give the
+complexity <img src=
+"../imgs/91db5e43592ff2ed7f193c58ce17024713dca87f.png"></p>
+<p>Now to check that it is the maximum value for <i>k</i>, assume
+the value for <i>k</i> greater than <i><img src=
+"../imgs/bca988685bcff7ec8743523c608d4ce661de8561.png"></i></p>
+<p><img src="../imgs/9d70aea5cc26de6fbefc0ba3481fbd7bc2aa6d6a.png">
+…… (1)</p>
+<p>Multiply by <i>n on</i> both sides, the equation (1) will
+become</p>
+<p><img src="../imgs/1980ca5f3e467cd88eecd22b0d103618cdb5b494.png">
+…… (2)</p>
+</div>
+<hr>
+<div class="answer">
+<p>From equation (2), the complexity will become,</p>
+<p><img src=
+"../imgs/2502b383dd61242819b207f6ccfe10b6e5c87600.png"></p>
+<p>Ignore lower term.</p>
+<p><img src=
+"../imgs/5c56fbd5bb5dd2fd0c9b19dc74f7ecd3055150f1.png"></p>
+<p>But this contradicts the condition that the complexity cannot
+exceed the running time of original merge sort.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Hence the value for</b> <i><b>k</b></i> <b>should not be
+greater than</b> <b><img src=
+"../imgs/bca988685bcff7ec8743523c608d4ce661de8561.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Since it is a constant factor, so user must select the value of
+<i>k</i> for which merge sort takes more time than insertion sort.
+Also this value will vary from computer to computer.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A bubble sort is a sorting algorithm which is used to arrange
+elements of an array in ascending or descending order. In each
+iteration, the algorithm checks adjacent elements to determine
+whether the first element is smaller than later element or not, if
+not, elements are exchanged.</p>
+<p>Two prove that bubble sort is correct, the output array must be
+in sorted order and the elements in the output array must be the
+elements in the original elements in <i>A</i> (irrespective of
+their order).</p>
+<p>• Since it is already given that the output array <img src=
+"../imgs/7fb0975fa907b7acc19d966bfbaae6a6a52ff67f.png"> contains
+the sorted elements, it is enough to prove <img src=
+"../imgs/7fb0975fa907b7acc19d966bfbaae6a6a52ff67f.png"> contains
+all the elements of <i>A</i>.</p>
+<p>• In other words, it is enough to prove that one of the
+permutations of <i>A</i> is same as<img src=
+"../imgs/7fb0975fa907b7acc19d966bfbaae6a6a52ff67f.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>A <b>loop invariant</b> is any condition or value of any
+variable in a program that must be true before and after each
+iteration of any loop.</p>
+<p>• The goal of for loop in lines 2-4 is to place the least
+element of the sub array <i>A</i>[<i>i</i>,<i>n</i>] at
+<i>i</i><sup>th</sup> position.</p>
+<p>• At the start of each iteration of <b>for</b> loop defined in
+line 2-4, the sub-array <i>A</i> contains elements of <i>A</i> but
+only in index between <i>j</i> and <i>n</i>.</p>
+<p>• At the end or start of <b>for</b> loop from line 2-4, the
+<i>j</i><sup>th</sup> position contains the smallest element
+between <i>j</i> and <i>n</i>.</p>
+<p><b>Initialization:</b></p>
+<p>In starting of ‘<b>fo</b>r’ loop defined in line 2-4, the value
+of <i>j</i> is equal to <i>n.</i> The sub array <i>A</i> contains
+only one element <img src=
+"../imgs/7faa7218aecfd7cf0c805c54e9ea7bafbec6fe60.png">which is
+smallest among <i>j</i> and <i>n</i>. Therefore the loop invariant
+trivially holds.</p>
+<p><b>Maintenances:</b></p>
+<p>• The 3<sup>rd</sup> line compares the <i>j</i><sup>th</sup> and
+<i>j</i>-1<sup>th</sup> element of array <i>A</i> in each iteration
+of <b>for</b> loop. When the <i>j</i><sup>th</sup> element is
+smaller than <i>j</i>-1<sup>th</sup> element, then the
+4<sup>th</sup> line of BUBBLESORT() algorithm swaps these two
+elements.</p>
+<p>• Swapping will not alter the permutation so loop invariant will
+hold true.</p>
+<p>• At the end of each iteration, the <i>i</i><sup>th</sup>
+position contains the smallest element between <i>j</i> and
+<i>n</i>, because the last comparison happens between,
+<i>j</i><sup>th</sup> and <i>i</i><sup>th</sup> elements.</p>
+<p>• Decreasing the value of <i>j</i> after every iteration will
+maintains the invariant.</p>
+<p><b>Termination:</b></p>
+<p>• The ‘<b>for</b>’ loop terminates when value of <i>j</i>
+becomes equal to <i>i</i>.</p>
+<p>• After the termination of inner <b>for</b> loop the
+<i>i</i><sup>th</sup> index contains the smallest element between
+<i>i</i> and <i>n</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Loop invariant:</b></p>
+<p>In each iteration of <b>for</b> loop defined in line 1-4, the
+sub-array<img src=
+"../imgs/1f7c1baebd3fffe0ac928f3199aaabdc54933524.png"> contains
+<i>i</i>-1 elements in ascending order.</p>
+<p><b>Initialization:</b></p>
+<p>In starting of ‘<b>fo</b>r’ loop defined in line 1-4, the value
+of <i>i</i> is equal to 1<i>.</i> The sub array <img src=
+"../imgs/1f7c1baebd3fffe0ac928f3199aaabdc54933524.png">does not
+contain any elements. Therefore the loop invariant holds.</p>
+<p><b>Maintenances:</b></p>
+<p>• According to part (b), the inner <b>for</b> loop defined in
+line 2-4, stores the smallest element at <i>i</i>.</p>
+<p>• Also, in each iteration, <i>i</i> value is incremented by
+1.</p>
+<p>• That is, after <i>i</i><sup>th</sup> iteration, sub
+array<img src=
+"../imgs/aa1b869e366b35f0cd8495e58cc2df3bb3048868.png">contains
+<i>i</i> number of smallest elements of array<img src=
+"../imgs/e6f9db17e3955b374d65c8272476c34c98c5f206.png">, in sorted
+order.</p>
+<p><b>Termination:</b></p>
+<p>• The outer ‘<b>for</b>’ loop terminates when the value of
+<i>i</i> becomes equal to <i>n-</i>1.</p>
+<p>• That is, after the termination of the outer <b>for</b> loop,
+the array<img src=
+"../imgs/e6f9db17e3955b374d65c8272476c34c98c5f206.png">contains the
+elements of original array<img src=
+"../imgs/e6f9db17e3955b374d65c8272476c34c98c5f206.png"> in sorted
+order.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• The running time of any algorithm depends on number of times
+the basic operation executes.</p>
+<p>• In BUBBLESORT() algorithm two <b>for</b> loops are used to
+compare elements(basic operation).</p>
+<p>• The iteration of inner <b>for</b> loop defined in line 2-4
+depends on the value of <i>i</i>.</p>
+<p>When value of <i>i</i> is 1 then inner for loop iterates
+<img src="../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">
+times, similarly when value of <i>i</i> is 2 then inner <b>for</b>
+loop iterates <img src=
+"../imgs/d80ace59894517f112e7dda295fb12f86abeaa17.png">times. So,
+for <i>i</i> the inner <b>for</b> loop iterates <img src=
+"../imgs/7c5a2b2c2b12fb096c3065eddf1ebe528ff4379e.png"> times</p>
+<p><img src=
+"../imgs/933aa375cf41cba8bb825d327752e0a57896ba20.png"></p>
+<p>Add and subtract <i>n</i></p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/5c4a87ee63b2abf67acf4e242a4e3edafd0b31c4.png">
+<p><img src=
+"../imgs/99c8571f75476234b7a5562fe4ec0e1666e41f69.png"></p>
+<p><b>Hence, the running time of BUBBLESORT () algorithm
+becomes</b> <b><img src=
+"../imgs/642d6ebcb1f14248615aeb12b1532f92f47e12a6.png"></b> <b>,
+because</b> <i><b>n</b></i> <sup>2</sup> <b>is the
+dominant.</b></p>
+<p><b>Comparison with Insertion sort:</b></p>
+<p>• Consider the insertion sort algorithm provided in section 2.2.
+The running time of insertion sort in worst case is also
+<b><img src=
+"../imgs/642d6ebcb1f14248615aeb12b1532f92f47e12a6.png"></b> and in
+the best case the complexity is reduced to<img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png">.</p>
+<p>• In the bubble sort mentioned above, the complexity will remain
+same that is <img src=
+"../imgs/642d6ebcb1f14248615aeb12b1532f92f47e12a6.png">in both
+worst and best cases.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Correctness of Horner’s rule</b></p>
+<p>a) Line 1 executes only one time to initialize the value of
+<i>y</i> to zero.</p>
+<p>Line 2 executes <i>n</i> times as the single for loop goes from
+<i>n</i> to 0.</p>
+<p>Line 3 executes 1 times.</p>
+<p>The running time is 1+<i>n</i>+1=<i>n</i>+2.</p>
+<p>Hence the running time of the given code for Horner’s rule in
+terms of Θ-notation</p>
+<p>is Θ(<i>n</i>).</p>
+</div>
+<hr>
+<div class="answer">
+<p>b) PSEUDOCODE for NAIVE polynomial – evaluation algorithm is</p>
+<p>NAIVE-POLY-EVAL(P, x):&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>1. y ← 0</p>
+<p>2. for i ← 0 to length(P)</p>
+<p>3. &nbsp;&nbsp;&nbsp;&nbsp;do a<sub>i</sub> ← P[i]</p>
+<p>4. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z ← 1</p>
+<p>5. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for j ← 1 to
+i</p>
+<p>6.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do
+z ← x·z</p>
+<p>7. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y ← y +
+a<sub>i</sub>·z</p>
+<p>8. return y</p>
+<p>Here y will contain the coefficients of the polynomial P.</p>
+<p>Running time of NAIVE polynomial – evaluation algorithm is the
+Θ(<i>n</i><sup>2</sup>). There</p>
+<p>are two for loops. The inner for loop executes for <i>n</i>
+times and outer for loop executes for <i>n</i> times. Hence the
+running time of this algorithm is Θ(<i>n</i><sup>2</sup>).</p>
+<p>The running time of Horner’s rule is Θ(<i>n</i>) whereas the
+running time of NAIVE</p>
+<p>polynomial – evaluation algorithm is the
+Θ(<i>n</i><sup>2</sup>).</p>
+</div>
+<hr>
+<div class="answer">
+<p>c) The loop invariant proofs consist of three parts:
+Initialization, Maintenance and</p>
+<p>Termination.</p>
+<p>Initialization: Initialize <i>y</i> = 0 and <i>i</i> = n at the
+beginning of the loop. i</p>
+<p>Maintenance: For each iteration of the loop, <img src=
+"../imgs/1896a82e2b5e2e4a5bce4c9e1a88982805e1ed81.png"> is
+calculated and is assigned to <i>y</i> and in the next loop
+iteration the value <i>y</i> is used as a coefficient to
+<i>x</i>.</p>
+<p>Termination: When the loop terminates with a condition <i>i</i>
+&lt; 0 and when the last iteration finishes, the ‘<i>i</i>’ value
+becomes less than 0. When the loop terminates, <i>i</i> = -1 and at
+that iteration the y value becomes</p>
+<p><img src=
+"../imgs/b368621b9af0bea7d560c91405ecd72d5da5ee80.png"></p>
+<p>d) To conclude that the given code correctly evaluates a
+polynomial, let take an</p>
+<p>example.</p>
+<p><img src=
+"../imgs/b2b7c99873a945a2417ff39fb24f7590d5cfa956.png"></p>
+<p>According to Horner’s rule the polynomial evaluation will be as
+follows.</p>
+<p>Step 1: <img src=
+"../imgs/297ff75676fcb240c28e75ab0cfae2e227bf07f5.png"></p>
+<p>= 12</p>
+<p>Step 2: <img src=
+"../imgs/3cd74eedde98f4b6ae5306222500e18cb3902403.png"></p>
+<p><img src=
+"../imgs/bfba29aeffee8d7932ac8c53675dc695e7e1ff17.png"></p>
+<p>Step 3: <img src=
+"../imgs/06819533e81d1e894c81a95519e63b8a33890a9e.png"></p>
+<p><img src=
+"../imgs/3c63e3edf57fd9bf563978160c8a3e574e8ef65e.png"></p>
+<p>Step 4: <img src=
+"../imgs/29d46cf969246213424976e00d2ddec3abbe401e.png"><img src=
+"../imgs/6fd01ebbabc1340b0a78a2ad3eed90424f45ec18.png"></p>
+<p><img src=
+"../imgs/c4b994cf2ebdc7f669f59ee6cc9c9056be8d6e3e.png"></p>
+<p>Usual Polynomial Method of Evaluation</p>
+<p><img src=
+"../imgs/c58f6637370a7cb59bbb460573a06cf20222255a.png"></p>
+<p><img src=
+"../imgs/027fbd42c7003e223e8fe28788ca90f48d944737.png"></p>
+<p>=<img src=
+"../imgs/c6cf239a2164c68d9ccdc0f89d73b0608bac77f3.png"></p>
+<p><img src=
+"../imgs/c4b994cf2ebdc7f669f59ee6cc9c9056be8d6e3e.png"></p>
+<p>Thus it can be concluded that Horner’s rule correctly evaluates
+a polynomial equation.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4P">
+                <a href="#problem-4P">4P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider an array <img src=
+"../imgs/1d7ca197f049240a92078b0a21618d5a6006856e.png"> of <i>n</i>
+distinct elements. Pair <img src=
+"../imgs/aed3136cee4f1584d13907aa3f4d4f457c5d9b37.png"> is called
+an inversion of array <img src=
+"../imgs/f9860816b2b75089f3a476b2ff059ea0189155a7.png">if the
+condition <img src=
+"../imgs/e394b97d2694fd2e4626511a88c11524cb692c4e.png"> and
+<img src="../imgs/8b97636285cc4b3cef76ff9e5ff87003c4414e2e.png"> is
+satisfied.</p>
+</div>
+<hr>
+<div class="answer">
+<p>a)</p>
+<p>Consider an array <img src=
+"../imgs/75de3c0dfac5d3a04e48d119c63915226f65ea5a.png"> to
+calculate the inversion.</p>
+<p>Take <img src=
+"../imgs/79ff3fd26a2be502a995e6ed62a5988b33894f4a.png"> and
+<img src="../imgs/2bcb7e5370fde7f735a2ff4150e4b7a9da4d227d.png">
+(index start with 0).</p>
+<p>Then <img src=
+"../imgs/b2a4c2ce5969c38d58679c0ffd6c24324c45fcb9.png"> and
+<img src=
+"../imgs/d40f4b06116a461a8274a0c8c020fd1218ef85a1.png">.</p>
+<p>According to the definition of inversion <img src=
+"../imgs/e394b97d2694fd2e4626511a88c11524cb692c4e.png">
+and<img src="../imgs/7af3d30b5dd3e818402a2c6f50724bfb049a64cc.png">.</p>
+<p>So the pair of inversion will be<img src=
+"../imgs/53d2ceb71cf0cefe048cb8b85a56fb4673093053.png">.</p>
+<p>Similarly, the remaining four inversions are <img src=
+"../imgs/2db92d8b6302c5ca592c42e9eb8f4eefbe74b431.png">.</p>
+<p>Therefore, all the five inversions are as follows <img src=
+"../imgs/ed8321de1114340615e0d403b64cd9ca22d781b9.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p>Arrange the elements in the set in reverse and store them in the
+array.</p>
+<p>The elements in the array in reverse order are <img src=
+"../imgs/35cad4584ddf6c6efa226430f8278fc890a73be2.png">. This array
+has most inversion.</p>
+<p>Calculate the total number of inversion in array <img src=
+"../imgs/2836ad198df01e9d27a91372eeee896fdc08b73e.png"> is as
+follows:</p>
+<p><img src=
+"../imgs/390133f4fddd053ecebd2ac3f10e6e300b5c1898.png"></p>
+<p>Where first element has <img src=
+"../imgs/724423d237e1049638218359c6920bc409ca7d4c.png"> inversion
+and second element has <img src=
+"../imgs/d15864d01df57b6a6ed52f3df38218e3ecb80ed3.png"> inversion
+and so on.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c)</p>
+<p>Relationship between the running time of insertion sort and the
+number of inversions in input array:</p>
+<p>• In insertion sort every unsorted element <img src=
+"../imgs/3fc4e53fbff304d56d267c0b36c2ec315328ba01.png"> of array is
+swapped by adjacent element<img src=
+"../imgs/c6ecf2187038befd11ad3eff5147d3bccb426c42.png">.</p>
+<p>• The process of insertion sort decreases the number of
+inversions in array <i>A</i>, because the element at location
+<img src="../imgs/37b9cbbb78db11af3550aa8142437d1aada0b261.png">
+and <img src=
+"../imgs/2aef808b4f1c61dc64ddc0af4d506c52bc50b5d8.png"> will no
+longer is an inversion.</p>
+<p>• If array <img src=
+"../imgs/b48e11eaa0ef77eba2387f86ca8998793bf3623f.png"> has
+<i>k</i> inversion with <img src=
+"../imgs/01a51a70ea6fe0eeb9be8ce5eca5a6377b6e4030.png">then the
+element before <i>m</i> are sorted.</p>
+<p>• Total number of iteration required in insertion sort is
+<img src="../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">
+and inversion is perform only when <img src=
+"../imgs/8e7e634c3f04c9f4e5b20176b10cfe2fb41c96e5.png">
+and<img src="../imgs/8b97636285cc4b3cef76ff9e5ff87003c4414e2e.png">.</p>
+<p>• So finally running time is <img src=
+"../imgs/7f62440a467e8143715437f325c9c48f635bef5d.png"> where
+<i>c</i> indicates the number of inversion because inversion is
+required only for unsorted data.</p>
+</div>
+<hr>
+<div class="answer">
+<p>d)</p>
+<p>Modified merge sort algorithm is to determine the number of
+inversion in <i>n</i> permutation.</p>
+<p>MERGE–SORT<img src=
+"../imgs/0860beb1cea6f629941737f8e1f4b1bfba89b8e3.png"></p>
+<p>// <i>p</i> is the starting point of array and <i>r</i> is the
+last index.</p>
+<p>1. If <img src=
+"../imgs/cd21f5157357a1882383abea1bea4b01cbd2b4ee.png"></p>
+<p>// set the value of inversion</p>
+<p>2. Inversion= 0</p>
+<p>//calculate the value of <i>q</i></p>
+<p>3. <img src=
+"../imgs/04c53d7f7682d69da9415162cffd87feb5fc4141.png"></p>
+<p>// find the value of inversion where <i>A</i> is the Array
+name</p>
+<p>4. inversions= inversions+ MERGE–SORT<img src=
+"../imgs/0860beb1cea6f629941737f8e1f4b1bfba89b8e3.png"></p>
+<p>5. inversions= inversions+ MERGE–SORT<img src=
+"../imgs/201a70fda9d0e29ea7d787220e97d1ed87c02fe9.png"></p>
+<p>6. inversions= inversions+ MERGE<img src=
+"../imgs/b81b417c13ce260361af15f7222400749265a77c.png"></p>
+<p>// return the inversion</p>
+<p>7. return inversions</p>
+<p>// else part execute when if part is false</p>
+<p>8. else</p>
+<p>9. return 0</p>
+</div>
+<hr>
+<div class="answer">//count the total inversion
+<p>MERGE<img src=
+"../imgs/b81b417c13ce260361af15f7222400749265a77c.png"></p>
+<p>//store the value in variable <img src=
+"../imgs/6b3ae292fda6b18969187f3bb9f0b1e7059d85be.png">.</p>
+<p>1. <img src=
+"../imgs/ca7cb5fee9bb2eff041ce49c7d8f01d749d5d443.png"></p>
+<p>//store the value in variable <img src=
+"../imgs/de3ec7da7a6014f021bc766b78523d9d68196aec.png"></p>
+<p>2. <img src=
+"../imgs/867cfe2f6971351657066d966309e5c26e7eb996.png"></p>
+<p>// take two new array <img src=
+"../imgs/eceb02354143ab62f90c8c2c8ff78783268ac442.png"> and
+<img src=
+"../imgs/52fa20332432468022c70115031e142a0c3e064b.png"></p>
+<p>3. for <img src=
+"../imgs/baad3037904e40a7ef5eb0f45ef1f79f3dafaca9.png"></p>
+<p>// store the value of array <i>A</i> at <i>i</i><sup>th</sup>
+location of array <i>B</i></p>
+<p>4. <img src=
+"../imgs/ed40d2f5f327a8e68d5878e2efb67d48205f893f.png"></p>
+<p>5. for <img src=
+"../imgs/6f11f7a08dd6d7c0c905058aa2b2ac4dcdde2b7e.png"></p>
+<p>6. <img src=
+"../imgs/96728b8f51b3d97869d2dc09d41f9334e7b2d21c.png"></p>
+<p>// initialize the value of <i>i</i> and <i>j</i></p>
+<p>7. <img src=
+"../imgs/5283768bff76a154b3ca52bcba937b4eb3d28020.png"></p>
+<p>8. <img src=
+"../imgs/a58ef6802a1ae405020f4e488481c48a40bfe90c.png"></p>
+<p>//another for loop is used to traverse from <i>p</i> to
+<i>r</i></p>
+<p>9. for <img src=
+"../imgs/33f9a0987894bd9b6b0a6c49b2488d7b58b59730.png"></p>
+<p>//if index <i>i</i> is greater than <img src=
+"../imgs/6b3ae292fda6b18969187f3bb9f0b1e7059d85be.png"></p>
+<p>10. if <img src=
+"../imgs/248e7aff766315d0b59d958eaac213e19753711f.png"></p>
+<p>//copy the content of array <i>B</i> into array <i>A</i></p>
+<p>11. <img src=
+"../imgs/a024a5c292d87f7119034819670f35b44743a51c.png"></p>
+<p>// increment the value of <i>j</i> by 1</p>
+<p>12. <i>j</i>++</p>
+<p>//if index <i>j</i> is greater than <img src=
+"../imgs/de3ec7da7a6014f021bc766b78523d9d68196aec.png"></p>
+<p>13. else if <img src=
+"../imgs/b762bf36c57e46166b2e16f7ce73694202ad9635.png"></p>
+<p>//copy the content of array <i>B</i> into array <i>A</i></p>
+<p>14. <img src=
+"../imgs/a024a5c292d87f7119034819670f35b44743a51c.png"></p>
+<p>// increment the value of <i>j</i> by 1</p>
+<p>15. <i>i</i>++</p>
+<p>16. else</p>
+<p>17. <img src=
+"../imgs/a024a5c292d87f7119034819670f35b44743a51c.png"></p>
+<p>18. <i>j</i>++</p>
+<p>//find the inversion</p>
+<p>19. inversions= inversions<img src=
+"../imgs/48661159f900dd0ed74861fe789c272d7af02de1.png"></p>
+<p>20. return inversions</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of algorithm:</b></p>
+<p>• Merge sort algorithm uses the index values of the array.</p>
+<p>• If initial index is less than the final array then initialize
+the value of inversion.</p>
+<p>• Calculate the value of <i>q</i>.</p>
+<p>• Find the value of inversion according to the line number 4, 5
+and 6 of merge short algorithm.</p>
+<p>• Next algorithm is used to count total number of inversion.</p>
+<p>• Two new arrays are used to store the temporary value of
+explicit array.</p>
+<p>• Different for loop is used to count the inversion at all
+specific value of array.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

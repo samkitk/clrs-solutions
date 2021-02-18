@@ -1,0 +1,513 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 20.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>Consider the universe size is u. Then, vEB tree contains the
+following:</p>
+<p>• <i>min</i> (minimum element in the tree)</p>
+<p>• <i>max</i> (maximum element in the tree)</p>
+<p>• Size of the universe, <i>u.</i></p>
+<p>• A pointer to <i>summary,</i> <i>.</i></p>
+<p>• An <img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png">pointers to
+<i><img src=
+"../imgs/8f66b7afd05af32deb5ec12bf0a66f3dc02877a2.png"></i>trees.</p>
+<p>Creating an empty vEB tree:</p>
+<p>• vEB-TREE-CREATE procedure recursively calls itself to create
+<img src="../imgs/cfb249bca8780fa54aa9a3049b716f54d8508549.png"> (
+That is, <img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png"><i><img src=
+"../imgs/d7ce6049b9361a699ef9785ce3b27bf5a127e0a7.png"></i>trees +
+one summary tree ,<i><img src=
+"../imgs/da900ca5d9edb5973b689c504e74d8b510796ebf.png"></i>). This
+operation is represented by <img src=
+"../imgs/b4b5ae57b2ea08cbc62b240720e2d58499592019.png">.</p>
+<p>• And moreover, the vEB-TREE-CREATE procedure sets the fields
+like <i>min,</i> <i>max</i> in the tree. This operation
+takes<img src=
+"../imgs/d7709b5e3b6a9ffe7e4c389b7c86b63d86de7de5.png">.</p>
+<p>Consider that <img src=
+"../imgs/f01458ddd0061d024d5ae62d26352cffa8d5bfbe.png"> is the time
+required to create an empty vEB tree, then the running time can be
+characterized for operation on vEB tree as follows:</p>
+<p><img src=
+"../imgs/5a7398e08482cd4b273eae6d37b9929a34d635b9.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i></p>
+<p>Show the recurrence relation.</p>
+<p><img src=
+"../imgs/5a7398e08482cd4b273eae6d37b9929a34d635b9.png"></p>
+<p>The solution:</p>
+<p><img src=
+"../imgs/9b4b441bf5cb18259b983229951bc13848f07f01.png"></p>
+<p><img src="../imgs/5a7398e08482cd4b273eae6d37b9929a34d635b9.png">
+<img src=
+"../imgs/d7d41b1bf238d5f34658e062260c31214fd6facd.png"></p>
+<p><img src=
+"../imgs/60bc3a3b23b16246c36039d2002c328144ae69fc.png"></p>
+<p>=<img src=
+"../imgs/f673de33124786dde8f280e740173f95c1284c64.png"></p>
+<p>Since,</p>
+<p><img src=
+"../imgs/f53d58b431327af01fcc33fc591a32525fcae9f7.png">.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/9b4b441bf5cb18259b983229951bc13848f07f01.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c</b></i> <i>.</i></p>
+<p>The following is the modified version of the vEB-TREE-INSERT
+:</p>
+<p><b>RS-vEB-TREE-INSERT</b> <b><img src=
+"../imgs/67b2f0b1e29460942824c1fb23b1ae52423169f7.png"></b>
+<b>:</b></p>
+<p>//check the base case empty tree</p>
+<p>1. <b>if</b> <i>T.min</i>==NIL</p>
+<p>//insert the value in the blank tree</p>
+<p>2. RS-vEB-EMPTY-TREE-INSERT(<i>T</i>,<i>x</i>)</p>
+<p>//check if the value is less than the current minimum</p>
+<p>3. <b>if</b><img src=
+"../imgs/56b70a8b5da7f5c572ec2a6c39ad76aa870ed351.png"></p>
+<p>//exchange the values if true</p>
+<p>4. exchange <i>x</i> with <i>T.min</i></p>
+<p>//find the appropriate location for the element</p>
+<p>//check if sub widget sub <img src=
+"../imgs/d7612eb4eb314aaa7ff83c3aca178a5c1139100c.png">is
+nonempty</p>
+<p>5. <b>if</b> <i>min</i><img src=
+"../imgs/86c3994ea6bcd927f95b14431373fefe336cec3a.png"></p>
+<p>6. RS-vEB-TREE-INSERT<img src=
+"../imgs/56235f3c1dfebbbb491a664cdb1cfab5d5438a4b.png"></p>
+<p>7. <b>else</b></p>
+<p>//make the element minimum for the new sub widget</p>
+<p><i>min</i> <img src=
+"../imgs/6c6c8f586cacf3d964c82ab21f4d9f68af3e159d.png"></p>
+<p>8. RS-vEB-TREE-INSERT<img src=
+"../imgs/54a5d15d24b2bc7d49c7ef08accda01b0b7a9363.png"></p>
+<p>//check if the element is greater than the current maximum</p>
+<p>9. <b>if</b> <i>x</i>&gt;<i>T</i>.<i>max</i></p>
+<p>10. <i>T.max</i>=<i>x</i></p>
+<p>The algorithm recursively calls itself either in line 6 or line
+8. The remaining part of the procedure takes O(1). Therefore, the
+recurrence <img src=
+"../imgs/aaafda723bde204a2bb6309c64334eefef825063.png"> have the
+solution of <img src=
+"../imgs/3da5bfeaca9883979dff84747bdaa95c8a1620e5.png">.</p>
+<p>This takes<img src=
+"../imgs/3da5bfeaca9883979dff84747bdaa95c8a1620e5.png"> time to
+insert <i>x</i> into the RS-vEB tree <i>T</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i></p>
+<p>The following is the modified version of the
+vEB-TREE-SUCCESSOR:</p>
+<p><b>VEB-SUCCESSOR</b> <b><img src=
+"../imgs/304761c71c6bb80fa9546db84ffc97f9045cd9b3.png"></b>
+<b>:</b></p>
+</div>
+<hr>
+<div class="answer">1. <b>if</b><img src=
+"../imgs/b22ad1cd5aa7b853d7bcb0dc29c2bf0aa7a0b73a.png">
+<p>2. then <b>return</b><img src=
+"../imgs/cb11bfc72f58ca8afbceb029381d5badc38ed4b3.png"></p>
+<p>3. <b>if</b> low <img src=
+"../imgs/a77747e32dfffcdfbb33f79ebed231b51d958ce0.png"></p>
+<p>4. then<img src=
+"../imgs/8ebb3b8c089047bb98db485af32d8d4e1eb8e6ee.png"></p>
+<p>5. <b>return</b> high <img src=
+"../imgs/e18895be199aacae8486019839a77d5b04af7554.png"></p>
+<p>6. <b>else</b></p>
+<p><img src=
+"../imgs/d8bcaf96e4ed37e61d9655d31b1d9187585ca293.png"></p>
+<p>7. <b>return</b><img src=
+"../imgs/1a142260eb62110a3b0a5f277d4aa361ca8ca624.png"></p>
+<p>This takes <img src=
+"../imgs/3da5bfeaca9883979dff84747bdaa95c8a1620e5.png"> time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>e.</b></i></p>
+<p>The procedure <b>RS-vEB-TREE-INSERT</b> recursively calls itself
+either in line 6 or line 8. Since, the uniform hashing is
+considered, the time required to insert a value into hash table is
+O(1).Thus, the remaining part of the procedure takes O(1).
+Therefore, the running time can be characterized as <img src=
+"../imgs/590978d058be21ac7991c478a8788f6548c1c6ad.png">.</p>
+<p>Consider <img src=
+"../imgs/52686e05101f50ad5f726457264d900a368297fe.png"></p>
+<p><img src=
+"../imgs/fb017770788b21c8141542c6616ab413bd3fb727.png"></p>
+<p>Consider <i>S</i>(<i>m</i>)=<i>T</i>(2<sup>m</sup>)</p>
+<p><img src=
+"../imgs/27bac9e6d7a387dca6dd5955a401755cb7d12bad.png"></p>
+<p>By case 2 of masters theorem, the above recurrence has the
+solution of <img src=
+"../imgs/3da5bfeaca9883979dff84747bdaa95c8a1620e5.png">.</p>
+<p>Even the procedure RS-vEB-TREE-SUCCESSOR runs in <img src=
+"../imgs/3da5bfeaca9883979dff84747bdaa95c8a1620e5.png">time,
+because it also calls itself in line 4 or 6, and the remaining part
+of the procedure executers in constant time.</p>
+<p>Hence, the assumption of simple uniform hashing, the total cost
+goes up to<img src=
+"../imgs/b9f81a2871470c53c8d29a88061ddd62de518b34.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>f.</b></i></p>
+<p>It is required to show that RS-vEB tree structure requires
+<img src=
+"../imgs/890c0f76b6aa34afe98fa2cae1cfa38578ff56e6.png">space to
+store n elements. The procedure RS-vEB-TREE-INSERT takes <img src=
+"../imgs/3da5bfeaca9883979dff84747bdaa95c8a1620e5.png"> time to
+insert one element. Therefore, it takes <img src=
+"../imgs/62fec60ae1f1944ca7368214a3257bb81617bb21.png"> time.
+Therefore, the time space required for RS-vEB tree is <img src=
+"../imgs/f73bd8a048310038eda4933180defb9ae9406d53.png">.</p>
+<p>Hence, the space is <img src=
+"../imgs/8a616d73a061341a610571cd8a05e38457c67835.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>g.</b></i></p>
+<p><b>Creating an empty vEB tree:</b></p>
+<p>• vEB-TREE-CREATE procedure recursively calls itself to create
+<img src="../imgs/cfb249bca8780fa54aa9a3049b716f54d8508549.png"> (
+That is, <img src=
+"../imgs/a74c78e1b50270765a0de03d6476f947b93f31c1.png"><i><img src=
+"../imgs/d7ce6049b9361a699ef9785ce3b27bf5a127e0a7.png"></i>trees +
+one summary tree ,<i><img src=
+"../imgs/da900ca5d9edb5973b689c504e74d8b510796ebf.png"></i>). This
+operation is represented by <img src=
+"../imgs/b4b5ae57b2ea08cbc62b240720e2d58499592019.png">.</p>
+<p>• And moreover, the vEB-TREE-CREATE procedure sets the fields
+like <i>min,</i> <i>max</i> in the tree. This operation
+takes<img src=
+"../imgs/d7709b5e3b6a9ffe7e4c389b7c86b63d86de7de5.png">.</p>
+<p>Consider that <img src=
+"../imgs/f01458ddd0061d024d5ae62d26352cffa8d5bfbe.png"> is the time
+required to create an empty vEB tree, then the running time can be
+characterized for operation on vEB tree is as follows:</p>
+<p><img src=
+"../imgs/5a7398e08482cd4b273eae6d37b9929a34d635b9.png"></p>
+<p>The above recurrence have the solution <img src=
+"../imgs/ad1d401808f770f8c16acf417c0a134f37241e1f.png">.</p>
+<p><b>Creating an empty RS-vEB tree:</b></p>
+<p>Generally, to create an empty vEB tree , it requires <img src=
+"../imgs/7b3c58a562111c42023e45d0dd35d2319a659ae0.png"> time. But
+creating an empty RS-vEB tree is simpler and faster than creating
+vEB tree. The reason is that, it implements the clusters using the
+hash table. Therefore, records can be accessed faster in hash
+tables.</p>
+<p>The structure used for creating the empty RS-vEB tree is defined
+in the problem. As this structure shows that there are no loops or
+recursions while creating the tree. So the procedure would
+intuitively run in the <b>constant time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><i><b>a.</b></i></p>
+<p>It is known that the <i>y-fast tries</i> make use of <img src=
+"../imgs/4a0876ace135a5120e2df229b0e408353335af07.png">space. Since
+the storage structure of the <i>tries</i> resemble the binary tree.
+So, if the domain ranges over the value <i>u</i>, the height of the
+tree would become <img src=
+"../imgs/f202293fdeb6fbfd8a0ca7e4f20d6483a2374d8e.png">.</p>
+<p>In each node, prefix of the binary representation of each
+element is stored. That is, if <i>u</i>=16, for each element
+<img src="../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png">
+binary values are to be stored in the hash table. So, the space
+required to store a value is<img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png">.</p>
+<p>Therefore, the total space required for storing <i>n</i> values
+is of<img src=
+"../imgs/d885ea5d53f9e267ced7a3055c499e087c239853.png">. Where, the
+total number of value is <i>n</i> and <i>u</i> is the domain of
+values.</p>
+<p><i><b>b.</b></i></p>
+<p><b>Accessing MINIMUM and MAXIMUM in constant time:</b> According
+to the preliminary structure of the <i>y-fast tries</i>, the
+perfect hash table stores a value and it’s all prefixes of the
+binary representation.</p>
+<p>To ensure that the MINIMUM and MAXIMUM can be fetched in the
+constant time, the values in the hash table should be in the
+ascending order. Then, just one operation is required to access the
+first value from the table, which is the minimum value in the set.
+Similarly, just one operation is required to access the last value
+from the table, which is the maximum value in the set.</p>
+<p><b>Accessing MEMBER, PREDECESSOR and SUCCESSOR:</b></p>
+<p>MEMBER operation finds whether an element exists in the tree or
+not. MEMBER operation would be performed by searching each item in
+the tree. Now as the BST is being used to retain the values and the
+depth of the <i>y</i>-<i>fast trie</i>s is<img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png">.Once the
+appropriate tree and the item are found that might be returned in
+constant time. this takes<img src=
+"../imgs/e71a666634348c8809ad83b51d47d1568e87de14.png">.</p>
+<p>PREDECESSOR(<i>x</i>) operation finds a maximum key value that
+is not as large as the current key value <i>x</i>. To perform this
+operation, first of all, the key <i>x</i> has to be find the node
+that matches <i>x</i>. Then, it is required to back up to a node
+that has 0 in the right side. That is, the searching will span over
+two binary search trees. One that is being traversed when the
+representative has to be found and the other that is searched when
+the predecessor has to be found.</p>
+<p>While traversing up, the worst possible time would be <img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png">and the same
+would be while coming down. The breadth of the search procedure
+would be the distance between the concerned trees and this
+takes<img src=
+"../imgs/e71a666634348c8809ad83b51d47d1568e87de14.png">.</p>
+<p>SUCCESSOR(<i>x</i>) operation finds the key with the least value
+larger than the current key <i>x</i>. The running time of this
+operation would be equal to the running time of the predecessor
+operation.</p>
+<p><b>INSERT and DELETE:</b> Insert operation inserts a new element
+in the <i>y</i>-<i>first tries</i>. Since the values in the
+<i>y</i>-<i>first tries</i> are stored as key value pair. In order
+to insert the value, first of all it is to be determined what
+binary search tree the value should be inserted in. after this the
+successor of the key has to be found so that the appropriate
+location for the key being inserted is to found. Once the insertion
+is done, it has to be ensured that the number of keys in the tree
+does not exceed the limit of<img src=
+"../imgs/8ef38b03d8e11c918d8f8a752bfad82d0ec03dd0.png">.</p>
+<p>Similarly, deletion also takes <img src=
+"../imgs/8ef38b03d8e11c918d8f8a752bfad82d0ec03dd0.png">time to
+delete an element form the table.</p>
+<p><i><b>c.</b></i></p>
+<p>It is to be shown that modified data structure that is a
+<i>y</i>-<i>fast tries</i> requires <img src=
+"../imgs/890c0f76b6aa34afe98fa2cae1cfa38578ff56e6.png">space to
+store <i>n</i> elements. Each widget on itself leaving the sub
+widgets and its summary widgets occupies <img src=
+"../imgs/a4f0fdd409c22b2bbd30b65c0bc25b8c6f95c491.png"> space. A
+group can be stored if and only if its minimum field is occupied by
+and it is respective element. The hash table expands the space by a
+fixed term or a constant factor by amortizing over the fixed cost
+of each sub elements. So, for 1 element, it is <img src=
+"../imgs/5348248797038408019902edf6f75aa3b51f3a98.png"> and for two
+elements, it is <img src=
+"../imgs/617d1b845cc8e1cf2164f54e3e34591970a8cf22.png">and so on.
+So the tree with the n elements would require<img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png"> space.</p>
+<p><i><b>d.</b></i></p>
+<p>Since there are n/<img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png"> clusters
+and size of each cluster is<img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png">, to find a
+cluster that has a minimum value and searching the minimum value
+takes<img src=
+"../imgs/e71a666634348c8809ad83b51d47d1568e87de14.png">. Similarly,
+the time required for searching the maximum is also <img src=
+"../imgs/e71a666634348c8809ad83b51d47d1568e87de14.png">.</p>
+<p>Therefore, the time required to find a minimum value as well as
+maximum value is<img src=
+"../imgs/e71a666634348c8809ad83b51d47d1568e87de14.png">.</p>
+<p><i><b>e.</b></i> It is to be shown that member operation in a
+<i>y</i>-<i>fast trie</i>s requires <img src=
+"../imgs/b9f81a2871470c53c8d29a88061ddd62de518b34.png"> time.</p>
+<p><b>Algorithm</b>:</p>
+<p>MEMBER<img src=
+"../imgs/e76e56079adce64515363586019b806969d96555.png"></p>
+<p>1. <b>if</b><img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"><img src=
+"../imgs/69a03331276bdea5f138e543227cfdf57f20e4df.png"><b>or</b><img src="../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"><img src="../imgs/41ce13e62ebab735741eb965023561e0ef4b750a.png"></p>
+<p>2. <b>return</b> true</p>
+<p>3. <b>else if</b><img src=
+"../imgs/042a10d32ce9c87d8f0a7b743a64caae1e35ddf8.png"></p>
+<p>4. <b>return</b> FALSE</p>
+<p>5. <b>else</b></p>
+<p><b>return</b> <i>y-fast tries</i> member <img src=
+"../imgs/28c1da4bc484017a2346c4d20fb79a2229ed2631.png"></p>
+</div>
+<hr>
+<div class="answer">Recurrence relation given below would find out
+the running time:
+<p><img src=
+"../imgs/35076362bfa92082a99adc5fdb30af9e45170cfc.png"></p>
+<p>Since:</p>
+<p><img src=
+"../imgs/b98b9c22debabb5657eee161c281afdca8d0155f.png"></p>
+<p>Now:</p>
+<p><img src=
+"../imgs/9934f00364c32e773f432b71c53b75c7b02bf4f8.png"></p>
+<p><img src=
+"../imgs/2bbe6dd24b3942ec5ef6706703f0e4a069e674e1.png"></p>
+<p>Now, changing the variables:</p>
+<p><img src=
+"../imgs/9f25baf8d5a7d95b396834e69a98a05e5d4dd4fc.png"></p>
+<p>So,</p>
+<p><img src=
+"../imgs/994735eb9fda93c20babdd6ed8f90f960576b801.png"></p>
+<p>The above relation depicts the running time checking for each
+and every element whether it is a member or not takes <img src=
+"../imgs/b9f81a2871470c53c8d29a88061ddd62de518b34.png"> time</p>
+<p><i><b>f.</b></i> While finding the predecessor the
+representative of the tree that the data item is in is to be
+reached. After this, process of locating the element in the tree
+can be consummated in <img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png"> time.</p>
+<p>Finding the appropriate representative from the
+<i>x</i>-<i>fast-trie</i>s would be done in the <img src=
+"../imgs/8ae787a4b4238f61995e5d67fd596418ce627619.png"> time, where
+<i>x</i> is the size of the tree. So, the time taken in finding the
+predecessor would be done in <img src=
+"../imgs/63c4801073dd4b90d98ba96854b08f213e215a9d.png"> time.</p>
+<p><i><b>g.</b></i> <b>Insert operation:</b> For inserting a key or
+a value pair, it must be known, which balanced binary search tree
+the key has to be inserted in. First, find the tree <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png"> having the
+successor of the key. Now, insert key <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"> into
+tree<img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">. Searching
+for the successor of key <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">takes
+<img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">time; as
+observed in the previous section. For the insertion, the growing
+universe size despite rapid change would not leave a great effect
+on the running time.</p>
+<p>This is because the value of the function would increase
+extremely slowly and that is why the time required to run the
+procedure would be<img src=
+"../imgs/dd2537bf887b466dcb98a11eb6d092ae81f91b7c.png">. After
+insertion it has to be made sure that the tree is not violating the
+basic requirement for the tree. For this to happen consider the
+number of elements in the tree is more than<img src=
+"../imgs/8ef38b03d8e11c918d8f8a752bfad82d0ec03dd0.png">. In this
+case, it needs to be split up. This would take <img src=
+"../imgs/8ef38b03d8e11c918d8f8a752bfad82d0ec03dd0.png">time. The
+representative of the previous tree has to be deleted and the
+representatives of the new formed trees have to be inserted in the
+<i>x</i>-<i>fast tries</i>.</p>
+<p>Since these tasks would be performed in the constant amount of
+time, the time consumed would be<img src=
+"../imgs/8ef38b03d8e11c918d8f8a752bfad82d0ec03dd0.png">. But
+practically this case would occur very rarely, precisely
+after<img src=
+"../imgs/8ef38b03d8e11c918d8f8a752bfad82d0ec03dd0.png">values, so
+the time taken in the insertion would be constantly amortized and
+thus would be equal to <img src=
+"../imgs/dd2537bf887b466dcb98a11eb6d092ae81f91b7c.png">.</p>
+<p><b>Delete operation</b>: Deletions are done as same as insertion
+in <i>y</i>-<i>fast tries</i>. The element has to be first located
+and if found the element should be deleted from the tree. Searching
+the element would take the time equal to what is taken in
+performing the MEMBER operation, that is<img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">. But just
+like the insertion the function very slowly, though the increment
+in the value of input can be rapid. So, keeping this slow growth
+rate in mind the complexity of deletion process can be bounded with
+the omega notation of the function and that is<img src=
+"../imgs/dd2537bf887b466dcb98a11eb6d092ae81f91b7c.png">.</p>
+<p>After deleting the value, it is to be checked if the tree
+violates the fundamental rule that there must be at least <img src=
+"../imgs/0176264c435c4184243890f5b7a7e0c3090e2e24.png">elements. If
+the same is not happening, the tree would have to be merged with
+its predecessor tree and the successor. After the merging, the tree
+has to be checked again if that is violating the property of having
+the maximum elements. So, the time taken in this entire procedure
+would be <img src=
+"../imgs/8ef38b03d8e11c918d8f8a752bfad82d0ec03dd0.png">. But the
+occurrence of this all is rare just like the insertion. So the
+deletion for the <i>y</i>-<i>fast trie</i>s would take the constant
+amount of amortized time and that would be <img src=
+"../imgs/b18e45ecf5dcb2ecde89dcb95b1c020fc78ccb06.png">.</p>
+<p><i><b>h.</b></i> Now, the requirement, that each of the
+<i>y</i>-<i>fast tries</i> must have <img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png">elements,
+should be relaxed. That means this rule should be made less strict
+for the <i>tries</i>. The rule can be modified to make the tries
+has at most <img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png"> elements.
+In any case the tree can have elements less than this. After this
+rule is applied, the INSERT and DELETE operation would run like the
+ones before. In the best and average case the operations can be
+consummated in less time, whatsoever.</p>
+<p>In the worst case, when the concerned tree has the largest
+number of elements and that being<img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png">, the time
+required to run the procedure would be<img src=
+"../imgs/2bc3a76a7fb5ec9d198cf3d07dbfe415020c9d06.png">. Since the
+growth rate of the function would be too slow in this case, too.
+So, the operation would be performed in the constant amortized
+time. As far as the other tasks are concerned, the asymptotic
+runtime will not be affected. The time taken to run the procedure
+is dependent on the size of the input. For the worst case, the
+input size would be <img src=
+"../imgs/c599adba7e3d56a588989efd79ff7b900de4bf2d.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

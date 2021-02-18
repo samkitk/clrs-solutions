@@ -1,0 +1,364 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 23.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><img src=
+"../imgs/e8a4cc9a71e8ea699a975aebcb02c66c533f6d03.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><img src=
+"../imgs/7405ad5e4a8b6b3a92e53c9a313d5bb1fa0d880f.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><img src=
+"../imgs/7b376da035a983916cb892d73ee3330cf7a1ff08.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>If the graph G is represented as an adjacency matrix, a row is
+searched in the adjacency matrix. It is assumed that the edge
+weights are stored in the adjacency matrix and the edges having 0
+weights are unconnected edges.</p>
+<p>The modified Prim’s algorithm is as follows:</p>
+<p><b>MST-PRIMS (G, r)</b></p>
+<p><b>for</b> each <img src=
+"../imgs/c3c6a68b7967fecd9c6d4fa1b934cf04b7c6bb7c.png"></p>
+<p><b>do</b> <img src=
+"../imgs/34915518e3a24516f95a95ec6039c107efb79c9e.png"></p>
+<p><img src="../imgs/2e312bb36a65166097be552dc865d75f74e43f37.png">
+<img src=
+"../imgs/c607a84265a7137cfddf2fe8fb6f0339f4b010e8.png"></p>
+<p><img src=
+"../imgs/ec2e4508a90990839bf83d6e3e22a75333e641e6.png"></p>
+<p><img src=
+"../imgs/5217ea79806be1bc103dcdbd061b4cca16012bdc.png"></p>
+<p><b>while</b> <img src=
+"../imgs/e9fd375eae4463c2a7e53a75da3a1ddaf5fc314c.png">
+<b>do</b></p>
+<p><img src=
+"../imgs/0414d88117f0a3a014240f1ca09b7f58e240a016.png"></p>
+<p><b>for</b> i = 1 to n</p>
+<p><b>do</b> <b>if</b> A[u][v] ==1 <b>and</b> <img src=
+"../imgs/342a92fb860190d366b51207cd53b8aa38876fe4.png"> <b>and</b>
+<img src=
+"../imgs/5db033b78ccc55205686d21391e5eae432aab86c.png"></p>
+<p><img src=
+"../imgs/9b19d65a5a5f93351bfb13494812c62eaa2524a2.png"></p>
+<p>key[v] = A [u, v]</p>
+<p><b>end</b></p>
+<p><b>end</b></p>
+<p><b>end</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The number of variables in outer <b>while</b> loop is |V| and
+the number of variables in the inner for loop is also |V|.</p>
+<p>The run-time of the algorithm is <img src=
+"../imgs/8f4995c26a61cce836da29acdf094a12cb75808e.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d015184ed9e3c5d704a5bb0b979b09f7a6cbd0bc.png">
+<hr>
+<img src="../imgs/eb1465e11d08e21eae8cb6cb5de6755a35a2f2ec.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/ab124c8b77bad05b132f059407846d7aeebd84f0.png">
+<hr>
+<img src="../imgs/e140cf3cf813567d8dfaac62dfef62eb2993c6c5.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Since, all the edge weights in the graph are integers in the
+range 1 to |V|, so the edges can be added to the array such that
+the edges that have the weight i go to the position i in the
+array.</p>
+<p>When an element is deleted, it is removed from the array that
+contains that element and added to the array at a new position. To
+extract the minimum weight edge, a linked list is maintained among
+all the positions that contain non-empty lists. It will take
+constant time.</p>
+<p>The total run time will be O(V+E).</p>
+</div>
+<hr>
+<div class="answer">
+<p>If the edge weights lie in the range 1 to W, then the operations
+will take <img src=
+"../imgs/b54c728ffb68dfa36492612f68ae0ca272588d56.png"> time. Thus,
+the total running time complexity of Prims algorithm if the edge
+weights are integers in the range 1 to W will be <img src=
+"../imgs/8670a866d521610ef5bbc86b7fab17af14f19b15.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/44e401837bb9ca6db23a5ab1d8d9108f5f882238.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A minimum spanning tree (MST) is defined as weighted graph
+<i>G</i> of the spanning tree, in which the sum of edges is equal
+to the minimum weight.</p>
+<p>Required time to update the MST if a new vertex and the incident
+edge are added to the graph G which has already computed the MST,
+are calculated by using the following steps:</p>
+<p>• Consider that graph <i>G</i> is defined as <i>G= (V, E)</i> in
+which the <i>V</i> is the set of vertices or <img src=
+"../imgs/b2e4c20e287b5c4c487e7aae2b39a7178dce62e3.png"> and E is
+the set of edges or<img src=
+"../imgs/34a84b2cf7dd989229f6446a83832abda55acd56.png">. Set of
+edges can also be defined as<img src=
+"../imgs/63a1afcf7978002b965f8ea10c71393967bb2c9d.png">.</p>
+<p>• To calculate the MST in this case or the graph which has a
+simple cycle, need to omit the edge which contains the maximum
+weight.</p>
+<p>• Now suppose that vertex <i>V</i><sub>new</sub> and incident
+edge is added to the some arbitrary connected graph.</p>
+<p>• Suppose edge <i>E</i><sub>min</sub> is the minimum weight edge
+incident to the new vertex <i>V</i><sub>new</sub><sub>.</sub> It is
+clear that <i>E</i><sub>min</sub> will be exist in the new minimum
+spanning tree which is called as T<sup>’</sup>.</p>
+<p>• However for every continuing edges incident to the
+<i>V</i><sub>new</sub><i>,</i> It is mandatory to decide that
+adding that edge and deleting of an original edge will lead to the
+lower cost spanning tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>For this consider the following figure as an example in which
+graph <i>G</i> contain the vertices <i>A1</i> and <i>B2</i>, and
+single edge is define as <i>(A1, B2).</i></p>
+<p><img src="../imgs/3bcee154ef5d04ec5fab9d7491d6e7f31c31351c.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\25.9.2015\Kuldeep 2254\Image\6.png"></p>
+<p>In the above diagram, graph <i>G</i> was initially comprised of
+the two vertices <i>(A1 and B2</i>) and single edge (<i>A1, B2</i>)
+for which the minimum spanning tree is that edge.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Add the third vertex <i>C3</i> and edges the <i>C</i>3 and the
+other vertices to the graph. In this case the MST can be defined as
+the set of<img src=
+"../imgs/6cd6259d75e814a2ec277c31974fc09119565878.png">.</p>
+<p>At this stage look at the all edges in the cycle which add the
+every new edge to the new minimum spanning tree <i>T</i>’ creates
+and delete the maximum weighted edge.</p>
+<p><b>This stepwise approach need to examine all old Minimum
+Spanning Tree edges in general case, therefore best time is the</b>
+<b><img src=
+"../imgs/5018d77fdeb742f1e8abe0a4c31342b02cd1bcc0.png"></b> <b>to
+do so.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Professor Borden suggested the new divide and conquer algorithm
+to compute the MST which is specified in the problem. The suggested
+algorithm of Professor Borden will not work correctly.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The following example shows that the suggested algorithm
+fails.</p>
+<p>Consider the following graph <i>G</i> which contains the four
+vertices <i>P, Q, R</i> and <i>S</i> which is connected with the
+four weighted edge <i>PQ, PR, RS</i> and <i>SQ</i>.</p>
+<p><img src="../imgs/bbd901e840b56e068ea3d687ed9138aa8ae0fe20.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\25.9.2015\Kuldeep 2254\Image\7.png"></p>
+<p>Now divide this graph G into the <i>G</i><sub>1</sub> and
+<i>G</i><sub>2</sub> which is define as: <i>G</i><sub>1</sub><i>=
+{P, Q}, G</i><sub>2</sub><i>={R, S}</i> and
+<i>E</i><sub>1</sub><i>= {(P, Q)}, E</i><sub>2</sub><i>= {(R,
+S)}.</i> Set of edges which cross the cut is define as
+<i>E</i><sub>e</sub> <i>= {(P, R), (Q</i>, <i>S)}.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now calculate and find the MST for the graph
+<i>G</i><sub>1</sub> and <i>G</i><sub>2</sub>. In this case, it can
+be seen that the minimum spanning tree for graph
+<i>G</i><sub>1</sub> and <i>G</i><sub>2</sub> are:</p>
+<p><i>MST (G</i> <sub>1</sub> <i>) = G</i> <sub>1</sub></p>
+<p><i>MST (G</i> <sub>2</sub> <i>) = G</i> <sub>2</sub></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now minimum spanning tree for the graph <i>G</i><sub>1</sub> and
+graph <i>G</i><sub>2</sub> are shown as following figure:</p>
+<p><img src="../imgs/8b95cba6c179919c0c95f0a295c7f5c17eacdc95.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\25.9.2015\Kuldeep 2254\Image\8.png"></p>
+<p>Now from the above graph <i>G</i>, minimum weighted edge from
+the two across cut edges is the <i>(P, R)</i> edge.</p>
+<p>Therefore edge (<i>P, R)</i> edge is sued for connecting the
+graph <i>G</i><sub>1</sub> and <i>G</i><sub>2</sub>. It is the
+minimum spanning tree which is return by the Borden algorithm. The
+minimum spanning tree can be shown as:</p>
+<p><img src="../imgs/35aa33a55e54a99d951ccae0a2ef16b806f907b1.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\25.9.2015\Kuldeep 2254\Image\9.png"></p>
+<p><b>Therefore, the algorithm proposed by Professor Borden will
+not compute the minimum spanning tree of</b> <i><b>G</b></i>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

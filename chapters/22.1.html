@@ -1,0 +1,602 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 22.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the graph<img src=
+"../imgs/4cc43aed229122177e5d1f3ff5bf237bfbc3bb92.png">and its
+adjacency-list representation. In this adjacency-list
+representation, for each vertex in<img src=
+"../imgs/769fc826da46f600f652cbbdfcc72c35cf1bf92b.png">, there is a
+list in the adjacency-list. Thus there are <img src=
+"../imgs/0969cb112621fda649bb6227c14e287692b44a17.png">lists in the
+adjacency list array, which is named as<i><img src=
+"../imgs/8f0d8ab7dde3169fcd0305a3dfe8227a9b5d5e01.png"></i>.</p>
+<p>• For every<img src=
+"../imgs/0bc2ad5e51264a119e4ce38d7f1fd10ecfc1339c.png">, the
+adjacency-list<img src=
+"../imgs/7728b7e85096f772f94a8cf677a0c7ed9a1266cf.png">consists
+each vertex <img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png"> in such a
+manner that there exists an edge<img src=
+"../imgs/1847886b67b908b5ea4026054eacf5e33d881a3b.png">.</p>
+<p>• In other words, every vertex that is adjacent to <img src=
+"../imgs/1b38f8f10d9f96612098da0ffc1a6d70ffeeb140.png">is stored
+in<img src=
+"../imgs/7728b7e85096f772f94a8cf677a0c7ed9a1266cf.png">.</p>
+<p>• If the graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png">is
+considered as a directed graph, then the sum of the lengths of each
+adjacency list is equal to<img src=
+"../imgs/2bd7adfbfd925f45cc05f764fe398bcd4d010b4a.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider a directed graph adjacency-list
+representation<i><img src=
+"../imgs/8f0d8ab7dde3169fcd0305a3dfe8227a9b5d5e01.png"></i>. Given
+below is the pseudo code to calculate out-degree of each
+vertex.</p>
+<p>Outdegree(Graph <i>G</i>)</p>
+<p>//array to store out degree for each vertex</p>
+<p>1 outdegree[<i>V</i>] ={0}</p>
+<p>//To traverse the list for all vertices</p>
+<p><b>2 for</b> each vertex <i>i</i> <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>V</i></p>
+<p>// counter to count the outdegree</p>
+<p>3 <i>count</i> = 0;</p>
+<p>//Traverse the adjacency list of <i>i</i><sup>th</sup> node</p>
+<p>4 <b>for</b> each <i>u</i> <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>G.adj</i>[<i>i</i>]</p>
+<p>5 <i>count</i>=<i>count</i>+1</p>
+<p>6 outdegree[i]=<i>count</i></p>
+<p><b>Explanation:</b></p>
+<p>• The above program, which takes a graph as a parameter,
+calculates the out degree of every vertex and stores it in an array
+named out degree.</p>
+<p>• First of all an empty array is initialized to 0 to store the
+out degree of vertices.</p>
+<p>• After that, it traverses each vertex</p>
+<p>• In the inner <i>for</i> loop, program traverse the adjacency
+list for <i>i</i><sup>th</sup> node and increment the counter in
+each iteration. At the end of the loop count contains the number of
+vertices in the adjacency list of <i>i</i><sup>th</sup> node.</p>
+<p>• Last line stores the out degree of <i>i</i><sup>th</sup> node
+in the outdegree array at <i>i</i><sup>th</sup> index.</p>
+<p>• Obviously, the outer for loop runs |<i>V</i>| times.</p>
+<p>• Here, for each vertex <i>v</i> in <i>G</i>, inner for loop
+runs <img src=
+"../imgs/2038f2564a35b964c4ac53640b49b29d21733804.png"> times.
+Since the sum of lengths of each vertex’s adjacency list is
+|<i>E</i>|, the inner for loop run |<i>E</i>| time in whole.</p>
+<p><b>Since there are traversal for each vertex and edge only once,
+the complexity is</b> <b><img src=
+"../imgs/9281da229e69fae5cbf0a4ed18a296b550c1e70f.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Now consider the following code to calculate the in degree of
+each vertex:</p>
+<p>Indegree (Graph <i>G</i>)</p>
+<p>//array to store in degree for each vertex</p>
+<p>1 indegree[<i>V</i>] ={0};</p>
+<p>//To traverse the list for all vertices</p>
+<p><b>2 for</b> each vertex <i>i</i> <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>V</i></p>
+<p>//Traverse the adjacency list of ith node</p>
+<p>3 <b>for</b> each <i>u</i> <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>G.adj</i>[<i>i</i>]</p>
+<p>4 indegree[<i>u</i>] = indegree[<i>u</i>]+1</p>
+<p><b>Explanation:</b></p>
+<p>• The in degree of the vertex is the number of vertices which
+head towards it. Now in adjacency list representation of directed
+graph each vertex head towards the vertex which is adjacent to
+it.</p>
+<p>• In the above program an array is initialized to 0 to calculate
+the in degree of a vertex.</p>
+<p>• A <i>for</i> loop is used to traverse the whole array of nodes
+and another <i>for</i> loop is used to traverse the edges. While
+traversing a particular node’s edges program simply increment the
+in-degree of corresponding vertices to which that node headed.</p>
+<p>• After the program completes its execution, the in-degree array
+will have the in degree of all the vertices.</p>
+<p><b>Since again in this program all the nodes and each edge are
+traversed only once. Therefore, the complexity of program is</b>
+<b><img src=
+"../imgs/9281da229e69fae5cbf0a4ed18a296b550c1e70f.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The number of vertices for representing a complete binary tree
+is provided as 7. Therefore, the binary tree with 7 vertices can be
+represented in figure Fig1 and it is provided as follows:</p>
+<p><img src="../imgs/414ba8e568ce0adb5945285686a9f3b4ce33196d.png"
+alt="Picture 1"></p>
+<p>Fig 1: Complete binary tree on 7 vertices.</p>
+<p>Here, the vertex 1 is the root node and vertices 4,5,6 and 7 are
+said to be known as leaf nodes. The vertices 2 and 3 are said to be
+known as the interior nodes.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The adjacency-list representation for a complete binary tree on
+7 vertices is shown in the figure Fig 2 and it is provided as
+follows:</p>
+<p><img src="../imgs/92fce51739121a56757655812583878ea80362ea.png"
+alt="Picture 2"></p>
+<p>Fig 2: The adjacency-list representation of a binary tree
+containing 7 vertices.</p>
+<p>This list shows that the adjacent of vertices of vertex 1 are
+vertices 2 and 3. The adjacency vertices of vertex 2 are vertices 4
+and 5. The adjacency vertices of vertex 3 are vertices 6 and 7.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The adjacency matrix can be made with the help of the connection
+between the vertices. The adjacency matrix of the complete binary
+tree made up of 7 vertices is shown in figure Fig 3 and it is
+provided as follows:</p>
+<p><img src="../imgs/c362b263620f0fcff9b405001b2dc50ca2212b5d.png"
+alt="Picture 3"></p>
+<p>Fig 3: The adjacency matrix of the complete binary tree
+containing 7 vertices.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Computing Transpose of a graph using
+adjacency-matrix:</b></p>
+<p>Transpose of a directed graph <img src=
+"../imgs/98bd8a6e33a210feb5221dc889e750151f2d8eed.png"> is the
+graph <img src=
+"../imgs/9ecaa8f02a3dc6a82408de90793d2f79a8e8a431.png"> with the
+edges that are reverse of the edges of the original graph <i>G</i>.
+A graph can be represented as adjacency- matrix or as
+adjacency-list.</p>
+<p><b>The following is the algorithm to compute the transpose of a
+graph using adjacency- matrix:</b></p>
+<p>Consider the <i>G</i> is the given graph and <i>A</i> is the
+adjacency-matrix of <i>G.</i> and also consider the <i>B</i> is the
+adjacency matrix for <img src=
+"../imgs/933a29b000053d8b431aed2d6caa7b21377a529a.png">.</p>
+<p>TRANSPOSE –ADJACENCY_MATRIX (<i>G,A</i>)</p>
+<p>//for each row of the adjacency-matrix of directed graph
+<i>G</i>.</p>
+<p>1. <b>for</b> <i>i=1</i> <b>to |</b><i>V|</i></p>
+<p><b>//</b>for each column <i>j</i> of the adjacency-matrix
+<i>G</i>.</p>
+<p>2. <b>for</b> <i>j=1</i> <b>to</b> <i>|V|</i></p>
+<p><b>//</b>reverse the edges and update the new adjacency
+list.</p>
+<p>3. <i>B</i>[<i>j</i>][<i>i</i>]=
+<i>A</i>[<i>i</i>][<i>j</i>]</p>
+<p>4. <b>return</b> <i>B</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation for the Algorithm:</b></p>
+<p>• In line 1-2, the algorithm repeats two loops to scan through
+the adjacency matrix.</p>
+<p>• In line 3, the adjacency matrix of the transpose graph is
+calculated.</p>
+<p>• The new adjacency matrix is the transpose of the adjacency
+matrix of the original graph.</p>
+<p><b>Since, the above algorithm scans the adjacency-matrix in</b>
+<b><img src=
+"../imgs/296110a347fab8c22984ae5d7b3ea22bb70539db.png"></b> <b>and
+updating the new adjacency matrix in</b> <b><img src=
+"../imgs/7b99e19d963de528f0f8e8939e4000e6548dd147.png"></b> <b>,
+obviously , the total time complexity of algorithm is</b>
+<b><img src=
+"../imgs/296110a347fab8c22984ae5d7b3ea22bb70539db.png"></b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Computing Transpose of a graph using adjacency-list:</b></p>
+<p>The graph can also be represented as adjacency list. Adjacency
+list is of a graph <img src=
+"../imgs/98bd8a6e33a210feb5221dc889e750151f2d8eed.png"> is an array
+of length |<i>V</i>|<i>, adj</i>[<i>u</i>]<i>.</i>
+<i>adj</i>[<i>u</i>] contains the list of nodes incident form the
+node <i>u</i>. where, |<i>V</i>| is the number of vertices in the
+graph <i>G</i>. |E| is the total number of edges in the graph
+<i>G</i>. sum of the nodes in the each list is equals to the number
+of edges in the graph. That is , |<i>E</i>|.</p>
+<p><b>The following is the algorithm to compute the transpose of a
+graph using adjacency-list.</b></p>
+<p>TRANSPOSE-ADJACENCY_LIST (<i>G</i>)</p>
+<p>//for each vertex <i>i</i> in the graph</p>
+<p>1. <b>for</b> <i>u=1</i> <b>to</b> |<i>V|</i></p>
+<p>2. <b>for</b> each vertex <i>v</i> in the list <i><img src=
+"../imgs/cbac67dba9225854be1f76d0f5ce3361d5c26a9e.png"></i></p>
+<p>3. Add vertex <i>u</i> to the list <img src=
+"../imgs/ae928a849e40c2b3e923ae5c059c21c8205076b6.png"></p>
+<p>4. <b>return</b> <i><img src=
+"../imgs/e0a0c4fec06e75c11f346df3896a5b44b9e8a8ec.png"></i></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation for Algorithm:</b></p>
+<p>• The algorithm scans through the each list in the adjacency
+list.</p>
+<p>• In line 3 of algorithm adds the vertexes to new adjacency
+lists such that the new list has reversed edges corresponding to
+the edges in the original graph.</p>
+<p>• If graph is directed then each edge is appeared once in the
+array of the list.</p>
+<p><b>Hence, total time complexity of algorithm will be</b>
+<b><img src=
+"../imgs/4d1977e9563053cbaa7c39e91f2adf0934f41143.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A multigraph is a graph which is allowed to have multiple edges
+between any two nodes. Therefore, in the adjacency representation
+of a multigraph, adjacency lists of nodes may have duplicate
+nodes.</p>
+<p>Consider the following algorithm that computes the adjacency
+list representation of the equivalent undirected graph<img src=
+"../imgs/dc6a2c85a9c5e7b6b5e89db57b65258a32d297fe.png"> from
+<i>G</i>, where<img src=
+"../imgs/5a72e7d2268ad7d03a71523797276774e9e36785.png">denotes the
+edges exists in <img src=
+"../imgs/785d06b44a2a7034681ca36a42913ba51658fb76.png">after
+replacing all the multiple edges between two vertices by a single
+edge, also after removing all self-loops.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm:</b></p>
+<p>//Define a procedure equiv_undirect_graph which takes an a
+multigraph as an argument</p>
+<p>1. equiv_undirect_graph (Graph <i>G</i>)</p>
+<p>// creating an empty graph to store new undirected Graph</p>
+<p>2. Graph <i>NewGraph</i></p>
+<p>// Declare a 2-D matrix to check the existence of edges in new
+graph</p>
+<p>//Assume that the array initially contains 0s.</p>
+<p>3. isAvailable[<i>V,V</i>]</p>
+<p>//Put 1 along the diagonal to avoid self-loops in new graph</p>
+<p>4. <b>for</b> <i>i</i> =0 <b>to</b> <i>V</i></p>
+<p>5. isAvailable[<i>i</i>,<i>i</i>]=1</p>
+<p>//Iterate through every vertex in the given multigraph</p>
+<p>6. <b>for</b> every<img src=
+"../imgs/b993cb5b919478a84476619dd3447234319c987b.png">:</p>
+<p>//Iterate adjacency list of <i>p</i></p>
+<p>7. <b>for</b> every<img src=
+"../imgs/13be7562ea7738a91a9ad4d99ec86da27e3324d4.png">in
+<i>G</i>.<i>adj</i>[<i>p</i>]</p>
+<p>8. <b>if</b> isAvailable[<i>q,p</i>]!=1</p>
+<p>9. isAvailable[<i>q,p</i>]=1</p>
+<p>10. isAvailable[<i>p,q</i>]=1</p>
+<p>// Call Add function to add a vertex <i>q</i> to adjacency list
+of vertex <i>p</i> //in <i>NewGraph</i></p>
+<p>11. Add(<i>NewGraph</i>.<i>adj</i>[<i>p</i>],<i>q</i>)</p>
+<p>// Call Add function to add a vertex <i>p</i> to adjacency list
+of vertex <i>q</i> //in <i>NewGraph</i></p>
+<p>12. Add(<i>NewGraph</i>.<i>adj</i>[<i>q</i>],<i>p</i>)</p>
+<p>//Return the new undirected graph in the form of adjacency
+list.</p>
+<p>13. <b>return</b> <i>NewGraph</i>;</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running time analysis:</b></p>
+<p>Consider the above algorithm. In the above algorithm, iteration
+is performed through every edges and vertices of a multi-graph.</p>
+<p>• The algorithm equiv_undirect_graph() takes a
+multi-graph(<i>G</i>) as an argument.</p>
+<p>• In line 2, <i>NewGraph</i> is created in which no self-loop
+and multi edge is included.</p>
+<p>• In line 3, there is a 2-D matrix to check whether there exists
+an edge between the nodes in the new graph.</p>
+<p>• In lines 4-5, a <i>for</i> loop is used to put the value 1 in
+diagonal, it will prevent the self-loops in new graph.</p>
+<p>• In line 6, program traverses through nodes of multigraph.</p>
+<p>• In line 7, there is a loop to traverse all adjacent vertices
+of a node.</p>
+<p>• In line 8, the <i>if</i> condition is used check whether
+already there exist an edge between <i>p</i> and <i>q</i> in new
+graph. Then updates the matrix and adds these edges to
+<i>NewGraph</i> accordingly.</p>
+<p>• Since, in line 5, diagonal values are set to 1, if condition
+in line 7 never executes for self-loops. Therefore self-edges are
+not added to new graph.</p>
+<p>• Also, in lines 9-10, an edge between <i>p</i> and <i>q</i> is
+updated by assigning 1 in the isAvailable array. Thus, even though
+<i>q</i> is repeated further in the adjacency list, it does not
+added to new graph. Therefore all multiple edges between any two
+nodes are replaced with single edge.</p>
+<p>• Obviously, the outer for loop runs number vertices(<i>V</i>)
+times and the inner for loop runs number of edges(<i>E</i>) times
+in a whole.</p>
+<p><b>Since, in above program, each node and edge traversed only
+once, the time complexity of the above algorithm is</b>
+<b><img src="../imgs/b194ada77638f733d81ecbb23d9c7a4578c3047d.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>For adjacency matrix representation:</b></p>
+<p>• If the square of the matrix is taken, an edge is left between
+all pairs of vertices that are separated by the path of 2.</p>
+<p>• To get the square of a graph, add the vertices that are
+separated by single edge in G, which means that add the vertices
+that are separated by single edge in the graph G.</p>
+<p>• The entry u, v in the final matrix should be 1 if either
+<img src="../imgs/e384882db217685e07321ca5f2140961a425684e.png"> or
+either <img src=
+"../imgs/4879833e2200c90fbfc4870790b1ebc92c9114ee.png">.</p>
+<p>• Take the square of the matrix, which can be done with the
+matrix multiplication which takes time <img src=
+"../imgs/ca9c03b9b2e2ca0e5619056a76845f1d9f5bd342.png">.</p>
+<p>• Thus, the total run time is <img src=
+"../imgs/ca9c03b9b2e2ca0e5619056a76845f1d9f5bd342.png">.</p>
+<p><b>For adjacency list representation:</b></p>
+<p>• Find the resultant graph by computing the transpose that is
+<img src="../imgs/9833c0838c2205235f88770bfced6efa9972bdf0.png">
+which takes time <img src=
+"../imgs/45b5665e74806d280a459d2b672fd27929e412c9.png"></p>
+<p>• As the list is scanned for each vertex say v, and another
+entry goes to the vertex u, add the vertex u to the list
+corresponding to the vertex v and add u in the list in <img src=
+"../imgs/9833c0838c2205235f88770bfced6efa9972bdf0.png">.</p>
+<p>• This takes time <img src=
+"../imgs/066da653c98e048b6bbcc1b9b903a1cd37118c79.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Universal sink</b></p>
+<p>A universal sink in a directed graph is a vertex with in-degree
+|<i>V</i>|-1 and out-degree 0. That is, there is an edge that
+enters into universal sink from every vertex in the graph. However,
+there exists no edge that leaves from the universal sink.</p>
+<p>The adjacency matrix is used to represent the graph. If an edge
+(<i>u,v</i>) exists in the graph <i>G</i> that leaves form <i>u</i>
+and enters into <i>v</i>, then the corresponding field
+(<i>A</i>[<i>u</i>][<i>v</i>]) in the adjacency matrix <i>A</i>, is
+set to 1. Otherwise, it is set to 0.</p>
+<p>Consider <i>A</i>=(<i>a</i><sub>ij</sub>) as an adjacency matrix
+for graph <i>G</i>.</p>
+<p>Then, <img src=
+"../imgs/47b98a14b6074ca8fd717443c6466605c0c58a0c.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Identifying universal sink in the adjacency matrix:</b></p>
+<p>• A graph could have 0 or 1 universal sinks.</p>
+<p>• If there exists a universal sink in a graph, then in the
+corresponding adjacency matrix, the values of the row corresponding
+to universal sink are set to zeros.</p>
+<p>• That is, <i>v</i> is a universal sink, if there exists an edge
+(<i>u,v</i>) for every vertex <i>u</i> <i><img src=
+"../imgs/1fc180c31a7eb5cb677e55f14275ec3a675e3266.png"></i>
+<i>V</i> and no edge leaves from <i>v</i>.</p>
+<p><b>Determining a universal sink using adjacency matrix:</b></p>
+<p>• For every row, start finding 1 linearly, and as soon as 1 is
+encountered, move to the second row.</p>
+<p>• If no 1 is found in a row, then the vertex corresponding to
+that row may be a universal sink.</p>
+<p>Assume, while traversing the first row, if 1 is found at column
+<i>k</i> and if all the elements from 1 through <img src=
+"../imgs/6227698a7e7fd39e31fc22b4da408100d2ce0065.png"> in the
+first row have zeros, then no node from 1 through <img src=
+"../imgs/6227698a7e7fd39e31fc22b4da408100d2ce0065.png"> is a
+universal sink. Thus, node 1 is eliminated as the row does not have
+all zeros. Move to row two. Continue the above process for the
+remaining nodes.</p>
+<p>Repeat the above process and examine one row at a time for the
+vertices that have not yet been eliminated to find the existence of
+a universal sink. Thus, finding a universal sink in a graph can be
+done in O(<i>V</i>) time.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Pseudo code for determining a universal sink in</b>
+<b><img src=
+"../imgs/fd0ebbdab69954b72b9f9742233d20ec178e5c76.png"></b>
+<b>:</b></p>
+<p><b>UNIVERSAL-SINK(</b> <i>A</i> <b>)</b></p>
+<p><b><img src=
+"../imgs/62da3abf70ccb29a0b8363f279a242e91b96059b.png" alt=
+"Picture 4"></b></p>
+<p><b>CHECK-SINK(</b> <i><b>A,u</b></i> <b>)</b></p>
+<p><b><img src=
+"../imgs/e976e86e63fa589ce79e134f6a687fa77468fb2f.png" alt=
+"Picture 5"></b></p>
+<p>UNIVERSAL-SINK runs in 2<i>V</i> times, thus the running time is
+O(2<i>V</i>)=O(<i>V</i>).</p>
+<p><b>Therefore</b> <b>, using adjacency matrix, a universal sink
+can be determined in O(</b> <i><b>V</b></i> <b>) time.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Consider the following graph:</b></p>
+</div>
+<hr>
+<div class="answer"><img src=
+"../imgs/4ad4ea7a973661ec181de1440152e3bf97c8b107.png" alt=
+"Picture 3">
+<p>The adjacency-matrix representation is</p>
+<p><img src="../imgs/aae40cd26fa8f41f954f33626bdfbb38afb80642.png"
+alt="Picture 2"></p>
+<p>Run the UNIVERSAL-SINK on the above adjacency matrix.</p>
+<p><img src="../imgs/9f9852817a286ee399ff969392345e21deaf5502.png"
+alt="C:\Users\balu.yoga\Desktop\table.jpg"></p>
+<p>In the graph above, vertex <i>V</i>3 is the universal sink,
+because row <i>V</i>3 has all zeros.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/efa3265c8e38a2e7eb3dd6b9b67bdf2e917afd75.png">
+<hr>
+<img src="../imgs/245b6b668ca3e046e2cafcdb9fa9da1116b11603.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,637 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 6.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Extracting Maximum from Heap</b></p>
+<p>The following heap <img src=
+"../imgs/4df91f195fcc2cd3272186b634af7474d912834b.png">is
+constructed with the specified set of elements.</p>
+<p><img src=
+"../imgs/6670571cb7cff923d2ffd02f6383288ebd1cb0de.png"></p>
+<p>The size of this heap: 12</p>
+<img src="../imgs/3cee8392c985e20b110953dffb992a617ae715b1.png"
+alt="Picture 10"></div>
+<hr>
+<div class="answer">
+<p>The maximum element of the above heap is 15. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 15 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 15 from the root</p>
+<p>• Move the value 1, which is at the last node, to the root</p>
+<p>• Swap 1 and 13</p>
+<p>• Swap 1 and 12</p>
+<p>• Swap 1 and 6</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/a2003693e49e2ee476f5e5f36d419ccb96facab3.png"
+alt="Picture 11"></p>
+<p>Now, <img src=
+"../imgs/d683229d4fc1c36faffcd8f5b0c2b48e600e8732.png"></p>
+<p>The size of this heap: 11</p>
+<p>The extracting elements (in extracting order): 15</p>
+<p>The maximum element of the above heap is 13. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 13 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 13 from the root</p>
+<p>• Move the value 2, which is at the last node, to the root</p>
+<p>• Swap 2 and 12</p>
+<p>• Swap 2 and 6</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/a9386d366466b9c477e8e73c4dc0bea233eada72.png"
+alt="Picture 12"></p>
+<p>Now, <img src=
+"../imgs/af931c55441ca203433ea19ad1dd8b1952c37353.png"></p>
+<p>The size of this heap: 10</p>
+<p>The extracting elements (in extracting order): 15, 13</p>
+</div>
+<hr>
+<div class="answer">
+<p>The maximum element of the above heap is 12. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 12 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 12 from the root</p>
+<p>• Move the value 1, which is at the last node, to the root</p>
+<p>• Swap 1 and 9</p>
+<p>• Swap 1 and 8</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/a0cdfb50253d48d47f4ffcfb1dca2e6ef5518258.png"
+alt="Picture 13"></p>
+<p>Now, <img src=
+"../imgs/e26d74127310f48884d98a9930360f62e90ee6bf.png"></p>
+<p>The size of this heap: 9</p>
+<p>The extracting elements (in extracting order): 15, 13, 12</p>
+<p>The maximum element of the above heap is 9. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 9 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 9 from the root</p>
+<p>• Move the value 0, which is at the last node, to the root</p>
+<p>• Swap 0 and 8</p>
+<p>• Swap 0 and 7</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/5eca1e27a65a302b266a8513b74ebeb659832364.png"
+alt="Picture 14"></p>
+<p>Now, <img src=
+"../imgs/67f03d38a9c8a1a50494447aa1f98616d24b91cd.png"></p>
+The size of this heap: 8 The extracting elements (in extracting
+order): 15, 13, 12, 9</div>
+<hr>
+<div class="answer">
+<p>The maximum element of the above heap is 8. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 8 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 8 from the root</p>
+<p>• Move the value 4, which is at the last node, to the root</p>
+<p>• Swap 4 and 7</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/a93575ddc9ceb12f9ec08f54fc53bac935eefee0.png"
+alt="Picture 22"></p>
+<p>Now, <img src=
+"../imgs/9032d3c04d0ac5478589cbd7a73be1f4eb0365a7.png"></p>
+<p>The size of this heap: 7</p>
+<p>The extracting elements (in extracting order): 15, 13, 12, 9,
+8</p>
+<p>The maximum element of the above heap is 7. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 7 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 7 from the root</p>
+<p>• Move the value 0, which is at the last node, to the root</p>
+<p>• Swap 0 and 6</p>
+<p>• Swap 0 and 5</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/cad88c07337699a6fa5ee37535bbcf116287554e.png"
+alt="Picture 23"></p>
+<p>Now, <img src=
+"../imgs/55cee02a0d2198e5cdbccb83888a22d24777f2f7.png"></p>
+<p>The size of this heap: 6</p>
+<p>The extracting elements (in extracting order): 15, 13, 12, 9, 8,
+7</p>
+</div>
+<hr>
+<div class="answer">
+<p>The maximum element of the above heap is 6. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 6 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 6 from the root</p>
+<p>• Move the value 1, which is at the last node, to the root</p>
+<p>• Swap 1 and 5</p>
+<p>• Swap 1 and 2</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/17b6fa3a27b3eebe5883c7edef214b52f7a98855.png"
+alt="Picture 24"></p>
+<p>Now, <img src=
+"../imgs/be96449a2a1dee8860d3ade45351e81814b803ce.png"></p>
+<p>The size of this heap: 5</p>
+<p>The extracting elements (in extracting order): 15, 13, 12, 9, 8,
+7, 6</p>
+</div>
+<hr>
+<div class="answer">
+<p>The maximum element of the above heap is 5. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 5 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 5 from the root</p>
+<p>• Move the value 1, which is at the last node, to the root</p>
+<p>• Swap 1 and 4</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/4f18368b1973ac1b024f06581f99593a61d765f3.png"
+alt="Picture 18"></p>
+<p>Now, <img src=
+"../imgs/00ef44031c42926ed27148cfd5d294c2d408cb39.png"></p>
+<p>The size of this heap: 4</p>
+<p>The extracting elements (in extracting order): 15, 13, 12, 9, 8,
+7, 6, 5</p>
+<p>The maximum element of the above heap is 4. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 4 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 4 from the root</p>
+<p>• Move the value 0, which is at the last node, to the root</p>
+<p>• Swap 0 and 2</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/a68d6db825b3b0400f9ee77dec744f19a39fb4c9.png"
+alt="Picture 19"></p>
+<p>Now, <img src=
+"../imgs/4078a118c8d5bc84379a6d21d59f4c55f1f47f9a.png"></p>
+<p>The size of this heap: 3</p>
+<p>The extracting elements (in extracting order): 15, 13, 12, 9, 8,
+7, 6, 5, 4</p>
+</div>
+<hr>
+<div class="answer">
+<p>The maximum element of the above heap is 2. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 2 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 2 from the root</p>
+<p>• Move the value 1, which is at the last node, to the root</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/67536464824271042d3469f667c233978e986dff.png"
+alt="Picture 20"></p>
+<p>Now, <img src=
+"../imgs/33d5ecc6386cdf2f5b122ed71ef872956aea6e23.png"></p>
+<p>The size of this heap: 2</p>
+The extracting elements (in extracting order): 15, 13, 12, 9, 8, 7,
+6, 5, 4, 2</div>
+<hr>
+<div class="answer">
+<p>The maximum element of the above heap is 1. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 1 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 1 from the root</p>
+<p>• Move the value 0, which is at the last node, to the root</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is as below.</p>
+<p><img src="../imgs/63003059d5371930bcfe97fc4830847c8afb02b9.png"
+alt="Picture 21"></p>
+<p>Now, <img src=
+"../imgs/e061256a6f7b5d6115bc3ea3e545235a1f6bb035.png"></p>
+<p>The size of this heap: 1</p>
+The extracting elements (in extracting order): 15, 13, 12, 9, 8, 7,
+6, 5, 4, 2, 1</div>
+<hr>
+<div class="answer">
+<p>The maximum element of the above heap is 0. So, the
+HEAP-EXTRACT-MAX operation extracts and returns the element 0 from
+the heap. Then the MAX-HEAPIFY operation rearranges the elements to
+satisfy the max-heap property.</p>
+<p><b>Steps Involved:</b></p>
+<p>• Extract the maximum element 0 from the root</p>
+<p>• Remove the last node</p>
+<p>Therefore the new heap is <b>empty</b>.</p>
+<p>The size of this heap: 0</p>
+<p>The extracting elements (in extracting order): 15, 13, 12, 9, 8,
+7, 6, 5, 4, 2, 1, 0</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The following heap, <img src=
+"../imgs/2355f7127543bc678b45f1a46aa71df0185a15ed.png"> is
+constructed with the specified set of elements <img src=
+"../imgs/1490c2bee9d4690cefdfdb97757c1739ac1b2fd1.png"></p>
+<p><img src="../imgs/71a51bf59938f97d636e961814b54fb4d0581165.png"
+alt="C:\Users\susan\Desktop\1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Insert 10 as the last node. After inserting, the tree is as
+follows:</p>
+<p><img src="../imgs/015be55ea2f50855f5902d1878d07fc541cb1cf1.png"
+alt="C:\Users\susan\Desktop\1.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>As the parent of node 10, which is 8 is less than 10, exchange
+the nodes 8 and 10. After exchanging, the tree is as follows:</p>
+<p><b><img src=
+"../imgs/977213115dc858c54ca6ebcc95597b20da9f0350.png" alt=
+"C:\Users\susan\Desktop\1.png"></b></p>
+</div>
+<hr>
+<div class="answer">As the parent of node 10 which is 9 is less
+than 10, exchange the nodes 9 and 10. After exchanging, the tree is
+as follows:
+<p><img src="../imgs/66c7746adcc93cc34d147e4e9249cc0a710e581e.png"
+alt="C:\Users\susan\Desktop\1.png"></p>
+<p>As the parent of node 10 which is 15 is greater 10, no exchange
+takes place.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Hence, the final heap is as shown below:</p>
+<p><img src="../imgs/e0bcc33f8e125d8db8d6128e7726660fd4739a33.png"
+alt="C:\Users\susan\Desktop\1.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/871e4de71d39842a4fd797f1b067f498d050ba29.png">
+<hr>
+<img src="../imgs/0fe565bc339fdbc6531c4ae4129217a3f9da466e.png">
+<hr>
+<img src="../imgs/ccbb5e665a5d72e866b20bfd2b38c10e0ce14073.png">
+<hr>
+<img src="../imgs/e56b78564bc445c64a0a009f9e6195d0f27d5d5c.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d5eaba38bd6822b9bf928003a1880568fb556922.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/c6d5c256efb81a4802722fb4d666236c512a59fb.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the HEAP-INCREASE-KEY algorithm provided in the
+textbook which needs three assignments in its line number 5. These
+three assignments are reduced using the concept of inner loop of
+INSERTION-SORT.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In HEAP-INCREASE-KEY algorithm the exchange operation used in
+line number 5 requires three assignments.</p>
+<p>• In first step assign the value of <img src=
+"../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png">in a
+temporary variable named <i>temp.</i></p>
+<p>• In second step assign the value of <img src=
+"../imgs/1509ce13ebf34d371338e1d162a6d72405c84234.png"> to
+<img src="../imgs/fb1c07816a3077a8dd74574ecf28c83c5d29aa8f.png"></p>
+<p>• In third step assign the value of t<i>emp</i> to<img src=
+"../imgs/1509ce13ebf34d371338e1d162a6d72405c84234.png">.</p>
+<p>Following three steps are used to swap the value:</p>
+<p><img src=
+"../imgs/6b51f3fbde9ab7c32f86f3bb312db511122eece6.png"></p>
+<p>These three assignments are necessary for the exchange of
+variables but they can be reduced to just one assignment by using
+the concept of the inner loop of insertion sort.</p>
+</div>
+<hr>
+<div class="answer">
+<p>while loop is used in line no. 4 of algorithm will reduce the
+three assignments to one assignment as illustrated below:</p>
+<p>HEAP-INCREASE-KEY (<i>A, i</i>, key)</p>
+<p>//check the value of key</p>
+<p>1. if <img src=
+"../imgs/4b768cda70bb2369746f4cecf8b2f75336796b86.png"></p>
+<p>//display the error message.</p>
+<p>2. error "new key is smaller than current key"</p>
+<p>//assign the value of key in <i>ith</i> location of array
+<i>A</i>.</p>
+<p>3. <img src=
+"../imgs/f4a74ae6779ca86b2c409e33c75511a54ec8fa73.png"></p>
+<p>//while loop is used to check the value of index <i>i</i> and
+compare the value of <i>A[i]</i> to its</p>
+<p>//parent.</p>
+<p>4. while<img src=
+"../imgs/38249766cb6e5d5a1277801fcd256b32baccb726.png"></p>
+<p>//sift the value of parent to its child</p>
+<p>5. <img src=
+"../imgs/cb934a4538e277a5bcbba73a3566281c46ba4dff.png"></p>
+<p>//copy the parent node value into <i>i</i>.</p>
+<p>6. <img src=
+"../imgs/13b9476c3c7c86d989f7087f645236a6fd763397.png"></p>
+<p>7. <img src=
+"../imgs/617614b983a0f454a7a595ddee4316df0bdd57c8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Explanation of Algorithm:</b></p>
+<p>• In line 5 of the above algorithm shift the value of the parent
+node to its child till the parent value is less than the child
+value.</p>
+<p>• When while loop used in line no. 4 breaks, assign the key
+value to the parent.</p>
+<p>• In this way reduce the 3 assignments of line no. 5 to just one
+assignment.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/5ef42575bf93b09977e2e25300947dc24d8ee477.png">
+<hr>
+<img src="../imgs/32ca2079ed13c26d9c4f5e70622f301729be26c8.png">
+<hr>
+<img src="../imgs/444b064dbc79b5ba1c9750de7ab02f1a48a82c65.png">
+<hr>
+<img src="../imgs/fdf51e667ce042eff7267e67e2b8cc4ba75e1da0.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>HEAP-DELETE can be implementead as HEAP-EXTRACT-MAX. First swap
+the last value in the array with the item in the node <i>i</i>.
+Then decrease the heap size by 1. Finally, to maintain max-heap
+property , call MAX-HEAPIFY.</p>
+</div>
+<hr>
+<div class="answer">
+<p><img src="../imgs/2bf9dd5583993128bce1c70e9e4ad787fce66281.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Run time for HEAP-DELETE:</b></p>
+<p>• All lines except the line 3 runs in constant time.</p>
+<p>• In each call of MAX-HEAPIFY, it determines the largest between
+left and right of node <i>i</i>. Then swaps the largest value with
+item in node <i>i</i>. MAX-HEAPIFY called recursively until the
+max-heap property is achieved.</p>
+<p>• Thus the MAX-HEAPIFY runs <i>O</i>(lg <i>n</i>) time.</p>
+<p><b>Therefore, the HEAP-DELETE(</b> <i><b>A</b></i> <b>,</b>
+<i><b>i</b></i> <b>) also runs in</b> <i><b>O</b></i> <b>(lg</b>
+<i><b>n</b></i> <b>) time.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the min-heap property of min-heap. According to this
+property, “every node except the root node consists its value
+minimum as much as that of its parent node”.</p>
+<p>So, the minimum value in all the elements is acquired by the
+root node of the min-heap.</p>
+<p>Now consider the following:</p>
+<p><b>BUILD-MIN-HEAP:</b></p>
+<p>It is used to create a min-heap using <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">elements. It
+takes a time complexity of <img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png">to build
+this min-heap.</p>
+<p><b>HEAP-MINIMUM:</b></p>
+<p>It is used to return the minimum of all the elements exists in
+the heap. It takes a time complexity of <img src=
+"../imgs/703893f27608846e27b68d9e6e8b17ad7f2ba54b.png">to return
+the minimum of all the elements.</p>
+<p><b>MIN-HEAPIFY(root):</b></p>
+<p>In MIN-HEAPIFY(root), it is assumed that the sub-trees, which
+are rooted at the child of the root, are min-heaps and it takes a
+time complexity of <img src=
+"../imgs/5d05f4b9cfe958928d1551475ee91aad44b649b5.png">to heapifies
+the tree.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now consider the following <img src=
+"../imgs/2a9d47284017aa7dd7cdbeddd21ec31b5cf17181.png">-time
+algorithm to merge <img src=
+"../imgs/9d2bddb163c1adb26e6162d23237951ed051a659.png">sorted lists
+into one sorted list.</p>
+<p><b>Algorithm:</b></p>
+<p>1. Build a min-heap by choosing the first element from each of
+the <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">sorted
+lists. The heap size is<img src=
+"../imgs/9d2bddb163c1adb26e6162d23237951ed051a659.png">, so
+BUILD-MIN-HEAP will take <img src=
+"../imgs/1324ba0a14b282873fe165fc6a176afe1ba4b442.png">time to
+build the min-heap. In this heap, list-id of the list (or from
+which list it has been taken) will also be stored along with the
+heap elements.</p>
+<p>At this stage, the root contains the minimum of the
+min-heap.</p>
+<p>2. Now, put the root into the final sorted list. Then, the root
+will be replaced with the next elements of the same list. It will
+take a time complexity of <img src=
+"../imgs/5348248797038408019902edf6f75aa3b51f3a98.png">time.</p>
+<p>At this stage, the min-heap property may be violated by the
+root.</p>
+<p>3. Now, run the MIN-HEAPIFY(root). The time taken in this
+is<img src=
+"../imgs/88b4a2ef99d60082f2f939e89b3dcee6ad13b805.png">.</p>
+<p>4. When the list is empty then repeat step (2) for non-empty
+list.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running time analysis of the above algorithm:</b></p>
+<p>In the above algorithm, step (1) will take a time complexity of
+<img src="../imgs/1324ba0a14b282873fe165fc6a176afe1ba4b442.png">by
+the BUILD-MIN-HEAP.</p>
+<p>The step (2) and step (3) will be repeated <img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">times. So,
+the total time complexity can be calculated by multiplying
+complexity of both steps by <i>n</i>.</p>
+<p>Calculate the total running time as follows:</p>
+<p><img src=
+"../imgs/92ebd378c3639b1dca4b2bb352528d8052c13331.png"></p>
+<p><b>Hence, the running time of the algorithm is</b> <b><img src=
+"../imgs/ab1bae118bd4710f5d483169a43942aaf1fb1efc.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

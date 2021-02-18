@@ -1,0 +1,336 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 14.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/cdcf1ce7733dcb6327a84e3012f3a46de4c86d28.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following diagram of red black tree:</p>
+<p><img src="../imgs/0e8a5c94e22dc23ee350fddcde9ce53e42178963.png"
+alt=
+"D:\2015 FILES\MONTHS 2015\9 September\25.9.2015\Gaurav 2254\1.png"></p>
+<p>In above red black tree the node <i>x</i> will have
+<i>x.size</i> attribute<i>.</i> This attribute is used to store the
+internal node of <i>x</i> sub-tree. The size of any internal node
+<i>x</i> is</p>
+<p><img src=
+"../imgs/c89135c390ef69c682d0f73a3699854f86972776.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the OS-RANK(T, <i>x</i>) algorithm provided in section
+14.1 to determine the rank of a node having key value 35 in above
+red black tree.</p>
+<p>• Initially, the <i>key</i> value of T (root) and <i>x</i> are
+26 and 35.</p>
+<p>• The 1<sup>st</sup> line of OS-RANK(T, <i>x</i>) algorithm
+calculate value of <i>r.</i> Now, add 1 in <i>x</i> left child
+size. The node <i>x</i> that is 35 does not have left child.
+Therefore the value of <i>x</i> becomes:</p>
+<p><img src=
+"../imgs/df721d8e21ee88b54210741572d527590f0e2a47.png"></p>
+<p>• The 2<sup>nd</sup> line assigns value of <i>x</i> into
+<i>y</i>. Therefore the value of <i>y</i> also becomes 35.</p>
+<p>• The 3<sup>rd</sup> line implement a <b>while</b> loop which
+check whether value of <i>y</i> that is 35 is not equal to T root
+that is 26. The condition is true so control moves into
+<b>while</b> loop.</p>
+<p>• The 4<sup>th</sup> line use <b>if</b> statement to check
+whether <i>y</i> node is right child of its parent. Currently
+<i>y</i> is 35 which is not the right child of its parent 38 so
+condition false. The control directly moves to 6<sup>th</sup>
+line.</p>
+<p>• The 6<sup>th</sup> line update the value of <i>y</i> with its
+parent, so now values of <i>y</i> becomes 38. Now control again
+moves to 3<sup>rd</sup> line. The <b>while</b> loop again checks
+value of <i>y</i> that is 38 is not equal to T root that is 26. The
+condition is true so control moves into <b>while</b> loop.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• The current <i>y</i> node that is 38 is right child of its
+parent 30 so 4<sup>th</sup> line condition get true.</p>
+<p>• The 5<sup>th</sup> line calculate the value of <i>r</i></p>
+<p><img src=
+"../imgs/a8553146090fd22f9329f447adac98f75cb7bf29.png"></p>
+<p>• The 6<sup>th</sup> line again updates the value of <i>y</i>
+from 38 to 30. Now, control again moves to 3<sup>rd</sup> line, the
+condition in 3<sup>rd</sup> line again gets true.</p>
+<p>• The current <i>y</i> node that is 30 is not the right child of
+its parent 41 so 4<sup>th</sup> line condition get False. Now,
+control moves to 6<sup>th</sup> line.</p>
+<p>• The 6<sup>th</sup> line again updates the value of <i>y</i>
+from 30 to 41. Now, control again moves to 3<sup>rd</sup> line, the
+condition in 3<sup>rd</sup> line again gets true.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• The current <i>y</i> node that is 41 is the right child of its
+parent 26 so 4<sup>th</sup> line condition get False.</p>
+<p>• The 5<sup>th</sup> line again calculate the value of
+<i>r</i></p>
+<p><img src=
+"../imgs/de98051186626961dde024bdfb95335b7b3215f1.png"></p>
+<p>• The 6<sup>th</sup> line again updates the value of <i>y</i>
+from 41 to 26. Now, control again moves to 3<sup>rd</sup> line, the
+condition in 3<sup>rd</sup> line gets false.</p>
+<p>• The control directly moves to 7<sup>th</sup> line. The
+7<sup>th</sup> line returns the value of <i>r</i> that is 16.</p>
+<p><b>Finally the value of</b> <i><b>r</b></i> <b>return by
+OS-RANK(T,</b> <i><b>x</b></i> <b>) algorithm is</b> <b>16</b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/c13b169d888ae928b5923c6765a1fcb92f562bdf.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/7865c58c35e44e02424229e63ab8f3993c4fdd0a.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/14c40a0f215fad0601e9f577fe5ea1d2c0adb3ea.png">
+<hr>
+<img src="../imgs/469f65f52e9058723bbebb6db3d2bbe8f6a25a90.png">
+<hr>
+<img src="../imgs/ac40f885951ab1dcb90940ba049f426fc1af933e.png">
+<hr>
+<img src="../imgs/5039dc484ee5de6139db31a78b0e8ee744c89ec4.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Insertion process:</b></p>
+<p>While insertion, multiple rotations are performed.</p>
+<p>First insert the node and increase the rank of every node by 1
+starting from root to the inserted node if the node is in the left
+subtree using the formula given below:</p>
+<p>rank[x]=rank[predecessor[x]]+1</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Rotations:</b></p>
+<p><b>Case: Left rotation</b></p>
+<p>In left rotation, the rank of the node on which rotation is made
+does not change. It remains same as before.</p>
+<p>It can be seen from the diagram below:</p>
+<p><img src="../imgs/d2cf0c577346795a77643a5f52142208dc795c19.png"
+alt="Picture 2"></p>
+<p><b>Case: Right rotation</b></p>
+<p>Same is the case with right rotation, the rank of the node on
+rotation is being made, rank remains same as shown below:</p>
+<p><img src="../imgs/68f6eb2d0afe8eed812f99a33466d9b5edee793b.png"
+alt="Picture 3"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Deletion:</b></p>
+<p>Opposite is the case with deletion. decrease the rank while
+deletion. In rotations, the rank does not change.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/7797ffb288ce42cab69dfe287438a4aa6d40707a.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>To find the number of intersections, count the number of
+inversions in the array of coordinates. The strategy behind
+counting inversions is that if two chords i and j (i &lt; j) come
+like (S<sub>i</sub>, E<sub>i</sub>, S<sub>j</sub>, E<sub>j</sub>)
+then they don’t intersect each other.</p>
+<p>Note that E<sub>j</sub> came before E<sub>i</sub> that is an
+inversion. Thus, the coordinates that are inversion do not
+intersect each other. It is shown below with the help of
+diagram.</p>
+<p><img src="../imgs/644a6278bcdb1e673d99e55ffd1fc77387dbe068.png"
+alt="Picture 2"></p>
+<p>Taking chord (s1, e1) and point (s1, e2), sweeping clockwise,
+they come in order s1,s2, e2, e1. 2&gt;1 but they came in unsorted
+order in e1 and e2. Thus, these are inversion. It is clear that
+these chords are not intersecting each other.</p>
+<p>Now, take chord (s2, e2) and (s4, e4) The end points are in
+order s2,e2,s4,e4. This is sorted order. Thus, these are not
+inversions. It can be seen from diagram that these chords are
+intersecting each other.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm: Intersection(A, p, r):</b></p>
+<p>1. Name all the chord points on the circle from the array A.
+Name starting point of ith chord as S<sub>i</sub> and end-point as
+E<sub>i</sub>.</p>
+<p>2. Now, calculate the inversions using merge sort using the
+steps below.</p>
+<p>3. if p &lt; r</p>
+<p>4. then q = b(p + r)/2c</p>
+<p>5. left = Intersection(A, p, q)</p>
+<p>6. right = Intersection(A, q + 1, r)</p>
+<p>7. inv = Intersection(A, p, q, r) + left + right</p>
+<p>8. return inv</p>
+<p>9. end if</p>
+<p>10. return 0</p>
+<p>11. Count the number of inversions.</p>
+<p>12. Total number of intersection = <img src=
+"../imgs/2cd30ffdffd87fd67a6b481a61d46f2c3751e482.png"> – number of
+intersections</p>
+<p><b>Complexity:</b></p>
+<p>Since this is using the concept of divide and conquer like merge
+sort, it takes O(nlg n) time to compute the number of
+intersections.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

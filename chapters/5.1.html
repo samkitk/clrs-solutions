@@ -1,0 +1,316 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 5.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>A relation R is said to be a partial order relation if it must
+possess the following three properties:</p>
+<p>• Reflexive.</p>
+<p>• Ant symmetric.</p>
+<p>• Transitive.</p>
+<p>A partial order is said to be a total or linear order if and
+only if for all <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"> and
+<img src="../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png"> in
+the set either <img src=
+"../imgs/7537549ab8937c6a7c725df1f965e4c704fd5382.png">or <img src=
+"../imgs/589241e0ecc6c04e38fa25b364dfa2f7f9fcd569.png"> is
+true.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, suppose that the relation is defined as “is as good or
+better”. Then the above three properties can be defined as:</p>
+<p>• <i>Reflexive</i>: This is a bit trivial, but from the
+assumption taken everybody is as good or better as themselves.</p>
+<p>• <i>Ant symmetric</i>: According to this, if <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"> is better
+than <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png"> then it’s
+never possible that <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png"> will be
+better than<img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png">.</p>
+<p>• <i>Transitive</i>: According to this, if <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"> is better
+than <img src=
+"../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">and
+<img src="../imgs/62c55eb099ce9afae8e4cd9c69d82b4e42c201e5.png">is
+better than <img src=
+"../imgs/2dba8cab49bd10b05f89a8f78caadf08daf45e5b.png">then, it is
+obvious that <img src=
+"../imgs/b36c821fa70f0add5dd8306bea16c6ab0bb1826e.png"> is better
+than<img src=
+"../imgs/2dba8cab49bd10b05f89a8f78caadf08daf45e5b.png">.</p>
+<p>Therefore, from the above definition, the relation follows a
+partial order. Here, it is assumed that the comparison will be take
+place between any two candidates. Then the comparison must be a
+total relation.</p>
+<p><b>Therefore, the total order on the ranks of the candidate is
+determined.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Implementation of procedure</b> <b>Random</b> <b>(</b>
+<i><b>a</b></i> <b>,</b> <i><b>b</b></i> <b>) :</b></p>
+<p>/* method to generate 0 or 1 randomly */</p>
+<p>Random01</p>
+<p><b>return</b> rand() % 2</p>
+<p><b>End</b> Random01</p>
+<p>/* find the least power of 2 which is greater than or equal to
+the given input a */</p>
+<p>LeastPowerOfTwo(a)</p>
+<p>power = 0</p>
+<p>temp = a</p>
+<p><b>while</b> temp <b>greater</b> <b>than</b> 1</p>
+<p>temp = temp/2</p>
+<p>power = power + 1</p>
+<p><b>return</b> power</p>
+<p><b>End</b> LeastPowerOfTwo</p>
+<p>/* generate a random number between 0 to a (exclusive) */</p>
+<p>Generate(a)</p>
+<p>run = LeastPowerOfTwo(a)</p>
+<p><b>while</b> true</p>
+<p>power = 1</p>
+<p>sum = 0</p>
+<p><b>for</b> i=0 <b>to</b> run</p>
+<p>sum = sum + Random01() * power</p>
+<p>power *= 2</p>
+<p><b>if</b> sum &lt; a</p>
+<p><b>return</b> sum</p>
+<p>End Generate</p>
+<p>/* generate a random nubmer between a (inclusive) and b
+(exclusive)*/</p>
+<p>Random(a,b)</p>
+<p><b>Return</b> a + generate(b-a)</p>
+<p><b>End</b> Random</p>
+</div>
+<hr>
+<div class="answer">
+<p>The question is similar to flip coins. Each time we flip a coin,
+we have the same probability to get either 0 or 1. If we flip the
+coin for several times, the probability of getting each permutation
+of 0 and 1 is the same. So, if we can use each permutation to
+represent a distinct number between <i>a</i> and <i>b</i>, we shall
+get the desired Random function.</p>
+<p>Binary format can be used to represent a number with a series of
+0 and 1s. So, if we run the Random (0, 1) for <i>1+lg (b-a)</i>
+times and convert the final permutation to a decimal value plus
+<i>a</i>, that's the value we want. And we need to be careful since
+<i>b-a</i> might not be exact power of 2, so we need to run Random
+(0, 1) for ceiling of <i>1+lg(b-a)</i> times. But a serial of 0 and
+1 of this length might represent a number exceeds <i>b-a</i>, we
+can abandon the value and restart Random (<i>a</i>, <i>b</i>) till
+the number is smaller than <i>b-a</i>.</p>
+<p><b>(OR)</b></p>
+<p>Consider the following implementation of the procedure <img src=
+"../imgs/29080fe917b3c2e215d611439b49be40bd3c298f.png"> which only
+makes call to<img src=
+"../imgs/17877c87571765d6d86a7f974d54649be81f1cc6.png">.</p>
+<p><b>Algorithm:</b></p>
+<p>Suppose<img src=
+"../imgs/2ea4a9b63a274f6ee4bd7783bf52ce4b22890247.png">.</p>
+<p>Step 1: First find the smallest <i>k</i>, in such a way
+that<img src=
+"../imgs/50a6c37ca8268f6a0040f48c295b91b73d4fa358.png">,
+where<img src=
+"../imgs/7fe2b4b37d89da1096261aceb22b6391c20d224d.png">.</p>
+<p>Step 2: Call the procedure, <img src=
+"../imgs/17877c87571765d6d86a7f974d54649be81f1cc6.png">, <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">times to get
+a <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png">-digit
+binary number <img src=
+"../imgs/f3985b035a470ffc6e5e5d8c186dee55fce5efc9.png">.</p>
+<p>Step 3: if <img src=
+"../imgs/9b35533621eaec8fb72e941c8b5262f6e253d06e.png">then go to
+step 2 otherwise returns<img src=
+"../imgs/a1fad28a302bb14ffd2702ed21e3be8ee38aac2c.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running Time Analysis:</b></p>
+<p>The above algorithm produces uniformly random number in that
+range. From the above algorithm, it may be a possibility to repeat
+the step 2.</p>
+<p>• The chance having not to repeat the step 2 is given by
+<img src=
+"../imgs/9cae3514f95e39be390a1942ad09c89c56536791.png">.</p>
+<p>• Consider the geometric distribution, which suggest it will
+take <img src=
+"../imgs/44572f48283907fb002b3b09775060ccb20eb6d1.png">trials
+before user get such numbers. In other words, it will take
+<img src="../imgs/078b3966e5dc6288067d2da0dc7a83fb1a23b77c.png">trials.</p>
+<p>As, the procedure <img src=
+"../imgs/17877c87571765d6d86a7f974d54649be81f1cc6.png">on each
+trial is called <img src=
+"../imgs/f060034fc8928b6735a170720aa0266092bbd136.png"> times, then
+the expected running time is as follows:</p>
+<p><img src=
+"../imgs/41d309d1eac7c1805d9c23a2b5a43c571aa32c17.png"></p>
+</div>
+<hr>
+<div class="answer">Now put the value of<img src=
+"../imgs/18ac17158f24881a871af9d55a76083b78a5228a.png">, then user
+will get;
+<p><img src=
+"../imgs/ef9d583cd3e3dae0d454f573406422ee5cbe12d9.png"></p>
+<p><b>Hence, the expected running time of the given procedure is
+given as</b> <b><img src=
+"../imgs/207e8bd0894b1374b2b47a5db697989694362b2a.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Algorithm to give unbiased answer</b></p>
+<p>A procedure BIASED–RANDOM is available, that outputs either 0 or
+1.</p>
+<p>The probability of the output 1 is <i>p</i>.</p>
+<p>The probability of the output 0 is 1 – <i>p</i>.</p>
+<p>where 0 &lt; <i>p</i> &lt; 1</p>
+<p>The algorithm UNBIASED–RANDOM that returns an unbiased answer is
+given as follows:</p>
+<p>UNBIASED–RANDOM</p>
+<p>1 do</p>
+<p>2 <img src=
+"../imgs/db10f012a35f105d989d96e492f4f3b4b2a7eb11.png">
+BIASED–RANDOM //first call to get a value</p>
+<p>3 <img src=
+"../imgs/b931dd7f733d9efff801c696ecaf783ffe752ea7.png">
+BIASED–RANDOM //second call to get a value</p>
+<p>4 while <img src=
+"../imgs/fdb3e57a50fe1e7b463498ae91da13e5da09b043.png"> //loop till
+both the values are equal</p>
+<p>5 return <i>x</i> //return <i>x</i> the value when <img src=
+"../imgs/71c28c723a652c34b9144d3377cb524430c8a7af.png"></p>
+<p>The algorithm UNBIASED–RANDOM returns an unbiased answer by
+using the procedure BIASED–RANDOM as a subroutine. To get unbiased
+answer, the algorithm calls the procedure BIASED–RANDOM twice and
+stores the values returned by the procedure in two variables
+<i>x</i> and <i>y</i>. In the conditional expression of the
+do-while loop, it compares <i>x</i> and <i>y</i>. If the values are
+equal the loop repeats, otherwise its breaks the loop and returns
+the first value stored in <i>x</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The probability of the outputs (0 or 1) by the algorithm
+UNBIASED–RANDOM can be calculated as follows:</p>
+<p>The probability of the output 0 is <img src=
+"../imgs/46f171b4d0348e0da21b4a584aff4b945bba97b9.png">.</p>
+<p>The probability of the output 1 is <img src=
+"../imgs/7737a2556b97a0715292d657708ef8b2f4c98f14.png">.</p>
+<p>Observe that <img src=
+"../imgs/bc6720f02b4ca14da00dea5518f99baf750e3593.png">. Hence the
+probabilities of both the outputs are equal.</p>
+<p>Since the probability of returning the output 0 is equal to the
+probability of returning the output1 and there is no other way,
+UNBIASED–RANDOM will return 0 and 1 each with probability <img src=
+"../imgs/f511efe630eb6d77981edac3e8f374e9567b9f29.png"> .</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Running time of the algorithm UNBIASED–RANDOM:</b></p>
+<p>Consider, each iteration takes O(1) time.</p>
+<p>The expected running time of the algorithm UNBIASED–RANDOM in
+the expected number of iterations is linear.</p>
+<p>The do-while loop iterates till the two values are not equal
+which can be considered as a Bernoulk trial. In the trail “success”
+means the algorithm returns a value. The algorithm will return 0 or
+1.</p>
+<p>The probability of the success is equal to the sum of
+probabilities of the outputs 0 and 1.</p>
+<p><img src=
+"../imgs/9b3d3b1e5060d18d9c14da4277abc06269e7341f.png">.</p>
+<p>Geometric distribution gives the number of trials until a
+success occurs.</p>
+<p>The expected number of trials for this scenario is given by
+<img src=
+"../imgs/b9b5f406b0b41b29c50c5fef71578c636d088bb7.png">.</p>
+<p>Therefore, the expected running time of the algorithm
+UNBIASED-RANDOM as a function of <i>p</i> is <img src=
+"../imgs/fd1baadc6487ced5b1e592852085df8580ff62bc.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

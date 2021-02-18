@@ -1,0 +1,245 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 18.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>According to the definition of B-Tree, there are lower and upper
+bounds on the number of keys a node can have. These bounds are
+represented using the minimum degree <i>t</i>, where <img src=
+"../imgs/bc2e9f670368f18adac001ccfe030bd3c63c03b7.png"> .</p>
+<p>• Except the root node, all other nodes should have minimum
+<img src="../imgs/b0b67470c8bd13515e1aeb806e4bcd68d11b6b19.png">
+keys.</p>
+<p>• Every internal node except the root will have minimum of
+<i>t</i> children.</p>
+<p>• In a nonempty tree, the root node must have minimum one
+key.</p>
+<p>• Every node can have maximum <img src=
+"../imgs/b6c87dc3d4193d4e8e3fca51f49ab4f968638ee2.png"> keys.</p>
+<p>• Every internal node can have maximum of 2<i>t</i>
+children.</p>
+<p>If the degree of <i>t</i> is 1, the minimum number of nodes will
+be 0 and the B-tree will be an empty tree. A nonempty B - tree
+should contain at least one key, thus making degree<img src=
+"../imgs/7bce2cc4d06801d910c7a3a62f4c71489e1e3f81.png">.</p>
+<p>Hence the minimum degree of <img src=
+"../imgs/7bce2cc4d06801d910c7a3a62f4c71489e1e3f81.png">and the
+minimum degree of <img src=
+"../imgs/3baccba9e75837b3af6f2cd81befd281cab5c9b3.png"> is not
+allowed.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The following is the given B-tree:</p>
+<p><img src=
+"../imgs/59cec53ddaa4ffbd55f390dacd545fe1f56613a2.png"></p>
+<p>According to property 5 B-tree</p>
+<p>a. Every node other than root must have at least <img src=
+"../imgs/d9708e8eb6618bcb3c885aca4ccb6c87dfdc1593.png"> keys.</p>
+<p>b. Every node may contain at most <img src=
+"../imgs/3e10f8f851f19c4fa04769eb1dd8471f24a853f0.png"> keys.</p>
+<p>c. And <i>t</i> ≥ 2</p>
+<p><b>Finding value of</b> <i><b>t</b></i> <b>:</b></p>
+<p>• Every node in the given tree has 2 keys or 3 keys.</p>
+<p>• Therefore, least number of keys, <i>t</i>-1 ≤ 2 and maximum
+number of keys, 2<i>t</i>-1 ≥ 3</p>
+<p>i.e. <i>t</i> ≤ 2 +1 and 2<i>t</i> ≥ 3+1</p>
+<p><i>t</i> ≤ 3 and 2<i>t</i> ≥ 4</p>
+<p><i>t</i> ≤ 3 and <i>t</i> ≥ 2</p>
+<p>• From the above two in equations, 2 ≤ <i>t</i> ≤ 3</p>
+<p>• So, the value of t cannot exceed 3 as some nodes have only 2
+keys.</p>
+<p><b>Therefore, the given tree is a legal B-tree, for</b>
+<i><b>t</b></i> <b>=2 or 3.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Since minimum degree, <i>t</i> = 2,</p>
+<p>• Every node except the root in the B-tree must have at least 1
+key (i.e. <i>t-1)</i>.</p>
+<p>• Every node can have at most 3 keys (i.e. <i>2t</i>-1).</p>
+<p>• That is, a node may have 1 key or 2 keys or 3 keys.</p>
+<p>All legal B-trees that represent {1, 2, 3, 4, 5} and satisfy the
+above conditions are shown below:</p>
+<p>i)</p>
+<p><img src="../imgs/acdf83ff3a1d9ae849175101a5578af9eddb0852.png"
+alt="Picture 2"></p>
+<p>ii)</p>
+<p><img src="../imgs/74ad5beb12f47d87801997f3e1af2f37f0964825.png"
+alt="Picture 3"></p>
+<p>iii)</p>
+<p><img src="../imgs/89e36720a0d90b5c3aa7dfddc7b0d43c70b3f1c5.png"
+alt="Picture 4"></p>
+<p>iv)</p>
+<p><img src="../imgs/25f7ece449d7c88329c1da6b0774b95d7859ca0e.png"
+alt="Picture 5"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/2cbbe936e92dd2a747cbd86c5e73c12faf9b4a61.png">
+<hr>
+<img src="../imgs/12382a48488d44cf7c9940eed3f67229c2089a65.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Supposed condition:</b></p>
+<p>If the black node assimilates the red children and incorporates
+its own black children at that place in the Red Black Tree, then a
+new data structure is formed.</p>
+<p>Red Black Tree is a special type of tree in which each node
+contains an extra bit for the storage of the color of that node.
+Every node in the Red Black Tree contains five fields <i>p</i> for
+parent, <i>left</i> for left child, <i>right</i> for right child,
+<i>key</i> for data value and <i>color</i> for color of the
+node.</p>
+<p>The properties of Red Black Tree are as follows:</p>
+<p>1. In this tree each and every node is either painted with red
+color or painted with black color.</p>
+<p>2. The root node of the Red Black tree is always black. (This
+rule is not right in every condition. Since the root can always be
+changed from red to black, but not true for the change of color
+from black to red always)</p>
+<p>3. All leaf nodes (NIL) are painted in black color.</p>
+<p>4. For each red node its children are always black.</p>
+<p>In the Red Black Tree each path from a node to its leaf contains
+equal number of black nodes.</p>
+<p><img src="../imgs/396526814994f1bc9f00995748ed809af421b8bc.png"
+alt="Picture 1"></p>
+<p>Fig: Red Black Tree</p>
+</div>
+<hr>
+<div class="answer">
+<p>B-Tree is a tree data structure in which each node can have at
+least two children and special attributes, that is, it stores the
+number of keys currently in node with the keys themselves. It also
+contains a boolean field which to confirm that if a node is
+internal node or the leaf node.</p>
+<p><img src="../imgs/0283407c37d5555aaf7dbbcee8c8f7023e1ce3ce.png"
+alt="2254-10"></p>
+<p>Fig: B-Tree</p>
+<p>As the root node in a Red Black tree is black, we can say that
+if a black node would absorb its red children and incorporate them
+with its black children, we would get a new data structure.</p>
+<p>This data structure would be a generalized version of Binary
+search tree, a tree with features similar to B Tree. It is because
+if all the black nodes would absorb its red children and make their
+children as its own, then the red black tree’s height will reduce
+and there will be many nodes in a single level. As per the
+definitions of B-Tree, this description suits well.</p>
+<p><b>Hence, in a Red Black Tree, if the black node absorbs its red
+children and incorporate its own children in that place, then the
+new formed data structure will be the</b> <b>B-Tree.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

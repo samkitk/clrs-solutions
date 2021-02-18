@@ -1,0 +1,658 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 34.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Refer to the circuit given in figure 34.8(b) of the text
+book.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Verifying that the circuit is unsatisfiable requires the
+following steps to be followed:</p>
+<p>• Find out the Boolean formula or the expression for the output
+of the circuit diagram.</p>
+<p>• Reduce the expression further to make the observations
+easier.</p>
+<p>• Draw truth table for every possible input values for the
+circuit and derive the output.</p>
+<p>Then using the truth table, it is found out whether the circuit
+is unsatisfiable.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Satisfiability:</b> It refers to whether an interpretation
+exists according to which the value of the Boolean formula becomes
+TRUE.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In other words, it means whether a combination of possible truth
+values of the variables can make the Boolean formula give TRUE as
+the output. The absence of such an interpretation is called
+<b>unsatisfiable.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Finding out the Boolean expression for the circuit
+diagram:</b></p>
+<p>The Boolean expression for the circuit diagram can be done by
+individually observing each segment of the circuit diagram and then
+combining these observations together appropriately.</p>
+<p><b><img src=
+"../imgs/924ca979ff431080d040d11ddd72b2087bcd4156.png" alt=
+"D:\Ani\G\2254-34.3-1E.png"></b></p>
+<p>On individually observing each segment and combining according
+to the function of the GATES, the output expression that is
+obtained is the following:</p>
+<p><img src=
+"../imgs/cf5fc977b50fd1f01b6b44c55d19d93626ccd179.png"></p>
+<p>The above is the output expression for the circuit diagram.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Reducing the output expression:</b></p>
+<p>The output expression can be reduced by using the various
+Boolean laws and theorems as follows:</p>
+<p><img src=
+"../imgs/1e06f8d96992c9cd228b5d3937a4610f561bdf37.png"></p>
+<p><img src=
+"../imgs/57984c61aa4df268a68f3b44514c1e8269cef046.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>As it can be seen from the reduced expression of the output
+expression, the output always holds 0 (or FALSE) as the value.</p>
+<p>So, there are no interpretations according to which the Boolean
+circuit gives TRUE value as output. The output of this circuit
+diagram is always FALSE. Therefore, drawing the truth value table
+is not needed anymore as the output remains FALSE constantly for
+any combination of input values.</p>
+<p><b>Thus, it is proved that the circuit diagram is
+unsatisfiable.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider a polynomial-time reduction<img src=
+"../imgs/50f47a2c7624170fcc09f76ab2d3f1a2ee6cffd1.png">. The
+polynomial-time reduction <img src=
+"../imgs/b445fc2639b3a93243f46b3b495c6d1b678c3805.png"> means,
+“there exists a computable function<img src=
+"../imgs/6a3cd55483f5f1c8f2738c9c89098c7ce29a526c.png">: alphabet
+of L<img src=
+"../imgs/4fdca010c9a1b2f943490197a2cbb95e53e1a006.png">alphabet of
+M in such a way that for all<img src=
+"../imgs/109ffebe6e26ba2e42dbe223046595d688afc7be.png">, <img src=
+"../imgs/fba1b8fa063f7228a72ed57539be79b11c1d322c.png">if and only
+if<img src=
+"../imgs/9edce50e074586ae6fa899f3f2d8f5e9a5d75c36.png">”.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proving</b> <b><img src=
+"../imgs/50f47a2c7624170fcc09f76ab2d3f1a2ee6cffd1.png"></b>
+<b>relation is a transitive relation:</b></p>
+<p>• Consider two polynomial-time reductions <img src=
+"../imgs/ee1ea5d0888267373b830918d6ef968031c5d65e.png">and<img src=
+"../imgs/2fe39d456b0fad2b816a4751d663c55ac3fe39ad.png">. In other
+words, there exists a polynomial-time computable reduction
+functions<img src=
+"../imgs/e196de10d964dbbd636f6e1552dfbf91857d523d.png">
+and<img src="../imgs/2434cb98525766d57744fc84280c42a58e0a860b.png">in
+such a way that :</p>
+<p><img src="../imgs/e214bfe684c9792c799f5165f95ce4ffab7778ab.png">
+…… (1)</p>
+<p><img src="../imgs/73ddb1d901d4f95a729a92a98020cff74dc226dc.png">
+…… (2)</p>
+<p>• Now, define a function <img src=
+"../imgs/4f42ac666de6bba12f96d584a9511e80572fc172.png"><img src=
+"../imgs/e452612cb1df6988ce3f411da07884745a52e170.png"> such that,
+<img src=
+"../imgs/86c7f7297b15c0dcf65038abe50997c91aa85d12.png">.</p>
+<p>Now, it is enough to prove that <img src=
+"../imgs/781fa74a45b1e879417ca62ff0278a8f3815cc6c.png">is
+polynomial-time reducible to <img src=
+"../imgs/ae4c61761c76cd7b54c70fdece1d603498b75539.png">
+(i.e.<img src=
+"../imgs/85d0f33ecba7066a5feddae0bf79ce64b9a01951.png">). In other
+words, for all<img src=
+"../imgs/109ffebe6e26ba2e42dbe223046595d688afc7be.png">, <img src=
+"../imgs/dba3cb8a30189177a510231ddf31f1071c3e6f15.png">.</p>
+<p>• Assume that, <i><img src=
+"../imgs/b65d684ed5e2f7306a61894cf3029fac8dc08611.png"></i>,</p>
+<p>o Then, from equation (1), <img src=
+"../imgs/6bcb47dab3adde6f3bf67f6567224dd4a267c901.png">.</p>
+<p>o Since, <img src=
+"../imgs/6bcb47dab3adde6f3bf67f6567224dd4a267c901.png">, from
+equation(2), <img src=
+"../imgs/cb67cfe3da4ac11fe9c165b99c1b210b326812c6.png">. That is
+<img src=
+"../imgs/3832b49c64424d950cf34762e03801409d2f8665.png"></p>
+<p><b>Thus, if</b> <i><b><img src=
+"../imgs/b65d684ed5e2f7306a61894cf3029fac8dc08611.png"></b></i>
+<b>, then</b> <b><img src=
+"../imgs/3832b49c64424d950cf34762e03801409d2f8665.png"></b> ……
+(3)</p>
+<p>• Let<img src=
+"../imgs/196c8746e4740d5b9ec68acc33167e754322aeb8.png">.</p>
+<p>o Then according to equation (2), <img src=
+"../imgs/6bcb47dab3adde6f3bf67f6567224dd4a267c901.png"></p>
+<p>o Since<img src=
+"../imgs/6bcb47dab3adde6f3bf67f6567224dd4a267c901.png">, according
+to equation (1), <img src=
+"../imgs/b65d684ed5e2f7306a61894cf3029fac8dc08611.png"></p>
+<p><b>Thus, if</b> <b><img src=
+"../imgs/ff1f3dbbf9e6f03e97db2f0102b95fcfe65a7ff0.png"></b> <b>,
+then</b> <b><img src=
+"../imgs/b65d684ed5e2f7306a61894cf3029fac8dc08611.png"></b> ……
+(4)</p>
+<p>From equations (3) & (4), <img src=
+"../imgs/85d0f33ecba7066a5feddae0bf79ce64b9a01951.png"> that is,
+<i><b><img src=
+"../imgs/b65d684ed5e2f7306a61894cf3029fac8dc08611.png"></b></i> if
+and only if <b><img src=
+"../imgs/3832b49c64424d950cf34762e03801409d2f8665.png"></b><b>.</b></p>
+<p><b>Hence, there exist a polynomial-time reduction from</b>
+<b><img src=
+"../imgs/781fa74a45b1e879417ca62ff0278a8f3815cc6c.png"></b>
+<b>to</b> <b><img src=
+"../imgs/ae4c61761c76cd7b54c70fdece1d603498b75539.png"></b>
+<b>or</b> <b><img src=
+"../imgs/85d0f33ecba7066a5feddae0bf79ce64b9a01951.png"></b> <b>,
+if</b> <b><img src=
+"../imgs/ee1ea5d0888267373b830918d6ef968031c5d65e.png"></b>
+<b>and</b> <b><img src=
+"../imgs/2fe39d456b0fad2b816a4751d663c55ac3fe39ad.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>By the definition reducibility, if <img src=
+"../imgs/c6a29b405ddafd963bb10373074269731e0954e1.png"> and
+<i><img src=
+"../imgs/ec5770863104805aa546662033e2c64d1cf68732.png"></i>are two
+languages and there is a polynomial-time computable function
+<img src="../imgs/04fc5b8d3ed480e92352b9fa92ca5656420b4a02.png">
+such that for all <img src=
+"../imgs/51ce0db2d18a07708ed56743d8e474043f8ea948.png">, <img src=
+"../imgs/89ef1b41e718925edc3dc4a374f5cc59f607edc5.png"> if and only
+if <img src=
+"../imgs/8bc045ba6dd9344fa8e15cc5117ec5743f47717c.png">, then the
+language <img src=
+"../imgs/c6a29b405ddafd963bb10373074269731e0954e1.png"> is said to
+be polynomial-time reducible to <i><img src=
+"../imgs/ec5770863104805aa546662033e2c64d1cf68732.png"></i><i>.</i>That
+is, <img src=
+"../imgs/fc013cd642bd05c576d19da204cc3f16c8e5ce6e.png"></p>
+<p>Now, it is required to prove that <img src=
+"../imgs/34ccd09f430bfc9367eaf5cedb2cd32d96c6d18b.png"> if and only
+if <img src=
+"../imgs/e513237696a5fbd27eb6c815a15a7467a145618d.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>1)</b></p>
+<p>Assume that <img src=
+"../imgs/34ccd09f430bfc9367eaf5cedb2cd32d96c6d18b.png">.</p>
+<p>Then by the definition, for all <img src=
+"../imgs/51ce0db2d18a07708ed56743d8e474043f8ea948.png"></p>
+<p><img src="../imgs/89ef1b41e718925edc3dc4a374f5cc59f607edc5.png">
+if and only if <img src=
+"../imgs/2587a5a613aa4194accb3e67d1aa9b0cb2ea4484.png"></p>
+<p>Also, <img src=
+"../imgs/605f3264871370ee59cfd0023a1433f587427c4c.png"> if and only
+if <img src=
+"../imgs/6cca273a0ce993d629a97b572f74c5fbc32bd6fd.png"></p>
+<p><img src="../imgs/c762b37db461183bc9139ee27b74d8f077cbaf41.png">
+<img src="../imgs/276780ba09c34f8d9537eadef2c26c0ff54520ce.png">if
+and only if <img src=
+"../imgs/b415c4b2ce9b320ce9216da8554ba4b4f55954a2.png"> [Since,
+<img src="../imgs/c6a29b405ddafd963bb10373074269731e0954e1.png">
+and <i><img src=
+"../imgs/ec5770863104805aa546662033e2c64d1cf68732.png"></i>are
+complement</p>
+<p>each other and <img src=
+"../imgs/50597b2a2fa80556b590ebaa092904f01839a501.png">]</p>
+<p><img src="../imgs/c762b37db461183bc9139ee27b74d8f077cbaf41.png">
+<img src=
+"../imgs/e513237696a5fbd27eb6c815a15a7467a145618d.png"></p>
+<p><b>Therefore if</b> <b><img src=
+"../imgs/34ccd09f430bfc9367eaf5cedb2cd32d96c6d18b.png"></b> <b>,
+then</b> <b><img src=
+"../imgs/e513237696a5fbd27eb6c815a15a7467a145618d.png"></b>
+<b>------(1)</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2) Proving converse:</b></p>
+<p>Assume that <img src=
+"../imgs/e513237696a5fbd27eb6c815a15a7467a145618d.png">.</p>
+<p>Then by the definition, for all <img src=
+"../imgs/51ce0db2d18a07708ed56743d8e474043f8ea948.png"></p>
+<p><img src="../imgs/276780ba09c34f8d9537eadef2c26c0ff54520ce.png">
+if and only if <img src=
+"../imgs/b415c4b2ce9b320ce9216da8554ba4b4f55954a2.png"></p>
+<p>Also, <img src=
+"../imgs/20effea2cbba111b7d3a9a1b3bc31b88fe1ab9f0.png"> if and only
+if <img src=
+"../imgs/a67477d58e05d57246e28728ec3b754316892891.png"></p>
+<p><img src="../imgs/c762b37db461183bc9139ee27b74d8f077cbaf41.png">
+<img src="../imgs/89ef1b41e718925edc3dc4a374f5cc59f607edc5.png">if
+and only if <img src=
+"../imgs/2587a5a613aa4194accb3e67d1aa9b0cb2ea4484.png"> [Since,
+<img src="../imgs/c6a29b405ddafd963bb10373074269731e0954e1.png">
+and <i><img src=
+"../imgs/ec5770863104805aa546662033e2c64d1cf68732.png"></i>are
+complement</p>
+<p>each other and <img src=
+"../imgs/50597b2a2fa80556b590ebaa092904f01839a501.png">]</p>
+<p><img src="../imgs/c762b37db461183bc9139ee27b74d8f077cbaf41.png">
+<img src=
+"../imgs/34ccd09f430bfc9367eaf5cedb2cd32d96c6d18b.png"></p>
+<p><b>Therefore if,</b> <img src=
+"../imgs/e513237696a5fbd27eb6c815a15a7467a145618d.png"> <b>then</b>
+<img src="../imgs/34ccd09f430bfc9367eaf5cedb2cd32d96c6d18b.png">
+<b>------(2)</b></p>
+<p><b>From (1) and (2), it is proved that</b> <b><img src=
+"../imgs/34ccd09f430bfc9367eaf5cedb2cd32d96c6d18b.png"></b> <b>if
+and only if</b> <b><img src=
+"../imgs/e513237696a5fbd27eb6c815a15a7467a145618d.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the following alternative proof of Lemma 34.5. The
+Lemma 34.5 shows that CIRCUIT-SAT belongs to NP.</p>
+<p>Here, it is given that or an encoding of a CIRCUIT-SAT problem C
+and a certificate that denotes an assignment of the Boolean values
+to every wires in the C.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the following algorithm which is constructed to proof
+the above statement:</p>
+<p><b>Algorithm:</b></p>
+<p>1. Check the every gates and after that the output wires of
+C.</p>
+<p>2. <b>for</b> every gate check the following</p>
+<p>3. <b>if</b></p>
+<p>4. the computed value and the output value of the wires given in
+the</p>
+<p>certificate is matched and the output of the overall circuit is
+1</p>
+<p>5. <b>then</b></p>
+<p>6. <b>return</b> 1</p>
+<p>7. <b>else</b></p>
+<p>8. <b>return</b> 0</p>
+</div>
+<hr>
+<div class="answer">
+<p>Running <b>time complexity</b> of the above algorithm:</p>
+<p>• As it can be easily seen from the above algorithm that
+checking performed for every gate and for all gates the computed
+and the output values are matched.</p>
+<p>• Therefore, the total polynomial time will be taken to perform
+this computation.</p>
+<p>• Hence, it is proved that, CIRCUIT-SAT belongs to NP.</p>
+<p>For an easier proof, the alternative certificate used is given
+as, “<b>A true assignment to the inputs”.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>In this user have assumed that the working storage for above
+algorithm holds a contiguous region of polynomial size. Below, it
+is show that how are user exploiting this assumption in the above
+lemma.</p>
+<p>a. At the top most priority user state it to be true that the
+number of bits to notify each configuration <img src=
+"../imgs/7fcfd8b173dbb10ff29682457c037e93f069bd3e.png">is
+polynomial in terms of <i>n</i>. Now, consider the program for
+algorithm <i>A</i> has constant size,<img src=
+"../imgs/26aa41f7914969d6c17a19411b2edcc7edf595ef.png"> as <i>A</i>
+runs in <img src=
+"../imgs/3f3dcf0f312c1e74de9eff625feff2d51404a773.png"> steps; the
+total heap of work storage too will also be polynomial on<img src=
+"../imgs/7abec6553c20f7ba1096b722aa0174557f3c1373.png">.</p>
+<p>b. The combinatorial circuit <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png">using the
+computer’s hardware has a size polynomial configuration in the
+length, which is also <img src=
+"../imgs/3f3dcf0f312c1e74de9eff625feff2d51404a773.png"> and is
+therefore an <i>n</i> polynomial term.</p>
+</div>
+<hr>
+<div class="answer">
+<p>c. Every step of algorithm that makes <i>p</i> takes polynomial
+time.</p>
+<p>d. The circuit <i>P</i> contains <img src=
+"../imgs/2bbeb5acb7c173934d9dc2956d8f74a484e4d21c.png">number of
+configuration and that too of <img src=
+"../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Without assuming the above assumption the CIRCUIT SATISFIABILITY
+PROBLEM cannot be shown NP HARD.</p>
+<p>• The term <b>“without loss of generality”</b> means that a
+proof and assumption can be used in the same related problems and
+cases.</p>
+<p>• Here, it has been observed that one assumption of storage size
+has been taken to show it for 4 cases.</p>
+<p><b>Hence it is following the without loss of generality
+principle and furthermore it can also be used to solve other NP
+HARD problems.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>According to the provided information, a language <i>L</i> is
+complete for a language class <i>C</i> with respect to polynomial
+time reduction if <img src=
+"../imgs/508f677c9fd59a669b54fa761b32f1f8a79c047b.png"> and
+<img src="../imgs/c82cb31a14a02f36b936aaeddc65eaa61107ccf1.png">for
+all<img src=
+"../imgs/6d6cb789d0ced4e2a317249aff3e1dcc6641e3b9.png">.</p>
+<p>Objective is to show that <b><img src=
+"../imgs/e725fecd5375303b712bb80bc06ce023b66c1b7e.png"></b>are the
+only ones which are themselves present in <b>P</b> but are not
+complete with respect to polynomial time reductions.</p>
+<p>To prove that a language <i>L</i> in <b>P</b> is complete, it
+should be in <b>P</b> and every problem in <b>P</b> can be reduced
+to the problem at hand in polynomial time. This is done by the
+following method:</p>
+<p>• Reduction from first problem to second problem requires
+mapping the “yes” instances of the first problem to the “yes”
+instances of the second problem.</p>
+<p>• Then mapping the “no” instances of the first problem to the
+“no” instances of the second problem.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The two languages that are given are<b><img src=
+"../imgs/e725fecd5375303b712bb80bc06ce023b66c1b7e.png"></b>.</p>
+<p>• It is already given that the languages<b><img src=
+"../imgs/e725fecd5375303b712bb80bc06ce023b66c1b7e.png"></b> are in
+<b>P.</b></p>
+<p>• The empty string<b><img src=
+"../imgs/529fd8f6398fc035d04e900c6867ac9706c24ce3.png"></b> doesn’t
+have any “yes” instances because it doesn’t accept any language at
+all. So, every input is rejected by this language.</p>
+<p>• The language <b><img src=
+"../imgs/4c1a3fe5e7f100d6860ced65a8178e411cfc5a54.png"></b> doesn’t
+have any “no” instances because it accepts every language that is
+composed of any combinations of two symbols – 0 and 1 including
+empty combination.</p>
+<p>Since, <b><img src=
+"../imgs/26c063d3be45fd080226f23bb83eb3cb18228238.png"></b>doesn’t
+have any “yes” instances and<b><img src=
+"../imgs/b06d376ad77b0c869b1af2dd4b0497c80a8f8691.png"></b>doesn’t
+have any “no” instances, therefore, it is not possible to define a
+reduction from any other problem in <b>P</b> to these problems
+because all other problems have both “yes” as well as “no”
+instances.</p>
+</div>
+<hr>
+<div class="answer">
+<p>A language <img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png"> reduces to
+language <img src=
+"../imgs/b97e3b20e653d24beda6f4c19778eb929b00d2c7.png"> if and only
+if there is a function <img src=
+"../imgs/5ca7bd31641d304d5a3735537ae215d49ddfb289.png">such that
+for every string in the first language<img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png">, the
+function can map to second language<img src=
+"../imgs/b97e3b20e653d24beda6f4c19778eb929b00d2c7.png"> and for
+every string not in the first language<img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png">, the
+function shouldn’t map it to any string of the second
+language<img src=
+"../imgs/b97e3b20e653d24beda6f4c19778eb929b00d2c7.png">. This
+mapping should be done in polynomial time.</p>
+<p>Assume the languages <img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png">and
+<img src="../imgs/b97e3b20e653d24beda6f4c19778eb929b00d2c7.png">are
+in <b>P.</b> So, it is obvious that they can be decided in
+polynomial time.</p>
+<p>The two edge cases of <b><img src=
+"../imgs/e725fecd5375303b712bb80bc06ce023b66c1b7e.png"></b>have
+already been handled previously so, it has not be handled here.</p>
+<p>Let <img src=
+"../imgs/bec32c4312759d38feed8a0855a9796b54473f36.png">and
+<img src="../imgs/184c8d2c88d62622bf51f855e57b65167fa7e3e6.png">.</p>
+<p>Now the mapping function is defined as follows:</p>
+<p>If<img src=
+"../imgs/b660adaff38c74c8301d7c3554a567614fb6ae14.png">, then
+<img src="../imgs/83f0134509fdc920f4fed65d95ac35d3f34c2fd5.png">
+and if<img src=
+"../imgs/54cb68f6d13df828f43a699ce7f35d8f2e6b8ce9.png">,
+then<img src=
+"../imgs/63672a8f564f4141c6d7ab76de1b2675ffd7bd17.png">.</p>
+<p>According to this, <img src=
+"../imgs/6a3cd55483f5f1c8f2738c9c89098c7ce29a526c.png">does
+represent a reduction from language <img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png"> to the
+language<img src=
+"../imgs/b97e3b20e653d24beda6f4c19778eb929b00d2c7.png">.</p>
+<p>Since both languages belong to the class of <b>P</b> problems,
+so language <img src=
+"../imgs/61db5358c85a145a08216cacdd76d9ab4a9deede.png">can be
+solved in polynomial time and thus, the reduction function
+<img src="../imgs/6a3cd55483f5f1c8f2738c9c89098c7ce29a526c.png">can
+also be computed in polynomial time.</p>
+<p><b>Thus, the languages</b> <b><img src=
+"../imgs/529fd8f6398fc035d04e900c6867ac9706c24ce3.png"></b>
+<b>and</b> <img src=
+"../imgs/b06d376ad77b0c869b1af2dd4b0497c80a8f8691.png"> <b>in P
+except are not complete for P in polynomial time
+reductions.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>According to the exercise 34.3-6 of the textbook, a language
+<i>L</i> is complete for a language class <i>C</i> with respect to
+polynomial time reduction if <img src=
+"../imgs/508f677c9fd59a669b54fa761b32f1f8a79c047b.png"> and
+<img src="../imgs/c82cb31a14a02f36b936aaeddc65eaa61107ccf1.png">for
+all<img src=
+"../imgs/6d6cb789d0ced4e2a317249aff3e1dcc6641e3b9.png">.</p>
+<p>A language <i>L</i> is Complete for NP with respect to
+polynomial time reduction.</p>
+<p>From the definition of <i>NP-complete;</i> if <img src=
+"../imgs/0486af45b2bfa6ef4e97bd127b87ece4d72e5a93.png">and
+<img src="../imgs/3c65a84bb5602dbab1156b6da5fa9fe9dd51fe3e.png">
+for all<img src=
+"../imgs/f68619a6b0813ce3595673b10033474b611c3984.png">.</p>
+<p>Suppose <i>L</i> is Complete for NP, then</p>
+<p><img src=
+"../imgs/520080adc52f6cb3a79433ae97a82ac73565f1dc.png"></p>
+<p>If NP is closed under complement, then NP=co-NP.</p>
+<p>So, <img src=
+"../imgs/638df46251c4aec4b6e974c492c052e11b4d6992.png"> Will be Co-
+NP and <img src=
+"../imgs/89be5042916f50b6e6d1e6d414e3c304689a30fd.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>According to exercise 34.3-6, polynomial time reduction function
+‘<i>f</i>’ is as follows:</p>
+<p><img src="../imgs/3c65a84bb5602dbab1156b6da5fa9fe9dd51fe3e.png">
+for all <img src=
+"../imgs/6d6cb789d0ced4e2a317249aff3e1dcc6641e3b9.png"></p>
+<p>Then <img src=
+"../imgs/8ff0ea6e3576c06c271ffa09effac14f2d234c5f.png"></p>
+<p>From the above equation (2)</p>
+<p><img src="../imgs/9c3b00b1f35222ab84381f39c1ba2caa545ac702.png">
+for all <img src=
+"../imgs/16a9fd3964927ca694fe2ea2f02dfea9fafd7812.png"></p>
+<p>From equation (3) it is proved that <img src=
+"../imgs/13312bad311fa2cc800c350046b9fd6968557ccb.png"> is complete
+for Co-NP.</p>
+<p><b>Therefore,</b> <i><b>L</b></i> <b>is complete for NP if and
+only if</b> <b><img src=
+"../imgs/638df46251c4aec4b6e974c492c052e11b4d6992.png"></b> <b>is
+complete for Co-NP.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,237 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 8.1</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The smallest possible depth of a leaf in a decision tree for a
+sorting algorithm is <img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">. This is
+because the minimum number of comparisons that are necessary to
+sort an array of size n is <img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">.</p>
+<p>Consider the decision tree for insertion of sort operation for
+three elements given in the figure 8.1 in the textbook.</p>
+<p>Consider an array<img src=
+"../imgs/1ff71495f4af0e760e426cd01647f1c74df4e8dc.png">. From the
+figure 8.1, it is clear that in order to check whether the array A
+is sorted or not, it is necessary to compare the nodes (1:2),
+(2:3), and (1:3).</p>
+<p>Hence, the number of comparisons that are necessary to sort an
+array of size 3 is 3.</p>
+<p>Consider an array<img src=
+"../imgs/de1eae388aabb55bbfa833ac5d2a394410babbaa.png">. The array
+is already in a sorted order. From the figure 8.1, it is clear that
+in order to check whether the array A is sorted or not, it is
+necessary to compare the nodes (1:2) and (2:3).</p>
+<p>Hence, the number of comparisons that are necessary to sort an
+array of size 3 is 2 which is equal to<img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">.</p>
+<p>Hence, the minimum number of comparisons that are necessary to
+sort an array of size n is <img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/8ac5442f8a161b8392d3fc3c522038c09567bcd6.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>For at least half of the n! Inputs of length n:</b></p>
+<p>Assume a decision tree T which have the height h with the
+reachable leaves r corresponding to the comparison sort of the n
+elements.</p>
+<p>Theorem 8.1 proof that any comparison sort algorithm need
+<img src="../imgs/acf5ddec3a074b1a72c12966174e178b186418a7.png">
+time in worst case.</p>
+<p>From this theorem, the equation can be write as <img src=
+"../imgs/fb0dd77c39c03bb90eaa6068d148e42bc0393563.png">.</p>
+<p>Now by taking the logarithms of this equation, it can be write
+as:</p>
+<p><img src=
+"../imgs/6703561bdc7208fa7581cfe467ed5d36897b1381.png"></p>
+<p>Hence, from the above result, it is concluded that there is no
+comparison sort whose running time is linear for the at least half
+of the n! Inputs of <i>n</i> length.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Fraction of 1/n of the inputs of length n:</b></p>
+<p>Assume a decision tree T which have the height h with the
+reachable leaves r corresponding to the comparison sort of the n
+elements.</p>
+<p>Theorem 8.1 proof that any comparison sort algorithm need
+<img src="../imgs/acf5ddec3a074b1a72c12966174e178b186418a7.png">
+time in worst case. From this theorem, the equation can be write as
+<img src=
+"../imgs/f37cdfcc48cb4e1b68aef33ec2147803e6a089cd.png">.</p>
+<p>Now by taking the logarithms of this equation, it can be write
+as:</p>
+<p><img src=
+"../imgs/bcbf7d5e447dec284398926a441f49adf3de2f0d.png"></p>
+<p>Hence, from the above result, it is concluded that there is no
+comparison sort whose running time is linear for Fraction of 1/n of
+the inputs of length n.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Fraction of 1/2</b> <sup>n</sup> <b>of the inputs of length
+n:</b></p>
+<p>Assume a decision tree T which have the height h with the
+reachable leaves r corresponding to the comparison sort of the n
+elements.</p>
+<p>Theorem 8.1 proof that any comparison sort algorithm need
+<img src="../imgs/acf5ddec3a074b1a72c12966174e178b186418a7.png">
+time in worst case. From this theorem, the equation can be write as
+<img src=
+"../imgs/b4af93c29701e5dcd731fc568e72d6529403b698.png">.</p>
+<p>Now by taking the logarithms of this equation, it can be write
+as:</p>
+<p><img src=
+"../imgs/cb2f8c9420c96ca9e34d559140432efad94b1631.png"></p>
+<p>Hence, from the above result, it is concluded that there is no
+comparison sort whose running time is linear for Fraction of
+1/2<sup>n</sup> of the inputs of length n.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Suppose that <i>A</i> be the sequence which is having the
+<i>n</i> number of elements. This sequence is divided into the
+subsequence of length <i>k</i> that is <i>n/k</i> for each of
+length <i>k</i> and in any subsequence, all the elements are
+greater than the all elements of the earlier subsequence. In any
+subsequence, all the elements are smaller than the all of the
+elements of the subsequent subsequence.</p>
+<p>Now to show that <img src=
+"../imgs/65f727eca8e8224b869d624a62d422125bf058ca.png"> is the
+lower bound on the comparison, it is needed to solve the specified
+variant of sorting problem.</p>
+<p>• First of all consider a decision tree of given height <i>h</i>
+for the comparison sort for sequence <i>A</i>. As the elements of
+the every subsequence may be in any order, therefore any of the
+<i>k!</i> Correspond to the last and final sorted order of the
+subsequence.</p>
+<p>• As there are the <i>n/k</i> subsequence, so each of that may
+in any order and there are the total <img src=
+"../imgs/de4083b67ac4e02dc500d13b5ac19bafa187306f.png">permutation
+of <i>A</i> which can be crossponding to sorting of some input
+order. Hence, for sorting of sequence <i>A</i>, any decision tree
+must have the number of leaves at least<img src=
+"../imgs/de4083b67ac4e02dc500d13b5ac19bafa187306f.png">.</p>
+<p>• Any binary tree with the height of <i>h</i> does not have more
+than <i>2</i><sup>h</sup> leaves, so it can be concluded that
+<img src="../imgs/1fee3d579f5ff1c1b114883d22debb57684e1e11.png">or
+by taking the logarithms, and it can be write as:<img src=
+"../imgs/48b2cef8c2a305309b97c6bb0435ab4fbdc780ec.png">.</p>
+<p>• Now the equation <img src=
+"../imgs/48b2cef8c2a305309b97c6bb0435ab4fbdc780ec.png"> can be
+solved further to get the result as:</p>
+<p><img src=
+"../imgs/60b528e47d34d9fe48b709910822fc79d25e925e.png"></p>
+<p>• Now, it can solved or write as <img src=
+"../imgs/b1894b2df802fefe480cd1c0de1d699fc7c84c94.png"> because
+<i>k!</i> is having the <i>k/2</i> as its largest terms being at
+least for <i>k/2</i> each (refer exercise 8.1.2 solution).</p>
+<p>This equation can be further solve as:</p>
+<p><img src=
+"../imgs/ca6873f3b4e59ee5f42cf2aaf8ddf009a1786e57.png"></p>
+<p>Thus, lower bound on the number of comparisons needed to solve
+the specified variant for sorting problem is<img src=
+"../imgs/65f727eca8e8224b869d624a62d422125bf058ca.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,426 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 32.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/b9c075750018a9a8a9951c793403b19f26a5fe5b.png">
+<hr>
+<img src="../imgs/dbe414aabd535c52e588bc5fc6d604ff4ebc8d39.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The state transition diagram for a string matching automaton for
+the pattern <i>ababbabbababbababbabb</i> over the alphabet
+<img src="../imgs/608fa5830ff88abd930579f33b6b1842cd5bd56e.png"> is
+as follows:</p>
+<p><img src="../imgs/7d60eeb9894f06e31d8c859175ef263bb125bc3c.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The above transition diagram can be used to show the pattern
+<i>ababbabbababbababbabb.</i></p>
+<p>Here, first the simple transitions take place from the states 0,
+1, 2,3….21 to traverse the entire string. Then, at each transition
+possibilities are detected to traverse the string.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>String Matching Automaton for a Non-Overlappable
+Pattern</b></p>
+<p>Normally a transition function is computed of a string matching
+automaton by the algorithm mentioned below. Consider the following
+algorithm computing transition function from a pattern:</p>
+<p>COMPUTE_TRANSITION_FUNCTION (<i>P</i>,<img src=
+"../imgs/70fc19c27e4666a341b1bd946685c9d91d9f887d.png">)</p>
+<p>// <i>m</i> is the length of the string</p>
+<p>1. <img src=
+"../imgs/90eafc8af5f616f1e528fd62599a947954a90764.png"></p>
+<p>//Use of for loop which will examine character stored in
+string</p>
+<p>2. <b>for</b> <img src=
+"../imgs/c65609491d360b77cae50ff9b1a62fa06bccf2cb.png"></p>
+<p>//Use of for loop to perform operation on character</p>
+<p>3. <b>for</b> every character <i>a</i> in <img src=
+"../imgs/70fc19c27e4666a341b1bd946685c9d91d9f887d.png"></p>
+<p>// +1 for <i>x</i>, +2 for subsequent repeat loop to
+decrement</p>
+<p>4. <i>k</i> = <i>min</i>(<i>m</i>+1, <i>q</i>+2); // work
+backwards from <i>q</i>+1</p>
+<p>5. <b>repeat</b></p>
+<p>6. <img src=
+"../imgs/dd0ef9f95dde8f8a4fb1fb9ea4ac64e5921218f0.png"></p>
+<p>//condition for termination of repeat</p>
+<p>7. <b>until</b><img src=
+"../imgs/a892de59dffffdc0845bbc959430756d99ff9802.png">;</p>
+<p>8. <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">(<i>q</i>,
+<i>a</i>) = <i>k</i>;</p>
+<p>//return the value of <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png"></p>
+<p>9. <b>return</b> <img src=
+"../imgs/ae7146962ade0e0301eb8d7d6a14c9a9fecb4ad4.png">;</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the state transition diagram:</p>
+<p><img src="../imgs/86a6b2dfc95607e61c8048a41375f28f0446d64d.png"
+alt="F:\Tiffs\7018-figures\2254-25-fig.tif"></p>
+<p>This diagram shows the automaton of the string with '<i>m</i>'
+number of states where <i>p</i><sub>0</sub>, <i>p</i><sub>1</sub>,
+<i>p</i><sub>2</sub>, …, <i>p</i><sub>m</sub> are the elements or
+characters of the string which when seen gets accepted and enters
+into the next state example on seeing <i>p</i><sub>0</sub> the
+automaton is shifted from state 0 to state 1.For an non overlapping
+pattern string,</p>
+<p>Consider <i>P</i> = <i>p</i><sub>0,</sub> <i>p</i><sub>1,</sub>
+<i>p</i><sub>2</sub> ……... <i>p</i><sub>m</sub></p>
+<p>The specific feature of a nonoverlappable pattern is that its
+proper pre?x are not its su?x. This property is used for describing
+the destination of the outgoing arrow. For every pair<img src=
+"../imgs/2c6afca9d831af96d3b6b921fbe814ec8f59a553.png">, labeling
+of state <i>q</i> by <i>a</i> will be there.</p>
+</div>
+<hr>
+<div class="answer">
+<p>As per the algorithm, the destination state <i>k</i> can be
+defined as:</p>
+<p>1. <b>When</b> <b><img src=
+"../imgs/600ef610e37db7527bd8340daa071a7f73dc434f.png"></b>
+<b>and</b><b><img src=
+"../imgs/9da24f7c0daaa8ec456da85b507a9b1dd96309a3.png"></b><b>:</b>
+In this case, the value of <i>k</i> will be 1 more than the value
+of <i>q</i>. This can be given as:<img src=
+"../imgs/e0dec8ca65933357b87a6d51fa49385911cee356.png">.</p>
+<p>2. <b>When</b><img src=
+"../imgs/73ba4b671bc778e5f1bbe980e0d483cc3378afbe.png"><b>:</b>
+When the value of <i>a</i> is equal to <i>p</i><sub>1</sub>, then
+the value of <i>k</i> is set to 1. So, this condition will make the
+value of <i>k</i> equal to 1.</p>
+<p>3. <b>If any other condition arises:</b> If both conditions
+given above are not satisfied, then the value of <i>k</i> is set to
+0.</p>
+<p>All the cases mentioned above can be shown as:</p>
+<p><img src=
+"../imgs/4c1ccca1e5507038851662e4c314e53507446435.png"></p>
+<p>When case 1 is satisfied, then the value <img src=
+"../imgs/22a2bcf85785e71d2986c206117dc43ce70080dc.png"> is obtained
+by using following equations:</p>
+<p><img src=
+"../imgs/145b6d450c70b4024a09baa75afb73a35cf31184.png"></p>
+<p><img src=
+"../imgs/edfd52583a061221eaa581288831881642e3b5c5.png"></p>
+<p><img src=
+"../imgs/e0dec8ca65933357b87a6d51fa49385911cee356.png"></p>
+<p>The arrow will be from state <i>q</i> to state<img src=
+"../imgs/22a2bcf85785e71d2986c206117dc43ce70080dc.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, denoting the value of <i>k</i> as:</p>
+<p><img src=
+"../imgs/94b2ee374f148436a816969fe77ff13f236f5bc7.png"></p>
+<p>It is clear from the above equation that <img src=
+"../imgs/7b38ccbbb0ed9640f548a4f3ed357255b937fcdf.png"> is a su?x
+of <img src=
+"../imgs/b33e3a72bde7392893c2097efa1ba95321c67ea0.png"><i>a</i>.</p>
+<p>When the value of<img src=
+"../imgs/d507cd47193f36b9ed96f62a8ea80a71d2e96f62.png">, then it is
+found that <img src=
+"../imgs/f46e9e8fc1a592588744843922e5afaa20757f25.png"> is a suffix
+of<img src="../imgs/b33e3a72bde7392893c2097efa1ba95321c67ea0.png">.
+For any of the non-overlappable pattern, this condition is
+impossible. So, the value of <i>k</i> will be either equal to 1 or
+less than 1. This means that the outgoing arrow having label
+<i>a</i> and from state <i>q</i> will either leads to state 1 or
+state 0. The outgoing arrow will lead to state 1 if condition given
+below will be satisfied:</p>
+<p><img src=
+"../imgs/9f65e950ff1b4caf4bb8a3944f90ffd34dc948eb.png"></p>
+<p>The equation given above means that <img src=
+"../imgs/889df21c1902d6bb1c75e2411e69f43366553ab5.png"> and it is a
+suffix of<img src=
+"../imgs/ea08e80c7bca3890ebce4c121aef95635ed1fc36.png">. In other
+words, the value of <i>a</i> is equal to <i>p</i><sub>1</sub>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Construct the automata as follows:</p>
+<p>Let <img src=
+"../imgs/74d192398c61e538a4cda08a0cc6d843877f3a17.png"> be the
+longest prefix which is common in both P and <img src=
+"../imgs/4a842da69b2342e947eb648c6efe97d87288d9c5.png">. Create the
+automaton A for <img src=
+"../imgs/74d192398c61e538a4cda08a0cc6d843877f3a17.png"> .</p>
+<p>Construct an arrow from the state labelled k to the chain of
+states k+1, k+2, k+3……|P| and draw the necessary arrows so that the
+transition is <img src=
+"../imgs/4b3518ee29727ecd64db410f26bbcd561905122c.png">.</p>
+<p>For the pattern <img src=
+"../imgs/4a842da69b2342e947eb648c6efe97d87288d9c5.png">, show the
+transition from the state labelled <img src=
+"../imgs/4993967ea4ffac93ac8edc1d24c22bbfcc0ee788.png"> to chain of
+states <img src=
+"../imgs/b536830a989b9773191f22b17246032000fb9fd7.png">,<img src=
+"../imgs/388ac621be6e71e221422fddd64e6832cd50cd50.png">,<img src=
+"../imgs/a512b349b33202798e724edaa75ef09b988de120.png">…..<img src=
+"../imgs/cd417d6f4789ecd4e7fabb41e63567c386587f61.png">.</p>
+<p>The transition for the pattern <img src=
+"../imgs/4a842da69b2342e947eb648c6efe97d87288d9c5.png">is <img src=
+"../imgs/9dc16c61dc039c2831306a9713defda20cf4b40a.png">……(refer
+Theorem 32.4 of textbook)</p>
+</div>
+<hr>
+<div class="answer">
+<p>The finite automata that determines the occurrences of either
+pattern can be shown below:</p>
+<p><img src="../imgs/b6f103cc33dfaaae6f6aaa3d473df13364e2f05b.png"
+alt="Picture 6"></p>
+<p>The transition from the first state to the intermediate states
+is shown in the following way:</p>
+<p><img src="../imgs/ed2b7e39ebd1a30c58e4b60cc76d120c34267958.png"
+alt="Picture 2"></p>
+<p>The minimization of the number of the states in the automaton is
+done by eliminating the null states that is, <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png"> which can
+be shown in the following way:</p>
+<p><img src="../imgs/8d0512ba69cbf6a1c2161f26cb8b31647cab430c.png"
+alt="Picture 7"></p>
+<p>Thus, the states are expanded in the following way as:
+11,12……<img src=
+"../imgs/ab7dfc37b21ce2ed72539c218fecfbdbd0b470d6.png"> for the
+pattern P and as: 21,22….<img src=
+"../imgs/5a99a68e0488f8ebf770d8093592e15894dc29aa.png"> for the
+pattern <img src=
+"../imgs/4a842da69b2342e947eb648c6efe97d87288d9c5.png">and on
+minimizing the null state each transition is shifted before by one
+step.<img src=
+"../imgs/9e0adb08fcf239515c0348310e58a0c40a2c09a7.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the pattern <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png"> which
+contains gap characters.</p>
+<p>Let <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">be the
+text.</p>
+<p>Find the occurrence of the pattern <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">in text
+<img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Find the occurrence of pattern <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png"> in text
+<img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">using the
+following steps:</p>
+<p>• Divide pattern <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png"> into
+substrings <img src=
+"../imgs/0c097d141c0954634473dee55fc2fd96d1dc5faf.png"> based on
+the gap character.</p>
+<p>• Compare the sub pattern <img src=
+"../imgs/8671bbad1b9b3ee16c5fb162a610cfe625f0d8ce.png">with text
+<img src="../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">.
+If <img src="../imgs/8671bbad1b9b3ee16c5fb162a610cfe625f0d8ce.png">
+does not match with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">, then the
+pattern does not match with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">.</p>
+<p>• If pattern <img src=
+"../imgs/8671bbad1b9b3ee16c5fb162a610cfe625f0d8ce.png">is found in
+text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">, then
+compare pattern <img src=
+"../imgs/15a0f41020583cf8936db76f1ea2a53f48e3d795.png"> in the
+remaining part of text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">. If
+<img src="../imgs/15a0f41020583cf8936db76f1ea2a53f48e3d795.png">
+does not match with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">, then the
+pattern does not match with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">.</p>
+<p>• Continue the process till all the patterns up to <img src=
+"../imgs/74d192398c61e538a4cda08a0cc6d843877f3a17.png"> are matched
+with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">. The
+process of comparison can be terminated at any point when <img src=
+"../imgs/6cac0e104b58bdb003ba38f1cabdcb8f5b67ebd9.png"> does not
+match with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Construct finite automatons for each <img src=
+"../imgs/b630194a0048af5b59f06fa3abda9fa95084a332.png">, that
+matches the sub pattern <img src=
+"../imgs/d5fe740e646b5ffd2c9559a661db2b402947e7a7.png">with text
+<img src="../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">.
+The following is the generalized finite automaton that accepts the
+string <img src=
+"../imgs/d5fe740e646b5ffd2c9559a661db2b402947e7a7.png">if it
+matches with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">:</p>
+<p><img src="../imgs/bfefd011cf3b9bd406bc7d9572f4bbe4df50d4ff.png"
+alt="Picture 2"></p>
+<p>Combine all the finite automatons that accept the sub pattern
+<img src="../imgs/b630194a0048af5b59f06fa3abda9fa95084a332.png">,
+with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">. Also, the
+accepting state of<img src=
+"../imgs/d5fe740e646b5ffd2c9559a661db2b402947e7a7.png">, where
+<img src="../imgs/2383a8bc1c561bfcd109f6fcc143ab74caee24e7.png">,
+is no longer accepting the pattern, but has a single transition to
+<img src=
+"../imgs/3188eb445493a117ffa82d20d4e18a1ea5c5289a.png">.</p>
+<p>The following is the generalized finite automaton to find the
+occurrence of pattern <img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png">in text
+<img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">:</p>
+<p><img src="../imgs/f1201693eaacb3438a8056d46cf4aad49e766c32.png"
+alt="Picture 1"></p>
+<p>Each finite automaton requires at least <img src=
+"../imgs/ff8425ffa0b83f0f3bb01bf42aafcd5200b6ece9.png">matches and
+at most <img src=
+"../imgs/d827aa50359b6618bd7998a3f0c504eee65d9f70.png">matches to
+verify that sub pattern <img src=
+"../imgs/d5fe740e646b5ffd2c9559a661db2b402947e7a7.png"> matches
+with text <img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png">.</p>
+<p>Overall, the number of matches required will be equal to
+<img src="../imgs/22139f9030416b0bd1ebd805f8e7092c410103f3.png"> or
+<img src="../imgs/d827aa50359b6618bd7998a3f0c504eee65d9f70.png">in
+worst case.</p>
+<p>However, <img src=
+"../imgs/6e167594535b134c7ee6357589eaf6fcfcf9e498.png"> .</p>
+<p>Hence, the maximum number of matchings required is <img src=
+"../imgs/d827aa50359b6618bd7998a3f0c504eee65d9f70.png">.</p>
+<p><b>Therefore, the sequentially combined finite automaton is the
+required finite automaton that can find an occurrence of</b>
+<b><img src=
+"../imgs/126cb63dec0713c99fb5f2e0713efa28db124fee.png"></b> <b>in a
+text</b> <b><img src=
+"../imgs/bd8008a741cb808173bdc944b5eff9ba38c3a945.png"></b>
+<b>in</b> <b><img src=
+"../imgs/c30e9eac86a492e0e43a20b7423112f17e7d7fce.png"></b>
+<b>matching time, where</b> <b><img src=
+"../imgs/91b736619d5b3b739fae3237e1a0ce6bfdf8238a.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

@@ -1,0 +1,256 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 6.4</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/b963767eb9ee1f2462925abc55a6e75079d756a7.png">
+<hr>
+<img src="../imgs/f319b4fbca057f343e7c81da1d169b44c5d4c87d.png">
+<hr>
+<img src="../imgs/2be44065ad6cd6981e50b545c8d2c000f125108b.png">
+<hr>
+<img src="../imgs/abcc878743ad908fe8c879ce26f33f1e1fbbab8c.png">
+<hr>
+<img src="../imgs/6cb985dd884e5af9c2dfece669e266c509961aa5.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Heap sort is the comparison based approach to sort the data. It
+is based on the heap data structure.</p>
+<p>Build the max heap from the initial data.</p>
+<p>• Store the largest element at the root of the heap.</p>
+<p>• Now replace this element with the last element of heap and
+decrease the heap size by one.</p>
+<p>• Then heapify the tree root.</p>
+<p>• Repeat the above steps till the size of heap is greater than
+one.</p>
+</div>
+<hr>
+<div class="answer">
+<p>A loop invariant is referred to the condition which is
+essentially true instantly before and after the every iteration of
+the loop.</p>
+<p>Consider the HEAPSORT algorithm given in the section 6.4,
+chapter 6 of the textbook to prove the correctness of HEAPSORT
+using the provided loop invariant.</p>
+<p><b>Loop invariant condition:</b></p>
+<p>At each iteration starting, the subarray <i>A</i>[<i>1… i</i>]
+is the max-heap which contain the smallest element <i>i</i> of the
+array and subarray <i>A</i>[<i>i+1 … n</i>] contains the
+<i>n</i>-<i>i</i> largest element of the sorted array <i>A</i>.</p>
+<p><b>Initialization:</b></p>
+<p>Before the for loop starts, <i>i</i> is equal to length of the
+array <i>n</i> (that is <i>i=n</i>)<i>.</i> Thus the claim about
+the sorting is true.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Maintenance:</b></p>
+<p>Now suppose that the loop invariant holds at starting point of
+iteration <i>i</i> and it holds at the starting of iteration
+<i>i-</i>1.</p>
+<p>• At the starting of iteration <i>i</i>, the subarray <i>A[1 …
+i]</i> is max-heap that holds the <i>i</i> smallest element of the
+array <i>A[1 … n].</i> The another subarray <i>A[i+1 … n]</i> holds
+the <i>n-i</i> largest element of the <i>A</i> in sorted order.</p>
+<p>• Now during the iteration <i>i</i>, key of <i>A</i>[1] is
+swapped with the key of <i>A</i>[i]<i>.</i> Decrease the size of
+heap to <i>i-</i>1. As the largest element of the max-heap is
+placed as root, element <i>A</i>[1] was the largest element in heap
+at the starting of iteration and it is located at position
+<i>A</i>[<i>i</i>]<i>.</i></p>
+<p>• Thus at the completion of iteration <i>i</i>, subarray
+<i>A</i>[<i>i…n</i>] store <i>n-i-</i>1 largest element of <i>A</i>
+in the sorted order. When the MAXHEAPIFY(A, 1) is called in
+iteration <i>i</i>, subtree of <i>A</i>[1] exist at the root of
+max-heap because only moved element was placed at the root of
+max-heap which exist at the starting of that iteration.</p>
+<p>Thus algorithm MAXHEAPIFY at the starting of iteration
+<i>i-</i>1 produces the subarray <i>A</i>[1<i>….i-</i>1] which is
+the max-heap that contains <i>i-</i>1 smallest element of <i>A</i>
+and is in sorted order. So the algorithm is correct.</p>
+<p><b>Termination:</b></p>
+<p>At the termination, the value of <i>i</i> will be 2. The
+subarray <i>A</i>[1<i>…</i>2] is the trivial max heap which is
+containing smallest element of <i>A</i> and subarray
+<i>A</i>[2<i>…n</i>] holds the <i>n-</i>1 largest element of
+<i>A</i> in the sorted order.</p>
+<p>Hence the complete array is in sorted order and algorithm
+produces a sorted array and it is correct.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the procedure BUILD-MAX-HEAP(A) as presented in figure
+6.3 in the textbook.</p>
+<p>The procedure MAX-HEAPIFY(A) as presented in figure 6.2 in the
+textbook.</p>
+<p><b>Running time of heap sort in increasing order:</b></p>
+<p>• The data structure first builds the heap tree for the given
+array A elements using the procedure BUILD-MAX-HEAP(A) and then
+calls the procedure MAX-HEAPIFY(A)to convert the tree into the
+maximum heap tree.</p>
+<p>• When the input array A is already sorted in increasing order,
+heap sort takes <img src=
+"../imgs/4684e724490a0f4fb9a4eb849fa01152974c8d67.png"> time.</p>
+<p>• Each of the <img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png"> call to
+MAX-HEAPIFY(A) takes <img src=
+"../imgs/24ddfb46bd927ba8001dfdaa24b66a2e83774be4.png"> time.</p>
+<p>• Even though the elements of the array are sorted in an
+increasing order, the tree must convert into the array back and
+then into a heap and sort it again.</p>
+<p><b>Running time of heap sort in decreasing order:</b></p>
+<p>• When the input array is already sorted in a decreasing order,
+then also the heap sort takes <img src=
+"../imgs/4684e724490a0f4fb9a4eb849fa01152974c8d67.png"> time.</p>
+<p>• Each of the <img src=
+"../imgs/c2581722d1ec389b3ab5bb7a608fb2d362e0698f.png"> call to
+MAX-HEAPIFY takes<img src=
+"../imgs/24ddfb46bd927ba8001dfdaa24b66a2e83774be4.png"> time.</p>
+<p>• The heap will be built in linear time as the elements of the
+array are in a decreasing order.</p>
+<p>• Every time the procedure BUILD-MAX-HEAP(A)is called the
+maximum element is removed, and then the MAX-HEAPIFY procedure is
+called to sort in the decreasing order.</p>
+<p>Thus, the maximum running time of heap sort is<img src=
+"../imgs/952a669b001bd5696527b168cb0d354f3a23e3a0.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Heap sort sorts elements in an array or list. It is a
+comparison–based sorting algorithm. It belongs to selection sort
+family.</p>
+<p>Consider a decision tree of height <i>h</i> and <i>n</i>
+elements. As there are <i>n</i> elements, <i>n</i>! permutations
+are possible. The tree must have at least <i>n</i>! leafs.</p>
+<p>Thus, <img src=
+"../imgs/eb08d074d2bbf07ecb75e6af85190db3e61c15f4.png"> ……(1)</p>
+<p>Taking logarithms on both sides of equation (1),</p>
+<p><img src="../imgs/c974c38b8130bc84047f34f24c9b3ca44ff3a4ad.png">
+……(2)</p>
+<p>As per Stirling’s approximation, the logarithmic function is a
+monotonically increasing function.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/ac133c35ddbe970daf4b7eb757ea825b7d8ebd2a.png"></p>
+<p>Take logarithm on both sides.</p>
+<p><img src=
+"../imgs/5ccbda6547009bb34de157e7372f40a5f1dd5d5c.png"></p>
+<p>Hence, the worst-case running time of heap sort is <img src=
+"../imgs/552baeb6a3aa52a6f0b889a996ae645d6f5b2063.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

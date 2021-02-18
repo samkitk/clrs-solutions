@@ -1,0 +1,612 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 21.P</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1P">
+                <a href="#problem-1P">1P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>OFF-LINE MINIMUM</b></p>
+<p>Off-line minimum problem is a problem concerned with maintaining
+the dynamic set <i>T</i> with the help of operation such as INSERT
+and EXTRACT-MIN. In this a sequence <img src=
+"../imgs/355a23ca999689c5192a7d75058f4eb50a052ccb.png"> is
+maintained with the <i>n</i> INSERT and the <i>m</i> EXTRACT-MIN
+operations.</p>
+<p>Every key has been inserted only once. It is used for
+determining the key that has been returned by EXTRACT-MIN
+operation. This problem is termed as off-line as the entire
+sequence is to be processed before the determination of the
+returned keys.</p>
+<p>The algorithm of OFF-LINE-MINIMUM (<i>m</i>, <i>n</i>) is given
+below:</p>
+<p>OFF-LINE-MINIMUM (<i>m</i>, <i>n</i>)</p>
+<p>//for loop to trace all elements</p>
+<p>1. <b>for</b> <img src=
+"../imgs/1c101ea46ce81cdb9d5b183ddf158b03381c12e8.png"></p>
+<p>2. Determine the value of <i>j</i> such that <img src=
+"../imgs/de129f26a9ca71db3c7403be4a2910f2b8aacc79.png"></p>
+<p>//Use of if condition to check whether value should be
+<i>extracted</i> or not</p>
+<p>3. <b>if</b> <img src=
+"../imgs/0d7f2234403b5d50ea04459f8be32ef92cd5dc3a.png"></p>
+<p>4. <img src=
+"../imgs/1ac498e2e4e6a15739e4159f99c99597755d212a.png"></p>
+<p>5. let l be the smallest value greater than <i>j</i></p>
+<p>for which set <i>K</i><sub>l</sub> exists</p>
+<p>//Add the element in the array and destroy from the previously
+stored location</p>
+<p>6. <img src=
+"../imgs/6cb138cf1d77bec5fc98a343d513cf985ffa0a2c.png">, destroying
+<i>K</i><sub>j</sub></p>
+<p>7. <b>return</b> <i>extracted</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> <i>Consider</i> the sequence given below:</p>
+<p><img src=
+"../imgs/a2cdcb02a295bdbab11b7fa601630f0905ee0314.png"></p>
+<p>As it is clear from the above sequence that the number of INSERT
+call (<i>n</i>) is 9 and number of EXTRACT-MIN call (<i>m</i>) is
+6.</p>
+<p>As there are 6 EXTRACT-MIN operations, the result that has been
+obtained when they are performed is given below:</p>
+<p>• When first EXTRACT-MIN operation is performed, the array has
+elements 4 and 8 in it. So, this call will extract the element
+4.</p>
+<p>• When second EXTRACT-MIN operation is performed, the array has
+elements 8 and 3 in it. So, this call will extract the element
+3.</p>
+<p>• When third EXTRACT-MIN operation is performed, the array has
+elements 8, 9, 2 and 6 in it. So, this call will extract the
+element 2.</p>
+<p>• When fourth EXTRACT-MIN operation is performed, the array has
+elements 8, 9 and 6 in it. So, this call will extract the element
+6.</p>
+<p>• When fifth EXTRACT-MIN operation is performed, the array has
+elements 8 and 9 in it. So, this call will extract the element
+8.</p>
+<p>• When sixth EXTRACT-MIN operation is performed, the array has
+elements 9, 1 and 7 in it. So, this call will extract the element
+1.</p>
+</div>
+<hr>
+<div class="answer">
+<p>This sequence will provide the extracted array as:</p>
+<p>4 3 2 6 8 1</p>
+<p>The table that has been formed after iterations <i>i</i> for
+given sequence is shown below:</p>
+<p><img src="../imgs/af5c7a1d013e02804ea68123434bb46ccac486f0.png"
+alt="Picture 22"></p>
+<p>In the table given above, no changes have been made when the
+value of <i>i</i> is 5 and 7. It is because the value of <i>j</i>
+becomes equal to <i>m+</i>1.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> In order to prove that the array returned by
+OFF-LINE-MINIMUM is correct, its contradictory should be
+considered.</p>
+<p>Consider that the extracted array returned by the
+OFF-LINE-MINIMUM is not correct.</p>
+<p>Consider <i>x</i>=extracted [<i>j</i>] be the smallest
+value.</p>
+<p>Suppose that for this value, the array is incorrect.</p>
+<p>And taking the correct solution is the array answer.</p>
+<p>Consider <i>y</i>=answer [<i>j</i>] which is not equal to value
+of <i>x</i>.</p>
+<p>So, there are two possibilities;</p>
+<p>Either<img src=
+"../imgs/84b76de7a1fe2a2aee606bdbd93e793751089e10.png">.</p>
+<p>If both the cases will false, this means that OFF-LINE-MINIMUM
+always returns correct <i>extracted</i> array.</p>
+<p>Assume<img src=
+"../imgs/acc6ecd9c19333eb8a8d7658448429467d366f1b.png">;</p>
+<p>This means that either <i>y</i> has smallest value of incorrect
+extracted array or the appearance of <i>y</i> is not there in
+extracted array.</p>
+<p>The processing of <i>y</i> is always done before processing
+<i>x</i>.</p>
+<p>So <i>y</i> had set value of <i>m+</i>1.</p>
+<p>But, if answer [<i>j</i>] was set to <i>y</i>, this means that
+<i>y</i> initially have been in some <i>K</i><sub>i</sub> with
+<i>i</i> &lt;= <i>j</i>.</p>
+<p>As there is no value of extracted [<i>j</i>], yet processing of
+<i>y</i> is there. This means that the value of <i>y</i> cannot be
+inserted in set<img src=
+"../imgs/a33e1e74fe155c3ccdb4ec19d981ba641a7585ae.png">, because
+there is only union with the set above and there is no union
+to<img src="../imgs/44d4e0389050513d75acc148eeb1d4ae70276c4f.png">
+yet.</p>
+<p><b>Therefore, the condition</b> <b><img src=
+"../imgs/acc6ecd9c19333eb8a8d7658448429467d366f1b.png"></b> <b>is
+false</b>.</p>
+<p>Consider the case when<img src=
+"../imgs/1579d45ce99a461f74baa4bffb0aa57a3ccc3630.png">:</p>
+<p>The argument is that <i>x</i> must appear in the answer array.
+The appearance of <i>x</i> should be before the extraction of
+<i>j</i><sup>th</sup> in the original sequence. It is because there
+is no backward movement of sets in OFF-LINE MINIMUM algorithm. Only
+the operation of unions is there with sets that are later than
+it.</p>
+<p>If the extraction of <i>x</i> is not there by the <i>j</i>th
+extraction, this means that optimal solution will be <i>x</i>
+instead of <i>y</i> for the extraction of <i>j</i><sup>th</sup>
+since <i>i</i> is smaller.</p>
+<p>Therefore, the optimal solution must have extracted <i>x</i> for
+some<img src=
+"../imgs/8b9ae480312858e05352d287d62aa387b3fee795.png">.</p>
+<p>But, that means that extracted [<i>j</i>] holds some<img src=
+"../imgs/e1a6e5747c5ef26540cf9e7559f7c4f1ccadea02.png">.</p>
+<p>By similar reasoning as above, <i>x</i> cannot be moved past the
+set <img src=
+"../imgs/15372366eeeb4ce567b12f26cf066b55c6606eb1.png"> since
+extracted [<i>i</i>] would have been empty at the time <i>x</i> was
+chosen.</p>
+<p>Since, only union with the sets is there and<img src=
+"../imgs/15372366eeeb4ce567b12f26cf066b55c6606eb1.png"> has not
+been union yet, we cannot put the value of <i>x</i> in extracted
+[<i>j</i>] before extracted [<i>i</i>].</p>
+<p><b>Therefore, the condition</b> <img src=
+"../imgs/1579d45ce99a461f74baa4bffb0aa57a3ccc3630.png"> <b>is
+false</b>.</p>
+<p>This is a contradiction since it was assumed that <i>x</i> is
+not equal to <i>y</i> and it is proved that<img src=
+"../imgs/1579d45ce99a461f74baa4bffb0aa57a3ccc3630.png">, and
+<img src="../imgs/acc6ecd9c19333eb8a8d7658448429467d366f1b.png">
+cannot be true, <i>x</i> has to be equal to <i>y</i> and
+<b>extracted array is correct.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> The OFF-LINE-MINIMUM can be implemented with
+the help of a disjoint set data structure.</p>
+<p>Initially <i>n</i> sets are created with the help of MAKE-SET
+operation. After that the union operation for <i>n–m</i> times are
+performed for the creation of <img src=
+"../imgs/44d4e0389050513d75acc148eeb1d4ae70276c4f.png">sets.</p>
+<p>For each set, maintain these three additional pieces of
+information which mention below:</p>
+<p>• One to the state next to it,</p>
+<p>• Second to the previous set</p>
+<p>• Third the number itself.</p>
+<p>Number will correspond to <i>j</i>, the next will correspond
+to<img src="../imgs/e8af4f6f0b6df26b04642400d9a55834bd926035.png">
+and the previous will correspond to<img src=
+"../imgs/5a2be4af8694a0e80638d4af60fcba8dff9d0bfd.png">. These
+properties can be easily maintained after union of two sets.</p>
+<p>The ‘<b>for’</b> loops of OFF-LINE-MINIMUM algorithm, has
+iterations which first call FIND-SET on <i>i</i> . The number field
+is used on returned representative as <i>j</i>.</p>
+<p>Then, to determine the next smallest set <img src=
+"../imgs/2d616ac0c946e5f4902aca5945a776fd8a58b04f.png"> greater
+than <i>j</i>, simply use the next pointer.</p>
+<p>At-most <i>m</i> UNION calls are made and the same method as
+above is followed.</p>
+<p>A total of <i>n</i> MAKE-SET operations, <i>n</i> FIND-SET and
+<i>n</i> UNION operations are there. Total <i>3n</i> operations
+which can be solved in amortized time. After making the changes,
+the algorithm of OFF-LINE-MINIMUM (<i>m</i>, <i>n</i>) is given
+below:</p>
+<p>OFF-LINE-MINIMUM (<i>m</i>, <i>n</i>)</p>
+<p>//for loop to trace all elements</p>
+<p>1. <b>for</b> <img src=
+"../imgs/1c101ea46ce81cdb9d5b183ddf158b03381c12e8.png"></p>
+<p>2. <img src=
+"../imgs/b5082197eef5e21478040604f9af20ce48581390.png"></p>
+<p>//Use of <b>if</b> condition to check whether value should be
+<i>extracted</i> or not</p>
+<p>3. <b>if</b> <img src=
+"../imgs/0d7f2234403b5d50ea04459f8be32ef92cd5dc3a.png"></p>
+<p>4. <img src=
+"../imgs/1ac498e2e4e6a15739e4159f99c99597755d212a.png"></p>
+<p>5. <img src=
+"../imgs/84a55f2cf1eca85e1ebb5421d32fcf84141dd683.png"></p>
+<p>//link the value of <i>j</i> and <i>l</i> and remove
+<i>K</i><sub>j</sub> from linked list</p>
+<p>6. <img src=
+"../imgs/151a6436adee668c8df928be1e45322a09fdddee.png"> and removal
+of <i>K</i><sub>j</sub> from linked list</p>
+<p>7. <b>return</b> <i>extracted</i></p>
+<p><b>Hence complexity of the worst case for the above
+implementation is equal to</b> <b><img src=
+"../imgs/ee890faf2994e8304949387d4821ce0183ab539f.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2P">
+                <a href="#problem-2P">2P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>DEPTH DETERMINATION</b></p>
+<p>In depth determination, a forest of trees is maintained and the
+following three main operations are used:</p>
+<p>MAKE-TREE(<i>t</i>) : This operation is used to create a tree
+which has a single node <i>t</i>.</p>
+<p>FIND-DEPTH(<i>t</i>) : This operation is used to find the depth
+of the node in a tree.</p>
+<p>GRAFT (<i>p</i>, <i>t</i>) : This operation is used to make the
+node <i>p</i> the child of node <i>t</i>. Here, <i>p</i> is the
+root and node <i>t</i> may or may not be the root.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the total number of nodes as <i>n</i> and <i>n</i> =
+<i>m</i>/3.</p>
+<p>• Apply <i>n</i> MAKE-TREE operations on <i>n</i> single nodes
+(that is, make <i>n</i> trees each with a single node).</p>
+<p>• Apply <i>n–</i>1 GRAFT operations on these <i>n</i> trees to
+form a single tree.</p>
+<p>• Apply FIND-DEPTH(<i>v</i><sub>i</sub>) operations on the
+resulting tree. In other words, find depth of each node in the
+tree.</p>
+<p>• Each MAKE-TREE operation takes <img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png"> time. Thus,
+<i>n</i> MAKE-TREE operation takes <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> time.</p>
+<p>• Each GRAFT operation takes <img src=
+"../imgs/a8f07360f9cbff0aa8010e9d010b06df2708fbfc.png">time. Thus,
+<i>n</i> GRAFT operation takes <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> time.</p>
+<p>• Each FIND-DEPTH operation takes <img src=
+"../imgs/9040d44b6c084ea56591aaaeb02912ca40a2f258.png"> time.</p>
+<p>The total time required for the sequence of <i>m</i> operations
+is as follows:</p>
+<p><img src=
+"../imgs/f62c970e65e5609d7c5b08e14f73fa06f4f05c2c.png"></p>
+<p><b>Hence the total time required to apply</b> <i><b>m</b></i>
+<b>operations is ?(</b> <i><b>m</b></i> <sup>2</sup> <b>).</b></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>MAKE-TREE</b> is used to create a new tree with a single node
+and having its pseudo time set to 0.</p>
+<p>A disjoint set data structure is defined as a collection of
+disjoint dynamic sets. Each of these can be identified by members
+of the set, which are representative.</p>
+<p>In the dynamic set implementations, each element of the set is
+represented by an object and performs some operations.</p>
+<p>1. <b>Make-Set (</b><i><b>v</b></i><b>):</b> Make-set is used to
+create a new set, which contains a single member (also
+representative). Since the sets are disjoint, <i>v</i> should not
+be in any other set.</p>
+<p>2. <b>Union (</b><i><b>u</b></i><i><b>,</b></i>
+<i><b>v</b></i><b>):</b> It combines the two sets <i>u</i> and
+<i>v</i> into one new set.</p>
+<p>3. <b>Find-Set (</b><i><b>v</b></i><b>):</b> This operation is
+used to return a pointer to representative of a set that contains
+<i>v</i>.</p>
+<p>The operation MAKE-TREE is similar to MAKE-SET operation.
+MAKE-TREE has one property that sets the <i>d</i> value to 0. The
+implementation of MAKE-TREE by using Make-Set operation is as
+follows:</p>
+<p>MAKE-TREE (<i><b>v</b></i>)</p>
+<p>//set the value of <i>v</i> as <i>v.p</i></p>
+<p><img src=
+"../imgs/c0625c994a5113a6c9561ba05a3562b7724b2ff9.png"></p>
+<p>//set the rank of <i>v</i> as 0</p>
+<p><img src=
+"../imgs/8f5505116e75e7236bb4165f59ac3e325c1990d3.png"></p>
+<p>//set the value of <i>v.p</i> as 0</p>
+<p><img src=
+"../imgs/07ccb90fa0956dfca62739d16124e0beb18a8d56.png"></p>
+<p><b>In the case of disjoint-sets, every single node has a depth
+of 0 and find path for node</b> <i><b>v</b></i> <b>consists of</b>
+<i><b>d</b></i> <b>[</b> <i><b>v</b></i> <b>]. Hence, the value
+of</b> <i><b>d</b></i> <b>[</b> <i><b>v</b></i> <b>] is always set
+to 0.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>The operation FIND-DEPTH is implemented by modifying the
+operation FIND-SET. FIND-SET operation uses path compression, which
+makes every node point to the root. FIND-SET recursively calls
+itself and finds the path from <i>v</i> to <i>r</i> (root).</p>
+<p>The FIND-SET can be modified to implement FIND-DEPTH, so that in
+each iteration, pseudo distance of node <i>v</i><sub>i</sub> is
+updated.</p>
+</div>
+<hr>
+<div class="answer"><b>The following is the modified FIND-SET
+operation:</b>
+<p>FIND-SET (<i>v</i>)</p>
+<p>//Condition to check whether the value of node is equal to its
+parent</p>
+<p><b>if</b> <img src=
+"../imgs/d1be36fa8af32e93ebe2024e2c509316a9abccb5.png"></p>
+<p>//Assign the value of node to integer <i>y</i></p>
+<p><img src=
+"../imgs/15f635e59eed3ba3bf450bf7810a009c46a338f0.png"></p>
+<p>//recursion starts here, FIND-SET is used to get the value of
+representative</p>
+<p>// element</p>
+<p><img src=
+"../imgs/ab34105bac71ab510a429d5afeb530bfd6c7866d.png"></p>
+<p>//update the pseudo distance</p>
+<p><img src=
+"../imgs/57bc8c038943d527fd24a141b765ec1bd020c93c.png"></p>
+<p>//return the value of <i>v.p</i></p>
+<p><b>return</b> <i>v.p</i></p>
+<p>The above operation uses path compression and it updates the
+pseudo distances for each node.</p>
+<p><b>The newly implemented FIND-DEPTH operation using modified
+FIND-SET operation is as follows:</b></p>
+<p>FIND-DEPTH(<i>v</i>)</p>
+<p>//Call FIND-SET</p>
+<p>FIND-SET(<i>v</i>)</p>
+<p><b>return</b> <img src=
+"../imgs/d2c34397da212ea17a794f636e3e23105f651a39.png"></p>
+<p>The FIND-DEPTH algorithm calls the algorithm of FIND-SET in
+order to perform path compression and to update the
+pseudo-distances. Finally, FIND-DEPTH returns the updated pseudo
+distance of <i>v</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The operation <img src=
+"../imgs/f24681d2cff2fa3dabea480fe37e9868bf9ae3ce.png"> is similar
+to the operation UNION BY RANK. The implementation of <img src=
+"../imgs/f24681d2cff2fa3dabea480fe37e9868bf9ae3ce.png"> to combine
+<i>r</i> and <i>v</i>, using the modified UNION and LINK
+procedures, is as follows:</p>
+<p>GRAFT(<i>r</i>, <i>v</i>)</p>
+<p>//Call FIND-SET function to know representative element of
+<i>r</i></p>
+<p><img src=
+"../imgs/9d0cddfef5d8a897de9cbdfcb44f291d1a50795b.png"></p>
+<p>//Call FIND-SET function to know representative element of
+<i>v</i></p>
+<p><img src=
+"../imgs/1eb2888cd023f535ca49fb83a74d6dc1de2e2947.png"></p>
+<p>//Call FIND-DEPTH function and assign the value of depth to
+variable <i>z</i></p>
+<p><img src=
+"../imgs/f678117b538157c6b819534ad2dbd8e996a54aab.png"></p>
+<p>//if condition to compare rank for performing LINK operation</p>
+<p><b>if</b> <img src=
+"../imgs/c1bfd4bc576ef331bb9743cfa396af641af319ff.png"></p>
+<p>//After knowing that the rank of <i>r’</i> is bigger, make it as
+root of smaller tree (<i>v’</i>)</p>
+<p><img src=
+"../imgs/3fd5a155a06ef9c6b1122399a453ae67ec60e5a5.png"></p>
+<p>//the depth of <i>r’</i> should be increased 1 more than depth
+of <i>v</i></p>
+<p><img src=
+"../imgs/8715d316267aa6b76e892738a54009740c0e808e.png"></p>
+<p>//Update value of <i>v’</i></p>
+<p><img src=
+"../imgs/23941db69ded1d182ae93bbf614a5578da8db52a.png"></p>
+<p>//When if condition is not satisfied, make <i>v’</i> as root of
+smaller tree (<i>r’</i>)</p>
+<p><b>else</b> <img src=
+"../imgs/5b5dbbcc3225632a398eaa7beb38e5c0c2bba2a1.png"></p>
+<p>//Update the value of <i>r’</i></p>
+<p><img src=
+"../imgs/b4a2cc0ef5842240558bb08a08f4d7ac1ec1e096.png"></p>
+<p>//if condition to check whether rank of both trees is same or
+not</p>
+<p><b>if</b> <img src=
+"../imgs/211710cfe896bc202a0b11f5b8292a21b8f27c07.png"></p>
+<p>//When the rank of both trees is same, the procedure has been
+followed as given // above, this leads to make increment in rank of
+<i>v’</i></p>
+<p><img src=
+"../imgs/4b6bff0b0a614e2e442b7b79d332a7c3e29b6ded.png"></p>
+<p>The algorithm finds out the representative elements of <i>r</i>
+and <i>v,</i> and then calculates the depth of <i>v</i> by using
+FIND-DEPTH function. Afterwards, the algorithm compares the ranks
+of <i>v’</i> and <i>r’</i> in order to perform LINK operation.</p>
+<p>LINK creates the new tree. The tree with smaller rank becomes
+the child of tree having larger rank. Then LINK updates the depths
+of <i>r’</i> and <i>v’</i>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the algorithm defined in the part (<i><b>b</b></i>).
+The operation MAKE-TREE is similar to operation MAKE-SET,
+FIND-DEPTH operation is similar to FIND-SET and GRAFT operation is
+similar to UNION operation.</p>
+<p>With the reference of theorem 21.14 in the textbook, the
+<b>worst-case time complexity</b> is equal to<img src=
+"../imgs/37de7b1f938570953aecdcd39d299763c7bd83b0.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3P">
+                <a href="#problem-3P">3P</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Least-Common-Ancestor (LCA)</b></p>
+<p>Least common ancestor algorithm is used to find the ancestor of
+two nodes that is farthest from the node.</p>
+<p>Consider the tree given below:</p>
+<p><img src="../imgs/3bed6a08bea2851b477b6085167d37cbbe2171e3.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\15.tif"></p>
+<p>Suppose the query is to find the LCA of nodes 4 and 7. This
+algorithm initially considers all the nodes as white, after
+visiting all children of node, the node is colored black. This
+algorithm returns a node that has both nodes as its child is taken
+and it should be farthest node from the node. In order to find LCA
+of pair {4, 7}, all the ancestors of both nodes are visited and it
+is found that the LCA of the pair is node 6.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>a.</b></i> As considering the algorithm, the least common
+ancestor is calculated in such a way that the shared ancestor is
+farthest and has maximum value of depth from the root.</p>
+<p>The procedure has a part which is used for determining the
+distance between node pairs in a tree, the print statement is used
+to find the least common ancestor with the help of the FIND-SET (v)
+operation. This takes place in the last step. This means farthest
+from the root.</p>
+<p>So, it is <b>called exactly once</b> in the procedure. This
+means when the algorithm is at the stage of termination.</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>b.</b></i> By using the disjoint-set operation computation
+of the sequences is there.</p>
+<p>Consider <img src=
+"../imgs/0b9236e4dcdbc87fc797b837407558fd112d21b2.png"> and
+<img src="../imgs/7cc0ad6a1ac116af475c9f1590d57505475c6887.png">for
+the nodes <i>u</i> and <i>v</i>.</p>
+<p>In both sequences, <i>P</i> is used to represent the parent of
+given node and <i>r</i> is used to represents the root node of the
+tree.</p>
+<p>The first element that has been obtained for the two sequences
+is the LCA.</p>
+<p><b>Hence the time complexity always equal to the depth of
+tree.</b></p>
+<p><b>It can be represented as</b> <img src=
+"../imgs/063286e9acba4e15e9acb1720e7d89acd377ae43.png"> (where
+<i>h</i> is the height of tree).</p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>c.</b></i> <b>Proof:</b></p>
+<p>Suppose we know the <b>least common ancestor</b> of nodes
+<i>u</i> and <i>v</i> in a rooted tree <i>T</i>. The tree also has
+a node is the node <i>w</i> whose height is least and is an
+ancestor of <i>u</i> and <i>v</i>.</p>
+<p><img src="../imgs/7d754ce5df4b831cd0cc37be92f9652c7da25584.png"
+alt="Picture 8"></p>
+<p>It has been given a rooted tree <i>T</i> and a set <i>P</i>
+having a pairs of node in <i>T</i> for the <b>off-line least common
+ancestor’s problem</b>, and here the least common ancestor of pair
+formed in <i>T</i> is determined.</p>
+<p>In order to prove that <b>Least Common Ancestor</b> always
+prints the LCA of pairs <i>u</i> and <i>v</i> for each pair {<i>u,
+v</i>}<i>?</i><i>P</i></p>
+<p>Consider the Depth-First Search Algorithm:</p>
+<p>1. Recall that in DFS all nodes start white, open nodes are
+colored grey and closed nodes are colored black. Grey nodes reside
+in a stack <i>S</i>.</p>
+<p>2. For each pink node w maintain a set <i>D</i> <sub>w</sub>
+consisting of <i>w</i> and all black nodes whose least pink
+ancestor is <i>w</i>.</p>
+<p>3. When a node <i>u</i> is finished, for all pairs <i>(u, v)</i>
+<i>?</i><i>P</i> such that <i>v</i> is black and <i>v</i>
+<i>?</i><i>D</i> <sub>w</sub> for some grey node <i>w</i>, <i>w</i>
+is the least common ancestor of <i>u</i> and <i>v</i>.</p>
+<p>Initial call is to LCA (root [<i>T</i>]<i>):</i></p>
+<p>LCA (<i>u</i>)</p>
+<p>// creation of new set in which <i>u</i> is the only element</p>
+<p>1. MAKE-SET (<i>u</i>)</p>
+<p>// color operation</p>
+<p>2. Color [<i>u</i>] ? grey # ancestor [<i>u</i>] ? <i>u</i>.</p>
+<p>//for loop to visit every node under <i>u</i> and <i>v</i></p>
+<p>3. <b>for</b> each child <i>v</i> of <i>u</i>.</p>
+<p>//perform LCA on node <i>v</i></p>
+<p>4. <b>do</b> LCA (<i>v</i>)</p>
+<p>// union operation on <i>u</i> and <i>v</i> sets when pop
+<i>v</i> from DFS stack is there</p>
+<p>5. UNION (<i>u, v</i>) – union</p>
+<p>// representative of <i>u</i>’s set has pointer to <i>u</i>.</p>
+<p>6. ancestor.[FIND (<i>u</i>)] ? <i>u</i></p>
+<p>//change the color of node <i>u</i> to black</p>
+<p>7. color (<i>u</i>) ? black</p>
+<p>//for loop to know all the pairs of <i>u</i> and <i>v</i></p>
+<p>8. <b>for</b> each node <i>v</i> such that {<i>u,v</i>}
+?<i>P</i></p>
+<p>//if condition to check whether all the children of node
+<i>v</i> are visited or not</p>
+<p>9. <b>if</b> color [<i>v</i>] = BLACK</p>
+<p>//This statement will return the LCA of two nodes</p>
+<p>10. then print ‘the LCA of’ <i>u</i> ‘and’ <i>v</i> ‘is’
+ancestor[FIND(<i>v</i>)</p>
+<p>// terminate</p>
+<p>Therefore, it is proved that LCA correctly prints the least
+common ancestor of <i>u</i> and <i>v</i> for each pair {<i>u,
+v</i>} <i>?</i> <i>P.</i></p>
+</div>
+<hr>
+<div class="answer">
+<p><i><b>d.</b></i> An optimal disjoint-set data structure can be
+obtained by performing two heuristics- path compression and union
+by rank. If LCA algorithm is implemented with the help of the
+disjoint-set data structure then it will use <img src=
+"../imgs/e57ffca717549bb67f621bd1d9d39d2f18f95e41.png">
+disjoint-set of operations.</p>
+<p>In the same tree, the multiple pairs of nodes are calculated.
+After implementation, it is made to run in <img src=
+"../imgs/54bdc5b5ce8f7f3660d59f80d69173967f54ebc8.png"> (where
+<img src="../imgs/99e082d9c9b0e228874aabd3134b65beee9380de.png"> as
+the size of the input).</p>
+<p>It is much slower than the linear time which has the complexity
+as<img src=
+"../imgs/74cbdef91a9c2a998bac830652ca0a00d1f600d8.png">.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

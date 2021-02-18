@@ -1,0 +1,365 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 4.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Find the Asymptotic Bounds</b></p>
+<p>a)</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/04ebaebbe82de9f864a7b831f164cf88eef9ecc7.png"></p>
+<p>Apply the master theorem and compare this recurrence with
+<img src=
+"../imgs/3d0f0d246f7116f3c6fd6c61357ecb3f38ade81e.png"></p>
+<p>From the specified recurrence, <i>a</i> = 2 and <i>b</i> =
+4.</p>
+<p>Calculate <img src=
+"../imgs/15eb8504abcec868e557c1906bf6579e6b2cf7b8.png"> as shown
+below:</p>
+<p><img src=
+"../imgs/50da06eb13ce483d9c2327b9388fd63478a7d7f4.png"></p>
+<p><img src=
+"../imgs/a8fb6eb23e429a4d1e910ede81a219da464a8174.png"></p>
+<p>Therefore, <img src=
+"../imgs/59a8da915df997e5ad82211752f1bb2be9a574c9.png"></p>
+<p><img src=
+"../imgs/c74e3619f491267bcfa4bead213358ad83497c07.png"></p>
+<p>And <img src=
+"../imgs/004668975bb303815066d16bb4ad553a704fe664.png"></p>
+<p><img src=
+"../imgs/b5b1ba05652a070de4e0bc499fce24feb49ecdab.png"></p>
+<p>Hence, <img src=
+"../imgs/4c4cf8098cbf1eacb5e2788f8ec1b747bd679414.png"></p>
+<p>Therefore, Case-1 of the master theorem can be applied as the
+solution.</p>
+<p><img src=
+"../imgs/31effc9c15c6488b67f4ce50608078eb6fbfadb5.png"></p>
+<p>Thus, the solution is, <img src=
+"../imgs/e2c8783fbfe8ad9bfe0e4d3ea922dc60189d23d8.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>b)</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/7c1a3a99e2bdeac805c0c343228b620a3e695892.png"></p>
+<p>Apply the master theorem and compare this recurrence with
+<img src=
+"../imgs/3d0f0d246f7116f3c6fd6c61357ecb3f38ade81e.png"></p>
+<p>From the specified recurrence, <i>a</i> = 2 and <i>b</i> =
+4.</p>
+<p><img src=
+"../imgs/50da06eb13ce483d9c2327b9388fd63478a7d7f4.png"></p>
+<p><img src=
+"../imgs/a8fb6eb23e429a4d1e910ede81a219da464a8174.png"></p>
+<p>Therefore, <img src=
+"../imgs/59a8da915df997e5ad82211752f1bb2be9a574c9.png"></p>
+<p><img src=
+"../imgs/c74e3619f491267bcfa4bead213358ad83497c07.png"></p>
+<p>And <img src=
+"../imgs/e2221b3b11d3de2bb77fdad1eb6f0037f4d7a27d.png"></p>
+<p><img src=
+"../imgs/2feed1fcf1690f85e70d43ffe4c1a376e8e557fc.png"></p>
+<p>Hence, <img src=
+"../imgs/873b8e55a8a1f78a71280666b3c501d7359a16fb.png"></p>
+<p>Therefore, Case-2 of the master theorem can be applied as the
+solution.</p>
+<p><img src=
+"../imgs/496c1ab6d236a556904f7c30f7ec61193c3e0194.png"></p>
+<p>Thus, the solution is, <img src=
+"../imgs/e00551a50360cea846cbf63871b48d8b311247fa.png"></p>
+<p>c)</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/3330a76f9e6a96ccd5d18cd9ea0e28c8bbee4701.png"></p>
+<p>Apply the master theorem and compare this recurrence with
+<img src=
+"../imgs/3d0f0d246f7116f3c6fd6c61357ecb3f38ade81e.png"></p>
+<p>From the specified recurrence, <i>a</i> = 2 and <i>b</i> =
+4.</p>
+<p><img src=
+"../imgs/50da06eb13ce483d9c2327b9388fd63478a7d7f4.png"></p>
+<p><img src=
+"../imgs/a8fb6eb23e429a4d1e910ede81a219da464a8174.png"></p>
+<p>Therefore, <img src=
+"../imgs/d0f81998384a5c0ac8dc133cddc5a9f1c2d1a429.png"></p>
+<p><img src=
+"../imgs/c74e3619f491267bcfa4bead213358ad83497c07.png"></p>
+<p>And <img src=
+"../imgs/47081687755eb0c9546f578123c373df71102587.png"></p>
+<p><img src=
+"../imgs/7a0303850ef5e81eaeafa664d6889bc15ef5d3b6.png"></p>
+<p>Hence, <img src=
+"../imgs/030b5fd13b85e9e87c30647143b552abecb774c9.png"></p>
+<p>Therefore, Case-3 of the master theorem can be applied as the
+solution.</p>
+<p><img src=
+"../imgs/38bb9e250ae573ef99b2ec3f42d7862de5a124ad.png"></p>
+<p>Thus, the solution is, <img src=
+"../imgs/f2a303b2e5152d69ed14f2723bcde3d1224cdafe.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>d)</p>
+<p>Consider the following recurrence:</p>
+<p><img src=
+"../imgs/4fa4cab6805b473759f63280c1116f715ce9e20f.png"></p>
+<p>Apply the master theorem and compare this recurrence with
+<img src=
+"../imgs/3d0f0d246f7116f3c6fd6c61357ecb3f38ade81e.png"></p>
+<p>From the specified recurrence, <i>a</i> = 2 and <i>b</i> =
+4.</p>
+<p><img src=
+"../imgs/50da06eb13ce483d9c2327b9388fd63478a7d7f4.png"></p>
+<p><img src=
+"../imgs/a8fb6eb23e429a4d1e910ede81a219da464a8174.png"></p>
+<p>Therefore, <img src=
+"../imgs/d0f81998384a5c0ac8dc133cddc5a9f1c2d1a429.png"></p>
+<p><img src=
+"../imgs/c74e3619f491267bcfa4bead213358ad83497c07.png"></p>
+<p>And <img src=
+"../imgs/e9cb8f7c0237f9abad34231cec418cbbdb654a6d.png"></p>
+<p><img src=
+"../imgs/b8d8831015827e2ebe9ef8d8615df70780f500fd.png"></p>
+<p>Hence, <img src=
+"../imgs/030b5fd13b85e9e87c30647143b552abecb774c9.png"></p>
+<p>Therefore, Case-3 of the master theorem can be applied as the
+solution.</p>
+<p><img src=
+"../imgs/ba87fb05249f95262d08c6e82cdab1d9954e2008.png"></p>
+<p>Thus, the solution is, <img src=
+"../imgs/e2f29a26b9b591d341281ef41c4731440e62e55e.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/d687b1513b11244aabcb8a3866e7726cf1f75bdf.png">
+<hr>
+<img src="../imgs/91444a872ab6974ab75f16a1cc52b880b2b2af98.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Refer the Theorem 4.1 (Master Theorem) given on page 94 of
+chapter 4. In this theorem, it is defined that the recurrence will
+be solved by the mater theorem, if it is in any form of the three
+cases.</p>
+<p>Now consider the given recurrence<img src=
+"../imgs/f1e34b5327c3d4517f67a5041a42673a5032a183.png">.</p>
+<p>Here,<img src=
+"../imgs/5eb4b481d4eb8a47d11988ad7251a724d8ae9ca6.png"> then,
+<img src=
+"../imgs/fe7c7ee6a25001c7d0abd78ff708f3fe5eeda458.png">.</p>
+<p>Therefore,</p>
+<p><img src=
+"../imgs/a23bdadd0bee938818629c453e98337ed6b57e89.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Check the first and second cases of master theorem:</b></p>
+<p>• For the given recurrence<img src=
+"../imgs/f1e34b5327c3d4517f67a5041a42673a5032a183.png">, the
+function <img src=
+"../imgs/2ea87fab115dc30a61292e1cd9369397855390e3.png"></p>
+<p>• Now, it can easily bees seen that <img src=
+"../imgs/fc35bf43389c680565944086266dd51c44e9ba3f.png">or <img src=
+"../imgs/61eebb0a2d5ef09847fbf52ec59fe8e55d41d8e4.png"></p>
+<p>• Also, <img src=
+"../imgs/6253c0fd4e6406aa3609797990db09e6132e567b.png">or<img src=
+"../imgs/db41a2ccaf264039de7b91dd0fb2c968d78d427d.png">.</p>
+<p>So, it does not form the first and the second cases.</p>
+<p><b>Check third case of master theorem:</b></p>
+<p>Here, <img src=
+"../imgs/2ea87fab115dc30a61292e1cd9369397855390e3.png">is
+asymptotically greater than <img src=
+"../imgs/1a4ffc930792fa3689e70723691aade1f9480b83.png">but not
+polynomial greater or larger.</p>
+<p>This is the main criteria of the third case. So, the
+recurrence<img src=
+"../imgs/f1e34b5327c3d4517f67a5041a42673a5032a183.png">does not
+form the third case.</p>
+<p>Hence, from the above explanation, the recurrence<img src=
+"../imgs/f1e34b5327c3d4517f67a5041a42673a5032a183.png">does not
+form the any of the three cases of master method.</p>
+<p><b>Therefore, it is not possible to apply master method on the
+recurrence</b> <b><img src=
+"../imgs/f1e34b5327c3d4517f67a5041a42673a5032a183.png"></b>
+<b>.</b></p>
+</div>
+<hr>
+<div class="answer">
+<p>Apply the substitution method and guess the solution.</p>
+<p>The substitution techniques requires to guess the solution by
+assuming that:<img src=
+"../imgs/4dd0f0d224203f06058289b941fc241a696049b2.png"></p>
+<p>Substitution into the recurrence yields:</p>
+<p><img src=
+"../imgs/f6fffa002125c69baa3e43547fc0d29ec48efa03.png"></p>
+<p>Here, the value of <i>lg 2</i> is constant so it can be
+ignored.</p>
+<p><b>Hence, an asymptotic upper bound for the recursion</b>
+<b><img src=
+"../imgs/f1e34b5327c3d4517f67a5041a42673a5032a183.png"></b>
+<b>is</b> <img src=
+"../imgs/212e1370bc2f2e975b7794ec44f8856a0b9b28cf.png">
+<b><img src="../imgs/efa399e275466d83a57d07b0119430b2665a85cf.png"></b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Regularity condition in Master theorem is <img src=
+"../imgs/48892943d2868182e96e9b756873ad7ec385f1f9.png">for some
+constant,<img src=
+"../imgs/1679d854114d36f9050f8f1bdd6813c60946f003.png">.</p>
+<p>Refer Theorem 4.1 of text book for Master theorem.</p>
+<p>Define a piecewise function <img src=
+"../imgs/88e3f60807c73ae505e3841f0834a14edafec7b6.png"> as
+follows:</p>
+<p><img src=
+"../imgs/715e9ba9e4208a56602bbc45578cfbe74bc93534.png"></p>
+<p>Consider <i>a</i> = 3 and <i>b</i> = 2 (here, <img src=
+"../imgs/2a5b107a7e3503c58b75c76d3dd0e496c7f65509.png">).</p>
+<p>There exists an, such that both cases of <img src=
+"../imgs/88e3f60807c73ae505e3841f0834a14edafec7b6.png">holds.</p>
+<p><img src=
+"../imgs/1ec97447d3ebf35f129518d55ba069e26934aca3.png"></p>
+<p>Therefore, the function <img src=
+"../imgs/88e3f60807c73ae505e3841f0834a14edafec7b6.png">satisfies
+all the conditions except regularity condition.</p>
+<p>Verify whether the function satisfies the regularity condition
+or not.</p>
+<p>If <img src=
+"../imgs/b131539fcf4659ce4c9015295a2e160c3e68c294.png">, then
+<img src=
+"../imgs/4024446525f52f1fccc579456314cd7bc6c018f0.png">.</p>
+<p>Since, for any number <i>d</i>, there always exists a number
+<img src=
+"../imgs/9228911184e336189057fbe87d46f1c134fc64d2.png">(example
+<img src=
+"../imgs/9d13cfb4875208deff4ee08b39399df9527032ec.png">).</p>
+<p>Also,</p>
+<p><img src="../imgs/88b618be9887b75a25eef1006194ad70e2459bcf.png">
+when <i>n</i> &gt;&gt; b (<i>n</i> is too larger than
+<i>b</i>).</p>
+<p>The function <img src=
+"../imgs/88e3f60807c73ae505e3841f0834a14edafec7b6.png">does not
+satisfy the regularity condition for large <i>n</i>, such that
+<img src="../imgs/3e0710780b6aca8357d61a9991d0ebffd374fded.png"> is
+an integer.</p>
+<p>Therefore, this is a required function <img src=
+"../imgs/88e3f60807c73ae505e3841f0834a14edafec7b6.png">, that
+satisfies all the conditions in the case 3 of the master theorem,
+except the regularity condition.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

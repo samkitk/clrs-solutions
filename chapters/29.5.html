@@ -1,0 +1,1488 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 29.5</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/c83f21904217a0464aeb21ba2fd146e23a3991b8.png">
+<hr>
+<img src="../imgs/6b51c38607c93773d3afb595ddaa6fc879359bfc.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>The SIMPLEX Procedure</b></p>
+<p>It is a method used for solving the linear program. Linear
+program generally comprises of the problem related to optimization.
+It is used for the linear program in its standard form. The
+standard form of the linear program is:</p>
+<p>Minimize:</p>
+<p><img src=
+"../imgs/e74842935c816555590603b0b0b35e94520d54a7.png"></p>
+<p>Subject to condition:</p>
+<p><img src=
+"../imgs/fe1d161d8e92664a2c0ff189957e80464aacd6d3.png"></p>
+<p>And <img src=
+"../imgs/18c66e8b33e7d2ad0480f254a9ef6e8eb830e192.png"></p>
+<p>Where<img src=
+"../imgs/6fddb85f24ae70506f5d5030f2af64a9a5d1db84.png">; the
+variables of the problem and values <img src=
+"../imgs/1a643fe8aab546f2474beb1d695f630e7d0bdbc0.png"> are the
+objective function coefficients.</p>
+<p>Now here in the given question, it is to be discussed that the
+bounding condition for simplex when its loop is replaced by the
+initialize simplex.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>SIMPLEX procedure:</b></p>
+<p>Before getting into the issue, a brief understanding of SIMPLEX
+procedure is required. Refer to the section 29.3 of the text book
+for the procedure,</p>
+<p>The simplex procedure is useful in making the linear programs.
+The procedure works on the linear programs that are represented in
+their standard forms. The procedure takes the standard form of the
+linear program as the input and yields an <i>n</i> vector <img src=
+"../imgs/292b1f7604d6cd75fd8ea8532a64a0ff231a3633.png"> and that is
+one of the optimal remedies to the concerned linear program.</p>
+<p>This procedure is specifically helpful when more than one
+decision variables are available. The procedure works as
+follows:</p>
+<p>The procedure first of all invokes the INITIALIZE-SIMPLEX (<i>A,
+b, c</i>) procedure in line 1. This finds out if the linear program
+is viable. If not, the linear program is stored in its slack form.
+In the third line a loop is initialized.</p>
+<p>If all of the coefficients in the concerned objective function
+of the linear program are negative integers, the loop would
+terminate. If not, the fourth line of the procedure selects a
+variable that is <img src=
+"../imgs/6a2b8aad8d2eca53d5219bffc3637080480f219c.png"> that has a
+positive coefficient.</p>
+<p>This will be made the entering variable for the procedure. This
+variable is chosen using some predefined deterministic rule. Now
+lines 5 to 9 check all of the constraints. This is meant for
+getting the one that most vitally limits the amount by which
+<img src="../imgs/6a2b8aad8d2eca53d5219bffc3637080480f219c.png">can
+be extended with leaving the non-negativity constraint intact.</p>
+<p>The variable associated with the non-negativity constraint
+is<img src="../imgs/d4e009670ab180b2dbec50e96654bbf88b51cf5a.png">.
+Now the leaving variable has to be chosen. Any random variable that
+follows the predefined deterministic rule can be chosen to play the
+leaving variable. If the quantity of increment in the entering
+variable is not controlled by any of the available constraints the
+line 11 returns “unbounded”.</p>
+<p>If this is not true for the scenario, the line 12 of the
+procedure swaps the entering variable and the leaving variable.
+This is achieved by invoking the PIVOT procedure. Now the desired
+solution of the given linear program is calculated using the line
+13 to line 16 of the procedure.</p>
+<p>Line 13 checks if the encountered variable is the basic or
+non-basic. If this is basic, the appropriate value is accumulated
+in the variable in line 15 and if this is not the basic variable
+then set it to 0 in line 16. The last line of the procedure returns
+the desired solution for the inputted linear program and that
+is<img src=
+"../imgs/cc634e73aa78005931309b4f305009d7002cbb91.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>INITIALIZE-SIMPLEX procedure:</b></p>
+<p>The procedure is used to find the basic feasible solution for
+the problem. This procedure finds out the basic solution if the
+program is feasible and returns that. If the program is not
+feasible then the procedure creates a secondary solution and keeps
+pivoting the secondary form till the time a feasible solution is
+found.</p>
+<p>Even after doing all this if no such solution for the problem is
+found the procedure returns “infeasible”.</p>
+<p>To understand the effect ofthis change a brief understanding of
+the procedure INITIALIZE-SIMPLEX is required.</p>
+<p><b>Explanation of the procedure:</b></p>
+<p>The first three lines check for the basic solution of the linear
+program. If the solution is found feasible, the slack form of the
+program is returned.</p>
+<p>If not, the secondary form of the solution is created. This
+would not be feasible whatsoever. The reason is that the initial
+solution of the basic form of the problem is not feasible.</p>
+<p>Now to find a viable solution pivoting is performed. This is
+done in the line 8. After pivoting the secondary form, the solution
+for the problem is searched for. This results in a viable solution.
+Now to find a complete feasible solution iterative invoke to PIVOT
+is required till the optimal solution is found.</p>
+<p>Once this is found the slack form of the program is found in
+line 12 and line 13. This slack form is returned with the help of
+line 15 of the procedure. Even after this if no feasible solution
+is found for the program, the procedure returns “infeasible”.</p>
+<p>So, altogether the procedure either finds a feasible solution
+for the problem or it just returns infeasible.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Effect of replacing the main loop with
+INITIALIZE-SIMPLEX:</b></p>
+<p>Now, it is to be checked what would happen if the main loop that
+is “while” loop of the procedure, is run by a call to
+INITIALIZE-SIMPLEX.</p>
+<p>Suppose that a feasible solution for the linear program exists.
+Now the initial call to INITIALIZE-SIMPLEX would return the slack
+form of the linear program. The “While” loop in the SIMPLEX
+procedure tries to find if this solution of the problem can be
+bounded by some set of entering or leaving variables or not.</p>
+</div>
+<hr>
+<div class="answer">INITIALIZE-SIMPLEX is intended to find a viable
+solution for the program. There might be two cases.
+<p><b>Case 1</b>: The procedure finds the viable solution for the
+linear program and returns the slack form of the solution.</p>
+<p><b>Case 2</b>: The procedure does not find any viable solution
+for the linear program and returns “infeasible”.</p>
+<p>So whenever the procedure would be called, there would be at
+least some viable solution found for the program or there would be
+no feasible solution found.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Case 1:</b></p>
+<p>Now, consider the first case where a feasible solution is found
+for the program.</p>
+<p>If this happens, then being feasible, the solution could always
+be restricted by some number of entering or leaving variables. In
+that case the line 11 of the procedure would never be executed.</p>
+<p><b>Case 2</b>:</p>
+<p>Now consider the other case:</p>
+<p>If no feasible solution for the program could be found, there
+would be no slack form for the program because there is no
+solution. If that happens, it makes no sense to talk about the
+bounded or unbounded form of the solution. Now keeping this in
+mind, line 11 of the procedure would not be executed, either.</p>
+<p>So, even in this the procedure would not return “unbounded”.</p>
+<p>Thus, it can be recapitulated from the above discussion that if
+the “while” loop is run by INITIALIZE-SIMPLEX, there “unbounded”
+would never be returned regardless of the presence of any feasible
+solution to the problem.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Linear programming problem (LPP):</b> It is a form of a
+problem in which maximizing or minimizing an objective is achieved
+with in the available limited resources and constraints.</p>
+<p>The following is the general mathematical representation of the
+linear programming problem:</p>
+<p>Maximize:</p>
+<p><img src=
+"../imgs/f104a00cb9861268731194fc15725d2baa560f17.png"></p>
+<p>Subject to condition:</p>
+<p><img src="../imgs/4857b161ccdc2cf2b0bff8a1e6bdaab0d5f92ecd.png">
+for<i><img src=
+"../imgs/89e8cfd3fcc6c74a3c5328ed9f29a9e202c8585b.png"></i></p>
+<p><img src=
+"../imgs/36636afeb13ebaa66ac38b1f178173a591fe6a21.png"><img src=
+"../imgs/0b235026817f07d08ed3212b9668c2d4f5a61d29.png"></p>
+<p>Equation (1) is the objective function and equation (2) and (3)
+are the constraints for the linear program. Solve the problem for
+the value of <i>n</i> variables<img src=
+"../imgs/a232a1a6d3f227ce291577deae48cd33e8d19d3b.png">, such that
+objective function is maximized.</p>
+<p>Note: The LPP described in the equations (1), (2), and (3) is
+also called as the primal of the LLP.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Dual of the Linear Program:</b></p>
+<p>When the LLP is defined for maximization objective, if it is
+solved for the minimization objective, then the form of LPP used
+here is known as dual of the given LPP. The original form of the
+linear program is referred as the primal form.</p>
+<p>Minimize:</p>
+<p><img src=
+"../imgs/684a4e7b6ca6f09128955e37f70f2141b8f8e8d8.png"></p>
+<p>Subject to condition:</p>
+<p><img src="../imgs/7487a6eccce4a2c08ba653e0b31917286c2302bf.png">
+for <img src=
+"../imgs/45cdc7883d610592013345db6d85b02b3f5270ab.png"></p>
+<p><img src="../imgs/25bbcbb6dab06051e9adcf8bfbf4e57cb18182f2.png">
+for <img src=
+"../imgs/ade98df339422b6d0fbb0f3e6b8b8719d70d409b.png"></p>
+<p>The dual of the LLP (given by the equations (1), (2), and (3))
+is formed by performing the following operations:</p>
+<p>• Change the maximization to minimization (vice versa).</p>
+<p>• Replace each less-than-or-equal-to with
+greater-than-or-equal-to in constraints.</p>
+<p>• Exchange the roles of coefficients on the right-hand-sides and
+the objective function.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Optimal Objective value:</b></p>
+<p>For the set of values in the variable<img src=
+"../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png">, if all the
+constraints are satisfied, then that set of values in the variable
+<img src="../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png"> is
+called the feasible solution. Otherwise the set is infeasible.</p>
+<p><img src="../imgs/4bfd61445cbd3801bab4b481ab3a7bf7206a6236.png">
+is the objective function value of the linear program for which the
+solution is <img src=
+"../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png">. The
+optimal feasible solution is the set of values in the variable
+<img src=
+"../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png">among
+feasible solutions, which yields the maximum objective value.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Optimal objective value of linear program</b> <i><b>L</b></i>
+<b>is 0:</b></p>
+<p>Now prove that optimal objective value of <i>L</i> is 0, if
+basic solution of both <i>L</i> and <i>dual of L</i> associated
+with the initial slack forms are feasible.</p>
+<p>Proof consists of two steps:</p>
+<p>• Extract the meaning of the statement; the fundamental
+solutions are mixed with the slack form of the feasible solutions
+in terms of the values of the objective function.</p>
+<p>• Get the complete proof with the help of the conclusion
+drawn.</p>
+<p><b>Step 1:</b></p>
+<p>Basic solution of both <i>L</i> and <i>dual of L</i> associated
+with the initial slack forms are feasible, so the objective value
+of <i>L</i> and <i>dual of L</i> can be written as follows:</p>
+<p><img src=
+"../imgs/69b91f2071b364639e9d03c05c7a6e61aad5f89b.png"></p>
+<p>Where, <img src=
+"../imgs/6250867beba88376e8b3fcc8e1af1a57d5a24d43.png">and
+<img src="../imgs/c814c69658cac5eb1b066120f31c0500b6786bf5.png">are
+the objective functions for the primal and dual linear programs
+respectively.</p>
+<p>Hence, the fundamental solutions for the primal and dual program
+of the linear program have zero values for each of the variables in
+them.</p>
+</div>
+<hr>
+<div class="answer"><b>Step 2:</b>
+<p>Complete the proof using the weak duality theorem.</p>
+<p><b>Weak duality theorem:</b></p>
+<p>Consider that there is a linear program of the following
+form:</p>
+<p>Maximize</p>
+<p><img src=
+"../imgs/8507033b3f2f1c1f3143ab555145b63f1b9d6c5b.png"></p>
+<p>Subject to</p>
+<p><img src=
+"../imgs/5e96c67673c10057c64a48ff714069a829d97151.png"></p>
+<p><img src=
+"../imgs/fbe86ae9b9b40b5611b2e8feafddc34292781071.png"></p>
+<p>and, it’s dual is of the following form:</p>
+<p>Minimize</p>
+<p><img src=
+"../imgs/33f7bca895399dedb3ad936eff05c041b2169ef2.png"></p>
+<p>Subject to:</p>
+<p><img src=
+"../imgs/3e10a340462c5a375a960db94753d8f92167377c.png"></p>
+<p><img src=
+"../imgs/22191b0cd29ae1ea4acd7e0552a582454ef66732.png"></p>
+<p>Suppose both of them have feasible solutions. Now, consider
+<img src="../imgs/9773e1508502d9f761409e4858c7c3933760475a.png"> to
+be a feasible solution for primal and <img src=
+"../imgs/d5634e45d13b826d788abdffc3e7f995a72575cd.png"> to be a
+feasible solution for dual form.</p>
+<p>The, the following inequality holds:</p>
+<p><img src=
+"../imgs/6679b6105e3afc6d6a989fa935516fbae1c41690.png"></p>
+<p>In simple words, the objective function of the primal form of
+the linear program is bounded by an upper limit and that is the
+objective function of the linear program’s dual form.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, the proof would be completed with corollary 29.9 (Refer to
+the section 29.4 of the textbook for this).</p>
+<p>Consider that the above rule holds for the set of primal and
+dual form of a linear program that are <i>L</i> and <i>L’</i>
+respectively. Along with this, the objective functions for both of
+the primal and the dual form of the linear program equivalent then
+<img src="../imgs/8994cce8ece0dfb5138a4de3effea3b60d7d36ed.png">
+and <img src=
+"../imgs/d071939b912dd52e3b61e291e96e49544a4eef98.png">are the
+optimal remedy to the primal and dual form of the linear program
+respectively.</p>
+<p>As the initial statement states that the fundamental solutions
+for both <i>L</i> and <i>L’</i> are feasible, setting the variables
+values to zero yields:</p>
+<p><img src=
+"../imgs/3bb51a812829167ef3254f990c1f0e979a30d496.png"></p>
+<p>That means, the value of the objective function of the dual from
+of the linear program holds a value 0.</p>
+<p>Now, as the strong duality rule says that if both of the primal
+and the dual form of the linear program have the feasible and
+optimal solutions, then the value of objective function of both of
+them will be equivalent.</p>
+<p>So, if the value of the objective function for the dual form is
+0, then it will be 0 for the objective function of primal form.</p>
+<p>That is,</p>
+<p><img src=
+"../imgs/3540b4b664bb6d89d8e137d638a283a21bf04e44.png"></p>
+<p><b>Therefore, optimal objective value of</b> <i><b>L</b></i>
+<b>is 0, if basic solution of both</b> <i><b>L</b></i> <b>and</b>
+<i><b>dual of L</b></i> <b>associated</b> <b>with the initial slack
+forms are feasible.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Fundamental Theorem of Linear Programming</b></p>
+<p><b>Linear programming</b> is a way of achieving the maximum
+possible outcome from a set of resources that are represented as an
+integrated mathematical design.</p>
+<p>In the technical terms the linear programming is a way to
+achieve optimum results from the linear programming problems. This
+optimization is subject to a few constraints.</p>
+<p><b>Standard form of linear program:</b></p>
+<p>In a standard form, there is a set of <i>p</i> real numbers that
+are <img src=
+"../imgs/39785c7b620b878141a51ec61f2526d3b388cec6.png">, another
+set of <i>q</i> real numbers that are<img src=
+"../imgs/84fb34e0509e338efd99b068086fee585ad1fdf3.png"> and a set
+of<img src=
+"../imgs/b2a92179c53ebd50387383530bca1a43746a2875.png">real numbers
+that are<img src=
+"../imgs/884d95328550c0cab6a30d4f4c43d6988d764a16.png">where,</p>
+<p><img src=
+"../imgs/a2fffe244451f068b76e9cdfcd1a0d90849f917e.png"></p>
+<p><img src=
+"../imgs/fbb2137243d040cb19bfd9b228696ffbe5d869ae.png"></p>
+<p>Now, the objective is to find <i>p</i> real numbers<img src=
+"../imgs/55db0d03d80e4b3031f1947950493a0acbeeb709.png">such
+that</p>
+<p>Maximize</p>
+<p><img src="../imgs/04372decb8d9b89cba8644873ef628c923520774.png">
+<b>… … (1)</b></p>
+<p>And that is subject to</p>
+<p><img src="../imgs/5d50b9dd599867b2da0c43dce65bff39fa2d307c.png">
+<b>… … (2)</b></p>
+<p><img src="../imgs/9ed522f4e550c53445df5a8686cda8cab558dcab.png">
+<b>… … (3)</b></p>
+<p>The first expression is called the objective function. The
+second and the third expression show the constraints.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Fundamental theorem of Linear Programming:</b></p>
+<p>The fundamental theorem of linear programming states the
+following:</p>
+<p>Consider a <img src=
+"../imgs/0f4459da59a6a082fc7709b854675f7389d6ae25.png"> matrix of
+rank <i>q</i>. Now, the linear programming says that:</p>
+<p>1. If there is a feasible solution for the problem, there does
+hold a basic feasible solution for the problem.</p>
+<p>2. If there is an optimal solution for the concerned problem,
+there must be a basic optimal solution for the problem.</p>
+<p>This theorem can be proved by using the SIMPLEX procedure. The
+SIMPLEX procedure works subtly regardless the linear program having
+any feasible solution, infeasible or has an unbounded solution.</p>
+<p>By its name, it suggests that it is related to the theory which
+is the basis for the existence of linear programming. For
+understanding this theorem, consider any linear program <i>L</i>
+which is in its standard form so it holds the following
+criteria:</p>
+<p>a. <i>L</i> is unbounded.</p>
+<p>b. <i>L</i> is infeasible.</p>
+<p>c. <i>L</i> holds an optimal solution which has a finite
+objective value.</p>
+<p>The theorem can be proved by giving separate proves for each of
+the above mentioned cases.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof of Fundamental Theorem of Linear Programming:</b></p>
+<p>Below is illustrated how the SIMPLEX procedure would work for
+each of the above mentioned cases.</p>
+<p><i><b>L</b></i> <b>is unbounded:</b></p>
+<p>Consider the case that there does exist a feasible solution for
+the procedure but that cannot be bounded.</p>
+<p>In this case, procedure SIMPLEX is able to find a feasible
+solution. Even in that case it might be possible that the solution
+cannot be bounded by the means of any entering and leaving
+variable.</p>
+<p>If this happens the solution would remain unbounded. In that
+case the procedure SIMPLEX returns “unbounded” and terminate the
+program. There would be no slack form of the program achieved in
+this case.</p>
+<p><i><b>L</b></i> <b>is infeasible:</b></p>
+Consider the case that there is no feasible solution for the
+provided problem. If this happens then the linear program is not
+feasible. The Procedure tries to find any feasible solution by
+applying pivoting but the solution would not be found. Now SIMPLEX
+procedure would not be able to find any feasible solution. Then the
+SIMPLEX would simple return “infeasible” and terminate the program.
+This is not possible to find any slack form in that case
+also.</div>
+<hr>
+<div class="answer"><i><b>L</b></i> <b>has an optimal solution
+which has finite objective value:</b> The third and the last case
+is that there is an optimal solution for the program. In that case,
+procedure finds an optimal solution for the program. If this
+happens then the objective function would have a finite value. The
+function would simply find the slack form of the linear program.
+The procedure returns this slack form and the program is
+terminated. Altogether it can be said that the fundamental theorem
+of linear programming ensures that it can be determined if the
+linear program has a feasible solution, a bounded solution or the
+program is infeasible.</div>
+<hr>
+<div class="answer">
+<p><b>Strict inequalities:</b></p>
+<p>A deep observance of the linear programming infers that the
+theory holds for only the non-strict inequalities. That means there
+exist, rules of the form:</p>
+<p><img src=
+"../imgs/b364d860965c4bf435be3740586fd7599b2ed614.png"></p>
+<p>Or</p>
+<p><img src=
+"../imgs/1e477d37f5668b50b5a88fca0797413561acb309.png"></p>
+<p>That means the right hand side of the expression might either be
+equal to, greater than or less than the left hand side.</p>
+<p>Strict inequality means that the right hand side of the equation
+would either be greater than or smaller than the left hand side of
+the expression.</p>
+<p>Term strict inequalities means that it will have the form
+as,</p>
+<p><img src=
+"../imgs/a3989cd9a36a7a0e826c7ab1fa552f5126b2d4ef.png"></p>
+<p>Or</p>
+<p><img src=
+"../imgs/ee7cb74b91a38e18c67d8d09cb2b48bfd94b3e32.png"></p>
+<p>This states that the value of d is strictly greater than or less
+than the value of term<img src=
+"../imgs/66755666b68546b49548f2b3339bf50c200d5586.png">. In a
+single term, it can be stated as:</p>
+<p><img src=
+"../imgs/8deb4c1ed18ee45a00294ddb245ee1fdd08bc481.png"></p>
+That is, the difference of the terms can never be equal to 0.</div>
+<hr>
+<div class="answer">
+<p><b>Effect of strict inequality on the linear program:</b></p>
+<p>In no scenario, strict inequality can be allowed for the linear
+programming. The reason is that if this is allowed for the linear
+programming, it is not possible to determine any limit for the
+value of term. That is, the value of term cannot be bounded between
+two limits. This makes the linear programming lose its basic
+objective which is to maximize the utilization of resources to any
+extreme limit.</p>
+<p>Consider the following example,</p>
+<p>Suppose there is a concrete instance of the linear programming
+as below:</p>
+<p>Maximize</p>
+<p><img src=
+"../imgs/539d6e33dadd2713a308ac541bb1566b8486435d.png"></p>
+<p>Subject to condition</p>
+<p><img src=
+"../imgs/2e2fd10670a2cc8422ca8eef92b8127140d591ae.png"></p>
+<p>The program suggests maximizing the value of <i>y</i> to a limit
+that is greater than 5.</p>
+<p>In this case, it is not known what limit the value <i>y</i> is
+to be maximized to. That means there might any number of values
+that the value of <i>y</i> could be maximized to. It creates a
+confusion that makes the linear programming not hold any
+longer.</p>
+<p>Now, it can be concluded that there will not be any value of
+<i>y</i> for which the maximum will be obtained and so there will
+not be any feasible solution for this consideration.</p>
+<p>So, the above discussion explains that the linear programming
+cannot be done with strict inequality allowed.</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Given linear program is</p>
+<p>maximize <img src=
+"../imgs/2ba91e0940ca3a8802ab13028fa716442407f93e.png"></p>
+<p>subject to</p>
+<p><img src=
+"../imgs/f4fad7f8f4f5e146be8c862731094064d7a21b03.png"></p>
+<p>The given linear program is in the standard form. When
+converting to slack form, use <img src=
+"../imgs/219315b7a83593551ab987851c77566a5a44245c.png"> to denote
+the slack variable associated with <i>i</i><sup>th</sup>
+inequality.</p>
+<p>The <i>i</i><sup>th</sup> constraint is given by</p>
+<p><img src="../imgs/23e6bd07f9e724aa041060ea19e91243df8c399d.png">
+along with the nonnegativity constraint <img src=
+"../imgs/f869028f17ad2dae30a537b522e9a499e67f15f7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The slack form of the given linear program (1) -(5) is</p>
+<p><img src=
+"../imgs/982a04189b50056b68c87368e454d1294cdae251.png"></p>
+<p>The basic solution of the linear program is <img src=
+"../imgs/524e895092a45075d08a193b0d1cd6a5bf61cd93.png"></p>
+<p>This solution violates the constraint (3) and it is not a
+feasible solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To determine whether a linear program has any feasible solution
+we, use <i><b>auxiliary linear program</b></i>.</p>
+<p>Using this auxiliary linear program, a slack is obtained for
+which the basic solution is feasible. The solution of the auxiliary
+linear program determines whether the initial linear program is
+feasible and if so, it provides a feasible solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Lemma:</b></p>
+<p>Let <img src=
+"../imgs/1ea8bd4fd8a6dcea4344d427778b8b9f917436f9.png">be the
+linear program in the standard form given by</p>
+<p>maximize <img src=
+"../imgs/a69929ad6abe6669c19e66999e9e62eb058e8a9b.png"></p>
+<p>subject to</p>
+<p><img src=
+"../imgs/aa78aeb005f40d94958cba2493833548857cbfb6.png"></p>
+<p>Let <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">be a new
+variable, and let <img src=
+"../imgs/824f67a7924f075764320abe4665a8ca7e1f7ddb.png">is the
+auxiliary linear program with <img src=
+"../imgs/4293b07cd40b30769f9117d598e66c856c8e50ff.png">variables
+given by</p>
+<p>maximize <img src=
+"../imgs/1e4a9aa8f2ae06757a57f69a1628cc58b0cdf086.png"></p>
+<p>subject to</p>
+<p><img src=
+"../imgs/8f295ae704b2067a4d213314b119f297efabf293.png"></p>
+<p>Then <img src=
+"../imgs/1ea8bd4fd8a6dcea4344d427778b8b9f917436f9.png">is feasible
+if and only if the optimal objective value of <img src=
+"../imgs/824f67a7924f075764320abe4665a8ca7e1f7ddb.png">is 0.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The auxiliary linear program equivalent to the linear program
+given in (1) -(5) is</p>
+<p>maximize <img src=
+"../imgs/2213f4cd90975f32445c64a2ba4b4da0880c4035.png"></p>
+<p>subject to</p>
+<p><img src=
+"../imgs/af2316ae130997e7b2a88e77420eedd259ac9535.png"></p>
+<p>The slack form auxiliary linear program given in (6) -(10)
+is</p>
+<p><img src=
+"../imgs/7f6074f98252ab0a64aa1bbbcf3612b2426d3573.png"></p>
+<p>The system of equations (11) -(14) has 3 equations and 5
+variables. Any settings of the variables <img src=
+"../imgs/2a6a4ab00a60bdee76960c89a4b2c54c10a03b0e.png">defines
+values for <img src=
+"../imgs/3c1ae505d3865c16ddb91ee8e4950fd8ed7b9ef7.png">; therefore,
+there is an infinite number of solutions to this system of
+equations. A solution is feasible if all of variables are
+nonnegative, and there can be an infinite number of feasible
+solutions. Find a basic solution to a system by setting all the
+non-basic variables to zero.</p>
+<p>The basic solution is</p>
+<p><img src=
+"../imgs/59faf46da65e0de0af3e82d04d5965427a264931.png"></p>
+<p>The basic solution has <img src=
+"../imgs/2600d30563a8083b7c739080b36ff4e302d4503c.png">which is not
+feasible for this auxiliary linear program.</p>
+<p>To perform the pivot operation, select <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png"> as the
+entering variable. Here <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">is selected
+as leaving variable, because it is the basic variable whose value
+in the basic solution is most negative. Switch the role of
+<img src="../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">and<img src="../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">.</p>
+<p>Solve the equation (13) to get the value of<img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">.</p>
+<p><img src=
+"../imgs/303bdfdabcf851dfb5afffd88df6820a0e888790.png"></p>
+<p>Solve the equations (12) and (14) to get <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png"> on right
+hand side, substitute <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">using (15)
+into equation (12) gives</p>
+<p><img src=
+"../imgs/234eff4736caf565e98deeea2f75fc7db8e4951a.png"></p>
+<p>equation (14) gives</p>
+<p><img src=
+"../imgs/ada832ae378df3ed87fffa762f9432bc8acc32f6.png"></p>
+<p>Objective function is given by</p>
+<p><img src=
+"../imgs/b4e8606014ebc931f3a264ed38ca7d9d81cd0384.png"></p>
+<p>Using the equations (15) -(18) we get the auxiliary linear
+program as</p>
+<p><img src=
+"../imgs/0940170e6eb1594ea97d964e2a1771fdb9ce986e.png"></p>
+<p>The basic solution to the system (19) -(22) is found by setting
+all the non-basic variables to zero. The basic solution is
+<img src="../imgs/92e3a12990e0ff444045661055babba10e0c986d.png">
+which is feasible. Precede further to find the optimal
+solution.</p>
+<p>Now reformulate the linear program (19) -(22) so that the basic
+solution has greater objective value. Select a non-basic variable
+<img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">whose
+coefficient in the objective function is positive and we increase
+the value <img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">as much as
+possible without violating any of the constraints. This variable
+<img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">becomes
+basic and some other variable becomes non-basic. Here choose
+<img src="../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">as
+the entering variable, because <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">should not
+be in basic variables. By degenerate pivot operation we make it as
+non-basic.</p>
+<p>Let the variable <img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">is selected
+as leaving variable.</p>
+<p>Therefore, switch the role of <img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">and<img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">. Solve the
+equation (20) to get<img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">.</p>
+<p><img src=
+"../imgs/8a0f7211993b8d728f1b741e11ff603bfaa61361.png"></p>
+<p>Solve equations (21) and (22) to get <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png"> on right
+hand side, substitute <img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">using (23).
+equation (21) gives</p>
+<p><img src=
+"../imgs/b2c05899446009a492a0d7ade53c04ab12172f43.png"></p>
+<p>equation (22) gives</p>
+<p><img src=
+"../imgs/0f3da03bdf1bff3d625ae6472e962b6098e2bbef.png"></p>
+<p>Objective function is given by</p>
+<p><img src=
+"../imgs/cf6b19f6f954cae17d0b64ec7925e4658d1d64e6.png"></p>
+<p>Using the equations (23) -(26) we get the auxiliary linear
+program as</p>
+<p><img src=
+"../imgs/d0a1fbc5885cbb2066357e239f5ec7599658721e.png"></p>
+<p>All the coefficients in the objective function are negative.
+Thus, the basic solution is obtained and this is the optimal
+solution.</p>
+<p>The basic solution to the system (27) is found by setting all
+the non-basic variables to zero. The basic solution is <img src=
+"../imgs/48b28e317ecb678c1d87eb41af3fd1d7e461da7a.png"> which is
+feasible. The objective value is 0. The slack form obtained is the
+final solution to the auxiliary problem.</p>
+<p>Note: From the <b>Lemma</b><img src=
+"../imgs/1ea8bd4fd8a6dcea4344d427778b8b9f917436f9.png">is feasible
+if and only if the optimal objective value of <img src=
+"../imgs/824f67a7924f075764320abe4665a8ca7e1f7ddb.png">is 0.</p>
+<p>The solution obtained has<img src=
+"../imgs/84bced129d7d61a1a5c7667c16962ed772758e6a.png">, the
+initial problem (1) -(5) is feasible and just remove it from the
+set of constraints. The objective function is formulated with
+appropriate substitutions made to include only non-basic
+variables.</p>
+<p><img src=
+"../imgs/8d3c9c0b826fa760eaf09eca6c3b9e6ed3ae3a21.png"></p>
+<p>Setting <img src=
+"../imgs/84bced129d7d61a1a5c7667c16962ed772758e6a.png">in (23)
+-(25) and simplifying, we get the objective function</p>
+<p><img src=
+"../imgs/b40a37d1d89cf00bf576025c5b43493c112c7675.png"></p>
+<p>The slack form is obtained as</p>
+<p><img src=
+"../imgs/9c5109313fbddfb3a0ce12539b04a7e12629e8cd.png"></p>
+<p>This slack form has feasible basic solution and can be solved by
+simplex method.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The system (28) -(31) has 3 equations and 5 variables. Any
+settings of the variables <img src=
+"../imgs/792a5ff9e6a2af384d9164c00564285ed7e95fbc.png">define
+values for<img src=
+"../imgs/78f66baa66fe127ed34d41c0bf57df1d8d7469a6.png">; therefore,
+there is an infinite number of solutions to this system of
+equations. A solution is feasible if all of variables are
+nonnegative, and there can be an infinite number of feasible
+solutions. Find a basic solution to a system by setting all the
+non-basic variables to zero.</p>
+<p>The basic solution is</p>
+<p><img src=
+"../imgs/c3db8ff2609ce90a341bfa09495578a9f5a370b7.png"></p>
+<p>The objective value is <img src=
+"../imgs/93c7fed2eb97531d757f8b3d4783e48d99360c68.png"></p>
+<p>Now reformulate the linear program so that the basic solution
+has greater objective value. Select a non-basic variable <img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">whose
+coefficient in the objective function is positive and we increase
+the value <img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">as much as
+possible without violating any of the constraints. This variable
+<img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">becomes
+basic and some other variable becomes non-basic.</p>
+</div>
+<hr>
+<div class="answer">The variable <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">is selected
+as it is the only variable with positive coefficient in the
+objective function.
+<p>Now, increase <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">up to
+<img src="../imgs/a1b6419992059e3a02c5b028ae2f1e3ef4cfaf63.png">as
+the basic variable <img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">also
+increases. If <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">increased
+above 5 then <img src=
+"../imgs/bd1f85bd4845d0e96a3ea5742f38d45e5abb6786.png">becomes
+negative.</p>
+<p>Now, increase <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">up to
+<img src="../imgs/a1b6419992059e3a02c5b028ae2f1e3ef4cfaf63.png">as
+the basic variable <img src=
+"../imgs/a01fcad42e9d30e4889aa0b11cb3f80494558453.png">also
+increases.</p>
+<p>The constraint (30) is the tightest constraint as it limits how
+much <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">can
+increased.</p>
+<p>Therefore, switch the role of <img src=
+"../imgs/bd1f85bd4845d0e96a3ea5742f38d45e5abb6786.png">and<img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">. Solve the
+equation (29) to get<img src=
+"../imgs/bd1f85bd4845d0e96a3ea5742f38d45e5abb6786.png">.</p>
+<p><img src=
+"../imgs/6f9aed342803a6fcd77253519645a4512f40e542.png"></p>
+<p>Solve equations (29) and (31) to get <img src=
+"../imgs/bd1f85bd4845d0e96a3ea5742f38d45e5abb6786.png"> on right
+hand side, substitute <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">using
+(32).</p>
+<p>equation (29) gives</p>
+<p><img src=
+"../imgs/141d69a3df50e1e32c67de754660773cde89be4d.png"></p>
+<p>equation (29) gives</p>
+<p><img src=
+"../imgs/4720a6b2ec1f789319f4df3989682ecd9790ce5a.png"></p>
+<p>Objective function is given by</p>
+<p><img src=
+"../imgs/0ded03a9e49fa2246e5d8119b0f528fe05f8f157.png"></p>
+<p>Using the equations (32) -(35) we get the linear program as</p>
+<p><img src=
+"../imgs/3a9cc6a6759343b7193498715328470012a8614e.png"></p>
+<p>All the coefficients in the objective function are negative.
+Thus, the basic solution is obtained and this is the optimal
+solution.</p>
+<p>The basic solution to the system (36) is found by setting all
+the non-basic variables to zero. The basic solution is <img src=
+"../imgs/8a06587a2af6a834e44bdbdc2707e86acc8e8539.png"> which is
+feasible.</p>
+<p>The objective value is <img src=
+"../imgs/0be2fcd9b36c5d1be112cab3a20fdaa9a53c18d2.png"></p>
+<p>Therefore, this solution <img src=
+"../imgs/8a06587a2af6a834e44bdbdc2707e86acc8e8539.png">is the basic
+solution to the linear program defined by (28) -(31).</p>
+<p>The objective value is <img src=
+"../imgs/7fcea2dc0e3751e3743adadce83e71bc326666fe.png"></p>
+<p>Hence, this solution <img src=
+"../imgs/8a06587a2af6a834e44bdbdc2707e86acc8e8539.png">is also the
+basic solution to the linear program defined by (1) -(5) which is
+the given linear program.</p>
+<p>The objective value is <img src=
+"../imgs/d9fcbece74e171b1ccbf46b1582deb5c342603b4.png"></p>
+<p>Therefore, the solution for the given linear program is given
+by</p>
+<p><b>Optimal basic solution is</b> <b><img src=
+"../imgs/71d77b18127053d011720e5e34e5da4532483610.png"></b> <b>and
+objective value is</b> <b><img src=
+"../imgs/09ec657d171b556d08df5c0b998ccf4fa0a2e7d3.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/df85119a36ca41f686f4c42ae8925fab2cdb732e.png">
+<hr>
+<img src="../imgs/9c5e7d25fa13efacb6907726a850f9abc13d6ac7.png">
+<hr>
+<img src="../imgs/d20746e38314edca112eee1e1457ea3bc6f7c3e3.png">
+<hr>
+<img src="../imgs/82451f6b8e39ec8add011e35b45c49037a1958e3.png">
+<hr>
+<img src="../imgs/a6eb3f9a3f6b77a94068c19977914c86d9506c36.png">
+<hr>
+<img src="../imgs/15851ad3167c37db2dfc6b5856aa7514f8b96e91.png">
+<hr>
+<img src="../imgs/b1e1d433e6524dc687f2b85df034392d48589ad9.png">
+<hr>
+<img src="../imgs/cfb5fb238c97a0c3d3decb1b7bfa7515dda7f82b.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+(no answer available from chegg)
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The provided linear program is</p>
+<p>Maximize <img src=
+"../imgs/2861ba47270a318f057a87e6d864bd602eeafa6f.png"></p>
+<p>subject to</p>
+<p><img src=
+"../imgs/4d1e4a98c86688156aedb9118c4f0c85456bb75a.png"></p>
+<p>The given linear program is in the standard form. When
+converting to slack form we use <img src=
+"../imgs/219315b7a83593551ab987851c77566a5a44245c.png"> to denote
+the slack variable associated with <i>i</i><sup>th</sup>
+inequality. The <i>i</i><sup>th</sup> constraint is given by
+<img src="../imgs/23e6bd07f9e724aa041060ea19e91243df8c399d.png">
+along with the nonnegativity constraint <img src=
+"../imgs/f869028f17ad2dae30a537b522e9a499e67f15f7.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The slack form of the given linear program (1)-(5) is</p>
+<p><img src=
+"../imgs/243e28155486d00617bf6cefbaf15687b80b1f1d.png"></p>
+<p>The basic solution of the linear program is <img src=
+"../imgs/be7aa18f7fa65676acccf6eb040cf4362f1830ef.png"></p>
+<p>This solution violates the constraint (2) and (3) and also it is
+not a feasible solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In order to determine whether a linear program has any feasible
+solution we will use auxiliary linear program.</p>
+<p>Using this auxiliary linear program, a slack form is obtained
+for which the basic solution is feasible. The solution of the
+auxiliary linear program determines whether the initial linear
+program is feasible and if so, it provides a feasible solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Lemma:</b></p>
+<p>Let <img src=
+"../imgs/1ea8bd4fd8a6dcea4344d427778b8b9f917436f9.png">be the
+linear program in the standard form given by</p>
+<p>maximize <img src=
+"../imgs/a69929ad6abe6669c19e66999e9e62eb058e8a9b.png"></p>
+<p>subject to</p>
+<p><img src=
+"../imgs/aa78aeb005f40d94958cba2493833548857cbfb6.png"></p>
+<p>Let <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">be a new
+variable, and let <img src=
+"../imgs/824f67a7924f075764320abe4665a8ca7e1f7ddb.png">is the
+auxiliary linear program with <img src=
+"../imgs/4293b07cd40b30769f9117d598e66c856c8e50ff.png">variables
+given by</p>
+<p>maximize <img src=
+"../imgs/1e4a9aa8f2ae06757a57f69a1628cc58b0cdf086.png"></p>
+<p>subject to</p>
+<p><img src=
+"../imgs/8f295ae704b2067a4d213314b119f297efabf293.png"></p>
+<p>Then <img src=
+"../imgs/1ea8bd4fd8a6dcea4344d427778b8b9f917436f9.png">is feasible
+if and only if the optimal objective value of <img src=
+"../imgs/824f67a7924f075764320abe4665a8ca7e1f7ddb.png">is 0.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The auxiliary linear program equivalent to the linear program
+given in (1)-(5) is</p>
+<p>maximize <img src=
+"../imgs/5516f511e5fea58f0d8de29ddf9ec9e99f434fd4.png"></p>
+<p>subject to</p>
+<p><img src=
+"../imgs/7c9cf69f16469db3f314e8f20ae0258235f1b7fc.png"></p>
+<p>The slack form auxiliary linear program given in (6)-(10) is</p>
+<p><img src=
+"../imgs/23ee250d5fe49780f74bb0f016208dc4a09a17bc.png"></p>
+<p>• The system of equations (11)-(14) has 3 equations and 5
+variables. Any settings of the variables <img src=
+"../imgs/2a6a4ab00a60bdee76960c89a4b2c54c10a03b0e.png">define
+values for<img src=
+"../imgs/3c1ae505d3865c16ddb91ee8e4950fd8ed7b9ef7.png">; therefore
+we have an infinite number of solutions to this system of
+equations.</p>
+<p>• A solution is feasible if all of variables are nonnegative,
+and there can be an infinite number of feasible solutions. We find
+a basic solution to a system by setting all the non-basic variables
+to zero. The basic solution is <img src=
+"../imgs/3a7fa7707480fd9eb0238a7ba766753db9d7049c.png"></p>
+<p>The basic solution has <img src=
+"../imgs/ed55c699605eaaa837f0ed5cf9532dd2936feba3.png">and<img src=
+"../imgs/2600d30563a8083b7c739080b36ff4e302d4503c.png"> which is
+not feasible for this auxiliary linear program.</p>
+<p>• To perform the pivot operation, select <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png"> as the
+entering variable. Here <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">is selected
+as leaving variable, because it is the basic variable whose value
+in the basic solution is most negative. Switch the role of
+<img src="../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">and<img src="../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">.</p>
+<p>• Solve the equation (13) to get the value of<img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">.</p>
+<p><img src=
+"../imgs/212fa1402da1da5f967a09f2ce5257a044d56837.png"></p>
+<p>• Solve equations (12) and (14) to get <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png"> on right
+hand side, substitute <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">using (15)
+Equation (12) gives</p>
+<p><img src=
+"../imgs/904fca085bcd7f7de9acbe48a4abd20dfdb1c5c7.png"></p>
+<p>Equation (14) gives</p>
+<p><img src=
+"../imgs/5b8ad1e285ee774053b44a2b264eaa753acf8cbd.png"></p>
+<p>Objective function is given by</p>
+<p><img src=
+"../imgs/df70ac4882e438c51322ab2fa8c3b29d9eeebdc8.png"></p>
+<p>Using the equations (15)-(18) we get the auxiliary linear
+program as</p>
+<p><img src=
+"../imgs/eeeeda7e53e79c8e23ee20af3f5a296ae6f4b25e.png"></p>
+<p>The basic solution to the system (19)-(22) is found by setting
+all the non-basic variables to zero. The basic solution is
+<img src="../imgs/89bd78a4abf03754eeb27f7de964c1c86bd20edc.png">
+which is feasible. We precede further to find the optimal
+solution.</p>
+</div>
+<hr>
+<div class="answer">
+<p>• Now reformulate the linear program (19)-(22) so that the basic
+solution has greater objective value. Select a non-basic variable
+<img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">whose
+coefficient in the objective function is positive and we increase
+the value <img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">as much as
+possible without violating any of the constraints.</p>
+<p>• This variable <img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">becomes
+basic and some other variable becomes non basic. Here we choose
+<img src="../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">as
+the entering variable, because <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">should not
+be in basic variables. By degenerate pivot operation we make it as
+non-basic.</p>
+<p>Let the variable <img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">is selected
+as leaving variable.</p>
+<p>Therefore switch the role of <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png">and<img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">. Solve the
+equation (20) to get<img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">.</p>
+<p><img src=
+"../imgs/5e11fd7b971ff61f46f9fc9492dd82dbdaa8a220.png"></p>
+<p>Solve equations (21) and (22) to get <img src=
+"../imgs/45593a9f57f949e9742251323bfaeace5a328fbb.png"> on right
+hand side, substitute <img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">using (23).
+Equation (21) gives</p>
+<p><img src=
+"../imgs/1a2a5b1d769047aebbe387dd05230df170156796.png"></p>
+<p>Equation (22) gives</p>
+<p><img src=
+"../imgs/68483338a858e5313ced64b34e9fb1ecaec153ee.png"></p>
+<p>Objective function is given by</p>
+<p><img src=
+"../imgs/90f4c8eb38cb9f6ea676f20d68dd825038c52f1c.png"></p>
+<p>Using the equations (23)-(26) we get the auxiliary linear
+program as</p>
+<p><img src=
+"../imgs/f2f14eadab2eef4a0e69490491540b83f099f27c.png"></p>
+<p>All the coefficients in the objective function are negative.
+Thus, the basic solution is obtained and this is the optimal
+solution.</p>
+<p>• The basic solution to the system (27) is found by setting all
+the non-basic variables to zero.</p>
+<p>• The basic solution is <img src=
+"../imgs/428cf573f79ba7462dacdee8fac54b0068e7ed3a.png"> which is
+feasible. The objective value is 0. The slack form obtained is the
+final solution to the auxiliary problem.</p>
+<p>Note: From the <b>Lemma</b><img src=
+"../imgs/1ea8bd4fd8a6dcea4344d427778b8b9f917436f9.png">is feasible
+if and only if the optimal objective value of <img src=
+"../imgs/824f67a7924f075764320abe4665a8ca7e1f7ddb.png">is 0.</p>
+<p>The solution obtained has<img src=
+"../imgs/84bced129d7d61a1a5c7667c16962ed772758e6a.png">, the
+initial problem (1)-(5) is feasible and we can just remove it from
+the set of constraints. The objective function is formulated with
+appropriate substitutions made to include only non-basic
+variables.</p>
+<p><img src=
+"../imgs/3c07313c66463bb543a224841f9763fe7db2708e.png"></p>
+<p>Setting <img src=
+"../imgs/84bced129d7d61a1a5c7667c16962ed772758e6a.png">and
+simplifying, we get the objective function</p>
+<p><img src=
+"../imgs/37de2cb24215d51d2ed2e354c74535366df07f4f.png"></p>
+<p>Also set <img src=
+"../imgs/84bced129d7d61a1a5c7667c16962ed772758e6a.png">in the
+equations (23)-(25) to obtain the slack form as</p>
+<p><img src=
+"../imgs/91b658567bdac52fe0e01b861cb6e9967a57af10.png"></p>
+<p>This slack form has feasible basic solution and now we can solve
+it by simplex method.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The system (28)-(31) has 3 equations and 5 variables. Any
+settings of the variables <img src=
+"../imgs/792a5ff9e6a2af384d9164c00564285ed7e95fbc.png">define
+values for<img src=
+"../imgs/78f66baa66fe127ed34d41c0bf57df1d8d7469a6.png">; therefore
+we have an infinite number of solutions</p>
+</div>
+<hr>
+<div class="answer">to this system of equations. A solution is
+feasible if all of variables are nonnegative, and there can be an
+infinite number of feasible solutions. We find a basic solution to
+a system by setting all the non-basic variables to zero. The basic
+solution is
+<p><img src=
+"../imgs/87ee9def84add6df42fab95f54df6f33e81af157.png"></p>
+<p>The objective value is <img src=
+"../imgs/b5574aa3f6363efb2133b1927e2efc46365c5b8d.png"></p>
+<p>Now, reformulate the linear program so that the basic solution
+has greater objective value. Select a non-basic variable <img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">whose
+coefficient in the objective function is positive and we increase
+the value <img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">as much as
+possible without violating any of the constraints. This variable
+<img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">becomes
+basic and some other variable becomes non basic.</p>
+<p>The variable <img src=
+"../imgs/b0c97682a3716dba02e8ffc8d3a99164ddfa1fad.png">is selected
+as it is has positive coefficient in the objective function.</p>
+<p>If <img src=
+"../imgs/b0c97682a3716dba02e8ffc8d3a99164ddfa1fad.png">increased
+above 3 then <img src=
+"../imgs/c06eff37b31d5eb81c67b40ebe1e4af803598df8.png">becomes
+negative.</p>
+<p>If <img src=
+"../imgs/b0c97682a3716dba02e8ffc8d3a99164ddfa1fad.png">increased
+above 1 then <img src=
+"../imgs/bd1f85bd4845d0e96a3ea5742f38d45e5abb6786.png">becomes
+negative.</p>
+<p>If <img src=
+"../imgs/b0c97682a3716dba02e8ffc8d3a99164ddfa1fad.png">increased
+above <img src=
+"../imgs/6aea17a75375f94e61a73b993ce26a203977b048.png"> then
+<img src=
+"../imgs/a01fcad42e9d30e4889aa0b11cb3f80494558453.png">becomes
+negative.</p>
+<p>The constraint (31) is the tightest constraint as it limits how
+much <img src=
+"../imgs/b0c97682a3716dba02e8ffc8d3a99164ddfa1fad.png">can
+increased.</p>
+<p>Therefore switch the role of <img src=
+"../imgs/b0c97682a3716dba02e8ffc8d3a99164ddfa1fad.png">and<img src=
+"../imgs/a01fcad42e9d30e4889aa0b11cb3f80494558453.png">. Solve the
+equation (31) to get<img src=
+"../imgs/b0c97682a3716dba02e8ffc8d3a99164ddfa1fad.png">.</p>
+<p><img src=
+"../imgs/91ba2c3dc1390ca9d6428748f946053c2c802f2e.png"></p>
+<p>Solve equations (29) and (30) to get <img src=
+"../imgs/a01fcad42e9d30e4889aa0b11cb3f80494558453.png"> on right
+hand side, substitute <img src=
+"../imgs/b0c97682a3716dba02e8ffc8d3a99164ddfa1fad.png">using
+(32).</p>
+<p>Equation (29) gives</p>
+<p><img src=
+"../imgs/08017ba5a003bcc4841c2c69d298b52356b8c45b.png"></p>
+<p>Equation (30) gives</p>
+<p><img src=
+"../imgs/dab1e05606a5e19335a4170d3597bcee138ed1aa.png"></p>
+<p>Objective function is given by</p>
+<p><img src=
+"../imgs/f6543d0535d055c2319aeb485717472b66dfee57.png"></p>
+<p>Using the equations (32)-(35) we get the linear program as</p>
+<p><img src=
+"../imgs/87b8e6ea8631e3debd6b4f01862578486821e1ab.png"></p>
+<p>We find a basic solution to a system by setting all the
+non-basic variables to zero. The basic solution is</p>
+<p><img src=
+"../imgs/dd89e1523cb8c94b757cee85caaa5615fb6055f5.png"></p>
+<p>The objective value is <img src=
+"../imgs/669eca7864f951843d9d5e37dfb303b0230463b3.png"></p>
+<p>Now again reformulate the linear program so that the basic
+solution has greater objective value. Select a non-basic variable
+<img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">whose
+coefficient in the objective function is positive and we increase
+the value <img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">as much as
+possible without violating any of the constraints. This variable
+<img src=
+"../imgs/ce7cb1e306e5caf625e4909bd1fa49c5f22afc02.png">becomes
+basic and some other variable becomes non basic.</p>
+<p>The variable <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">is selected
+as it is the only variable with positive coefficient in the
+objective function.</p>
+<p>We can increase <img src=
+"../imgs/1f8241dddc5168d652e2936cff15ba73accf45cc.png">up
+to<img src="../imgs/a1b6419992059e3a02c5b028ae2f1e3ef4cfaf63.png">,
+the basic variables <img src=
+"../imgs/4d9db2f14c47ccf5328d9ef32b492f01243cb18a.png">also
+increases to<img src=
+"../imgs/a1b6419992059e3a02c5b028ae2f1e3ef4cfaf63.png">.</p>
+<p>Hence the given linear programming problem given by (1)-(5) is
+unbounded.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Variation of Dual and Primal</b></p>
+<p>Linear programming is used to find out the best outcome from a
+given number of equations. In linear programming, a list of
+requirements is considered.</p>
+<p>For better understanding of the question, a shallow look at
+primal and dual of the linear programming would be required. In the
+linear program, every primal has its corresponding dual.</p>
+<p>It is shown below,</p>
+<p><b>Primal LP</b> <i><b>(P)</b></i> <b>:</b></p>
+<p>Find values for the <i>n</i> variables<img src=
+"../imgs/f4a333912ef44e22189c5a397f82491854585227.png">:</p>
+<p>Maximize</p>
+<p><img src="../imgs/c7f95d4502c2e9c5f29b3d3444a628ead189c0af.png">
+<b>… … (1)</b></p>
+<p>Subject to condition</p>
+<p><img src="../imgs/4857b161ccdc2cf2b0bff8a1e6bdaab0d5f92ecd.png">
+for <i>i</i>=1, 2… <i>m</i>. <b>… … (2)</b></p>
+<p><img src="../imgs/36636afeb13ebaa66ac38b1f178173a591fe6a21.png">
+for <i>j</i>=1, 2… <i>n</i>. <b>… … (3)</b></p>
+<p>Here, equation <b>(1)</b> is the objective function and
+equations <b>(2)</b> and <b>(3)</b> are the constraints for the
+objective.</p>
+<p><b>Dual LP</b> <i><b>(D)</b></i> <b>:</b></p>
+<p>Find values for the <i>m</i> variables<img src=
+"../imgs/7958ae0bc7ae8140064487e50ac78daa430fa64f.png">:</p>
+<p>Minimize</p>
+<p><img src="../imgs/39d9a0908319ad45d766cccb2dc30eca23680482.png">
+<b>… … (4)</b></p>
+<p>Subject to condition</p>
+<p><img src="../imgs/7487a6eccce4a2c08ba653e0b31917286c2302bf.png">
+for <i>j</i>= 1, 2… <i>n</i>. <b>… … (5)</b></p>
+<img src="../imgs/25bbcbb6dab06051e9adcf8bfbf4e57cb18182f2.png">
+for <i>i</i>=1, 2… <i>m</i>. <b>… … (6)</b></div>
+<hr>
+<div class="answer">
+<p>Here in the problem, a 1-variable linear program is given in
+which there is a primal <i>P</i>. It also has a dual <i>D</i>.</p>
+<p><b>Primal:</b></p>
+<p>Consider the primal <i>P</i> given below:</p>
+<p>Maximize</p>
+<p><img src=
+"../imgs/01573f153b67087a3d0bc68375d273cf31d30438.png"></p>
+<p>Subject to constraint</p>
+<p><img src=
+"../imgs/14fdbe034b579aa7228c01f1238746705ff6650c.png"></p>
+<p><img src=
+"../imgs/fbe86ae9b9b40b5611b2e8feafddc34292781071.png"></p>
+<p>Where <i>r, s, t</i> are arbitrary real numbers. And <i>x</i> is
+the new defined variable for dual.</p>
+<p><b>Dual of P:</b></p>
+<p>The dual D of this variable program is given below:</p>
+<p>Minimize</p>
+<p><img src=
+"../imgs/ba866e6458497a1f0942233b516c1a63af013852.png"></p>
+<p>Subject to constraint</p>
+<p><img src=
+"../imgs/16cee1346e01c447e5c799046edddf1b4acb1632.png"></p>
+<p><img src=
+"../imgs/22191b0cd29ae1ea4acd7e0552a582454ef66732.png"></p>
+<p>Now, there are three kinds of the solution that can be found for
+the concerned linear programs. They are discussed as below:</p>
+<p><b>Optimal solution:</b> Optimal solution is a solution which
+provides the best suited solution for the equations. When there is
+more than 1 solution of linear programming, then the best solution
+as per requirement is the optimal solution.</p>
+<p><b>Feasible solution:</b> In linear programming, a feasible
+solution is a solution which provides a single or infinite number
+of solutions. In this case, many of the conditions are satisfied
+which provides optimal solution.</p>
+<p><b>Infeasible solution:</b> In linear programming, an infeasible
+solution is a solution which does not have any solution. In this
+case, the equations provide a parallel line.</p>
+<p>There are certain implications of the feasibility of the primal
+and the dual form of the linear program.</p>
+<p>1. If there exists a feasible solution for the primal form of
+the program and that is <img src=
+"../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png">and for the
+dual form that is<img src=
+"../imgs/07c136328e5d7141536dbc5f9ace6acd1a508814.png">. Then</p>
+<p><img src=
+"../imgs/e311f50545cb1ee56ef9e9e5f0af1ef0caf0ff5c.png"></p>
+<p>2. If there exists a feasible solution for the primal form of
+the program, that is <img src=
+"../imgs/8f8469678d35100f0af3bcd63c133bae0d4968f0.png"> but not for
+the dual form of the program. Then</p>
+<p><img src=
+"../imgs/4d9c8629387a250afa43e1c5270f717c13ed1520.png"></p>
+<p>That means</p>
+<p><img src=
+"../imgs/75f6f35c564c8c7468c4ddabaab0e30e6ae3e2df.png"></p>
+<p>3. If there exists a feasible solution for the dual form of the
+program, that is <img src=
+"../imgs/07c136328e5d7141536dbc5f9ace6acd1a508814.png"> but not for
+the dual form of the program. Then</p>
+<p><img src=
+"../imgs/ba211e64ad7ec5556b21f804ad243836e10ee86a.png"></p>
+<p>That means</p>
+<p><img src=
+"../imgs/62663702f93a8e04f5d332ac68cc209f92cddbfc.png"></p>
+<p>4. There are no feasible solutions to either of the primal or
+the dual form of the linear form.</p>
+<p>Now, the condition is to be asserted on primal and dual for
+various values of <i>r</i>, <i>s</i> and <i>t</i>.</p>
+<p><b>1.</b> Both primal and the dual have optimal solutions with
+the finite objective values. For this to happen both primal and
+dual have feasible solution. Moreover, keeping the previously
+discussed implications in mind the value of objective function of
+the primal form would be equal to the objective function of the
+dual form of the linear program.</p>
+<p>To find the feasible solution for both of the primal and the
+dual form, any of these values can be used,</p>
+<p><b>a</b>.<img src=
+"../imgs/4529777067c91b1663b405a95921253e698994d4.png">and<img src=
+"../imgs/72675d5ad2b04ccd2691c47e1b010d49e4f3c5e6.png">.</p>
+<p><b>b</b>. <img src=
+"../imgs/e5d67741f581f72ced287e26fef37d93904255c9.png">and<img src=
+"../imgs/72675d5ad2b04ccd2691c47e1b010d49e4f3c5e6.png">.</p>
+<p><b>c.</b> <img src=
+"../imgs/ab18b349b29175c5c3610ecbaa1537aacdafaddd.png">and
+<img src="../imgs/23232c6465ba97dc8bd449183581b54f055ed50e.png">
+has an arbitrary value.</p>
+<p>In case <b>a</b>, the value of <i>r</i> is taken as less than 0,
+value of <i>s</i> is equal to or greater than 0 and value of
+<i>t</i> is either equal to or greater than 0. This condition
+provides the optimal solution and SIMPLEX returns “feasible”.</p>
+<p>In case <b>b</b>, the value of <i>r</i> is made equal to 0,
+value of <i>s</i> can be either greater than or equal to zero and
+the value of <i>t</i> remains same as that in case <b>a</b>. In
+this, the SIMPLEX returns “feasible”.</p>
+<p>In case <b>c</b>, the value of <i>r</i> is made greater than 0,
+the value of <i>s</i> remains same as in case <b>b</b> and value of
+<i>t</i> can take any of the arbitrary values. The value returned
+by SIMPLEX is “feasible”.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2.</b> Primal <i>P</i> is feasible, but dual <i>D</i> is
+infeasible.</p>
+<p>In this case the value of the objective function of the primal
+function would tend to negativity.</p>
+<p>It is possible in two ways as,</p>
+<p><b>a</b>. <img src=
+"../imgs/17ee20dcfd60aa59770cd5172c1a68581058e42b.png">and<img src=
+"../imgs/71a89118c6b80b0f49584f6c95ddde30b54c0869.png">.</p>
+<p><b>b.</b> <img src=
+"../imgs/b7e192d91f5feace59c1fe5862fc9e64179f117d.png">and<img src=
+"../imgs/71a89118c6b80b0f49584f6c95ddde30b54c0869.png">.</p>
+<p>In both ways, <b>a</b> and <b>b</b><i>,</i> the value of
+<i>r</i> is taken either 0 or greater than 0 or less than 0. The
+value of <i>s</i> is less than or equal to zero and the value of
+<i>t</i> is taken greater than 0. These cases make the program
+<i>P</i> as feasible and it is dual <i>D</i> as infeasible.</p>
+<p><b>3.</b> Dual <i>D</i> is feasible but primal <i>P</i> is
+infeasible.</p>
+<p>In this case the value of the objective function of the dual
+form must tend to infinity.</p>
+<p>This condition is possible only when</p>
+<p><img src=
+"../imgs/d4e91d895f0d44071ddcb07ffb92397746cba7c1.png">, and</p>
+<p><img src=
+"../imgs/ced9a1aeab126c1dff7f27c4c4e2bb2b60d89ef6.png"></p>
+<p>In the condition given above, the value of <i>r</i> is taken as
+either equal to or greater than 0 and the value of is taken as less
+than 0. This condition will provide infeasible solution for
+<i>P</i> and feasible solution for its dual <i>D</i>.</p>
+<p><b>4.</b> Neither primal <i>P</i> nor the dual <i>D</i> is
+feasible. It is possible when <img src=
+"../imgs/f07fe829aa0625666bcf75ac1ddf666810e31424.png">
+and<img src="../imgs/71a89118c6b80b0f49584f6c95ddde30b54c0869.png">.</p>
+<p>When the value of <i>r</i> is made equal to zero, the
+substitution of the value in the respective objective function and
+the constraints would yield the values of <i>s</i> and
+<i>t</i>.</p>
+<p>Now the value of <i>s</i> is less than 0 and value of <i>t</i>
+as greater than 0.</p>
+<p>This leads to providing infeasible solution for program <i>P</i>
+and its dual <i>D</i>.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

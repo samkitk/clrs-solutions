@@ -1,0 +1,391 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 30.3</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>To implement an Iterative-FFT algorithm computes DFT. Look at
+figure 1.</p>
+<p><img src="../imgs/fd0ca795aa3b956d43bf0c23c8e6121f7073a822.png"
+alt="Picture 1"></p>
+</div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer"></div>
+<hr>
+<div class="answer">
+<p><b>Steps to implementthe Iterative-FFT algorithm:</b></p>
+<p><b>In the above given vector, n=8. Values are :
+(0,2,3,-1,4,5,7,9)</b></p>
+<p><b>(k)</b> <sub>10</sub> <b>(k)</b> <sub>2</sub> <b>(r</b>
+<sub>8</sub> <b>(k))</b> <sub>2</sub> <b>(r</b> <sub>8</sub>
+<b>(k))</b> <sub>10</sub></p>
+<p>0 0000 0000 0 = 0 * 2<sup>4</sup></p>
+<p>2 0010 0100 4 = 1 * 2<sup>2</sup></p>
+<p>3 0011 1100 12 = 3 * 2<sup>2</sup></p>
+<p>-1 1001 1100 -4 = -1 * 2<sup>2</sup></p>
+<p>4 0100 0010 2 = 2 * 2<sup>0</sup></p>
+<p>5 0101 1010 10 = 5 * 2<sup>1</sup></p>
+<p>7 0111 1110 14 = 7 * 2<sup>1</sup></p>
+<p>9 1001 1001 9 = 9 * 2<sup>0</sup></p>
+<p><b>Table 1 : Factorization of given vector
+(0,2,3,-1,4,5,7,9)</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><img src="../imgs/c3e5d4975eaa014f2f2e606684675428a9a1d357.png"
+alt="Picture 13">To implement an FFT algorithm with the
+bit-reversal permutation occurring ath the end takes 8 steps. Look
+at figure 1.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Algorithm to implementthe bit-reversal permutation occurring
+at the end:</b></p>
+<p>Iterative-FFT(a)</p>
+<p>1. Bit-Reverse -Copy(a, A)</p>
+<p>2. n = a.length //n is a power of 2</p>
+<p>3. <i><b>for</b></i> s= lg n to 1 //for bit-reversal permutation
+occurring at the end</p>
+<p>4. m=2<sup>s</sup></p>
+<p>5. ω<sub>m</sub> = 2<sup>xi/m</sup></p>
+<p>6. <i><b>for</b></i> k= 0 to n-1 by m</p>
+<p>7. ω = 1</p>
+<p>8. <i><b>for</b></i> j=0 to m/2-1</p>
+<p>9. t = ω A[k + j + m/2]</p>
+<p>10. u = A[k + j]</p>
+<p>11. A[k + j] = u + t</p>
+<p>12. A[k + j + m/2] = u - t</p>
+<p>13. ω = ω ω<sub>m</sub></p>
+<p>14. Return A</p>
+<p>Call the function Bit-Reverse-Copy and its algorithm is given as
+:</p>
+<p>1. Bit-Reverse -Copy(a, A)</p>
+<p>2. n = a.length //n is a power of 2</p>
+<p>3. <i><b>for</b></i> k = 0 to n-1</p>
+<p>4. A[rev (k)] = a<sub>k</sub></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>The twiddle factors computed by the ITERATIVE-FFT will depend on
+the innermost for loop.</p>
+<p>The number of iterations of the for loop that is from k=0 to n-1
+by m are n/m. For each m/2 iterations, that are computed by running
+the for loop from j=0 to m/2-1 the number of twiddle factors are:
+<img src=
+"../imgs/0ded2c63a30cf20334324f45418356f10c54628c.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p>If the twiddle factors are computed before then there will be no
+requirement of any computation.</p>
+<p>The number of twiddle factors that will show up are n/2 so those
+computed by us are m/2=<img src=
+"../imgs/671af59d7d050296908b25dfcf3a131cbb4ba922.png"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Butterfly Operations</b></p>
+<p>A butterfly operation is used with the context of the fast
+Fourier transform which perform the computation by producing the
+larger DFT (that is the Discrete Fourier Transform) by the
+combination of the smaller DFTs. It is called so as its DFD (data
+flow diagram) has the shape of butterfly in the case of
+radix-2.</p>
+<p>It is mostly used in the case of the algorithm called as
+Cooley–Tukey FFT algorithm, in this algorithm the DFD is breakdown
+recursively into the size <img src=
+"../imgs/275d0671cd019db521109433bca6444ec207673a.png"> into the
+<i>r</i> smaller transform of the size <i>c</i> and where <i>r</i>
+is the radix of the transform.</p>
+<p>And in the next step the smaller DFDs are combined with the help
+of <i>r</i> butterflies which are of size <i>r</i> (which
+operations are performed <i>c</i> times) which are multiplied by
+the root of unity termed as twiddle factor.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The butterfly circuit of a fast Fourier-Transform comprises of
+various stages:</p>
+<p><b>1.</b> There is a memory stage where output of the
+butterfly-operation is received and the input is supplied.</p>
+<p><b>2.</b> There is a block for floating point computation which
+receives the input of the butterfly-operation from the stage
+operation and where the various operation sequences such as
+addition and multiplication are performed.</p>
+<p><b>3.</b> There is a forwarding circuit.</p>
+<p>a. The multiplier output signal is received and the input
+signals adder is applied for at least one adder.</p>
+<b>b</b>. The multiplier output signal is received using at least
+one adder to the input port of the second adder.</div>
+<hr>
+<div class="answer">
+<p>The recursive procedure of FFT, in the form of tree is shown
+below:</p>
+<p><img src="../imgs/855902f1dd2adb675d0a8a48e0a7e802d2882d00.png"
+alt="F:\Tiffs\2254.tif"></p>
+<p>The leaf nodes given in the tree given above will specify inputs
+of FFT in parallel. The root node has all the inputs and they are
+divided in such a manner that consecutive inputs enter into left
+child and right child.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The representation of the FFT in parallel form is given
+below:</p>
+<p><img src="../imgs/6629d9acb1236e2fb1cf077a22f9ae4e06c29035.png"
+alt="F:\Tiffs\2254.tif"></p>
+<p>In the figure given above, the outputs of the adders at stage 1
+become the inputs of the adders at stage 2. In FFT adders, all the
+outputs of adders at previous stage become inputs of current adder
+and twiddle factor is also there.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In order to identify a failed adder in the circuit which always
+produces a zero output, the circuit has been checked in order of
+decreasing stages. For two inputs <i>x</i> and <i>y</i>, with a
+twiddle factor of <i>t</i>, the outputs provided by an adder are
+<img src="../imgs/9a260777076157d1eebc6a74372038cbcf539256.png">
+and<img src=
+"../imgs/ec396ad4337323290655e866fda8950f01721a5c.png">. As the
+changes made by twiddle factor is very low, outputs can be observed
+by removing twiddle factor.</p>
+<p>For an input of 1, 1, 1, 1, 0, 0, 0 and 0, the outputs provided
+by adders at stage 1 are 1, 1, 1, 1, 1, 1, 1 and 1. At stage 2, the
+outputs become 1, 0, 1, 0, 1, 0, 1 and 0. So, at stage 1, every
+adder provides output of 1 from every wire and at stage 2 it
+provides output of 1 and 0. Here, corresponding outputs are
+considered which are 1, 0, 1, 0, 0, 0, 0and 0.</p>
+<p>Consider the adders from top to bottom and then left to right as
+adder 1, adder 2, and adder 3 ……… adder 12. The fault adder found
+easily by looking at obtained outputs. For this, variation in
+inputs are made so that the output provided by any wire of the
+adder is 1, it s because the fault adder make output of 0 in both
+cases. A table that showing change in output and on the basis of
+them identification of fault adder is given below:</p>
+<table border="1" style="border-collapse:collapse;">
+<tr>
+<td>
+<p><b>Change in output wires</b></p>
+</td>
+<td>
+<p><b>Fault adder</b></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>0</sub> and <i>y</i><sub>1</sub></p>
+</td>
+<td>
+<p>Adder 1</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>2</sub> and <i>y</i><sub>3</sub></p>
+</td>
+<td>
+<p>Adder 2</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>4</sub> and <i>y</i><sub>5</sub></p>
+</td>
+<td>
+<p>Adder 3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>6</sub> and <i>y</i><sub>7</sub></p>
+</td>
+<td>
+<p>Adder 4</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>0</sub> and <i>y</i><sub>2</sub></p>
+</td>
+<td>
+<p>Adder 5</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>1</sub> and <i>y</i><sub>3</sub></p>
+</td>
+<td>
+<p>Adder 6</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>4</sub> and <i>y</i><sub>6</sub></p>
+</td>
+<td>
+<p>Adder 7</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>5</sub> and <i>y</i><sub>7</sub></p>
+</td>
+<td>
+<p>Adder 8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>0</sub> and <i>y</i><sub>4</sub></p>
+</td>
+<td>
+<p>Adder 9</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>1</sub> and <i>y</i><sub>5</sub></p>
+</td>
+<td>
+<p>Adder 10</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>2</sub> and <i>y</i><sub>6</sub></p>
+</td>
+<td>
+<p>Adder 11</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><i>y</i> <sub>3</sub> and <i>y</i><sub>7</sub></p>
+</td>
+<td>
+<p>Adder 12</p>
+</td>
+</tr>
+</table>
+<p>The method that has been followed above is an efficient method
+because on the basis of the outputs the default adder can be
+detected. As the approach used here starts from the output, this
+makes the approach more efficient. It is because the user is always
+concerns with the output provided by the adder.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        

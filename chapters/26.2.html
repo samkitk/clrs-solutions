@@ -1,0 +1,1114 @@
+<!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>Chapter 26.2</title>
+          <link rel="stylesheet" href="../style.css">
+          
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload=function(){
+      setTimeout(function(){
+        if(screen.width<680){
+          var wrapper=document.getElementById('wrapper');
+          var zoom=screen.width/680;
+          wrapper.style.zoom = zoom;
+          document.body.style.width=screen.width+'px';
+        }
+      });
+    };
+  </script>
+
+        </head>
+        <body>
+            <div id="wrapper">
+                
+        <div class="problem">
+            <div class="problem-title" id="problem-1E">
+                <a href="#problem-1E">1E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Flow network is the network which shows the automation of
+assembly line in the company from the warehouse to the
+manufacturing location and vice versa. In this network the raw
+material go to the destination through various stages to be a
+finished product.</p>
+<p>The flow network has two basic terms that is flow of data and
+the capacity of the node or intermediate location.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the equation:</p>
+<p><img src="../imgs/9d445fcf8d09fa0b2d9370822bcab7c86fa09f83.png">
+… … (1)</p>
+<p>In the above equation,</p>
+<p>The functions<img src=
+"../imgs/8cc49bed65c1e68a641948a219478fed3f75682d.png">and<img src=
+"../imgs/e1650a02646ea4d8798b7fbce45d5bde1b3984b8.png">is
+representing the flow from first vertex to the second<i>.</i></p>
+<p>The vertex set <img src=
+"../imgs/f07ae084f38cc2405a43c8d8516ad42a2ade2baf.png">is the set
+of vertices towards which there is an edge from <i>s</i>.</p>
+Vertex set <img src=
+"../imgs/9dbb3cd1519ecb10cb1786c41a2dd8181b166ea2.png">is the set
+of vertices from which there is an edge to <i>s</i>.</div>
+<hr>
+<div class="answer">
+<p>So the terms in the equation representing the sum of flow of
+edges starting from the one vertex to other in the network flow and
+residual network.</p>
+<p>The terms in the equation can be edited as:</p>
+<p>The first term can be summed over <i>V</i> because <img src=
+"../imgs/679412d04d0f6156ef16265c7536e27d7f45f8bb.png"> for
+<img src="../imgs/753bb797b3a4cd89ae796735013f15c3a5943d9b.png">
+will be zero,</p>
+<p>The second term can be summed over <i>V</i> because <img src=
+"../imgs/3c2306d505ae3db17dca064f95eaff3637faf340.png"> for
+<img src="../imgs/8817fbe94bfbb01a50c24242fc2e9ca0c25e1f2b.png">
+will be zero.</p>
+<p>The third and the fourth term can be summed over <i>V</i> since
+<img src="../imgs/4d92a5ddab05ce8a2aca53769612eb6b00f0a118.png">
+would be equal to <i>V</i></p>
+<p>Hence equation (1) can be composed as:</p>
+<p><img src=
+"../imgs/72344310a0a382c6a6337016f6a1df230fafe7fe.png"></p>
+<p><b>Hence, proved</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-2E">
+                <a href="#problem-2E">2E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="../imgs/818a3277950064ed819181e724feafe17629909e.png">
+<hr>
+<img src="../imgs/856edef6672d8e0d9d2d636715916697e17d5d2e.png">
+<hr>
+<img src="../imgs/f30b0102fcfd9ff964c45265c7bba3751eb1d277.png">
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-3E">
+                <a href="#problem-3E">3E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Execution of the Edmonds-Karp algorithm</b></p>
+<p>Edmond-Karp algorithm is the better version of Ford-Fulkerson
+algorithm and is used to compute the maximum flow in a network. The
+Edmond-Karp algorithm is same as the Ford-Fulkerson algorithm,
+except that Breadth first search (BFS) algorithm is used in the
+Edmond-Karp algorithm to find the augment path.</p>
+<p><b>The following is the Edmond-Karp algorithm:</b></p>
+<p>EDMONDS-KARP(<i>G,s,t</i>)</p>
+<p>1 <b>for</b> each edge (<i>u,v</i>) <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png"><i>G.E</i></p>
+<p>2 (<i>u,v</i>).<i>f</i> = 0</p>
+<p>//Breadth first search(BFS) is used to find the path
+<i>p</i></p>
+<p>3 <b>while</b> there is a path <i>p</i> from <i>s</i> to
+<i>t</i> in the residual network</p>
+<p>4 <i>c</i><sub>f</sub> (<i>p</i>)= min { <i>c</i><sub>f</sub>
+(<i>u,v</i>): (<i>u,v</i>)is in <i>p</i>}</p>
+<p>5 <b>for</b> each edge (<i>u,v</i>) in <i>p</i></p>
+<p>6 <b>if</b> (<i>u,v</i>) <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>E</i></p>
+<p>7 (<i>u,v</i>).<i>f</i> = (<i>u,v</i>).<i>f</i> +
+<i>c</i><sub>f</sub> (<i>p</i>)</p>
+<p>8 <b>else</b> (<i>v,u</i>).<i>f</i> = (<i>v,u</i>).<i>f</i> +
+<i>c</i><sub>f</sub> (<i>p</i>)</p>
+<p>• The EDMONDS-KARP algorithm sets the flow of all the edges to 0
+in line 1-2.</p>
+<p>• The Edmond-Karp algorithm uses the Breadth first search (BFS)
+algorithm to find the augment path in line 3. That is, in the
+Edmond-Karp algorithm, the augment path from source to sink is the
+path with minimum number of edges in the residual network.</p>
+<p>• If there exist a path <i>p</i> in the residual network
+<i>G</i><sub>f</sub> , then the minimum capacity of the path
+<i>p</i> is calculated in line 4 using the following formula:</p>
+<p><img src=
+"../imgs/4ce4f05fea4dabb30076f7df19cf66e7f241e34c.png"></p>
+<p>• Each edge in the path <i>p</i> is then augmented by <img src=
+"../imgs/d6c274e54334fbc7ce9a2c44ec15617ba9db1be4.png">and then the
+residual graph is updated in the line 6- 8.</p>
+<p>• The above steps are repeated until there is a path <i>p</i> in
+<i>G</i><sub>f</sub>.</p>
+</div>
+<hr>
+<div class="answer">
+<p>Consider the figure 26.1(a) in the textbook and execute the
+Edmond-Karp algorithm as follows:</p>
+<p><b>1.</b> The path <img src=
+"../imgs/cc609fe111c760f876937144022e3d2c019a817f.png"> is the path
+with minimum edges. Then the minimum capacity of path <i>p</i> is,
+<img src=
+"../imgs/de855ce0f539e0b3b296f32b667d4d0aba2e0c92.png">.</p>
+<p>Thus, augment the path in the residual graph. The new network is
+on the right hand side.</p>
+<p><img src="../imgs/5f34756d687de1e7553842d447a9b5c0ec1e7f2c.png"
+alt="Picture 10"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>2.</b> The path <img src=
+"../imgs/628c3ad962faec89eaf1719874c26356016e57a9.png"> is another
+path with minimum edges. Then the minimum capacity of path <i>p</i>
+is,<img src=
+"../imgs/beea96cb7ac2fec26a3fc9555755676278fc11cb.png"></p>
+<p>Thus, augment the path in the residual graph. The new network is
+on the right hand side.</p>
+<p><img src="../imgs/328015f172c6c11d74936de9bdb493417d0e86ae.png"
+alt="Picture 9"></p>
+</div>
+<hr>
+<div class="answer">
+<p><b>3.</b> The path <img src=
+"../imgs/d4d0194d99fddc97624a600346b37a43487576ed.png"> is the path
+with minimum edges in the remaining paths. Then the minimum
+capacity of path <i>p</i>, the path capacity, is as follows:</p>
+<p><img src=
+"../imgs/15f548a46abdeb7fa6ef49338cab921eaf7f8afc.png"></p>
+<p>Thus, augment the path in the residual graph. The new network is
+on the right hand side.</p>
+<p><img src="../imgs/4d4729eae1cdd8c6849e6775e59ab1b058a6aa22.png"
+alt="Picture 8"></p>
+</div>
+<hr>
+<div class="answer">
+<p>Since there is no further augmenting path in the network, the
+algorithm is terminated. The final network is as follows:</p>
+<p><img src="../imgs/4d4729eae1cdd8c6849e6775e59ab1b058a6aa22.png"
+alt="Picture 12"></p>
+<p><b>Hence, the maximum flow</b> <i><b>f(</b></i> <b>that
+reached</b> <i><b>t)</b></i> <b>for the network is,</b>
+<b><img src="../imgs/70130d9466b16cc2e44614d0ad453b4fed902236.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-4E">
+                <a href="#problem-4E">4E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider <i>S</i>=<img src=
+"../imgs/3d2d62cf901d4f614c5d0ac5ccacec2888036503.png">and
+<i>T</i>=<img src=
+"../imgs/323b176b730b21ddccd2548c81dd5cdfd07066bc.png">. The cut
+(<i>S,T</i>) is the minimum cut for the network shone in the figure
+26.6.</p>
+<p>The capacity for the cut is,</p>
+<p><i>c</i>(<i>S,T</i>)
+=c(<i>v</i><sub>1</sub><i>,v</i><sub>3</sub>)+c(<i>v</i><sub>4</sub><i>,v</i><sub>3</sub>)+c(<i>v</i><sub>4</sub><i>,t</i>)=
+12+7+4=23</p>
+<p>This is the minimum over all cuts of the network.</p>
+<p><img src="../imgs/ae0f961215faf20592f155ee6c3a491c5a8afdd6.png"
+alt="Picture 6"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The Augmenting path (c) of three augmenting paths cancels the
+flow.</p>
+<p><img src="../imgs/3ccb248c157b0e14b45fa573edb0622f53096932.png"
+alt="Picture 7"></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-5E">
+                <a href="#problem-5E">5E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Consider the problem of converting a network with multiple
+sources and multiple sinks to a single source and a single sink. In
+this conversion, edges with infinite capacity are added from super
+source to all the sources, and edges with infinite capacity are
+added from sinks to super sink.</p>
+<p><b>Flow in the new network has a finite value:</b></p>
+<p>• To find a maximum flow of a network with multiple sources and
+multiple sinks, convert it into a single source to single sink
+problem and apply FORD-FULKERSON method.</p>
+<p>• It can be observed that any flow in the resulting network
+corresponds to a flow in the multi-source, multi-sink network with
+the same flow.</p>
+<p>• Consider that the edges of original network with multiple
+sources and sinks have finite capacity. While running
+FORD-FULKERSON algorithm on the resulting network, it can be
+observed that any flow along the augment path is finite, since the
+residual capacity is the capacity of any edge in the original
+network and it is finite.</p>
+<p><b>Therefore, any flow in the resulting network is finite, if
+the edges of the original network have finite capacity.</b></p>
+<p>Alternatively, a cut can be constructed such that it separates
+all the sources from all the sinks. That is, only edges of the
+original network cross the cut. Since only the edges of original
+network cross the cut, the net flow across the cut is finite.</p>
+<p><b>Thus,</b> <b>the capacity of the cut is finite and any flow
+in the single-source , single-sink network is finite.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-6E">
+                <a href="#problem-6E">6E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Flow network is a network, in which each edge (<i>u,v</i>) has
+some non-negative capacity <i>c</i>(<i>u,v</i>)<img src=
+"../imgs/cddf12bbbfaf165b24810c8fbc8473bbd6cb2d07.png"> 0. Thus,
+the maximum flow allowed between two nodes <i>u</i> and <i>v</i> is
+<i>c</i>(<i>u,v</i>). Source <i>s</i> and sink <i>t</i> are two
+special nodes in the flow network.</p>
+<p>• The aim of the maximum flow problem of flow network is to find
+the maximum flow value between <i>s</i> and <i>t</i>.</p>
+<p>• A flow network with multiple sources and multiple sinks can
+also be solved by converting it into a flow network with single
+source and single sink .</p>
+</div>
+<hr>
+<div class="answer">
+<p>Now, consider a flow network with multiple sources<img src=
+"../imgs/4ed7c1658fe7394069cffd439b166b5f10502844.png">,
+for<img src=
+"../imgs/6b70f6bf85622679bdc5f99674af51cc7b16d81b.png">with flow
+of<img src=
+"../imgs/df09ea12f04fed58bbc19b72d00dc4aa58ba97b4.png">units and
+multiple sinks <img src=
+"../imgs/de9b1e75e3260a7fc7e1db8eb60d8fadf4f42aff.png">
+consumes<img src=
+"../imgs/6e090a44de0506720fcab5ef8287b671953ac92a.png">units of
+flow, for<img src=
+"../imgs/bdbba41e0b39fe798c496b132e4b3528b96a21c5.png">.</p>
+<p>• Assume that the total flow produced is the sum of flows
+produced at all sources in the network, and it is represented by
+<i>p</i>:</p>
+<p><img src=
+"../imgs/26c8abadf1102765bf18f92798086603b4e18f47.png">, Where
+<img src=
+"../imgs/638e9fddbcb99a8133d609fb579cf8c5dca4bf18.png"></p>
+<p>• Also assume that the total flow consumed is the sum of flows
+consumed by all sinks in the network, and it is denoted by <i>q</i>
+as:</p>
+<p><img src=
+"../imgs/bd9d890bfd8e072e88261135a444b3a0947bb7ce.png">,
+Where<img src=
+"../imgs/9430b0c970e75a5bb1d236753f68ed94faa5b8a4.png"></p>
+<p>• From the Flow network property,</p>
+<p><img src=
+"../imgs/34d0a04dbc09308517b2aa93a1be212df221f28a.png"></p>
+</div>
+<hr>
+<div class="answer">
+<p>The above network with multiple sources and multiple sinks can
+be turned into a flow network with single source and single sink as
+follows:</p>
+<p>• Add a super source <i>s</i> to the network, such that there
+exist edges from super source <i>s</i> to each source
+<i>s</i><sub>i</sub>.</p>
+<p>• Now assign capacity for each edge
+(<i>s</i>,<i>s</i><sub>i</sub>) as <i>p</i><sub>i</sub>.</p>
+<p>That is,
+<i>c</i>(<i>s,s</i><sub>i</sub>)=<i>p</i><sub>i</sub>.</p>
+<p>• Also add a super sink <i>t</i> to the network, such that there
+exist edges from super sink <i>t</i> to each sink
+<i>t</i><sub>j</sub>.</p>
+<p>• Now assign capacity for each edge
+(<i>t</i><sub>i</sub>,<i>t</i>) as <i>q</i><sub>j</sub>.</p>
+<p>That is, <i>c</i>(<i>t</i><sub>j</sub>,<i>t</i>) =
+<i>q</i><sub>j</sub>.</p>
+<p>The converted network can be represented as follows:</p>
+<p><img src="../imgs/7025e1629fba7ee0d308b938c083184738d2653b.png"
+alt="D:\Tiffs\2254-26.1-3E.tif"></p>
+<p><b>Hence, the converted problem can be solved using the method
+that finds maximum flow in a single source, single sink flow
+network.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-7E">
+                <a href="#problem-7E">7E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>To check that <img src=
+"../imgs/f212b0e5b68822559a697cca9fa56280f4ec2cac.png"> is a flow
+in <img src=
+"../imgs/774c639d6825feeb48b2428d53f3b3ea68ed03ea.png">with value
+<img src=
+"../imgs/fa79b0905223a131ea13ef8ad0560882343b17a4.png">check that
+it satisfies both the capacity constraints and flow
+constraints.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Capacity constraint:</b> Since, the residual capacity is
+always less than or equal to the initial capacity, so each value of
+the flow is less than the capacity.</p>
+<p><b>Flow constraint</b>: Since <img src=
+"../imgs/e7919f801cff60fdffcc58a881f4c0921b20674b.png">is constant
+along a path, so flow should be conserved. This is because at each
+vertex interior to the path, the flow in from one edge is cancelled
+by the flow out to the next vertex in the path as in the edges that
+are given the flow is along the path.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-8E">
+                <a href="#problem-8E">8E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>FORD-FULKERSON procedure uses residual networks to decide an
+augmenting path in order to increase the net flow.</p>
+<p>The residual network <img src=
+"../imgs/753848f6edf7af2526237b01a186952baf7755c5.png">for a given
+flow network <i>G</i> and a flow <i>f</i> consists of the edges
+with capacities that represent how can we change the flow on edges
+of <i>G</i>.</p>
+<p>An augmenting path <i>p</i> is a simple path from source
+<i>s</i> to sink <i>t</i> in the residual network<img src=
+"../imgs/753848f6edf7af2526237b01a186952baf7755c5.png">. So by
+definition of residual network we can increase the flow of an edge
+<img src="../imgs/08c34da91abfcaf6498b33dee1b040c0b1f20cc8.png">of
+an augmenting path up to <img src=
+"../imgs/c3983ad10b78099f9d2377fed3364d7643cd27e8.png">without
+violating any capacity constraints.</p>
+</div>
+<hr>
+<div class="answer">
+<p>In the residual network edges leaving from <i>s</i> denote the
+residual capacity of that edge and edges going to <i>s</i> denote
+the capacity that is filled. If we disallow edges entering into
+<img src="../imgs/e299b3326d01294704a7bc6ac9d07576957a2f91.png"> ,
+Then in the residual graph we can have only those edges for which
+the total capacity is not full till now that is we will show only
+outgoing edges that will carry the value equal to the residual
+capacity of the edge.</p>
+<p>Since the flow conservation is not violated, we can inherently
+say that the Ford-Fulkerson algorithm would still remain
+correct.</p>
+<p>So, even if we remove edges entering to the source <i>s</i> in
+the residual network, it will not affect the procedure
+FORD-FULKERSON and we will still be able to compute the maximum
+flow.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-10E">
+                <a href="#problem-10E">10E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p>Run the Ford-Fulkerson algorithm and make the changes in it that
+an edge is removed if the flow of the graph G reaches its capacity.
+If <i>f(u,v)=c(u,v),</i>where <i>f(u,v)</i> denotes the flow of the
+graph and <i>c(u,v)</i> denotes the capacity of the graph then
+there should not exist any reverse edge in the residual
+network.</p>
+</div>
+<hr>
+<div class="answer">
+<p>The result of the modified Ford-Fulkerson algorithm are the
+augmenting paths which are needed. There are at most |E| paths
+because every augmenting path produces at least one edge whose flow
+is equal to its capacity, which is set to be the actual flow for
+the edge in a maximum flow and the modification prevents the
+destruction of this program.</p>
+<p>Thus, the main steps are:</p>
+<p>• Find the maximum flow</p>
+<p>• Get the minimum cut of the network.</p>
+<p>• When one edge is saturated on the minimum cut each time, the
+upper bound is |E|</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-9E">
+                <a href="#problem-9E">9E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Flow Network</b></p>
+<p>A flow network, in the most basic form, is a directed graph.
+Each of the edges has a capacity assigned to it. In the network a
+certain amount of flow goes from each edge of the network.</p>
+<p>There are certain nodes in the graph from which the flow starts
+and to which the flow ends. These two nodes are called the source
+and sink of the network respectively.</p>
+<p>Consider the following diagram of flow network:</p>
+<p>In the following diagram the node <i>s</i> is the source of the
+network and the node <i>t</i> is the destination or sink of the
+network. Each of the graph edge has a capacity.</p>
+<p>The capacity defines the data value that can go through that
+edge. The capacity is always a positive integer. One more thing is
+that if there is an edge from a vertex <i>v</i><sub>1</sub> to
+vertex <i>v</i><sub>2</sub> than there can be no edge from
+<i>v</i><sub>2</sub> to <i>v</i><sub>1</sub>.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p>In the above diagram vertex <i>s</i> is the source and the
+vertex <i>t</i> is the sink or destination. The capacity of each
+edge is shown alongside the edge. As the edge from <i>s</i> to
+<i>v</i><sub>1</sub> has the capacity of 16.</p>
+<p>A flow network has various applications in practicality. It is
+used in data warehouses, scientific research and electricity
+distribution etc.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Flow conservation:</b></p>
+<p>In the flow network the flow conservation is defined as the
+property that none of the vertices that are not source or sink can
+store or create the flow.</p>
+<p>That is for each vertex the flow coming to a vertex is same as
+the flow passing from that vertex. It means the total flow for a
+vertex at any time is zero.</p>
+<p>For a graph <i>G</i>(<i>V</i>, <i>E</i>) having edge <img src=
+"../imgs/a2ec664e656799caa80e38d8287f3e235e30ceec.png"></p>
+<p><img src=
+"../imgs/b805e8b9782ba67d410cbae619af0c5c62ce48d9.png"></p>
+<p>The flow value of the edge which is not present in the edge set
+<i>E</i> will be zero that is <img src=
+"../imgs/d2773def81ec0c369689b9358ab70509ae7860dd.png"> <b>if</b>
+<img src=
+"../imgs/9cdbb5580b98c5f191721ad64ce31ce096dc252f.png">.</p>
+<p><b>Capacity constraint:</b></p>
+<p>The capacity of a vertex is the limit of the flow that can be
+allowed by the vertex to flow from that vertex. No edge can pass
+the flow through it beyond its capacity.</p>
+<p>For any edge <img src=
+"../imgs/b548683a2ac11bfb638001c9ebbc303779aae81e.png">the value of
+flow must be in between zero and the capacity of the edge that
+is<img src=
+"../imgs/b5deda6abf5636900a3027489bde90aa143df8c6.png">.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Proof for flow conservation and capacity constraint:</b></p>
+<p>Consider the graph <i>G</i> (<i>V</i>, <i>E</i>)</p>
+<p>Where <i>V</i> = the set of vertices and</p>
+<p><i>E=</i> the set of edges in the graph. For any edge<img src=
+"../imgs/872d6905864f97ca12142818c7b9655420d92606.png"> the
+value<img src=
+"../imgs/25e1fecf8a0c7acc7f9615a2a293b5dbf927f3bf.png">denotes the
+flow from the vertex <i>u</i> to vertex <i>v</i> and <img src=
+"../imgs/eaeb6fba773c5d38ddbecac76ce44e88cf8db9d8.png">denotes the
+value of flow in the opposite direction.</p>
+<p>Now for a flow network it is required that if an edge <img src=
+"../imgs/872d6905864f97ca12142818c7b9655420d92606.png">then it’s
+opposite edge that is <img src=
+"../imgs/60dea3563735888c4e9416b15f6b108216c004c8.png">and so,</p>
+<p><img src=
+"../imgs/652d7d204b48300fc01eaeaf3207bf3409cb9755.png">.</p>
+<p>Thus,theequation 26.4 from the book can be rewritten as
+follows:</p>
+<p><img src=
+"../imgs/afcd94293e4b9e1be8b52dbfe39b77ac317339a4.png"></p>
+<p>It implies that the new flow on each edge is simply the sum of
+the two flows on that edge.</p>
+<p>Now consider <i>u</i> is a vertex other than source and sink in
+the network <i>G</i> that is <img src=
+"../imgs/76de6f2a45fedab19c6122eae0bededb6bddd715.png"></p>
+<p><img src=
+"../imgs/ee7e77cfd5b87f653fcd10ef0446736e0144921b.png"></p>
+<p><b>Hence, the augmented flow</b> <b><img src=
+"../imgs/3879e0881a2ca76b5e22d455a1468eb679ef5b07.png"></b> <b>in
+the network</b> <i><b>G</b></i> <b>having flows</b> <i><b>f</b></i>
+<b>and</b> <b><img src=
+"../imgs/3e7de1e1dce39e7e3e129df2244af83ff52ea20f.png"></b>
+<b>satisfies flow conservation property of the network</b>.</p>
+<p>Now to showing that<img src=
+"../imgs/3879e0881a2ca76b5e22d455a1468eb679ef5b07.png">need not
+satisfy the capacity constraint by giving a simple
+counterexample.</p>
+<p>Consider the flow network<i>G</i>which has just a source and a
+target vertex, with a single edge <img src=
+"../imgs/9b67c005853c95449e3f626868715bd192c544c8.png">having
+capacity<img src=
+"../imgs/01d9a929c10891913f9bf7d1853f01bc3b58d146.png">.</p>
+<p>Now define the flows <i>f</i>and <img src=
+"../imgs/bd4a635b1b3e936ab2d14f383c70bc12ed4e5594.png">to
+have<img src=
+"../imgs/3912264dc60c246809b4c6a50b0038ef1da06059.png"></p>
+<p>Then,</p>
+<p><img src=
+"../imgs/534974519465df2b87451730091aed5c75be5b51.png"></p>
+<p><b>Therefore, it is not needed that</b> <b><img src=
+"../imgs/3879e0881a2ca76b5e22d455a1468eb679ef5b07.png"></b>
+<b>satisfy the capacity constraint.</b></p>
+<p>Hence, the augmented flow <img src=
+"../imgs/3879e0881a2ca76b5e22d455a1468eb679ef5b07.png">in a network
+<i>G</i> follows the flow conservation property but not the
+capacity constraint property.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-11E">
+                <a href="#problem-11E">11E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Finding Edge connectivity:</b></p>
+<p>Finding edge connectivity problem is an application of max-flow
+min-cut theorem. Min-cut of a network <i>G</i> is the cut whose
+capacity is the least of all possible cuts of <i>G</i>.</p>
+<p>• If the capacities of all edges are 1, then the min-cut equals
+the edge capacity.</p>
+<p>• If minimum cut is <i>k</i>, edge connectivity is also
+<i>k</i>. That is, <i>G</i> can be disconnected on removing
+<i>k</i> edges.</p>
+<p><b>Solving Edge connectivity problem:</b></p>
+<p>Consider that max-flow algorithm runs on a network and returns a
+max-flow of a residual graph.</p>
+<p>Thus, Edge connectivity problem can be solved using the max-flow
+algorithm as follows:</p>
+<p>• For any two vertices <i>u</i> and <i>v</i> in <i>G</i>, a flow
+network <i>G</i><sub>uv</sub> with directed edges of capacity 1 can
+be defined such that, <i>s</i>=<i>u</i> and <i>t</i>=<i>v</i>.</p>
+<p>• The max-flow algorithm like FORD-FULKERSON can be applied to
+find max-flow of <i>G</i><sub>uv</sub> .</p>
+<p>• Since all capacities are 1, the number of edges crossing a cut
+equals the capacity of the cut.</p>
+<p>EDGE- CONNECTIVITY(<i>G</i>)</p>
+<p>1 set initially <i>k</i>=<img src=
+"../imgs/7e34a007bd835dc92ad9c46a7cd5fa86919a169b.png"></p>
+<p>2 arbitrarily select any vertex <i>u</i> <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png"> v</p>
+<p>3 <b>for</b> each vertex <i>v</i> <img src=
+"../imgs/4f8024863c8f68865105c834f3e4ea3b6d5a7191.png">
+<i>G</i>.<i>V</i>-{<i>u</i>}</p>
+<p>4 do set up the flow network <i>G</i><sub>uv</sub></p>
+<p>5 <i>f</i><sub>uv</sub> =FORD-FULKERSON
+(<i>G</i><sub>uv</sub><sub>,</sub><i>u,v</i>) // finding max-flow
+of <i>G</i><sub>uv</sub></p>
+<p>6 <i>k</i>=min(<i>k</i>, <i>f</i><sub>uv</sub>)</p>
+<p>7 <b>return</b> <i>k</i>|</p>
+<p>The above algorithm runs O(V) times and finds the capacity of
+all possible cuts. The algorithm finds minimum of all these
+capacities in line 6. That is, <i>k</i> edges should be removed to
+disconnect the network.</p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-12E">
+                <a href="#problem-12E">12E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Flow Network</b></p>
+<p>A flow network, in the most basic form, is a directed graph.
+Each of the edges has a capacity assigned to it. In the network a
+certain amount of flow goes from each edge of the network. There
+are certain nodes in the graph from which the flow starts and to
+which the flow ends. These two nodes are called the source and sink
+of the network respectively.</p>
+<p>In the diagram below the node <i>s</i> is the source of the
+network and the node <i>t</i> is the destination or sink of the
+network. Each of the graph edge has a capacity. The capacity
+defines the data value that can go through that edge. The capacity
+is always a positive integer. One more thing is that if there is an
+edge from a vertex <i>v</i><sub>1</sub> to vertex
+<i>v</i><sub>2</sub> than there can be no edge from
+<i>v</i><sub>2</sub> to <i>v</i><sub>1</sub>.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p>In the above diagram vertex <i>s</i> is the source and the
+vertex <i>t</i> is the sink or destination. The capacity of each
+edge is shown alongside the edge. As the edge from <i>s</i> to
+<i>v</i><sub>1</sub> has the capacity of 16.</p>
+<p>A flow network has various applications in practicality. It is
+used in data warehouses, scientific research and electricity
+distribution etc.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>NETWORK FLOW:</b></p>
+<p>It has been provided that a flow network <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> has the
+edge which enters the source <i>s</i>. The flow <i>f</i> for that
+edge is denoted by <img src=
+"../imgs/374b9bc36bf235e9b52e7edf9914363d7579388b.png">enters the
+source and the value of that flow is equal to 1.</p>
+<p>Proving that a flow <img src=
+"../imgs/bd4a635b1b3e936ab2d14f383c70bc12ed4e5594.png"> exists,
+as<img src="../imgs/822468c5b8d15e12bb2fafeec4b2a64d488be813.png">,
+and its value is equal to <i>f</i>.</p>
+<p><b>Proof:</b></p>
+<p>If<img src=
+"../imgs/f099b6d88aedc20cb1bfa19526b123bb61026e49.png">, it means
+there exists an edge having one unit of flow.</p>
+<p><img src=
+"../imgs/c3ccdf5c23088354244595176af52a475db2e4e8.png"></p>
+<p>Reducing the flow by one unit means <img src=
+"../imgs/374b9bc36bf235e9b52e7edf9914363d7579388b.png">reduces to
+0</p>
+<p><img src=
+"../imgs/52d9ffa48802979688ba99340b71ed41610c35a9.png"></p>
+Consider the flow network <i>G</i> and the flow <i>f</i>, so there
+is a path <i>p</i> from <i>y</i> to <i>z</i>. It means vertex
+<i>y</i> is flow connected to vertex <i>z</i> and each edge has
+positive flow. Define that <i>y</i> and <i>s</i> are flow connected
+to it.</div>
+<hr>
+<div class="answer">
+<p>For the proof consider the <b>lemma,</b></p>
+<p>In a graph <img src=
+"../imgs/f2a8b8010b4100d39a7b44e358d7926df7a5b478.png"> which is a
+flow network and <i>f</i> be a flow in this network now if
+<i>s,</i> the source vertex is not flow connected to <i>v,</i>
+then<img src=
+"../imgs/5097a51f256bac970c17367401e6decdd791de4a.png">.</p>
+<p><b>Proof of lemma:</b></p>
+<p>In the network, <i>s</i> is not flow connected to <i>v</i>; this
+means that no flow exists from <i>s</i> to <i>v</i>.</p>
+<p>Thus, from the flow conservation concept, <img src=
+"../imgs/5097a51f256bac970c17367401e6decdd791de4a.png"></p>
+<p>Consider <i>Y</i> be the set of all vertices <i>y</i>, such that
+<i>s</i> is the flow connected to <i>y</i>.</p>
+<p>Now, apply the flow conservation concept to all vertices in
+<i>V-Y</i> and take the sum.</p>
+<p><img src=
+"../imgs/6755a61da997dd9cd381ad33908cfd04fdb49eb2.png"></p>
+<p>Dividing <i>V</i> into <i>Y</i>,</p>
+<p><img src=
+"../imgs/654aab810491e4ffd4bbe011e1de0cba68134d49.png"></p>
+<p>But,</p>
+<p><img src=
+"../imgs/bc0f8a583ba9043884d92f25a901a383fc28ec91.png"></p>
+<p>And</p>
+<p><img src=
+"../imgs/36afa9f08dd4f52ad54ac55abf912c450084f377.png"></p>
+<p>Since the flow from any vertex in <i>Y</i> to any vertex in
+<i>V-Y</i> must be 0,</p>
+<p>Hence,</p>
+<p><img src=
+"../imgs/b148b90c1c5c75218d9f32c256d1d15c03e237fe.png"></p>
+<p>From the above equation,</p>
+<p><img src=
+"../imgs/d62d7e547ffc0b23531bf0c6bc9f2a19349fe844.png">for each
+<img src="../imgs/9ac3d6ff19fcc64743c996c79208031756ee0d52.png">and
+<img src=
+"../imgs/245ae6f255621e76ee5e77ce6d40c9d296f6d9a1.png"></p>
+Since <img src=
+"../imgs/3f01fd940607208e43e685fcb31ef118fbbd1cbe.png">and
+<img src="../imgs/37a086edde6a7f9e278cd8dead91544aeb50a6e0.png">so,<img src="../imgs/5097a51f256bac970c17367401e6decdd791de4a.png"></div>
+<hr>
+<div class="answer">
+<p><b>Now to construct the required flow</b> <b><img src=
+"../imgs/eaeb6fba773c5d38ddbecac76ce44e88cf8db9d8.png"></b>
+<b>:</b></p>
+<p>Consider the contra positive of the lemma according to
+which<img src=
+"../imgs/3abdf14bb53673bd92beaedba00fabff62f53899.png">. It means
+that there is some path <i>p</i> from <i>s</i> to <i>v</i> that is
+<i>s</i> is flow connected to <i>v</i>.</p>
+<p>Take a path <i>p’</i>in the network which has a positive flow
+cycle on each edge.</p>
+<p>1. In this, the capacity of eachedge is a positive value andat
+least 1.</p>
+<p>2. For obtaining a flow <i>f’</i>, if 1 is subtracted from each
+and every edge of the cycle, the flow <i>f’</i> still satisfies the
+concept of a flow network. The value of <img src=
+"../imgs/fc73a6dc00de0ab8c26312d14d2f6892929d083c.png">will be
+equal to<img src=
+"../imgs/cdae096d4967210c7af5b904cfcb443de02e6175.png">.</p>
+<p>Because for the edge <img src=
+"../imgs/0b3e13c68bd06e810512c10aff57659bfd97d36c.png">is in the
+cycle,</p>
+<p><img src=
+"../imgs/52d9ffa48802979688ba99340b71ed41610c35a9.png"></p>
+<p><img src=
+"../imgs/e31e5fcef58357382f53559eaa0b43466fe52311.png"></p>
+<p><img src=
+"../imgs/8ae5d52379122e5335107fc58e8fbd667ade65d4.png"></p>
+<p><b>Algorithm for computing</b> <b><img src=
+"../imgs/eaeb6fba773c5d38ddbecac76ce44e88cf8db9d8.png"></b>
+<b>:</b></p>
+<p>The above procedure for proving<img src=
+"../imgs/e25f3809318cd8e894b0cf5ee61c805d844337f8.png">can be put
+in the form of the following algorithm.</p>
+<p><b>Input:</b> <img src=
+"../imgs/374b9bc36bf235e9b52e7edf9914363d7579388b.png"></p>
+<p><b>Output:</b> <img src=
+"../imgs/e25f3809318cd8e894b0cf5ee61c805d844337f8.png"></p>
+<p>// initializing the graph <i>G</i></p>
+<p>1. <b>Initialize</b>a graph <i>G</i> having a path cycle
+<i>p</i> from <i>v</i> to <i>s</i> with flow<img src=
+"../imgs/374b9bc36bf235e9b52e7edf9914363d7579388b.png"></p>
+<p>2. It is known that the source outflow will be one less.</p>
+<p>// loop running for every edge of the graph</p>
+<p>3. <b>for</b> each edge in graph and a new path <i>p’</i></p>
+<p>// to check for the edges that has some flow and decrease it by
+1</p>
+<p>4. <b>check</b> to see whether the flow edge will be</p>
+<p>It means <img src=
+"../imgs/bd2340674e48b4c7565b3c3d59ca596bc3d17123.png"></p>
+<p>Now subtracting by 1</p>
+<p><img src=
+"../imgs/d8e9060b11c411adadd7773a53c109cc36b69694.png"></p>
+<p>// returning back</p>
+<p>5. <b>return</b> still flow <i>f’</i></p>
+<p>// printing the statement</p>
+<p>6. <b>print</b> “satisfying the flow network and also has the
+value<img src=
+"../imgs/cdae096d4967210c7af5b904cfcb443de02e6175.png">”</p>
+<p>Edge <img src=
+"../imgs/0b3e13c68bd06e810512c10aff57659bfd97d36c.png">is in
+cycle</p>
+<p>// returning back</p>
+<p>7. <b>return</b><img src=
+"../imgs/e31e5fcef58357382f53559eaa0b43466fe52311.png"></p>
+<p>8. <b>return</b> <img src=
+"../imgs/e25f3809318cd8e894b0cf5ee61c805d844337f8.png"></p>
+<p>The “<b>for</b>” loop in line 3 runs for <i>E</i> times and it
+checks, for each edges in the graph whether there is flow or not.
+Then all the traversed edges, which it goes through is put into the
+list.</p>
+<p><b>Hence, the algorithm has a complexity of</b> <b><img src=
+"../imgs/3f17d605d8738f934b7f28c94da39dbae65c6c2f.png"></b>
+<b>.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+        <div class="problem">
+            <div class="problem-title" id="problem-13E">
+                <a href="#problem-13E">13E</a>
+            </div> 
+            <div class="problem-content">
+                <!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="answer">
+<p><b>Flow Network</b></p>
+<p>A flow network, in the most basic form, is a directed graph.
+Each of the edges has a capacity assigned to it. In the network a
+certain amount of flow goes from each edge of the network. There
+are certain nodes in the graph from which the flow starts and to
+which the flow ends. These two nodes are called the source and sink
+of the network respectively.</p>
+<p>In the diagram below the node <i>s</i> is the source of the
+network and the node <i>t</i> is the destination or sink of the
+network. Each of the graph edge has a capacity. The capacity
+defines the data value that can go through that edge. The capacity
+is always a positive integer. One more thing is that if there is an
+edge from a vertex <i>v</i><sub>1</sub> to vertex
+<i>v</i><sub>2</sub> than there can be no edge from
+<i>v</i><sub>2</sub> to <i>v</i><sub>1</sub>.</p>
+<p><img src="../imgs/f7c99af66cca771168fbcf08c94e0e92a3e3e366.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\11.tif"></p>
+<p>In the above diagram vertex <i>s</i> is the source and the
+vertex <i>t</i> is the sink or destination. The capacity of each
+edge is shown alongside the edge.As the edge from <i>s</i> to
+<i>v</i><sub>1</sub> has the capacity of 16.</p>
+<p>Now the possible flows paths from the source to destination can
+be:</p>
+<p><img src=
+"../imgs/6658c581aa6d55349a52d007a819b0155f0bea7a.png"></p>
+<p>There might be a few more flow paths as well. The maximum flow
+possible through a path is equal to the minimum capacity of an
+edge. For example in the first flow path<img src=
+"../imgs/cc609fe111c760f876937144022e3d2c019a817f.png">, the
+maximum flow would be12.</p>
+<p>A <b>cut</b> in a network is the set of network edges that, when
+removed from the network stop the flow of data from the source to
+sink. Amongst the set of cuts the one that has the minimum capacity
+is known as the <b>minimum cut</b>.</p>
+<p>A flow network has various applications in practicality. It is
+used in data warehouses, scientific research and electricity
+distribution etc.</p>
+</div>
+<hr>
+<div class="answer">
+<p>To find the minimum cut with least amount of edges the
+<b>Maximum Flow Minimum Cut</b> theorem can be used.</p>
+<p>This theorem says that in a flow network, the maximum quantity
+of flow going from source to sink will be always equal to the least
+or minimum quantity which when discarded in a particular way from
+the network creates the condition that neither of the flow can go
+through from the source to the sink.</p>
+<p><b>For example</b>:</p>
+<p>In the above graph the possible cuts are:</p>
+<p><img src=
+"../imgs/99676ee9742853a07b381f4bf66da800525fc542.png"></p>
+<p><img src="../imgs/61474230ae0df8509e43b796c1da2a4289f403a5.png"
+alt="C:\Users\evelyn 16\Desktop\CDR TIP\12.tif"></p>
+<p>Removal of any of the given set of edges would leave the network
+disconnected and reaching destination from source would not be
+possible either way.</p>
+<p>In the possible cuts of the above network the cut<img src=
+"../imgs/c712e4c5b825adac934a10342d7750330ecb10ea.png">has the
+least capacity and that is<img src=
+"../imgs/a649ce459b79a8dd9b495657ec771801edb173db.png">. The edge
+<i>v</i><sub>2</sub><i>v</i><sub>1</sub> is assigned acapacity 0
+because that is in the reverse direction of <i>sv</i><sub>2</sub>
+and <i>v</i><sub>1</sub><i>v</i><sub>3</sub>.</p>
+</div>
+<hr>
+<div class="answer">
+<p><b>Modifying the capacities of</b> <i><b>G</b></i> <b>:</b></p>
+<p>Modification of the capacitiesof various paths of <i>G</i> to
+create a new flow network <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png"> in which
+any minimum cut in <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png">is a minimum
+cut with the fewer number of edgesin<i>G</i>. The process of
+modifying the cut in <i>G</i> is as:</p>
+<p>? Try to find a minimum cut in the graph <i>G</i> with a changed
+variable;</p>
+<p>? The fundamental to be applied here is as the cost incurred in
+a cut is equal to the total capacity moving through the cut, for
+this change the graph by adding up a new edge from every node in
+the graph to <i>t</i> that have capacity one.</p>
+<p>? The above line or method implies that each node in the same
+region of cut as <i>s</i>will provide one extra cost to the total
+cost of the cut.</p>
+<p>? As the edges from that particular node to <i>t</i> would be go
+through that edge.</p>
+<p>? Now consider the following changes:</p>
+<p><b>a.</b> Make product of the edges by multiplying with
+<i>V</i>, here <i>V</i> is the number of nodes in the graph.</p>
+<p><b>b.</b> Add one to each and every node of the graph.</p>
+<p>? The maximum contribution which is possible from this edge
+altogether to the cut cost is<img src=
+"../imgs/56720c7e8353493adc2f3ff1972296925662ecda.png">. As the
+cost of the older minimum cut was <i>N</i>,</p>
+<p>The cost incurred in new minimum cut<img src=
+"../imgs/b01c7087fe0c75dae77b1f7d1b74d21a09cdcd89.png">is</p>
+<p><img src=
+"../imgs/f2696755d8f949ee5f0180e65e229fbe6e6c4da6.png">.</p>
+<p>Here,<img src=
+"../imgs/8ba874acc963c81d6400bff94ec15de8309f528e.png">is the
+number of nodes on the same side of the cut as<i>s</i>.</p>
+<p>? Take a directed graph <img src=
+"../imgs/5672f6e111ce86b3ddeefa437947ad630f9e892d.png"> having some
+capacity in every edge and a source and sink pair</p>
+<p><img src=
+"../imgs/9b67c005853c95449e3f626868715bd192c544c8.png">,</p>
+<p>? Construct the new graph <img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png"> by the
+following steps:</p>
+<p><b>1.</b> For every edge <img src=
+"../imgs/f321eef7c244c834706dd4512bd5f8cb7a83f826.png">in the
+graph, multiply it with capacity <i>c</i></p>
+<p><b>2.</b> For every node <i>v</i> in the graph, add edge which
+is new <img src=
+"../imgs/eae9fdcfe14e52f3bb50e1a909f56b9c7978463f.png">which have
+capacity 1.</p>
+<p><b>3.</b> Calculate a minimum cut in the graph.</p>
+<b>Hence, the new flow</b> <b><img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png"></b>
+<b>would be achieved which is having a minimum cut with itself with
+smallest number of edges.</b></div>
+<hr>
+<div class="answer">
+<p><b>Mathematical manipulation:</b></p>
+<p>Suppose there are two cuts <img src=
+"../imgs/1e8a83ead6b448841eea47ff4a3222d92d970fd0.png"> and
+<img src="../imgs/bac6db05ec7adab40f56974178ba4c9a8a5ef6a2.png">in
+the first graph <i>G</i> and <i><img src=
+"../imgs/2179776bbd5f7d2d2334d8eda39b152a9a0e33bf.png"></i>and<img src="../imgs/2be36f5be6700de6419803a6c8105c00d577f5ba.png">
+be their respective capacities. Because <i>G’</i> is the enhanced
+graph made by using <i>G</i> so this will have the same cuts as
+<i>G</i>has.</p>
+<p>Now, it is known that every edge has got an addition of d in the
+capacity.</p>
+<p>So, the total capacity of the cut would be increased by
+<i>d</i>.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/2115f8a3ab1728d5658b399794d5e1fd4fad6357.png"></p>
+<p>If <img src=
+"../imgs/2be36f5be6700de6419803a6c8105c00d577f5ba.png"> has fewer
+edges than <img src=
+"../imgs/2179776bbd5f7d2d2334d8eda39b152a9a0e33bf.png">then the
+capacity of <img src=
+"../imgs/2be36f5be6700de6419803a6c8105c00d577f5ba.png"> would be
+less than<img src=
+"../imgs/2179776bbd5f7d2d2334d8eda39b152a9a0e33bf.png">that is the
+contradiction of consideration. This will be always true regardless
+how many edges are there in the cut.</p>
+<p>So, the minimum cut owning least number of edges in <i>G’</i>
+would be the minimum cut with least number of edges in
+<i>G</i>.</p>
+<p>Now, choosing the value of <i>d</i> carefully is important.
+Suppose, in <i>G</i>, the difference between the capacities of two
+cuts is <i>x</i>.</p>
+<p>So,</p>
+<p><img src=
+"../imgs/34e5bd57e296737713f3dd042ca48ed1dc26f071.png"></p>
+<p>Here, <i>E</i> is the number of edges in the graph.</p>
+<p>For <img src=
+"../imgs/6f01ac1e5abdb831db74dda6674a5e84c8440de8.png"></p>
+<p>Now, if <img src=
+"../imgs/1c1dbca5d51dc2932d9b5c19c2472eb1daadfc7c.png">is less than
+<img src=
+"../imgs/c75d8721c85763459e3bf111d2478549f1b45545.png">then it
+needs to be proved that <img src=
+"../imgs/ab5227be3d45d183e872c10c4bdec879229336a6.png">is less
+than<img src=
+"../imgs/f3201982d99233c64548d789898669a34cadd185.png">.</p>
+<p><img src=
+"../imgs/3983d5a986a61dad7c3865a95717d4b04498d966.png"></p>
+<p>The capacity can only be positive. So, <i>x</i> can be any
+positive number. The simplest value would be 1 and all the edges
+can be doubled to yield the below given result:</p>
+<p><img src=
+"../imgs/7ec7dafa2acf1857566006a13e8834e5d784fb53.png"></p>
+<p><b>Hence, the new network flow</b> <b><img src=
+"../imgs/c3aaa48060187f9a957d30a34ba061d10b34ecd8.png"></b> <b>can
+be gotten which is having a minimum cut with itself with smallest
+number of edges.</b></p>
+</div>
+</body>
+</html>
+
+            </div>     
+        </div> 
+        
+            </div>    
+            <div class="info">
+                Chegg Rip, Introduction to Algorithms, 3rd Edition. [RipVer 0.1]
+            <a href="../index.html">
+                (index)
+            </a>
+            </div>
+            <a class="return-float-btn" href="../index.html">
+                <span class="arrow-left icon"/>    
+            </a>
+        </body>
+        </html>
+        
